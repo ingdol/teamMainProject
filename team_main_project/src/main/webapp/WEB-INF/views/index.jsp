@@ -12,5 +12,7 @@
 		<form method="post" action="/sun/mapsearch">
 		<input type="submit" value="전송">
 		</form>
+		파일 올림
+		sej로 수정
 	</body>
 </html>
