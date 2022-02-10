@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* index.css */
+
+/*************** Header *******************/
+
+#headerBox {
+	width:1240px;
+	height:120px;
+	padding:0;
+}
+
+#logoBox {
+	float:center;
+	height:120px;
+	width:1240px;
+}
+
+#logoImg {
+	position: absolute;
+	width: 400px;
+	height: 74px;
+	left: 520px;
+	top: 30px;
+}
+/************* 메인 메뉴 고정 **********/
+/* 윈도우 스크롤 시 메인 메뉴 고정 */
+/* 클래스 선택자 css 설정해 놓고 js 파일에서 addClass()로 사용 */
+/* .mainMenuFixed {
+	position:fixed;
+	top:0px;
+}
+
+메인 메뉴 아래에 그림자 표시
+.mainMenuShadow {
+	box-shadow:0 3px 5px 0px gray;
+	offset-x | offset-y | blur-radius | spread-radius | color
+}
+
+ */
+
+.mainMenuFixed {
+	position:fixed;
+	top:0px;
+}
+
+/* 메인 메뉴 아래에 그림자 표시 */
+.mainMenuShadow {
+	box-shadow:0 3px 5px 0px gray;
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+}

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+footer {
+	background-color:#FAFAFA;
+	width:1280px;
+	height:100%;
+}
+
+#footerBox div{
+	display:inline-block;
+	margin:10px;
+	padding:35px;
+}
+
+#bottomMenuBox1 {
+	margin-top:100px;
+	float:center;
+	padding-right:10px;
+	width:120px;
+	height:200px;
+}
+
+#bottomMenuBox1 ul{ 
+	margin:0;
+	padding-top:20px;
+}
+
+#bottomMenuBox1 li {
+	float:right;
+	text-align:left;
+	width:100%;
+	height:30px;
+	line-height:30px;
+}
+
+#bottomMenuBox1 ul li a {
+	text-decoration:none;
+	color:#9C9C9C;
+	font-size:14px;   /* pt 도 됨 */
+	font-weight:bold;
+}
+
+#bottomMenuBox1 ul li a:hover {
+	color:black;
+}
+
+#bottomMenuBox2 {
+	margin-top:20px;
+	float:center;
+	padding-right:10px;
+	width:120px;
+	height:200px;
+}
+
+#bottomMenuBox2 ul{ 
+	margin:0; 
+	padding-top:20px;
+}
+
+#bottomMenuBox2 li {
+	float:right;
+	text-align:left;
+	width:100%;
+	height:30px;
+	line-height:30px;
+}
+
+#bottomMenuBox2 ul li a {
+	text-decoration:none;
+	color:#9C9C9C;
+	font-size:14px;   /* pt 도 됨 */
+	font-weight:bold;
+}
+
+#bottomMenuBox2 ul li a:hover {
+	color:black;
+}
+
+#footerTextBox {
+	float:left;
+	text-align:left;
+}
+
+#tel{
+	color:#9C9C9C;
+	font-weight:bold;
+	padding-bottom:1px;
+	font-size:40px;
+}
+
+
+#footerText{
+	color:#9C9C9C;
+	font-weight:bold;
+	padding-bottom:1px;
+	font-size:12px;
+	
+}
+#moveToTop:hover { opacity:0.7; cursor:pointer;}
