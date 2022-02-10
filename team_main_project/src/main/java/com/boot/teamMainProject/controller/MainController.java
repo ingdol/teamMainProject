@@ -8,7 +8,13 @@ public class MainController {
 	// index 페이지로 이동
 	@RequestMapping("/")
 	public String index() {
-		int a = 1;
+//		int a = 1;
 		return "index";
+	}
+	
+	//서연
+	@RequestMapping("/sun/mapsearch")
+	public String mapsearch() {
+		return "/sun/mapsearch";
 	}
 }
