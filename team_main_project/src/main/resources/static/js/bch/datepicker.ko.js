@@ -8,5 +8,7 @@
     clear: 'Clear',
     dateFormat: 'yyyy-mm-dd',
     timeFormat: 'hh:ii:ss',
-    firstDay: 0
+    firstDay: 0,
+    step: 30,
+    interval: 30,
 }; })(jQuery);
