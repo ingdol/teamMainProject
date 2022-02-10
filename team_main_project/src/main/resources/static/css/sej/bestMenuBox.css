@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* bestMenuBox.css */
+
+#beneBox {
+	float:center;
+	height:400px;
+	width:1240px;
+}
+#beneImg {
+	margin-top:100px;
+	height:200px;
+	width:480px;
+}
+
+#bestMenuBox1 {
+	margin-left:130px;
+	margin-right:130px;
+	height:200px;
+	line-height:35px;
+	background-color:#FDFDFD;
+	text-align:center;
+	
+	
+}
+#bestMenuBox2 {
+	margin-bottom:10px;
+	height:100%;
+	line-height:35px;
+	background-color:#FDFDFD;
+	text-align:center;
+}
+
