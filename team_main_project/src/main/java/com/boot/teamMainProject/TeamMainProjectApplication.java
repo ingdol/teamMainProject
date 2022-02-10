@@ -6,11 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-
+import com.boot.teamMainProject.controller.GatherDetController;
+import com.boot.teamMainProject.controller.MainController;
 @SpringBootApplication
 @ComponentScan(basePackages= {"com.boot.teamMainProject"}) 
 //@MapperScan(basePackageClasses = IProductDAO.class)
 @ComponentScan(basePackageClasses=MainController.class)
+@ComponentScan(basePackageClasses=GatherDetController.class)
 @ComponentScan(basePackageClasses= SpaceReservationController.class)
 
 public class TeamMainProjectApplication {

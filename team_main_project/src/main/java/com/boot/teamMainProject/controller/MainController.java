@@ -12,6 +12,9 @@ public class MainController {
 		return "index";
 	}
 	
+
+	//ldh(아직 안추가함)
+
 	// 메인 페이지로 이동
 	@RequestMapping("/main")
 	public String main() {
