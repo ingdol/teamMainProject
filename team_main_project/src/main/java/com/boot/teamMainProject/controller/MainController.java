@@ -8,6 +8,7 @@ public class MainController {
 	// index 페이지로 이동
 	@RequestMapping("/")
 	public String index() {
+		int a = 1;
 		return "index";
 	}
 }
