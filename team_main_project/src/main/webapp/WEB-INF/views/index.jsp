@@ -8,5 +8,6 @@
 	</head>
 	<body>
 		index 입니다.
+		수정 테스트 입니다.
 	</body>
 </html>
