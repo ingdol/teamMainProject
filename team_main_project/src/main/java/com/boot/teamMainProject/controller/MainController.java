@@ -12,9 +12,15 @@ public class MainController {
 		return "index";
 	}
 	
+	// 메인 페이지로 이동
+	@RequestMapping("/main")
+	public String main() {
+		return "/sej/main";
+
 	//서연
 	@RequestMapping("/sun/mapsearch")
 	public String mapsearch() {
 		return "/sun/mapsearch";
+
 	}
 }

@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* menu.css */
+
+/* 모든 <ul> 태그에 적용 */
+ul {
+	margin-top:0;
+	padding:0;
+	list-style:none;   /* type 없음 */
+}
+
+/********** TOP MENU ************/
+
+#topMenuBox {
+	float:right;
+	width:1280px;
+	height:10px;
+	padding-right:10px;
+}
+
+#topMenuBox ul{ margin:0;}
+
+#topMenuBox li {
+	float:right;
+	text-align:center;
+	line-height:30px;
+	font-size:13px;   /* pt 도 됨 */
+	margin:8px;
+}
+
+#topMenuBox ul li a {
+	text-decoration:none;
+	color:black;
+}
+
+#topMenuBox ul li a:hover {
+	color:black;
+	font-weight:bold;
+}
+
+
+/********** MAIN MENU ************/
+
+#mainMenuBox {
+	width:1280px;
+	height:35px;
+	line-height:35px;
+	background-color:#ffffff;   /* white*/
+	z-index:20;  /* 스크롤 시 위 오도록 */
+	border-top:solid #cccccc 1px;
+	border-bottom:solid #cccccc 1px;
+}
+
+#mainMenuBox ul{ margin:0;}
+
+#mainMenuBox li {
+	float:left;
+	text-align:center;
+	width:12%;
+	height:30px;
+	line-height:30px;
+}
+
+#mainMenuBox ul li a {
+	text-decoration:none;
+	color:black;
+	font-size:14px;   /* pt 도 됨 */
+	font-weight:bold;
+}
+
+#mainMenuBox ul li a:hover {
+	color:red;
+	font-weight:bold;
+}
+
+
+/********** SUB MENU ************/
+
+#subMenuBox {
+	width:1280px;
+	height:160px;
+	background-color:#ffffff;   /* white*/
+	text-align:center;
+	z-index:10;  /* 스크롤 시 위 오도록 */
+	padding-bottom:0;
+	position:absolute;
+	visibility:hidden; /* 시작 시 SUB MENU 항목 숨김 */
+}
+
+.subMenuItem {
+	width:12%;
+	background-color:#ffffff;  
+	border-left:solid #cccccc 1px;
+	border-right:solid #cccccc 1px;
+	margin-top:10px;
+}
+
+#subMenuItem1 {
+	position:absolute;
+	margin-left:0%;
+}
+
+#subMenuItem2 {
+	position:absolute;
+	margin-left:12%;
+}
+
+#subMenuItem3 {
+	position:absolute;
+	margin-left:24%;
+}
+
+#subMenuItem4 {
+	position:absolute;
+	margin-left:36%;
+}
+
+#subMenuItem5 {
+	position:absolute;
+	margin-left:48%;
+}
+
+#subMenuItem6 {
+	position:absolute;
+	margin-left:60%;
+}
+
+#subMenuItem7 {
+	position:absolute;
+	margin-left:72%;
+}
+.subMenuItem ul {background-color:#ffffff;  }
+
+.subMenuItem ul li {height:35px; line-height:35px;}
+
+.subMenuItem ul li a {
+	display:inline-block;
+	color:#333333;
+	text-decoration:none;;
+}
+
+.subMenuItem ul li a:hover {
+	background-color:#ffffff; 
+	text-decoration:underline;
+	color:black;
+}
+
+/*********** BOTTOM MENU *************/
+
+#bottomMenuBox {
+	height:30px;
+	line-height:30px;
+}
+
+
+#bottomMenuBox li {
+	display:inline-block;
+	text-align:center;
+	padding:5px;
+}
+
+
+#bottomMenuBox li a {
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
