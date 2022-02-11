@@ -12,9 +12,31 @@ public class MainController {
 		return "index";
 	}
 	
-	//서연
+	//서연 --------------------
 	@RequestMapping("/sun/mapsearch")
 	public String mapsearch() {
 		return "/sun/mapsearch";
 	}
+	
+	@RequestMapping("/sun/hobbysearch")
+	public String hobbysearch() {
+		return "/sun/hobbysearch";
+	}
+	
+	@RequestMapping("/sun/allmoim")
+	public String allmoim() {
+		return "/sun/allmoim";
+	}
+	
+	@RequestMapping("/sun/detailgat")
+	public String detailgat() {
+		return "/sun/detailgat";
+	}
+	
+	@RequestMapping("/sun/commumain")
+	public String commumain() {
+		return "/sun/commumain";
+	}
+	
+	//-------------------------
 }
