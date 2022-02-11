@@ -1,22 +1,24 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
         <title>공간 대여 전체</title>
     </head>
     <link type="text/css" rel="stylesheet" href="css/bch/datepicker.min.css"> <!-- 라이브러리 -->
-    <link type="text/css" rel="stylesheet" href="css/bch/spaceReservationAll.css"> <!-- 달력 설정 css -->
+    <link type="text/css" rel="stylesheet" href="css/bch/spaceReservationAll.css">
+    <link type="text/css" rel="stylesheet" href="css/bch/gallery.css">
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/bch/datepicker.min.js"></script> <!-- 라이브러리 -->
-    <script src="js/bch/datepicker.ko.js"></script> <!-- 한글 -->
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="js/bch/datepicker.min.js"></script> <!-- 달력 js -->
+    <script src="js/bch/datepicker.ko.js"></script> <!-- 달력 한글 js -->
     <script src="js/bch/datepickerUse.js"></script> <!-- 달력 설정 js -->
     <body>
-        <div>
-            <span id="entrance">입실 하실 날</span><span>퇴실 하실 날</span>
-            <div class="double">
-                <input id="datepicker1" type="text" readonly> -
-                <input id="datepicker2" type="text" readonly>
-            </div>
-            <span>
+        <div id="FormBox" class="FormBox">
+            <form class="findPlace" id="findPlace" >
+                <span>
+                    <input id="datepicker" type="text" readonly placeholder="날짜">
+            </span>
+                <span>
                 <select name="location">
                     <option value="">지역을 선택해 주세요.</option>
                     <option value="서울">서울 특별시</option>
@@ -37,8 +39,7 @@
                     <option value="제주">제주 특별자치도</option>
                 </select>
             </span>
-            <span>시간</span>
-            <span>카테고리
+                <span>
                 <select name="category">
                     <option value="">장소의 테마를 선택해 주세요.</option>
                     <option value="파티룸">파티룸</option>
@@ -49,8 +50,53 @@
                     <option value="실내운동시설">실내운동시설</option>
                     <option value="문화생활시설">문화생활시설</option>
                 </select>
-            </span>
-            <span>최대 인원</span>
+                </span>
+                <span><input type="text" placeholder="최대 인원"></span>
+                <button class="findPlaceBtn" id="findPlaceBtn">검색</button>
+            </form>
+        </div>
+    <hr>
+        <div class="spaceListBox">
+            <div class="gallerylist">
+                <span class="gallerylistBox">
+                    <c:forEach items="${spaceList}" var="space">
+                        <a href="<c:url value='/detailViewProject/${space.spaceNo}' />"> <!-- 클릭 시 링크 설정 -->
+                            <div class="card">
+                                <!-- 카드 헤더 -->
+                                <div class="card-header" >
+                                    <div class = "card-header-is_closed" >
+                                        <div class = "card-header-text" > 모집중 </div >
+                                        <div class = "card-header-number" > 2 / 5 </div >
+                                    </div >
+                                </div>
+                                <!--  카드 바디 -->
+                                <div class="card-body">
+                                    <!--  카드 바디 헤더 -->
+                                    <div class="card-body-header">
+                                        <h1>${space.spaceTitle}</h1>
+                                        <p class="card-body-hashtag">${space.spaceArea}</p>
+                                        <p class = "card-body-nickname">
+                                            최대 ${space.spacePerMax}인
+                                        </p>
+                                    </div>
+                                    <p class="card-body-description">
+                                    ${space.spacePrice1}<span>/비수기</span>
+                                            ${space.spacePrice2}<span>/성수기</span>
+                                    </p>
+                                    <!--  카드 바디 본문 -->
+                                    <!--  카드 바디 푸터 -->
+                                    <div class="card-body-footer">
+                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
+                                        <i class="icon icon-view_count"></i>조회 38회
+                                        <i class="icon icon-comments_count"></i>댓글 4개
+                                        <i class="reg_date"> 2018/04/12 </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </c:forEach>
+                </span>
+            </div>
         </div>
     </body>
 </html>
