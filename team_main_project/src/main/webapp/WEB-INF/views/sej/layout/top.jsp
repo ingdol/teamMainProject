@@ -9,11 +9,8 @@
 		<link href="<c:url value='/css/sej/common.css?after'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/index.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/menu.css'/>" rel="stylesheet" type="text/css">
-		<link href="<c:url value='/css/sej/bestMenuBox.css?after'/>" rel="stylesheet" type="text/css">
-		<link href="<c:url value='/css/sej/product.css?after'/>" rel="stylesheet" type="text/css">
-		<link href="<c:url value='/css/sej/footer.css?after'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/footer.css'/>" rel="stylesheet" type="text/css">
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/sej/subMenu.js'/>"></script>
 		<script src="<c:url value='/js/sej/index.js'/>"></script>
 	</head>
 	<body>
@@ -24,13 +21,19 @@
 		</header>
 		<nav>
 			<div id="mainMenuBox">
-				<ul id="menuItem">
-					<li></li>
-					<li><a href="#"><img src="<c:url value='/image/sej/allGather.png'/>" id="allGather"></a></li>
-					<li><a href="#"><img src="<c:url value='/image/sej/lookSpace.png'/>" id="lookSpace"></a></li>
-					<li><a href="#"><img src="<c:url value='/image/sej/community.png'/>" id="community"></a></li>
-					<li><a href="#"><img src="<c:url value='/image/sej/login.png'/>" id="login"></a></li>
-				</ul>				
+				<div id="searchBox">
+					<div id="searchIcon"><img src="<c:url value='/image/sej/searchIcon.png'/>" id="searchIconImag"></div>
+					<div id="searchInputBox"><input id="searchInput" type="text" placeholder="검색어를 입력해주세요" name="keyword"></div>
+					<!-- <input id="searchBtn" type="submit" value="검색"> -->
+				</div>
+				<div id="MenuBarBox">
+					<ul id="menuItem">
+						<li><a href="#"><img src="<c:url value='/image/sej/allGather.png'/>" id="menuImg"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/lookSpace.png'/>" id="menuImg"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/community.png'/>" id="menuImg"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/login.png'/>" id="menuImg"></a></li>
+					</ul>
+				</div>				
 			</div>  <!-- mainMenuBox 끝 -->
 		</nav>
 	</body>
