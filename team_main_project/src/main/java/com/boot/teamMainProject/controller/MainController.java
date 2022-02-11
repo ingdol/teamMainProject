@@ -21,7 +21,6 @@ public class MainController {
 //		int a = 1;
 		return "index";
 	}
-	
 
 
 
@@ -64,6 +63,7 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+
 	
 	//ldh(아직 안추가함)
 	@RequestMapping("/ldh/SomoimboardWrite")
@@ -75,6 +75,27 @@ public class MainController {
 	public String Somoimboard() {
 		return "/ldh/Somoimboard";
 
+	}
+	
+
+	@RequestMapping("/sun/hobbysearch")
+	public String hobbysearch() {
+		return "/sun/hobbysearch";
+	}
+	
+	@RequestMapping("/sun/allmoim")
+	public String allmoim() {
+		return "/sun/allmoim";
+	}
+	
+	@RequestMapping("/sun/detailgat")
+	public String detailgat() {
+		return "/sun/detailgat";
+	}
+	
+	@RequestMapping("/sun/commumain")
+	public String commumain() {
+		return "/sun/commumain";
 	}
 	
 }

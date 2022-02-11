@@ -6,20 +6,20 @@
 
 #headerBox {
 	width:1240px;
-	height:120px;
+	height:100px;
 	padding:0;
 }
 
 #logoBox {
 	float:center;
-	height:120px;
+	height:100px;
 	width:1240px;
 }
 
 #logoImg {
 	position: absolute;
-	width: 400px;
-	height: 74px;
+	width: 300px;
+	height: 58px;
 	left: 520px;
 	top: 30px;
 }
@@ -46,6 +46,6 @@
 
 /* 메인 메뉴 아래에 그림자 표시 */
 .mainMenuShadow {
-	box-shadow:0 3px 5px 0px gray;
+	box-shadow:0 3px 5px 0px #F2F2F2;
 	/* offset-x | offset-y | blur-radius | spread-radius | color */
 }
