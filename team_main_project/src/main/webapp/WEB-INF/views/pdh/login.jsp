@@ -20,7 +20,6 @@
     <!-- MAIN -->
     <div id="l-form">
         <form class="form" method="post" onsubmit="return onSubmit()">
-        <!-- <form action="" class="form"> -->
             <h1>Sign In</h1>
             <ul>
                 <li class="l-li" id="l-email">
@@ -34,10 +33,10 @@
                     <label for="" class="l-label" id="pw-label">Password</label>
                 </li>
                 <li class="l-li-Btn">
-                    <input type="submit" id="l-submit" value="Sign In">
+                    <input type="button" id="l-submit" value="Sign In">
                 </li>
                 <li class="l-li-Btn">
-                    <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d74df3c90e2abbac5e5a0e4a9dea5408&redirect_uri=http://127.0.0.1:5500/index">
+                    <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d74df3c90e2abbac5e5a0e4a9dea5408&redirect_uri=http://125.140.227.37:5500/index">
                         <img src="../image/kakao/kakao_login_medium_wide.png" width="100%" height="50hv">
                     </a>
                 </li>
