@@ -4,6 +4,9 @@ import com.boot.teamMainProject.controller.SpaceReservationController;
 import com.boot.teamMainProject.dao.IMemDAO;
 import com.boot.teamMainProject.controller.MainController;
 import com.boot.teamMainProject.dao.ISpaceDAO;
+
+import com.boot.teamMainProject.controller.MemberController;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,9 +23,11 @@ import com.boot.teamMainProject.dao.IMemDAO;
 @ComponentScan(basePackageClasses=MainController.class)
 @ComponentScan(basePackageClasses=GatherDetController.class)
 @ComponentScan(basePackageClasses= SpaceReservationController.class)
+@ComponentScan(basePackageClasses= MemberController.class)
 @MapperScan(basePackageClasses = IMemDAO.class)
 @MapperScan(basePackageClasses=IGatherDetDAO.class)//ldh
 @MapperScan(basePackageClasses = ISpaceDAO.class)
+
 
 public class TeamMainProjectApplication {
 

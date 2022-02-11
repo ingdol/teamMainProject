@@ -1,5 +1,7 @@
 package com.boot.teamMainProject.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,13 +17,20 @@ public class MemberService implements IMemberService {
 	IMemDAO dao;
 	
 	@Override
+	public MemberVO signIn(HashMap<String, String> param) {
+		System.out.println("MemberService" + param);
+		System.out.println("MemberService=return" + dao.signIn(param) );
+		return dao.signIn(param);
+	}
+	
+	@Override
 	public String memIdCheck(String memId) {
 		return dao.memIdCheck(memId);
 	}
 	
 	@Override
-	public void signIn(MemberVO vo) {
-		dao.signIn(vo);
+	public void signUp(MemberVO vo) {
+		dao.signUp(vo);
 	}
 
 }
