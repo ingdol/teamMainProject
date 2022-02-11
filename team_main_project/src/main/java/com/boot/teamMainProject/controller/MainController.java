@@ -37,30 +37,4 @@ public class MainController {
 		return "/sun/mapsearch";
 
 	}
-	
-	// pdh 로그인
-	
-	@Autowired
-	MemberService service;
-	
-	@Autowired
-	IMemberService iMemberService;
-	
-	@RequestMapping(value = "/login", method = {RequestMethod.GET})
-	public String home() {
-
-		return "pdh/login";
-	}
-	
-	@RequestMapping(value = "/signin")
-	public String signUp(@RequestBody HashMap<String, String> map, MemberVO vo) {
-
-		// System.out.println(map);
-		
-		vo.setMemId(map.get("id"));
-		vo.setMemPw(map.get("pw"));
-		service.signIn(vo);
-
-		return "redirect:/";
-	}
 }
