@@ -23,7 +23,7 @@ public class MainController {
 	}
 	
 
-	//ldh(아직 안추가함)
+
 
 	// 메인 페이지로 이동
 	@RequestMapping("/main")
@@ -63,4 +63,18 @@ public class MainController {
 
 		return "redirect:/";
 	}
+	
+	
+	//ldh(아직 안추가함)
+	@RequestMapping("/ldh/SomoimboardWrite")
+	public String SomoimboardWrite() {
+		return "/ldh/SomoimboardWrite";
+
+	}
+	@RequestMapping("/ldh/Somoimboard")
+	public String Somoimboard() {
+		return "/ldh/Somoimboard";
+
+	}
+	
 }

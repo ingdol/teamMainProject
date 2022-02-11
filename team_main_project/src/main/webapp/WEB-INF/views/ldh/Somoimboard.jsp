@@ -8,6 +8,12 @@
 		<title>소모임 게시판</title>
 	</head>
 	<body>
-		
+		<div id ="wrap">
+			
+			<form method="post" action = "<c:url value='/ldh/Somoimboard/{gatDetNo}'/>">
+			${글 제목}
+			
+			</form>
+		</div>
 	</body>
 </html>

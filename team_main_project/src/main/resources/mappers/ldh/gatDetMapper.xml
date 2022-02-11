@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.teamMainProject.dao.IGatherDetDAO">
+	<resultMap id="gatResult" type="com.boot.teamMainProject.model.GatherDetVO">
+		<result property="gatNo" column="gatNo" />
+		<result property="gatDetNo" column="gatDetNo" />
+		<result property="gatDetTitle" column="gatDetTitle" />
+		<result property="memNick" column="memNick" />
+		<result property="gatDetInfo" column="gatDetInfo" />	
+		<result property="gatDetPhoto" column="gatDetPhoto" />	
+		<result property="gatDetDate" column="gatDetDate" />	
+		<result property="gatDetLike" column="gatDetLike" />	
+		<result property="gatDetView" column="gatDetView" />	
+		<result property="gatDetComNum" column="gatDetComNum" />	
+	</resultMap>
+	
+   <select id="detailViewBoard" parameterType="string"
+   				resultType="com.boot.teamMainProject.model.GatherDetVO">
+  		SELECT * FROM gather_det WHERE GatDetNo=#{GatDetNo}
+   </select>
+	
+	<insert id="updateGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
+			INSERT INTO gather_det(gatDetNo,gatDetTitle,memNick,gatDetInfo, gatDetView, gatDetComNum) 
+			VALUES (4, ${gatDetTitle},${memNick},${gatDetInfo},0,0)
+	</insert>
+	
+
+  </mapper>
