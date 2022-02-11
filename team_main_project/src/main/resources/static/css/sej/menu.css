@@ -8,141 +8,71 @@ ul {
 	list-style:none;   /* type 없음 */
 }
 
-/********** TOP MENU ************/
-
-#topMenuBox {
-	float:right;
-	width:1280px;
-	height:10px;
-	padding-right:10px;
-}
-
-#topMenuBox ul{ margin:0;}
-
-#topMenuBox li {
-	float:right;
-	text-align:center;
-	line-height:30px;
-	font-size:13px;   /* pt 도 됨 */
-	margin:8px;
-}
-
-#topMenuBox ul li a {
-	text-decoration:none;
-	color:black;
-}
-
-#topMenuBox ul li a:hover {
-	color:black;
-	font-weight:bold;
-}
-
 
 /********** MAIN MENU ************/
 
 #mainMenuBox {
 	width:1280px;
-	height:35px;
+	height:60px;
 	line-height:35px;
 	background-color:#ffffff;   /* white*/
 	z-index:20;  /* 스크롤 시 위 오도록 */
-	border-top:solid #cccccc 1px;
-	border-bottom:solid #cccccc 1px;
+	padding-top:10px;
+}
+
+#MenuBarBox {
+	width:350px;
+	position: absolute;
+	margin-left:670px;
 }
 
 #mainMenuBox ul{ margin:0;}
 
 #mainMenuBox li {
 	float:left;
-	text-align:center;
-	width:12%;
+	width:25%;
 	height:30px;
 	line-height:30px;
 }
 
-#mainMenuBox ul li a {
-	text-decoration:none;
-	color:black;
-	font-size:14px;   /* pt 도 됨 */
-	font-weight:bold;
+#menuImg {
+	width: 50px;
+	height: 50px;
 }
 
-#mainMenuBox ul li a:hover {
-	color:red;
-	font-weight:bold;
+/********** SEARCH FORM ************/
+#searchBox {
+	width: 350px;
+	height: 50px;
+	position: absolute;
+	margin-left:300px;
 }
 
-
-/********** SUB MENU ************/
-
-#subMenuBox {
-	width:1280px;
-	height:160px;
-	background-color:#ffffff;   /* white*/
-	text-align:center;
-	z-index:10;  /* 스크롤 시 위 오도록 */
-	padding-bottom:0;
-	position:absolute;
-	visibility:hidden; /* 시작 시 SUB MENU 항목 숨김 */
+#searchIcon {
+	width: 50px;
+	height: 50px;
+	padding:10px;
+	position: absolute;
+	z-index: 2;
 }
 
-.subMenuItem {
-	width:12%;
-	background-color:#ffffff;  
-	border-left:solid #cccccc 1px;
-	border-right:solid #cccccc 1px;
-	margin-top:10px;
+#searchIconImag {
+	margin-top: 3px;
+	width: 25px;
+	height: 25px;
 }
 
-#subMenuItem1 {
-	position:absolute;
-	margin-left:0%;
+#searchInput {
+	width: 290px;
+	height: 50px;
+	background: #F7F7F7;
+	border-radius: 25px;
+	padding-left:60px;
+	border:0 solid white;
+	position: relative;
+	z-index: 1;
 }
 
-#subMenuItem2 {
-	position:absolute;
-	margin-left:12%;
-}
-
-#subMenuItem3 {
-	position:absolute;
-	margin-left:24%;
-}
-
-#subMenuItem4 {
-	position:absolute;
-	margin-left:36%;
-}
-
-#subMenuItem5 {
-	position:absolute;
-	margin-left:48%;
-}
-
-#subMenuItem6 {
-	position:absolute;
-	margin-left:60%;
-}
-
-#subMenuItem7 {
-	position:absolute;
-	margin-left:72%;
-}
-.subMenuItem ul {background-color:#ffffff;  }
-
-.subMenuItem ul li {height:35px; line-height:35px;}
-
-.subMenuItem ul li a {
-	display:inline-block;
-	color:#333333;
-	text-decoration:none;;
-}
-
-.subMenuItem ul li a:hover {
-	background-color:#ffffff; 
-	text-decoration:underline;
-	color:black;
-}
 
 /*********** BOTTOM MENU *************/
 
