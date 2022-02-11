@@ -36,6 +36,7 @@ public class MainController {
 		return "/sun/mapsearch";
 
 	}
+<<<<<<< Updated upstream
 	
 	// pdh 로그인
 	
@@ -98,4 +99,6 @@ public class MainController {
 		return "/sun/commumain";
 	}
 	
+=======
+>>>>>>> Stashed changes
 }

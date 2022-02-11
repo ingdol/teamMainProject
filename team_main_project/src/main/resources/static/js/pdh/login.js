@@ -19,7 +19,7 @@ const addDomSuccess = document.createElement('span');
 
 // --| Table Regular expression
 const idRegex = new RegExp(/^[A-Za-z0-9]{4,12}$/);
-const pwRegex = new RegExp(/^[A-Za-z0-9]{4,12}$/);
+const pwRegex = new RegExp(/^[A-Za-z0-9]{6,12}$/);
 const emailRegex = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
 const nameRegex = new RegExp(/^[가-힣]{2,6}$/);
 const numRegex = new RegExp(/[^0-9]{1,13}/g);
@@ -32,12 +32,16 @@ function signinData() {
 
 }
 
+submitBtn.addEventListener('click', function() {
+	onSubmit()
+})
+
 // --| Submit EventLisener
 function onSubmit() {
     if (emailRegex.test(email.value) === false) {
         addDomSuccess.remove();
         addDomFail.classList.add("fail-font");
-        addDomFail.textContent = '이메일 유효성 검사 실패';
+        addDomFail.textContent = '이메일을 입력해 주세요.';
         liEmail.appendChild(addDomFail);
         email.focus();
         emailLabel.classList.add("fail-label");
@@ -58,7 +62,7 @@ function onSubmit() {
     if (pwRegex.test(pw.value) === false) {
         // addDomSuccess.remove();
         addDomFail.classList.add("fail-font");
-        addDomFail.textContent = '비밀번호 유효성 검사 실패';
+        addDomFail.textContent = '비밀번호 6자리 이상';
         liPw.appendChild(addDomFail);
         pw.focus();
         pwLabel.classList.add("fail-label");
@@ -75,37 +79,30 @@ function onSubmit() {
         pw.classList.add("success-line");
     }
 
-
-
-
-
-
-
-
-
-    const xhr = new XMLHttpRequest;
+    const xhr = new XMLHttpRequest();
     const data = {
         id: email.value,
-        pw: pw.value,
-        // --| Immediately invoked function expression(IIFE)
-        test: (function () {
-
-            return 'test';
-        }())
+        pw: pw.value
     }
 
-    xhr.open('POST', 'signin', false);
+    xhr.open('POST', '/signin', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(data));
     xhr.onload = function () {
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200) {
                 console.log("Connection!")
+                if(xhr.response === "fail") {
+                    alert("fail");
+                    return false;
+                } else if(xhr.response === "success") {
+                    alert("success");
+                }
             } else {
-                console("Error...")
+                console.log("Error...");
             }
         } else {
-            console("Not Found...")
+            console.log("Not Found...");
         }
     }
 }

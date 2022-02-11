@@ -10,9 +10,6 @@
 	<body>
 		index 입니다.
 		수정 테스트 입니다.
-		<form method="post" action="/sun/mapsearch">
-		<input type="submit" value="전송">
-		</form>
 		파일 올림
 		sej로 수정
 		
