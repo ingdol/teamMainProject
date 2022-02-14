@@ -68,6 +68,13 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.l-li-Chk {
+    list-style: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+    /* margin-top: -1.5rem; */
+}
+
 #l-submit {
     width: 24rem;
     height: var(--box-size-first);
