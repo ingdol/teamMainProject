@@ -26,9 +26,9 @@ public class GatherDetService implements IGatherDetService {
 	}
 
 	@Override
-	public String updateGatherDet(GatherDetVO gat) {
+	public void insertGatherDet(GatherDetVO gat) {
 		// TODO Auto-generated method stub
-		return dao.updateGatherDet(gat);
+		dao.insertGatherDet(gat);
 	}
 
 }

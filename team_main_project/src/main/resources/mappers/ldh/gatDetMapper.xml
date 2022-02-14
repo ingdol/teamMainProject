@@ -18,14 +18,14 @@
 		<result property="gatDetComNum" column="gatDetComNum" />	
 	</resultMap>
 	
-   <select id="detailViewBoard" parameterType="string"
+   <select id="detailViewBoard" parameterType="int"
    				resultType="com.boot.teamMainProject.model.GatherDetVO">
-  		SELECT * FROM gather_det WHERE GatDetNo=#{GatDetNo}
+  		SELECT * FROM gather_det WHERE gatDetNo=#{gatDetNo}
    </select>
 	
-	<insert id="updateGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-			INSERT INTO gather_det(gatDetNo,gatDetTitle,memNick,gatDetInfo, gatDetView, gatDetComNum) 
-			VALUES (4, ${gatDetTitle},${memNick},${gatDetInfo},0,0)
+	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
+			INSERT INTO gather_det(gatNo, gatDetNo,gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetView, gatDetComNum) 
+			VALUES (${gatNo}, 4, '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0)
 	</insert>
 	
 

@@ -6,14 +6,24 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>소모임 게시판</title>
+		<link rel="stylesheet" href="<c:url value="/css/ldh/Sdetail.css" />">
 	</head>
 	<body>
-		<div id ="wrap">
+		<div class ="wrap">
+			<div class="boardtitle">
+			${gat.gatDetTitle}
+			</div>
+			<br><br>
+			<div class="nick"> ${gat.memNick}</div><br>
+			<div class="date">작성일자 : ${gat.gatDetDate}<br>
+			조회수 : ${gat.gatDetView}
+			</div>
+			<br>
+			<br>
+			<div class="boardDetail">
+			${gat.gatDetInfo }
+			</div>
 			
-			<form method="post" action = "<c:url value='/ldh/Somoimboard/{gatDetNo}'/>">
-			${글 제목}
-			
-			</form>
 		</div>
 	</body>
 </html>
