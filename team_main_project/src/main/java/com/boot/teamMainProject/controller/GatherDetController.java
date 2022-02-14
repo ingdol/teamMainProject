@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import com.boot.teamMainProject.model.GatherDetVO;
 import com.boot.teamMainProject.service.GatherDetService;
 
@@ -18,22 +17,23 @@ public class GatherDetController {
 	@Autowired
 	GatherDetService service;
 	
+
+	
+	@ResponseBody
+	@RequestMapping("/sboard")
+	public String insertGatherDet(GatherDetVO gat) {
+		service.insertGatherDet(gat);
+
+				
+		return "/sboard";
+	}
+	
 	@RequestMapping("/ldh/Somoimboard/{gatDetNo}")
 	public String detailViewBoard(@PathVariable int gatDetNo, Model model) {
 		System.out.println(gatDetNo); 
 		GatherDetVO gat = service.detailViewBoard(gatDetNo);
 		model.addAttribute("gat", gat);
 		
-		return "ldh/Somoimboard";  // 상품 상세 정보 뷰 페이지
+		return "ldh/Somoimboard";
 	}
-	
-	@ResponseBody
-	@RequestMapping("/sboard")
-	public String updateGatherDet(GatherDetVO gat) {
-		service.updateGatherDet(gat);
-
-				
-		return "/sboard";
-	}
-	
 }
