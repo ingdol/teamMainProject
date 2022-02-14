@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* -------------- 모임소개 --------- */
+/* .moiminfobox {
+	background-color: gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+}
+
+.moiminfobox .ul1 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.moiminfobox .li1 {
+	list-style: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 20%;
+}
+
+.moiminfobox .li1 img {
+	width: 90%;
+	height: 90%;
+	object-fit: cover;
+} */
+
+/* -------------- 모임메뉴 --------- */
+.moimmenubox ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.moimmenubox li {
+	list-style: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+
+.moimmenubox .btn {
+	width: 100%;
+}
+
+/* 모임가입섹션 */
+.moimjoin ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.moimjoin li {
+	list-style: none;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+
+.moimjoin li button {
+	width: 100%;
+}
