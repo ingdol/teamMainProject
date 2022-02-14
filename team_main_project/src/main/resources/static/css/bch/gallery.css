@@ -10,6 +10,9 @@
     margin: 0 auto;
     border: 1px gold solid;
 }
+.gallerylist {
+    margin: 1.5%;
+}
 .screen {
     display: inline;
 
@@ -72,7 +75,7 @@ table {
     width: 100%;
     height: 270px;
     border-radius: 15px 15px 0 0;
-    background-image: url("images/korea.jpeg");
+    background-image: url("image/bch/IMG_4587.JPG");
     background-size: 100% 280px;
     background-repeat: no-repeat;
 }
@@ -170,4 +173,6 @@ h1 {
 
 .reg_date {
     float: right;
+    padding-right: 3%;
+    color: black;
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.teamMainProject.dao.ISpace_CtgDAO">
+    <resultMap id="spaceNameResult" type="com.boot.teamMainProject.model.Space_CtgVO">
+        <result property="spaceCtgNo" column="spaceCtgNo" />
+        <result property="spaceCtgName" column="spaceCtgName" />
+    </resultMap>
+
+    <select id="SpaceCtgName" resultMap="spaceNameResult">
+        SELECT spaceCtgName FROM Space_Ctg JOIN Space ON Space_Ctg.spaceCtgNo = space.spaceCtgNo
+    </select>
+
+</mapper>

@@ -13,11 +13,13 @@
     <script src="js/bch/datepicker.ko.js"></script> <!-- 달력 한글 js -->
     <script src="js/bch/datepickerUse.js"></script> <!-- 달력 설정 js -->
     <body>
+    <!-- top -->
+    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
             <form class="findPlace" id="findPlace" >
                 <span>
                     <input id="datepicker" type="text" readonly placeholder="날짜">
-            </span>
+                </span>
                 <span>
                 <select name="location">
                     <option value="">지역을 선택해 주세요.</option>
@@ -65,8 +67,12 @@
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >
                                     <div class = "card-header-is_closed" >
-                                        <div class = "card-header-text" > 모집중 </div >
-                                        <div class = "card-header-number" > 2 / 5 </div >
+                                        <div class = "card-header-text" >
+                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">
+                                            ${spaceCtgName.spaceCtgName}
+                                            </c:forEach>
+                                        </div >
+                                        <div class = "card-header-number" ></div >
                                     </div >
                                 </div>
                                 <!--  카드 바디 -->
@@ -80,16 +86,16 @@
                                         </p>
                                     </div>
                                     <p class="card-body-description">
-                                    ${space.spacePrice1}<span>/비수기</span>
-                                            ${space.spacePrice2}<span>/성수기</span>
+<%--                                    ${space.spacePrice1}<span>/비수기</span><br>${space.spacePrice2}<span>/성수기</span>--%>
+                                        ${space.spaceInfo}
                                     </p>
                                     <!--  카드 바디 본문 -->
                                     <!--  카드 바디 푸터 -->
                                     <div class="card-body-footer">
                                         <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
-                                        <i class="icon icon-view_count"></i>조회 38회
-                                        <i class="icon icon-comments_count"></i>댓글 4개
-                                        <i class="reg_date"> 2018/04/12 </i>
+                                        <i class="icon icon-view_count"></i>
+                                        <i class="icon icon-comments_count"></i>
+                                        <i class="reg_date"></i>
                                     </div>
                                 </div>
                             </div>
@@ -98,5 +104,7 @@
                 </span>
             </div>
         </div>
+        <!-- bottom -->
+        <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </body>
 </html>
