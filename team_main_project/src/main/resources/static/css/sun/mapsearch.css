@@ -1,1 +1,88 @@
 @charset "UTF-8";
+
+/* **********필터************ */
+.filter{
+	margin: 3%;
+	
+}
+.filter ul {
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.filter li {
+	list-style: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 90px;
+}
+
+.filter li div {
+	border: 1px solid #3EAAFF;
+	border-radius: 10px;
+	width: 50%;
+	height: 100%;
+	line-height: 90px;
+}
+
+.filter li div:hover{
+	cursor:pointer;
+	background-color: #a8d8ff;	
+}
+
+
+/* **********필터선택후 나오는 화면(지도)************ */
+#locationsearch{
+	width:100%;
+	height: 1000px;	
+	position: relative;
+}
+#locationsearch .dropbox{
+	/* display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1%;
+	width:40%;	 */
+	position: absolute;
+	left: 40%;
+	width:20%;
+	height:5%;
+	border:1px solid #aaaaaa;
+	border-radius:10px;
+	top:15px;
+	background-color: white;
+}
+
+#locationsearch .dropbox .dropdown{
+	height: 100%;
+}
+
+#locationsearch .dropbox .dropdown:hover{
+	cursor: pointer;
+	background-color:  #a8d8ff;
+}
+
+#locationsearch .dropbox .dropdown span{
+	display: inline-block;
+	margin: 5%;
+}
+#locationsearch .dropbox .dropdown span:first-child{
+	padding-right: 5%;
+}
+#locationsearch .dropbox .dropdown span:nth-child(2){
+	padding-left: 5%;
+}
+
+.mapphoto{
+	width:100%;
+	overflow: hidden;
+}
+.mapphoto img{
+	width:100%;
+}

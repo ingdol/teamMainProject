@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.commumenubox ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.commumenubox li {
+	list-style: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+
+.commumenubox .btn {
+	width: 100%;
+}
