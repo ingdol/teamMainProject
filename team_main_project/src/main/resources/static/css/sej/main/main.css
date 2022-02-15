@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/*********** Hobby Menu************/
+#hobbyMenu {
+	width:1280px;
+	height:120px;
+	margin-top:50px;
+}
+
+#hobbyMenu ul{ margin:0; padding-left:20px;}
+
+#hobbyMenu li {
+	float:left;
+	width:14%;
+	height:30px;
+	line-height:30px;
+}
+
+#hobbyMenu ul li a {
+	text-decoration:none;
+	color:gray;
+	font-size:18px; 
+	font-weight:bold;
+}
+#hobbyMenu img {
+	width: 120px;
+	height: 120px;
+	border-radius: 30px;
+}
+
+
+/*********** Best Item *************/
+#bestItem {
+	width:1280px;
+	height:500px;
+	margin-top:50px;
+}
+
+#itemTop {
+	width:1280px;
+	height:70px;
+	position: relative;
+}
+
+#bestName {
+	float:left;
+	font-size:30px;
+	font-weight:bold;
+}
+
+#allView a{
+	float:right;
+	text-decoration:none;
+	font-size:18px; 
+	color:black;
+}
+
+
+#bestMenu ul{ margin:0; padding-left:20px;}
+
+#bestMenu li {
+	float:left;
+	width:33%;
+	height:30px;
+	line-height:30px;
+	text-align:left;
+}
+
+#bestMenu ul li a {
+	text-decoration:none;
+	color:black;
+}
+
+#bestMenu img {
+	width: 360px;
+	height: 240px;
+	border-radius: 10px;
+}
+
+#gatherCtg {
+	font-size:18px; 
+}
+
+#gatherName {
+	font-size:26px; 
+}
+
+#bestBr {
+	content: "";
+	display:block;
+	margin-bottom:10px;
+}
