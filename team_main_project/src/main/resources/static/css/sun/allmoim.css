@@ -1,1 +1,37 @@
 @charset "UTF-8";
+
+.allfilter{
+	margin-top:1%;
+	margin-bottom:1%;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width:40%;
+}
+
+.allfilter .dropdown{
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 90px;
+}
+
+
+/* **************필터선택후***************** */
+
+#allmoimsearch .result{
+	float: left;
+	margin:0% 0% 1% 1%;
+}
+
+.card-deck{
+	clear: both;
+}
+
+.filterresultmoim, .filterresultclass{
+	margin:2%;
+}

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>map으로 모임찾기(필터)</title>
+<title>전체모임(필터)</title>
 <link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <link href="<c:url value='/css/sun/allmoim.css'/>" rel="stylesheet"	type="text/css">
 <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">
@@ -78,7 +78,8 @@
 				<h1 id="sectioninfo">전체모임목록</h1>
 
 				<!-- 모임필터결과 -->
-				<div id="filterresultmoim">
+				<div class="filterresultmoim">
+				<span class="result">검색결과모임</span>
 					<div class="card-deck">
 						<div class="card">
 							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
@@ -144,7 +145,8 @@
 				</div>
 
 				<!-- 클래스필터결과 -->
-				<div id="filterresultclass">
+				<div class="filterresultclass">
+				<span class="result">검색결과클래스</span>
 					<div class="card-deck">
 						<div class="card">
 							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
