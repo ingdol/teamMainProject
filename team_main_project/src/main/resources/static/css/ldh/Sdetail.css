@@ -1,14 +1,11 @@
 @charset "UTF-8";
 
 
-.wrap{
-position: absolute;
-background: #FFFFFF;
-}
+
 
 
 .boardtitle{
-position: absolute;
+/* position: absolute; */
 width: 519px;
 height: 32px;
 
@@ -19,15 +16,14 @@ box-sizing: border-box;
 }
 
 .boardDetail{
-
-position: absolute;
+position:relative;
 width: 519px;
 height: 302px;
 
 background: #FFFFFF;
 border: 1px solid #000000;
 box-sizing: border-box;
-	
+vertical-align: top;
 }
 
 .nick{
@@ -43,3 +39,14 @@ line-height: 16px;
 
 color: #000000;
 }
+
+.detail1{
+	
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+	}
