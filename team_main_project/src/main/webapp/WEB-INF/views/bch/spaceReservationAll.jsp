@@ -12,16 +12,15 @@
     <script src="js/bch/datepicker.min.js"></script> <!-- 달력 js -->
     <script src="js/bch/datepicker.ko.js"></script> <!-- 달력 한글 js -->
     <script src="js/bch/datepickerUse.js"></script> <!-- 달력 설정 js -->
+    <script src="js/bch/spaceSearch.js"></script> <!-- 조건 검색 -->
     <body>
-    <!-- top -->
-    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
-            <form class="findPlace" id="findPlace" >
+            <form class="findPlace" >
                 <span>
                     <input id="datepicker" type="text" readonly placeholder="날짜">
                 </span>
                 <span>
-                <select name="location">
+                <select name="location" id="location" class="location">
                     <option value="">지역을 선택해 주세요.</option>
                     <option value="서울">서울 특별시</option>
                     <option value="인천">인천 광역시</option>
@@ -42,24 +41,24 @@
                 </select>
             </span>
                 <span>
-                <select name="category">
+                <select name="category" id="category" class="category">
                     <option value="">장소의 테마를 선택해 주세요.</option>
-                    <option value="파티룸">파티룸</option>
-                    <option value="회의실">회의실</option>
-                    <option value="펜션">펜션</option>
-                    <option value="골프 연습장">골프 연습장</option>
-                    <option value="야외운동시설">야외운동시설</option>
-                    <option value="실내운동시설">실내운동시설</option>
-                    <option value="문화생활시설">문화생활시설</option>
+                    <option value="1">파티룸</option>
+                    <option value="2">회의실</option>
+                    <option value="3">펜션</option>
+                    <option value="4">골프 연습장</option>
+                    <option value="5">야외운동시설</option>
+                    <option value="6">실내운동시설</option>
+                    <option value="7">문화생활시설</option>
                 </select>
                 </span>
-                <span><input type="text" placeholder="최대 인원"></span>
+                <span><input type="number" placeholder="최대 인원" id="maxPerson" class="maxPerson"></span>
                 <button class="findPlaceBtn" id="findPlaceBtn">검색</button>
             </form>
         </div>
     <hr>
-        <div class="spaceListBox">
-            <div class="gallerylist">
+        <div class="spaceListBox" id="spaceListBox">
+            <div class="gallerylist" id="gallerylist">
                 <span class="gallerylistBox">
                     <c:forEach items="${spaceList}" var="space">
                         <a href="<c:url value='/detailViewProject/${space.spaceNo}' />"> <!-- 클릭 시 링크 설정 -->
@@ -86,8 +85,8 @@
                                         </p>
                                     </div>
                                     <p class="card-body-description">
-<%--                                    ${space.spacePrice1}<span>/비수기</span><br>${space.spacePrice2}<span>/성수기</span>--%>
-                                        ${space.spaceInfo}
+                                    ${space.spacePrice1}<span>/비수기</span><br>${space.spacePrice2}<span>/성수기</span>
+                                    <%--${space.spaceInfo}--%>
                                     </p>
                                     <!--  카드 바디 본문 -->
                                     <!--  카드 바디 푸터 -->
@@ -104,7 +103,5 @@
                 </span>
             </div>
         </div>
-        <!-- bottom -->
-        <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </body>
 </html>

@@ -19,4 +19,5 @@ public class Space_CtgService implements ISpace_CtgService {
     public ArrayList<Space_CtgVO> SpaceCtgName() {
         return dao.SpaceCtgName();
     }
+
 }

@@ -11,7 +11,10 @@
     </resultMap>
 
     <select id="SpaceCtgName" resultMap="spaceNameResult">
-        SELECT spaceCtgName FROM Space_Ctg JOIN Space ON Space_Ctg.spaceCtgNo = space.spaceCtgNo
+        <![CDATA[
+        SET @rownum:=0;
+        SELECT @rownum:=@rownum+1, spaceCtgName FROM Space_Ctg JOIN Space ON Space_Ctg.spaceCtgNo = space.spaceCtgNo WHERE @rownum:=@rownum+1 = Space.spaceNo
+        ]]>
     </select>
 
 </mapper>
