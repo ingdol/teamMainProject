@@ -6,12 +6,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Daily&Linker</title>
-		<link href="<c:url value='/css/sej/common.css?after'/>" rel="stylesheet" type="text/css">
-		<link href="<c:url value='/css/sej/index.css'/>" rel="stylesheet" type="text/css">
-		<link href="<c:url value='/css/sej/menu.css'/>" rel="stylesheet" type="text/css">
-		<link href="<c:url value='/css/sej/footer.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/main/common.css?after'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/main/index.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/main/menu.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/main/footer.css'/>" rel="stylesheet" type="text/css">
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/sej/index.js'/>"></script>
+		<script src="<c:url value='/js/sej/main/index.js'/>"></script>
 	</head>
 	<body>
 		<header>
@@ -28,10 +28,10 @@
 				</div>
 				<div id="MenuBarBox">
 					<ul id="menuItem">
-						<li><a href="#"><img src="<c:url value='/image/sej/allGather.png'/>" id="menuImg"></a></li>
-						<li><a href="#"><img src="<c:url value='/image/sej/lookSpace.png'/>" id="menuImg"></a></li>
-						<li><a href="#"><img src="<c:url value='/image/sej/community.png'/>" id="menuImg"></a></li>
-						<li><a href="#"><img src="<c:url value='/image/sej/login.png'/>" id="menuImg"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/gather3.png'/>" id="menuImg1"><br id="menuBr">전체모임</a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/space3.png'/>" id="menuImg2"><br id="menuBr">공간구경</a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/commu3.png'/>" id="menuImg3"><br id="menuBr">커뮤니티</a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/login3.png'/>" id="menuImg4"><br id="menuBr">로그인</a></li>
 					</ul>
 				</div>				
 			</div>  <!-- mainMenuBox 끝 -->
