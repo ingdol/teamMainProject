@@ -20,7 +20,6 @@
     <!-- MAIN -->
     <div id="l-form">
         <form class="form" method="post" onsubmit="return onSubmit()">
-        <!-- <form action="" class="form"> -->
             <h1>Sign In</h1>
             <ul>
                 <li class="l-li" id="l-email">

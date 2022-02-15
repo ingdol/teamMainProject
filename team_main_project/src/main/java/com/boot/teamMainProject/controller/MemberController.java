@@ -28,6 +28,12 @@ public class MemberController {
 		return "pdh/login";
 	}
 	
+	@RequestMapping(value = "/signup", method = {RequestMethod.GET})
+	public String signup() {
+
+		return "pdh/signup";
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/signin")
 	public String signIn(@RequestBody HashMap<String, String> param, HttpSession session) {
@@ -35,16 +41,20 @@ public class MemberController {
 		String checkVar = "fail";
 		MemberVO resultChk = service.signIn(param);
 		
-		System.out.println(param);
-		System.out.println(param.getClass().getName()); // 타입 확인
-		System.out.println(resultChk);
-		
 		if(resultChk != null) {
-			// System.out.println("use : " + memId_result);
 			session.setAttribute("sid", resultChk.getMemId());
 			checkVar = "success";
 		}
 
 		return checkVar;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/idcheck")
+	public String signIn(@RequestBody HashMap<String, String> param) {
+		
+		String checkId = "use";
+		
+		return checkId;
 	}
 }
