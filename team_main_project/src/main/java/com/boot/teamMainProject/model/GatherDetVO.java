@@ -3,8 +3,8 @@ package com.boot.teamMainProject.model;
 import java.util.Date;
 
 public class GatherDetVO {
-	private String gatNo;
-	private String gatDetNo;
+	private int gatNo;
+	private int gatDetNo;
 	private String gatDetTitle;
 	private String memNick;
 	private String gatDetInfo;
@@ -14,16 +14,16 @@ public class GatherDetVO {
 	private int gatDetView;
 	private int gatDetComNum;
 	
-	public String getGatNo() {
+	public int getGatNo() {
 		return gatNo;
 	}
-	public void setGatNo(String gatNo) {
+	public void setGatNo(int gatNo) {
 		this.gatNo = gatNo;
 	}
-	public String getGatDetNo() {
+	public int getGatDetNo() {
 		return gatDetNo;
 	}
-	public void setGatDetNo(String gatDetNo) {
+	public void setGatDetNo(int gatDetNo) {
 		this.gatDetNo = gatDetNo;
 	}
 	public String getGatDetTitle() {

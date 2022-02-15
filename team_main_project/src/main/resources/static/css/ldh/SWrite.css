@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-.wrap{
+#wrap{
+
 position: absolute;
 background: #FFFFFF;
+	text-align:center;
+	position:relative;
 }
 
 .subbox{
@@ -14,4 +17,6 @@ background: #66A3FF;
 border: 3px solid #0038FF;
 box-sizing: border-box;
 border-radius: 10px;
+
+color: white;
 }

@@ -23,8 +23,7 @@ public class GatherDetController {
 	@RequestMapping("/sboard")
 	public String insertGatherDet(GatherDetVO gat) {
 		service.insertGatherDet(gat);
-
-				
+		
 		return "/sboard";
 	}
 	

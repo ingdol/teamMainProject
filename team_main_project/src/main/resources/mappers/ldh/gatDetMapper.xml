@@ -24,8 +24,8 @@
    </select>
 	
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-			INSERT INTO gather_det(gatNo, gatDetNo,gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetView, gatDetComNum) 
-			VALUES (${gatNo}, 4, '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0)
+			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetLike, gatDetView, gatDetComNum) 
+			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0,0)
 	</insert>
 	
 
