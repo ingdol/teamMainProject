@@ -3,3 +3,39 @@
 #sectioninfo{
 	display: none;
 }
+
+/* **********모임카테고리 필터************ */
+.filter{
+	margin: 3%;
+	
+}
+.filter ul {
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.filter li {
+	list-style: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 90px;
+}
+
+.filter li div {
+	border: 1px solid #3EAAFF;
+	border-radius: 10px;
+	width: 50%;
+	height: 100%;
+	line-height: 90px;
+}
+
+.filter li div:hover{
+	cursor:pointer;
+	background-color: #a8d8ff;	
+}
