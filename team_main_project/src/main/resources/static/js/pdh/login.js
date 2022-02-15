@@ -33,10 +33,6 @@ function signinData() {
 
 }
 
-/*submitBtn.addEventListener('click', function() {
-	onSubmit();
-});*/
-
 // --| Submit EventLisener
 function onSubmit() {
     if (emailRegex.test(email.value) === false) {
@@ -149,7 +145,7 @@ function getCookie(name) {
  *
  * @param {string} nameKey : Cookie Key
  * @param {string} value : Email Value
- * @param {Date} expires : 현재 시간
+ * @param {string} expires : 현재 시간
  * @Date : 2022. 02. 14.
 */
 function setCookie(nameKey, value, expires) {
