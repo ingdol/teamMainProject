@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#mapmiddle .hobby{
+	display: none;
+}
+
 
 /* **********필터선택후 나오는 화면(지도)************ */
 #locationsearch{
