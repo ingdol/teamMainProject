@@ -32,10 +32,10 @@ $(function(){
 		moveSlide(movedIndex); 
 	});
 	
-	// 초기 슬라이더 위치 랜덤하게 지정
+	/*// 초기 슬라이더 위치 랜덤하게 지정
 	var rNum = Math.floor(Math.random() * 5);
 	moveSlide(rNum); 
-	
+	*/
 	// 각 컨트롤 버튼에 대해 	
 	$('.controlButton').each(function(index){
 		$(this).hover(

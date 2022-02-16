@@ -1,22 +1,30 @@
 @charset "UTF-8";
-footer {
-	background-color: #F8F8F8;
+#footerDiv{
 	width:1280px;
 	height:100%;
 	margin-top:50px;
 }
 
+#footerDiv div{
+	background-color: #F9F9F9;
+}
+
+
 #footerBox div{
 	display:inline-block;
 	margin:10px;
 	padding-left:35px;
-	padding-top:10px;
+	padding-top:15px;
+}
+
+#footerTitle1 {
+	width:500px;
 }
 
 #bottomMenuBox1 {
 	float:left;
 	margin-right:700px;
-	width:800px;
+	width:850px;
 	height:50px;
 }
 
@@ -35,13 +43,41 @@ footer {
 #bottomMenuBox1 ul li a {
 	text-decoration:none;
 	color:#3A3A3A;
-	font-size:20px;   /* pt 도 됨 */
+	font-size:23px;   /* pt 도 됨 */
 }
 
 #bottomMenuBox1 ul li a:hover {
 	color:black;
+	font-weight:bold;
 }
 
+#bottomMenuBox2 {
+	float:left;
+	margin-right:700px;
+	width:600px;
+	height:50px;
+}
+
+#bottomMenuBox2 ul{ 
+	margin:0;
+}
+
+#bottomMenuBox2 li {
+	float:left;
+	text-align:left;
+	height:30px;
+	line-height:30px;
+}
+
+#bottomMenuBox2 ul li a {
+	text-decoration:none;
+	color:#3A3A3A;
+	font-size:20px;   /* pt 도 됨 */
+}
+
+#menuBold {
+	font-weight:bold;
+}
 
 #footerTextBox {
 	float:left;
@@ -55,7 +91,6 @@ footer {
 	font-size:12px;
 	
 }
-
 
 #footerTitle1{
 	color:#3A3A3A;
@@ -78,10 +113,15 @@ footer {
 
 #footerTable2 tr {
 	height : 40px;
+	color:gray;
 }
 
 #footerHr {
-	background-color: red;
+	margin-top:10px;
+	border-top: 1px solid #E3E3E3;
+	margin-left:20px;
+	margin-right:50px;
 }
 
 #moveToTop:hover { opacity:0.7; cursor:pointer;}
+
