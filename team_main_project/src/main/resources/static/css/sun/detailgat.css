@@ -71,7 +71,7 @@
 	margin-top: 2%;
 	width:100%;
 }
-.moiminfodetail,.moimcommu,.moimphoto,.moimchatting{
+.moimcommu,.moimphoto,.moimchatting{
 	margin: 0;
 	padding: 0;
 	width:100%;
@@ -80,26 +80,6 @@
 
 
 /* *******모임사진첩******* */
-/* .moimphoto{
-	width:100%;
-}
-.card-group{
-	display: flex;
-	justify-content: space-around;
-    align-items: center;
-    width:36%;
-}
-.card-group .card{
-	justify-content: center;
-    align-items: center;
-    padding: 1%;
-    width:33%;
-}
-.card-group .card img{	
-	box-sizing: border-box; 
-	object-fit: cover;
-} */
-
 .card-group{
 	height: 400px;
     display: flex;
@@ -119,7 +99,7 @@
 .card-group li{
 	box-sizing: border-box; 
     width: 100%;
-    height:100%;
+    height:85%;
     /* 폰트 가운데정렬 */
     display: flex;
     justify-content: initial;
@@ -142,12 +122,18 @@
 }
 .card-group li .card-body{
 	height: 21%;
+	padding: 0 !important;
 }
 .card-group li .card-body .card-text{
 	margin-bottom: 0.5%;
 }
 .card-group li .card-footer{
 	height: 9%;
+	padding: 0 !important;
+}
+
+.moimphoto nav{
+	width:20%;
 }
 /* ********모임가입섹션*********** */
 

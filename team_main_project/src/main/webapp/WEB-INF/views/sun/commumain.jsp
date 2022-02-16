@@ -25,7 +25,7 @@
                 	<h3 id="sectioninfo">커뮤니티메뉴</h3>
                 	<div class="commumenubox">
                 			<ul>
-                				<li><button type="button">전체글</button></li>
+                				<li><button type="button" class="btn btn-outline-primary">전체글</button></li>
                 				<li><button type="button" class="btn btn-outline-primary">일상</button></li>
                 				<li><button type="button" class="btn btn-outline-primary">후기</button></li>
                 				<li><button type="button" class="btn btn-outline-primary">베스트</button></li>
