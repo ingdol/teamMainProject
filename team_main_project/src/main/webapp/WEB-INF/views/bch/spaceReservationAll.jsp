@@ -7,7 +7,7 @@
     <link type="text/css" rel="stylesheet" href="css/bch/datepicker.min.css"> <!-- 라이브러리 -->
     <link type="text/css" rel="stylesheet" href="css/bch/spaceReservationAll.css">
     <link type="text/css" rel="stylesheet" href="css/bch/gallery.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="js/bch/datepicker.min.js"></script> <!-- 달력 js -->
     <script src="js/bch/datepicker.ko.js"></script> <!-- 달력 한글 js -->
@@ -53,15 +53,15 @@
                 </select>
                 </span>
                 <span><input type="number" placeholder="최대 인원" id="maxPerson" class="maxPerson"></span>
-                <button class="findPlaceBtn" id="findPlaceBtn">검색</button>
+                <input type="submit" value="검색" id="findPlaceBtn">
             </form>
         </div>
     <hr>
         <div class="spaceListBox" id="spaceListBox">
             <div class="gallerylist" id="gallerylist">
-                <span class="gallerylistBox">
+                <span class="gallerylistBox" id="gallerylistBox">
                     <c:forEach items="${spaceList}" var="space">
-                        <a href="<c:url value='/detailViewProject/${space.spaceNo}' />"> <!-- 클릭 시 링크 설정 -->
+                        <a href="<c:url value='/detailViewSpace/${space.spaceNo}' />"> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >
@@ -80,7 +80,7 @@
                                     <div class="card-body-header">
                                         <h1>${space.spaceTitle}</h1>
                                         <p class="card-body-hashtag">${space.spaceArea}</p>
-                                        <p class = "card-body-nickname">
+                                        <p class ="card-body-nickname">
                                             최대 ${space.spacePerMax}인
                                         </p>
                                     </div>

@@ -8,23 +8,61 @@ $(document).ready(function(){
             data:{"location":$('#location').val(),
                 "category":$('#category').val(),
                 "maxPerson":$('#maxPerson').val()},
-            dataType:'text',
+            dataType:'json',
+            async: false,
             success:function(result){
                 if(result != ""){
-                    $('#gallerylistBox').empty();
-                    $('#gallerylistBox').append('<table>');
-                        for(var i=0; i <result.length; i++){
-                            $('#resultTable').append('<tr><td>' + result[i].spaceTitle + '</td><td>');
-                                // result[i].prdName + '</td><td>' +
-                                // result[i].prdPrice+ '</td><td>' +
-                                // result[i].prdCompany + '</td><td>' +
-                                // result[i].prdStock + '</td><td>');
+                    var space = result;
+                    $('#gallerylist').empty();
+                    $('#gallerylist').append('<span class="gallerylistBox" id="gallerylistBox">');
+                        for(var i = 0; i < Object.keys(space).length; i++){
+                            $('#gallerylistBox').append('<a href="' + '/detailViewSpace/' + space[i].spaceNo + '"'  + '>' +
+                                '<div class="card">' +
+                                '<div class="card-header">' +
+                                '<div class="card-header-is_closed">' +
+                                '<div class="card-header-text">');
+                            $.ajax({
+                                type:"post",
+                                url:"constraintCtg", // @RestController로 요청
+                                dataType: 'json',
+                                async: false,
+                                success:function(result){
+                                    var spaceCtgName = result;
+                                    for(var j = 0; j < 1; j++) {
+                                        $('#gallerylistBox').append(spaceCtgName[j].spaceCtgName + '</div>'); // card-header-text 닫힘
+                                    }
+                                },
+                                error:function(data, textStatus){
+                                    alert("카테고리 이름 추출 실패");
+                                }
+                            }); // 카테고리 이름 뽑는 ajax 끝
+                            $('#gallerylistBox').append('<div class="card-header-number"></div>' +
+                                                        '</div>' + // card-header-is_closed 닫힘
+                                                        '</div>' + // card-header 닫힘
+                                                        '<div class="card-body">' +
+                                                        '<div class="card-body-header">' +
+                                                        '<h1>' + space[i].spaceTitle + '</h1>' +
+                                                        '<p class="card-body-hashtag">' + space[i].spaceArea + '</p>' +
+                                                        '<p class="card-body-nickname">' + '최대' + space[i].spacePerMax + '인' + '</p>' +
+                                                        '</div>' + // card-body-header 닫힘
+                                                        '<p class="card-body-description">' +
+                                                        space[i].spacePrice1 + '<span>' + '/비수기' + '</span>' + '<br>' +
+                                                        space[i].spacePrice2 + '<span>' + '/성수기' + '</span>' + '</p>' +
+                                                        '<div class="card-body-footer">' +
+                                                        '<hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">' +
+                                                        '<i class="icon icon-view_count"></i>' +
+                                                        '<i class="icon icon-comments_count"></i>' +
+                                                        '<i class="reg_date"></i>' +
+                                                        '</div>' +
+                                                        '</div>' +
+                                                        '</div>' +
+                                                        '</a>');
                         }
-                    $('#gallerylistBox').append('</table>');
+                    $('#gallerylist').append('</span>');
                 }
             },
             error:function(data, textStatus){
-                alert("전송 실패");
+                alert("조건 검색 실패");
             }
         });
     });
