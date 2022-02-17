@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.teamMainProject.dao.IGatherDetDAO">
+	<resultMap id="gatResult" type="com.boot.teamMainProject.model.GatherDetVO">
+		<result property="gatNo" column="gatNo" />
+		<result property="gatDetNo" column="gatDetNo" />
+		<result property="gatDetTitle" column="gatDetTitle" />
+		<result property="memNick" column="memNick" />
+		<result property="gatDetInfo" column="gatDetInfo" />	
+		<result property="gatDetPhoto" column="gatDetPhoto" />	
+		<result property="gatDetDate" column="gatDetDate" />	
+		<result property="gatDetLike" column="gatDetLike" />	
+		<result property="gatDetView" column="gatDetView" />	
+		<result property="gatDetComNum" column="gatDetComNum" />	
+	</resultMap>
+	
+   <select id="detailViewBoard" parameterType="int"
+   				resultType="com.boot.teamMainProject.model.GatherDetVO">
+  		SELECT * FROM gather_det WHERE gatDetNo=#{gatDetNo}
+   </select>
+
+<!-- 	<select id="MoveinsertGather" parameterType="String" -->
+<!--    				resultType="com.boot.teamMainProject.model.GatherDetVO"> -->
+<!--   		SELECT * FROM gather_det WHERE memNick=#{memNick} -->
+<!--    </select> -->
+	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
+			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetLike, gatDetView, gatDetComNum) 
+			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0,0)
+	</insert>
+	
+	<resultMap id="MeemResult" type="com.boot.teamMainProject.model.MemberVO">
+		<result property="memNick" column="memNick" />
+	</resultMap>
+	
+	<select id="MoveinsertGather" parameterType="String"
+   				resultType="com.boot.teamMainProject.model.MemberVO">
+  		SELECT * FROM member WHERE memNick=#{memNick}
+   </select>
+	
+  </mapper>
+  

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+
+
+
+
+.boardtitle{
+/* position: absolute; */
+width: 519px;
+height: 32px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+	
+}
+
+.boardDetail{
+position:relative;
+width: 519px;
+height: 302px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+vertical-align: top;
+}
+
+.nick{
+position: absolute;
+width: 52px;
+height: 16px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+}
+
+.detail1{
+	
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+	}
+	
+.comment{
+
+width: 519px;
+height: 122px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+}

@@ -68,17 +68,24 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.l-li-Chk {
+    list-style: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+    /* margin-top: -1.5rem; */
+}
+
 #l-submit {
     width: 24rem;
     height: var(--box-size-first);
     /* margin-left: 20rem; */
     font-weight: bold;
     color: black;
-    background: dodgerblue;
+    background: rgba(30, 144, 255, 1.0);
     border: none;
     border-radius: 3rem;
-
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .l-label {
@@ -89,10 +96,20 @@ h1 {
     background-color: #ffffff;
     color: gray;
     font-weight: bold;
+    z-index: -1;
     transition: all 0.2s;
 }
 
 /* ======== PSEUDO-CLASS <SELECTOR> ======== */
+#l-submit:hover {
+    background: rgba(50, 130, 255, 0.9);
+    
+}
+
+#l-submit:active {
+    background: rgba(50, 130, 255, 1.0);
+}
+
 .l-input:focus + .l-label {
     top: -1rem;
     left: -0.3rem;
