@@ -73,6 +73,8 @@ public class MainController {
 		return "/sun/allmoim";
 	}
 
+	//---------------------------------
+
 	@RequestMapping("/ldh/SomoimboardWrite")
 	public String SomoimboardWrite() {
 		return "/ldh/SomoimboardWrite";
