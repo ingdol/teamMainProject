@@ -3,7 +3,7 @@
  */
  
 $(function(){
-	$('#filter div').on('click',function(){
+	$('').on('click',function(){
 		console.log("a");
 	});
 });

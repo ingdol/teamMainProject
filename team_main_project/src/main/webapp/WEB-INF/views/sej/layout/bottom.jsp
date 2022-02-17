@@ -6,7 +6,7 @@
    <head>
    </head>
    <body>
-      <footer>
+      <footer id="footerDiv">
          <div id="footerBox">
             <div id="footerTextBox">
             	<div id="bottomMenuBox1">
@@ -30,14 +30,14 @@
                			<tr><td colspan = "2">㈜데일리앤링커은 통신판매중개자로서 거래당사자가 아니며, 호스트가 등록한 상품정보 및 거래에 대해 ㈜프렌트립은 일체의 책임을 지지 않습니다.<br>
                				   NICEPAY 안전거래 서비스 : 고객님의 안전거래를 위해 현금 결제 시, 저희 사이트에서 가입한 구매안전 서비스를 이용할 수 있습니다.</td></tr>
                	</table></div>
-               	<div id="bottomMenuBox1">
-	               <ul id="bottomMenuItem1">
-	                  <li><a href="#">이용약관</a></li>
-	                  <li><a href="#">개인정보처리방침</a></li>
-	                  <li><a href="#">위치기반 서비스</a></li>
+               	<div id="bottomMenuBox2">
+	               <ul id="bottomMenuItem2">
+	                  <li><a href="#">이용약관&nbsp;|&nbsp;</a></li>
+	                  <li id="menuBold"><a href="#"> 개인정보처리방침</a></li>
+	                  <li><a href="#">&nbsp;|&nbsp;위치기반 서비스</a></li>
 	               </ul>
 	            </div>
-	            <div id="moveToTopBox"><img src="<c:url value='/image/moveToTop.png'/>" id="moveToTop"></div>
+	            <%-- <div id="moveToTopBox"><img src="<c:url value='/image/moveToTop.png'/>" id="moveToTop"></div> --%>
             </div>
             
          </div>

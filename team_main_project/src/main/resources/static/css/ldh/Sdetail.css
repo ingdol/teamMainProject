@@ -50,3 +50,13 @@ line-height: 16px;
 
 color: #000000;
 	}
+	
+.comment{
+
+width: 519px;
+height: 122px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+}

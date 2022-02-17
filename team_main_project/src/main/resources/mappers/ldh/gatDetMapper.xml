@@ -22,11 +22,24 @@
    				resultType="com.boot.teamMainProject.model.GatherDetVO">
   		SELECT * FROM gather_det WHERE gatDetNo=#{gatDetNo}
    </select>
-	
+
+<!-- 	<select id="MoveinsertGather" parameterType="String" -->
+<!--    				resultType="com.boot.teamMainProject.model.GatherDetVO"> -->
+<!--   		SELECT * FROM gather_det WHERE memNick=#{memNick} -->
+<!--    </select> -->
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
 			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetLike, gatDetView, gatDetComNum) 
 			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0,0)
 	</insert>
 	
-
+	<resultMap id="MeemResult" type="com.boot.teamMainProject.model.MemberVO">
+		<result property="memNick" column="memNick" />
+	</resultMap>
+	
+	<select id="MoveinsertGather" parameterType="String"
+   				resultType="com.boot.teamMainProject.model.MemberVO">
+  		SELECT * FROM member WHERE memNick=#{memNick}
+   </select>
+	
   </mapper>
+  

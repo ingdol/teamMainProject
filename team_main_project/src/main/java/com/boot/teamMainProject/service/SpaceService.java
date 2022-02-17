@@ -11,7 +11,10 @@ import java.util.ArrayList;
 
 @Service
 public class SpaceService implements ISpaceService {
-//    @Setter(onMethod_ = {@Autowired})
+//<<<<<<< HEAD
+////    @Setter(onMethod_ = {@Autowired})
+//=======
+//>>>>>>> branch 'main' of https://github.com/ingdol/teamMainProject.git
     @Qualifier("ISpaceDAO")
     ISpaceDAO dao;
 

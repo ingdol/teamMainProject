@@ -7,8 +7,10 @@ import com.boot.teamMainProject.service.Space_CtgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 
@@ -27,10 +29,22 @@ public class SpaceReservationController {
         model.addAttribute("spaceCtgName", spaceCtgName);
         return "bch/spaceReservationAll";
     }
-    @RequestMapping("findConstraint")
-    public ArrayList<SpaceVO> findConstraint(Model model, @RequestParam("location") String location, @RequestParam("category") String category, @RequestParam("maxPerson") int maxPerson) {
+
+    @ResponseBody
+    @RequestMapping(value = "findConstraint")
+    public ArrayList<SpaceVO> findConstraint(Model model,
+                                             @RequestParam("location") String location,
+                                             @RequestParam("category") String category,
+                                             @RequestParam("maxPerson") int maxPerson) {
         ArrayList<SpaceVO> constraintSpaceList = service.listFindSpace(location, category, maxPerson);
         model.addAttribute("constraintSpaceList", constraintSpaceList);
         return constraintSpaceList;
+    }
+    @ResponseBody
+    @RequestMapping(value = "constraintCtg")
+    public ArrayList<Space_CtgVO> constraintCtg(Model model) {
+        ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
+        model.addAttribute("spaceCtgName", spaceCtgName);
+        return spaceCtgName;
     }
 }

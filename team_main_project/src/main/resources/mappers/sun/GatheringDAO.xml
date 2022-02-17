@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.teamMainProject.dao">
+  	<resultMap id="gatheringResult" type="com.boot.teamMainProject.model.GatheringVO">
+  		<result property="gatNo" column="gatNo"/>
+  		<result property="memNick" column="memNick"/>
+  		<result property="garInfo" column="garInfo"/>
+  		<result property="hobbyNo" column="hobbyNo"/>
+  		<result property="gatArea" column="gatArea"/>
+  		<result property="gatOpen" column="gatOpen"/>
+  		<result property="gatHate" column="gatHate"/>
+  	</resultMap>
+  	
+  	<select id="showlist" resultMap="gatheringResult">
+  		select * from gathering
+  	</select>
+  	
+  	
+  </mapper>

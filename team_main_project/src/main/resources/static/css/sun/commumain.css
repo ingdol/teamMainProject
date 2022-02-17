@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+#commumiddle{
+	margin:2% 1% 1% 1%;
+}
+
+.commumenubox{
+	width:80%;
+	
+}
+
 .commumenubox ul {
 	margin: 0;
 	padding: 0;
@@ -9,15 +18,24 @@
 }
 
 .commumenubox li {
+	padding:1%;
 	list-style: none;
 	box-sizing: border-box;
 	flex-shrink: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 20%;
+	width: 19%;
 }
 
 .commumenubox .btn {
 	width: 100%;
+}
+
+
+/* ***************nav***************** */
+
+#commumiddle nav{
+	width:30%;
+	margin-top: 2%;
 }
