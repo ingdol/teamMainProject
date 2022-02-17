@@ -62,27 +62,27 @@
 			<!-- 필터선택후 나오는화면 hobby-->
 			<div id="hobbyclick" class="hobby">
 				<ul>
-					<li><a href="<c:url value='/sun/allmoim/{hobbyNo}'/>"><img src="<c:url value='/images/1.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/1'/>"><img src="<c:url value='/images/1_sport.jpg'/>"></a>
 					</li>
-					<li><a href="<c:url value='/sun/allmoim/{hobbyNo}'/>"><img src="<c:url value='/images/2.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/2'/>"><img src="<c:url value='/images/2_outdoor.jpg'/>"></a>
 					</li>
-					<li><a href="<c:url value='/sun/allmoim/{hobbyNo}'/>"><img src="<c:url value='/images/3.jpg'/>"></a>
-					</li>
-				</ul>
-				<ul>
-					<li><a href="#"><img src="<c:url value='/images/4.jpg'/>"></a>
-					</li>
-					<li><a href="#"><img src="<c:url value='/images/5.jpg'/>"></a>
-					</li>
-					<li><a href="#"><img src="<c:url value='/images/6.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/3'/>"><img src="<c:url value='/images/3_study.jpg'/>"></a>
 					</li>
 				</ul>
 				<ul>
-					<li><a href="#"><img src="<c:url value='/images/7.jpg'/>"></a>
+					<li><a href="#"><img src="<c:url value='/images/4_travel.jpg'/>"></a>
 					</li>
-					<li><a href="#"><img src="<c:url value='/images/8.jpg'/>"></a>
+					<li><a href="#"><img src="<c:url value='/images/5_cook.jpg'/>"></a>
 					</li>
-					<li><a href="#"><img src="<c:url value='/images/9.jpg'/>"></a>
+					<li><a href="#"><img src="<c:url value='/images/6_animal.jpg'/>"></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="#"><img src="<c:url value='/images/7_picture.jpg'/>"></a>
+					</li>
+					<li><a href="#"><img src="<c:url value='/images/8_help.jpg'/>"></a>
+					</li>
+					<li><a href="#"><img src="<c:url value='/images/9_art2.jpg'/>"></a>
 					</li>
 				</ul>
 			</div>

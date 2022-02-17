@@ -1,3 +1,4 @@
+=======
 package com.boot.teamMainProject.controller;
 
 import java.util.HashMap;
@@ -112,7 +113,4 @@ public class MainController {
 //
 //		return "redirect:/";
 //	}
-
-
-	//-------------------------
 }
