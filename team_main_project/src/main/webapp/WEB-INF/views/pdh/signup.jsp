@@ -22,13 +22,13 @@
         <form class="form" method="post" onsubmit="return onSubmit();">
             <h1>Sign Up</h1>
             <ul>
-                <li class="l-li" id="l-email">
-                    <input type="text" class="l-input" id="email" placeholder=" ">
-                    <label for="" class="l-label" id="email-label">이름</label>
+                <li class="l-li" id="l-name">
+                    <input type="text" class="l-input" id="name" placeholder=" ">
+                    <label for="" class="l-label" id="name-label">이름</label>
                 </li>
 
                 <li class="l-li" id="l-email">
-                    <input type="email" class="l-input" id="email" placeholder=" " onchange="function idChecking();">
+                    <input type="email" class="l-input" id="email" placeholder=" " onchange="idChecking();">
                     <label for="" class="l-label" id="email-label">Email</label>
                 </li>
                 <li class="l-li" id="l-pw">
@@ -36,18 +36,18 @@
                     <input type="password" class="l-input" id="pw" autocomplete="on" placeholder=" ">
                     <label for="" class="l-label" id="pw-label">Password</label>
                 </li>
-                <li class="l-li" id="l-email">
-                    <input type="text" class="l-input" id="email" placeholder=" ">
-                    <label for="" class="l-label" id="email-label">닉네임</label>
+                <li class="l-li" id="l-nick">
+                    <input type="text" class="l-input" id="nick" placeholder=" ">
+                    <label for="" class="l-label" id="nick-label">닉네임</label>
                 </li>
-                <li class="l-li" id="l-email">
-                    <input type="email" class="l-input" id="number" placeholder=" ">
-                    <label for="" class="l-label" id="email-label">휴대전화</label>
+                <li class="l-li" id="l-number">
+                    <input type="tel" class="l-input" id="number" placeholder=" ">
+                    <label for="" class="l-label" id="number-label">휴대전화</label>
                 </li>
                 <li class="l-li-title">
                     <div class="l-title">관심분야</div>
                 </li>
-                <li class="l-li-check" id="l-email">
+                <li class="l-li-check" id="l-check">
                     <input type="checkbox" id="label-art" class="l-check" value="art"><label for="label-art">예술 및 연극</label>
                     <input type="checkbox" id="label-sport" class="l-check" value="sport"><label for="label-sport" >스포츠</label>
                     <input type="checkbox" id="label-cook" class="l-check" value="cook"><label for="label-cook">요리</label>
@@ -68,14 +68,14 @@
                     <input type="checkbox" id="label-news" class="l-check" value="news"><label for="label-news">뉴스</label>
                     <input type="checkbox" id="label-politics" class="l-check" value="politics"><label for="label-politics">정치</label>
                 </li>
-                <li class="l-li" id="l-email">
-                    <input type="text" class="l-input-address1" id="email" placeholder=" ">
+                <li class="l-li" id="l-address">
+                    <input type="text" class="l-input-address1" id="email1" placeholder=" ">
                     <label for="" class="l-label-address" id="email-label">상세주소</label>
-                    <input type="text" class="l-input-address" id="email" placeholder=" ">
+                    <input type="text" class="l-input-address" id="email1" placeholder=" ">
                     <label for="" class="l-label" id="email-label">우편번호</label>
                 </li>
                 <li class="l-li-Btn">
-                    <input type="submit" id="l-submit" value="Sign Up">
+                    <input type="submit" id="l-submit" value="Sign Up" onclick="onSubmit();">
                 </li>
             </ul>
         </form>
