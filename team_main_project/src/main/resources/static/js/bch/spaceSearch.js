@@ -9,10 +9,11 @@ $(document).ready(function(){
                 "category":$('#category').val(),
                 "maxPerson":$('#maxPerson').val()},
             dataType:'json',
-            async: false,
+
             success:function(result){
                 if(result != ""){
                     var space = result;
+                    console.log(space);
                     $('#gallerylist').empty();
                     $('#gallerylist').append('<span class="gallerylistBox" id="gallerylistBox">');
                         for(var i = 0; i < Object.keys(space).length; i++){
@@ -25,7 +26,7 @@ $(document).ready(function(){
                                 type:"post",
                                 url:"constraintCtg", // @RestController로 요청
                                 dataType: 'json',
-                                async: false,
+
                                 success:function(result){
                                     var spaceCtgName = result;
                                     for(var j = 0; j < 1; j++) {

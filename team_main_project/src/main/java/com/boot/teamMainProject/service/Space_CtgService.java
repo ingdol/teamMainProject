@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @Service
 public class Space_CtgService implements ISpace_CtgService {
-//    @Setter(onMethod_ = {@Autowired})
+    @Setter(onMethod_ = {@Autowired})
     @Qualifier("ISpace_CtgDAO")
     ISpace_CtgDAO dao;
 

@@ -53,7 +53,8 @@
                 </select>
                 </span>
                 <span><input type="number" placeholder="최대 인원" id="maxPerson" class="maxPerson"></span>
-                <input type="submit" value="검색" id="findPlaceBtn">
+<%--                <input type="submit" value="검색" id="findPlaceBtn">--%>
+                <button id="findPlaceBtn">검색</button>
             </form>
         </div>
     <hr>
@@ -61,7 +62,7 @@
             <div class="gallerylist" id="gallerylist">
                 <span class="gallerylistBox" id="gallerylistBox">
                     <c:forEach items="${spaceList}" var="space">
-                        <a href="<c:url value='/detailViewSpace/${space.spaceNo}' />"> <!-- 클릭 시 링크 설정 -->
+                        <a href="<c:url value='/detailViewSpace/${space.spaceNo}'/>"> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >
@@ -105,3 +106,36 @@
         </div>
     </body>
 </html>
+
+
+
+
+<%--<span class="gallerylistBox" id="gallerylistBox">'--%>
+<%--    <a href="' + '/detailViewSpace/' + space[i].spaceNo + '">--%>
+<%--        <div class="card">'--%>
+<%--                <div class="card-header">'--%>
+<%--                    <div class="card-header-is_closed">--%>
+<%--                        <div class="card-header-text">spaceCtgName[j].spaceCtgName--%>
+<%--                        </div>--%>
+<%--                        <div class="card-header-number"></div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            <div class="card-body">--%>
+<%--                <div class="card-body-header">--%>
+<%--                    <h1>space[i].spaceTitle</h1>--%>
+<%--                    <p class="card-body-hashtag">space[i].spaceArea</p>--%>
+<%--                    <p class="card-body-nickname">최대space[i].spacePerMax인</p>--%>
+<%--                </div>--%>
+<%--                <p class="card-body-description">space[i].spacePrice1<span>/비수기</span><br>--%>
+<%--                space[i].spacePrice2 <span>/성수기</span>--%>
+<%--                </p>--%>
+<%--                <div class="card-body-footer">--%>
+<%--                    <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
+<%--                    <i class="icon icon-view_count"></i>--%>
+<%--                    <i class="icon icon-comments_count"></i>--%>
+<%--                    <i class="reg_date"></i>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </a>--%>
+<%--</span>--%>
