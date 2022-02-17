@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.boot.teamMainProject.model.GatherDetVO;
+import com.boot.teamMainProject.model.MemberVO;
 import com.boot.teamMainProject.service.GatherDetService;
 
 
@@ -17,15 +18,29 @@ public class GatherDetController {
 	@Autowired
 	GatherDetService service;
 	
+	
+	
 
 	
-	@ResponseBody
+	@RequestMapping("/ldh/SomoimboardWrite/{memNick}")
+	public String MoveinsertGather(@PathVariable String memNick, Model model) {
+		System.out.println(memNick); 
+		MemberVO gat = service.MoveinsertGather(memNick);
+		model.addAttribute("gat", gat);
+
+		return "/ldh/SomoimboardWrite";
+	}
+	
+
 	@RequestMapping("/sboard")
 	public String insertGatherDet(GatherDetVO gat) {
 		service.insertGatherDet(gat);
+
 		
-		return "/sboard";
+		return "redirect:/ldh/Somoimboard";
 	}
+	
+	
 	
 	@RequestMapping("/ldh/Somoimboard/{gatDetNo}")
 	public String detailViewBoard(@PathVariable int gatDetNo, Model model) {
