@@ -72,11 +72,6 @@ public class MainController {
 		return "/sun/commumain";
 	}
 	
-//	@RequestMapping("/sun/allmoim")
-//	public String allmoim() {
-//		return "/sun/allmoim";
-//	}
-	
 	//**관심사카테고리에서 특정카테고리클릭시 해당카테고리 전체모임,클래스 나타내기	
 	@RequestMapping("/sun/allmoim/{hobbyNo}")
 	public String showlist(@PathVariable String hobbyNo, Model model) {
