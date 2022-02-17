@@ -27,6 +27,8 @@ public class GatherDetController {
 		return "/sboard";
 	}
 	
+	
+	
 	@RequestMapping("/ldh/Somoimboard/{gatDetNo}")
 	public String detailViewBoard(@PathVariable int gatDetNo, Model model) {
 		System.out.println(gatDetNo); 
