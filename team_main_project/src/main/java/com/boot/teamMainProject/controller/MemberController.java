@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -51,10 +52,17 @@ public class MemberController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/idcheck")
-	public String signIn(@RequestBody HashMap<String, String> param) {
+	public HashMap<String, String> memIdCheck(@RequestBody String param) {
 		
 		String checkId = "use";
+		String memIdCheck = service.memIdCheck(param);
 		
-		return checkId;
+		if(memIdCheck == null) {
+			checkId = "no_use";
+		}
+		
+		HashMap<String, String> id = new HashMap<String, String>();
+		id.put("id", checkId);
+		return id;
 	}
 }

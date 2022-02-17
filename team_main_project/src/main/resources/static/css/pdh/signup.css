@@ -164,6 +164,14 @@ h1 {
 }
 
 /* ======== PSEUDO-CLASS <SELECTOR> ======== */
+#l-submit:hover {
+    background: rgba(50, 130, 255, 0.9);
+}
+
+#l-submit:active {
+    background: rgba(50, 130, 255, 1.0);
+}
+
 .l-input:focus + .l-label {
     top: -1rem;
     left: -0.3rem;

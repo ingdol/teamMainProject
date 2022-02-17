@@ -9,8 +9,13 @@
 		<result property="memPw" column="memPw" />
 	</resultMap>
 	
+	<!-- 회원 아이디 중복 조회 -->
+	<select id="memIdCheck" resultType="string" parameterType="string">
+		SELECT memId FROM Member WHERE memId=#{memId}
+	</select>
+	
 	<select id="signIn" resultType="com.boot.teamMainProject.model.MemberVO" parameterType="hashmap">
-		SELECT * FROM Member WHERE memId=#{id} AND memPw=#{pw}
+		SELECT memId, memPw FROM Member WHERE memId=#{id} AND memPw=#{pw}
 	</select>
 
 </mapper>

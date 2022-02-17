@@ -3,7 +3,6 @@ package com.boot.teamMainProject.model;
 import java.sql.Timestamp;
 
 public class MemberVO {
-	private String memNo;
 	private String memId;
 	private String memPw;
 	private String memName;
@@ -26,12 +25,6 @@ public class MemberVO {
 	private int levelSpace;
 	private int memPoint;
 	
-	public String getMemNo() {
-		return memNo;
-	}
-	public void setMemNo(String memNo) {
-		this.memNo = memNo;
-	}
 	public String getMemId() {
 		return memId;
 	}

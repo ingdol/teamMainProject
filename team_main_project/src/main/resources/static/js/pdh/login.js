@@ -19,11 +19,9 @@ const addDomFail = document.createElement('span');
 const addDomSuccess = document.createElement('span');
 
 // --| Table Regular Expression
-const idRegex = new RegExp(/^[A-Za-z0-9]{4,12}$/);
 const pwRegex = new RegExp(/^[A-Za-z0-9]{6,12}$/);
 const emailRegex = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
-const nameRegex = new RegExp(/^[가-힣]{2,6}$/);
-const numRegex = new RegExp(/[^0-9]{1,13}/g);
+
 
 testInput.addEventListener('keyup', function (e) {
 
@@ -83,33 +81,32 @@ function onSubmit() {
         setCookie("saveid", email.value, 0); // Expires / Max-Age 0Day (Delete Cookie)
     }
 
-    // --| AJAX 통신
-    const xhr = new XMLHttpRequest();
-    const data = {
-        id: email.value,
-        pw: pw.value
-    }
-
-    xhr.open('POST', '/signin', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(data));
-    xhr.onload = function () {
-        if (xhr.readyState === xhr.DONE) {
-            if (xhr.status === 200) {
-                console.log("Connection!")
-                if(xhr.response === "fail") {
-                    alert("fail");
-                    return false;
-                } else if(xhr.response === "success") {
-                    alert("success");
-                }
-            } else {
-                console.log("Error...");
-            }
-        } else {
-            console.log("Not Found...");
+    fetch('/signin', {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({
+            id: email.value, 
+            pw: pw.value, 
+        }), 
+    })
+    .then(res => {
+    	if(res.status === 200) {
+            console.log("Connection!");
         }
-    }
+        
+        return res.text();
+    })
+    .then((data) => {
+	console.log(data);
+		if(data === "fail") {
+            alert("fail");
+            return false;
+        } else if(data === "success") {
+            alert("success");
+        }
+	})
+    .catch((err) => console.log(err))
+    
 }
 
 // --| 페이지 로드 후 쿠키 정보 확인

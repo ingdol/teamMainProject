@@ -75,5 +75,44 @@ public class MainController {
 
 	//---------------------------------
 
+	@RequestMapping("/ldh/SomoimboardWrite")
+	public String SomoimboardWrite() {
+		return "/ldh/SomoimboardWrite";
+	}
+
+	@RequestMapping("/ldh/Somoimboard")
+	public String Somoimboard() {
+		return "/ldh/Somoimboard";
+	}
+
+	//---------------------------------
+
+	// pdh 로그인
+//
+//	@Autowired
+//	MemberService service;
+//
+//	@Autowired
+//	IMemberService iMemberService;
+//
+//	@RequestMapping(value = "/login", method = {RequestMethod.GET})
+//	public String home() {
+//
+//		return "pdh/login";
+//	}
+//
+////	@RequestMapping(value = "/signin")
+//	public String signUp(@RequestBody HashMap<String, String> map, MemberVO vo) {
+//
+//		// System.out.println(map);
+//
+//		vo.setMemId(map.get("id"));
+//		vo.setMemPw(map.get("pw"));
+//		service.signIn(vo);
+//
+//		return "redirect:/";
+//	}
+
+
 	//-------------------------
 }
