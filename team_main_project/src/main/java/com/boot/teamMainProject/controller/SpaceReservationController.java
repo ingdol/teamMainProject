@@ -48,6 +48,13 @@ public class SpaceReservationController {
     // 공간 상세 페이지
     @RequestMapping("/detailViewSpace/{spaceNo}")
     public String detailViewSpace(@PathVariable String spaceNo, Model model) {
+        SpaceVO space = service.detailSpace(spaceNo);
+        model.addAttribute("space", space);
         return "bch/detailViewSpace";
+    }
+    // test Page
+    @RequestMapping("/test")
+    public String test() {
+        return "bch/test";
     }
 }

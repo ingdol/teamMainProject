@@ -14,6 +14,8 @@
     <script src="js/bch/datepickerUse.js"></script> <!-- 달력 설정 js -->
     <script src="js/bch/spaceSearch.js"></script> <!-- 조건 검색 -->
     <body>
+    <!-- TOP  -->
+    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
             <form class="findPlace" >
                 <span>
@@ -104,6 +106,8 @@
                 </span>
             </div>
         </div>
+        <!-- BOTTOM  -->
+        <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </body>
 </html>
 
