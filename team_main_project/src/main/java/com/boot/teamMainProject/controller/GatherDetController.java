@@ -1,14 +1,19 @@
 package com.boot.teamMainProject.controller;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.boot.teamMainProject.model.GatherDetComVO;
 import com.boot.teamMainProject.model.GatherDetVO;
 import com.boot.teamMainProject.model.MemberVO;
+import com.boot.teamMainProject.service.CommentService;
 import com.boot.teamMainProject.service.GatherDetService;
 
 
@@ -18,7 +23,8 @@ public class GatherDetController {
 	@Autowired
 	GatherDetService service;
 	
-	
+	@Inject
+	CommentService service2;
 	
 
 	
@@ -43,10 +49,13 @@ public class GatherDetController {
 	
 	
 	@RequestMapping("/ldh/Somoimboard/{gatDetNo}")
-	public String detailViewBoard(@PathVariable int gatDetNo, Model model) {
+	public String detailViewBoard(@PathVariable int gatDetNo, Model model) throws Exception {
 		System.out.println(gatDetNo); 
 		GatherDetVO gat = service.detailViewBoard(gatDetNo);
 		model.addAttribute("gat", gat);
+		
+		List<GatherDetComVO> comList = service2.readComment(gatDetNo);
+		model.addAttribute("comList", comList);
 		
 		return "ldh/Somoimboard";
 	}
