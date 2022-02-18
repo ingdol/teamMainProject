@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.teamMainProject.dao.ISpaceReviewDAO">
+
+    <resultMap id="spaceReviewResult" type="com.boot.teamMainProject.model.SpaceReviewVO">
+        <result property="spaceNo" column="spaceNo" />
+        <result property="spaceRevNo" column="spaceRevNo" />
+        <result property="spaceRevTitle" column="spaceRevTitle" />
+        <result property="memNick" column="memNick" />
+        <result property="spaceRevInfo" column="spaceRevInfo" />
+        <result property="spaceRevDate" column="spaceRevDate" />
+    </resultMap>
+
+    <select id="spaceReview" resultMap="spaceReviewResult">
+        select * from Space_Rev WHERE spaceNo=#{spaceNo}
+    </select>
+
+</mapper>

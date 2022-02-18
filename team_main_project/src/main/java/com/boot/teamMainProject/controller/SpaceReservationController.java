@@ -1,7 +1,9 @@
 package com.boot.teamMainProject.controller;
 
+import com.boot.teamMainProject.model.SpaceReviewVO;
 import com.boot.teamMainProject.model.SpaceVO;
 import com.boot.teamMainProject.model.Space_CtgVO;
+import com.boot.teamMainProject.service.SpaceReviewService;
 import com.boot.teamMainProject.service.SpaceService;
 import com.boot.teamMainProject.service.Space_CtgService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ public class SpaceReservationController {
     SpaceService service;
     @Autowired
     Space_CtgService space_ctgService;
+    @Autowired
+    SpaceReviewService spaceReviewService;
 
     @RequestMapping("SpaceReservationAll")
     public String SpaceReservationAll(Model model) {
@@ -49,7 +53,9 @@ public class SpaceReservationController {
     @RequestMapping("/detailViewSpace/{spaceNo}")
     public String detailViewSpace(@PathVariable String spaceNo, Model model) {
         SpaceVO space = service.detailSpace(spaceNo);
+        SpaceReviewVO spaceReview = spaceReviewService.spaceReview(spaceNo);
         model.addAttribute("space", space);
+        model.addAttribute("spaceReview", spaceReview);
         return "bch/detailViewSpace";
     }
     // test Page

@@ -5,10 +5,13 @@
 /*    position: relative;*/
 /*}*/
 
+/*최상단 div*/
 .detailWrap {
     width: 1280px;
+    font-family: 'NanumSquareRound';
 }
 
+/*이미지 태그 감싸는 div*/
 .spacePicture {
     background-size: contain;
     background-repeat: no-repeat;
@@ -22,6 +25,7 @@
     height: 100%;
     object-fit: cover;
 }
+/*예약 하는 div 박스*/
 .reservation {
     margin-top: 4%;
     border: 1px solid black;
@@ -29,28 +33,96 @@
     height: 900px;
     position: relative;
 }
-
+/*네비게이션 감싸는 div*/
 .navigation {
     position: sticky;
-    z-index: 20;
-}
+    background-color: white !important;
 
+}
+ /*li 감싸는 ul*/
  .navigation_list {
-     display :flex;
+     display :inline-block;
      list-style : none;
-     justify-content : space-around;
-     align-items : center;
-     background-color: aqua;
+     width: 100%;
+     justify-content : center;
+     background-color: white;
+     margin-top: 20px;
+     margin-bottom: 20px;
  }
 
 .navigation_list li {
+    /*cursor: pointer;*/
+    /*position: relative;*/
+    /*display: inline-block;*/
+    font-size: 25px;
+    /*margin-top: 7%;*/
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline;
+    border-bottom: 2px solid #5da5f8;
     cursor: pointer;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -ms-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
 }
 
-.content {
-    height: 50vh;
+.navigation_list li:hover {
+    background-color: #ffd014;
 }
+
+/*div>ul>li::after{*/
+/*    content: "|";*/
+/*    display: inline;*/
+/*}*/
+
+/*div>ul>li:last-child::after{*/
+/*    content: "";*/
+/*}*/
+
+/*각 목록 감싸는 div*/
+.content {
+    height: 300px;
+}
+/*공간 소개, 안내, 유의 사항, 지도, 이용 후기 h태그*/
 .h-intro {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*소개, 유의 사항 등 콘텐츠 표현*/
+.content p {
+    font-size: 20px;
+    color: #545252;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.content ul li {
+    padding: 5px 0px 5px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #d9d8d8;
+    font-size: 18px;
+    font-weight: 900;
+}
+.content ul li span{
+    font-weight: normal !important;
+    margin-left: 3%;
+}
+
+#spaceTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#spaceInfo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#spaceInfo2{
     margin-top: 10px;
     margin-bottom: 10px;
 }
