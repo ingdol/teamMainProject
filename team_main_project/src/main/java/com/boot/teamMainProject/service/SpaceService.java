@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Service
 public class SpaceService implements ISpaceService {
 
-    @Setter(onMethod_ = {@Autowired})
+    @Autowired
     @Qualifier("ISpaceDAO")
     ISpaceDAO dao;
 

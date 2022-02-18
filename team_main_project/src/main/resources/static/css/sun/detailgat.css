@@ -2,10 +2,35 @@
 
 #detailgatmiddle{
 	width:100%;
-	height: 800px;
+	height: 900px;
 	position: relative;
 }
 
+span{
+	display: inline-block;
+	margin-top: 1%;
+}
+.large{
+	font-weight: bold;
+	font-size: large;
+}
+.medium{
+	font-size: medium;
+	font-weight: bold;
+}
+
+.photobox{
+	width:50%;
+	height:30%;
+	overflow: hidden;
+}
+.photobox img{
+	object-fit: cover; 
+}
+.infobox{
+	width:80%;
+	margin-top:2%;
+}
 
 /* -------------- 모임소개 --------- */
 
@@ -15,7 +40,7 @@
 	padding:1%;
 	left:12%;
 	width:70%;
-	height: 25%;
+	height: 22%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +66,8 @@
 .moimdetail{
 	position: absolute;
 	width:100%;
-	top:32%;
+	height:75%;
+	top:29%;
 }
 
 .moimmenubox ul {
@@ -70,12 +96,19 @@
 .moimdetail .detailinfo{
 	margin-top: 2%;
 	width:100%;
+	height: 100%;
+}
+
+.moiminfodetail{
+	width:100%;
+	height: 95%;
 }
 .moimcommu,.moimphoto,.moimchatting{
 	margin: 0;
 	padding: 0;
 	width:100%;
 	display: none;
+	height: 95%;
 }
 
 
@@ -132,7 +165,8 @@
 	padding: 0 !important;
 }
 
-.moimphoto nav{
+.moimphoto nav,
+.moimcommu nav{
 	width:20%;
 }
 /* ********모임가입섹션*********** */
@@ -143,6 +177,7 @@
 	top:90%;
 	left:35%;
 	margin:1%;
+	z-index: 1;
 }
 
 .moimjoin ul {
@@ -164,4 +199,16 @@
 
 .moimjoin li button {
 	width: 100%;
+}
+
+
+/* 모임게시판 */
+.board_list_wrap{
+	width:80%;
+	height: 95%;
+	border: 1px solid #c9c9c9;
+	padding: 2%;
+	display: grid;
+	align-items: center;
+	justify-content: center;
 }

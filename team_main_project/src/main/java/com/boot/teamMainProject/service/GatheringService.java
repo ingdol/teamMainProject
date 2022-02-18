@@ -21,4 +21,9 @@ public class GatheringService implements IGatheringService {
 		return dao.showlist(hobbyNo);
 	}
 
+	@Override
+	public ArrayList<GatheringVO> detailgat(int gatNo) {
+		return dao.detailgat(gatNo);
+	}
+
 }

@@ -13,6 +13,7 @@
 <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/js/sun/allmoim.js'/>"></script>
 </head>
 <body>
 	<section id="wrap">
@@ -81,7 +82,7 @@
 
 				<!-- 모임필터결과 -->
 				<div class="filterresultmoim">
-				<span class="result">검색결과모임</span>
+				<c:forEach items="${gatheringResult}" var="gat" begin="0" end="0"><span class="result">검색결과모임 : ${gat.hobbyNo}</span></c:forEach>
 					<div class="cardbox">						
 						<!-- 받아오기 -->
 						<c:forEach items="${gatheringResult}" begin="0" end="5" var="gat">
@@ -90,9 +91,10 @@
 							<div class="cardbody">
 								<h5 class="cardtitle">${gat.gatName}</h5>
 								<p class="cardtext">${gat.gatInfo}</p>
-								<p class="cardtext">
-									<small class="textmuted"><fmt:formatDate value="${gat.gatOpen}" pattern="YY/MM/dd"/></small>
-								</p>
+								<p class="hidden">${gat.gatNo}</p>
+								<small class="cardtext textmuted">
+									<fmt:formatDate value="${gat.gatOpen}" pattern="YY/MM/dd"/>
+								</small>
 							</div>
 						</div>
 						</c:forEach>

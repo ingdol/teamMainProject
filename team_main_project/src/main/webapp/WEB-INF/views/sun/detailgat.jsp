@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,10 @@
 				</div>
 				<div class="moimname">
 					<div>소모임이름</div>
-					<div><a href="#"><img src="#" alt="등급">모임개설자닉네임</a><button>1:1문의</button></div>
+					<div>
+						<c:forEach items="${detail}" var="detail"><a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a></c:forEach>
+						<button>1:1문의</button>
+					</div>
 				</div>		
 			</div>
 			<div class="moimdetail">
@@ -49,12 +53,66 @@
 					<h3 id="sectioninfo">모임메뉴별상세화면</h3>
 					<!-- 정보 클릭시 -->
 					<div class="moiminfodetail current">
-						<h4>!모임정보</h4>
+						<h4 id="sectioninfo">!모임정보</h4>
+						<div class="photobox"><img src="/images/1.jpg"></div>
+						<div class="infobox">
+							<c:forEach items="${detail}" var="detail">
+								<span class="large">모임 이름 : ${detail.gatName}</span><br>
+								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
+								<span class="medium">- 모임 소개 -</span><br>
+								<span>${detail.gatInfo}</span><br>
+								<hr>
+								<span>${detail.gatNo}</span><br>
+								<span>${detail.memNick}</span><br>
+								<span>${detail.hobbyNo}</span><br>
+								<span>${detail.gatArea}</span><br>
+								<span>${detail.gatHate}</span><br>						
+							</c:forEach>
+						</div>						
 					</div>
-	
+
 					<!-- 모임게시판 클릭시 -->
-					<div class="moimcommu">모임게시판</div>
-	
+					<div class="moimcommu">
+						<div class="board_list_wrap">
+							<div class="board_list">
+								<div class="top">
+									<div class="num">번호</div>
+									<div class="title">제목</div>
+									<div class="writer">글쓴이</div>
+									<div class="date">작성일</div>
+									<div class="count">조회</div>
+								</div>
+								<c:forEach items="${comlist}" var="com">
+									<div>
+										<div class="num">${com.comNo}</div>
+										<div class="title" id="comTitle">
+											<a href="<c:url value='/listview/${com.comNo}'/>">${com.comTitle}</a>
+										</div>
+										<div class="writer" id="comId">${com.memId}</div>
+										<div class="date" id="comDate">${com.comDate}</div>
+										<div class="count" id="comCount">${com.comCount}</div>
+									</div>
+								</c:forEach>
+							</div>
+							<nav aria-label="Page navigation example">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+									</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+									</a></li>
+								</ul>
+							</nav>
+							<div class="bt_wrap">
+								<a href="<c:url value='/write'/>" class="on">등록</a>
+							</div>
+						</div>
+					</div>
+
 					<!-- 모임사진첩 클릭시 -->
 					<div class="moimphoto">
 						<h4>!모임사진첩</h4>

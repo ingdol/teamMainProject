@@ -19,5 +19,9 @@
   		select * from gathering WHERE hobbyNo=#{hobbyNo}
   	</select>
   	
+  	<select id="detailgat" resultMap="gatheringResult">
+  		select * from gathering WHERE gatNo=#{gatNo}
+  	</select>
+  	
   	
   </mapper>
