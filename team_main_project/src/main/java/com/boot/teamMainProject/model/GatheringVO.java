@@ -6,7 +6,8 @@ public class GatheringVO {
 	
 	private int gatNo;
 	private String memNick;
-	private String garInfo;
+	private String gatName;
+	private String gatInfo;
 	private String hobbyNo;
 	private String gatArea;
 	private Date gatOpen;
@@ -24,11 +25,17 @@ public class GatheringVO {
 	public void setMemNick(String memNick) {
 		this.memNick = memNick;
 	}
-	public String getGarInfo() {
-		return garInfo;
+	public String getGatName() {
+		return gatName;
 	}
-	public void setGarInfo(String garInfo) {
-		this.garInfo = garInfo;
+	public void setGatName(String gatName) {
+		this.gatName = gatName;
+	}
+	public String getGatInfo() {
+		return gatInfo;
+	}
+	public void setGatInfo(String gatInfo) {
+		this.gatInfo = gatInfo;
 	}
 	public String getHobbyNo() {
 		return hobbyNo;
