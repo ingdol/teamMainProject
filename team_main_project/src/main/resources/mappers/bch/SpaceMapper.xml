@@ -37,4 +37,8 @@
         </if>
     </select>
 
+    <select id="detailSpace" resultMap="spaceResult">
+        SELECT * FROM Space WHERE spaceNo=#{spaceNo}
+    </select>
+
 </mapper>

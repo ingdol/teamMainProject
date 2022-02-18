@@ -9,7 +9,7 @@ $(document).ready(function(){
                 "category":$('#category').val(),
                 "maxPerson":$('#maxPerson').val()},
             dataType:'json',
-
+            async: false,
             success:function(result){
                 if(result != ""){
                     var space = result;
@@ -26,9 +26,9 @@ $(document).ready(function(){
                                 type:"post",
                                 url:"constraintCtg", // @RestController로 요청
                                 dataType: 'json',
-
-                                success:function(result){
-                                    var spaceCtgName = result;
+                                async: false,
+                                success:function(result_name){
+                                    var spaceCtgName = result_name;
                                     for(var j = 0; j < 1; j++) {
                                         $('#gallerylistBox').append(spaceCtgName[j].spaceCtgName + '</div>'); // card-header-text 닫힘
                                     }

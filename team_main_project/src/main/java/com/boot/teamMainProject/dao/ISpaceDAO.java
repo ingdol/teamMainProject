@@ -6,4 +6,5 @@ import java.util.ArrayList;
 public interface ISpaceDAO {
     ArrayList<SpaceVO> listAllSpace();
     ArrayList<SpaceVO> listFindSpace(String location, String category, int maxPerson);
+    SpaceVO detailSpace(String spaceNo);
 }
