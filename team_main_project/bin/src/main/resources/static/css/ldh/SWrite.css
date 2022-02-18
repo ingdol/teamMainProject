@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#wrap{
+
+position: absolute;
+background: #FFFFFF;
+	text-align:center;
+	position:relative;
+}
+
+.subbox{
+position: absolute;
+width: 89px;
+height: 47px;
+
+background: #66A3FF;
+border: 3px solid #0038FF;
+box-sizing: border-box;
+border-radius: 10px;
+
+color: white;
+}

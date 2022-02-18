@@ -1,0 +1,262 @@
+/* ======== CASCADING VARIABLES ======== */
+:root {
+    /* ======== ALIGN ======== */
+    --main-align-margin-auto: 0 auto;
+
+    /* ======== COLOR ======== */
+    --color-first: #ffffff;
+
+    /* ======== SIZE ======== */
+    --nomal-font-size: 24px;
+    --sub-font-size: 12px;
+    --box-size-first: 40px;
+}
+
+/* ======== TEXT FONT ======== */
+
+/* ======== MAIN ======== */
+
+/* 보류코드 */
+/* *,
+::after,
+::before {
+    box-sizing: border-box;
+} */
+/* 보류코드 */
+
+body {
+    margin: var(--main-align-margin-auto);
+    /* box-sizing: border-box; */
+}
+
+h1 {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+#l-form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-input {
+    position: absolute;
+    width: 100%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-address {
+    position: absolute;
+    width: 40%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-address1 {
+    position: absolute;
+    width: 40%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+
+    left: 14rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-li {
+    list-style: none;
+    position: relative;
+    height: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+.l-li-check {
+    list-style: none;
+    position: relative;
+    height: 5rem;
+    margin-bottom: 6rem;
+}
+
+.l-li-title {
+    list-style: none;
+    position: relative;
+    height: 3rem;
+    /* margin-bottom: 0.5rem; */
+}
+
+.l-li-Btn {
+    list-style: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#l-submit {
+    width: 24rem;
+    height: var(--box-size-first);
+    /* margin-left: 20rem; */
+    font-weight: bold;
+    color: black;
+    background: dodgerblue;
+    border: none;
+    border-radius: 3rem;
+
+    cursor: pointer;
+}
+
+.l-label {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: -1;
+    transition: all 0.2s;
+}
+
+.l-title {
+    position: absolute;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+}
+
+.l-label-address {
+    position: absolute;
+    left: 15rem;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: -1;
+    transition: all 0.2s;
+}
+
+.l-check {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* ======== PSEUDO-CLASS <SELECTOR> ======== */
+#l-submit:hover {
+    background: rgba(50, 130, 255, 0.9);
+}
+
+#l-submit:active {
+    background: rgba(50, 130, 255, 1.0);
+}
+
+.l-input:focus + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input:not(:focus).l-input:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-address:focus + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address:not(:focus).l-input-address:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-address1:focus + .l-label1 {
+    top: -1rem;
+    left: 13.5rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address1:not(:focus).l-input-address1:not(:placeholder-shown) + .l-label1 {
+    top: -1rem;
+    left: 13.5rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address1:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+/* ======== SUCCESS EVENT <CLASS> ======== */
+.success-font {
+    color: green;
+    font-weight: bold;
+}
+
+.success-line {
+    border-width: 2px;
+    border-color: green;
+}
+
+.success-label {
+    color: green;
+}
+
+
+/* ======== WARNING EVENT <TAG> ======== */
+span {
+    position: relative;
+    top: 3rem;
+    left: 0.3rem;
+}
+
+/* ======== WARNING EVENT <CLASS> ======== */
+.fail-font {
+    color: red;
+    font-weight: bold;
+}
+
+.fail-line {
+    border-width: 2px;
+    border-color: red;
+}
+
+.fail-label {
+    color: red;
+}

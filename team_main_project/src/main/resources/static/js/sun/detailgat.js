@@ -15,10 +15,12 @@ $(function(){
 	});
 	
 	$(".moim2").on('click',function(){
+		/*모임 내 게시판*/
 		console.log("a");
 		$('.moiminfodetail').hide();
 		$('.moimphoto').hide();
 		$('.moimchatting').hide();
+		location.href='/sun/detailgat/'+gatNo+'/commulist';
 		$('.moimcommu').show();
 	});
 	
