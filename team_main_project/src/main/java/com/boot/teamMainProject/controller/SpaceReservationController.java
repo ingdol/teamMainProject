@@ -22,6 +22,7 @@ public class SpaceReservationController {
     @Autowired
     SpaceReviewService spaceReviewService;
 
+    // 공간 전체 페이지
     @RequestMapping("SpaceReservationAll")
     public String SpaceReservationAll(Model model) {
         ArrayList<SpaceVO> spaceList = service.listAllSpace();
@@ -30,6 +31,16 @@ public class SpaceReservationController {
         model.addAttribute("spaceCtgName", spaceCtgName);
         return "bch/spaceReservationAll";
     }
+    // 공간 전체페이지 카테고리 이름 찾기 (현재 동작 x)
+    @ResponseBody
+    @RequestMapping("transferCtgName")
+    public Space_CtgVO transferCtgName(Model model,
+                                       @RequestParam("spaceNoForCtgName") String spaceNo) {
+        Space_CtgVO SpaceCtgNameforAll = space_ctgService.SpaceCtgNameforAll(spaceNo);
+        model.addAttribute("SpaceCtgNameforAll", SpaceCtgNameforAll);
+        return SpaceCtgNameforAll;
+    }
+
     // 조건 상세 조회
     @ResponseBody
     @RequestMapping(value = "findConstraint")
@@ -41,7 +52,7 @@ public class SpaceReservationController {
         model.addAttribute("constraintSpaceList", constraintSpaceList);
         return constraintSpaceList;
     }
-    // 조건 상세 조회 할 때 카테고리 이름 조회
+    // 조건 상세 조회 할 때 카테고리 이름 조회(화면에 공간 유형 띄우기 위함.)
     @ResponseBody
     @RequestMapping(value = "constraintCtg")
     public ArrayList<Space_CtgVO> constraintCtg(Model model) {
@@ -49,6 +60,7 @@ public class SpaceReservationController {
         model.addAttribute("spaceCtgName", spaceCtgName);
         return spaceCtgName;
     }
+
     // 공간 상세 페이지
     @RequestMapping("/detailViewSpace/{spaceNo}")
     public String detailViewSpace(@PathVariable String spaceNo, Model model) {

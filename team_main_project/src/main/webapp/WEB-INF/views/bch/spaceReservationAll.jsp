@@ -64,6 +64,7 @@
             <div class="gallerylist" id="gallerylist">
                 <span class="gallerylistBox" id="gallerylistBox">
                     <c:forEach items="${spaceList}" var="space">
+                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />
                         <a href="<c:url value='/detailViewSpace/${space.spaceNo}'/>"> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->

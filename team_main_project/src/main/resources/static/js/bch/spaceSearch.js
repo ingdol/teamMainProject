@@ -1,4 +1,16 @@
 $(document).ready(function(){
+    // $.ajax({
+    //     type: "post",
+    //     url: "transferCtgName",
+    //     data:{"spaceNoForCtgName":'<c:out value="${spaceNoForCtgName}'},
+    //     dataType: 'json',
+    //     success:function (result) {
+    //         alert(result);
+    //     },
+    //     error:function(data, textStatus){
+    //         alert("카테고리 이름 return 검색 실패");
+    //     }
+    // })
     $('#findPlaceBtn').on('click', function(){
         event.preventDefault();
 
