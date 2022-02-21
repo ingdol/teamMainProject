@@ -84,6 +84,11 @@ public class MainController {
 	public String Somoimboard() {
 		return "/ldh/Somoimboard";
 	}
+	
+	@RequestMapping("/ldh/SomoimCreate")
+	public String SomoimCreate() {
+		return "/ldh/SomoimCreate";
+	}
 
 	//---------------------------------
 
