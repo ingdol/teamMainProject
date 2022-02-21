@@ -19,6 +19,7 @@
 	<section id="wrap">
 		<h1 id="sectioninfo">전체모임</h1>
 		<!-- -----------------header,nav메뉴 부분---------------- -->
+		
 		<jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		<!-- -----------------middle부분---------------- -->
 		<section id="allmoimmiddle">
