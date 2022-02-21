@@ -6,12 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>카테고리별 모임찾기(필터)</title>
-<link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">
 <link href="<c:url value='/css/sun/mapsearch.css'/>" rel="stylesheet" type="text/css">
 <link href="<c:url value='/css/sun/hobbysearch.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-<script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 <script src="<c:url value='/js/sun/mapsearch.js'/>"></script>
 </head>
 <body>

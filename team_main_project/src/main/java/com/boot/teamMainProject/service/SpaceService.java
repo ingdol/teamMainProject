@@ -12,7 +12,6 @@ import com.boot.teamMainProject.model.SpaceVO;
 public class SpaceService implements ISpaceService {
 
 //   @Setter(onMethod_ = {@Autowired})
-
     @Qualifier("ISpaceDAO")
     ISpaceDAO dao;
 
