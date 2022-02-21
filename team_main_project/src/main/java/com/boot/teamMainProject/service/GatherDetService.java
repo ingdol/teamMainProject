@@ -1,5 +1,7 @@
 package com.boot.teamMainProject.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -36,6 +38,13 @@ public class GatherDetService implements IGatherDetService {
 	public MemberVO MoveinsertGather(String memNick) {
 		// TODO Auto-generated method stub
 		return dao.MoveinsertGather(memNick);
+	}
+
+	
+	// 서연 - 소모임게시판 전체화면
+	public ArrayList<GatherDetVO> gatcommulist(int gatNo) {
+		// TODO Auto-generated method stub
+		return dao.gatcommulist(gatNo);
 	}
 
 }

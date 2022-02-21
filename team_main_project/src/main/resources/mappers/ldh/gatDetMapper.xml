@@ -40,6 +40,12 @@
    				resultType="com.boot.teamMainProject.model.MemberVO">
   		SELECT * FROM member WHERE memNick=#{memNick}
    </select>
+   
+   <!-- 서연 - 소모임게시판 전체화면 -->
+   
+   <select id="gatcommulist" resultMap="gatResult">
+  		select * from gather_det WHERE gatNo=#{gatNo}
+  	</select>
 	
   </mapper>
   
