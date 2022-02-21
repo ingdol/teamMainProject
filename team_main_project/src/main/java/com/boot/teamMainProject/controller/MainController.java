@@ -1,19 +1,17 @@
+
 package com.boot.teamMainProject.controller;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.boot.teamMainProject.model.MemberVO;
+import com.boot.teamMainProject.model.GatheringVO;
 import com.boot.teamMainProject.service.GatheringService;
-import com.boot.teamMainProject.service.IMemberService;
-import com.boot.teamMainProject.service.MemberService;
 
 @Controller
 public class MainController {
@@ -66,14 +64,52 @@ public class MainController {
 		return "/sun/allmoim";
 	}
 
-	//**관심사카테고리에서 특정카테고리클릭시 해당카테고리 전체모임,클래스 나타내기
-	@RequestMapping("/sun/allmoim/{hobbyNo}")
-	public String showlist(@PathVariable String hobbyNo,Model model) {
-		System.out.println("a");
-		return "/sun/allmoim";
+	//**관심사카테고리에서 특정카테고리클릭시 해당카테고리 전체모임,클래스 나타내기	
+		@RequestMapping("/sun/allmoim/{hobbyNo}")
+		public String showlist(@PathVariable String hobbyNo, Model model) {
+			ArrayList<GatheringVO> gatheringResult = gatherser.showlist(hobbyNo);
+			System.out.println("gatheringResult = " + gatheringResult);
+			model.addAttribute("gatheringResult",gatheringResult);
+			System.out.println("bb");
+			return "/sun/allmoim";
+		}
+	//---------------------------------
+
+	@RequestMapping("/ldh/SomoimboardWrite")
+	public String SomoimboardWrite() {
+		return "/ldh/SomoimboardWrite";
+	}
+
+	@RequestMapping("/ldh/Somoimboard")
+	public String Somoimboard() {
+		return "/ldh/Somoimboard";
 	}
 
 	//---------------------------------
 
-	//-------------------------
+	// pdh 로그인
+//
+//	@Autowired
+//	MemberService service;
+//
+//	@Autowired
+//	IMemberService iMemberService;
+//
+//	@RequestMapping(value = "/login", method = {RequestMethod.GET})
+//	public String home() {
+//
+//		return "pdh/login";
+//	}
+//
+////	@RequestMapping(value = "/signin")
+//	public String signUp(@RequestBody HashMap<String, String> map, MemberVO vo) {
+//
+//		// System.out.println(map);
+//
+//		vo.setMemId(map.get("id"));
+//		vo.setMemPw(map.get("pw"));
+//		service.signIn(vo);
+//
+//		return "redirect:/";
+//	}
 }

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* menu.css */
+
+/* 모든 <ul> 태그에 적용 */
+ul {
+	margin-top:0;
+	padding:0;
+	list-style:none;   /* type 없음 */
+}
+
+
+/********** MAIN MENU ************/
+
+#mainMenuBox {
+	width:1280px;
+	height:70px;
+	line-height:35px;
+	background-color:#ffffff;   /* white*/
+	z-index:20;  /* 스크롤 시 위 오도록 */
+	padding-top:8px;
+}
+
+#MenuBarBox {
+	width:480px;
+	height:100px;
+	position: absolute;
+	margin-left:760px;
+}
+
+#mainMenuBox ul{ margin:0;}
+
+#mainMenuBox li {
+	float:left;
+	width:20%;
+	height:30px;
+	line-height:30px;
+}
+
+#mainMenuBox ul li a {
+	text-decoration:none;
+	color:#9F9F9F;
+	font-size:15px;   /* pt 도 됨 */
+	font-weight:bold;
+}
+
+#menuImg1 {
+	width: 45px;
+	height: 33px;
+	padding-top:2px;
+}
+
+#menuImg2 {
+	width: 40px;
+	height: 35px;
+}
+
+#menuImg3 {
+	width: 35px;
+	height: 35px;
+}
+
+#menuImg4 {
+	width: 35px;
+	height: 34px;
+	padding-top:1px;
+}
+
+#menuBr {
+	content: "";
+	display:block;
+	margin-bottom:-10px;
+}
+
+/********** SEARCH FORM ************/
+#searchBox {
+	width: 350px;
+	height: 50px;
+	position: absolute;
+	margin-left:160px;
+}
+
+#searchIcon {
+	width: 50px;
+	height: 50px;
+	padding:10px;
+	position: absolute;
+	z-index: 2;
+}
+
+#searchIconImag {
+	margin-top: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+#searchInput {
+	width: 500px;
+	height: 60px;
+	background: #F7F7F7;
+	border-radius: 25px;
+	padding-left:65px;
+	border:0 solid white;
+	position: relative;
+	z-index: 1;
+	font-size:20px;
+	font-weight:bold;
+}
+
+#searchInput::placeholder {
+  color:lightgray;
+  font-weight: bold;
+}
+
+/*********** BOTTOM MENU *************/
+
+#bottomMenuBox {
+	height:30px;
+	line-height:30px;
+}
+
+
+#bottomMenuBox li {
+	display:inline-block;
+	text-align:center;
+	padding:5px;
+}
+
+
+#bottomMenuBox li a {
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

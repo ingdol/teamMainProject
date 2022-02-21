@@ -6,4 +6,5 @@ import java.util.ArrayList;
 
 public interface ISpace_CtgService {
     ArrayList<Space_CtgVO> SpaceCtgName();
+    Space_CtgVO SpaceCtgNameforAll(String spaceNo);
 }

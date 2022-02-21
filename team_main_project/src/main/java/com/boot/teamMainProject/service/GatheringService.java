@@ -17,8 +17,13 @@ public class GatheringService implements IGatheringService {
 	IGatheringDAO dao;
 	
 	@Override
-	public ArrayList<GatheringVO> showlist() {
-		return dao.showlist();
+	public ArrayList<GatheringVO> showlist(String hobbyNo) {
+		return dao.showlist(hobbyNo);
+	}
+
+	@Override
+	public ArrayList<GatheringVO> detailgat(int gatNo) {
+		return dao.detailgat(gatNo);
 	}
 
 }

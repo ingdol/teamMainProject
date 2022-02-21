@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 @Service
 public class SpaceService implements ISpaceService {
+
+   @Setter(onMethod_ = {@Autowired})
     @Qualifier("ISpaceDAO")
     ISpaceDAO dao;
 
@@ -22,5 +24,9 @@ public class SpaceService implements ISpaceService {
     @Override
     public ArrayList<SpaceVO> listFindSpace(String location, String category, int maxPerson) {
         return dao.listFindSpace(location, category, maxPerson);
+    }
+    @Override
+    public SpaceVO detailSpace(String spaceNo) {
+        return dao.detailSpace(spaceNo);
     }
 }

@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+#detailgatmiddle{
+	width:100%;
+	height: 800px;
+	position: relative;
+}
+
+
+/* -------------- 모임소개 --------- */
+
+.moiminfobox{
+    position: absolute;
+	margin:2.5%;
+	padding:1%;
+	left:12%;
+	width:70%;
+	height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border : 1px solid #3EAAFF;
+    border-radius: 10px;
+}
+.moiminfobox .moimpic,
+.moiminfobox .moimname{
+	width:50%;
+    justify-content: space-around;
+}
+
+.moimname div{
+	margin-top: 2%;
+}
+.moimpic img{
+	width : 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* -------------- 모임메뉴 --------- */
+.moimdetail{
+	position: absolute;
+	width:100%;
+	top:32%;
+}
+
+.moimmenubox ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.moimmenubox li {
+	list-style: none;
+	box-sizing: border-box;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+
+.moimmenubox .btn {
+	width: 100%;
+}
+
+/* **********모임상세카테고리************* */
+.moimdetail .detailinfo{
+	margin-top: 2%;
+	width:100%;
+}
+.moimcommu,.moimphoto,.moimchatting{
+	margin: 0;
+	padding: 0;
+	width:100%;
+	display: none;
+}
+
+
+/* *******모임사진첩******* */
+.card-group{
+	height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-group ul{
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-group li{
+	box-sizing: border-box; 
+    width: 100%;
+    height:85%;
+    /* 폰트 가운데정렬 */
+    display: flex;
+    justify-content: initial;
+    align-items:center; 
+    margin: 2%;
+}
+.card-group li div{
+	box-sizing: border-box; 
+	object-fit: cover;
+	width: 100%;
+}
+
+.card-group li .card{
+	width: 100%;
+    height:100%;
+    
+}
+.card-group li img{
+	height: 70%;	
+}
+.card-group li .card-body{
+	height: 21%;
+	padding: 0 !important;
+}
+.card-group li .card-body .card-text{
+	margin-bottom: 0.5%;
+}
+.card-group li .card-footer{
+	height: 9%;
+	padding: 0 !important;
+}
+
+.moimphoto nav{
+	width:20%;
+}
+/* ********모임가입섹션*********** */
+
+.moimjoin{
+	position: fixed;
+	width:30%;
+	top:90%;
+	left:35%;
+	margin:1%;
+}
+
+.moimjoin ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.moimjoin li {
+	list-style: none;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+}
+
+.moimjoin li button {
+	width: 100%;
+}

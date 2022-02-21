@@ -1,4 +1,16 @@
 $(document).ready(function(){
+    // $.ajax({
+    //     type: "post",
+    //     url: "transferCtgName",
+    //     data:{"spaceNoForCtgName":'<c:out value="${spaceNoForCtgName}'},
+    //     dataType: 'json',
+    //     success:function (result) {
+    //         alert(result);
+    //     },
+    //     error:function(data, textStatus){
+    //         alert("카테고리 이름 return 검색 실패");
+    //     }
+    // })
     $('#findPlaceBtn').on('click', function(){
         event.preventDefault();
 
@@ -13,6 +25,7 @@ $(document).ready(function(){
             success:function(result){
                 if(result != ""){
                     var space = result;
+                    console.log(space);
                     $('#gallerylist').empty();
                     $('#gallerylist').append('<span class="gallerylistBox" id="gallerylistBox">');
                         for(var i = 0; i < Object.keys(space).length; i++){
@@ -26,8 +39,8 @@ $(document).ready(function(){
                                 url:"constraintCtg", // @RestController로 요청
                                 dataType: 'json',
                                 async: false,
-                                success:function(result){
-                                    var spaceCtgName = result;
+                                success:function(result_name){
+                                    var spaceCtgName = result_name;
                                     for(var j = 0; j < 1; j++) {
                                         $('#gallerylistBox').append(spaceCtgName[j].spaceCtgName + '</div>'); // card-header-text 닫힘
                                     }

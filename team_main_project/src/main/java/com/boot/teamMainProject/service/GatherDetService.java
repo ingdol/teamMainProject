@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.boot.teamMainProject.dao.IGatherDetDAO;
 import com.boot.teamMainProject.model.GatherDetVO;
+import com.boot.teamMainProject.model.MemberVO;
 
 @Service
 public class GatherDetService implements IGatherDetService {
@@ -29,6 +30,12 @@ public class GatherDetService implements IGatherDetService {
 	public void insertGatherDet(GatherDetVO gat) {
 		// TODO Auto-generated method stub
 		dao.insertGatherDet(gat);
+	}
+
+	@Override
+	public MemberVO MoveinsertGather(String memNick) {
+		// TODO Auto-generated method stub
+		return dao.MoveinsertGather(memNick);
 	}
 
 }

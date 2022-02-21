@@ -5,5 +5,6 @@ import java.util.ArrayList;
 import com.boot.teamMainProject.model.GatheringVO;
 
 public interface IGatheringDAO {
-	ArrayList<GatheringVO> showlist();
+	ArrayList<GatheringVO> showlist(String hobbyNo);
+	ArrayList<GatheringVO> detailgat(int gatNo);
 }

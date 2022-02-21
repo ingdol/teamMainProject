@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +13,7 @@
 <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/js/sun/allmoim.js'/>"></script>
 </head>
 <body>
 	<div id="wrap">			
@@ -80,82 +83,36 @@
 
 				<!-- 모임필터결과 -->
 				<div class="filterresultmoim">
-				<span class="result">검색결과모임</span>
-					<div class="card-deck">
+				<c:forEach items="${gatheringResult}" var="gat" begin="0" end="0"><span class="result">검색결과모임 : ${gat.hobbyNo}</span></c:forEach>
+					<div class="cardbox">						
+						<!-- 받아오기 -->
+						<c:forEach items="${gatheringResult}" begin="0" end="5" var="gat">
 						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">모임제목</h5>
-								<p class="card-text">모임소개</p>
-								<p class="card-text">
-									<small class="text-muted">모임개설일</small>
-								</p>
+							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
+							<div class="cardbody">
+								<h5 class="cardtitle">${gat.gatName}</h5>
+								<p class="cardtext">${gat.gatInfo}</p>
+								<p class="hidden">${gat.gatNo}</p>
+								<small class="cardtext textmuted">
+									<fmt:formatDate value="${gat.gatOpen}" pattern="YY/MM/dd"/>
+								</small>
 							</div>
 						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">모임제목</h5>
-								<p class="card-text">모임소개</p>
-								<p class="card-text">
-									<small class="text-muted">모임개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">모임제목</h5>
-								<p class="card-text">모임소개</p>
-								<p class="card-text">
-									<small class="text-muted">모임개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">모임제목</h5>
-								<p class="card-text">모임소개</p>
-								<p class="card-text">
-									<small class="text-muted">모임개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">모임제목</h5>
-								<p class="card-text">모임소개</p>
-								<p class="card-text">
-									<small class="text-muted">모임개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">모임제목</h5>
-								<p class="card-text">모임소개</p>
-								<p class="card-text">
-									<small class="text-muted">모임개설일</small>
-								</p>
-							</div>
-						</div>
+						</c:forEach>
 					</div>
 				</div>
 
 				<!-- 클래스필터결과 -->
 				<div class="filterresultclass">
 				<span class="result">검색결과클래스</span>
-					<div class="card-deck">
+					<div class="cardbox">
 						<div class="card">
 							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">클래스제목</h5>
-								<p class="card-text">클래스소개</p>
-								<p class="card-text">
-									<small class="text-muted">개설일</small>
+							<div class="cardbody">
+								<h5 class="cardtitle">클래스제목</h5>
+								<p class="cardtext">클래스소개</p>
+								<p class="cardtext">
+									<small class="textmuted">개설일</small>
 								</p>
 							</div>
 						</div>
