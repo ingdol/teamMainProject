@@ -12,13 +12,15 @@
 	</head>
 	<body>
 	
-	<!-- TOP  -->
 	<div id="mainWrap">
+        <!-- TOP  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
-		   
-			<section>
 			
+			<section>
 		<div class ="wrap">
+		
+		
+		   
 			<table border = "0" align="center" >
 			<tr><td colspan="4"><img src="<c:url value='/image/ldh/ex${gat.gatNo}.png'/> "></td></tr>
 			<tr><td colspan="4" class="boardtitle" align="left">${gat.gatDetTitle}<br></td></tr>
@@ -63,7 +65,7 @@
 			
 		</div>
 		 </section>
-		 <!-- BOTTOM  -->
+			<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
 		    
 		   </div>

@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Daily&Linker</title>
-		<link href="<c:url value='/css/sej/main/common.css?after'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/main/common.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/index.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/menu.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/footer.css'/>" rel="stylesheet" type="text/css">

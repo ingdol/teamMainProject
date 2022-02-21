@@ -8,7 +8,6 @@
 /* 모든 컨텐츠를 포함하는  box */
 #mainWrap {
 	width:1280px;
-	text-align:center;
 	position:relative;
 	background-color:#ffffff;
 }

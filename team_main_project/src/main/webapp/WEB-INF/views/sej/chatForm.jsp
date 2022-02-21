@@ -11,26 +11,48 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/sej/chatbot.css'/>">
 	</head>
 	<body>			
-		<div id="wrap">
+		<div id="mainWrap">
+		
+			<!-- TOP  -->
+		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
+		   
+		<div id="chatSize">
 			<!-- Header -->
 			<div id="chatHeader">
-				<span>챗봇</span>
+				<span>개설자 1:1 채팅</span>
 				<button id="btnClose">X</button>
 			</div>
 		
 		<!-- 채팅 내용 출력 -->
 			
 			<!-- 응답 메시지 출력  -->
+		<div id="chatAllBox">
 			<div id="chatBox"></div><br>
 			
-			<!-- 질문 메시지 입력 폼 -->
-			<form id="chatForm">
-				<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
-				<input type="submit" value="전송">		
-			</form>
+			<div id="chatInputBox">
+				<!-- 질문 메시지 입력 폼 -->
+				<form id="chatForm">
+					<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
+					<input type="submit" id="btnSubmit" value="전송" >		
+				</form>		
+			</div><br>
+		</div>
+			<div>
+			<!-- 음성 녹음 -->
+			음성 메시지 : <button id="record">녹음</button> 
+							<button id="stop">정지</button>
+							<div id="sound-clips"></div><br>
 			
-			<br><br>
-			<a href="/">index 페이지로 이동</a>
+			</div>
+			
+			<div>
+				<audio preload="auto" controls></audio>
+			</div>			
+			</div>
+			
+			<!-- BOTTOM  -->
+		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+			
 		</div>
 	</body>
 </html>
