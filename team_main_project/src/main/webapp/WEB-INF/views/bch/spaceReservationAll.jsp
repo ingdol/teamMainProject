@@ -14,8 +14,9 @@
     <script src="js/bch/datepickerUse.js"></script> <!-- 달력 설정 js -->
     <script src="js/bch/spaceSearch.js"></script> <!-- 조건 검색 -->
     <body>
-    <!-- TOP  -->
-    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
+    <div id ="mainWrap">
+        <!-- TOP  -->
+        <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
             <form class="findPlace" >
                 <span>
@@ -64,7 +65,8 @@
             <div class="gallerylist" id="gallerylist">
                 <span class="gallerylistBox" id="gallerylistBox">
                     <c:forEach items="${spaceList}" var="space">
-                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />
+<%--                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />--%>
+                        <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${space.spaceNo}' />">
                         <a href="<c:url value='/detailViewSpace/${space.spaceNo}'/>"> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->
@@ -109,6 +111,7 @@
         </div>
         <!-- BOTTOM  -->
         <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+    </div>
     </body>
 </html>
 

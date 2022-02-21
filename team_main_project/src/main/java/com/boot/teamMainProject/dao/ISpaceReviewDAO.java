@@ -6,4 +6,5 @@ import java.util.ArrayList;
 
 public interface ISpaceReviewDAO {
     SpaceReviewVO spaceReview(String SpaceNo);
+    ArrayList<SpaceReviewVO> spaceReviewTest(String spaceNo);
 }

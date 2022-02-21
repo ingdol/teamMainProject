@@ -20,7 +20,7 @@
         ]]>
     </select>
 
-    <select id="SpaceCtgNameforAll" resultMap="spaceNameResult">
+    <select id="SpaceCtgNameForAll" resultMap="spaceNameResult">
         SELECT sc.spaceCtgName, s.spaceNo FROM Space_Ctg sc, Space s
         WHERE s.spaceCtgNo = sc.spaceCtgNo AND s.spaceNo = #{spaceNo}
     </select>

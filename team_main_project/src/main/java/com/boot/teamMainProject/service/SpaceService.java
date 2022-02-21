@@ -29,4 +29,9 @@ public class SpaceService implements ISpaceService {
     public SpaceVO detailSpace(String spaceNo) {
         return dao.detailSpace(spaceNo);
     }
+
+    @Override
+    public ArrayList<SpaceVO> detailSpaceTest(String spaceNo) {
+        return dao.detailSpaceTest(spaceNo);
+    }
 }

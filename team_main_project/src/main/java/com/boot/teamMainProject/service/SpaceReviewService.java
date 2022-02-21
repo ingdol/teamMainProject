@@ -21,4 +21,9 @@ public class SpaceReviewService implements ISpaceReviewService{
     public SpaceReviewVO spaceReview(String spaceNo) {
         return dao.spaceReview(spaceNo);
     }
+
+    @Override
+    public ArrayList<SpaceReviewVO> spaceReviewTest(String spaceNo) {
+        return dao.spaceReviewTest(spaceNo);
+    }
 }

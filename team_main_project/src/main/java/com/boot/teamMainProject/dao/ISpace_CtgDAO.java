@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public interface ISpace_CtgDAO {
     ArrayList<Space_CtgVO> SpaceCtgName();
-    Space_CtgVO SpaceCtgNameforAll(String spaceNo);
+    ArrayList<Space_CtgVO> SpaceCtgNameForAll(String spaceNo);
 }
