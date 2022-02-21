@@ -10,7 +10,7 @@
 		<script src="<c:url value='/js/sej/main/slideShow.js'/>"></script>
 	</head>
 	<body>
-		<div id="wrap">			
+		<div id="mainWrap">			
 		
 			<!-- TOP  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />

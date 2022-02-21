@@ -12,13 +12,17 @@
 	</head>
 	<body>
 	
-	<!-- TOP  -->
+	<div id="mainWrap">
+        <!-- TOP  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
-		   
-			<section>
 			
+			<section>
 		<div class ="wrap">
+		
+		
+		   
 			<table border = "0" align="center" >
+			<tr><td colspan="4"><img src="<c:url value='/image/ldh/ex${gat.gatNo}.png'/> "></td></tr>
 			<tr><td colspan="4" class="boardtitle" align="left">${gat.gatDetTitle}<br></td></tr>
 			</table>
 			<br>
@@ -53,7 +57,7 @@
 
 				<table class="comment" align="center" border="0" width="1000px">
 					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"><img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
-					<tr><td colspan="2">${comList.gatDetComInfo}</td></tr>
+					<tr><td colspan="2" align="left">${comList.gatDetComInfo}</td></tr>
 				</table>
 			
 				</c:forEach>
@@ -61,7 +65,9 @@
 			
 		</div>
 		 </section>
-		 <!-- BOTTOM  -->
+			<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+		    
+		   </div>
 	</body>
 </html>

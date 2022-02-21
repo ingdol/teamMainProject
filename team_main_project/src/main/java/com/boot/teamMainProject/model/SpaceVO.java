@@ -14,6 +14,15 @@ public class SpaceVO {
     private int spacePerNum;
     private int spacePerMax;
     private Date spaceOpen;
+    private String spacePhoto;
+
+    public String getSpacePhoto() {
+        return spacePhoto;
+    }
+
+    public void setSpacePhoto(String spacePhoto) {
+        this.spacePhoto = spacePhoto;
+    }
 
     public String getSpaceNo() {
         return spaceNo;

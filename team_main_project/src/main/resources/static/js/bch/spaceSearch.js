@@ -1,4 +1,19 @@
 $(document).ready(function(){
+    console.log($('#spaceNoForCtgName').val());
+    // $.ajax({
+    //     type: "post",
+    //     url: "SpaceReservationAll",
+    //     data:{"spaceNoForCtgName": $('#spaceNoForCtgName').val()
+    //           },
+    //     dataType: 'json',
+    //     success:function (result) {
+    //         alert("카테고리 이름 성공");
+    //         alert(result);
+    //     },
+    //     error:function(data, textStatus){
+    //         alert("카테고리 이름 return 검색 실패");
+    //     }
+    // })
     $('#findPlaceBtn').on('click', function(){
         event.preventDefault();
 

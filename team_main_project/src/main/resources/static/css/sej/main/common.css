@@ -6,9 +6,8 @@
 * {padding: 0; margin:0 auto;}
 
 /* 모든 컨텐츠를 포함하는  box */
-#wrap {
+#mainWrap {
 	width:1280px;
-	text-align:center;
 	position:relative;
 	background-color:#ffffff;
 }
