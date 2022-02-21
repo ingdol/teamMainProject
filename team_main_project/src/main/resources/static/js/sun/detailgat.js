@@ -20,7 +20,7 @@ $(function(){
 		$('.moiminfodetail').hide();
 		$('.moimphoto').hide();
 		$('.moimchatting').hide();
-		location.href='/sun/detailgat/'+gatNo+'/commulist';
+		/*location.href='/sun/detailgat/'+gatNo+'/commulist';*/
 		$('.moimcommu').show();
 	});
 	

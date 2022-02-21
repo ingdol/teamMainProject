@@ -82,15 +82,15 @@
 									<div class="date">작성일</div>
 									<div class="count">조회</div>
 								</div>
-								<c:forEach items="${comlist}" var="com">
+								<c:forEach items="${gatherCommu}" var="com">
 									<div>
-										<div class="num">${com.comNo}</div>
+										<div class="num">${com.gatDetNo}</div>
 										<div class="title" id="comTitle">
-											<a href="<c:url value='/listview/${com.comNo}'/>">${com.comTitle}</a>
+											<a href="<c:url value='#'/>">${com.gatDetTitle}</a>
 										</div>
-										<div class="writer" id="comId">${com.memId}</div>
-										<div class="date" id="comDate">${com.comDate}</div>
-										<div class="count" id="comCount">${com.comCount}</div>
+										<div class="writer" id="comId">${com.memNick}</div>
+										<div class="date" id="comDate">${com.gatDetDate}</div>
+										<div class="count" id="comCount">${com.gatDetView}</div>
 									</div>
 								</c:forEach>
 							</div>
