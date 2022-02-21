@@ -18,5 +18,8 @@
     <select id="spaceReview" resultMap="spaceReviewResult">
         select * from Space_Rev WHERE spaceNo=#{spaceNo}
     </select>
+    <select id="spaceReviewTest" resultMap="spaceReviewResult">
+        select * from Space_Rev WHERE spaceNo=#{spaceNo}
+    </select>
 
 </mapper>

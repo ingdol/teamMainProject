@@ -8,12 +8,19 @@ import com.boot.teamMainProject.model.SpaceReviewVO;
 
 @Service
 public class SpaceReviewService implements ISpaceReviewService{
-	/* @Setter(onMethod_ = {@Autowired}) */
+
+//    @Setter(onMethod_ = {@Autowired})
+
     @Qualifier("ISpaceReviewDAO")
     ISpaceReviewDAO dao;
 
     @Override
     public SpaceReviewVO spaceReview(String spaceNo) {
         return dao.spaceReview(spaceNo);
+    }
+
+    @Override
+    public ArrayList<SpaceReviewVO> spaceReviewTest(String spaceNo) {
+        return dao.spaceReviewTest(spaceNo);
     }
 }

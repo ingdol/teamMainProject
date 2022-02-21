@@ -12,7 +12,8 @@
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 	</head>
 	<body>
-	
+		
+		<div id="mainWrap">
 	    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		   
 			<section>
@@ -40,5 +41,6 @@
 		</section>
 		<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+		    </div>
 	</body>
 </html>
