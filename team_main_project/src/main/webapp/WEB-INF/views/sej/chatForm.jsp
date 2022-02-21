@@ -12,6 +12,7 @@
 	</head>
 	<body>			
 		<div id="wrap">
+		
 			<!-- Header -->
 			<div id="chatHeader">
 				<span>챗봇</span>
@@ -23,14 +24,31 @@
 			<!-- 응답 메시지 출력  -->
 			<div id="chatBox"></div><br>
 			
-			<!-- 질문 메시지 입력 폼 -->
-			<form id="chatForm">
-				<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
-				<input type="submit" value="전송">		
-			</form>
+			<div>
+				<!-- 질문 메시지 입력 폼 -->
+				<form id="chatForm">
+					<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
+					<input type="submit" value="전송">		
+				</form>		
+			</div><br>
+			
+			<div>
+			<!-- 음성 녹음 -->
+			음성 메시지 : <button id="record">녹음</button> 
+							<button id="stop">정지</button>
+							<div id="sound-clips"></div><br>
+			
+			</div>
+			
+			<div>
+				<audio preload="auto" controls></audio>
+			</div>			
 			
 			<br><br>
 			<a href="/">index 페이지로 이동</a>
 		</div>
+		
+			<!-- BOTTOM  -->
+		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
 	</body>
 </html>
