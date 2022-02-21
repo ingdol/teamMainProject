@@ -12,6 +12,7 @@ ul {
 /********** MAIN MENU ************/
 
 #mainMenuBox {
+	text-align:center;
 	width:1280px;
 	height:70px;
 	line-height:35px;

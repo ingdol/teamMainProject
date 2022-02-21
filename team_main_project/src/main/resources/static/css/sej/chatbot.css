@@ -1,21 +1,101 @@
 @charset "UTF-8";
 
-#wrap { margin:0 auto; width: 500px; 	height: 800px; } 
+#chatSize {
+	margin-top: 30px;
+}
 
-#chatHeader {padding: 10px 15px; border-bottom: 1px solid #95a6b4;}
-#btnClose {border: none; background: none; float: right;}
+#chatHeader { 
+	height:30px;
+	width:700px;
+	padding: 10px 15px; 
+	background:#8ADBFF;
+	font-size: 18px;
+	text-align:center;
+}
+
+#btnClose {
+	border: none; 
+	background: none; 
+	float: right;
+}
+
+#chatAllBox {
+	width: 730px; 
+	background:#F6F6F6;
+}
  
-#chatBox {height: 600px; width: 500px; overflow-y:scroll; padding:10px 15px; background:#9bbbd4;} 	
+#chatBox {
+	height: 600px; 
+	width: 677px; 
+	overflow-y:scroll; 
+	padding:10px 26px; 
+	background:#F6F6F6;
+} 	
 
-#message {width: 440px;}
+#chatInputBox {
+	text-align:center;
+	height: 80px; 
+	width: 720px; 
+	padding-top:10px;
+	background:#FFFFFF;
+}
 
-#btnSubmit {float: right; background:#eeeeee; height: 28px; padding-right:0;}
+#message {
+	height: 70px; 
+	width: 550px; 
+	border:0 solid white;
+	font-size:16px;
+}
 
-.msgBox  span {padding:3px 5px; word-break:break-all; display:block; 
-							 max-width:300px; margin-bottom: 10px; border-radius: 10px;}
+#btnSubmit {
+	height: 60px; 
+	width: 110px; 
+	padding-right:0;
+	background: #D0D0D0;
+	border-radius: 10px;
+	border:0 solid white;
+	font-size:16px;
+}
+
 							 
-.msgBox.send  span {background:#fef01b; float:right; }
+.msgBox.send  #msgInputBox {
+	background: #EAF5FF;
+	border: 1px solid #ABABAB;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding:15px;
+	text-align:left; 
+	float:right; 
+}
 
-.msgBox #in {width:480px; background:#9bbbd4;}
-.msgBox.receive  span {background:#ffffff; float:left; }
+.msgBox #in {
+	width:650px; 
+	background:#F6F6F6;
+	float:left; 
+}
 
+.msgBox #msgOwner {
+	background: none;
+	float:left; 
+	margin-top:10px;
+}
+
+
+.msgBox #msgOwnBox {
+	background: #FFFFFF;
+	border: 1px solid #ABABAB;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding:15px;
+	float:left; 
+	text-align:left;
+	margin-right:356px;
+	margin-top:10px;
+}
+
+#chatImage {
+	width:70%;
+	height:50%;
+	margin-top:50px;
+	margin-bottom:50px;
+}

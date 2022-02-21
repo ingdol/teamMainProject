@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.boot.teamMainProject.service.ChatbotService;
 import com.boot.teamMainProject.service.STTService;
+import com.boot.teamMainProject.service.TTSService;
 
 @RestController
 public class APIRestController {
@@ -19,6 +20,9 @@ public class APIRestController {
 
 	@Autowired
 	private STTService sttService;
+	
+	@Autowired
+	private TTSService ttsService;
 	
 	@RequestMapping("/chatbotCall")
 	public String  chatbotCall(@RequestParam("message") String message ) {
@@ -58,15 +62,15 @@ public class APIRestController {
 	}
 
 	
-//	@RequestMapping("/chatbotTTS")
-//	public String  chatbotTTS(@RequestParam("message") String message ) {
-//		String result = ttsService.chatbotTextToSpeech(message);
-//		return result;  // voiceFileName;  // 저장된 음성 파일명 반환
-//	}
-//	
-//	@RequestMapping("/chatbotCallImgLink")
-//	public String  chatbotCallImgLink(@RequestParam("message") String message ) {
-//		String result = chatService.imgLinkMainService(message);
-//		return result; // JSON 형태의 결과를 그대로 ajax로 응답으로 전송
-//	}
+	@RequestMapping("/chatbotTTS")
+	public String  chatbotTTS(@RequestParam("message") String message ) {
+		String result = ttsService.chatbotTextToSpeech(message);
+		return result;  // voiceFileName;  // 저장된 음성 파일명 반환
+	}
+	
+	@RequestMapping("/chatbotCallImgLink")
+	public String  chatbotCallImgLink(@RequestParam("message") String message ) {
+		String result = chatService.imgLinkMainService(message);
+		return result; // JSON 형태의 결과를 그대로 ajax로 응답으로 전송
+	}
 }
