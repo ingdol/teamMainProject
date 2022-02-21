@@ -28,10 +28,16 @@
 				</div>
 				<div id="MenuBarBox">
 					<ul id="menuItem">
-						<li><a href="#"><img src="<c:url value='/image/sej/gather3.png'/>" id="menuImg1"><br id="menuBr">전체모임</a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/allGather.png'/>" id="menuImg1"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/lookSpace.png'/>" id="menuImg2"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/community.png'/>" id="menuImg3"></a></li>
+						<li><a href="#"><img src="<c:url value='/image/sej/login.png'/>" id="menuImg4"></a></li>
+					
+						<%-- <li><a href="#"><img src="<c:url value='/image/sej/gather3.png'/>" id="menuImg1"><br id="menuBr">전체모임</a></li>
 						<li><a href="#"><img src="<c:url value='/image/sej/space3.png'/>" id="menuImg2"><br id="menuBr">공간구경</a></li>
 						<li><a href="#"><img src="<c:url value='/image/sej/commu3.png'/>" id="menuImg3"><br id="menuBr">커뮤니티</a></li>
 						<li><a href="#"><img src="<c:url value='/image/sej/login3.png'/>" id="menuImg4"><br id="menuBr">로그인</a></li>
+					 --%>
 					</ul>
 				</div>				
 			</div>  <!-- mainMenuBox 끝 -->
