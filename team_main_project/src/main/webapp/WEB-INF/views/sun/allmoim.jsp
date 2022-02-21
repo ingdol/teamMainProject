@@ -13,7 +13,8 @@
 <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 </head>
 <body>
-	<section id="wrap">
+	<div id="wrap">			
+		    
 		<h1 id="sectioninfo">전체모임</h1>
 		<!-- -----------------header,nav메뉴 부분---------------- -->
 		<jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
@@ -212,10 +213,9 @@
 				</div>
 			</section>
 		</section>
-
-		<!-- -----------footer부분--------- -->
-		<jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
-
-	</section>
+	<!-- BOTTOM  -->
+		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+			
+		</div>
 </body>
 </html>
