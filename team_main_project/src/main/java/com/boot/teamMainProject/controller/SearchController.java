@@ -49,12 +49,13 @@ public class SearchController {
 		return "/sej/allSearch";
 	}
 	
+	
 	@RequestMapping("/gatherSearch")
 	public String gatherSearch(@RequestParam HashMap<String, Object> param, 
 																				Model model){
 		ArrayList<GatheringVO> gatSearchList = Gatherservice.gatherSearch(param);
 		model.addAttribute("gatSearchList", gatSearchList);			
-		
+
 		return "sej/memSearchFormResult"; // 뷰 페이지 반환
 	}
 	

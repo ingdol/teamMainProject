@@ -20,4 +20,15 @@
   		select * from class WHERE hobbyNo=#{hobbyNo}
   	</select>
   	
+  	<!-- sej -->
+  	<!-- 전체 클래스 조회 : Best -->
+ 	<select id="listAllClassBest" resultMap="classResult">
+ 		SELECT * FROM class ORDER BY classHate
+ 	</select>
+ 	
+ 	<!-- 전체 클래스 조회 : 신규 -->
+ 	<select id="listAllClassNew" resultMap="classResult">
+ 		SELECT * FROM class ORDER BY classOpen DESC
+ 	</select>
+  	
   </mapper>
