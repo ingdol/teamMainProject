@@ -26,4 +26,14 @@ public class GatheringService implements IGatheringService {
 		return dao.detailgat(gatNo);
 	}
 
+	
+	
+	
+	//idh
+	@Override
+	public void insertGathering(GatheringVO gath) {
+		// TODO Auto-generated method stub
+		dao.insertGathering(gath);
+	}
+	
 }
