@@ -1,6 +1,7 @@
 package com.boot.teamMainProject.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -26,4 +27,28 @@ public class GatheringService implements IGatheringService {
 		return dao.detailgat(gatNo);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	//sej
+	// 전체 모임 조회 - 베스트
+	@Override
+	public ArrayList<GatheringVO> listAllGatherBest() {		
+		return dao.listAllGatherBest();
+	}
+	// 전체 모임 조회 - 신규
+	@Override
+	public ArrayList<GatheringVO> listAllGatherNew() {		
+		return dao.listAllGatherNew();
+	}
+	
+
+	@Override
+	public ArrayList<GatheringVO> gatherSearch(HashMap<String, Object> map){
+		return dao.gatherSearch(map);
+	}
 }

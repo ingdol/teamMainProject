@@ -24,4 +24,23 @@
   	</select>
   	
   	
+  	
+  	
+  	
+  	<!-- sej -->
+  	<!-- 전체 모임 조회 : Best -->
+ 	<select id="listAllGatherBest" resultMap="gatheringResult">
+ 		SELECT * FROM gathering ORDER BY gatHate
+ 	</select>
+  	
+  	<!-- 전체 모임 조회 : 신규 -->
+ 	<select id="listAllGatherNew" resultMap="gatheringResult">
+ 		SELECT * FROM gathering ORDER BY gatOpen DESC
+ 	</select>
+ 	
+ 	<!-- 회원 검색  -->
+	<select id="gatherSearch" resultMap="gatheringResult" parameterType="hashmap">
+		SELECT * FROM gathering WHERE gatName LIKE CONCAT('%', #{keyword}, '%')
+	</select>
+  	
   </mapper>

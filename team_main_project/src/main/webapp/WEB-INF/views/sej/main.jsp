@@ -16,6 +16,9 @@
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		   
 			<section>
+			
+			
+				<div id="searchResultbox"></div>
 				<article id="content1"> <!-- 탭메뉴 -->
 			        <div id="hobbyMenu">
 						<ul id="hobbyMenuItem">
@@ -52,49 +55,70 @@
 			<section>
 				<div id="bestItem">
 					<div id="itemTop">
-						<div id="bestName">BEST 모임 & 클래스</div>
+						<div id="bestName">BEST 모임</div>
 						<div id="allView"><a href="#">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">
+							<c:forEach items="${gatListBest}" var="gat" begin="0" end="2"><li>	
+									<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">소모임</p>
-									<br id="bestBr"><p id="gatherName">소모임 이름</p>
-									<br id="bestBr"><div id="gatherArea">지역이름 | 인원수</div> </a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">
+									<br id="bestBr"><p id="gatherName">${gat.gatName}</p>
+									<br id="bestBr"><div id="gatherArea">${gat.gatArea}</div> </a></li>
+							</c:forEach>
+						</ul>
+					</div>	
+				</div>
+				
+				<div id="bestItem">
+					<div id="itemTop">
+						<div id="bestName">BEST 클래스</div>
+						<div id="allView"><a href="#">전체 보기</a></div>
+					</div>
+					 <div id="bestMenu">
+						<ul id="bestMenuList">
+							<c:forEach items="${classListBest}" var="classVo" begin="0" end="2"><li>	
+									<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">	
+									<br id="bestBr"><p id="gatherCtg">클래스</p>
+									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
+									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>
+							</c:forEach>
+						</ul>
+					</div>	
+				</div>
+				
+				<div id="bestItem">
+					<div id="itemTop">
+						<div id="bestName">신규 모임</div>
+						<div id="allView"><a href="#">전체 보기</a></div>
+					</div>
+					 <div id="bestMenu">
+						<ul id="bestMenuList">
+							<c:forEach items="${gatListNew}" var="gat" begin="0" end="2"><li>	
+									<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">소모임</p>
-									<br id="bestBr"><p id="gatherName">소모임 이름</p>
-									<br id="bestBr"><div id="gatherArea">지역이름 | 인원수</div> </a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">
-									<br id="bestBr"><p id="gatherCtg">소모임</p>
-									<br id="bestBr"><p id="gatherName">소모임 이름</p>
-									<br id="bestBr"><div id="gatherArea">지역이름 | 인원수</div> </a></li>
+									<br id="bestBr"><p id="gatherName">${gat.gatName}</p>
+									<br id="bestBr"><div id="gatherArea">${gat.gatArea}</div> </a></li>
+							</c:forEach>
 						</ul>
 					</div>	
 				</div>
 				<div id="bestItem">
 					<div id="itemTop">
-						<div id="bestName">신규 모임 & 클래스</div>
+						<div id="bestName">신규 클래스</div>
 						<div id="allView"><a href="#">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">
-									<br id="bestBr"><p id="gatherCtg">소모임</p>
-									<br id="bestBr"><p id="gatherName">소모임 이름</p>
-									<br id="bestBr"><div id="gatherArea">지역이름 | 인원수</div> </a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">
-									<br id="bestBr"><p id="gatherCtg">소모임</p>
-									<br id="bestBr"><p id="gatherName">소모임 이름</p>
-									<br id="bestBr"><div id="gatherArea">지역이름 | 인원수</div> </a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">
-									<br id="bestBr"><p id="gatherCtg">소모임</p>
-									<br id="bestBr"><p id="gatherName">소모임 이름</p>
-									<br id="bestBr"><div id="gatherArea">지역이름 | 인원수</div> </a></li>
+							<c:forEach items="${classListNew}" var="classVo" begin="0" end="2"><li>	
+									<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">	
+									<br id="bestBr"><p id="gatherCtg">클래스</p>
+									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
+									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>
+							</c:forEach>
 						</ul>
 					</div>	
 				</div>
-				
 				
 			</section>
 			
