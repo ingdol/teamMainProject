@@ -8,6 +8,10 @@
     <link type="text/css" rel="stylesheet" href="/css/bch/detailViewSpace.css">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
     <script src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder">
+    </script> <!-- 네이버 지도 api -->
+    <script src="/js/bch/MapForDetailView.js"></script>
     <script>
         $(document).ready(function(){
             $('#move_section1').on('click', function(){
@@ -44,6 +48,8 @@
                     <h2 id="spaceInfo2">${space.spaceInfo}</h2>
                 </div>
             </div>
+            <div class="reservation" id="reservation">
+            </div>
             <div id="navigation" class="navigation">
                 <ul class="navigation_list">
                     <li id="move_section1" class="moveSection">공간 소개</li>
@@ -53,6 +59,7 @@
                     <li id="move_section5" class="moveSection">이용 후기</li>
                 </ul>
 <%--                <hr size="2px" width="100%" align="left" color="#5da5f8">--%>
+
             </div>
             <div class="container">
                 <div id="section1" class="content">
@@ -83,6 +90,12 @@
                 <div id="section4" class="content">
                     <h3 class="h-intro">지도</h3>
                     <hr size="5px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
+                    <div id="SpaceMapInfo">
+                        <div id="SpaceTitleInMap">${space.spaceTitle}</div>
+                        <span id="addressValue">${space.spaceArea}</span>
+                        <input type="hidden" name="address" id="address" value="${space.spaceArea}">
+                    </div>
+                    <div id="map" style="width: 100%; height: 50%;"></div>
                 </div>
                 <div id="section5" class="content">
                     <h3 class="h-intro">이용 후기</h3>
@@ -96,8 +109,6 @@
                 </div>
             </div>
         </div>
-<%--        <div class="reservation" id="reservation">--%>
-<%--        </div>--%>
     <!-- BOTTOM  -->
     <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </div>

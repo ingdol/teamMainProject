@@ -1,8 +1,13 @@
 /**
- * mapsearch
+ * allmoim
  */
  
 $(function(){
+	
+	$('.btn').on('click',function(e){
+		window.location.href='/sun/allmoimdetail';
+	});
+	
 	$('.card').on('click',function(e){
 				
 		console.log(e.target.parentNode.classList);	
@@ -18,4 +23,5 @@ $(function(){
 		/* 한번누르면 current 지워주기*/		
 		oncard.classList.remove("current");
 	});
+	
 });

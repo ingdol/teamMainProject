@@ -11,19 +11,29 @@ import com.boot.teamMainProject.model.ClassVO;
 
 @Service
 public class ClassService implements IClassService {
-	
-	@Autowired
-	@Qualifier("IClassDAO")
-	IClassDAO dao;
+   
+   @Autowired
+   @Qualifier("IClassDAO")
+   IClassDAO dao;
 
-	@Override
-	public ArrayList<ClassVO> listAllClassBest() {
-		return dao.listAllClassBest();
-	}
-	
-	@Override
-	public ArrayList<ClassVO> listAllClassNew() {
-		return dao.listAllClassNew();
-	}
+   @Override
+   public ArrayList<ClassVO> listAllClassBest() {
+      return dao.listAllClassBest();
+   }
+   
+   @Override
+   public ArrayList<ClassVO> listAllClassNew() {
+      return dao.listAllClassNew();
+   }
+
+
+   
+   // 서연
+   @Override
+   public ArrayList<ClassVO> listClass(String hobbyNo) {
+	   return dao.listClass(hobbyNo);
+   }
+   
 
 }
+

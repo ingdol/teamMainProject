@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.boot.teamMainProject.model.ClassVO;
 import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.service.ClassService;
 import com.boot.teamMainProject.service.GatheringService;
 
 @Controller
@@ -20,8 +22,8 @@ public class MainController {
 	//--서연---
 	@Autowired
 	GatheringService gatherser;
-
-
+	@Autowired
+	ClassService classser;
 //---------------------------
 //---------컨트롤러코드부분----------
 
@@ -53,24 +55,18 @@ public class MainController {
 	public String detailgat() {
 		return "/sun/detailgat";
 	}
+	
+	
 
-	@RequestMapping("/sun/commumain")
-	public String commumain() {
-		return "/sun/commumain";
-	}
-
-	@RequestMapping("/sun/allmoim")
-	public String allmoim() {
-		return "/sun/allmoim";
-	}
 
 	//**관심사카테고리에서 특정카테고리클릭시 해당카테고리 전체모임,클래스 나타내기	
 		@RequestMapping("/sun/allmoim/{hobbyNo}")
 		public String showlist(@PathVariable String hobbyNo, Model model) {
 			ArrayList<GatheringVO> gatheringResult = gatherser.showlist(hobbyNo);
-			System.out.println("gatheringResult = " + gatheringResult);
+			ArrayList<ClassVO> classResult = classser.listClass(hobbyNo);
+			
 			model.addAttribute("gatheringResult",gatheringResult);
-			System.out.println("bb");
+			model.addAttribute("classResult",classResult);
 			return "/sun/allmoim";
 		}
 	//---------------------------------

@@ -9,6 +9,7 @@
 		<title>글 등록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
+		  <script src="<c:url value='/js/ldh/Sajax.js'/>"></script>
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 	</head>
 	<body>
