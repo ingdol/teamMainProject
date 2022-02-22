@@ -13,8 +13,8 @@ import com.boot.teamMainProject.model.Space_CtgVO;
 @Service
 public class Space_CtgService implements ISpace_CtgService {
 
-	@Setter(onMethod_ = {@Autowired})
-
+//	@Setter(onMethod_ = {@Autowired})
+    @Autowired
     @Qualifier("ISpace_CtgDAO")
     ISpace_CtgDAO dao;
 

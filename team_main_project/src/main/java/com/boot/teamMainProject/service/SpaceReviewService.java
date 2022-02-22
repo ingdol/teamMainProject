@@ -13,8 +13,8 @@ import com.boot.teamMainProject.model.SpaceReviewVO;
 @Service
 public class SpaceReviewService implements ISpaceReviewService{
 
-    @Setter(onMethod_ = {@Autowired})
-
+//    @Setter(onMethod_ = {@Autowired})
+    @Autowired
     @Qualifier("ISpaceReviewDAO")
     ISpaceReviewDAO dao;
 

@@ -4,14 +4,16 @@
 }
 .spaceListBox {
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     /*padding: 30px;*/
-    /*width: 85%;*/
+    width: 100%;
     margin: 0 auto;
     border: 1px gold solid;
 }
 .gallerylist {
-    margin: 1.5%;
+    /*margin: 1%;*/
+    display: flex !important;
+    justify-content: center !important;
 }
 .screen {
     display: inline;

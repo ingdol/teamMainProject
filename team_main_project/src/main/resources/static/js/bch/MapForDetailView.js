@@ -33,6 +33,13 @@ $(document).ready(function (){
                 anchor: new naver.maps.Point(11, 35)
             }
         };
+        // 맵 옵션
+        var mapOptions = {
+            scaleControl: false,
+            logoControl: false,
+            mapDataControl: false,
+            zoomControl: true
+        }
 
         // 마커 생성
         var marker = new naver.maps.Marker(markerOptions);
