@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     /*padding: 30px;*/
-    width: 85%;
+    /*width: 85%;*/
     margin: 0 auto;
     border: 1px gold solid;
 }
@@ -15,7 +15,6 @@
 }
 .screen {
     display: inline;
-
     border: #9c9c9c 1px solid;
 }
 
@@ -24,9 +23,9 @@ p, blockquote, pre, a, abbr, acronym, address, big, quotes, code, del,
 dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, u,
 i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
 caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
-details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+details, embed, figure, figcaption, header, footer, hgroup, menu, nav,
 output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
+    /*margin: 0;*/
     padding: 0;
     border: 0;
     font-size: 100%;
@@ -75,7 +74,7 @@ table {
     width: 100%;
     height: 270px;
     border-radius: 15px 15px 0 0;
-    background-image: url("image/bch/IMG_4587.JPG");
+    background-image: url("/image/bch/IMG_4587.JPG");
     background-size: 100% 280px;
     background-repeat: no-repeat;
 }
@@ -161,14 +160,14 @@ h1 {
 .icon-view_count {
     width: 25px;
     height: 17px;
-    background: url("images/eye.jpg") no-repeat;
+    /*background: url("images/eye.jpg") no-repeat;*/
 }
 
 .icon-comments_count {
     margin-left: 5px;
     width: 25px;
     height: 17px;
-    background: url("images/comment.jpg") no-repeat;
+    /*background: url("images/comment.jpg") no-repeat;*/
 }
 
 .reg_date {
