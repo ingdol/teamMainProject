@@ -201,6 +201,7 @@
 	
 	
 	function callAjaxTTS(result){
+		//console.log(result);
 		$.ajax({
             type:"post",            
             url:"chatbotTTS",

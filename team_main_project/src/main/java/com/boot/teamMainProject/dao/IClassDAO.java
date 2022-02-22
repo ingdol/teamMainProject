@@ -14,3 +14,4 @@ public interface IClassDAO {
    // 서연
    ArrayList<ClassVO> listClass(String hobbyNo);
 }
+
