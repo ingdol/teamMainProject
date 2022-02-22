@@ -3,7 +3,7 @@ package com.boot.teamMainProject.model;
 import java.util.Date;
 
 public class SpaceVO {
-    private String spaceNo;
+    private int spaceNo;
     private String memNick;
     private String spaceTitle;
     private String spaceInfo;
@@ -24,11 +24,11 @@ public class SpaceVO {
         this.spacePhoto = spacePhoto;
     }
 
-    public String getSpaceNo() {
+    public int getSpaceNo() {
         return spaceNo;
     }
 
-    public void setSpaceNo(String spaceNo) {
+    public void setSpaceNo(int spaceNo) {
         this.spaceNo = spaceNo;
     }
 

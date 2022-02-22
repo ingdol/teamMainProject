@@ -60,7 +60,7 @@
                 <button id="findPlaceBtn">검색</button>
             </form>
         </div>
-    <hr>
+        <hr size="3px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
         <div class="spaceListBox" id="spaceListBox">
             <div class="gallerylist" id="gallerylist">
                 <span class="gallerylistBox" id="gallerylistBox">
@@ -109,6 +109,7 @@
                 </span>
             </div>
         </div>
+        <hr size="3px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
         <!-- BOTTOM  -->
         <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </div>

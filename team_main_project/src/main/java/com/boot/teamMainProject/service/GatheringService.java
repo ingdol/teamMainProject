@@ -30,6 +30,7 @@ public class GatheringService implements IGatheringService {
 	
 	
 	
+
 	
 	
 	
@@ -51,4 +52,13 @@ public class GatheringService implements IGatheringService {
 	public ArrayList<GatheringVO> gatherSearch(HashMap<String, Object> map){
 		return dao.gatherSearch(map);
 	}
+
+	//idh
+	@Override
+	public void insertGathering(GatheringVO gath) {
+		// TODO Auto-generated method stub
+		dao.insertGathering(gath);
+	}
+	
+
 }

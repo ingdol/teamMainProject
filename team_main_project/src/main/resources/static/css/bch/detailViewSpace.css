@@ -7,7 +7,7 @@
 
 /*최상단 div*/
 .detailWrap {
-    width: 1280px;
+    width: 98%;
     font-family: 'NanumSquareRound';
     text-align: left !important;
 }
@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    width: 1280px;
+    width: 100%;
     height: 720px;
 }
 .spacePicture img {
@@ -28,10 +28,9 @@
 }
 /*예약 하는 div 박스*/
 .reservation {
-    margin-top: 4%;
     border: 1px solid black;
-    width: 300px;
-    height: 900px;
+    width: 100%;
+    height: 350px;
     position: relative;
 }
 /*네비게이션 감싸는 div*/
@@ -60,7 +59,7 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 20px;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     padding-left: 20px;
     padding-right: 20px;
     display: inline;
@@ -100,6 +99,9 @@
 .h-intro {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    
 }
 
 /*소개, 유의 사항 등 콘텐츠 표현*/
@@ -150,4 +152,24 @@
     padding: 0 !important;
     font-weight: bold !important;
     font-size: 18px !important;
+}
+
+/* 주소 꾸미기 */
+
+#addressValue {
+    font-size: 18px;
+    color: #656565;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#SpaceTitleInMap {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#map {
+    margin-top: 15px;
 }
