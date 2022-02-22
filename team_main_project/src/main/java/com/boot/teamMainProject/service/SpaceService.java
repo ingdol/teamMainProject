@@ -11,7 +11,7 @@ import com.boot.teamMainProject.model.SpaceVO;
 @Service
 public class SpaceService implements ISpaceService {
 
-	/* @Setter(onMethod_ = {@Autowired}) */
+//   @Setter(onMethod_ = {@Autowired})
     @Qualifier("ISpaceDAO")
     ISpaceDAO dao;
 
@@ -27,5 +27,10 @@ public class SpaceService implements ISpaceService {
     @Override
     public SpaceVO detailSpace(String spaceNo) {
         return dao.detailSpace(spaceNo);
+    }
+
+    @Override
+    public ArrayList<SpaceVO> detailSpaceTest(String spaceNo) {
+        return dao.detailSpaceTest(spaceNo);
     }
 }

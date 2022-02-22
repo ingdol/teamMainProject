@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -27,8 +28,9 @@
         });
     </script>
     <body>
-    <!-- TOP  -->
-    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
+    <div id ="mainWrap">
+        <!-- TOP  -->
+        <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="detailWrap" class="detailWrap">
             <div>
                 <h1 id="spaceTitle">${space.spaceTitle}</h1>
@@ -66,6 +68,13 @@
                 <div id="section2" class="content">
                     <h3 class="h-intro">안내</h3>
                     <hr size="5px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
+                    <c:set var="spaceT" value="${space.spaceInfo}"></c:set>
+                    <c:set var="keywordArr" value="${fn:split(spaceT,'.')}"></c:set>
+                    <c:forEach items="${keywordArr}" var="spaceInfo">
+                        <ul>
+                            <li><span>※</span> ${spaceInfo}</li>
+                        </ul>
+                    </c:forEach>
                 </div>
                 <div id="section3" class="content">
                     <h3 class="h-intro">유의 사항</h3>
@@ -78,7 +87,12 @@
                 <div id="section5" class="content">
                     <h3 class="h-intro">이용 후기</h3>
                     <hr size="5px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
-                    <div class="rev">${spaceReview.spaceRevTitle}</div>
+                    <c:forEach items="${spaceReviewTest}" var="spaceReview">
+                        <div class="revMemNick" id="revMemNick">${spaceReview.memNick}</div>
+                        <p>제목</p><div class="revMemTitle" id="revMemTitle">${spaceReview.spaceRevTitle}</div>
+                        <p>내용</p><div class="revInfo" id="revInfo">${spaceReview.spaceRevTitle}</div>
+                        <hr color="#d9d8d8" style="margin-bottom: 10px; margin-top: 10px;">
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -86,5 +100,6 @@
 <%--        </div>--%>
     <!-- BOTTOM  -->
     <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+    </div>
     </body>
 </html>

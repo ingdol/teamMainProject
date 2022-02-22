@@ -32,14 +32,14 @@ public class SpaceReservationController {
         return "bch/spaceReservationAll";
     }
     // 공간 전체페이지 카테고리 이름 찾기 (현재 동작 x)
-    @ResponseBody
-    @RequestMapping("transferCtgName")
-    public Space_CtgVO transferCtgName(Model model,
-                                       @RequestParam("spaceNoForCtgName") String spaceNo) {
-        Space_CtgVO SpaceCtgNameforAll = space_ctgService.SpaceCtgNameforAll(spaceNo);
-        model.addAttribute("SpaceCtgNameforAll", SpaceCtgNameforAll);
-        return SpaceCtgNameforAll;
-    }
+//    @ResponseBody
+//    @RequestMapping("transferCtgName")
+//    public Space_CtgVO transferCtgName(Model model,
+//                                       @RequestParam("spaceNoForCtgName") String spaceNo) {
+//        Space_CtgVO SpaceCtgNameforAll = space_ctgService.SpaceCtgNameforAll(spaceNo);
+//        model.addAttribute("SpaceCtgNameforAll", SpaceCtgNameforAll);
+//        return SpaceCtgNameforAll;
+//    }
 
     // 조건 상세 조회
     @ResponseBody
@@ -65,9 +65,13 @@ public class SpaceReservationController {
     @RequestMapping("/detailViewSpace/{spaceNo}")
     public String detailViewSpace(@PathVariable String spaceNo, Model model) {
         SpaceVO space = service.detailSpace(spaceNo);
-        SpaceReviewVO spaceReview = spaceReviewService.spaceReview(spaceNo);
+//        SpaceReviewVO spaceReview = spaceReviewService.spaceReview(spaceNo); // ArrayList로 동작해야 돌아감
+        ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
+        ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
         model.addAttribute("space", space);
-        model.addAttribute("spaceReview", spaceReview);
+//        model.addAttribute("spaceReview", spaceReview); // ArrayList로 동작해야 돌아감
+        model.addAttribute("spaceReviewTest", spaceReviewTest);
+        model.addAttribute("spaceInfo", spaceInfo);
         return "bch/detailViewSpace";
     }
     // test Page

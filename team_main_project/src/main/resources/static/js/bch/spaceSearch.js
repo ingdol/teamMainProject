@@ -1,10 +1,13 @@
 $(document).ready(function(){
+    console.log($('#spaceNoForCtgName').val());
     // $.ajax({
     //     type: "post",
-    //     url: "transferCtgName",
-    //     data:{"spaceNoForCtgName":'<c:out value="${spaceNoForCtgName}'},
+    //     url: "SpaceReservationAll",
+    //     data:{"spaceNoForCtgName": $('#spaceNoForCtgName').val()
+    //           },
     //     dataType: 'json',
     //     success:function (result) {
+    //         alert("카테고리 이름 성공");
     //         alert(result);
     //     },
     //     error:function(data, textStatus){
