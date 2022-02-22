@@ -32,11 +32,13 @@
 					<img src="../image/LOGO.png">
 				</div>
 				<div class="moimname">
-					<div>소모임이름</div>
+					<c:forEach items="${detail}" var="detail">
+					<div>${detail.gatName}</div>
 					<div>
-						<c:forEach items="${detail}" var="detail"><a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a></c:forEach>
+						<a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
 						<button>1:1문의</button>
 					</div>
+					</c:forEach>
 				</div>		
 			</div>
 			<div class="moimdetail">
@@ -86,10 +88,10 @@
 									<div>
 										<div class="num">${com.gatDetNo}</div>
 										<div class="title" id="comTitle">
-											<a href="<c:url value='#'/>">${com.gatDetTitle}</a>
+											<a href="<c:url value='#'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>
 										</div>
 										<div class="writer" id="comId">${com.memNick}</div>
-										<div class="date" id="comDate">${com.gatDetDate}</div>
+										<div class="date" id="comDate"><fmt:formatDate value="${com.gatDetDate}" pattern="YY/MM/dd"/></div>
 										<div class="count" id="comCount">${com.gatDetView}</div>
 									</div>
 								</c:forEach>
@@ -115,7 +117,7 @@
 
 					<!-- 모임사진첩 클릭시 -->
 					<div class="moimphoto">
-						<h4>!모임사진첩</h4>
+						<h4 id="sectioninfo">!모임사진첩</h4>
 						<div class="card-group">
 							<ul>
 								<li>
