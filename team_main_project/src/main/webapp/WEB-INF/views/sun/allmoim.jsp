@@ -28,54 +28,51 @@
 
 			<!-- 전체모임에서 필터 -->
 			<div id="allfilter" class="allfilter">
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button"
-						id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-						서울시</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<button class="dropdown-item" type="button">Action</button>
-						<button class="dropdown-item" type="button">Another
-							action</button>
-						<button class="dropdown-item" type="button">Something
-							else here</button>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button"
-						id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-						강남구</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<button class="dropdown-item" type="button">Action</button>
-						<button class="dropdown-item" type="button">Another
-							action</button>
-						<button class="dropdown-item" type="button">Something
-							else here</button>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button"
-						id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-						베이커리</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<button class="dropdown-item" type="button">Action</button>
-						<button class="dropdown-item" type="button">Another
-							action</button>
-						<button class="dropdown-item" type="button">Something
-							else here</button>
-					</div>
-				</div>
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button"
-						id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-						회원많은순</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<button class="dropdown-item" type="button">Action</button>
-						<button class="dropdown-item" type="button">Another
-							action</button>
-						<button class="dropdown-item" type="button">Something
-							else here</button>
-					</div>
-				</div>
+				<form class="dropdown">
+					<fieldset>
+						<legend id="sectioninfo">지역정보</legend>
+						<div>
+							<select name="area">
+								<option value="all" selected>전체지역
+								<option value="seoul">서울시
+								<option value="gyeonggi">경기도
+								<option value="gyeongsang">경상도
+								<option value="jeolla">전라도
+							</select>
+						</div>
+					</fieldset>
+				</form>
+				<form class="dropdown">
+					<fieldset>
+						<legend id="sectioninfo">관심사</legend>
+						<div>
+							<select name="hobby">
+								<option value="all" selected>전체카테고리
+								<option value="sport">운동
+								<option value="outdoor">아웃도어
+								<option value="study">자기계발
+								<option value="travel">여행
+								<option value="cook">음식&요리
+								<option value="animal">애견&애묘
+								<option value="picture">사진&영상
+								<option value="help">봉사활동
+								<option value="art2">문화예술
+							</select>
+						</div>
+					</fieldset>
+				</form>
+				<form class="dropdown">
+					<fieldset>
+						<legend id="sectioninfo">회원수필터</legend>
+						<div>
+							<select name="hot">
+								<option value="all" selected>전체카테고리
+								<option value="joinmax">회원수많은순
+								<option value="datemax">개설일순
+							</select>
+						</div>
+					</fieldset>
+				</form>
 			</div>
 
 			<!-- 전체모임에서 필터선택후 나오는화면  -->
@@ -84,7 +81,7 @@
 
 				<!-- 모임필터결과 -->
 				<div class="filterresultmoim">
-				<c:forEach items="${gatheringResult}" var="gat" begin="0" end="0"><span class="result">검색결과모임 : ${gat.hobbyNo}</span></c:forEach>
+				<c:forEach items="${gatheringResult}" var="gat" begin="0" end="0"><span class="result">검색결과모임 : ${gat.hobbyNo}&nbsp;&nbsp;<button class="btn">↑지역,hobbyNo,회원수별 전체보기</button></span></c:forEach>
 					<div class="cardbox">						
 						<!-- 받아오기 -->
 						<c:forEach items="${gatheringResult}" begin="0" end="5" var="gat">
@@ -105,68 +102,22 @@
 
 				<!-- 클래스필터결과 -->
 				<div class="filterresultclass">
-				<span class="result">검색결과클래스</span>
+				<c:forEach items="${classResult}" var="clas" begin="0" end="0"><span class="result">검색결과클래스 : ${clas.hobbyNo}&nbsp;&nbsp;<button class="btn">↑지역,hobbyNo,회원수별 전체보기</button></span></c:forEach>
 					<div class="cardbox">
+						<!-- 클래스 받아오기 -->
+						<c:forEach items="${classResult}" begin="0" end="5" var="clas">
 						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
+							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
-								<h5 class="cardtitle">클래스제목</h5>
-								<p class="cardtext">클래스소개</p>
-								<p class="cardtext">
-									<small class="textmuted">개설일</small>
-								</p>
+								<h5 class="cardtitle">${clas.classTitle}</h5>
+								<p class="cardtext">${clas.classInfo}</p>
+								<p class="hidden">${clas.classNo}</p>
+								<small class="cardtext textmuted">
+									<fmt:formatDate value="${clas.classOpen}" pattern="YY/MM/dd"/>
+								</small>
 							</div>
 						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">클래스제목</h5>
-								<p class="card-text">클래스소개</p>
-								<p class="card-text">
-									<small class="text-muted">개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">클래스제목</h5>
-								<p class="card-text">클래스소개</p>
-								<p class="card-text">
-									<small class="text-muted">개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">클래스제목</h5>
-								<p class="card-text">클래스소개</p>
-								<p class="card-text">
-									<small class="text-muted">개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">클래스제목</h5>
-								<p class="card-text">클래스소개</p>
-								<p class="card-text">
-									<small class="text-muted">개설일</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img src="../image/LOGO.PNG" class="card-img-top" alt="LOGO">
-							<div class="card-body">
-								<h5 class="card-title">클래스제목</h5>
-								<p class="card-text">클래스소개</p>
-								<p class="card-text">
-									<small class="text-muted">개설일</small>
-								</p>
-							</div>
-						</div>
+						</c:forEach>
 					</div>
 				</div>
 			</section>

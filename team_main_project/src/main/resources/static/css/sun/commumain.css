@@ -32,6 +32,10 @@
 	width: 100%;
 }
 
+/* *****************카테고리선택********** */
+.dailybox, .reviewbox, .bestbox, .writebox{
+	display: none;
+}
 
 /* ***************nav***************** */
 
