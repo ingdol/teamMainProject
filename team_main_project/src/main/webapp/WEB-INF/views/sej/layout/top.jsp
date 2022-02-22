@@ -24,7 +24,8 @@
 			<div id="mainMenuBox">
 				<div id="searchBox">
 				<form id="memSearchFrm">
-					<div id="searchIcon"><button id="searchBtn" type="submit" onclick="location.href='<c:url value="/main"/>'"><img src="<c:url value='/image/sej/searchIcon.png'/>" ></button></div>
+					<div id="searchIcon"><button id="searchBtn" type="submit" <%-- onclick="location.href='<c:url value="/searchTest"/>'" --%> >
+														 <img src="<c:url value='/image/sej/searchIcon.png'/>"  id="searchBtnImg"></button></div>
 					<div id="searchInputBox"><input id="searchInput" type="text" placeholder="검색어를 입력해주세요" name="keyword"></div>
 					<!-- <input id="searchBtn" type="submit" value="검색"> -->
 				</form>
@@ -44,6 +45,7 @@
 					</ul>
 				</div>				
 			</div>  <!-- mainMenuBox 끝 -->
+			
 		</nav>
 	</body>
 </html>

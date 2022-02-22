@@ -15,10 +15,8 @@
 			<!-- TOP  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		   
+		   <div id="searchResultbox">
 			<section>
-			
-			
-				<div id="searchResultbox"></div>
 				<article id="content1"> <!-- 탭메뉴 -->
 			        <div id="hobbyMenu">
 						<ul id="hobbyMenuItem">
@@ -121,6 +119,9 @@
 				</div>
 				
 			</section>
+			</div>
+		   
+			
 			
 			<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />

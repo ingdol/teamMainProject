@@ -107,11 +107,15 @@ ul {
 	position: absolute;
 	z-index: 2;
 }
-
-#searchBtn {
+#searchBtnImg {
 	margin-top: 5px;
 	width: 30px;
 	height: 30px;
+}
+
+#searchBtn {
+	  border:none;
+	  background:none;
 }
 
 #searchInput {
