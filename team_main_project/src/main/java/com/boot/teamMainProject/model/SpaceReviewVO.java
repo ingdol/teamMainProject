@@ -3,18 +3,18 @@ package com.boot.teamMainProject.model;
 import java.util.Date;
 
 public class SpaceReviewVO {
-    private String spaceNo;
+    private int spaceNo;
     private String spaceRevNo;
     private String spaceRevTitle;
     private String memNick;
     private String spaceRevInfo;
     private Date spaceRevDate;
 
-    public String getSpaceNo() {
+    public int getSpaceNo() {
         return spaceNo;
     }
 
-    public void setSpaceNo(String spaceNo) {
+    public void setSpaceNo(int spaceNo) {
         this.spaceNo = spaceNo;
     }
 
