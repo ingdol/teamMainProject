@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.teamMainProject.dao.ICommunityDAO">
+  	<resultMap id="communityResult" type="com.boot.teamMainProject.model.CommunityVO">
+  		<result property="commuNo" column="commuNo"/>
+  		<result property="commuCtgNo" column="commuCtgNo"/>
+  		<result property="commuTitle" column="commuTitle"/>
+  		<result property="memNick" column="memNick"/>
+  		<result property="commuInfo" column="commuInfo"/>
+  		<result property="commuPhoto" column="commuPhoto"/>
+  		<result property="commuDate" column="commuDate"/>
+  		<result property="commuLike" column="commuLike"/>
+  		<result property="commuView" column="commuView"/>
+  		<result property="commuComNum" column="commuComNum"/>
+  	</resultMap>
+ 
+ 	<!-- 전체글 -->
+ 	<select id="communitylist" resultMap="communityResult">
+  		select * from community
+  	</select>
+  	
+  	<!-- 일상글 -->  	
+  	<select id="dailylist" resultMap="communityResult">
+  		select * from community where CommuCtgNo=1
+  	</select>
+  	
+  	<!-- 후기글 -->
+  	<select id="reviewlist" resultMap="communityResult">
+  		select * from community where CommuCtgNo=2
+  	</select>
+  	
+  	<!-- 베스트글 -->
+  	<select id="bestlist" resultMap="communityResult">
+  		select * from community where commuLike>5
+  	</select>
+  	 
+  </mapper>
