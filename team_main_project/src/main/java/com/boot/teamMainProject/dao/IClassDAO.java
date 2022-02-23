@@ -12,8 +12,9 @@ public interface IClassDAO {
    ArrayList<ClassVO> listAllClassNew();   // 전체 클래스 조회 - 신규
    ArrayList<ClassVO> classSearch(HashMap<String, Object> map); // 클래스 검색
    
-   
    // 서연
    ArrayList<ClassVO> listClass(String hobbyNo);
+   ArrayList<ClassVO> listall();
+   ArrayList<ClassVO> listClassdatemax(String hobbyNo);
+   ArrayList<ClassVO> listalldatemax();
 }
-

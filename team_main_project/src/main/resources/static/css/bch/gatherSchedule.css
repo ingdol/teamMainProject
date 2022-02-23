@@ -1,0 +1,38 @@
+.wrap{
+    font-family: 'NanumSquareRound';
+    width: 1260px;
+    justify-content: center;
+}
+#title {
+    width: 1260px;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 27px;
+    font-weight: bold;
+}
+#content {
+    margin-top: 30px;
+    width: 1260px;
+    margin-bottom: 30px;
+}
+
+#selectDate, #selectTime, #personMax, #scheduleAddress, #scheduleSpace {
+    height: 38px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#wrap .btn-primary {
+    background-color: #5da5f8;
+    border-color: #5da5f8;
+}
+#btnSave {
+    float: right;
+}

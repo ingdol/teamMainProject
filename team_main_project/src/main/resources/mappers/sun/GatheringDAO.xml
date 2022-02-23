@@ -24,6 +24,17 @@
   		select * from gathering WHERE gatNo=#{gatNo}
   	</select>
   	
+  	<select id="showall" resultMap="gatheringResult">
+  		select * from gathering
+  	</select>
+  	
+  	<select id="showlistdatemax" resultMap="gatheringResult">
+  		SELECT * FROM gathering WHERE hobbyNo=#{hobbyNo} order by gatOpen ASC
+  	</select>
+  	
+  	<select id="showalldatemax" resultMap="gatheringResult">
+  		select * from gathering order by gatOpen ASC
+  	</select>
   	
   	
   	

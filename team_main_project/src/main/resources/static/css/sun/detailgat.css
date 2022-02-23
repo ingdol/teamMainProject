@@ -205,10 +205,30 @@ span{
 /* 모임게시판 */
 .board_list_wrap{
 	width:80%;
-	height: 95%;
+	height: 80%;
 	border: 1px solid #c9c9c9;
-	padding: 2%;
-	display: grid;
-	align-items: center;
-	justify-content: center;
+	padding: 1%;
+	margin-left: 9%;
+	margin-bottom: 1%;
+}
+
+.num,.title,.writer,.date,.count{
+	display: inline-block;
+	margin:1%;
+}
+
+.num{
+	width:10%;
+}
+
+.title{
+	width:25%;
+}
+
+.writer,.date,.count{
+	width:10%;
+}
+
+.nav{
+	margin:1%;
 }

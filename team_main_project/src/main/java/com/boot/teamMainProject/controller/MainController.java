@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boot.teamMainProject.model.ClassVO;
 import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.model.HobbyCtgVO;
 import com.boot.teamMainProject.service.ClassService;
 import com.boot.teamMainProject.service.GatheringService;
+import com.boot.teamMainProject.service.HobbyCtgService;
 
 @Controller
 public class MainController {
@@ -24,6 +26,8 @@ public class MainController {
 	GatheringService gatherser;
 	@Autowired
 	ClassService classser;
+	@Autowired
+	HobbyCtgService ctgser;
 //---------------------------
 //---------컨트롤러코드부분----------
 
@@ -64,9 +68,11 @@ public class MainController {
 		public String showlist(@PathVariable String hobbyNo, Model model) {
 			ArrayList<GatheringVO> gatheringResult = gatherser.showlist(hobbyNo);
 			ArrayList<ClassVO> classResult = classser.listClass(hobbyNo);
+			ArrayList<HobbyCtgVO> ctg = ctgser.ctgall();
 			
 			model.addAttribute("gatheringResult",gatheringResult);
 			model.addAttribute("classResult",classResult);
+			model.addAttribute("ctg",ctg);
 			return "/sun/allmoim";
 		}
 	//---------------------------------
@@ -85,6 +91,7 @@ public class MainController {
 	public String SomoimCreate() {
 		return "/ldh/SomoimCreate";
 	}
+	
 
 	//---------------------------------
 

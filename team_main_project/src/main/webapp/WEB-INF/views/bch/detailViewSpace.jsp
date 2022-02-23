@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -12,6 +13,10 @@
             src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder">
     </script> <!-- 네이버 지도 api -->
     <script src="/js/bch/MapForDetailView.js"></script>
+
+    <!-- fullcalender -->
+    <link href='/css/bch/main.min.css' rel='stylesheet' />
+    <script src='/js/bch/main.min.js'></script>
     <script>
         $(document).ready(function(){
             $('#move_section1').on('click', function(){
@@ -29,6 +34,13 @@
             $('#move_section5').on('click', function(){
                 document.getElementById('section5').scrollIntoView({behavior: "smooth", block: "center"})
             });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
         });
     </script>
     <body>
@@ -49,6 +61,10 @@
                 </div>
             </div>
             <div class="reservation" id="reservation">
+                <span id="calendarSpan">
+                    adasdasdasdadasdas
+                    <div id='calendar'></div>
+                </span>
             </div>
             <div id="navigation" class="navigation">
                 <ul class="navigation_list">
@@ -104,6 +120,7 @@
                         <div class="revMemNick" id="revMemNick">${spaceReview.memNick}</div>
                         <p>제목</p><div class="revMemTitle" id="revMemTitle">${spaceReview.spaceRevTitle}</div>
                         <p>내용</p><div class="revInfo" id="revInfo">${spaceReview.spaceRevTitle}</div>
+                        <p id="revDate"><fmt:formatDate value="${spaceReview.spaceRevDate}" pattern="yyyy-MM-dd HH:ss"/></p>
                         <hr color="#d9d8d8" style="margin-bottom: 10px; margin-top: 10px;">
                     </c:forEach>
                 </div>

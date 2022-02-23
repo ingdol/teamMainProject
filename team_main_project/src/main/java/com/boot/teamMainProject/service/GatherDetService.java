@@ -23,9 +23,8 @@ public class GatherDetService implements IGatherDetService {
 	}
 
 	@Override
-	public GatherDetVO detailViewBoard(int gatDetNo) {
-		// TODO Auto-generated method stub
-		return dao.detailViewBoard(gatDetNo);
+	public GatherDetVO detailViewBoard(int gatNo ,int gatDetNo) {
+		return dao.detailViewBoard(gatNo, gatDetNo);
 	}
 
 	@Override
@@ -46,5 +45,7 @@ public class GatherDetService implements IGatherDetService {
 		// TODO Auto-generated method stub
 		return dao.gatcommulist(gatNo);
 	}
+
+
 
 }

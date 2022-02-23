@@ -46,18 +46,22 @@
 					<fieldset>
 						<legend id="sectioninfo">관심사</legend>
 						<div>
-							<select name="hobby">
-								<option value="all" selected>전체카테고리
-								<option value="sport">운동
-								<option value="outdoor">아웃도어
-								<option value="study">자기계발
-								<option value="travel">여행
-								<option value="cook">음식&요리
-								<option value="animal">애견&애묘
-								<option value="picture">사진&영상
-								<option value="help">봉사활동
-								<option value="art2">문화예술
+							<c:forEach items="${ctg}" begin="0" end="0" var="ct">
+							<select name="hobbyselect" id="hobbyselect">
+									<option class="option" value="--">관심사
+									<option class="option" value="all" <c:if test="${ct.hobbyNo eq '10'}">selected</c:if>>전체목록
+									<option class="option" value="1" <c:if test="${ct.hobbyNo eq '1'}">selected</c:if>>운동
+									<option class="option" value="2" <c:if test="${ct.hobbyNo eq '2'}">selected</c:if>>아웃도어
+									<option class="option" value="3" <c:if test="${ct.hobbyNo eq '3'}">selected</c:if>>자기계발
+									<option class="option" value="4" <c:if test="${ct.hobbyNo eq '4'}">selected</c:if>>여행
+									<option class="option" value="5" <c:if test="${ct.hobbyNo eq '5'}">selected</c:if>>음식&요리
+									<option class="option" value="6" <c:if test="${ct.hobbyNo eq '6'}">selected</c:if>>애견&애묘
+									<option class="option" value="7" <c:if test="${ct.hobbyNo eq '7'}">selected</c:if>>사진&영상
+									<option class="option" value="8" <c:if test="${ct.hobbyNo eq '8'}">selected</c:if>>봉사활동
+									<option class="option" value="9" <c:if test="${ct.hobbyNo eq '9'}">selected</c:if>>문화예술
 							</select>
+							</c:forEach>
+							<!--  <c:if test="${ct.hobbyNo eq '9'}">selected</c:if> -->
 						</div>
 					</fieldset>
 				</form>
@@ -65,10 +69,9 @@
 					<fieldset>
 						<legend id="sectioninfo">회원수필터</legend>
 						<div>
-							<select name="hot">
-								<option value="all" selected>전체카테고리
-								<option value="joinmax">회원수많은순
-								<option value="datemax">개설일순
+							<select name="hot" id="hot">
+								<option class="num" value="joinmax">회원수많은순
+								<option class="num" value="datemax">개설일순
 							</select>
 						</div>
 					</fieldset>
@@ -102,7 +105,7 @@
 
 				<!-- 클래스필터결과 -->
 				<div class="filterresultclass">
-				<c:forEach items="${classResult}" var="clas" begin="0" end="0"><span class="result">검색결과클래스 : ${clas.hobbyNo}&nbsp;&nbsp;<button class="btn">↑지역,hobbyNo,회원수별 전체보기</button></span></c:forEach>
+				<c:forEach items="${classResult}" var="clas" begin="0" end="0"><span class="result">검색결과클래스 : <span class="hobby">${clas.hobbyNo}</span>&nbsp;&nbsp;<button class="btn">↑지역,hobbyNo,회원수별 전체보기</button></span></c:forEach>
 					<div class="cardbox">
 						<!-- 클래스 받아오기 -->
 						<c:forEach items="${classResult}" begin="0" end="5" var="clas">
