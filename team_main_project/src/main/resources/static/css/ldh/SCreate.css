@@ -1,43 +1,41 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
 
-
-.toggle input[type=radio]{
-    display: none;
-    
-}
-.toggle input[type=radio] + label {
-    position: relative;
-	padding: 20px 10px;
-
-	background: #58AFFF;
+#wrap2{
+/* 	position: relative; */
+background: #FFFFFF;
+	text-align:center;
+/* 	position:relative; */
+	width:70%;
+/* 	height:100%; */
+	box-shadow: 0px 1px 3px;
 	border-radius: 10px;
-	color:white;
-}
-.toggle input[type=radio]:checked + label {
-    position: relative;
-
-	background: #2C73FF;
-	border-radius: 10px;
-	color:white;
-	border: 1px solid rgba(0, 0, 0, 0.15);
-	box-sizing: border-box;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+/* 	padding:50px; */
 }
 
-.toggle2 input[type=checkbox]{
+
+.toggle2 input[type=radio]{
     display: none;
     position: relative;
+ 
 }
-.toggle2 input[type=checkbox] + label {
+
+.toggle2 input[type=radio] + label {
 	filter: brightness(70%);
     opacity:0.5; 
     position: relative;
 }
-.toggle2 input[type=checkbox]:checked + label {
-    filter: brightness(100%);
+.toggle2 input[type=radio] + label:hover{
+	filter: brightness(100%);
     opacity:1; 
     position: relative;   
+}
+.toggle2 input[type=radio]:checked + label {
+    filter: brightness(100%);
+    opacity:1; 
+
+    position: relative; 
 }
 
 .toggle2-text{
@@ -47,11 +45,54 @@
 	top:80%;
 }
 
-.s-title{
+.subbox2{
+position:relative;
 
-background: #FFFFFF;
-border: 1px solid rgba(0, 133, 255, 0.25);
+	
+width: 100%;
+height: 100px;
+text-align: center;
+
+background: #66A3FF;
+border: 3px solid #66A3FF;
 box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.25);
 border-radius: 10px;
+font-size:300%;
+font-family: 'Dongle', sans-serif;;
+
+color: white;
+}
+
+.subbox2:hover{
+	background: #0038FF;
+	border: 3px solid #0038FF;
+	border-radius: 10px;
+}
+
+
+select::-ms-expand{
+	display:none;
+}
+
+select{
+/* 	-o-appearance: none; */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+	width: 200px;
+	height: 40px;
+	padding: 5px 30px 5px 10px;
+	background: url('/image/ldh/select.png') no-repeat 95% 50%;
+	background-size: 20px;
+	border-radius:10px;
+	border: 1px solid rgba(0, 133, 255, 0.25);
+	box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.25);
+}
+
+select option{
+	size:5px;
+	background: white;
+	color: black;
+	padding: 3px 0;
 }
