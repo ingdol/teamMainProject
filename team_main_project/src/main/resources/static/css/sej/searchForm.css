@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/*********** Best Item *************/
+#searchItem {
+	clear:both;
+	width:1260px;
+	height:100%;
+	margin-top:50px;
+	margin-left:25px;
+	margin-bottom:100px;
+}
+
+#itemSTop {
+	width:1260px;
+	height:70px;
+	position: relative;
+}
+
+#searchName {
+	float:left;
+	font-size:30px;
+	font-weight:bold;
+}
+
+#searchMenu ul{ margin:0; padding-left:20px;}
+
+#searchMenu li {
+	float:left;
+	width:33%;
+	height:100%;
+	line-height:30px;
+	text-align:left;
+	margin-bottom:50px;
+}
+
+#searchMenu ul li a {
+	text-decoration:none;
+	color:black;
+}
+
+#searchMenu img {
+	width: 360px;
+	height: 240px;
+	border-radius: 10px;
+}
+
+#searchCtg {
+	font-size:18px; 
+}
+
+#searchName {
+	font-size:26px; 
+	width:394px;
+	padding-bottom:10px;
+	float:left;
+}
+
+#searchBr {
+	content: "";
+	display:block;
+	margin-bottom:10px;
+}
+
+#searchNone {
+	font-size:20px;
+	height:100px; 
+}

@@ -54,9 +54,11 @@ public class SearchController {
 	public String gatherSearch(@RequestParam HashMap<String, Object> param, 
 																				Model model){
 		ArrayList<GatheringVO> gatSearchList = Gatherservice.gatherSearch(param);
+		ArrayList<ClassVO> classSearchList = service.classSearch(param);
 		model.addAttribute("gatSearchList", gatSearchList);			
+		model.addAttribute("classSearchList", classSearchList);			
 
-		return "sej/memSearchFormResult"; // 뷰 페이지 반환
+		return "sej/searchFormResult"; // 뷰 페이지 반환
 	}
 	
 	

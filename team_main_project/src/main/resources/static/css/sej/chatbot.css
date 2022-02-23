@@ -35,16 +35,20 @@
 #chatInputBox {
 	text-align:center;
 	height: 80px; 
-	width: 720px; 
+	width: 690px; 
 	padding-top:10px;
 	background:#FFFFFF;
+	padding-right:25px;
 }
 
 #message {
 	height: 70px; 
-	width: 550px; 
+	width: 430px; 
 	border:0 solid white;
 	font-size:16px;
+	float:left;
+	padding-left:40px;
+	position: relative;
 }
 
 #btnSubmit {
@@ -55,6 +59,8 @@
 	border-radius: 10px;
 	border:0 solid white;
 	font-size:16px;
+	position: absolute;
+	margin-top:5px;
 }
 
 							 
@@ -98,4 +104,36 @@
 	height:50%;
 	margin-top:50px;
 	margin-bottom:50px;
+}
+
+#record {
+    border:none;
+    background:none;
+}
+#recordBox {
+	height: 70px; 
+	width: 100px; 
+	margin-left:470px;
+	position: relative;
+	
+}
+#stop {
+    border:none;
+    background:none;
+}
+
+#recordText {
+	position: absolute;
+}
+
+#recordImg {
+	width: 40px;
+	height: 40px;
+	margin-top:20px;
+}
+
+#stopImg {
+	width: 40px;
+	height: 40px;
+	padding-bottom:2px;
 }

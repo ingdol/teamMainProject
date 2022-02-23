@@ -30,14 +30,14 @@
           
                 record.onclick = () => {
                     mediaRecorder.start();
-                    record.style.background = "red";
-                    record.style.color = "black";
+                    /*record.style.background = "red";
+                    record.style.color = "black";*/
                 }
 
                 stop.onclick = () => {//정지 버튼 클릭 시
                     mediaRecorder.stop();//녹음 정지                       
-                    record.style.background = "";
-                    record.style.color = "";
+                    /*record.style.background = "";
+                    record.style.color = "";*/
                 }
                 
                 mediaRecorder.onstop = e => {                        
@@ -160,17 +160,11 @@
 						callAjaxTTS(bubbles[b].data.description);										   
 					}	else if(bubbles[b].type == 'template'){//이미지 답변 또는 멀티링크 답변 시작
 						if(bubbles[b].data.cover.type=="image"){//이미지 이면
+							$("#chatBox").append("<div class='msgBox receive'><span id='in'><span id='msgOwner'>개설자</span><br><span id='msgOwnBox'>" + bubbles[b].data.cover.data.description+ "</span></span></div><br><br>");	
+								// 챗봇으로 부터 받은 텍스트 답변을 음성으로 변환하기 위해 TTS 호출
 							$("#chatBox").append("<img src='" + bubbles[b].data.cover.data.imageUrl +
 																		 "' alt='이미지 없음' id='chatImage'>");
-							if(bubbles[b].data.contentTable == null){
-								$("#chatBox").append
-								("<a href='"+bubbles[b].data.cover.data.action.data.url+"' target='_blank'>" + 
-										bubbles[b].data.cover.data.action.data.url+ "</a><br><br>");							
-							
-								$("#chatBox").append("<div class='msgBox receive'><span id='in'><span id='msgOwner'>개설자</span><br><span id='msgOwnBox'>" + bubbles[b].data.cover.data.description+ "</span></span></div><br><br>");	
-								// 챗봇으로 부터 받은 텍스트 답변을 음성으로 변환하기 위해 TTS 호출									   
-								callAjaxTTS(bubbles[b].data.cover.data.description);										
-							}
+								callAjaxTTS(bubbles[b].data.cover.data.description);					
 						} 	else if(bubbles[b].data.cover.type=="text"){//멀티링크 답변이면
 							$("#chatBox").append("<div class='msgBox receive'><span id='in'><span id='msgOwner'>개설자</span><br><span id='msgOwnBox'>" + bubbles[b].data.cover.data.description+ "</span></span></div><br><br>");
 							// 챗봇으로 부터 받은 텍스트 답변을 음성으로 변환하기 위해 TTS 호출									   
@@ -201,7 +195,7 @@
 	
 	
 	function callAjaxTTS(result){
-		//console.log(result);
+		console.log(result);
 		$.ajax({
             type:"post",            
             url:"chatbotTTS",

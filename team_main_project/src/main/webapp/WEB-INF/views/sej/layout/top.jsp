@@ -17,7 +17,7 @@
 	<body>
 		<header>
 			<div id="headerBox">
-				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/image/sej/logo.jpg'/>" id="logoImg"></a></div>
+				<div id="logoBox"><a href="<c:url value='/main2'/>"><img src="<c:url value='/image/sej/logo.jpg'/>" id="logoImg"></a></div>
 			</div>
 		</header>
 		<nav>

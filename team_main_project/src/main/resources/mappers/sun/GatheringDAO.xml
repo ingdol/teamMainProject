@@ -13,6 +13,7 @@
   		<result property="gatArea" column="gatArea"/>
   		<result property="gatOpen" column="gatOpen"/>
   		<result property="gatHate" column="gatHate"/>
+  		<result property="gatPhoto" column="gatPhoto"/>
   	</resultMap>
   	
   	<select id="showlist" resultMap="gatheringResult">
@@ -49,9 +50,9 @@
  		SELECT * FROM gathering ORDER BY gatOpen DESC
  	</select>
  	
- 	<!-- 회원 검색  -->
+ 	<!-- 모임 검색  -->
 	<select id="gatherSearch" resultMap="gatheringResult" parameterType="hashmap">
-		SELECT * FROM gathering WHERE gatName LIKE CONCAT('%', #{keyword}, '%')
+		SELECT * FROM gathering WHERE (gatName LIKE CONCAT('%', #{keyword}, '%')) OR (gatArea LIKE CONCAT('%', #{keyword}, '%'))
 	</select>
   	
   </mapper>

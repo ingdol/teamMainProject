@@ -1,18 +1,25 @@
 package com.boot.teamMainProject.service;
 
-import java.util.ArrayList;
+  	<select id="listClass" resultMap="classResult">
+  		select * from class WHERE hobbyNo=#{hobbyNo}
+  	</select>
+  	
+  	<!-- sej -->
+  	<!-- 전체 클래스 조회 : Best -->
+ 	<select id="listAllClassBest" resultMap="classResult">
+ 		SELECT * FROM class ORDER BY classHate
+ 	</select>
+ 	
+ 	<!-- 전체 클래스 조회 : 신규 -->
+ 	<select id="listAllClassNew" resultMap="classResult">
+ 		SELECT * FROM class ORDER BY classOpen DESC
+ 	</select>
+ 	
+ 	<!-- 클래스 검색  -->
+	<select id="classSearch" resultMap="classResult" parameterType="hashmap">
+		SELECT * FROM class WHERE (classTitle LIKE CONCAT('%', #{keyword}, '%')) OR (classArea LIKE CONCAT('%', #{keyword}, '%'))
+	</select>
+  	
+  	
+  </mapper>
 
-import com.boot.teamMainProject.model.ClassVO;
-
-public interface IClassService {
-
-   ArrayList<ClassVO> listAllClassBest();   // 전체 클래스 조회 - 베스트
-   ArrayList<ClassVO> listAllClassNew();   // 전체 클래스 조회 - 신규
-   
-   
-   // 서연
-   ArrayList<ClassVO> listClass(String hobbyNo);
-   ArrayList<ClassVO> listall();
-   ArrayList<ClassVO> listClassdatemax(String hobbyNo);
-   ArrayList<ClassVO> listalldatemax();
-}

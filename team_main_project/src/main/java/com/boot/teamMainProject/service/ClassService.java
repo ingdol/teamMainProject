@@ -1,6 +1,7 @@
 package com.boot.teamMainProject.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,6 +26,12 @@ public class ClassService implements IClassService {
    public ArrayList<ClassVO> listAllClassNew() {
       return dao.listAllClassNew();
    }
+   
+// 모임 검색
+	@Override
+	public ArrayList<ClassVO> classSearch(HashMap<String, Object> map){
+		return dao.classSearch(map);
+	}
 
 
    
@@ -48,3 +55,4 @@ public class ClassService implements IClassService {
    
 
 }
+
