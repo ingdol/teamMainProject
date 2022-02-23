@@ -16,6 +16,7 @@
 		<result property="gatDetLike" column="gatDetLike" />	
 		<result property="gatDetView" column="gatDetView" />	
 		<result property="gatDetComNum" column="gatDetComNum" />	
+		<result property="gatDetCategory" column="gatDetCategory" />
 	</resultMap>
 	
    <select id="detailViewBoard" parameterType="int"
@@ -28,8 +29,8 @@
 <!--   		SELECT * FROM gather_det WHERE memNick=#{memNick} -->
 <!--    </select> -->
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetLike, gatDetView, gatDetComNum) 
-			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0,0)
+			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
+			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0,0,${gatDetCategory})
 	</insert>
 	
 	<resultMap id="MeemResult" type="com.boot.teamMainProject.model.MemberVO">
@@ -40,6 +41,11 @@
    				resultType="com.boot.teamMainProject.model.MemberVO">
   		SELECT * FROM member WHERE memNick=#{memNick}
    </select>
+   
+<!--    <select id="MoveinsertGather2" parameterType="String" -->
+<!--    				resultType="com.boot.teamMainProject.model.MemberVO"> -->
+<!--   		SELECT * FROM member WHERE memNick=#{memNick} -->
+<!--    </select> -->
    
    <!-- 서연 - 소모임게시판 전체화면 -->
    
