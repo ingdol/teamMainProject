@@ -47,7 +47,7 @@ public class GatheringService implements IGatheringService {
 		return dao.listAllGatherNew();
 	}
 	
-
+	// 모임 검색
 	@Override
 	public ArrayList<GatheringVO> gatherSearch(HashMap<String, Object> map){
 		return dao.gatherSearch(map);

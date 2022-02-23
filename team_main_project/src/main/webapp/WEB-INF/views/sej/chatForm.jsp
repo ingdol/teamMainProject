@@ -33,17 +33,18 @@
 				<!-- 질문 메시지 입력 폼 -->
 				<form id="chatForm">
 					<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
+					
 					<input type="submit" id="btnSubmit" value="전송" >		
-				</form>		
+				</form>	
+				<div id="recordBox">
+						<!-- 음성 녹음 -->
+							<button id="record"><img src="<c:url value='/image/sej/Microphone.png'/>" id="recordImg"></button> 
+							<button id="stop"><img src="<c:url value='/image/sej/Block Microphone.png'/>" id="stopImg"></button>
+							<div id="sound-clips"></div>
+				</div>	
 			</div><br>
 		</div>
-			<div>
-			<!-- 음성 녹음 -->
-			음성 메시지 : <button id="record">녹음</button> 
-							<button id="stop">정지</button>
-							<div id="sound-clips"></div><br>
 			
-			</div>
 			
 			<div>
 				<audio preload="auto" controls></audio>
