@@ -12,6 +12,7 @@ public interface IClassService {
    
    // 서연
    ArrayList<ClassVO> listClass(String hobbyNo);
-   
+   ArrayList<ClassVO> listall();
+   ArrayList<ClassVO> listClassdatemax(String hobbyNo);
+   ArrayList<ClassVO> listalldatemax();
 }
-

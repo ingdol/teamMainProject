@@ -43,3 +43,27 @@
 	width:30%;
 	margin-top: 2%;
 }
+
+
+/* ************글페이지부분**************** */
+
+.allbox,.dailybox,.reviewbox,.bestbox{
+	width:80%;
+}
+
+.num,.title,.writer,.date,.count{
+	display: inline-block;
+	margin:1%;
+}
+
+.num{
+	width:10%;
+}
+
+.title{
+	width:25%;
+}
+
+.writer,.date,.count{
+	width:10%;
+}

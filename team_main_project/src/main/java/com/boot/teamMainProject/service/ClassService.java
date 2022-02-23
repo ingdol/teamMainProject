@@ -33,7 +33,18 @@ public class ClassService implements IClassService {
    public ArrayList<ClassVO> listClass(String hobbyNo) {
 	   return dao.listClass(hobbyNo);
    }
+
+	public ArrayList<ClassVO> listall() {
+		return dao.listall();
+	}
+
+	public ArrayList<ClassVO> listClassdatemax(String hobbyNo) {
+		return dao.listClassdatemax(hobbyNo);
+	}
+
+	public ArrayList<ClassVO> listalldatemax() {
+		return dao.listalldatemax();
+	}
    
 
 }
-

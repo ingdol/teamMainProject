@@ -3,8 +3,27 @@
  */
  
 $(function(){
+	/* select별로 모임,클래스나타내기 */
+	$('#hobbyselect').on('change',function(){
+		const selectedValue = document.getElementById('hobbyselect').value;
+		console.log(selectedValue);
+		if($('#hobbyselect option:selected').val()!='10' && $('#hobbyselect option:selected').val()!='--')
+			window.location.href='/sun/allmoim/'+selectedValue;
+		else if($('#hobbyselect option:selected').val()=='10'){
+			window.location.href='/sun/allmoim/all';			
+		}
+	});
 	
-	$('.btn').on('click',function(e){
+	/* 개설일순 */
+	$('#hot').on('change',function(){
+		console.log($('#hot option:selected').val());
+	/*if($('#hot option:selected').val()=='datemax'){
+		location.href='/sun/allmoim/'+$('#hobbyselect option:selected').val()+'/datemax';
+	}*/
+	});
+
+	
+	$('.btn').on('click',function(){
 		window.location.href='/sun/allmoimdetail';
 	});
 	

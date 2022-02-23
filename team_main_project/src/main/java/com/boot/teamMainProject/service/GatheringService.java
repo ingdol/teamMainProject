@@ -27,14 +27,8 @@ public class GatheringService implements IGatheringService {
 		return dao.detailgat(gatNo);
 	}
 
-	
-	
-	
 
-	
-	
-	
-	
+
 	//sej
 	// 전체 모임 조회 - 베스트
 	@Override
@@ -60,5 +54,19 @@ public class GatheringService implements IGatheringService {
 		dao.insertGathering(gath);
 	}
 	
+
+  //서연
+  	public ArrayList<GatheringVO> showall() {
+		return dao.showall();
+	}
+
+	public ArrayList<GatheringVO> showlistdatemax(String hobbyNo) {
+		return dao.showlistdatemax(hobbyNo);
+	}
+
+	public ArrayList<GatheringVO> showalldatemax() {
+		return dao.showalldatemax();
+	}
+
 
 }

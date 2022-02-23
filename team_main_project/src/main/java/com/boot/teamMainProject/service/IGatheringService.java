@@ -10,10 +10,6 @@ public interface IGatheringService {
 	ArrayList<GatheringVO> showlist(String hobbyNo);
 	ArrayList<GatheringVO> detailgat(int gatNo);
 
-	
-	
-	
-	
 
 	//sej
 	ArrayList<GatheringVO> listAllGatherBest();   // 전체 모임 조회
@@ -22,5 +18,10 @@ public interface IGatheringService {
 
 	//ldh
 	void insertGathering(GatheringVO gath);
+
+	//sun
+	ArrayList<GatheringVO> showall();
+	ArrayList<GatheringVO> showlistdatemax(String hobbyNo);
+	ArrayList<GatheringVO> showalldatemax();
 
 }
