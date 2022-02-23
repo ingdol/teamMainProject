@@ -26,4 +26,16 @@ public class GatheringService implements IGatheringService {
 		return dao.detailgat(gatNo);
 	}
 
+	public ArrayList<GatheringVO> showall() {
+		return dao.showall();
+	}
+
+	public ArrayList<GatheringVO> showlistdatemax(String hobbyNo) {
+		return dao.showlistdatemax(hobbyNo);
+	}
+
+	public ArrayList<GatheringVO> showalldatemax() {
+		return dao.showalldatemax();
+	}
+
 }

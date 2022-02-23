@@ -96,6 +96,7 @@
 									</div>
 								</c:forEach>
 							</div>
+						</div>
 							<nav aria-label="Page navigation example">
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#"
@@ -111,8 +112,7 @@
 							</nav>
 							<div class="bt_wrap">
 								<a href="<c:url value='/write'/>" class="on">등록</a>
-							</div>
-						</div>
+							</div>						
 					</div>
 
 					<!-- 모임사진첩 클릭시 -->

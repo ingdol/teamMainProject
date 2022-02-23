@@ -20,4 +20,15 @@
   		select * from class WHERE hobbyNo=#{hobbyNo}
   	</select>
   	
+  	<select id="listall" resultMap="classResult">
+  		select * from class
+  	</select>
+  	
+  	<select id="listClassdatemax" resultMap="classResult">
+  		select * from class WHERE hobbyNo=#{hobbyNo} order by classOpen ASC
+  	</select>
+  	
+  	<select id="listalldatemax" resultMap="classResult">
+  		select * from class order by classOpen ASC
+  	</select>
   </mapper>
