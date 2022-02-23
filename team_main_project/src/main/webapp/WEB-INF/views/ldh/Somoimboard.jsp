@@ -19,12 +19,23 @@
 			<section>
 		<div class ="wrap">
 		
-		
-		   
+		   	<c:if test="${gat.gatDetCategory == 0}">
 			<table border = "0" align="center" >
 			<tr><td colspan="4"><img src="<c:url value='/image/ldh/ex${gat.gatNo}.png'/> "></td></tr>
-			<tr><td colspan="4" class="boardtitle" align="left">${gat.gatDetTitle}<br></td></tr>
+			<tr><td colspan="4" class="boardtitle" align="left">
+
+			<span style="color:blue">[일상]</span> ${gat.gatDetTitle}<br></td></tr>
 			</table>
+			</c:if>
+			
+			<c:if test="${gat.gatDetCategory == 1}">
+			<table border = "0" align="center" >
+			<tr><td colspan="4"><img src="<c:url value='/image/ldh/ex${gat.gatNo}.png'/> "></td></tr>
+			<tr><td colspan="4" class="boardtitle2" align="left">
+
+			<span style="color:red">[리뷰]</span> ${gat.gatDetTitle}<br></td></tr>
+			</table>
+			</c:if>
 			<br>
 			<table border = "0" align="center" class="detail1">
 			<tr><td align="left" colspan="2"><h3>${gat.memNick}</h3><br>

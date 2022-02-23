@@ -21,7 +21,8 @@
 		<br>
 		ldh 링크수정<br>
 		<a href="<c:url value='/ldh/SomoimboardWrite/코딩이'/>">글쓰기 링크</a>
-		<a href="<c:url value='/ldh/Somoimboard/1'/>">글 조회</a>
+		<a href="<c:url value='/ldh/Somoimboard/1/1'/>">글 조회</a>
 		<a href="<c:url value='/ldh/SomoimCreate'/>">소모임 만들기 링크</a>
+	
 	</body>
 </html>

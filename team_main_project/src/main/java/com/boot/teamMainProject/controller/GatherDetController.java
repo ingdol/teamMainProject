@@ -41,6 +41,7 @@ public class GatherDetController {
 
 		return "/ldh/SomoimboardWrite";
 	}
+
 	
 
 	@RequestMapping("/sboard")
@@ -53,10 +54,10 @@ public class GatherDetController {
 	
 	
 	
-	@RequestMapping("/ldh/Somoimboard/{gatDetNo}")
-	public String detailViewBoard(@PathVariable int gatDetNo, Model model) throws Exception {
-		System.out.println(gatDetNo); 
-		GatherDetVO gat = service.detailViewBoard(gatDetNo);
+	@RequestMapping("/ldh/Somoimboard/{gatNo}/{gatDetNo}")
+	public String detailViewBoard(@PathVariable int gatNo, @PathVariable int gatDetNo, Model model) throws Exception {
+		System.out.println(gatNo + " " + gatDetNo); 
+		GatherDetVO gat = service.detailViewBoard(gatNo, gatDetNo);
 		model.addAttribute("gat", gat);
 		
 		List<GatherDetComVO> comList = service2.readComment(gatDetNo);

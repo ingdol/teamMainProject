@@ -13,6 +13,7 @@ public class GatherDetVO {
 	private int gatDetLike;
 	private int gatDetView;
 	private int gatDetComNum;
+	private int gatDetCategory;
 	
 	public int getGatNo() {
 		return gatNo;
@@ -73,5 +74,11 @@ public class GatherDetVO {
 	}
 	public void setGatDetComNum(int gatDetComNum) {
 		this.gatDetComNum = gatDetComNum;
+	}
+	public int getGatDetCategory() {
+		return gatDetCategory;
+	}
+	public void setGatDetCategory(int gatDetCategory) {
+		this.gatDetCategory = gatDetCategory;
 	}
 }

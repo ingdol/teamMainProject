@@ -25,17 +25,10 @@
 			<form id="SCreateForm" name="SCreateForm" method="post"  action="/screate">
 
 			<h3>호스트 이름(테스트)</h3><br>
-			<input type="text" id="memNick" name="memNick" >
-<!-- 			
-<h3>온/오프라인 여부를 선택해주세요.</h3><br><br> -->
-<!-- 			<div class="toggle"> -->
-<!-- 				<input type="radio" id="toggle-1" name="onoffline" value=0> -->
-<!--     			<label for="toggle-1" >&nbsp;&nbsp;온라인&nbsp;&nbsp;</label> -->
-<!--   		  		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -->
-<!--   		  		<input type="radio" id="toggle-2" name="onoffline" value=1> -->
-<!--   			  	<label for="toggle-2">&nbsp;오프라인&nbsp;</label> -->
-<!-- 			</div> -->
-<!-- 			<br><br><br> -->
+			<input type="text" id="memNick" name="memNick" ><br>
+
+<br><h3>소모임을 열 지역을 선택해주세요.</h3><br>
+			<div class="select">
 			 <select name="gatArea1" id="gatArea1" onchange="categoryChange(this)">
               	<option value="">시/도 선택</option>
              	 <option value="강원">강원</option>
@@ -58,9 +51,9 @@
 			<select name="gatArea2" id="state">
               <option>군/구 선택</option>
             </select>
-			
+			</div>
 <!-- 			<input type="hidden" id="gatArea" name="gatArea" oninput="_onSubmit()"> -->
-			
+			<br><br>
 			<h3>소모임의 카테고리를 선택해주세요.</h3><br>
 			<div class="toggle2">
 
