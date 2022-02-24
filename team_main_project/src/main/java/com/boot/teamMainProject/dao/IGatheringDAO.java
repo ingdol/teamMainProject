@@ -11,7 +11,7 @@ public interface IGatheringDAO {
 	ArrayList<GatheringVO> showall();
 	ArrayList<GatheringVO> showlistdatemax(String hobbyNo);
 	ArrayList<GatheringVO> showalldatemax();
-	
+	ArrayList<GatheringVO> hateasc();	
 	
 
 	//sej
@@ -23,4 +23,5 @@ public interface IGatheringDAO {
 	
 	//ldh
 	void insertGathering(GatheringVO gath);
+	GatheringVO detailViewSomoim(int gatNo);
 }

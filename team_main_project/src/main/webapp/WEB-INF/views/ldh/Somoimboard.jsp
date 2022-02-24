@@ -21,7 +21,12 @@
 		
 		   	<c:if test="${gat.gatDetCategory == 0}">
 			<table border = "0" align="center" >
-			<tr><td colspan="4"><img src="<c:url value='/image/ldh/ex${gat.gatNo}.png'/> "></td></tr>
+			<c:if test="${gath.gatBanPhoto!=''}">
+			<tr><td colspan="4"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></td></tr>
+			</c:if>
+			<c:if test="${gath.gatBanPhoto==''}">
+			<tr><td colspan="4"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></td></tr>
+			</c:if>
 			<tr><td colspan="4" class="boardtitle" align="left">
 
 			<span style="color:blue">[일상]</span> ${gat.gatDetTitle}<br></td></tr>
@@ -30,7 +35,12 @@
 			
 			<c:if test="${gat.gatDetCategory == 1}">
 			<table border = "0" align="center" >
-			<tr><td colspan="4"><img src="<c:url value='/image/ldh/ex${gat.gatNo}.png'/> "></td></tr>
+			<c:if test="${gath.gatBanPhoto!=''}">
+			<tr><td colspan="4"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></td></tr>
+			</c:if>
+			<c:if test="${gath.gatBanPhoto==''}">
+			<tr><td colspan="4"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></td></tr>
+			</c:if>
 			<tr><td colspan="4" class="boardtitle2" align="left">
 
 			<span style="color:red">[리뷰]</span> ${gat.gatDetTitle}<br></td></tr>
@@ -48,6 +58,10 @@
 			<br>
 			<table border = "0" align="center" >
 			<tr><td colspan="4"  class="boardDetail" align="left">
+			
+			<c:if test="${gat.gatDetPhoto != ''}">
+			<img src="<c:url value='/images/${gat.gatDetPhoto}'/>" ><br>
+			</c:if>
 			${gat.gatDetInfo }
 			</td></tr>
 

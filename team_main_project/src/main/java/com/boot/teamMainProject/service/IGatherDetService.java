@@ -1,5 +1,6 @@
 package com.boot.teamMainProject.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.boot.teamMainProject.model.GatherDetVO;
@@ -8,7 +9,7 @@ import com.boot.teamMainProject.model.MemberVO;
 public interface IGatherDetService {
 	String gatdetLoad(int gatDetNo);
 	GatherDetVO detailViewBoard(int gatNo ,int gatDetNo);
-	void insertGatherDet(GatherDetVO gat);
+	void insertGatherDet(GatherDetVO gat)  throws IOException;
 	MemberVO MoveinsertGather(String memNick);
 
 	

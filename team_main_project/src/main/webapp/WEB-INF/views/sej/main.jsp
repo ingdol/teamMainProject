@@ -75,6 +75,7 @@
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
+
 							<c:forEach items="${classListBest}" var="classVo" begin="0" end="2"><li>	
 									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">클래스</p>

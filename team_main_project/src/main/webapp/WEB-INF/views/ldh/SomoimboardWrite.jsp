@@ -9,7 +9,7 @@
 		<title>글 등록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
-		  <script src="<c:url value='/js/ldh/Sajax.js'/>"></script>
+<%-- 		  <script src="<c:url value='/js/ldh/Sajax.js'/>"></script> --%>
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 	</head>
 	<body>
@@ -20,7 +20,7 @@
 			<section>
 		<div class="wrap">
 				<h3 align="center">카테고리</h3><br>
-			<form id="SBoardForm" name="SBoardForm" method="post"  action="/sboard">
+			<form id="SBoardForm" name="SBoardForm" method="post"  action="/sboard" enctype="multipart/form-data">
 				
 				<table border="0" align='center'>
 				<tr height="60px"><td align='right'>
@@ -43,6 +43,13 @@
 				rows="15" cols="141" style="padding-left: 10px; padding-top: 10px;" placeholder="내용을 입력해주세요" onfocus="this.placeholder=''" 
 				onblur="this.placeholder='내용을 입력해주세요'" ></textarea>
 				</td></tr>
+				<tr><td colspan="3" align="left" class="filebox">
+
+			<input class="upload-name" value="첨부파일">
+			<label for="file">사진 찾기</label>
+			<input type="file" id="file" name="uploadFile">
+			
+		</td></tr>
 				<tr><td colspan="3" align="right">
 				<input type="submit" value="등록" class="subbox"></td></tr>
 				</table>

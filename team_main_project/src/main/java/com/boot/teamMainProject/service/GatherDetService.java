@@ -1,5 +1,6 @@
 package com.boot.teamMainProject.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class GatherDetService implements IGatherDetService {
 	}
 
 	@Override
-	public void insertGatherDet(GatherDetVO gat) {
+	public void insertGatherDet(GatherDetVO gat) throws IOException {
 		// TODO Auto-generated method stub
 		dao.insertGatherDet(gat);
 	}

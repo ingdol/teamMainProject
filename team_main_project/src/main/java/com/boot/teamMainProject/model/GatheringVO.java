@@ -13,6 +13,7 @@ public class GatheringVO {
 	private Date gatOpen;
 	private int gatHate;
 	private String gatPhoto;
+	private String gatBanPhoto;
 	
 	public int getGatNo() {
 		return gatNo;
@@ -67,6 +68,12 @@ public class GatheringVO {
 	}
 	public void setGatPhoto(String gatPhoto) {
 		this.gatPhoto = gatPhoto;
+	}
+	public String getGatBanPhoto() {
+		return gatBanPhoto;
+	}
+	public void setGatBanPhoto(String gatBanPhoto) {
+		this.gatBanPhoto = gatBanPhoto;
 	}
 
 }
