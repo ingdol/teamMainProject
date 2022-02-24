@@ -23,4 +23,5 @@ public interface IGatheringDAO {
 	
 	//ldh
 	void insertGathering(GatheringVO gath);
+	GatheringVO detailViewSomoim(int gatNo);
 }

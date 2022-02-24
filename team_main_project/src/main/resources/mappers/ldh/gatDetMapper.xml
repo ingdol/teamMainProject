@@ -29,8 +29,8 @@
 <!--   		SELECT * FROM gather_det WHERE memNick=#{memNick} -->
 <!--    </select> -->
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
-			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}',CURRENT_TIMESTAMP,0,0,0,${gatDetCategory})
+			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo,gatDetPhoto, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
+			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}','${gatDetPhoto}',CURRENT_TIMESTAMP,0,0,0,${gatDetCategory})
 	</insert>
 	
 	<resultMap id="MeemResult" type="com.boot.teamMainProject.model.MemberVO">
