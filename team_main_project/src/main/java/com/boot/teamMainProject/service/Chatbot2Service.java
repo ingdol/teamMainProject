@@ -16,7 +16,7 @@ public class Chatbot2Service implements IChatbotService {
     IChatbotDAO dao;
 	
 	@Override
-	public ArrayList<ChatbotVO> listAllChatbot() {
+	public ArrayList<ChatbotVO> listAllChatbot(String apiURL, String secretKey)  {
 		// TODO Auto-generated method stub
 		return null;
 	}

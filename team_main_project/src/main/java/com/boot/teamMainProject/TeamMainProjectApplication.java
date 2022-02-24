@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.boot.teamMainProject.dao.GatherDetComDAO;
+import com.boot.teamMainProject.dao.IChatbotDAO;
 import com.boot.teamMainProject.dao.IClassDAO;
 import com.boot.teamMainProject.dao.IGatherDetDAO;
 import com.boot.teamMainProject.dao.IGatheringDAO;
@@ -20,6 +21,7 @@ import com.boot.teamMainProject.dao.ISpaceDAO;
 @MapperScan(basePackageClasses=GatherDetComDAO.class)
 @MapperScan(basePackageClasses=IGatherDetDAO.class)
 @MapperScan(basePackageClasses=IClassDAO.class)
+@MapperScan(basePackageClasses=IChatbotDAO.class)
 public class TeamMainProjectApplication {
 
 	public static void main(String[] args) {

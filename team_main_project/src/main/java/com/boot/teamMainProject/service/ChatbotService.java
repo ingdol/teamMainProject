@@ -5,7 +5,6 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 
@@ -14,30 +13,17 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.boot.teamMainProject.dao.IChatbotDAO;
-import com.boot.teamMainProject.model.ChatbotVO;
-
 @Service
-public class ChatbotService implements IChatbotService {
-	@Autowired
-    @Qualifier("IChatbotDAO")
-    IChatbotDAO dao;
+public class ChatbotService {
 	
-	@Override
-	public ArrayList<ChatbotVO> listAllChatbot() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	public String main(String voiceMessage) {
 	//public static String main(String voiceMessage) {	
-		
-		String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6552/cf8a5d638c866e9109e32be396f147feea8ace157e9807604010f18b49ae6ec1";
-		String secretKey = "cU9rWGVCWWdBYXdzb3h1cEZvb0dRS3lxT1B3WHh3RGE=";		
+
+		String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6628/b91f6abe4434c2b7219b82f19d0782237ad211a39c7af1e35b027170de1d099b";
+		String secretKey = "d1d4UXVRcldLQ2VsbmpiTWRXWVFhdnBTQlVGT2NwV3M=";		
 		
         String chatbotMessage = ""; // 응답 메시지        
 
@@ -97,9 +83,9 @@ public class ChatbotService implements IChatbotService {
 	public String imgLinkMainService(String voiceMessage) {
 		//public static String main(String voiceMessage) {	
 
-			String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6552/cf8a5d638c866e9109e32be396f147feea8ace157e9807604010f18b49ae6ec1";
-			String secretKey = "cU9rWGVCWWdBYXdzb3h1cEZvb0dRS3lxT1B3WHh3RGE=";		
-			
+			String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6628/b91f6abe4434c2b7219b82f19d0782237ad211a39c7af1e35b027170de1d099b";
+			String secretKey = "d1d4UXVRcldLQ2VsbmpiTWRXWVFhdnBTQlVGT2NwV3M=";		
+
 	        String chatbotMessage = ""; // 응답 메시지        
 
 	        try {
