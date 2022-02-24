@@ -5,8 +5,14 @@
   
 <mapper namespace="com.boot.teamMainProject.dao.IMemDAO">
 	<resultMap type="com.boot.teamMainProject.model.MemberVO" id="MemberResult">
+		<result property="memName" column="memName" />
 		<result property="memId" column="memId" />
 		<result property="memPw" column="memPw" />
+		<result property="memNick" column="memNick" />
+		<result property="memPhone" column="memPhone" />
+		<result property="hobbyNo1" column="hobbyNo1" />
+		<result property="hobbyNo2" column="hobbyNo2" />
+		<result property="hobbyNo3" column="hobbyNo3" />
 	</resultMap>
 	
 	<!-- 회원 아이디 중복 조회 -->
@@ -14,8 +20,44 @@
 		SELECT memId FROM Member WHERE memId=#{memId}
 	</select>
 	
+	<!-- 회원 로그인 -->
 	<select id="signIn" resultType="com.boot.teamMainProject.model.MemberVO" parameterType="hashmap">
 		SELECT memId, memPw FROM Member WHERE memId=#{id} AND memPw=#{pw}
+	</select>
+	
+	<!-- parameterType="com.boot.users.model.MemberVO" -->
+	<insert id="userSignup" parameterType="com.boot.teamMainProject.model.MemberVO">
+		INSERT INTO Member 
+		(
+			memId, 
+			memPw, 
+			memName, 
+			memArea, 
+			memPhone, 
+			memBirth,
+			hobbyNo1, 
+			hobbyNo2, 
+			hobbyNo3, 
+			memNick 
+		)
+		 VALUES
+	 	(
+	 		#{memId}, 
+	 		#{memPw}, 
+	 		#{memName}, 
+	 		#{memArea}, 
+	 		#{memPhone},
+	 		#{memBirth},
+		 	#{hobbyNo1}, 
+		 	#{hobbyNo2}, 
+		 	#{hobbyNo3}, 
+		 	#{memNick}
+	 	)
+	</insert>
+	
+	<!-- 회원 닉네임 중복 조회 -->
+	<select id="memNickCheck" resultType="string" parameterType="string">
+		SELECT memNick FROM Member WHERE memNick=#{memNick}
 	</select>
 
 </mapper>

@@ -29,8 +29,13 @@ public class MemberService implements IMemberService {
 	}
 	
 	@Override
-	public void signUp(MemberVO vo) {
-		dao.signUp(vo);
+	public String memNickCheck(String memNick) {
+		return dao.memNickCheck(memNick);
+	}
+	
+	@Override
+	public void userSignup(MemberVO vo) {
+		dao.userSignup(vo);
 	}
 
 }
