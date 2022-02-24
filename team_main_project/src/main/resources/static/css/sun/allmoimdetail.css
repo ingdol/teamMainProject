@@ -1,62 +1,26 @@
 @charset "UTF-8";
 
-p{
-	margin:-2px;
-}
 .hidden{
 	display: none;
 }
 
-#allmoimmiddle{
+#moimmiddle{
 	position: relative;
 	width:100%;
 }
 
-.allfilter{
-	margin-top:1%;
-	margin-bottom:1%;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	width:40%;
-}
-
-.allfilter .dropdown{
-	box-sizing: border-box;
-	flex-shrink: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 30%;
-	height: 90px;
-}
-
-
-/* **************필터선택후***************** */
-
-#allmoimsearch{
+#moimsearch{
 	width:100%;
 	height: 800px;
 }
 
-.filterresultmoim,
-.filterresultclass{
-	width:100%;
-	height: 50%;
+.resultmoim{
+	height: 100%;
 }
 
-.filterresultmoim .result,
-.filterresultclass .result{
-	float: left;
-	margin:0% 0% 1% 1%;
-}
-
-/* 검색결과모임 */
 .cardbox {
-	clear: both;
 	width: 100%;
-	height:85%;
+	height:46%;
 	margin:2% 0% 2% 0%;
 	display: flex;
 	align-items: center;
@@ -90,7 +54,6 @@ p{
 	height: 20%;
 	text-align: center;
 }
-
 .cardbox .card .cardbody .cardtext:nth-child(2) {
 	margin-top: 5%;
 	padding: 0 1% 0 1%;
@@ -100,9 +63,12 @@ p{
 } 
 
 
-.dropdown fieldset{
-	border: 0;
+/* 페이지이동 */
+.page{
+	text-align: center;
 }
-.dropdown legend {
-	display: none;
+
+.page li{
+	display: inline-block;
+	padding: 1%;
 }

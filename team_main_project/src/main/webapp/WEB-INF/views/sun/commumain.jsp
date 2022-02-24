@@ -15,7 +15,7 @@
 		<script src="<c:url value='/js/sun/commumain.js'/>"></script>
 	</head>
 		<body>
-		<section id="wrap">
+		<section id="mainWrap">
             <h1 id="sectioninfo">전체커뮤니티 메인화면</h1>
             <!-- -----------------header,nav메뉴 부분---------------- -->
           	<jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />               
@@ -47,7 +47,7 @@
 								<div class="count">조회</div>
 							</div>
 							<c:forEach items="${comlist}" var="comlist">
-								<div>
+								<div class="top">
 									<div class="num">${comlist.commuNo}</div>
 									<div class="title" id="comTitle">
 										<a href="#">${comlist.commuTitle}/댓글수${comlist.commuComNum}</a>
@@ -71,10 +71,7 @@
 									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 								</a></li>
 							</ul>
-						</nav>	
-						<div class="bt_wrap">
-								<a href="<c:url value='/write'/>" class="on">등록</a>
-						</div>
+						</nav>						
 					</div>
 				</div>
 				
@@ -90,7 +87,7 @@
 								<div class="count">조회</div>
 							</div>
 							<c:forEach items="${dailylist}" var="dailylist">
-								<div>
+								<div class="top">
 								<div class="num">${dailylist.commuNo}</div>
 								<div class="title" id="comTitle">
 									<a href="#">${dailylist.commuTitle}/댓글수${dailylist.commuComNum}</a>
@@ -114,10 +111,7 @@
 									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 								</a></li>
 							</ul>
-						</nav>	
-						<div class="bt_wrap">
-								<a href="<c:url value='/write'/>" class="on">등록</a>
-						</div>
+						</nav>						
 					</div>
 				</div>
 				
@@ -133,7 +127,7 @@
 								<div class="count">조회</div>
 							</div>
 							<c:forEach items="${reviewlist}" var="reviewlist">
-								<div>
+								<div class="top">
 								<div class="num">${reviewlist.commuNo}</div>
 								<div class="title" id="comTitle">
 									<a href="#">${reviewlist.commuTitle}/댓글수${reviewlist.commuComNum}</a>
@@ -157,10 +151,7 @@
 									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 								</a></li>
 							</ul>
-						</nav>	
-						<div class="bt_wrap">
-								<a href="<c:url value='/write'/>" class="on">등록</a>
-						</div>
+						</nav>							
 					</div>
 				</div>
 				
@@ -176,7 +167,7 @@
 								<div class="count">조회</div>
 							</div>
 							<c:forEach items="${bestlist}" var="bestlist">
-								<div>
+								<div class="top">
 								<div class="num">${bestlist.commuNo}</div>
 								<div class="title" id="comTitle">
 									<a href="#">${bestlist.commuTitle}/댓글수${bestlist.commuComNum}</a>
@@ -200,10 +191,7 @@
 									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 								</a></li>
 							</ul>
-						</nav>	
-						<div class="bt_wrap">
-								<a href="<c:url value='/write'/>" class="on">등록</a>
-						</div>
+						</nav>							
 					</div>
 				</div>
 				

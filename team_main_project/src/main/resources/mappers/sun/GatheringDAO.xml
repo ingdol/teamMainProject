@@ -35,9 +35,9 @@
   	<select id="showalldatemax" resultMap="gatheringResult">
   		select * from gathering order by gatOpen ASC
   	</select>
-  	
-  	
-  	
+  	<select id="hateasc" resultMap="gatheringResult">
+  		select * from gathering order by gatHate asc
+  	</select>  	
   	
   	<!-- sej -->
   	<!-- 전체 모임 조회 : Best -->
