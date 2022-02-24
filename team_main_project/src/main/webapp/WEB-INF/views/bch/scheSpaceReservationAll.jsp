@@ -68,7 +68,7 @@
                     <c:forEach items="${spaceList}" var="space">
 <%--                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />--%>
                         <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${space.spaceNo}' />">
-                        <a id="card-link" href="<c:url value='/detailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->
+                        <a id="card-link" href="<c:url value='/scheDetailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >

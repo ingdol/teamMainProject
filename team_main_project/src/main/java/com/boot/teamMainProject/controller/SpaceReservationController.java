@@ -31,6 +31,15 @@ public class SpaceReservationController {
         model.addAttribute("spaceCtgName", spaceCtgName);
         return "bch/spaceReservationAll";
     }
+    // 공간 전체 페이지(모임 일정 만드는 페이지에서 사용)
+    @RequestMapping("ScheSpaceReservationAll")
+    public String ScheSpaceReservationAll(Model model) {
+        ArrayList<SpaceVO> spaceList = service.listAllSpace();
+        ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
+        model.addAttribute("spaceList", spaceList);
+        model.addAttribute("spaceCtgName", spaceCtgName);
+        return "bch/scheSpaceReservationAll";
+    }
     // 공간 전체페이지 카테고리 이름 찾기 (현재 동작 x)
 //    @ResponseBody
 //    @RequestMapping("transferCtgName")
@@ -50,7 +59,7 @@ public class SpaceReservationController {
                                              @RequestParam("category") String category,
                                              @RequestParam("maxPerson") int maxPerson) {
         ArrayList<SpaceVO> constraintSpaceList = service.listFindSpace(gatArea1, state, category, maxPerson);
-        model.addAttribute("constraintSpaceList", constraintSpaceList);
+//        model.addAttribute("constraintSpaceList", constraintSpaceList);
         return constraintSpaceList;
     }
     // 조건 상세 조회 할 때 카테고리 이름 조회(화면에 공간 유형 띄우기 위함.)
@@ -61,7 +70,6 @@ public class SpaceReservationController {
         model.addAttribute("spaceCtgName", spaceCtgName);
         return spaceCtgName;
     }
-
     // 공간 상세 페이지
     @RequestMapping("/detailViewSpace/{spaceNo}")
     public String detailViewSpace(@PathVariable String spaceNo, Model model) {
@@ -74,6 +82,19 @@ public class SpaceReservationController {
         model.addAttribute("spaceReviewTest", spaceReviewTest);
         model.addAttribute("spaceInfo", spaceInfo);
         return "bch/detailViewSpace";
+    }
+    // 공간 상세 페이지 (모임 일정 만드는 페이지에서 사용)
+    @RequestMapping("/scheDetailViewSpace/{spaceNo}")
+    public String scheDetailViewSpace(@PathVariable String spaceNo, Model model) {
+        SpaceVO space = service.detailSpace(spaceNo);
+//        SpaceReviewVO spaceReview = spaceReviewService.spaceReview(spaceNo); // ArrayList로 동작해야 돌아감
+        ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
+        ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
+        model.addAttribute("space", space);
+//        model.addAttribute("spaceReview", spaceReview); // ArrayList로 동작해야 돌아감
+        model.addAttribute("spaceReviewTest", spaceReviewTest);
+        model.addAttribute("spaceInfo", spaceInfo);
+        return "bch/scheDetailViewSpace";
     }
     // test Page
     @RequestMapping("/test")

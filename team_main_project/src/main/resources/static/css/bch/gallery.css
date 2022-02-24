@@ -103,7 +103,7 @@ table {
 
 h1 {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .card-body {
@@ -113,6 +113,7 @@ h1 {
 .card-body-header{
     line-height: 25px;
     margin: 10px 20px 0px 20px;
+    font-weight: bold;
 }
 
 .card-body-description  {
