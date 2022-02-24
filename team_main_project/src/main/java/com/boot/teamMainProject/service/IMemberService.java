@@ -5,8 +5,8 @@ import java.util.HashMap;
 import com.boot.teamMainProject.model.MemberVO;
 
 public interface IMemberService {
-//	void signIn(MemberVO vo);
 	String memIdCheck(String memId);
-	void signUp(MemberVO vo);
+	String memNickCheck(String memNick);
 	MemberVO signIn(HashMap<String, String> param);
+	void userSignup(MemberVO vo);
 }
