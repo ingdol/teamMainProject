@@ -24,8 +24,8 @@ public class SpaceService implements ISpaceService {
     }
 
     @Override
-    public ArrayList<SpaceVO> listFindSpace(String location, String category, int maxPerson) {
-        return dao.listFindSpace(location, category, maxPerson);
+    public ArrayList<SpaceVO> listFindSpace(String gatArea1, String state, String category, int maxPerson) {
+        return dao.listFindSpace(gatArea1, state, category, maxPerson);
     }
     @Override
     public SpaceVO detailSpace(String spaceNo) {

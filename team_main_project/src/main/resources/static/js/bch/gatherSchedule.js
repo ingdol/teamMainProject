@@ -9,4 +9,30 @@ $(document).ready(function(){
         }).open();
     });
     // 지도 끝
+    // ajax
+    // $('#btnSave').on('submit', function(){
+    //     event.preventDefault();
+    //     $.ajax({
+    //         type: "post",
+    //         url: "WriteGatherSchedule",
+    //         data:{"memNick": $('#memNick').val(),
+    //             "gatNo": $('#gatNo').val(),
+    //             "gatScheTitle": $('#gatScheTitle').val(),
+    //               "gatScheDate": $('#gatScheDate').val(),
+    //             "gatScheTime": $('#gatScheTime').val(),
+    //             "gatScheMax": $('#gatScheMax').val(),
+    //             "scheduleAddress": $('#scheduleAddress').val(),
+    //             "gatScheSpace": $('#gatScheSpace').val(),
+    //             "scheduleSpace": $('#scheduleSpace').val(),
+    //             "gatScheInfo": $('#gatScheInfo').val()
+    //               },
+    //         dataType: 'text',
+    //         success:function (result) {
+    //             alert("일정 등록 완료!");
+    //         },
+    //         error:function(data, textStatus){
+    //             alert("카테고리 이름 return 검색 실패");
+    //         }
+    //     })
+    // });
 });

@@ -45,10 +45,11 @@ public class SpaceReservationController {
     @ResponseBody
     @RequestMapping(value = "findConstraint")
     public ArrayList<SpaceVO> findConstraint(Model model,
-                                             @RequestParam("location") String location,
+                                             @RequestParam("gatArea1") String gatArea1,
+                                             @RequestParam("state") String state,
                                              @RequestParam("category") String category,
                                              @RequestParam("maxPerson") int maxPerson) {
-        ArrayList<SpaceVO> constraintSpaceList = service.listFindSpace(location, category, maxPerson);
+        ArrayList<SpaceVO> constraintSpaceList = service.listFindSpace(gatArea1, state, category, maxPerson);
         model.addAttribute("constraintSpaceList", constraintSpaceList);
         return constraintSpaceList;
     }

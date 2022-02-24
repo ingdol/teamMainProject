@@ -27,8 +27,8 @@
 
     <select id="listFindSpace" resultMap="spaceResult">
         SELECT * FROM Space WHERE 1=1
-        <if test="location != null and location != ''">
-            and Space.spaceArea LIKE CONCAT('%', #{location}, '%')
+        <if test="gatArea1 != null and gatArea1 != ''">
+            and Space.spaceArea LIKE CONCAT('%', #{gatArea1}, '%', #{state}, '%')
         </if>
         <if test="category != null and category != ''">
             and Space.spaceCtgNo LIKE CONCAT('%', #{category}, '%')

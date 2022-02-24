@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     console.log($('#spaceNoForCtgName').val());
     // $.ajax({
     //     type: "post",
@@ -20,7 +21,8 @@ $(document).ready(function(){
         $.ajax({
             type:"post",
             url:"findConstraint",
-            data:{"location":$('#location').val(),
+            data:{"gatArea1":$('#gatArea1').val(),
+                "state":$('#state').val(),
                 "category":$('#category').val(),
                 "maxPerson":$('#maxPerson').val()},
             dataType:'json',
@@ -76,9 +78,17 @@ $(document).ready(function(){
                         }
                     $('#gallerylist').append('</span>');
                 }
+                else {
+                    $('#gallerylist').empty();
+                    $('#gallerylist').css({"margin-left" : "0 !important"});
+                    $('#gallerylist').append('<span id="notFound" style="margin: 0 !important;">');
+                    $('#gallerylist').append('<p style="font-weight: bold; color:#474646 ;font-size: 64px; padding: 20px; margin: 20px;">검색 결과가 없습니다.</p>');
+                    $('#gallerylist').append('</span>');
+
+                }
             },
             error:function(data, textStatus){
-                alert("조건 검색 실패");
+                alert("조건을 정확하게 입력해 주세요.");
             }
         });
     });

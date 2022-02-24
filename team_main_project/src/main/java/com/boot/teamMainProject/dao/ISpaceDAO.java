@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public interface ISpaceDAO {
     ArrayList<SpaceVO> listAllSpace();
-    ArrayList<SpaceVO> listFindSpace(String location, String category, int maxPerson);
+    ArrayList<SpaceVO> listFindSpace(String gatArea1, String state,String category, int maxPerson);
     SpaceVO detailSpace(String spaceNo);
     ArrayList<SpaceVO> detailSpaceTest(String spaceNo);
 }
