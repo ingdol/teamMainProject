@@ -136,4 +136,11 @@ public class SunController {
 				return "/sun/allmoim";
 			}
 	
+		
+			@RequestMapping("/sun/allmoimdetail")
+			public String allmoimdetail(Model model) {
+				ArrayList<GatheringVO> gatheringResult = gatherser.hateasc();
+				model.addAttribute("gatheringResult",gatheringResult);
+				return "/sun/allmoimdetail";
+			}
 }

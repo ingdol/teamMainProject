@@ -9,7 +9,7 @@ public interface IGatheringService {
 
 	ArrayList<GatheringVO> showlist(String hobbyNo);
 	ArrayList<GatheringVO> detailgat(int gatNo);
-
+	ArrayList<GatheringVO> hateasc();
 
 	//sej
 	ArrayList<GatheringVO> listAllGatherBest();   // 전체 모임 조회

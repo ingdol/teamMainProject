@@ -6,7 +6,7 @@
 
 .commumenubox{
 	width:80%;
-	
+	margin-bottom: 1%;
 }
 
 .commumenubox ul {
@@ -48,7 +48,7 @@
 /* ************글페이지부분**************** */
 
 .allbox,.dailybox,.reviewbox,.bestbox{
-	width:80%;
+	width:70%;
 }
 
 .num,.title,.writer,.date,.count{
@@ -66,4 +66,9 @@
 
 .writer,.date,.count{
 	width:10%;
+}
+
+.top{
+	display: flex;
+    justify-content: space-between;
 }
