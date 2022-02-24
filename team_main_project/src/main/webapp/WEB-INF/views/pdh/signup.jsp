@@ -16,36 +16,62 @@
 <body>
     <!-- HEADER -->
     <!-- <header id="header"></header> -->
-    
+    <div id="mainWrap">
+    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
     <!-- MAIN -->
     <div id="l-form">
-        <form class="form" method="post" onsubmit="return onSubmit();">
+        <form class="form" method="post">
             <h1>Sign Up</h1>
             <ul>
-                <li class="l-li" id="l-name">
-                    <input type="text" class="l-input" id="name" placeholder=" ">
-                    <label for="" class="l-label" id="name-label">이름</label>
-                </li>
-
                 <li class="l-li" id="l-email">
-                    <input type="email" class="l-input" id="email" placeholder=" " onchange="idChecking();">
-                    <label for="" class="l-label" id="email-label">Email</label>
+                    <input type="text" class="l-input" id="email" placeholder=" ">
+                    <label for="" class="l-label" id="email-label">이메일</label>
                 </li>
                 <li class="l-li" id="l-pw">
                     <!-- Warning : Input elements should have autocomplete attributes -->
                     <input type="password" class="l-input" id="pw" autocomplete="on" placeholder=" ">
-                    <label for="" class="l-label" id="pw-label">Password</label>
+                    <label for="" class="l-label" id="pw-label">비밀번호</label>
+                </li>
+                <li class="l-li" id="l-name">
+                    <input type="text" class="l-input" id="name" placeholder=" ">
+                    <label for="" class="l-label" id="name-label">이름</label>
+                </li>
+		        <li class="l-li-title-birth">
+                    <div class="l-title" id="title-birth">생년월일</div>
+                </li>
+                <li class="l-li" id="l-birth">
+                	<input type="number" class="l-input-year" id="year" placeholder=" " min="1">
+                    <label for="" class="l-label-year" id="year-label">년</label>
+                    <input type="number" class="l-input-day" id="day" placeholder=" " min="1" max="31">
+                    <label for="" class="l-label-day" id="day-label">일</label>
+                	<div class="dropdown">
+                		<input type="text" class="textBox" placeholder="월" readonly>
+                		<div class="option">
+                			<div id="month-1"><ion-icon name="calendar-outline"></ion-icon>1월</div>
+                			<div id="month-2"><ion-icon name="calendar-outline"></ion-icon>2월</div>
+                			<div id="month-3"><ion-icon name="calendar-outline"></ion-icon>3월</div>
+                			<div id="month-4"><ion-icon name="calendar-outline"></ion-icon>4월</div>
+                			<div id="month-5"><ion-icon name="calendar-outline"></ion-icon>5월</div>
+                			<div id="month-6"><ion-icon name="calendar-outline"></ion-icon>6월</div>
+                			<div id="month-7"><ion-icon name="calendar-outline"></ion-icon>7월</div>
+                			<div id="month-8"><ion-icon name="calendar-outline"></ion-icon>8월</div>
+                			<div id="month-9"><ion-icon name="calendar-outline"></ion-icon>9월</div>
+                			<div id="month-10"><ion-icon name="calendar-outline"></ion-icon>10월</div>
+                			<div id="month-11"><ion-icon name="calendar-outline"></ion-icon>11월</div>
+                			<div id="month-12"><ion-icon name="calendar-outline"></ion-icon>12월</div>
+                		</div>
+                	</div>
                 </li>
                 <li class="l-li" id="l-nick">
                     <input type="text" class="l-input" id="nick" placeholder=" ">
                     <label for="" class="l-label" id="nick-label">닉네임</label>
                 </li>
                 <li class="l-li" id="l-number">
-                    <input type="tel" class="l-input" id="number" placeholder=" ">
+                    <input type="tel" class="l-input" id="number" placeholder=" " maxlength="13">
                     <label for="" class="l-label" id="number-label">휴대전화</label>
                 </li>
                 <li class="l-li-title">
-                    <div class="l-title">관심분야</div>
+                    <div class="l-title" id="title-hobby">관심분야</div>
                 </li>
                 <li class="l-li-check" id="l-check">
                     <input type="checkbox" id="label-art" class="l-check" value="art"><label for="label-art">예술 및 연극</label>
@@ -69,13 +95,23 @@
                     <input type="checkbox" id="label-politics" class="l-check" value="politics"><label for="label-politics">정치</label>
                 </li>
                 <li class="l-li" id="l-address">
-                    <input type="text" class="l-input-address1" id="email1" placeholder=" ">
-                    <label for="" class="l-label-address" id="email-label">상세주소</label>
-                    <input type="text" class="l-input-address" id="email1" placeholder=" ">
-                    <label for="" class="l-label" id="email-label">우편번호</label>
+                    <input type="text" class="l-input-address" id="postcode" placeholder=" ">
+                    <label for="" class="l-label" id="postcode-label" >우편번호</label>
+                    <!-- <input type="button" class="l-address-Btn" value="우편번호 찾기" > -->
+                     <button class="l-address-Btn">우편번호 찾기</button>
+                </li>
+                <li class="l-li" id="l-address">
+                    <input type="text" class="l-input-disabled" id="address" placeholder=" ">
+                    <label for="" class="l-label" id="address-label">주소</label>
+                </li>
+                <li class="l-li" id="l-detail-address">
+                    <input type="text" class="l-input" id="detailAddress" placeholder=" ">
+                	<label for="" class="l-label" id="detailAddress-label">상세주소</label>
                 </li>
                 <li class="l-li-Btn">
-                    <input type="submit" id="l-submit" value="Sign Up" onclick="onSubmit();">
+	                <button id="l-submit">
+	                	<i class="far fa-paper-plane"></i> Sign Up
+	                </button>
                 </li>
             </ul>
         </form>
@@ -83,12 +119,17 @@
 
     <!-- FOOTER -->
     <!-- <footer id="footer"></footer> -->
-
+	<jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+    </div>
     <!-- JavaScript -->
 
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
-    <script src="<c:url value="/js/pdh/signup.js" />"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://kit.fontawesome.com/a68ab22d16.js" crossorigin="anonymous"></script>
+    <script type="module" src="<c:url value="/js/pdh/signup.js" />"></script>
     <script src="../js/kakao_login.js"></script>
 </body>
 
