@@ -18,7 +18,7 @@ public interface IGatheringService {
 
 	//ldh
 	void insertGathering(GatheringVO gath);
-
+	GatheringVO detailViewSomoim(int gatNo);
 	//sun
 	ArrayList<GatheringVO> showall();
 	ArrayList<GatheringVO> showlistdatemax(String hobbyNo);

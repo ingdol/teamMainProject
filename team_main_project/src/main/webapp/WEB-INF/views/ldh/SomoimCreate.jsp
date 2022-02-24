@@ -10,6 +10,7 @@
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SCreate.css" />">
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 		  <script src="<c:url value='/js/ldh/screate.js'/>"></script>
+		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
 	</head>
 	<body>
 		<div id="mainWrap">
@@ -22,7 +23,7 @@
 			
 				
 			
-			<form id="SCreateForm" name="SCreateForm" method="post"  action="/screate">
+			<form id="SCreateForm" name="SCreateForm" method="post"  action="/screate" enctype="multipart/form-data">
 
 			<h3>호스트 이름(테스트)</h3><br>
 			<input type="text" id="memNick" name="memNick" ><br>
@@ -89,9 +90,21 @@
 			<textarea id="gatDetInfo" name="gatDetInfo" rows="15" cols="66" placeholder="소모임에 대한 설명을 입력해주세요" 
 			onfocus="this.placeholder=''" onblur="this.placeholder='소모임에 대한 설명을 입력해주세요'"  style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25);
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
-			<br><br><br><br>
-			<input type="submit" value="소모임 만들기" class="subbox2" >
 			
+			<br><br>
+			<div class="filebox">
+			<input class="upload-name" value="첨부파일">
+			<label for="file">사진 찾기</label>
+			<input type="file" id="file" name="uploadFile1"><br><br>
+			</div>
+			<div class="filebox2">
+			<input class="upload-name2" value="첨부파일">
+			<label for="file2">사진 찾기</label>
+			<input type="file" id="file2" name="uploadFile2">
+			
+			<br><br>
+			<input type="submit" value="소모임 만들기" class="subbox2" >
+			</div>
 			</form>
 			
 			

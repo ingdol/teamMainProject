@@ -53,7 +53,9 @@ public class GatheringService implements IGatheringService {
 		// TODO Auto-generated method stub
 		dao.insertGathering(gath);
 	}
-	
+	public GatheringVO detailViewSomoim(int gatNo) {
+		return dao.detailViewSomoim(gatNo);
+	}
 
   //서연
   	public ArrayList<GatheringVO> showall() {
