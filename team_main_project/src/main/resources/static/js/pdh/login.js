@@ -19,20 +19,17 @@ const addDomFail = document.createElement('span');
 const addDomSuccess = document.createElement('span');
 
 // --| Table Regular Expression
-const pwRegex = new RegExp(/^[A-Za-z0-9]{6,12}$/);
-const emailRegex = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
+const pwRegex = new RegExp(/^[A-Za-z0-9]{6,18}$/);
+const emailRegex = new RegExp(
+	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+);
 
+// --| Submit EventListener
+document.querySelector('form').addEventListener('submit', function(event){
+    event.preventDefault();
+});
 
-testInput.addEventListener('keyup', function (e) {
-
-})
-
-function signinData() {
-
-}
-
-// --| Submit EventLisener
-function onSubmit() {
+async function onSubmit() {
     if (emailRegex.test(email.value) === false) {
         addDomSuccess.remove();
         addDomFail.classList.add("fail-font");
@@ -57,7 +54,7 @@ function onSubmit() {
     if (pwRegex.test(pw.value) === false) {
         // addDomSuccess.remove();
         addDomFail.classList.add("fail-font");
-        addDomFail.textContent = '비밀번호 6자리 이상';
+        addDomFail.textContent = '비밀번호 6~18자리';
         liPw.appendChild(addDomFail);
         pw.focus();
         pwLabel.classList.add("fail-label");
@@ -80,8 +77,21 @@ function onSubmit() {
     } else {
         setCookie("saveid", email.value, 0); // Expires / Max-Age 0Day (Delete Cookie)
     }
+    
+    if(await checkingEmail() === true) {
+	
+	} else {
+		return false;
+	}
+	
+	location.href = '/';
+	
+}
 
-    fetch('/signin', {
+async function checkingEmail(){
+	let checkEmail = true;
+	
+    await fetch('/signin', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' }, 
         body: JSON.stringify({
@@ -99,14 +109,21 @@ function onSubmit() {
     .then((data) => {
 	console.log(data);
 		if(data === "fail") {
-            alert("fail");
-            return false;
+	        addDomFail.classList.add("fail-font");
+	        addDomFail.textContent = '비밀번호를 다시 한번 확인해주세요.(6~12자리)';
+	        liPw.appendChild(addDomFail);
+	        pw.focus();
+	        pwLabel.classList.add("fail-label");
+	        pw.classList.add("fail-line");
+            checkEmail = false;
         } else if(data === "success") {
-            alert("success");
+			console.log('login success!')
+            checkEmail = true;
         }
 	})
     .catch((err) => console.log(err))
     
+    return checkEmail;
 }
 
 // --| 페이지 로드 후 쿠키 정보 확인
@@ -144,7 +161,7 @@ function getCookie(name) {
  * @param {string} value : Email Value
  * @param {string} expires : 현재 시간
  * @Date : 2022. 02. 14.
-*/
+ */
 function setCookie(nameKey, value, expires) {
     var expdate = new Date();
     expdate.setDate(expdate.getDate() + expires);

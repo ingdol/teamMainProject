@@ -16,17 +16,17 @@
 <body>
     <!-- HEADER -->
     <!-- <header id="header"></header> -->
-    
+    <div id="mainWrap">
+    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
     <!-- MAIN -->
     <div id="l-form">
-        <form class="form" method="post" onsubmit="return onSubmit()">
+        <form action="/" class="form" method="post" onsubmit="return onSubmit();">
             <h1>Sign In</h1>
             <ul>
                 <li class="l-li" id="l-email">
-                    <input type="email" class="l-input" id="email" placeholder=" ">
+                    <input type="text" class="l-input" id="email" placeholder=" ">
                     <label for="" class="l-label" id="email-label">Email</label>
                 </li>
-
                 <li class="l-li" id="l-pw">
                     <!-- Warning : Input elements should have autocomplete attributes -->
                     <input type="password" class="l-input" id="pw" autocomplete="on" placeholder=" ">
@@ -36,8 +36,8 @@
                     <input type="checkbox" id="id-save">
                     <label for="id-save">아이디 저장</label>
                 </li>
-                <li class="l-li-Btn">
-                    <input type="submit" id="l-submit" value="Sign In">
+                <li class="l-li-Btn">          
+                	<button id="l-submit"><i class="fa fa-key"></i>&nbsp;Sign In</button>
                 </li>
                 <li class="l-li-Btn">
                     <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d74df3c90e2abbac5e5a0e4a9dea5408&redirect_uri=http://125.140.227.37:5500/index">
@@ -50,10 +50,12 @@
 
     <!-- FOOTER -->
     <!-- <footer id="footer"></footer> -->
-
+	<jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
+    </div>
     <!-- JavaScript -->
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="https://kit.fontawesome.com/a68ab22d16.js" crossorigin="anonymous"></script>
     <script src="<c:url value="/js/pdh/login.js" />"></script>
     <script src="../js/kakao_login.js"></script>
 </body>
