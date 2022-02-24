@@ -35,19 +35,19 @@
 	<select id="classSearch" resultMap="classResult" parameterType="hashmap">
 		SELECT * FROM class WHERE (classTitle LIKE CONCAT('%', #{keyword}, '%')) OR (classArea LIKE CONCAT('%', #{keyword}, '%'))
 	</select>
-
-
-	<!-- sun -->
-	<select id="listall" resultMap="classResult">
-		select * from class
-	</select>
-
-	<select id="listClassdatemax" resultMap="classResult">
-		select * from class WHERE hobbyNo=#{hobbyNo} order by classOpen ASC
-	</select>
-
-	<select id="listalldatemax" resultMap="classResult">
-		select * from class order by classOpen ASC
-	</select>
+    
+     
+   <!-- sun -->
+    <select id="listall" resultMap="classResult">
+        select * from class
+     </select>
+     
+     <select id="listClassdatemax" resultMap="classResult">
+        select * from class WHERE hobbyNo=#{hobbyNo} order by classOpen ASC
+     </select>
+     
+     <select id="listalldatemax" resultMap="classResult">
+        select * from class order by classOpen ASC
+     </select>
 
 </mapper>

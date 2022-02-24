@@ -14,7 +14,6 @@ public class WebConfig implements WebMvcConfigurer {
 				.addResourceLocations("file:///D:/project/linkerprj/prjphoto/") // 서연님 경로
 				.addResourceLocations("file:///Users/gobyeongchae/Desktop/teamImage/"); //공통 이미지 경로(고병채)
 
-
 		registry.addResourceHandler("/voice/**")
 		.addResourceLocations("file:///C:/upload/"); //챗봇 보이스
 	}

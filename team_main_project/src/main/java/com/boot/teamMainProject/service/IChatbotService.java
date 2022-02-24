@@ -6,5 +6,5 @@ import com.boot.teamMainProject.model.ChatbotVO;
 
 public interface IChatbotService {
 
-	   ArrayList<ChatbotVO> listAllChatbot();   // 전체 조회
+	   ArrayList<ChatbotVO> listAllChatbot(String apiURL, String secretKey);   // 전체 조회
 }

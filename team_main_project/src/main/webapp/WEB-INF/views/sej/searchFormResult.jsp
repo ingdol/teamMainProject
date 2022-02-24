@@ -20,7 +20,7 @@
 						</c:when>
 				   <c:otherwise>
 				   <c:forEach items="${gatSearchList}" var="gat"><li>	
-							<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="searchImg">	
+							<a href="#"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="searchImg">	
 							<br id="searchBr"><p id="searchCtg">소모임</p>
 							<br id="searchBr"><p id="searchName">${gat.gatName}</p>
 							<br id="searchBr"><div id="searchArea">${gat.gatArea}</div> </a></li>
@@ -45,7 +45,7 @@
 						</c:when>
 				   <c:otherwise>
 				   <c:forEach items="${classSearchList}" var="classVo"><li>	
-							<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="searchImg">	
+							<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="searchImg">	
 							<br id="searchBr"><p id="searchCtg">클래스</p>
 							<br id="searchBr"><p id="searchName">${classVo.classTitle}</p>
 							<br id="searchBr"><div id="searchArea">${classVo.classArea}</div> </a></li>
