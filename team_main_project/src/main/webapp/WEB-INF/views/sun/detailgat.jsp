@@ -16,7 +16,7 @@
 	<style type="text/css"></style>
 </head>
 <body>
-	<section id="wrap">
+	<section id="mainWrap">
 		<h1 id="sectioninfo">상세모임</h1>
 
 		<!-- -----------------header,nav메뉴 부분---------------- -->
@@ -29,14 +29,14 @@
 			<div class="moiminfobox">
 				<h3 id="sectioninfo">모임소개</h3>
 				<div class="moimpic">
-					<img src="../image/LOGO.png">
+					<img src="<c:url value='/images/1_sport.jpg'/>">
 				</div>
 				<div class="moimname">
 					<c:forEach items="${detail}" var="detail">
 					<div>${detail.gatName}</div>
 					<div>
-						<a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
-						<button>1:1문의</button>
+						모임장 : <a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
+						<a href="#"><span class="quest">1:1문의</span></a>
 					</div>
 					</c:forEach>
 				</div>		
@@ -85,7 +85,7 @@
 									<div class="count">조회</div>
 								</div>
 								<c:forEach items="${gatherCommu}" var="com">
-									<div>
+									<div class="top">
 										<div class="num">${com.gatDetNo}</div>
 										<div class="title" id="comTitle">
 											<a href="<c:url value='#'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>
@@ -108,11 +108,9 @@
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
+									<li class="bt_wrap"><a href="<c:url value='/write'/>" class="on">등록</a></li>
 								</ul>
-							</nav>
-							<div class="bt_wrap">
-								<a href="<c:url value='/write'/>" class="on">등록</a>
-							</div>						
+							</nav>	
 					</div>
 
 					<!-- 모임사진첩 클릭시 -->
@@ -122,7 +120,7 @@
 							<ul>
 								<li>
 									<div class="card">
-										<img src="<c:url value='/image/hobbyCtg/1_sport.jpg'/>" class="card-img-top" alt="...">
+										<img src="<c:url value='/images/1_sport.jpg'/>" class="card-img-top" alt="...">
 										<div class="card-body">
 											<h5 class="card-title">사진제목</h5>
 											<p class="card-text">사진내용(글자수정해놓아야함)</p>
@@ -134,7 +132,7 @@
 								</li>
 								<li>
 									<div class="card">
-										<img src="<c:url value='/image/hobbyCtg/1_sport.jpg'/>" class="card-img-top" alt="...">
+										<img src="<c:url value='/images/1_sport.jpg'/>" class="card-img-top" alt="...">
 										<div class="card-body">
 											<h5 class="card-title">사진제목</h5>
 											<p class="card-text">사진내용(글자수정해놓아야함)</p>
@@ -146,7 +144,7 @@
 								</li>
 								<li>
 									<div class="card">
-										<img src="<c:url value='/image/hobbyCtg/1_sport.jpg'/>" class="card-img-top" alt="...">
+										<img src="<c:url value='/images/1_sport.jpg'/>" class="card-img-top" alt="...">
 										<div class="card-body">
 											<h5 class="card-title">사진제목</h5>
 											<p class="card-text">사진내용(글자수정해놓아야함)</p>

@@ -23,4 +23,12 @@ $(function(){
 		$('.map').hide();
 		$('.hobby').show();
 	});	
+	
+	$('.hotmenu').on('click',function(){
+		console.log("hotmenu 클릭");		
+		location.href="/sun/allmoimdetail";
+	});
+	
+	/* 페이지넘기는거 - restcontroller사용? */
+	/*페이지번호 받아서, begin*페이지번호 이헌식으로해서 받기?  */
 });

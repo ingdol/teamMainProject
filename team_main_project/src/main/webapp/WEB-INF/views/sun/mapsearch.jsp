@@ -13,7 +13,7 @@
 <script src="<c:url value='/js/sun/mapsearch.js'/>"></script>
 </head>
 <body>
-	<section id="wrap">
+	<section id="mainWrap">
 		<h1 id="sectioninfo">모임찾기</h1>
 		<!-- -----------------header,nav메뉴 부분---------------- -->
 		<jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
@@ -68,19 +68,19 @@
 					</li>
 				</ul>
 				<ul>
-					<li><a href="#"><img src="<c:url value='/images/4_travel.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/4'/>"><img src="<c:url value='/images/4_travel.jpg'/>"></a>
 					</li>
-					<li><a href="#"><img src="<c:url value='/images/5_cook.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/5'/>"><img src="<c:url value='/images/5_cook.jpg'/>"></a>
 					</li>
-					<li><a href="#"><img src="<c:url value='/images/6_animal.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/6'/>"><img src="<c:url value='/images/6_animal.jpg'/>"></a>
 					</li>
 				</ul>
 				<ul>
-					<li><a href="#"><img src="<c:url value='/images/7_picture.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/7'/>"><img src="<c:url value='/images/7_picture.jpg'/>"></a>
 					</li>
-					<li><a href="#"><img src="<c:url value='/images/8_help.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/8'/>"><img src="<c:url value='/images/8_help.jpg'/>"></a>
 					</li>
-					<li><a href="#"><img src="<c:url value='/images/9_art2.jpg'/>"></a>
+					<li><a href="<c:url value='/sun/allmoim/9'/>"><img src="<c:url value='/images/9_art2.jpg'/>"></a>
 					</li>
 				</ul>
 			</div>

@@ -68,5 +68,9 @@ public class GatheringService implements IGatheringService {
 		return dao.showalldatemax();
 	}
 
+	public ArrayList<GatheringVO> hateasc() {
+		return dao.hateasc();
+	}
+
 
 }
