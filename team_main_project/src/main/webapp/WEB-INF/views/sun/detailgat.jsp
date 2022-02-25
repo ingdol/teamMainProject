@@ -178,9 +178,9 @@
 			<div class="moimjoin">
 				<h3 id="sectioninfo">해당모임찜,가입버튼</h3>
 				<ul>
-					<li><button type="button" class="btn btn-primary">일정잡기</button></li>
-					<li><button type="button" class="btn btn-secondary">찜하기</button></li>
-					<li><button type="button" class="btn btn-primary">가입하기</button></li>
+					<li><button type="button" class="btn btn-primary gatherschedule">일정잡기</button></li>
+					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
+					<li><button type="button" class="btn btn-primary join">가입하기</button></li>
 				</ul>
 			</div>
 		</section>

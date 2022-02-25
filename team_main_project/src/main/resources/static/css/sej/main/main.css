@@ -20,7 +20,7 @@
 #hobbyMenu ul li a {
 	text-decoration:none;
 	color:gray;
-	font-size:18px; 
+	font-size:18px;
 	font-weight:bold;
 }
 #hobbyMenu img {
@@ -53,7 +53,7 @@
 #allView a{
 	float:right;
 	text-decoration:none;
-	font-size:18px; 
+	font-size:18px;
 	color:black;
 	margin-right:30px;
 }
@@ -81,15 +81,22 @@
 }
 
 #gatherCtg {
-	font-size:18px; 
+	font-size:18px;
 }
 
 #gatherName {
-	font-size:26px; 
+	font-size:26px;
 	width:394px;
 	padding-bottom:10px;
 	float:left;
 }
+#gatherArea {
+	font-size:16px;
+	width:394px;
+	padding-bottom:10px;
+	float:left;
+}
+
 
 #bestBr {
 	content: "";

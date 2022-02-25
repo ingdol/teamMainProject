@@ -54,17 +54,14 @@
             </div>
             <div>
                 <div id="spacePicture" class="spacePicture">
-                    <img src="<c:url value='/bchimages/${space.spacePhoto}'/>" />
+                    <img src="<c:url value='/images/bch/${space.spacePhoto}'/>" />
                 </div>
                 <div>
                     <h2 id="spaceInfo2">${space.spaceInfo}</h2>
                 </div>
             </div>
             <div class="reservation" id="reservation">
-                <span id="calendarSpan">
-                    adasdasdasdadasdas
-                    <div id='calendar'></div>
-                </span>
+
             </div>
             <div id="navigation" class="navigation">
                 <ul class="navigation_list">
