@@ -39,6 +39,6 @@ public class GatherController {
     public String WriteGatherSchedule(GatherScheduleVO gatherScheduleVO, SpaceReservationVO spaceReservationVO) {
         service.MakeGatherSchedule(gatherScheduleVO);
         reservationService.SpaceReservation(spaceReservationVO);
-        return "redirect:/main2";
+        return "redirect:/";
     }
 }
