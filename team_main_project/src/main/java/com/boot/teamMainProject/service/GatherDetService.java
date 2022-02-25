@@ -39,13 +39,20 @@ public class GatherDetService implements IGatherDetService {
 		// TODO Auto-generated method stub
 		return dao.MoveinsertGather(memNick);
 	}
-
+	
+	@Override
+	public ArrayList<GatherDetVO> CountBoard() {
+		// TODO Auto-generated method stub
+		return dao.CountBoard();
+	}
 	
 	// 서연 - 소모임게시판 전체화면
 	public ArrayList<GatherDetVO> gatcommulist(int gatNo) {
 		// TODO Auto-generated method stub
 		return dao.gatcommulist(gatNo);
 	}
+
+	
 
 
 
