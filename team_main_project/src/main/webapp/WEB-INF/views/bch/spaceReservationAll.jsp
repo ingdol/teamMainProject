@@ -72,7 +72,7 @@
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >
-                                    <img id="card-image" src="<c:url value='/bchimages/${space.spacePhoto}'/>" />
+                                    <img id="card-image" src="<c:url value='/images/bch/${space.spacePhoto}'/>" />
                                     <div class = "card-header-is_closed" >
                                         <div class = "card-header-text" >
                                             <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">

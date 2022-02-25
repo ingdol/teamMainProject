@@ -88,7 +88,7 @@
 									<div class="top">
 										<div class="num">${com.gatDetNo}</div>
 										<div class="title" id="comTitle">
-											<a href="<c:url value='#'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>
+											<a href="<c:url value='/ldh/Somoimboard/{gatNo}/{gatDetNo}'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>
 										</div>
 										<div class="writer" id="comId">${com.memNick}</div>
 										<div class="date" id="comDate"><fmt:formatDate value="${com.gatDetDate}" pattern="YY/MM/dd"/></div>
@@ -178,9 +178,9 @@
 			<div class="moimjoin">
 				<h3 id="sectioninfo">해당모임찜,가입버튼</h3>
 				<ul>
-					<li><button type="button" class="btn btn-primary">일정잡기</button></li>
-					<li><button type="button" class="btn btn-secondary">찜하기</button></li>
-					<li><button type="button" class="btn btn-primary">가입하기</button></li>
+					<li><button type="button" class="btn btn-primary gatherschedule">일정잡기</button></li>
+		            <li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
+		            <li><button type="button" class="btn btn-primary join">가입하기</button></li>
 				</ul>
 			</div>
 		</section>
