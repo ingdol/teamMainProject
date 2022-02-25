@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+.hidden{
+	display: none;
+}
+
+#moimmiddle{
+	position: relative;
+	width:100%;
+}
+
+#moimsearch{
+	width:100%;
+	height: 800px;
+}
+
+.resultmoim{
+	height: 100%;
+}
+
+.cardbox {
+	width: 100%;
+	height:46%;
+	margin:2% 0% 2% 0%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.cardbox .card{
+	width:15%;
+	height: 100%;
+	display: grid;
+	align-items: start;
+	cursor: pointer;
+	background-color:  #d9eeff;
+}
+.cardbox .card:hover{
+	opacity: 0.7;
+}
+
+.cardbox .card img{
+	width:100%;
+	height: 80%;	
+}
+.cardbody{
+	display: grid;
+	justify-content: center;
+	margin-top: 5%;
+}
+
+.cardbox .card .cardbody h5{
+	width:100%;
+	height: 20%;
+	text-align: center;
+}
+.cardbox .card .cardbody .cardtext:nth-child(2) {
+	margin-top: 5%;
+	padding: 0 1% 0 1%;
+}
+.cardbox .card .cardbody {
+	height: 38%;
+} 
+
+
+/* 페이지이동 */
+.page{
+	text-align: center;
+}
+
+.page li{
+	display: inline-block;
+	padding: 1%;
+}

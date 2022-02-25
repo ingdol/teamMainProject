@@ -35,7 +35,8 @@ h1 {
 }
 
 #l-form {
-    height: 100vh;
+    height: 70vh;
+    margin-bottom: -10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +50,7 @@ h1 {
     background: none;
     border: none;
     border-bottom: 1px solid black;
-
+	z-index: 11;
     outline: 0;
     transition: border-color 0.4s, border-width 0.1s;
     font-size: var(--nomal-font-size);
@@ -80,7 +81,7 @@ h1 {
     height: var(--box-size-first);
     /* margin-left: 20rem; */
     font-weight: bold;
-    color: black;
+    color: white;
     background: rgba(30, 144, 255, 1.0);
     border: none;
     border-radius: 3rem;
@@ -96,7 +97,7 @@ h1 {
     background-color: #ffffff;
     color: gray;
     font-weight: bold;
-    z-index: -1;
+    z-index: 10;
     transition: all 0.2s;
 }
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.teamMainProject.dao.ISpaceReservationDAO">
+
+    <resultMap id="spaceReser" type="com.boot.teamMainProject.model.SpaceReservationVO">
+        <result property="spaceReserNo" column="spaceReserNo" />
+        <result property="gatNo" column="gatNo" />
+        <result property="classNo" column="classNo" />
+        <result property="memNick" column="memNick" />
+        <result property="spaceNo" column="spaceNo" />
+        <result property="spaceReserDate" column="spaceReserDate" />
+        <result property="spaceReserTime" column="spaceReserTime" />
+
+    </resultMap>
+
+    <insert id="SpaceReservation" parameterType="com.boot.teamMainProject.model.SpaceReservationVO">
+        INSERT INTO Space_Reservation (gatNo, memNick, spaceNo, spaceReserDate, spaceReserTime)
+        VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{spaceReserDate}, #{spaceReserTime})
+    </insert>
+
+</mapper>

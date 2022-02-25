@@ -54,3 +54,9 @@
 .mapphoto img{
 	width:100%;
 }
+
+
+/* 클릭메뉴 글자 중간으로 */
+.filter li{
+	text-align: center;
+}

@@ -8,15 +8,13 @@
 <head>
 <meta charset="UTF-8">
 <title>전체모임(필터)</title>
-<link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
 <link href="<c:url value='/css/sun/allmoim.css'/>" rel="stylesheet"	type="text/css">
 <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-<script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 <script src="<c:url value='/js/sun/allmoim.js'/>"></script>
 </head>
 <body>
-	<div id="wrap">			
+	<div id="mainWrap">			
 		    
 		<h1 id="sectioninfo">전체모임</h1>
 		<!-- -----------------header,nav메뉴 부분---------------- -->
@@ -44,7 +42,7 @@
 				</form>
 				<form class="dropdown">
 					<fieldset>
-						<legend id="sectioninfo">관심사</legend>
+						<legend>관심사</legend>
 						<div>
 							<c:forEach items="${ctg}" begin="0" end="0" var="ct">
 							<select name="hobbyselect" id="hobbyselect">
@@ -67,7 +65,7 @@
 				</form>
 				<form class="dropdown">
 					<fieldset>
-						<legend id="sectioninfo">회원수필터</legend>
+						<legend>회원수필터</legend>
 						<div>
 							<select name="hot" id="hot">
 								<option class="num" value="joinmax">회원수많은순
@@ -92,7 +90,6 @@
 							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${gat.gatName}</h5>
-								<p class="cardtext">${gat.gatInfo}</p>
 								<p class="hidden">${gat.gatNo}</p>
 								<small class="cardtext textmuted">
 									<fmt:formatDate value="${gat.gatOpen}" pattern="YY/MM/dd"/>
@@ -113,7 +110,6 @@
 							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${clas.classTitle}</h5>
-								<p class="cardtext">${clas.classInfo}</p>
 								<p class="hidden">${clas.classNo}</p>
 								<small class="cardtext textmuted">
 									<fmt:formatDate value="${clas.classOpen}" pattern="YY/MM/dd"/>

@@ -1,9 +1,9 @@
 .wrap{
-    font-family: 'NanumSquareRound';
+    font-family: 'NanumSquareRound' !important;
     width: 1260px;
     justify-content: center;
 }
-#title {
+#gatScheTitle {
     width: 1260px;
     height: 50px;
     margin-top: 30px;
@@ -11,13 +11,13 @@
     font-size: 27px;
     font-weight: bold;
 }
-#content {
+#gatScheInfo {
     margin-top: 30px;
     width: 1260px;
     margin-bottom: 30px;
 }
 
-#selectDate, #selectTime, #personMax, #scheduleAddress, #scheduleSpace {
+#gatScheDate, #gatScheTime, #gatScheMax, #scheduleAddress, #scheduleSpace {
     height: 38px;
     padding: 5px;
     margin-top: 10px;

@@ -20,13 +20,13 @@
 				<article id="content1"> <!-- 탭메뉴 -->
 			        <div id="hobbyMenu">
 						<ul id="hobbyMenuItem">
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/1_sport2.png'/>" id="menuImg"><br>운동</a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/2_outdoor2.png'/>" id="menuImg"><br>아웃도어</a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/3_study2.png'/>" id="menuImg"><br>자기계발</a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel2.png'/>" id="menuImg"><br>여행</a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/5_cook2.png'/>" id="menuImg"><br>요리&음식</a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/6_animal2.png'/>" id="menuImg"><br>애견&애묘</a></li>
-							<li><a href="#"><img src="<c:url value='/image/hobbyCtg/7_picture2.png'/>" id="menuImg"><br>사진&영상</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/1_sport2.png'/>" id="menuImg"><br>운동</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/2_outdoor2.png'/>" id="menuImg"><br>아웃도어</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/3_study2.png'/>" id="menuImg"><br>자기계발</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/4_travel2.png'/>" id="menuImg"><br>여행</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/5_cook2.png'/>" id="menuImg"><br>요리&음식</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/6_animal2.png'/>" id="menuImg"><br>애견&애묘</a></li>
+							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/7_picture2.png'/>" id="menuImg"><br>사진&영상</a></li>
 						</ul>
 					</div>	
 
@@ -36,16 +36,16 @@
 				<article id="slideShow"> <!-- 슬라이드 쇼  -->
 					<!-- 이전/다음 버튼 -->
 					<div id="prevNextButtonBox">
-						<img src="<c:url value='/image/sej/leftButton.png'/>" id="prevButton">
-						<img src="<c:url value='/image/sej/rightButton.png'/>" id="nextButton">
+						<img src="<c:url value='/images/sej/leftButton.png'/>" id="prevButton">
+						<img src="<c:url value='/images/sej/rightButton.png'/>" id="nextButton">
 					</div>				
 					<div id="slideShowBox">
 						<div id="slidePanel">
-							<img src="<c:url value='/image/sej/banner/003.png'/>"  class="slideImage">
-							<img src="<c:url value='/image/sej/banner/004.png'/>"  class="slideImage">
-							<img src="<c:url value='/image/sej/banner/002.png'/>" class="slideImage">
-							<img src="<c:url value='/image/sej/banner/001.png'/>" class="slideImage">
-							<img src="<c:url value='/image/sej/banner/005.png'/>" class="slideImage">
+							<img src="<c:url value='/images/sej/banner/003.png'/>"  class="slideImage">
+							<img src="<c:url value='/images/sej/banner/004.png'/>"  class="slideImage">
+							<img src="<c:url value='/images/sej/banner/002.png'/>" class="slideImage">
+							<img src="<c:url value='/images/sej/banner/001.png'/>" class="slideImage">
+							<img src="<c:url value='/images/sej/banner/005.png'/>" class="slideImage">
 						</div>
 					</div> <!-- slideShowBox 끝 -->
 				</article>
@@ -59,7 +59,7 @@
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 							<c:forEach items="${gatListBest}" var="gat" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/image/${gat.gatPhoto}'/>" id="bestImg">	
+									<a href="#"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">소모임</p>
 									<br id="bestBr"><p id="gatherName">${gat.gatName}</p>
 									<br id="bestBr"><div id="gatherArea">${gat.gatArea}</div> </a></li>
@@ -75,8 +75,9 @@
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
+
 							<c:forEach items="${classListBest}" var="classVo" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/image/${classVo.classPhoto}'/>" id="bestImg">	
+									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">클래스</p>
 									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
 									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>
@@ -93,7 +94,7 @@
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 							<c:forEach items="${gatListNew}" var="gat" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">	
+									<a href="#"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">소모임</p>
 									<br id="bestBr"><p id="gatherName">${gat.gatName}</p>
 									<br id="bestBr"><div id="gatherArea">${gat.gatArea}</div> </a></li>
@@ -109,7 +110,7 @@
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 							<c:forEach items="${classListNew}" var="classVo" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/image/hobbyCtg/4_travel.jpg'/>" id="bestImg">	
+									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">클래스</p>
 									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
 									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>

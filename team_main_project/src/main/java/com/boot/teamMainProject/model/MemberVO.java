@@ -1,5 +1,6 @@
 package com.boot.teamMainProject.model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MemberVO {
@@ -9,6 +10,9 @@ public class MemberVO {
 	private String memArea;
 	private String memPhone;
 	private String memNick;
+	private String hobbyNo1;
+	private String hobbyNo2;
+	private String hobbyNo3;
 	private String classJoin1;
 	private String classJoin2;
 	private String classJoin3;
@@ -19,8 +23,8 @@ public class MemberVO {
 	private String gatJoinNo3;
 	private String gatJoinNo4;
 	private String gatJoinNo5;
-	private Timestamp memBirth;
-	private Timestamp joinDate;
+	private String memBirth;
+	private String joinDate;
 	private int levelClass;
 	private int levelSpace;
 	private int memPoint;
@@ -60,6 +64,24 @@ public class MemberVO {
 	}
 	public void setMemNick(String memNick) {
 		this.memNick = memNick;
+	}
+	public String getHobbyNo1() {
+		return hobbyNo1;
+	}
+	public void setHobbyNo1(String hobbyNo1) {
+		this.hobbyNo1 = hobbyNo1;
+	}
+	public String getHobbyNo2() {
+		return hobbyNo2;
+	}
+	public void setHobbyNo2(String hobbyNo2) {
+		this.hobbyNo2 = hobbyNo2;
+	}
+	public String getHobbyNo3() {
+		return hobbyNo3;
+	}
+	public void setHobbyNo3(String hobbyNo3) {
+		this.hobbyNo3 = hobbyNo3;
 	}
 	public String getClassJoin1() {
 		return classJoin1;
@@ -121,16 +143,16 @@ public class MemberVO {
 	public void setGatJoinNo5(String gatJoinNo5) {
 		this.gatJoinNo5 = gatJoinNo5;
 	}
-	public Timestamp getMemBirth() {
+	public String getMemBirth() {
 		return memBirth;
 	}
-	public void setMemBirth(Timestamp memBirth) {
+	public void setMemBirth(String memBirth) {
 		this.memBirth = memBirth;
 	}
-	public Timestamp getJoinDate() {
+	public String getJoinDate() {
 		return joinDate;
 	}
-	public void setJoinDate(Timestamp joinDate) {
+	public void setJoinDate(String joinDate) {
 		this.joinDate = joinDate;
 	}
 	public int getLevelClass() {
@@ -151,6 +173,5 @@ public class MemberVO {
 	public void setMemPoint(int memPoint) {
 		this.memPoint = memPoint;
 	}
-	
 	
 }

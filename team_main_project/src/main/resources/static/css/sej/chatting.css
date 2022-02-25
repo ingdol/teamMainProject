@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+
+.container{
+	width:680px;
+	background:#F6F6F6;
+	margin-top:30px;
+	padding-bottom:20px;
+	
+}
+.container h1{
+	font-size: 18px;
+	text-align:center;
+	padding:13px;
+	background:#8ADBFF;
+}
+.chating{
+	background:#F6F6F6;
+	width:650px;
+	height: 600px; 
+	overflow: auto;
+	padding:15px;
+}
+.chating .me{
+	height: auto; 
+	width: auto; 
+	background: #FFFFFF;
+	border: 1px solid #ABABAB;
+	border-radius: 10px;
+	font-size:16px;
+	float:right; 
+	margin-left:400px;
+	position: relative;
+	padding:10px;
+	margin-top:10px;
+	
+}
+.chating .othersText{
+	height: auto; 
+	width: auto; 
+	font-size:16px;
+	float:left; 
+	margin-right:400px;
+	position: relative;
+	padding:10px;
+	margin-top:10px;
+	font-weight:bold;
+}
+.chating .othersBox{
+	height: auto; 
+	width: auto; 
+	background: #FFFFFF;
+	border: 1px solid #ABABAB;
+	border-radius: 10px;
+	font-size:16px;
+	float:left; 
+	margin-right:400px;
+	position: relative;
+	padding:10px;
+}
+
+.yourInputBox {
+	text-align:center;
+	height: 70px; 
+	width: 550px; 
+	background:#FFFFFF;
+	padding-right:110px;
+}
+
+.chattingInput {
+	height: 70px; 
+	width: 470px; 
+	border:0 solid white;
+	font-size:16px;
+	float:left;
+	padding-left:50px;
+	position: relative;
+}
+
+.chattingBtn {
+	height: 55px; 
+	width: 110px; 
+	padding-right:0;
+	background: #D0D0D0;
+	border-radius: 10px;
+	border:0 solid white;
+	font-size:16px;
+	position: absolute;
+	margin-top:7px;
+}
+#yourMsg{
+	display: none;
+}
