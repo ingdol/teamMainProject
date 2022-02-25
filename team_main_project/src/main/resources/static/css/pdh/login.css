@@ -95,6 +95,7 @@ h1 {
 	border: none;
 	border-bottom: 1px solid black;
 	left: 19rem;
+	cursor: pointer;
 }
 
 .l-label {
