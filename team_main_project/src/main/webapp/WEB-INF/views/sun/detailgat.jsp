@@ -88,7 +88,7 @@
 									<div class="top">
 										<div class="num">${com.gatDetNo}</div>
 										<div class="title" id="comTitle">
-											<a href="<c:url value='#'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>
+											<a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>
 										</div>
 										<div class="writer" id="comId">${com.memNick}</div>
 										<div class="date" id="comDate"><fmt:formatDate value="${com.gatDetDate}" pattern="YY/MM/dd"/></div>
