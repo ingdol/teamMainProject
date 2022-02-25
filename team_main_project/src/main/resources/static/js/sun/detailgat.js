@@ -40,7 +40,9 @@ $(function(){
 		location.href='/chat';
 	});
 	
+	
 	$(".gatherschedule").on('click',function(){
 		location.href='/GatherSchedule';
-	});
+	});	
+	
 });

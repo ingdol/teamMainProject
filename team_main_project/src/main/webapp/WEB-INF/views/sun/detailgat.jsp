@@ -171,6 +171,8 @@
 						</nav>
 					</div>
 
+
+
 					<!-- 채팅 클릭시 -->
 					<div class="moimchatting">모임채팅</div>
 				</div>
