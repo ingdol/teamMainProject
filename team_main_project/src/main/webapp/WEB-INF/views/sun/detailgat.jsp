@@ -36,7 +36,7 @@
 					<div>${detail.gatName}</div>
 					<div>
 						모임장 : <a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
-						<a href="#"><span class="quest">1:1문의</span></a>
+						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
 					</c:forEach>
 				</div>		
@@ -108,7 +108,7 @@
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
-									<li class="bt_wrap"><a href="<c:url value='/write'/>" class="on">등록</a></li>
+									<li class="bt_wrap"><a href="<c:url value='/ldh/SomoimboardWrite/{memNick}'/>" class="on">등록</a></li>
 								</ul>
 							</nav>	
 					</div>
@@ -178,8 +178,9 @@
 			<div class="moimjoin">
 				<h3 id="sectioninfo">해당모임찜,가입버튼</h3>
 				<ul>
-					<li><button type="button" class="btn btn-secondary btn-lg">찜하기</button></li>
-					<li><button type="button" class="btn btn-primary btn-lg">가입하기</button></li>
+					<li><button type="button" class="btn btn-primary">일정잡기</button></li>
+					<li><button type="button" class="btn btn-secondary">찜하기</button></li>
+					<li><button type="button" class="btn btn-primary">가입하기</button></li>
 				</ul>
 			</div>
 		</section>
