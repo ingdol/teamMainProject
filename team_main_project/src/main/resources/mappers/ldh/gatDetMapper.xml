@@ -31,6 +31,7 @@
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
 			INSERT INTO gather_det(gatNo, gatDetTitle,memNick,gatDetInfo,gatDetPhoto, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
 			VALUES (${gatNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}','${gatDetPhoto}',CURRENT_TIMESTAMP,0,0,0,${gatDetCategory})
+			
 	</insert>
 	
 	<resultMap id="MeemResult" type="com.boot.teamMainProject.model.MemberVO">
@@ -42,10 +43,10 @@
   		SELECT * FROM member WHERE memNick=#{memNick}
    </select>
    
-<!--    <select id="CountBoard"  -->
-<!--    				resultType="com.boot.teamMainProject.model.GatherDetVO"> -->
-<!--   		SELECT COUNT(*) FROM gather_det -->
-<!--    </select> -->
+   <select id="CountBoard" 
+   				resultType="com.boot.teamMainProject.model.GatherDetVO">
+  		SELECT * FROM gather_det
+   </select>
 <!--    <select id="MoveinsertGather2" parameterType="String" -->
 <!--    				resultType="com.boot.teamMainProject.model.MemberVO"> -->
 <!--   		SELECT * FROM member WHERE memNick=#{memNick} -->

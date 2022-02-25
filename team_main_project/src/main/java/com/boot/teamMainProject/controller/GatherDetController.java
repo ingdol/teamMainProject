@@ -2,8 +2,8 @@ package com.boot.teamMainProject.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import javax.inject.Inject;
 
@@ -47,8 +47,8 @@ public class GatherDetController {
 		return "/ldh/SomoimboardWrite";
 	}
 
-	int count2 =3;
 
+	
 	@RequestMapping("/sboard")
 	public String insertGatherDet (@RequestParam int gatNo ,@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
 	{
@@ -88,8 +88,15 @@ public class GatherDetController {
 		gat.setGatDetPhoto(gatDetPhoto); 
 		service.insertGatherDet(gat);
 		
+//		int gatNo2 = gatNo;
+//		count2 = count2 + 1;
+		
+		ArrayList<GatherDetVO> gdList = service.CountBoard();
+		int count2 = gdList.size();
+		
 		int gatNo2 = gatNo;
-		count2 = count2 + 1;
+		System.out.println(count2); 
+
 		
 		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + count2;
 	}
