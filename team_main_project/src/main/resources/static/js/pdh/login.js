@@ -4,6 +4,7 @@
 // --| Author: ParkDoHun
 "use strict"
 const testInput = document.querySelector('.l-input');
+const singUpBtn = document.querySelector('#l-signup');
 const submitBtn = document.querySelector('#l-submit');
 const email = document.querySelector('#email');
 const pw = document.querySelector('#pw');
@@ -23,6 +24,11 @@ const pwRegex = new RegExp(/^[A-Za-z0-9]{6,18}$/);
 const emailRegex = new RegExp(
 	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 );
+
+singUpBtn.addEventListener('click', function(event) {
+	event.preventDefault();
+	location.href = '/signup';
+})
 
 // --| Submit EventListener
 document.querySelector('form').addEventListener('submit', function(event){
