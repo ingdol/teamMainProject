@@ -15,13 +15,12 @@ $(document).ready(function(){
                 if(result != ""){
                     var space = result;
 
-                    alert(Object.keys(space).length);
                     console.log(space);
                     $('#gallerylistBox').empty(); // 비우기
                     for(var i = 0; i < Object.keys(space).length; i++){
-
                         var item = $('.card-link-R').clone(); // 복사
-                        $(item).find('.card-body-header-title').html(space[i].spaceTitle + i);
+                        $(item).find('.card-body-header').prepend('<img src="' + '<c:url value="' + '/bchimages/' + space[i].spacePhoto + '"/>' + '/>')
+                        $(item).find('.card-body-header-title').html(space[i].spaceTitle);
                         $(item).find('.card-body-hashtag').html(space[i].spaceArea);
                         $(item).find('.card-body-nickname').html('최대 ' + space[i].spacePerMax + '인');
                         $(item).find('.card-body-description').html(space[i].spacePrice1 + '<span>/비수기</span><br>' + space[i].spacePrice2 + '<span>/성수기</span></p>');
@@ -33,7 +32,7 @@ $(document).ready(function(){
                             success:function(result_name){
                                 var spaceCtgName = result_name;
                                 for(var j = 0; j < 1; j++) {
-                                    $(item).find(".card-header-text").html(spaceCtgName[j].spaceCtgName + i + "@" + j);
+                                    $(item).find(".card-header-text").html(spaceCtgName[j].spaceCtgName);
                                 }
                             },
                             error:function(data, textStatus){

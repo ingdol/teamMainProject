@@ -78,9 +78,14 @@ table {
     width: 100%;
     height: 270px;
     border-radius: 0px 0px 0 0;
-    background-image: url("/image/bch/IMG_4587.JPG");
+    /*background-image: url("/image/bch/IMG_4587.JPG");*/
     background-size: 100% 280px;
     background-repeat: no-repeat;
+}
+
+.card-header img{
+    width: 100%;
+    height: 100%;
 }
 
 .card:hover .card-header  {

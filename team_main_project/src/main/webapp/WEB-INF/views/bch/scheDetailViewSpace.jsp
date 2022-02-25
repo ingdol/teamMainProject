@@ -48,7 +48,7 @@
             </div>
             <div>
                 <div id="spacePicture" class="spacePicture">
-                    <img src="/image/bch/IMG_4587.JPG">
+                    <img src="<c:url value='/bchimages/${space.spacePhoto}'/>" />
                 </div>
                 <div>
                     <h2 id="spaceInfo2">${space.spaceInfo}</h2>
