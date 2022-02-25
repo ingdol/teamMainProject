@@ -42,6 +42,10 @@
   		SELECT * FROM member WHERE memNick=#{memNick}
    </select>
    
+<!--    <select id="CountBoard"  -->
+<!--    				resultType="com.boot.teamMainProject.model.GatherDetVO"> -->
+<!--   		SELECT COUNT(*) FROM gather_det -->
+<!--    </select> -->
 <!--    <select id="MoveinsertGather2" parameterType="String" -->
 <!--    				resultType="com.boot.teamMainProject.model.MemberVO"> -->
 <!--   		SELECT * FROM member WHERE memNick=#{memNick} -->
