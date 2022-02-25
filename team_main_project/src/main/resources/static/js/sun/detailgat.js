@@ -36,6 +36,7 @@ $(function(){
 		$('.moiminfodetail').hide();
 		$('.moimcommu').hide();
 		$('.moimphoto').hide();
-		$('.moimchatting').show();
+		/*$('.moimchatting').show();*/
+		location.href='/chat';
 	});
 });

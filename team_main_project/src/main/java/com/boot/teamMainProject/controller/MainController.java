@@ -2,7 +2,6 @@
 package com.boot.teamMainProject.controller;
 
 import java.util.ArrayList;
-import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,12 +31,11 @@ public class MainController {
 //---------컨트롤러코드부분----------
 
 
-	// index 페이지로 이동
-	@RequestMapping("/")
-	public String index() {
-//		int a = 1;
-		return "index";
-	}
+//	// 메인 페이지로 이동
+//	@RequestMapping("/")
+//	public String index() {
+//		return "/sej/main";
+//	}
 
 	//ldh(아직 안추가함)
 
