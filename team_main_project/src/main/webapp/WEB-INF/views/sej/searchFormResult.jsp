@@ -20,7 +20,7 @@
 						</c:when>
 				   <c:otherwise>
 				   <c:forEach items="${gatSearchList}" var="gat"><li>	
-							<a href="#"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="searchImg">	
+							<a href="<c:url value='/sun/detailgat/${gat.gatNo}'/>"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="searchImg">	
 							<br id="searchBr"><p id="searchCtg">소모임</p>
 							<br id="searchBr"><p id="searchName">${gat.gatName}</p>
 							<br id="searchBr"><div id="searchArea">${gat.gatArea}</div> </a></li>

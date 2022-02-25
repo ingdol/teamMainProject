@@ -30,7 +30,7 @@ public class SearchController {
 	
 	
 	// 메인페이지 - 베스트 모임 클래스. 신규 모임 클래스 DB 연결
-	@RequestMapping("/main2")
+	@RequestMapping("/")
 	public String listAllGatherBest(Model model) {
 		ArrayList<GatheringVO> gatListBest = Gatherservice.listAllGatherBest();
 		ArrayList<GatheringVO> gatListNew = Gatherservice.listAllGatherNew();

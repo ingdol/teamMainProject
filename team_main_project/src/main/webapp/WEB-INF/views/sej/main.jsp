@@ -59,7 +59,7 @@
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 							<c:forEach items="${gatListBest}" var="gat" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="bestImg">	
+									<a href="<c:url value='/sun/detailgat/${gat.gatNo}'/>"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">소모임</p>
 									<br id="bestBr"><p id="gatherName">${gat.gatName}</p>
 									<br id="bestBr"><div id="gatherArea">${gat.gatArea}</div> </a></li>
@@ -94,7 +94,7 @@
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 							<c:forEach items="${gatListNew}" var="gat" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="bestImg">	
+									<a href="<c:url value='/sun/detailgat/${gat.gatNo}'/>"><img src="<c:url value='/images/${gat.gatPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">소모임</p>
 									<br id="bestBr"><p id="gatherName">${gat.gatName}</p>
 									<br id="bestBr"><div id="gatherArea">${gat.gatArea}</div> </a></li>
