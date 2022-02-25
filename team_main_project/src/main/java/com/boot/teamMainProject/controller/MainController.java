@@ -33,11 +33,11 @@ public class MainController {
 
 
 	// index 페이지로 이동
-//	@RequestMapping("/")
-//	public String index() {
-////		int a = 1;
-//		return "/index";
-//	}
+	@RequestMapping("/")
+	public String index() {
+//		int a = 1;
+		return "index";
+	}
 
 	//ldh(아직 안추가함)
 
