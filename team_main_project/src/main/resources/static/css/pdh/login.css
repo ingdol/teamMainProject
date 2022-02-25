@@ -89,6 +89,14 @@ h1 {
     transition: all 0.2s;
 }
 
+#l-signup {
+	position: absolute;
+	background: none;
+	border: none;
+	border-bottom: 1px solid black;
+	left: 19rem;
+}
+
 .l-label {
     position: absolute;
     left: 1rem;
