@@ -44,6 +44,9 @@
                         <img src="<c:url value="/image/kakao/kakao_login_medium_wide.png" />" width="100%" height="50hv">
                     </a>
                 </li>
+                <li class="l-li-Btn">
+                	<button id="l-signup"><i class="far fa-paper-plane"></i>&nbsp;회원가입</button>
+                </li>
             </ul>
         </form>
     </div>
