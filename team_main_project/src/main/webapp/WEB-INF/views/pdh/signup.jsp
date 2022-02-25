@@ -16,8 +16,6 @@
 <body>
     <!-- HEADER -->
     <!-- <header id="header"></header> -->
-    <div id="mainWrap">
-    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
     <!-- MAIN -->
     <div id="l-form">
         <form class="form" method="post">
@@ -119,8 +117,6 @@
 
     <!-- FOOTER -->
     <!-- <footer id="footer"></footer> -->
-	<jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
-    </div>
     <!-- JavaScript -->
 
     <script src="../js/header.js"></script>
