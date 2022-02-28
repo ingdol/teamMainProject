@@ -101,3 +101,20 @@ border-radius: 10px;
 
 padding: 10px 10px 10px 10px;
 }
+
+.comsubbox{
+	width: 65px;
+height: 57px;
+
+background: #66A3FF;
+border: 3px solid #66A3FF;
+box-sizing: border-box;
+border-radius: 10px;
+
+color: white;
+	
+}
+.comsubbox:hover{
+	background: #0038FF;
+border: 3px solid #0038FF;
+}

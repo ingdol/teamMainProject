@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,10 +48,10 @@ public class GatherDetController {
 		return "/ldh/SomoimboardWrite";
 	}
 
-
+	
 	
 	@RequestMapping("/sboard")
-	public String insertGatherDet (@RequestParam int gatNo ,@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
+	public String insertGatherDet ( @RequestParam int gatNo ,@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
 	{
 		
 		
@@ -86,19 +87,45 @@ public class GatherDetController {
 		
 		String gatDetPhoto = savedFileName;
 		gat.setGatDetPhoto(gatDetPhoto); 
-		service.insertGatherDet(gat);
+		
 		
 //		int gatNo2 = gatNo;
 //		count2 = count2 + 1;
 		
 		ArrayList<GatherDetVO> gdList = service.CountBoard();
-		int count2 = gdList.size();
+		int count2 = gdList.size() +1;
 		
 		int gatNo2 = gatNo;
-		System.out.println(count2); 
-
 		
+		int gatDetNo = count2;
+		gat.setGatDetNo(gatDetNo); 
+		service.insertGatherDet(gat);
+		System.out.println(count2); 
 		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + count2;
+	}
+	
+	
+	//댓글작성
+	@RequestMapping("/Commentcreate/{gatNo}/{gatDetNo}")
+	public String insertGatDetCom (@PathVariable int gatNo ,@PathVariable int gatDetNo ,@RequestParam String gatDetComInfo,GatherDetComVO gatc) throws IOException
+	{
+		
+		String check = gatDetComInfo;
+		
+		if(check.length()!=0) {
+		ArrayList<GatherDetComVO> cmList = service2.CommentCountBoard(gatDetNo);
+		GatherDetVO gat = service.detailViewBoard(gatNo, gatDetNo);
+		int comcount = cmList.size() +1;
+		gat.setGatDetComNum(comcount);
+
+		int gatDetComNo = comcount;
+		gatc.setGatDetComNo(gatDetComNo); 
+		gat.setGatDetComNum(gatDetComNo);
+		service.updateGatherDet(gat);
+		service2.insertGatDetCom(gatc);
+		System.out.println(comcount); 
+		}
+		return "redirect:/ldh/Somoimboard/"+gatNo + "/" + gatDetNo;
 	}
 	
 	
@@ -111,12 +138,23 @@ public class GatherDetController {
 		
 		model.addAttribute("gat", gat);
 		model.addAttribute("gath", gath);
+
+		
 		
 		List<GatherDetComVO> comList = service2.readComment(gatDetNo);
 		model.addAttribute("comList", comList);
 		
 		return "ldh/Somoimboard";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	int countex1 = 14;
 	int countex2 = 14;
