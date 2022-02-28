@@ -13,7 +13,7 @@ public interface IGatherDetDAO {
 	void insertGatherDet(GatherDetVO gat) throws IOException;
 	MemberVO MoveinsertGather(String memNick);
 	ArrayList<GatherDetVO> CountBoard ();
-	
+	void updateGatherDet(GatherDetVO gat);
 	
 	// 서연-소모임게시판 전체화면
 	ArrayList<GatherDetVO> gatcommulist(int gatNo);

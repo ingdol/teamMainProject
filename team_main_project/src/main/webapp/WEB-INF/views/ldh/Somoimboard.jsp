@@ -9,6 +9,18 @@
 		<link rel="stylesheet" href="<c:url value="/css/ldh/Sdetail.css" />">
 <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+<script src="<c:url value='/js/ldh/Sdate.js'/>"></script>
+
+<script>
+	function commentCheck() {
+    var form = document.CommentForm1;
+    if(form.gatDetComInfo.value.length==0) {
+        alert("댓글을 입력하세요");
+        return form.gatDetComInfo.focus();
+    }
+    form.submit();
+}
+</script>
 	</head>
 	<body>
 	
@@ -64,10 +76,15 @@
 			</c:if>
 			${gat.gatDetInfo }
 			</td></tr>
-
+			
+			<c:if test="${empty sessionScope.sid }">
+			<tr><td align="center" colspan="4"><br></td></tr>
+			</c:if>
+			
+			<c:if test="${not empty sessionScope.sid }">
 			<tr><td align="center" colspan="4"><br><img src="<c:url value='/image/ldh/star1.png'/>" width="40px" height="40px"> 추천!
 			<img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
-			
+			</c:if>
 			
 			<tr><td colspan="4" align="left">댓글 ${gat.gatDetComNum}</td></tr>
 			 </table>
@@ -81,14 +98,28 @@
 				<c:forEach items="${comList }" var="comList"> 
 
 				<table class="comment" align="center" border="0" width="1000px">
-					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"><img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
+					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right">${comList.gatDetComDate} <img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
 					<tr><td colspan="2" align="left">${comList.gatDetComInfo}</td></tr>
 				</table>
 			
 				</c:forEach>
 			</ol>
-			
-		</div>
+			</div>
+			<br>
+			<c:if test="${not empty sessionScope.sid }">
+			<form id="CommentForm1" name="CommentForm1" method="post"  action="/Commentcreate/${gat.gatNo }/${gat.gatDetNo}">
+				<table border='0'>
+				<tr><td>${sessionScope.sid}님</td><td>
+				<textarea id="gatDetComInfo" name="gatDetComInfo" 
+				rows="3" cols="120" style="padding-left: 10px; padding-top: 10px;" placeholder="댓글을 입력해주세요" onfocus="this.placeholder=''" 
+				onblur="this.placeholder='댓글을 입력해주세요'" ></textarea>
+				</td>
+				<td><input type="submit" value="댓글"  class="comsubbox" onClick="commentCheck()"></td></tr>
+				
+				</table>
+			</form>
+			</c:if>
+		
 		 </section>
 			<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />

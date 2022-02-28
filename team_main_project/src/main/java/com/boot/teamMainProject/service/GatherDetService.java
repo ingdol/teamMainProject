@@ -52,6 +52,12 @@ public class GatherDetService implements IGatherDetService {
 		return dao.gatcommulist(gatNo);
 	}
 
+	@Override
+	public void updateGatherDet(GatherDetVO gat) {
+		// TODO Auto-generated method stub
+		dao.updateGatherDet(gat);
+	}
+
 	
 
 
