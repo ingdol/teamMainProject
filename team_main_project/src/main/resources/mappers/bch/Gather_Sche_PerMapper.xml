@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.teamMainProject.dao.IGatherScheduleDAO">
+
+    <resultMap id="gatherSchePerNo" type="com.boot.teamMainProject.model.Gather_Sche_PerVO">
+        <result property="gatScheNo" column="gatScheNo" />
+        <result property="gatNo" column="gatNo" />
+        <result property="memNick" column="memNick" />
+        <result property="gatSchePerNo" column="gatSchePerNo" />
+
+    </resultMap>
+<!--  현재 모임 참가 인원 숫자 조회  -->
+    <select id="GatherJoinNow" resultType="int">
+        select count(*) from Gather_Sche_Per where gatScheNo=#{gatScheNo}
+    </select>
+</mapper>

@@ -29,12 +29,6 @@ public class GatherController {
     public String GatherSchedule() {
         return "bch/gatherSchedule";
     }
-    @ResponseBody
-    @RequestMapping("sendForm")
-    public String sendForm() {
-
-        return "bch/gatherSchedule";
-    }
 
     // 모임 일정 신청 POST
     @RequestMapping("WriteGatherSchedule")
@@ -43,6 +37,7 @@ public class GatherController {
         reservationService.SpaceReservation(spaceReservationVO);
         return "redirect:./sun/detailgat/{gatNo}";
     }
+
     // 모임 일정 공지
     @RequestMapping("ScheduleNotice/{gatNo}/{gatScheNo}")
     public String ScheduleNotice(@PathVariable int gatNo, @PathVariable int gatScheNo, Model model) {
@@ -53,5 +48,17 @@ public class GatherController {
         model.addAttribute("gatherSchedule", gatherSchedule);
         scheduleService.updateViewCount(gatScheNo);
         return "bch/scheduleNotice";
+    }
+
+    // 모임 참가 ajax
+    @ResponseBody
+    @RequestMapping("JoinGather")
+    public void JoinGather(@RequestParam("ajaxMemNick") String ajaxMemNick,
+                           @RequestParam("ajaxGatScheNo") int ajaxGatScheNo,
+                           @RequestParam("ajaxGatNo") int ajaxGatNo) {
+        int ScheduleMaxPerson = scheduleService.CheckMaxPerson(ajaxGatScheNo);
+        int SchedulePersonNow = scheduleService.GatherJoinNow(ajaxGatScheNo);
+        System.out.println("모임 최대 인원 : " + ScheduleMaxPerson);
+        System.out.println("현재 인원 : " + SchedulePersonNow);
     }
 }

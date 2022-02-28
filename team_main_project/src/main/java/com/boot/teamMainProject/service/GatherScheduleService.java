@@ -1,7 +1,6 @@
 package com.boot.teamMainProject.service;
 
 import com.boot.teamMainProject.dao.IGatherScheduleDAO;
-import com.boot.teamMainProject.dao.IGatheringDAO;
 import com.boot.teamMainProject.model.GatherScheduleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -33,5 +32,15 @@ public class GatherScheduleService implements IGatherScheduleService{
     @Override
     public GatherScheduleVO LocdGather_Schedule(int gatNo) {
         return dao.LocdGather_Schedule(gatNo);
+    }
+
+    @Override
+    public int CheckMaxPerson(int gatScheNo) {
+        return dao.CheckMaxPerson(gatScheNo);
+    }
+
+    @Override
+    public int GatherJoinNow(int gatScheNo) {
+        return dao.GatherJoinNow(gatScheNo);
     }
 }

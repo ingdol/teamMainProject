@@ -8,11 +8,13 @@
       <link rel="stylesheet" href="<c:url value="/css/ldh/Sdetail.css" />">
       <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
       <link rel="stylesheet" href="<c:url value="/css/bch/scheNotice.css" />">
+      <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
       <script src="/js/jquery-3.6.0.min.js"></script>
       <script type="text/javascript"
               src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder">
       </script> <!-- 네이버 지도 api -->
       <script src="/js/bch/MapForDetailView.js"></script>
+      <script src="/js/bch/scheNotice.js"></script>
   </head>
   <body>
       <div id ="mainWrap">
@@ -50,13 +52,18 @@
                               <c:set var="keywordArr" value="${fn:split(spaceT,' ')[1]}"></c:set>
                               <p>날짜 : ${gatherSchedule.gatScheDate} ${keywordArr} ${gatherSchedule.gatScheTime}</p>
                               <p>최대 인원 : ${gatherSchedule.gatScheMax}</p>
-                              <p>지도</p>
+<%--                              <p style="margin-top: 10px; margin-bottom: 10px; font-weight: bold;">지도</p>--%>
                               <input type="hidden" name="address" id="address" value="${gatherSchedule.gatScheLocation}">
-                              <div id="map" style="width: 100%; height: 85%;"></div>
                           </td>
                       </tr>
-                      <tr><td colspan="4" align="left">댓글 ${gat.gatDetComNum}</td></tr>
                   </table>
+                  <div id="map" style="width: 1000px; height: 50%; margin-top: 10px;"></div>
+                  <input type="button" value="일정 참가" id="joinGatherBtn">
+                  <input type="hidden" id="ajaxMemNick" value="코딩이">
+                  <fmt:parseNumber value="${gatherSchedule.gatScheNo}" type="number" var="gatScheNo" />
+                  <fmt:parseNumber value="${gatherSchedule.gatNo}" type="number" var="gatNo" />
+                  <input type="hidden" id="ajaxGatScheNo" value="${gatScheNo}">
+                  <input type="hidden" id="ajaxGatNo" value="${gatNo}">
               </div>
           </section>
           <section>
@@ -64,7 +71,7 @@
                   <ol class="comList">
                       <c:forEach items="${comList }" var="comList">
                           <table class="comment" align="center" border="0" width="1000px">
-                              <tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"><img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
+                              <tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"></td></tr>
                               <tr><td colspan="2" align="left">${comList.gatDetComInfo}</td></tr>
                           </table>
                       </c:forEach>

@@ -1,3 +1,23 @@
+.wrap{
+    font-family: 'NanumSquareRound' !important;
+}
 .boardDetail{
-    height: 800px !important;
+    height: 100px !important;
+}
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#joinGatherBtn{
+    background-color: #5da5f8;
+    border: 2px solid #5da5f8;
+    color: white;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 10px;
+    float: right;
+    margin-right: 11%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
