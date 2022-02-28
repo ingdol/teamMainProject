@@ -87,11 +87,9 @@ public class SpaceReservationController {
     @RequestMapping("/scheDetailViewSpace/{spaceNo}")
     public String scheDetailViewSpace(@PathVariable String spaceNo, Model model) {
         SpaceVO space = service.detailSpace(spaceNo);
-//        SpaceReviewVO spaceReview = spaceReviewService.spaceReview(spaceNo); // ArrayList로 동작해야 돌아감
         ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
         ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
         model.addAttribute("space", space);
-//        model.addAttribute("spaceReview", spaceReview); // ArrayList로 동작해야 돌아감
         model.addAttribute("spaceReviewTest", spaceReviewTest);
         model.addAttribute("spaceInfo", spaceInfo);
         return "bch/scheDetailViewSpace";

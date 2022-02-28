@@ -1,18 +1,16 @@
 package com.boot.teamMainProject.controller;
 
-import com.boot.teamMainProject.model.GatherScheduleVO;
-import com.boot.teamMainProject.model.SpaceReservationVO;
-import com.boot.teamMainProject.model.SpaceVO;
-import com.boot.teamMainProject.model.Space_CtgVO;
+import com.boot.teamMainProject.model.*;
 import com.boot.teamMainProject.service.GatherScheduleService;
+import com.boot.teamMainProject.service.GatheringService;
 import com.boot.teamMainProject.service.SpaceReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.ArrayList;
 
 @Controller
@@ -21,6 +19,10 @@ public class GatherController {
     GatherScheduleService service;
     @Autowired
     SpaceReservationService reservationService;
+    @Autowired
+    GatherScheduleService scheduleService;
+    @Autowired
+    GatheringService service3;
 
     // 모임 일정 신청 페이지
     @RequestMapping("GatherSchedule")
@@ -39,6 +41,17 @@ public class GatherController {
     public String WriteGatherSchedule(GatherScheduleVO gatherScheduleVO, SpaceReservationVO spaceReservationVO) {
         service.MakeGatherSchedule(gatherScheduleVO);
         reservationService.SpaceReservation(spaceReservationVO);
-        return "redirect:/";
+        return "redirect:./sun/detailgat/{gatNo}";
+    }
+    // 모임 일정 공지
+    @RequestMapping("ScheduleNotice/{gatNo}/{gatScheNo}")
+    public String ScheduleNotice(@PathVariable int gatNo, @PathVariable int gatScheNo, Model model) {
+//        ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
+        GatheringVO gath = service3.detailViewSomoim(gatNo);
+        GatherScheduleVO gatherSchedule = scheduleService.LocdGather_Schedule(gatScheNo);
+        model.addAttribute("gath", gath);
+        model.addAttribute("gatherSchedule", gatherSchedule);
+        scheduleService.updateViewCount(gatScheNo);
+        return "bch/scheduleNotice";
     }
 }

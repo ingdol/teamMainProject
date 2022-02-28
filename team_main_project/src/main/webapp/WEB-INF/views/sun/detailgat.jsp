@@ -95,6 +95,17 @@
 										<div class="count" id="comCount">${com.gatDetView}</div>
 									</div>
 								</c:forEach>
+								<c:forEach items="${gatherSchedule}" var="gatSche">
+									<div class="top">
+										<div class="num">${gatSche.gatScheNo}</div>
+										<div class="title" id="gatTitle">
+											<a href="<c:url value='/ScheduleNotice/${gatSche.gatNo}/${gatSche.gatScheNo}'/>">[일정 공지]${gatSche.gatScheTitle}</a>
+										</div>
+										<div class="writer" id="gatId">${gatSche.memNick}</div>
+										<div class="date" id="gatDate"><fmt:formatDate value="${gatSche.gatScheWriteDate}" pattern="YY/MM/dd"/></div>
+										<div class="count" id="gatCount">${gatSche.gatScheView}</div>
+									</div>
+								</c:forEach>
 							</div>
 						</div>
 							<nav aria-label="Page navigation example">

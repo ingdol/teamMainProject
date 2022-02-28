@@ -2,24 +2,13 @@ package com.boot.teamMainProject.controller;
 
 import java.util.ArrayList;
 
+import com.boot.teamMainProject.model.*;
+import com.boot.teamMainProject.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.boot.teamMainProject.model.ClassVO;
-import com.boot.teamMainProject.model.CommunityVO;
-import com.boot.teamMainProject.model.GatherDetComVO;
-import com.boot.teamMainProject.model.GatherDetVO;
-import com.boot.teamMainProject.model.GatheringVO;
-import com.boot.teamMainProject.model.HobbyCtgVO;
-import com.boot.teamMainProject.service.ClassService;
-import com.boot.teamMainProject.service.CommentService;
-import com.boot.teamMainProject.service.CommunityService;
-import com.boot.teamMainProject.service.GatherDetService;
-import com.boot.teamMainProject.service.GatheringService;
-import com.boot.teamMainProject.service.HobbyCtgService;
 
 @Controller
 public class SunController {
@@ -39,15 +28,21 @@ public class SunController {
 	
 	@Autowired
 	HobbyCtgService ctgser;
+
+	// 모임 일정 공지 service(고병채)
+	@Autowired
+	GatherScheduleService scheduleService;
 	// 해당모임클릭시 해당모임 상세페이지 나오도록
 	
 	@RequestMapping("/sun/detailgat/{gatNo}")
 	public String detailgat(@PathVariable int gatNo, Model model) {
 		ArrayList<GatheringVO> detail = gatherser.detailgat(gatNo);
 		ArrayList<GatherDetVO> gatherCommu = gatherDetser.gatcommulist(gatNo);
+		ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
 		
 		model.addAttribute("detail",detail);
 		model.addAttribute("gatherCommu",gatherCommu);
+		model.addAttribute("gatherSchedule", gatherSchedule);
 		System.out.println("detail = " + detail);
 		System.out.println("gatherCommu = " + gatherCommu);
 		return "/sun/detailgat";

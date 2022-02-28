@@ -1,5 +1,7 @@
 package com.boot.teamMainProject.model;
 
+import java.util.Date;
+
 public class GatherScheduleVO {
     private int gatScheNo;
     private int gatNo;
@@ -13,6 +15,24 @@ public class GatherScheduleVO {
     private String gatScheSpace;
     private String scheduleAddress;
     private String scheduleSpace;
+    private int gatScheView;
+    private Date gatScheWriteDate;
+
+    public Date getGatScheWriteDate() {
+        return gatScheWriteDate;
+    }
+
+    public void setGatScheWriteDate(Date gatScheWriteDate) {
+        this.gatScheWriteDate = gatScheWriteDate;
+    }
+
+    public int getGatScheView() {
+        return gatScheView;
+    }
+
+    public void setGatScheView(int gatScheView) {
+        this.gatScheView = gatScheView;
+    }
 
     public String getScheduleAddress() {
         return scheduleAddress;
