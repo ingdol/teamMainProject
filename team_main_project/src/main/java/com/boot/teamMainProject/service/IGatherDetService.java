@@ -11,7 +11,7 @@ public interface IGatherDetService {
 	GatherDetVO detailViewBoard(int gatNo ,int gatDetNo);
 	void insertGatherDet(GatherDetVO gat)  throws IOException;
 	MemberVO MoveinsertGather(String memNick);
-
+	ArrayList<GatherDetVO> CountBoard ();
 	
 	
 	// 서연 - 소모임게시판 전체화면
