@@ -21,3 +21,6 @@ p{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.comment{
+    height: 10px !important;
+}

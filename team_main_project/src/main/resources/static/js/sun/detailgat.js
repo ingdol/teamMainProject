@@ -41,6 +41,6 @@ $(function(){
 	});
 	
 	$(".gatherschedule").on('click',function(){
-		location.href='/GatherSchedule';
+		location.href='/GatherSchedule?';
 	});	
 });

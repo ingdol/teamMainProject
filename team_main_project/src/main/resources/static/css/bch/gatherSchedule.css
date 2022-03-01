@@ -33,6 +33,6 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: #5da5f8;
     border-color: #5da5f8;
 }
-#btnSave {
+#btnSave1, #btnSave2 {
     float: right;
 }

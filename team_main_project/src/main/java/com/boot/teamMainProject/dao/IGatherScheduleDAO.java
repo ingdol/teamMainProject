@@ -1,6 +1,7 @@
 package com.boot.teamMainProject.dao;
 
 import com.boot.teamMainProject.model.GatherScheduleVO;
+import com.boot.teamMainProject.model.Gather_Sche_PerVO;
 
 import java.util.ArrayList;
 
@@ -11,4 +12,5 @@ public interface IGatherScheduleDAO {
     GatherScheduleVO LocdGather_Schedule(int gatNo); // 상세 보기 전용
     int CheckMaxPerson(int gatScheNo); // 모임 최대 인원 검색
     int GatherJoinNow(int gatScheNo); // 현재 참가 인원 검색
+    ArrayList<Gather_Sche_PerVO> GatherJoinPerson(int gatScheNo); // 현재 참가인원 조회
 }

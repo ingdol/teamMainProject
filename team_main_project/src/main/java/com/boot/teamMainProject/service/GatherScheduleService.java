@@ -2,6 +2,7 @@ package com.boot.teamMainProject.service;
 
 import com.boot.teamMainProject.dao.IGatherScheduleDAO;
 import com.boot.teamMainProject.model.GatherScheduleVO;
+import com.boot.teamMainProject.model.Gather_Sche_PerVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,10 @@ public class GatherScheduleService implements IGatherScheduleService{
     @Override
     public int GatherJoinNow(int gatScheNo) {
         return dao.GatherJoinNow(gatScheNo);
+    }
+
+    @Override
+    public ArrayList<Gather_Sche_PerVO> GatherJoinPerson(int gatScheNo) {
+        return dao.GatherJoinPerson(gatScheNo);
     }
 }
