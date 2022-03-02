@@ -1,14 +1,20 @@
 package com.boot.teamMainProject.controller;
 
 import java.sql.Date;
+import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,15 +41,18 @@ public class MemberController {
 		return "pdh/signup";
 	}
 	
+	// 로그인
 	@ResponseBody
 	@RequestMapping(value = "/signin")
-	public String signIn(@RequestBody HashMap<String, String> param, HttpSession session) {
+	public String signIn(@RequestBody HashMap<String, String> param, HttpServletRequest request) {
 
 		String checkVar = "fail";
 		MemberVO resultChk = service.signIn(param);
+		HttpSession session = request.getSession();
 		
 		if(resultChk != null) {
 			session.setAttribute("sid", resultChk.getMemId());
+			session.setMaxInactiveInterval(3600); // 60분
 			checkVar = "success";
 		}
 
@@ -108,4 +117,43 @@ public class MemberController {
 		
 		return "test";
 	}
+	
+	// 로그아웃
+	@RequestMapping(value = "/logout")
+	public void logout(HttpServletRequest request) {
+		request.getSession().invalidate();
+		request.getSession(true);
+	}
+	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+
+    @RequestMapping(value = "/start", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public String startApp(@RequestBody String body) {
+        System.out.println(body);
+        logger.info(body);
+        return "/";
+    }
+
+    @RequestMapping(value = "/doA", method = RequestMethod.GET)
+    public String doA(Locale locale, Model model){
+        JSONObject cred = new JSONObject();
+        JSONObject auth = new JSONObject();
+        JSONObject parent = new JSONObject();
+
+        cred.put("username","adm");
+        cred.put("password", "pwd");
+        auth.put("tenantName", "bee6438379@gmail.com");
+//        auth.put("tenantName", param);
+        auth.put("passwordCredentials", cred);
+        parent.put("auth", auth);
+
+        URLConn conn = new URLConn("http://127.0.0.1",1516);
+        conn.urlPost(parent);
+
+        System.out.println(MemberVO.getAuthNum());
+
+        return "index";
+    }
+	
 }
