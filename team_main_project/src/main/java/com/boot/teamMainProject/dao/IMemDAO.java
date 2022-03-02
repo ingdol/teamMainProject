@@ -10,4 +10,5 @@ public interface IMemDAO {
 	String memNickCheck(String memNick);
 	MemberVO signIn(HashMap<String, String> param);
 	void userSignup(MemberVO vo);
+	MemberVO detailViewMember(String memId);// sej:상세 회원 조회
 }

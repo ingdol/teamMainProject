@@ -1,7 +1,5 @@
 package com.boot.teamMainProject.controller;
 
-import java.sql.Date;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Locale;
@@ -52,6 +50,7 @@ public class MemberController {
 		
 		if(resultChk != null) {
 			session.setAttribute("sid", resultChk.getMemId());
+			session.setAttribute("sidNick", resultChk.getMemNick()); //닉네임
 			session.setMaxInactiveInterval(3600); // 60분
 			checkVar = "success";
 		}

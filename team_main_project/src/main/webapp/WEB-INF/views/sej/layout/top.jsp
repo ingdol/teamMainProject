@@ -47,7 +47,7 @@
 							<input id="menu" type="checkbox">
                 	            <nav id="main_nav">
 				    		         <ul>
-				    		          	<li><a href="#">마이페이지</a></li>
+				    		          	<li><a href="<c:url value='/chat/${sessionScope.sid}'/>">마이페이지</a></li>
 				    		          	<li><a href="#">로그아웃</a></li>
 				    		          </ul>
 				    		     </nav>

@@ -1,11 +1,8 @@
-/**
- * chatting.js
- */
- 
- var ws;
+var ws;
 
 	function wsOpen(){
-		ws = new WebSocket("ws://" + location.host + "/chating");
+		//웹소켓 전송시 현재 방의 번호를 넘겨서 보낸다.
+		ws = new WebSocket("ws://" + location.host + "/chating/"+$("#roomNumber").val());
 		wsEvt();
 	}
 		
@@ -15,8 +12,6 @@
 		}
 		
 		ws.onmessage = function(data) {
-			
-			
 			//메시지를 받으면 동작
 			var msg = data.data;
 			if(msg != null && msg.trim() != ''){
@@ -37,9 +32,6 @@
 					console.warn("unknown type!")
 				}
 			}
-			
-			// 스크롤해서 올리기										   
-			$("#chating").scrollTop($("#chating").prop("scrollHeight"));
 		}
 
 		document.addEventListener("keypress", function(e){
@@ -59,14 +51,12 @@
 			$("#yourName").hide();
 			$("#yourMsg").show();
 		}
-		
-		
-		
 	}
 
 	function send() {
 		var option ={
 			type: "message",
+			roomNumber: $("#roomNumber").val(),
 			sessionId : $("#sessionId").val(),
 			userName : $("#userName").val(),
 			msg : $("#chatting").val()

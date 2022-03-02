@@ -59,5 +59,10 @@
 	<select id="memNickCheck" resultType="string" parameterType="string">
 		SELECT memNick FROM Member WHERE memNick=#{memNick}
 	</select>
-
+	
+	<!-- sej : 회원 상세 정보 조회  -->
+	<select id="detailViewMember" parameterType="string" 
+													  resultType="com.boot.teamMainProject.model.MemberVO" >
+		SELECT * FROM Member WHERE memId=#{memId}  		
+	</select>
 </mapper>

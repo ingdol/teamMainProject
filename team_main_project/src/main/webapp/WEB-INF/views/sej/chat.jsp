@@ -11,20 +11,22 @@
 	</head>
 	<body>
 		<div id="mainWrap">			
-		
 			<!-- TOP  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 				<div id="container" class="container">
-					<h1>채팅</h1>
+					<h1>${roomName}의 채팅방</h1>
 					<input type="hidden" id="sessionId" value="">
+					<input type="hidden" id="roomNumber" value="${roomNumber}">
 					
 					<div id="chating" class="chating">
 					</div>
 					
+					<c:if test="${not empty sessionScope.sid}">
 					<div id="yourName" class="yourInputBox">
-						<input type="text" name="userName" id="userName" placeholder="닉네임 입력" class="chattingInput">
+						<input type="text" name="userName" id="userName" value="${mem.memNick}" class="chattingInput">
 						<button onclick="chatName()" id="startBtn" class="chattingBtn">이름 등록</button>
 					</div>
+					</c:if>
 					<div id="yourMsg" class="yourInputBox">
 						<input id="chatting" name="chatting" placeholder="보내실 메시지를 입력하세요." class="chattingInput">
 						<button onclick="send()" id="sendBtn" class="chattingBtn">보내기</button>
