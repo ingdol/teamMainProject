@@ -14,8 +14,6 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <!-- <header id="header"></header> -->
     <!-- MAIN -->
     <div id="l-form">
         <form action="/" class="form" method="post" onsubmit="return onSubmit();">
