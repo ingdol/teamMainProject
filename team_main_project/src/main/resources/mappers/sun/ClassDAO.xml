@@ -49,5 +49,9 @@
      <select id="listalldatemax" resultMap="classResult">
         select * from class order by classOpen ASC
      </select>
+     
+     <select id="classinfo" resultMap="classResult">
+        select * from class WHERE classNo=#{classNo}
+     </select>
 
 </mapper>
