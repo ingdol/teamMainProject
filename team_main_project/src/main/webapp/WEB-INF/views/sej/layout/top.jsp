@@ -15,7 +15,6 @@
 		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
 	</head>
 	<body>
-	<div id="topBox">
 		<header>
 			<div id="headerBox">
 				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/images/sej/logo.jpg'/>" id="logoImg"></a></div>
@@ -37,13 +36,22 @@
 						<li><a href="<c:url value='/sun/mapsearch'/>"><img src="<c:url value='/images/sej/allGather.png'/>" id="menuImg1"></a></li>
 						<li><a href="<c:url value='/SpaceReservationAll'/>"><img src="<c:url value='/images/sej/lookSpace.png'/>" id="menuImg2"></a></li>
 						<li><a href="<c:url value='/sun/commumain'/>"><img src="<c:url value='/images/sej/community.png'/>" id="menuImg3"></a></li>
-						<%-- <c:if test="${empty sessionScope.sid}" > --%>
+						<c:if test="${empty sessionScope.sid}" >
+							<%-- <li><a href="#"><img src="<c:url value='/images/sej/mypage.png'/>" id="menuImg5"></a></li> --%>
+							<%-- <li><a href="<c:url value='/login'/>"><img src="<c:url value='/images/sej/login.png'/>" id="menuImg4"></a></li> --%>
 							<li><a href="<c:url value='/login'/>"><img src="<c:url value='/images/sej/login.png'/>" id="menuImg4"></a></li>
-						<%-- </c:if>
+						</c:if>
 
 						<c:if test="${not empty sessionScope.sid}">
-							<li><a href="#"><img src="<c:url value='/images/sej/mypage.png'/>" id="menuImg5"></a></li>
-						</c:if> --%>
+							<li><label class="menu" for="menu"><img src="<c:url value='/images/sej/mypage.png'/>" id="menuImg5"></label></li>
+							<input id="menu" type="checkbox">
+                	            <nav id="main_nav">
+				    		         <ul>
+				    		          	<li><a href="#">마이페이지</a></li>
+				    		          	<li><a href="#">로그아웃</a></li>
+				    		          </ul>
+				    		     </nav>
+						</c:if>
 					
 					
 						<%-- <li><a href="#"><img src="<c:url value='/image/sej/gather3.png'/>" id="menuImg1"><br id="menuBr">전체모임</a></li>
@@ -56,6 +64,5 @@
 			</div>  <!-- mainMenuBox 끝 -->
 			
 		</nav>
-	</div>
 	</body>
 </html>
