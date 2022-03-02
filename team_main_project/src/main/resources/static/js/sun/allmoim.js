@@ -4,7 +4,7 @@
  
 $(function(){
 	/* select별로 모임,클래스나타내기 */
-	$('#hobbyselect').on('change',function(){
+	/*$('#hobbyselect').on('change',function(){
 		const selectedValue = document.getElementById('hobbyselect').value;
 		console.log(selectedValue);
 		if($('#hobbyselect option:selected').val()!='10' && $('#hobbyselect option:selected').val()!='--')
@@ -13,32 +13,36 @@ $(function(){
 			window.location.href='/sun/allmoim/all';			
 		}
 	});
+	*/
 	
 	/* 개설일순 */
-	$('#hot').on('change',function(){
+	/*$('#hot').on('change',function(){
 		console.log($('#hot option:selected').val());
 	/*if($('#hot option:selected').val()=='datemax'){
 		location.href='/sun/allmoim/'+$('#hobbyselect option:selected').val()+'/datemax';
 	}*/
-	});
-
 	
-	$('.btn').on('click',function(){
+	/*});*/
+	
+	/*$('.btn').on('click',function(){
 		window.location.href='/sun/allmoimdetail';
-	});
+	});*/
 	
 	
 	$('#moimcard').on('click',function(e){
 				
-		console.log(e.target.parentNode.classList);	
-		
-		e.target.parentNode.classList.add("current");
+		console.log(e.target.classList);	
+		if(e.target.classList != "card")
+			e.target.parentNode.classList.add("current");
+		else
+			e.target.classList.add("current");
+			
 		var oncard = document.querySelector('.current');
 		var hidden = oncard.querySelector('.hidden');
 		var gatNo = hidden.innerText;
 		console.log(gatNo);
 			
-		window.location.href='/sun/detailgat/'+gatNo;	
+		window.location.href='/sun/detailgat/'+gatNo;
 		
 		/* 한번누르면 current 지워주기*/		
 		oncard.classList.remove("current");
@@ -46,9 +50,13 @@ $(function(){
 	
 	$('#classcard').on('click',function(e){
 				
-		console.log(e.target.parentNode.classList);	
+		console.log(e.target.classList);	
 		
-		e.target.parentNode.classList.add("current");
+		if(e.target.classList != "card")
+			e.target.parentNode.classList.add("current");
+		else
+			e.target.classList.add("current");
+			
 		var oncard = document.querySelector('.current');
 		var hidden = oncard.querySelector('.hidden');
 		var classNo = hidden.innerText;

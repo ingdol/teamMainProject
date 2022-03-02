@@ -28,18 +28,18 @@
 			<h1 id="sectioninfo">중간섹션</h1>
 			<div class="moiminfobox">
 				<h3 id="sectioninfo">모임소개</h3>
+				<c:forEach items="${detail}" var="detail">
 				<div class="moimpic">
-					<img src="<c:url value='/images/1_sport.jpg'/>">
+					<img src="<c:url value='/images/${detail.classPhoto}'/>">
 				</div>
 				<div class="moimname">
-					<c:forEach items="${detail}" var="detail">
 					<div>${detail.classTitle}</div>
 					<div>
 						강사 : <a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
 						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
-					</c:forEach>
 				</div>		
+				</c:forEach>
 			</div>
 			<div class="moimdetail">
 				<div class="moimmenubox">
@@ -54,22 +54,21 @@
 					<!-- 정보 클릭시 -->
 					<div class="moiminfodetail current">
 						<h4 id="sectioninfo">!클래스정보</h4>
-						<div class="photobox"><img src="/images/1.jpg"></div>
+						<c:forEach items="${detail}" var="detail">
+						<div class="photobox"><img src="<c:url value='/images/${detail.classPhoto}'/>"></div>
 						<div class="infobox">
-							<c:forEach items="${detail}" var="detail">
 								<span class="large">클래스 제목 : ${detail.classTitle}</span><br>
 								<span>클래스 개설일 : <fmt:formatDate value="${detail.classOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 클래스 소개 -</span><br>
 								<span>${detail.classInfo}</span><br>
-								<hr>
-								<span><img src="<c:url value='/images/${detail.classPhoto}'/>"></span><br>								
+								<hr>								
 								<span>${detail.classNo}</span><br>
 								<span>${detail.memNick}</span><br>
 								<span>${detail.hobbyNo}</span><br>
 								<span>${detail.classArea}</span><br>
 								<span>${detail.classHate}</span><br>						
-							</c:forEach>
 						</div>					
+						</c:forEach>
 					</div>
 
 					<!-- 리뷰게시판 클릭시 -->

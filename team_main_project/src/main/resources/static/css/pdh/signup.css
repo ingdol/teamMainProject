@@ -48,6 +48,20 @@ h1 {
     font-size: var(--nomal-font-size);
 }
 
+.l-input-email {
+    position: absolute;
+    width: 70%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+	z-index: 11;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
 .l-input-day {
     position: absolute;
     width: 20%;
@@ -177,6 +191,15 @@ h1 {
     transition: 800ms ease all;
     outline: none;
     font-size: var(--nomal-font-size);
+}
+
+.l-auth-Btn {
+	position: absolute;
+	width: 20%;
+	height: var(--box-size-first);
+	margin-bottom: 30px;
+	left: 19rem;
+	cursor: pointer;
 }
 
 #l-submit {
@@ -471,6 +494,23 @@ h1 {
 }
 
 .l-input-year:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-email:focus + .l-label {
+    top: -1rem;
+    left: -0.25rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-email:not(:focus).l-input-email:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.25rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-email:focus {
     border-width: 2px;
     border-color: deepskyblue;
 }

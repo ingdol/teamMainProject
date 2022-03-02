@@ -28,18 +28,18 @@
 			<h1 id="sectioninfo">중간섹션</h1>
 			<div class="moiminfobox">
 				<h3 id="sectioninfo">모임소개</h3>
+				<c:forEach items="${detail}" var="detail">
 				<div class="moimpic">
-					<img src="<c:url value='/images/1_sport.jpg'/>">
+					<img src="<c:url value='/images/${detail.gatBanPhoto}'/>">
 				</div>
 				<div class="moimname">
-					<c:forEach items="${detail}" var="detail">
 					<div>${detail.gatName}</div>
 					<div>
-						모임장 : <a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
+						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
 						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
-					</c:forEach>
 				</div>		
+				</c:forEach>
 			</div>
 			<div class="moimdetail">
 				<div class="moimmenubox">
@@ -56,9 +56,9 @@
 					<!-- 정보 클릭시 -->
 					<div class="moiminfodetail current">
 						<h4 id="sectioninfo">!모임정보</h4>
-						<div class="photobox"><img src="/images/1.jpg"></div>
+						<c:forEach items="${detail}" var="detail">
+						<div class="photobox"><img src="/images/${detail.gatPhoto}"></div>
 						<div class="infobox">
-							<c:forEach items="${detail}" var="detail">
 								<span class="large">모임 이름 : ${detail.gatName}</span><br>
 								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 모임 소개 -</span><br>
@@ -69,8 +69,8 @@
 								<span>${detail.hobbyNo}</span><br>
 								<span>${detail.gatArea}</span><br>
 								<span>${detail.gatHate}</span><br>						
-							</c:forEach>
 						</div>						
+						</c:forEach>
 					</div>
 
 					<!-- 모임게시판 클릭시 -->

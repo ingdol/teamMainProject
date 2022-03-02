@@ -1,8 +1,5 @@
 package com.boot.teamMainProject.model;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-
 public class MemberVO {
 	private String memId;
 	private String memPw;
@@ -25,6 +22,7 @@ public class MemberVO {
 	private String gatJoinNo5;
 	private String memBirth;
 	private String joinDate;
+	private static String authNum;
 	private int levelClass;
 	private int levelSpace;
 	private int memPoint;
@@ -151,6 +149,12 @@ public class MemberVO {
 	}
 	public String getJoinDate() {
 		return joinDate;
+	}
+	public void setAuthNum(String authNum) {
+		MemberVO.authNum = authNum;
+	}
+	public static String getAuthNum() {
+		return authNum;
 	}
 	public void setJoinDate(String joinDate) {
 		this.joinDate = joinDate;

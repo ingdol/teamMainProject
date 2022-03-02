@@ -106,3 +106,15 @@ p{
 .dropdown legend {
 	display: none;
 }
+
+.plus{
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 5px;
+	cursor: pointer;
+	background-color:  #d9eeff;
+}
+
+.plus:hover {
+	opacity:0.7;
+}

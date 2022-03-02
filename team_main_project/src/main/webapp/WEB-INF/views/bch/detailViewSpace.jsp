@@ -9,14 +9,10 @@
     <link type="text/css" rel="stylesheet" href="/css/bch/detailViewSpace.css">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
     <script src="/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript"
-            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder">
-    </script> <!-- 네이버 지도 api -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder"></script> <!-- 네이버 지도 api -->
     <script src="/js/bch/MapForDetailView.js"></script>
+    <script src="/js/bch/CheckReservationTime.js"></script>
 
-    <!-- fullcalender -->
-    <link href='/css/bch/main.min.css' rel='stylesheet' />
-    <script src='/js/bch/main.min.js'></script>
     <script>
         $(document).ready(function(){
             $('#move_section1').on('click', function(){
@@ -34,13 +30,6 @@
             $('#move_section5').on('click', function(){
                 document.getElementById('section5').scrollIntoView({behavior: "smooth", block: "center"})
             });
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
-            });
-            calendar.render();
         });
     </script>
     <body>
@@ -61,7 +50,10 @@
                 </div>
             </div>
             <div class="reservation" id="reservation">
-
+                <input type="hidden" id="no" value="${space.spaceNo}">
+                <input type="date" class="setDateTime" id="date" value="">
+                <input type="time" class="setDateTime" id="time" value="">
+                <input type="time" class="setDateTime" id="time2" value="">
             </div>
             <div id="navigation" class="navigation">
                 <ul class="navigation_list">

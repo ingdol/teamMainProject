@@ -10,7 +10,7 @@
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="/js/bch/selectLocation.js"></script>
-    <script src="/js/bch/spaceSearch3.js"></script>
+    <script src="/js/bch/gatherspaceSearch4.js"></script>
     <body>
     <div id ="mainWrap">
         <%request.setCharacterEncoding("UTF-8");%>
@@ -20,6 +20,7 @@
         <!-- TOP  -->
         <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
+            <input type="hidden" id="gatNo" value="<%=gatNo%>">
             <form class="findPlace" >
                 <span>
                     <input type="date" id="gatScheDate" name="gatScheDate" placeholder="날짜 선택">
@@ -119,13 +120,14 @@
         <!-- BOTTOM  -->
         <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </div>
-<%--    <span class="gallerylistBoxTemp" id="gallerylistBoxTemp">--%>
+    <span class="gallerylistBoxTemp" id="gallerylistBoxTemp">
 <%--        <c:forEach items="${spaceList}" var="space">--%>
-            <a class="card-link-R" href="<c:url value='/detailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->
+<%--    <div id="template">--%>
+            <a class="card-link-R"> <!-- 클릭 시 링크 설정 -->
                 <div class="card">
                     <!-- 카드 헤더 -->
                     <div class="card-header" >
-
+                        <img id="card-image-R" />
                         <div class = "card-header-is_closed" >
                             <div class = "card-header-text" ></div >
                             <div class = "card-header-number" ></div >
@@ -152,7 +154,8 @@
                     </div>
                 </div>
             </a>
+<%--        </div>--%>
 <%--        </c:forEach>--%>
-<%--    </span>--%>
+    </span>
     </body>
 </html>

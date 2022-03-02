@@ -14,16 +14,20 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <!-- <header id="header"></header> -->
     <!-- MAIN -->
     <div id="l-form">
         <form class="form" method="post">
             <h1>Sign Up</h1>
             <ul>
                 <li class="l-li" id="l-email">
-                    <input type="text" class="l-input" id="email" placeholder=" ">
+                    <input type="text" class="l-input-email" id="email" placeholder=" ">
                     <label for="" class="l-label" id="email-label">이메일</label>
+                    <button class="l-auth-Btn" id="auth-btn">메일 인증</button>
+                </li>
+                <li class="l-li" id="l-auth">
+                	<input type="text" class="l-input-email" id="auth" placeholder=" ">
+                	<label for="" class="l-label" id="auth-label">인증번호</label>
+                	<button class="l-auth-Btn" id="auth-check-btn">확인</button>
                 </li>
                 <li class="l-li" id="l-pw">
                     <!-- Warning : Input elements should have autocomplete attributes -->
@@ -96,7 +100,7 @@
                     <input type="text" class="l-input-address" id="postcode" placeholder=" ">
                     <label for="" class="l-label" id="postcode-label" >우편번호</label>
                     <!-- <input type="button" class="l-address-Btn" value="우편번호 찾기" > -->
-                     <button class="l-address-Btn">우편번호 찾기</button>
+                     <button class="l-address-Btn" id="address-btn">우편번호 찾기</button>
                 </li>
                 <li class="l-li" id="l-address">
                     <input type="text" class="l-input-disabled" id="address" placeholder=" ">
@@ -115,10 +119,7 @@
         </form>
     </div>
 
-    <!-- FOOTER -->
-    <!-- <footer id="footer"></footer> -->
     <!-- JavaScript -->
-
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

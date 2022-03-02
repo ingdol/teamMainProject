@@ -21,4 +21,9 @@
     <select id="GatherJoinPerson" resultMap="gatherSchePerNo">
         select * from Gather_Sche_Per where gatScheNo=#{gatScheNo}
     </select>
+    <!--  모임 일정 참가  -->
+    <insert id="JoinGather" parameterType="com.boot.teamMainProject.model.Gather_Sche_PerVO" >
+        INSERT INTO Gather_Sche_Per (gatScheNo, gatNo, memNick)
+        VALUES (#{gatScheNo}, #{gatNo}, #{memNick})
+    </insert>
 </mapper>

@@ -19,7 +19,7 @@ $(document).ready(function(){
                     $('#gallerylistBox').empty(); // 비우기
                     for(var i = 0; i < Object.keys(space).length; i++){
                         var item = $('#gallerylistBoxTemp > .card-link-R').clone(); // 복사
-                        item.attr('href', "/detailViewSpace/" + space[i].spaceNo);
+                        item.attr('href', "/scheDetailViewSpace/" + space[i].spaceNo + "?" + "gatNo=" + $('#gatNo').val());
                         $(item).find('#card-image-R').html();
                         $(item).find('#card-image-R').attr('src', "/images/bch/" + space[i].spacePhoto);
                         $(item).find('.card-body-header-title').html(space[i].spaceTitle);

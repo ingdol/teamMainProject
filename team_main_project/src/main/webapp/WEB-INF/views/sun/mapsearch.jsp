@@ -11,6 +11,8 @@
 <link href="<c:url value='/css/sun/hobbysearch.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="<c:url value='/js/sun/mapsearch.js'/>"></script>
+<script src="<c:url value='/js/sun/mapapi.js'/>"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=0dazxdiykm&submodules=geocoder"></script>
 </head>
 <body>
 	<section id="mainWrap">
@@ -34,29 +36,15 @@
 			<div id="locationsearch" class="map">
 				<div class="dropbox">
 					<h3 id="sectioninfo">지역선택하기</h3>
-					<div class="dropdown">
-					<!-- 	<button class="btn btn-secondary dropdown-toggle" type="button"
-							id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
-							Dropdown</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-							<button class="dropdown-item" type="button">Action</button>
-							<button class="dropdown-item" type="button">Another
-								action</button>
-							<button class="dropdown-item" type="button">Something
-								else here</button>
-						</div> -->
-						<span>서울시</span>
-						<span>강남구</span>
-						
-					</div>
-				</div>
-				<div class="mapphoto">
-					<a href="#"><img id="Rectangle_be"
-						src="<c:url value='/images/Rectangle_be.png'/>"></a>
-				</div>
+				</div>		
+				<c:forEach items="${gatheringResult}" begin="0" var="gr">
+				<input type="hidden" id="gat" value="${gr.gatNo}">
+				<input type="hidden" id="maps" value="${gr.gatArea}">
+				</c:forEach>
+				<div class="mapphoto" id="map" style="width: 90%; height: 750px;"></div>
 			</div>
-			
-			
+
+
 			<!-- 필터선택후 나오는화면 hobby-->
 			<div id="hobbyclick" class="hobby">
 				<ul>

@@ -9,9 +9,7 @@
     <link type="text/css" rel="stylesheet" href="/css/bch/detailViewSpace.css">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
     <script src="/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript"
-            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder">
-    </script> <!-- 네이버 지도 api -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder"></script> <!-- 네이버 지도 api -->
     <script src="/js/bch/MapForDetailView.js"></script>
     <script>
         $(document).ready(function(){
