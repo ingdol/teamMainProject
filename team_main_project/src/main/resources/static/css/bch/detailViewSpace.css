@@ -26,14 +26,7 @@
     height: 100%;
     object-fit: cover;
 }
-/*예약 하는 div 박스*/
-.reservation {
-    border: 1px solid black;
-    width: 100%;
-    height: 350px;
-    position: relative;
-    background-color: #9fcdff;
-}
+
 #calendarSpan {
     border: 1px solid green;
     width: 450px;
@@ -181,4 +174,17 @@
 #revDate {
     font-size: 14px;
     color: #9c9c9c;
+}
+/*예약 하는 div 박스*/
+.reservation {
+    border: 1px solid black;
+    width: 80%;
+    height: 350px;
+    position: relative;
+    background-color: #9fcdff;
+}
+.setDateTime {
+    width: 170px;
+    height: 35px;
+    margin-right: 15px;
 }

@@ -115,12 +115,14 @@
         <!-- BOTTOM  -->
         <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </div>
-<%--    <span class="gallerylistBoxTemp" id="gallerylistBoxTemp">--%>
+    <span class="gallerylistBoxTemp" id="gallerylistBoxTemp">
 <%--        <c:forEach items="${spaceList}" var="space">--%>
-            <a class="card-link-R" href="<c:url value='/detailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->
+<%--    <div id="template">--%>
+            <a class="card-link-R"> <!-- 클릭 시 링크 설정 -->
                 <div class="card">
                     <!-- 카드 헤더 -->
                     <div class="card-header" >
+                        <img id="card-image-R" />
                         <div class = "card-header-is_closed" >
                             <div class = "card-header-text" ></div >
                             <div class = "card-header-number" ></div >
@@ -147,7 +149,8 @@
                     </div>
                 </div>
             </a>
+<%--        </div>--%>
 <%--        </c:forEach>--%>
-<%--    </span>--%>
+    </span>
     </body>
 </html>
