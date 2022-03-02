@@ -6,6 +6,9 @@
    <head>
    </head>
    <body>
+   <div id="footerBack">
+   </div>
+   <div id="mainWrap">
       <footer id="footerDiv">
          <div id="footerBox">
             <div id="footerTextBox">
@@ -42,5 +45,6 @@
             
          </div>
       </footer>
+      </div>
    </body>
 </html>

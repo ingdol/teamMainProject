@@ -1,9 +1,7 @@
 package com.boot.teamMainProject.controller;
 
-import com.boot.teamMainProject.model.*;
-import com.boot.teamMainProject.service.GatherScheduleService;
-import com.boot.teamMainProject.service.GatheringService;
-import com.boot.teamMainProject.service.SpaceReservationService;
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,6 +42,7 @@ public class GatherController {
 
     // 모임 일정 신청 POST
     @RequestMapping("WriteGatherScheduleWithoutSpaceReser/{gatNo}")
+
     public String WriteGatherScheduleWithoutSpaceReser(GatherScheduleVO gatherScheduleVO) {
         service.MakeGatherSchedule(gatherScheduleVO);
         return "redirect:/sun/detailgat/{gatNo}";

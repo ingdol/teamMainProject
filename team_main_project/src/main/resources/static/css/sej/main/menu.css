@@ -7,6 +7,36 @@ ul {
 	padding:0;
 	list-style:none;   /* type 없음 */
 }
+/********** TOP MENU ************/
+
+#topMenuBox {
+	float:right;
+	width:1280px;
+	height:40px;
+	padding-right:10px;
+	
+	background: #F7F7F7;
+}
+
+#topMenuBox ul{ margin:0;}
+
+#topMenuBox li {
+	float:right;
+	text-align:center;
+	line-height:30px;
+	font-size:13px;   /* pt 도 됨 */
+	margin:8px;
+}
+
+#topMenuBox ul li a {
+	text-decoration:none;
+	color:black;
+}
+
+#topMenuBox ul li a:hover {
+	color:black;
+	font-weight:bold;
+}
 
 
 /********** MAIN MENU ************/
@@ -160,9 +190,53 @@ ul {
 	text-decoration:none;
 }
 
+/* myBox Menu */
 
+ input#menu {
+	display: none;
+	
+}
 
+nav#main_nav{
+	display: none;
+}
 
+ input#menu:checked + nav#main_nav {
+	display: block;
+}
+
+#main_nav {
+	margin-top: 35px;
+    margin-right: 48px;
+    padding: 11px;
+    width: 114px;
+    height: 81px;
+    float: right;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+#main_nav ul {
+	background-color:#ffffff; 
+	text-align:left;
+	padding-left:10px;
+	padding-top:4px;
+}
+
+#main_nav ul li {
+	height:40px; 
+	width:100px;
+}
+
+#main_nav ul li a {
+	display:inline-block;
+	color:#939393;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:left;
+	padding-top:3px;
+}
 
 
 
