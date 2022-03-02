@@ -41,7 +41,7 @@ public class GatherController {
         reservationService.SpaceReservation(spaceReservationVO);
         return "redirect:/sun/detailgat/{gatNo}";
     }
-    
+
     // 모임 일정 신청 POST
     @RequestMapping("WriteGatherScheduleWithoutSpaceReser/{gatNo}")
     public String WriteGatherScheduleWithoutSpaceReser(GatherScheduleVO gatherScheduleVO) {
