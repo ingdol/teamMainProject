@@ -8,9 +8,9 @@ public class SpaceReservationVO {
     private int classNo;
     private String memNick;
     private int spaceNo;
-    private Date spaceReserDate;
-    private Date spaceReserStartTime;
-    private Date spaceReserEndTime;
+    private String spaceReserDate;
+    private String spaceReserStartTime;
+    private String spaceReserEndTime;
     private int spacePay;
 
     public int getSpaceNo() {
@@ -53,27 +53,27 @@ public class SpaceReservationVO {
         this.memNick = memNick;
     }
 
-    public Date getSpaceReserDate() {
+    public String getSpaceReserDate() {
         return spaceReserDate;
     }
 
-    public void setSpaceReserDate(Date spaceReserDate) {
+    public void setSpaceReserDate(String spaceReserDate) {
         this.spaceReserDate = spaceReserDate;
     }
 
-    public Date getSpaceReserStartTime() {
+    public String getSpaceReserStartTime() {
         return spaceReserStartTime;
     }
 
-    public void setSpaceReserStartTime(Date spaceReserStartTime) {
+    public void setSpaceReserStartTime(String spaceReserStartTime) {
         this.spaceReserStartTime = spaceReserStartTime;
     }
 
-    public Date getSpaceReserEndTime() {
+    public String getSpaceReserEndTime() {
         return spaceReserEndTime;
     }
 
-    public void setSpaceReserEndTime(Date spaceReserEndTime) {
+    public void setSpaceReserEndTime(String spaceReserEndTime) {
         this.spaceReserEndTime = spaceReserEndTime;
     }
 

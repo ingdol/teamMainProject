@@ -54,6 +54,11 @@
                 <input type="date" class="setDateTime" id="date" value="">
                 <input type="time" class="setDateTime" id="time" value="">
                 <input type="time" class="setDateTime" id="time2" value="">
+                <input type="button" value="예약하기" id="ReservationBtn" style="display: none">
+                <p style="color: red">※ 선택하신 날짜가 예약 가능하면 예약 버튼이 나타납니다.</p>
+                <input type="hidden" id="memNick" value="코딩이"> <!-- 값 변경 필요 -->
+                <input type="hidden" id="spacePrice" value="${space.spacePrice1}"> <!-- 값 변경 필요 -->
+                <input type="hidden" id="spaceNo" value="${space.spaceNo}"> <!-- 값 변경 필요 -->
             </div>
             <div id="navigation" class="navigation">
                 <ul class="navigation_list">

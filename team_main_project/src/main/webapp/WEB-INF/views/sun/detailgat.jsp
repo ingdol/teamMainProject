@@ -30,7 +30,7 @@
 				<h3 id="sectioninfo">모임소개</h3>
 				<c:forEach items="${detail}" var="detail">
 				<div class="moimpic">
-					<img src="<c:url value='/images/${detail.gatBanPhoto}'/>">
+					<img src="<c:url value='/images/ldh/${detail.gatBanPhoto}'/>">
 				</div>
 				<div class="moimname">
 					<div>${detail.gatName}</div>

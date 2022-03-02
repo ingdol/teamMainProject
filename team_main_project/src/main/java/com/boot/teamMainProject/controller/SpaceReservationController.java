@@ -106,19 +106,17 @@ public class SpaceReservationController {
     public String test() {
         return "bch/test";
     }
+
     // 예약 상세 페이지에서 예약 시간 조회
     @ResponseBody
     @RequestMapping("CheckReservationTime")
-    public ArrayList<SpaceReservationVO> CheckReservationTime(@RequestParam("spaceNo") int spaceNo,
-                                                              @RequestParam("spaceDate") String spaceDate,
-                                                              @RequestParam("spaceStartTime") String spaceStartTime,
-                                                              @RequestParam("spaceEndTime") String spaceEndTime) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat Timeformatter = new SimpleDateFormat("HH:mm");
-        Date date = formatter.parse(spaceDate);
-        Date StartTime = Timeformatter.parse(spaceStartTime);
-        Date EndTime = Timeformatter.parse(spaceEndTime);
-        ArrayList<SpaceReservationVO> CheckReservation = reservationService.CheckReservationTime(spaceNo, date, StartTime, EndTime);
+    public ArrayList<SpaceReservationVO> CheckReservationTime(@RequestParam("spaceNo") int spaceNo){
+//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//        SimpleDateFormat Timeformatter = new SimpleDateFormat("HH:mm");
+//        Date date = formatter.parse(spaceDate);
+//        Date StartTime = Timeformatter.parse(spaceStartTime);
+//        Date EndTime = Timeformatter.parse(spaceEndTime);
+        ArrayList<SpaceReservationVO> CheckReservation = reservationService.CheckReservationTime(spaceNo);
         return CheckReservation;
     }
 }

@@ -177,14 +177,30 @@
 }
 /*예약 하는 div 박스*/
 .reservation {
-    border: 1px solid black;
-    width: 80%;
-    height: 350px;
-    position: relative;
-    background-color: #9fcdff;
+    margin: 0 auto;
+    /*border: 1px solid black;*/
+    width: 60%;
+    height: 85px;
+    /*position: relative;*/
+    /*background-color: #9fcdff;*/
 }
 .setDateTime {
     width: 170px;
     height: 35px;
     margin-right: 15px;
+    margin-top: 17px;
+}
+#ReservationBtn{
+    width: 170px;
+    height: 35px;
+    margin-right: 15px;
+    margin-top: 17px;
+    background-color: #5da5f8;
+    border: 2px solid #5da5f8;
+    cursor: pointer;
+    color: white;
+}
+.reservation p{
+    margin-top: 10px;
+    margin-bottom: 5px;
 }

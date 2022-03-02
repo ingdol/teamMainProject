@@ -22,7 +22,7 @@ public class SpaceReservationService implements ISpaceReservationService{
     }
 
     @Override
-    public ArrayList<SpaceReservationVO> CheckReservationTime(int spaceNo, Date spaceDate, Date spaceStartTime, Date spaceEndTime) {
-        return dao.CheckReservationTime(spaceNo, spaceDate, spaceStartTime, spaceEndTime);
+    public ArrayList<SpaceReservationVO> CheckReservationTime(int spaceNo) {
+        return dao.CheckReservationTime(spaceNo);
     }
 }

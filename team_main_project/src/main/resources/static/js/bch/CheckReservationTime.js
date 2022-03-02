@@ -1,8 +1,8 @@
 $(document).ready(function(){
-
    $('#date').change(function (){
       $('#time').val("");
       $('#time2').val("");
+      $('#ReservationBtn').css("display", "none");
    });
 
    $('#time').change(function (){
@@ -39,18 +39,35 @@ $(document).ready(function(){
             },
             dataType: "json",
             success:function(result){
-               alert(result);
                console.log(result);
-               var date = new Date();
                if(result != "") {
                   var reservation = result;
                   for(var i = 0; i < Object.keys(reservation).length; i++) {
-                     alert(reservation[i].spaceReserDate.date.toLocaleString() + "\n" + reservation[i].spaceReserStartTime.date.toLocaleString() + "\n" + reservation[i].spaceReserEndTime.date.toLocaleString());
+                     if(reservation[i].spaceReserDate == $('#date').val()) { // 날짜 비교 if문
+                        if( reservation[i].spaceReserStartTime <= $('#time').val() && reservation[i].spaceReserEndTime >= $('#time').val() ) { // 예약 할 시작 시간이 이미 예약된 시작 시간보다 클 때 && 예약 할 시작 시간이 이미 예약 된 종료 시간보다 작을 때
+                           alert(reservation[i].spaceReserStartTime + "부터 " + reservation[i].spaceReserEndTime + "까지는 예약이 불가능 합니다.");
+                           $('#time').val("");
+                           $('#time2').val("");
+                           $('#ReservationBtn').css("display", "none");
+                        } // (예약 할 시간이 이미 예약된 시간 사이에 있을 때)
+                        else if( reservation[i].spaceReserStartTime >= $('#time').val() && reservation[i].spaceReserStartTime <= $('#time2').val() ) { // 예약 할 시작 시간이 이미 예약된 시간보다 작을 때 && 예약 할 종료 시간이 이미 예약 된 시작 시간보다 클 때
+                           alert(reservation[i].spaceReserStartTime + "부터 " + reservation[i].spaceReserEndTime + "까지는 예약이 불가능 합니다.");
+                           $('#time').val("");
+                           $('#time2').val("");
+                           $('#ReservationBtn').css("display", "none");
+                        } // (시작 시간은 맞지만 종료 시간이 문제인 경우)
+                        else {
+                           $('#ReservationBtn').css("display", "inline");
+                        }
+                     } // 날짜 비교 if문
+                     else { // 비교 해서 날짜 되니까 예약하면 됨.
+                        $('#ReservationBtn').css("display", "inline");
+                     }
                   }
                }
             },
             error:function(data, textStatus, result){
-
+               alert("error!");
             }
          }); // ajax 끝
       } // else 끝
