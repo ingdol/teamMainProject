@@ -28,6 +28,9 @@ public class SunController {
 	
 	@Autowired
 	HobbyCtgService ctgser;
+	
+	@Autowired
+	ClassRevService classrevser;
 
 	// 모임 일정 공지 service(고병채)
 	@Autowired
@@ -137,5 +140,14 @@ public class SunController {
 				ArrayList<GatheringVO> gatheringResult = gatherser.hateasc();
 				model.addAttribute("gatheringResult",gatheringResult);
 				return "/sun/allmoimdetail";
+			}
+			
+			@RequestMapping("/sun/detailclass/{classNo}")
+			public String detailclass(@PathVariable int classNo, Model model) {
+				ArrayList<ClassVO> detail = classser.classinfo(classNo);
+				ArrayList<ClassRevVO> revlist = classrevser.revlist(classNo);
+				model.addAttribute("detail",detail);
+				model.addAttribute("revlist",revlist);
+				return "/sun/detailclass";
 			}
 }

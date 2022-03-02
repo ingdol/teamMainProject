@@ -86,7 +86,7 @@
 					<div class="cardbox">						
 						<!-- 받아오기 -->
 						<c:forEach items="${gatheringResult}" begin="0" end="5" var="gat">
-						<div class="card">
+						<div class="card" id="moimcard">
 							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${gat.gatName}</h5>
@@ -106,7 +106,7 @@
 					<div class="cardbox">
 						<!-- 클래스 받아오기 -->
 						<c:forEach items="${classResult}" begin="0" end="5" var="clas">
-						<div class="card">
+						<div class="card" id="classcard">
 							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${clas.classTitle}</h5>

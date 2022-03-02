@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.boot.teamMainProject.dao.IClassRevDAO">
+	<resultMap id="classRev" type="com.boot.teamMainProject.model.ClassRevVO">
+		<result property="classNo" column="classNo"/>
+		<result property="classRevNo" column="classRevNo"/>
+		<result property="classRevTitle" column="classRevTitle"/>
+		<result property="memNick" column="memNick"/>
+		<result property="classRevPhoto" column="classRevPhoto"/>
+		<result property="classRevInfo" column="classRevInfo"/>
+		<result property="classRevDate" column="classRevDate"/>		
+	</resultMap>	
+	
+	<select id="revlist" resultMap="classRev">
+		select * from class_rev WHERE classNo=#{classNo}
+	</select>
+</mapper>

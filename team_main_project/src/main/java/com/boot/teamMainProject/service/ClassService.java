@@ -52,6 +52,10 @@ public class ClassService implements IClassService {
 	public ArrayList<ClassVO> listalldatemax() {
 		return dao.listalldatemax();
 	}
+
+	public ArrayList<ClassVO> classinfo(int classNo) {
+		return dao.classinfo(classNo);
+	}
    
 
 }

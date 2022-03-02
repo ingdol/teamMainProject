@@ -27,7 +27,8 @@ $(function(){
 		window.location.href='/sun/allmoimdetail';
 	});
 	
-	$('.card').on('click',function(e){
+	
+	$('#moimcard').on('click',function(e){
 				
 		console.log(e.target.parentNode.classList);	
 		
@@ -36,8 +37,24 @@ $(function(){
 		var hidden = oncard.querySelector('.hidden');
 		var gatNo = hidden.innerText;
 		console.log(gatNo);
+			
+		window.location.href='/sun/detailgat/'+gatNo;	
+		
+		/* 한번누르면 current 지워주기*/		
+		oncard.classList.remove("current");
+	});
+	
+	$('#classcard').on('click',function(e){
 				
-		window.location.href='/sun/detailgat/'+gatNo;
+		console.log(e.target.parentNode.classList);	
+		
+		e.target.parentNode.classList.add("current");
+		var oncard = document.querySelector('.current');
+		var hidden = oncard.querySelector('.hidden');
+		var classNo = hidden.innerText;
+		console.log(classNo);			
+	
+		window.location.href='/sun/detailclass/'+classNo;
 
 		/* 한번누르면 current 지워주기*/		
 		oncard.classList.remove("current");
