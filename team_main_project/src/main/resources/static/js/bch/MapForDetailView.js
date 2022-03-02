@@ -19,7 +19,11 @@ $(document).ready(function (){
         // 지도 생성
         var map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(y, x), // 지도를 열 좌표
-            zoom: 18
+            zoom: 16,
+            zoomControl: true, //줌 컨트롤의 표시 여부
+            zoomControlOptions: { //줌 컨트롤의 옵션
+                position: naver.maps.Position.TOP_RIGHT
+            }
         });
 
         // 지도에 해당 좌표 마커(아이콘 설정)

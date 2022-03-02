@@ -10,12 +10,15 @@
         <link type="text/css" rel="stylesheet" href="/css/bch/gatherSchedule.css">
         <script src="/js/bch/gatherSchedule.js"></script>
         <script>
-            document.addEventListener('keydown', function(event) {
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                };
-            }, true);
             $(document).ready(function(){
+                // if($('#spaceNo').val() == 0 || $('#spaceNo').val() == null) {
+                //     $('#btnSave2').css("display", "none");
+                //     $('#btnSave1').show();
+                // }
+                // else {
+                //     $('#btnSave1').css("display", "none");
+                //     $('#btnSave2').show();
+                // }
                 $('#toggleBtn').on('click', function(){
                     if($('#findAddress').css("display") == "none") {
                         $('#findAddress').show();
@@ -45,13 +48,7 @@
                 $('#spaceReserDate').val($('#gatScheDate').val());
             }
             function setTime(){
-                $('#spaceReserStartTime').val($('#gatScheTime').val());
-            }
-            function checkPerson() {
-                if ($('#gatScheMax').val() <= 0 && $('#gatScheMax').val() != "") {
-                    $("#gatScheMax").val("");
-                    alert("1명 이하는 입력 하실 수 없습니다.")
-                }
+                $('#spaceReserTime').val($('#gatScheTime').val());
             }
         </script>
     </head>
@@ -90,7 +87,7 @@
 
                     <form name="form" id="form" method="post">
                         <input type="hidden" value="코딩이" id="memNick" name="memNick"> <!-- 값 변경해야 함 -->
-                        <input type="text" value="<%=gatNo%>" id="gatNo" name="gatNo"> <!-- 값 변경해야 함 -->
+                        <input type="text" value="<%=gatNo%>" id="classNo" name="classNo"> <!-- 값 변경해야 함 -->
                         <input type="text" value="<%=c_spaceNo%>" id="spaceNo" name="spaceNo"> <!-- 값 변경해야 함 -->
                         <div>
                             <input type="text"  name="gatScheTitle" id="gatScheTitle" placeholder="제목을 입력해 주세요">
@@ -100,8 +97,8 @@
                             <input type="date" id="gatScheDate" name="gatScheDate" placeholder="날짜 선택" onchange="setDate()">
                             <input type="time" id="gatScheTime" name="gatScheTime" placeholder="시간 선택" onchange="setTime()">
                             <input type="hidden" id="spaceReserDate" name="spaceReserDate" placeholder="날짜 선택">
-                            <input type="hidden" id="spaceReserStartTime" name="spaceReserStartTime" placeholder="시간 선택">
-                            <input type="number" placeholder="최대 인원 입력" id="gatScheMax" name="gatScheMax" min="1" onkeyup="checkPerson()">
+                            <input type="hidden" id="spaceReserTime" name="spaceReserTime" placeholder="시간 선택">
+                            <input type="number" placeholder="최대 인원 입력" id="gatScheMax" name="gatScheMax" min="1">
                             <input type="button" value="장소 대여하지 않겠습니다." id="toggleBtn" class="btn btn-primary">
                         </div>
 

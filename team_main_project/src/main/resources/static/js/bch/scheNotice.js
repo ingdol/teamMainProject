@@ -4,19 +4,19 @@ $(document).ready(function(){
 
         $.ajax({
             type:"post",
-            url:"JoinGatherPlan",
+            url:"/JoinGatherPlan",
             data:{"ajaxMemNick":$('#ajaxMemNick').val(),
                   "ajaxGatScheNo":$('#ajaxGatScheNo').val(),
                   "ajaxGatNo":$('#ajaxGatNo').val()
                 },
-            dataType:'json',
             success:function(result){
-                alert("일정 참가 완료");
+                alert(result);
+                location.reload();
             },
             error:function(data, textStatus, result){
-                alert("일정 참가 실패");
+                // alert("일정 참가 실패");
                 console.log(data);
-                alert(result);
+                console.log(result);
                 console.log(textStatus);
             }
         });

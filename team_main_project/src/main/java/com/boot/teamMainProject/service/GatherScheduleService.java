@@ -49,4 +49,9 @@ public class GatherScheduleService implements IGatherScheduleService{
     public ArrayList<Gather_Sche_PerVO> GatherJoinPerson(int gatScheNo) {
         return dao.GatherJoinPerson(gatScheNo);
     }
+
+    @Override
+    public void JoinGather(int gatScheNo, int gatNo, String memNick) {
+        dao.JoinGather(gatScheNo, gatNo, memNick);
+    }
 }

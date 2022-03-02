@@ -1,13 +1,17 @@
 package com.boot.teamMainProject.model;
 
+import java.util.Date;
+
 public class SpaceReservationVO {
     private int spaceReserNo;
     private int gatNo;
     private int classNo;
     private String memNick;
     private int spaceNo;
-    private String spaceReserDate;
-    private String spaceReserTime;
+    private Date spaceReserDate;
+    private Date spaceReserStartTime;
+    private Date spaceReserEndTime;
+    private int spacePay;
 
     public int getSpaceNo() {
         return spaceNo;
@@ -49,19 +53,35 @@ public class SpaceReservationVO {
         this.memNick = memNick;
     }
 
-    public String getSpaceReserDate() {
+    public Date getSpaceReserDate() {
         return spaceReserDate;
     }
 
-    public void setSpaceReserDate(String spaceReserDate) {
+    public void setSpaceReserDate(Date spaceReserDate) {
         this.spaceReserDate = spaceReserDate;
     }
 
-    public String getSpaceReserTime() {
-        return spaceReserTime;
+    public Date getSpaceReserStartTime() {
+        return spaceReserStartTime;
     }
 
-    public void setSpaceReserTime(String spaceReserTime) {
-        this.spaceReserTime = spaceReserTime;
+    public void setSpaceReserStartTime(Date spaceReserStartTime) {
+        this.spaceReserStartTime = spaceReserStartTime;
+    }
+
+    public Date getSpaceReserEndTime() {
+        return spaceReserEndTime;
+    }
+
+    public void setSpaceReserEndTime(Date spaceReserEndTime) {
+        this.spaceReserEndTime = spaceReserEndTime;
+    }
+
+    public int getSpacePay() {
+        return spacePay;
+    }
+
+    public void setSpacePay(int spacePay) {
+        this.spacePay = spacePay;
     }
 }
