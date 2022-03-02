@@ -14,7 +14,11 @@
 
     </resultMap>
 <!--  현재 모임 참가 인원 숫자 조회  -->
-    <select id="GatherJoinNow" resultType="int">
+    <select id="GatherJoinNow" resultType="int" parameterType="int">
         select count(*) from Gather_Sche_Per where gatScheNo=#{gatScheNo}
+    </select>
+<!--  현재 모임 참가 인원 조회  -->
+    <select id="GatherJoinPerson" resultMap="gatherSchePerNo">
+        select * from Gather_Sche_Per where gatScheNo=#{gatScheNo}
     </select>
 </mapper>

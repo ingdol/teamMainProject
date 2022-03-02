@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -10,20 +11,33 @@
         <script src="/js/bch/gatherSchedule.js"></script>
         <script>
             $(document).ready(function(){
+                // if($('#spaceNo').val() == 0 || $('#spaceNo').val() == null) {
+                //     $('#btnSave2').css("display", "none");
+                //     $('#btnSave1').show();
+                // }
+                // else {
+                //     $('#btnSave1').css("display", "none");
+                //     $('#btnSave2').show();
+                // }
                 $('#toggleBtn').on('click', function(){
                     if($('#findAddress').css("display") == "none") {
                         $('#findAddress').show();
                         $('#findScheduleSpace').hide();
-                        $('#findScheduleSpace').val("");
+                        $('#scheduleSpace').val("");
                         $('#toggleBtn').val("장소를 대여하겠습니다.")
                         $('#gatScheSpace').val("N")
+                        $('#spaceNo').val(null);
+                        $('#btnSave1').show();
+                        $('#btnSave2').hide();
                     }
                     else if($('#findAddress').css("display") != "none") {
                         $('#findAddress').hide();
-                        $('#findAddress').val("");
+                        $('#scheduleAddress').val("");
                         $('#findScheduleSpace').show();
                         $('#toggleBtn').val("장소 대여하지 않겠습니다.")
                         $('#gatScheSpace').val("Y")
+                        $('#btnSave2').show();
+                        $('#btnSave1').hide();
                     }
                 });
             });
@@ -47,17 +61,36 @@
 
                     <%request.setCharacterEncoding("UTF-8");%>
                     <%
-//                        String memNick = request.getParameter("memNick");
-//                        int spaceNo = Integer.parseInt(request.getParameter("spaceNo"));
-//                        int gatNo = Integer.parseInt(request.getParameter("gatNo"));
-//                        int classNo = Integer.parseInt(request.getParameter("classNo"));
+//                          String memNick = request.getParameter("memNick");
+//                          int gatNo = Integer.parseInt(request.getParameter("gatNo"));
+//                          int classNo = Integer.parseInt(request.getParameter("classNo"));
+                        String spaceNo = request.getParameter("spaceNo");
+                        int c_spaceNo = 0;
+                        String SpaceNo = "";
+                        if(spaceNo == null) {
+                            c_spaceNo = 0;
+                        }
+                        else {
+                            c_spaceNo = Integer.parseInt(request.getParameter("spaceNo"));
+                        }
+                        // spaceArea 태그
                         String spaceArea = request.getParameter("spaceArea");
+                        if(spaceArea == null) {
+                            spaceArea = "";
+                        }
+                        else {
+                            spaceArea = request.getParameter("spaceArea");
+                        }
+                        // 주소에서 받아옴
+                        String gatNo = request.getParameter("gatNo");
                     %>
 
-                    <form name="form" id="form" method="post" action="/WriteGatherSchedule">
+                    <form name="form" id="form" method="post">
                         <input type="hidden" value="코딩이" id="memNick" name="memNick"> <!-- 값 변경해야 함 -->
-                        <input type="hidden" value="1" id="gatNo" name="gatNo"> <!-- 값 변경해야 함 -->
-                        <input type="hidden" value="1" id="spaceNo" name="spaceNo"> <!-- 값 변경해야 함 -->
+                        <input type="text" value="<%=gatNo%>" id="gatNo" name="gatNo"> <!-- 값 변경해야 함 -->
+                        <input type="hidden" value="1" id="classNo" name="classNo"> <!-- 값 변경해야 함 -->
+                        <input type="text" value="<%=c_spaceNo%>" id="spaceNo" name="spaceNo"> <!-- 값 변경해야 함 -->
+
                         <div>
                             <input type="text"  name="gatScheTitle" id="gatScheTitle" placeholder="제목을 입력해 주세요">
                         </div>
@@ -72,7 +105,8 @@
                         </div>
 
                         <div id="findAddress" style="display: none;">
-                            <span><input type="text" id="scheduleAddress" name="scheduleAddress" readonly>
+                            <span>
+                                <input type="text" id="scheduleAddress" name="scheduleAddress" placeholder="주소를 검색해 주세요." readonly>
                                 <input type="button" value="주소 검색" id="zipcodeButton" class="btn btn-primary">
                             </span>
                         </div>
@@ -80,15 +114,18 @@
                         <input type="hidden" value="Y" id="gatScheSpace" name="gatScheSpace"> <!-- Y,N값 중 하나 들어감 -->
 
                         <div id="findScheduleSpace">
-                            <span><input type="text" id="scheduleSpace" name="scheduleSpace" value="<%=spaceArea%>" placeholder="현재 없음" readonly>
-                                <a href="/ScheSpaceReservationAll"><input type="button" value="장소 검색" id="findSpace" class="btn btn-primary" onclick="loadSpaceReser()"></a>
+                            <span>
+                                <input type="text" id="scheduleSpace" name="scheduleSpace" value="<%=spaceArea%>" placeholder="장소를 검색해 주세요." readonly>
+                                <a href="/ScheSpaceReservationAll?gatNo=<%=gatNo%>"><input type="button" value="장소 검색" id="findSpace" class="btn btn-primary" onclick="loadSpaceReser()"></a>
                             </span>
                         </div>
 
                         <div>
                             <textarea rows="20" name="gatScheInfo" id="gatScheInfo" placeholder="내용을 입력해 주세요" style="resize: none"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="btnSave" onclick="Reservation()">일정 등록</button>
+                            <button type="submit" class="btn btn-primary" id="btnSave1" onclick="javascript: form.action='/WriteGatherScheduleWithoutSpaceReser/<%=gatNo%>'" style="display: none;">일정 등록(공간 없음)</button>
+                            <button type="submit" class="btn btn-primary" id="btnSave2" onclick="javascript: form.action='/WriteGatherSchedule/<%=gatNo%>'">일정 등록(공간 있음)</button>
+<%--                        <button type="submit" class="btn btn-primary" id="btnSave">일정 등록</button>--%>
                     </form>
                 </div>
 

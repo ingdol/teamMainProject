@@ -38,6 +38,10 @@
 
     </script>
     <body>
+    <%request.setCharacterEncoding("UTF-8");%>
+    <%
+        String gatNo = request.getParameter("gatNo");
+    %>
     <div id ="mainWrap">
         <!-- TOP  -->
         <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
@@ -58,12 +62,12 @@
                 <form type="hidden" id="hiddenForm">
 
                     <!-- hidden -->
-                    <input type="hidden" id="spaceNo" name="spaceNo" value="${space.spaceNo}" readonly>
+<%--                    <input type="hidden" id="spaceNo" name="spaceNo" value="${space.spaceNo}" readonly>--%>
                     <input type="hidden" id="gatNo" name="gatNo" value="1" readonly> <!-- value 수정해야 합니다. -->
                     <input type="hidden" id="classNo" name="classNo" value="1" readonly> <!-- value 수정해야 합니다. -->
                     <input type="hidden" id="memNick" name="memNick" value="코딩이" readonly> <!-- value 수정해야 합니다. -->
                     <!-- hidden -->
-                    <a href="/GatherSchedule?spaceNo=${space.spaceNo}&gatNo=1&classNo=1&memNick=코딩이&spaceArea=${space.spaceArea}"><input type="button" value="공간 예약하기" style="width: 160px; height: 90px;" onclick="return sendForm()"></a>
+                    <a href="/GatherSchedule?spaceNo=${space.spaceNo}&gatNo=<%=gatNo%>&memNick=코딩이&spaceArea=${space.spaceArea}"><input type="button" value="공간 예약하기" style="width: 160px; height: 90px;" onclick="return sendForm()"></a>
                 </form>
 
             </div>

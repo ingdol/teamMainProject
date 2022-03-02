@@ -23,7 +23,6 @@
 
           <section>
               <div class ="wrap">
-
                       <table border = "0" align="center" >
                           <c:if test="${gath.gatBanPhoto!=''}">
                               <tr><td colspan="4"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></td></tr>
@@ -57,26 +56,24 @@
                           </td>
                       </tr>
                   </table>
-                  <div id="map" style="width: 1000px; height: 50%; margin-top: 10px;"></div>
-                  <input type="button" value="일정 참가" id="joinGatherBtn">
-                  <input type="hidden" id="ajaxMemNick" value="코딩이">
-                  <fmt:parseNumber value="${gatherSchedule.gatScheNo}" type="number" var="gatScheNo" />
-                  <fmt:parseNumber value="${gatherSchedule.gatNo}" type="number" var="gatNo" />
-                  <input type="hidden" id="ajaxGatScheNo" value="${gatScheNo}">
-                  <input type="hidden" id="ajaxGatNo" value="${gatNo}">
+                  <div id="map" style="width: 1000px; height: 50%; margin-top: 20px; margin-bottom: 20px;"></div>
               </div>
           </section>
           <section>
               <div class ="wrap">
                   <ol class="comList">
-                      <c:forEach items="${comList }" var="comList">
-                          <table class="comment" align="center" border="0" width="1000px">
-                              <tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"></td></tr>
-                              <tr><td colspan="2" align="left">${comList.gatDetComInfo}</td></tr>
-                          </table>
-                      </c:forEach>
+                      <table class="comment" align="center" border="0" width="1000px">
+                          <tr><td align="left"><b style="font-size: large;">현재 신청 인원</b></td><td align="right"></td></tr>
+                          <c:forEach items="${GatherJoinPerson}" var="GatherJoinPerson">
+                              <tr><td align="left"><b>"${GatherJoinPerson.memNick}"</b> 님</td><td align="right"></td></tr>
+                          </c:forEach>
+                      </table>
                   </ol>
               </div>
+              <input type="hidden" id="ajaxMemNick" value="코딩이">
+              <input type="hidden" id="ajaxGatScheNo" value="${gatherSchedule.gatScheNo}">
+              <input type="hidden" id="ajaxGatNo" value="${gatherSchedule.gatNo}">
+              <input type="button" value="일정 참가" id="joinGatherBtn">
           </section>
 
           <!-- BOTTOM  -->

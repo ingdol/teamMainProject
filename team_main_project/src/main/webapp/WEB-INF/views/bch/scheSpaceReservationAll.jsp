@@ -13,6 +13,10 @@
     <script src="/js/bch/spaceSearch3.js"></script>
     <body>
     <div id ="mainWrap">
+        <%request.setCharacterEncoding("UTF-8");%>
+        <%
+            String gatNo = request.getParameter("gatNo");
+        %>
         <!-- TOP  -->
         <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
@@ -68,7 +72,7 @@
                     <c:forEach items="${spaceList}" var="space">
 <%--                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />--%>
                         <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${space.spaceNo}' />">
-                        <a id="card-link" href="<c:url value='/scheDetailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->
+                        <a id="card-link" href="/scheDetailViewSpace/${space.spaceNo}?gatNo=<%=gatNo%> "> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >

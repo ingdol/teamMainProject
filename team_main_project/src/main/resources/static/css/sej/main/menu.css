@@ -14,11 +14,12 @@ ul {
 #mainMenuBox {
 	text-align:center;
 	width:1280px;
-	height:70px;
+	height:75px;
 	line-height:35px;
 	background-color:#ffffff;   /* white*/
 	z-index:20;  /* 스크롤 시 위 오도록 */
 	padding-top:8px;
+	box-sizing: border-box; 
 }
 
 #MenuBarBox {
@@ -43,13 +44,7 @@ ul {
 }
 
 #menuImg1 {
-	padding-top:2px;
-}
-
-#menuImg2 {
-}
-
-#menuImg3 {
+	margin-top:3px;
 }
 
 #menuImg4 {
@@ -109,8 +104,10 @@ ul {
 	width: 50px;
 	height: 50px;
 	padding:10px;
+	margin-left:10px;
 	position: absolute;
 	z-index: 2;
+	box-sizing: border-box; 
 }
 #searchBtnImg {
 	margin-top: 5px;
@@ -124,7 +121,7 @@ ul {
 }
 
 #searchInput {
-	width: 500px;
+	width: 570px;
 	height: 60px;
 	background: #F7F7F7;
 	border-radius: 25px;
@@ -134,6 +131,7 @@ ul {
 	z-index: 1;
 	font-size:20px;
 	font-weight:bold;
+	box-sizing: border-box; 
 }
 
 #searchInput::placeholder {

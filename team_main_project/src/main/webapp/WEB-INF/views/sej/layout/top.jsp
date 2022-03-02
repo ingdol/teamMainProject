@@ -15,6 +15,7 @@
 		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
 	</head>
 	<body>
+	<div id="topBox">
 		<header>
 			<div id="headerBox">
 				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/images/sej/logo.jpg'/>" id="logoImg"></a></div>
@@ -55,5 +56,6 @@
 			</div>  <!-- mainMenuBox 끝 -->
 			
 		</nav>
+	</div>
 	</body>
 </html>

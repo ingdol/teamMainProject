@@ -39,7 +39,7 @@
         update Gather_Sche set gatScheView = gatScheView + 1 where gatScheNo = #{gatScheNo}
     </update>
 <!--  모임 최대 인원 조회  -->
-    <select id="CheckMaxPerson" resultType="int">
+    <select id="CheckMaxPerson" resultType="int" parameterType="int">
         select gatScheMax from Gather_Sche where gatScheNo=#{gatScheNo}
     </select>
 </mapper>

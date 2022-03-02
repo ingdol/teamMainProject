@@ -42,10 +42,12 @@ public class SunController {
 		ArrayList<GatheringVO> detail = gatherser.detailgat(gatNo);
 		ArrayList<GatherDetVO> gatherCommu = gatherDetser.gatcommulist(gatNo);
 		ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
+		GatheringVO sendGatherNo = gatherser.detailViewSomoim(gatNo);
 		
 		model.addAttribute("detail",detail);
 		model.addAttribute("gatherCommu",gatherCommu);
 		model.addAttribute("gatherSchedule", gatherSchedule);
+		model.addAttribute("sendGatherNo", sendGatherNo);
 		System.out.println("detail = " + detail);
 		System.out.println("gatherCommu = " + gatherCommu);
 		return "/sun/detailgat";

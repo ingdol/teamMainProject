@@ -1,8 +1,8 @@
 package com.boot.teamMainProject.model;
 
 public class ChatbotVO {
-	private String apiURL;
-	private String secretKey;
+	public String apiURL;
+	public String secretKey;
 	
    public String getApiURL() {
 	return apiURL;
