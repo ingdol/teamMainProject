@@ -38,4 +38,9 @@ public class MemberService implements IMemberService {
 		dao.userSignup(vo);
 	}
 
+	//sej : 멤버 조회
+	@Override
+	public  MemberVO detailViewMember(String memId) {		
+		return dao.detailViewMember(memId);
+	}
 }

@@ -1,6 +1,10 @@
 package com.boot.teamMainProject.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+import com.boot.teamMainProject.model.GatherScheduleVO;
+import com.boot.teamMainProject.model.Gather_Sche_PerVO;
+import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.model.SpaceReservationVO;
+import com.boot.teamMainProject.service.GatherScheduleService;
+import com.boot.teamMainProject.service.GatheringService;
+import com.boot.teamMainProject.service.SpaceReservationService;
 
 @Controller
 public class GatherController {
