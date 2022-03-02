@@ -37,7 +37,8 @@
 				<div class="dropbox">
 					<h3 id="sectioninfo">지역선택하기</h3>
 				</div>		
-				<c:forEach items="${gatheringResult}" begin="3" var="gr">
+				<c:forEach items="${gatheringResult}" begin="0" var="gr">
+				<input type="hidden" id="gat" value="${gr.gatNo}">
 				<input type="hidden" id="maps" value="${gr.gatArea}">
 				</c:forEach>
 				<div class="mapphoto" id="map" style="width: 90%; height: 750px;"></div>

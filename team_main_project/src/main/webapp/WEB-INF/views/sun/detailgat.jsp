@@ -35,7 +35,7 @@
 				<div class="moimname">
 					<div>${detail.gatName}</div>
 					<div>
-						모임장 : <a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
+						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
 						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		

@@ -21,7 +21,7 @@
 				<section id="moimsearch">
 					<h1 id="sectioninfo">전체모임목록</h1>
 					<div class="resultmoim">
-						<div class="cardbox">
+						<div class="cardbox moimcard">
 							<!-- 받아오기 -->
 							<c:forEach items="${gatheringResult}" begin="0" end="4" var="gat" >
 								<div class="card">
@@ -36,7 +36,7 @@
 								</div>
 							</c:forEach>
 						</div>
-						<div class="cardbox">
+						<div class="cardbox moimcard">
 							<c:forEach items="${gatheringResult}" begin="5" end="9" var="gat" >
 								<div class="card">
 									<img src="<c:url value='/images/1_sport.jpg'/>" alt="LOGO">
