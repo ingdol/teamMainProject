@@ -50,7 +50,11 @@ public class MainController {
 	// 서연
 	//**각 화면페이지
 	@RequestMapping("/sun/mapsearch")
-	public String mapsearch() {
+	public String mapsearch(Model model) {
+		ArrayList<GatheringVO> gatheringResult = gatherser.showall();
+		ArrayList<ClassVO> classResult = classser.listall();
+		model.addAttribute("gatheringResult",gatheringResult);
+		model.addAttribute("classResult",classResult);
 		return "/sun/mapsearch";
 	}
 	@RequestMapping("/sun/detailgat")

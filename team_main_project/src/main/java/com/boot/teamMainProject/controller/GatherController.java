@@ -38,7 +38,7 @@ public class GatherController {
         return "redirect:/sun/detailgat/{gatNo}";
     }
     // 모임 일정 신청 POST
-    @RequestMapping("WriteGatherScheduleWithoutSpaceReser/{gatNo)")
+    @RequestMapping("WriteGatherScheduleWithoutSpaceReser/{gatNo}")
     public String WriteGatherScheduleWithoutSpaceReser(GatherScheduleVO gatherScheduleVO) {
         service.MakeGatherSchedule(gatherScheduleVO);
         return "redirect:/sun/detailgat/{gatNo}";
