@@ -12,20 +12,62 @@
     text-align: left !important;
 }
 
-/*이미지 태그 감싸는 div*/
-.spacePicture {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+#slideShow {
+    position: relative;
+    background-color: #000000;
+    height: 480px;
+    line-height: 520px;
+    margin-top: 5px;
+}
 
-    width: 100%;
-    height: 720px;
+#slideShowBox {
+    width: 1254px;
+    height: 480px;
+    text-align: center;
+    overflow: hidden;
 }
-.spacePicture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+#slidePanel {
+    position: relative;
+    width: 5120px;
+    height: 480px;
 }
+.slideImage {
+    float: left;
+    width: 1280px;
+    height: 480px;
+}
+/* prev / next 버튼 */
+#prevNextButtonBox {
+    position: relative;
+    z-index: 10;
+}
+#prevButton {
+    position: absolute;
+    top: 210px;
+    left: 4%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+#nextButton {
+    position: absolute;
+    top: 210px;
+    right: 4%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+#prevButton:hover {
+    opacity: 1;
+}
+#nextButton:hover {
+    opacity: 1;
+}
+
+
+
+
+
+
 
 #calendarSpan {
     border: 1px solid green;

@@ -19,6 +19,7 @@
         <result property="spacePerMax" column="spacePerMax" />
         <result property="spaceOpen" column="spaceOpen" />
         <result property="spacePhoto" column="spacePhoto" />
+        <result property="spacePhoto2" column="spacePhoto2" />
     </resultMap>
 
     <select id="listAllSpace" resultMap="spaceResult">
