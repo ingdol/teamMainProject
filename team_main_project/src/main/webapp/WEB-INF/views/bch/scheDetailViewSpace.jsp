@@ -12,6 +12,7 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder"></script> <!-- 네이버 지도 api -->
     <script src="/js/bch/MapForDetailView.js"></script>
     <script src="/js/bch/CheckReservationTimeForGatherDetail.js"></script>
+    <script src="/js/bch/slideShow.js"></script>
     <script>
         $(document).ready(function(){
             $('#move_section1').on('click', function(){
@@ -50,8 +51,20 @@
                 <h3 id="spaceInfo">${space.spaceInfo}</h3>
             </div>
             <div>
-                <div id="spacePicture" class="spacePicture">
-                    <img src="<c:url value='/images/bch/${space.spacePhoto}'/>" />
+                <div id="slideShow" class="slideShow">
+                    <div id="prevNextButtonBox">
+                        <img src="<c:url value='/images/sej/leftButton.png'/>" id="prevButton">
+                        <img src="<c:url value='/images/sej/rightButton.png'/>" id="nextButton">
+                    </div>
+                    <div id="slideShowBox">
+                        <div id="slidePanel">
+                            <c:set var="spacePhoto2" value="${space.spacePhoto2}"></c:set>
+                            <c:set var="spacePhotoArr" value="${fn:split(spacePhoto2,' ')}"></c:set>
+                            <c:forEach items="${spacePhotoArr}" var="spaceInfo">
+                                <img src="<c:url value='/images/bch/${spaceInfo}'/>" class="slideImage" />
+                            </c:forEach>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h2 id="spaceInfo2">${space.spaceInfo}</h2>
