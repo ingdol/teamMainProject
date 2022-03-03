@@ -10,4 +10,6 @@ public interface ICommunityDAO {
 	ArrayList<CommunityVO> dailylist();
 	ArrayList<CommunityVO> reviewlist();
 	ArrayList<CommunityVO> bestlist();
+	ArrayList<CommunityVO> communitylist2();
+	ArrayList<CommunityVO> communitylist3();
 }

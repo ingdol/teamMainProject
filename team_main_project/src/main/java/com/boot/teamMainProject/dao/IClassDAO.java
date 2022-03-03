@@ -18,4 +18,5 @@ public interface IClassDAO {
    ArrayList<ClassVO> listClassdatemax(String hobbyNo);
    ArrayList<ClassVO> listalldatemax();
    ArrayList<ClassVO> classinfo(int classNo);
+   ArrayList<ClassVO> filterclass(String garArea,String hobbyNo);
 }

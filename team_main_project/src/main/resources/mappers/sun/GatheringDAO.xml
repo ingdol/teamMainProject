@@ -36,8 +36,17 @@
   		select * from gathering order by gatOpen ASC
   	</select>
   	<select id="hateasc" resultMap="gatheringResult">
-  		select * from gathering order by gatHate asc
+  		select * from gathering order by gatHate ASC LIMIT 10
   	</select>  	
+  	<select id="hateasc2" resultMap="gatheringResult">
+  		select * from gathering order by gatHate ASC LIMIT 10,10
+  	</select> 
+  	<select id="hateasc3" resultMap="gatheringResult">
+  		select * from gathering order by gatHate ASC LIMIT 20,10
+  	</select> 
+  	<select id="filtermoim" resultMap="gatheringResult">
+		SELECT * FROM gathering WHERE (gatArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+	</select>
   	
   	<!-- sej -->
   	<!-- 전체 모임 조회 : Best -->

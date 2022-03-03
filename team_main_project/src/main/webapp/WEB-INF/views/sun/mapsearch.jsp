@@ -41,6 +41,11 @@
 				<input type="hidden" id="gat" value="${gr.gatNo}">
 				<input type="hidden" id="maps" value="${gr.gatArea}">
 				</c:forEach>
+				<c:forEach items="${classResult}" begin="0" var="cr">
+				<input type="hidden" id="gat" value="${cr.classNo}">
+				<input type="hidden" id="maps2" value="${cr.classArea}">
+				</c:forEach>
+				
 				<div class="mapphoto" id="map" style="width: 90%; height: 750px;"></div>
 			</div>
 

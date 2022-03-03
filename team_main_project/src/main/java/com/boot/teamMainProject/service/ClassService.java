@@ -56,6 +56,10 @@ public class ClassService implements IClassService {
 	public ArrayList<ClassVO> classinfo(int classNo) {
 		return dao.classinfo(classNo);
 	}
+
+	public ArrayList<ClassVO> filterclass(String gatArea,String hobbyNo) {
+		return dao.filterclass(gatArea,hobbyNo);
+	}
    
 
 }

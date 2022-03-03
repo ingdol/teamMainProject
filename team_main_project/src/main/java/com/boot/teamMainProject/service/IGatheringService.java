@@ -10,7 +10,9 @@ public interface IGatheringService {
 	ArrayList<GatheringVO> showlist(String hobbyNo);
 	ArrayList<GatheringVO> detailgat(int gatNo);
 	ArrayList<GatheringVO> hateasc();
-
+	ArrayList<GatheringVO> hateasc2();
+	ArrayList<GatheringVO> hateasc3();
+	ArrayList<GatheringVO> filtermoim(String gatArea,String hobbyNo);
 	//sej
 	ArrayList<GatheringVO> listAllGatherBest();   // 전체 모임 조회
 	ArrayList<GatheringVO> listAllGatherNew();   // 전체 모임 조회 - 신규
@@ -23,5 +25,6 @@ public interface IGatheringService {
 	ArrayList<GatheringVO> showall();
 	ArrayList<GatheringVO> showlistdatemax(String hobbyNo);
 	ArrayList<GatheringVO> showalldatemax();
+	
 
 }

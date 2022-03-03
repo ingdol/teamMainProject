@@ -30,12 +30,14 @@
 					<fieldset>
 						<legend id="sectioninfo">지역정보</legend>
 						<div>
-							<select name="area">
-								<option value="all" selected>전체지역
-								<option value="seoul">서울시
-								<option value="gyeonggi">경기도
-								<option value="gyeongsang">경상도
-								<option value="jeolla">전라도
+							<select name="area" id="area">
+								<option value="all">전체지역
+								<option value="서울">서울시
+								<option value="경기">경기도
+								<option value="경상">경상도
+								<option value="전라">전라도
+								<option value="충청">충청도
+								<option value="강원">강원도
 							</select>
 						</div>
 					</fieldset>
@@ -44,9 +46,7 @@
 					<fieldset>
 						<legend>관심사</legend>
 						<div>
-							<c:forEach items="${ctg}" begin="0" end="0" var="ct">
 							<select name="hobbyselect" id="hobbyselect">
-									<option class="option" value="--">관심사
 									<option class="option" value="all">전체목록
 									<option class="option" value="1">운동
 									<option class="option" value="2">아웃도어
@@ -58,7 +58,6 @@
 									<option class="option" value="8">봉사활동
 									<option class="option" value="9">문화예술
 							</select>
-							</c:forEach>
 							<!--  <c:if test="${ct.hobbyNo eq '9'}">selected</c:if> -->
 						</div>
 					</fieldset>
@@ -75,7 +74,7 @@
 						<!-- 받아오기 -->
 						<c:forEach items="${gatheringResult}" begin="0" end="4" var="gat">
 						<div class="card">
-							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
+							<img src="<c:url value='/images/ldh/${gat.gatBanPhoto}'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${gat.gatName}</h5>
 								<p class="hidden">${gat.gatNo}</p>
@@ -85,8 +84,8 @@
 							</div>
 						</div>
 						</c:forEach>
-						<div class="plus">모임더보기</div>
 					</div>
+					<div class="moimplus">모임더보기</div>
 				</div>
 
 				<!-- 클래스필터결과 -->
@@ -95,7 +94,7 @@
 						<!-- 클래스 받아오기 -->
 						<c:forEach items="${classResult}" begin="0" end="4" var="clas">
 						<div class="card">
-							<img src="<c:url value='/images/4_travel.jpg'/>" class="card-img-top" alt="LOGO">
+							<img src="<c:url value='/images/${clas.classPhoto}'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${clas.classTitle}</h5>
 								<p class="hidden">${clas.classNo}</p>
@@ -105,8 +104,8 @@
 							</div>
 						</div>
 						</c:forEach>						
-						<div class="plus">클래스더보기</div>
 					</div>
+					<div class="classplus">클래스더보기</div>
 				</div>
 			</section>
 		</section>

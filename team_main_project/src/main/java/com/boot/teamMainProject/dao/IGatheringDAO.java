@@ -12,7 +12,9 @@ public interface IGatheringDAO {
 	ArrayList<GatheringVO> showlistdatemax(String hobbyNo);
 	ArrayList<GatheringVO> showalldatemax();
 	ArrayList<GatheringVO> hateasc();	
-	
+	ArrayList<GatheringVO> hateasc2();
+	ArrayList<GatheringVO> hateasc3();
+	ArrayList<GatheringVO> filtermoim(String gatArea,String hobbyNo);
 
 	//sej
 	ArrayList<GatheringVO> listAllGatherBest();   // 전체 모임 조회 - 베스트

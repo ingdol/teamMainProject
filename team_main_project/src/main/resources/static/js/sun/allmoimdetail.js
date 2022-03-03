@@ -21,5 +21,5 @@ $(function(){
 		/* 한번누르면 current 지워주기*/		
 		oncard.classList.remove("current");
 	});
-	
+		
 });

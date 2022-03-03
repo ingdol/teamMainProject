@@ -1,9 +1,11 @@
 package com.boot.teamMainProject.service;
 
 import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
 import com.boot.teamMainProject.dao.ICommunityDAO;
 import com.boot.teamMainProject.model.CommunityVO;
 
@@ -32,6 +34,16 @@ public class CommunityService implements ICommunityService {
 	@Override
 	public ArrayList<CommunityVO> bestlist() {
 		return dao.bestlist();
+	}
+
+	@Override
+	public ArrayList<CommunityVO> communitylist2() {
+		return dao.communitylist2();
+	}
+
+	@Override
+	public ArrayList<CommunityVO> communitylist3() {
+		return dao.communitylist3();
 	}
 
 }
