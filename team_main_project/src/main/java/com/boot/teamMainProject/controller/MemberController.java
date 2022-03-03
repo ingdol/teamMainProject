@@ -50,7 +50,6 @@ public class MemberController {
 		
 		if(resultChk != null) {
 			session.setAttribute("sid", resultChk.getMemId());
-			session.setAttribute("sidNick", resultChk.getMemNick()); //닉네임
 			session.setMaxInactiveInterval(3600); // 60분
 			checkVar = "success";
 		}
@@ -122,6 +121,7 @@ public class MemberController {
 	public String logout(HttpServletRequest request) {
 		request.getSession().invalidate();
 		request.getSession(true);
+
 		return "redirect:/";
 	}
 	

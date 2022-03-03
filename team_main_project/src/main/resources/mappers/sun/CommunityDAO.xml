@@ -19,22 +19,30 @@
  
  	<!-- 전체글 -->
  	<select id="communitylist" resultMap="communityResult">
-  		select * from community
+  		select * from community order by commuNo desc LIMIT 10
+  	</select>
+  	
+  	<select id="communitylist2" resultMap="communityResult">
+  		select * from community order by commuNo desc LIMIT 10,10
+  	</select>
+  	
+  	<select id="communitylist3" resultMap="communityResult">
+  		select * from community order by commuNo desc LIMIT 20,10
   	</select>
   	
   	<!-- 일상글 -->  	
   	<select id="dailylist" resultMap="communityResult">
-  		select * from community where CommuCtgNo=1
+  		select * from community where CommuCtgNo=1 order by commuNo desc
   	</select>
   	
   	<!-- 후기글 -->
   	<select id="reviewlist" resultMap="communityResult">
-  		select * from community where CommuCtgNo=2
+  		select * from community where CommuCtgNo=2 order by commuNo desc
   	</select>
   	
   	<!-- 베스트글 -->
   	<select id="bestlist" resultMap="communityResult">
-  		select * from community where commuLike>5
+  		select * from community where commuLike>5 order by commuNo desc
   	</select>
   	 
   </mapper>

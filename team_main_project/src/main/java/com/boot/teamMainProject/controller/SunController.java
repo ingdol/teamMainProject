@@ -1,6 +1,7 @@
 package com.boot.teamMainProject.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.boot.teamMainProject.model.*;
 import com.boot.teamMainProject.service.*;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 
@@ -80,9 +82,49 @@ public class SunController {
 	
 	
 	// 전체커뮤니티게시판
-	@RequestMapping("/sun/commumain")
+	@RequestMapping("/sun/commumain/1")
 	public String commumain(Model model) {
 		ArrayList<CommunityVO> comlist = commuser.communitylist();
+		ArrayList<CommunityVO> dailylist = commuser.dailylist();
+		ArrayList<CommunityVO> reviewlist = commuser.reviewlist();
+		ArrayList<CommunityVO> bestlist = commuser.bestlist();
+		
+		model.addAttribute("comlist",comlist);
+		model.addAttribute("dailylist",dailylist);
+		model.addAttribute("reviewlist",reviewlist);
+		model.addAttribute("bestlist",bestlist);
+		
+		System.out.println("comlist = "+comlist);
+		System.out.println("dailylist = "+dailylist);
+		System.out.println("reviewlist = "+reviewlist);
+		System.out.println("bestlist = "+bestlist);
+		
+		return "/sun/commumain";
+	}
+	
+	@RequestMapping("/sun/commumain/2")
+	public String commumain2(Model model) {
+		ArrayList<CommunityVO> comlist = commuser.communitylist2();
+		ArrayList<CommunityVO> dailylist = commuser.dailylist();
+		ArrayList<CommunityVO> reviewlist = commuser.reviewlist();
+		ArrayList<CommunityVO> bestlist = commuser.bestlist();
+		
+		model.addAttribute("comlist",comlist);
+		model.addAttribute("dailylist",dailylist);
+		model.addAttribute("reviewlist",reviewlist);
+		model.addAttribute("bestlist",bestlist);
+		
+		System.out.println("comlist = "+comlist);
+		System.out.println("dailylist = "+dailylist);
+		System.out.println("reviewlist = "+reviewlist);
+		System.out.println("bestlist = "+bestlist);
+		
+		return "/sun/commumain";
+	}
+	
+	@RequestMapping("/sun/commumain/3")
+	public String commumain3(Model model) {
+		ArrayList<CommunityVO> comlist = commuser.communitylist3();
 		ArrayList<CommunityVO> dailylist = commuser.dailylist();
 		ArrayList<CommunityVO> reviewlist = commuser.reviewlist();
 		ArrayList<CommunityVO> bestlist = commuser.bestlist();
@@ -144,9 +186,23 @@ public class SunController {
 			}
 	
 		
-			@RequestMapping("/sun/allmoimdetail")
+			@RequestMapping("/sun/allmoimdetail/1")
 			public String allmoimdetail(Model model) {
 				ArrayList<GatheringVO> gatheringResult = gatherser.hateasc();
+				model.addAttribute("gatheringResult",gatheringResult);
+				return "/sun/allmoimdetail";
+			}
+			
+			@RequestMapping("/sun/allmoimdetail/2")
+			public String allmoimdetail2(Model model) {
+				ArrayList<GatheringVO> gatheringResult = gatherser.hateasc2();
+				model.addAttribute("gatheringResult",gatheringResult);
+				return "/sun/allmoimdetail";
+			}
+			
+			@RequestMapping("/sun/allmoimdetail/3")
+			public String allmoimdetail3(Model model) {
+				ArrayList<GatheringVO> gatheringResult = gatherser.hateasc3();
 				model.addAttribute("gatheringResult",gatheringResult);
 				return "/sun/allmoimdetail";
 			}
@@ -158,5 +214,17 @@ public class SunController {
 				model.addAttribute("detail",detail);
 				model.addAttribute("revlist",revlist);
 				return "/sun/detailclass";
+			}
+			
+			//**관심사카테고리에서 특정카테고리클릭시 해당카테고리 전체모임,클래스 나타내기	
+			@RequestMapping("/sun/allmoim/{gatArea}{hobbyNo}")
+			public String filter(@PathVariable String gatArea,@PathVariable String hobbyNo, Model model) {
+				System.out.println(gatArea+","+hobbyNo);
+				ArrayList<GatheringVO> gatheringResult = gatherser.filtermoim(gatArea,hobbyNo);
+				ArrayList<ClassVO> classResult = classser.filterclass(gatArea,hobbyNo);
+				
+				model.addAttribute("gatheringResult",gatheringResult);
+				model.addAttribute("classResult",classResult);
+				return "/sun/allmoim";
 			}
 }

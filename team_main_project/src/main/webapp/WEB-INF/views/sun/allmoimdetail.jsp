@@ -25,7 +25,7 @@
 							<!-- 받아오기 -->
 							<c:forEach items="${gatheringResult}" begin="0" end="4" var="gat" >
 								<div class="card">
-									<img src="<c:url value='/images/1_sport.jpg'/>" alt="LOGO">
+									<img src="<c:url value='/images/ldh/${gat.gatBanPhoto}'/>" alt="LOGO">
 									<div class="cardbody">
 										<h5 class="cardtitle">${gat.gatName}</h5>
 										<p class="hidden">${gat.gatNo}</p>
@@ -39,7 +39,7 @@
 						<div class="cardbox moimcard">
 							<c:forEach items="${gatheringResult}" begin="5" end="9" var="gat" >
 								<div class="card">
-									<img src="<c:url value='/images/1_sport.jpg'/>" alt="LOGO">
+									<img src="<c:url value='/images/ldh/${gat.gatBanPhoto}'/>" alt="LOGO">
 									<div class="cardbody">
 										<h5 class="cardtitle">${gat.gatName}</h5>
 										<p class="hidden">${gat.gatNo}</p>
@@ -56,9 +56,9 @@
 								<li class="page-item"><a class="page-link" href="#"
 									aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 								</a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="<c:url value='/sun/allmoimdetail/1'/>">1</a></li>
+								<li class="page-item"><a class="page-link" href="<c:url value='/sun/allmoimdetail/2'/>">2</a></li>
+								<li class="page-item"><a class="page-link" href="<c:url value='/sun/allmoimdetail/3'/>">3</a></li>
 								<li class="page-item"><a class="page-link" href="#"
 									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 								</a></li>

@@ -3,16 +3,22 @@
  */
 
 $(document).ready(function (){ 
-    var allmaps = document.querySelectorAll('#maps');
+	
+	// 지도 생성
+	var map = new naver.maps.Map('map', {
+	   center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576), // 지도를 열 좌표
+	   zoom: 8
+	});
+	
+    var allmaps = document.querySelectorAll('#maps,#maps2');
     console.log(allmaps.length);
     
     for(var i=0; i<allmaps.length; i++){
     	console.log(allmaps[i].value);	
 	}
-    
+	
 	// 도로명 주소를 좌표 값으로 변환(API)	
-	for(var i=0; i<allmaps.length; i++){
-			
+	for(var i=0; i<allmaps.length; i++){			
 	    naver.maps.Service.geocode({
 	        query: allmaps[i].value
 	    }, function(status, response) {
@@ -28,17 +34,11 @@ $(document).ready(function (){
 	        let y = new Array();
 	        
 	        x[i] = parseFloat(items[0].x);
-	       	y[i] = parseFloat(items[0].y);
-	
-	        // 지도 생성
-	        var map = new naver.maps.Map('map', {
-	            center: new naver.maps.LatLng(y[i], x[i]), // 지도를 열 좌표
-	            zoom: 10
-	        });
+	       	y[i] = parseFloat(items[0].y);	
+	      
 	
 	        // 지도에 해당 좌표 마커(아이콘 설정)
 	        var markerOptions = {
-	            /*position: new naver.maps.LatLng(y, x), //마커찍을 좌표*/
 	            position: new naver.maps.LatLng(y[i], x[i]),
 	            map: map,
 	            icon: {
@@ -48,6 +48,10 @@ $(document).ready(function (){
 	                anchor: new naver.maps.Point(11, 35)
 	            }
 	        };
+			var markers = new Array(); // 마커 정보를 담는 배열
+	        markers[i] = new naver.maps.Marker(markerOptions);
+	        
+
 	        // 맵 옵션
 	        var mapOptions = {
 	            scaleControl: false,
@@ -56,9 +60,23 @@ $(document).ready(function (){
 	            zoomControl: true
 	        }
 	
+			var infoWindow = new Array(); // 정보창을 담는 배열
 	        // 마커 생성
-	        var marker = new naver.maps.Marker(markerOptions);
-	
+			
+	        infoWindow[i] = new naver.maps.InfoWindow({
+		     content: '<div style="width:200px;text-align:center;padding:10px;"><b>' + y[i] + '</b><br> - 네이버 지도 - </div>'
+		 }); // 클릭했을 때 띄워줄 정보 HTML 작성
 	    });	   
+	    
 	   }
+	   
+	   for(var i=0; i<allmaps.length; i++){
+		   $(markers[i]).on('click',function(){
+					console.log("눌러눌러");
+				});		
+		}
+	
+	
 });
+
+

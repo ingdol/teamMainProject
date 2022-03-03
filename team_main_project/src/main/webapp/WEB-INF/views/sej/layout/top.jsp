@@ -35,7 +35,7 @@
 
 						<li><a href="<c:url value='/sun/mapsearch'/>"><img src="<c:url value='/images/sej/allGather.png'/>" id="menuImg1"></a></li>
 						<li><a href="<c:url value='/SpaceReservationAll'/>"><img src="<c:url value='/images/sej/lookSpace.png'/>" id="menuImg2"></a></li>
-						<li><a href="<c:url value='/sun/commumain'/>"><img src="<c:url value='/images/sej/community.png'/>" id="menuImg3"></a></li>
+						<li><a href="<c:url value='/sun/commumain/1'/>"><img src="<c:url value='/images/sej/community.png'/>" id="menuImg3"></a></li>
 						<c:if test="${empty sessionScope.sid}" >
 							<%-- <li><a href="#"><img src="<c:url value='/images/sej/mypage.png'/>" id="menuImg5"></a></li> --%>
 							<%-- <li><a href="<c:url value='/login'/>"><img src="<c:url value='/images/sej/login.png'/>" id="menuImg4"></a></li> --%>

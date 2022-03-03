@@ -26,7 +26,7 @@ $(function(){
 	
 	$('.hotmenu').on('click',function(){
 		console.log("hotmenu 클릭");		
-		location.href="/sun/allmoimdetail";
+		location.href="/sun/allmoimdetail/1";
 	});
 	
 	/* 페이지넘기는거 - restcontroller사용? */

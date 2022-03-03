@@ -69,9 +69,21 @@ public class GatheringService implements IGatheringService {
 	public ArrayList<GatheringVO> showalldatemax() {
 		return dao.showalldatemax();
 	}
-
+	
 	public ArrayList<GatheringVO> hateasc() {
 		return dao.hateasc();
+	}
+
+	public ArrayList<GatheringVO> hateasc2() {
+		return dao.hateasc2();
+	}
+	
+	public ArrayList<GatheringVO> hateasc3() {
+		return dao.hateasc3();
+	}
+
+	public ArrayList<GatheringVO> filtermoim(String gatArea, String hobbyNo) {
+		return dao.filtermoim(gatArea,hobbyNo);
 	}
 
 

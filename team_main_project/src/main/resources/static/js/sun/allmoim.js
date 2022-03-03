@@ -28,15 +28,39 @@ $(function(){
 		window.location.href='/sun/allmoimdetail';
 	});*/
 	
+	/* seleted 선택하기 */
+	
+	var pickarea='';
+	var pickhobby='';
+	var change = new Array();
+	change[0],change[1]='';
+	
+	$('#area').on('change',function(e){
+		e.preventDefault();
+		pickarea = document.getElementById('area').value;
+		console.log(pickarea);
+		console.log(pickhobby);
+		change[0] = pickarea;
+	});
+	
+	$('#hobbyselect').on('change',function(e){
+		e.preventDefault();
+		pickhobby = document.getElementById('hobbyselect').value;
+		console.log(pickarea);
+		console.log(pickhobby);
+		change[1] = pickhobby;
+		location.href='/sun/allmoim/'+change[0]+change[1];
+		pickarea='';
+		pickhobby='';
+	});	
 	
 	$('#moimcard').on('click',function(e){
-				
+				e.preventDefault();
 		console.log(e.target.classList);	
-		if(e.target.classList != "card")
-			e.target.parentNode.classList.add("current");
-		else
+		if(e.target.classList == "card")
 			e.target.classList.add("current");
-			
+		else
+			return;				
 		var oncard = document.querySelector('.current');
 		var hidden = oncard.querySelector('.hidden');
 		var gatNo = hidden.innerText;
@@ -49,23 +73,30 @@ $(function(){
 	});
 	
 	$('#classcard').on('click',function(e){
-				
+				e.preventDefault();
 		console.log(e.target.classList);	
 		
-		if(e.target.classList != "card")
-			e.target.parentNode.classList.add("current");
-		else
+		if(e.target.classList == "card")
 			e.target.classList.add("current");
-			
+		else
+			return;		
 		var oncard = document.querySelector('.current');
 		var hidden = oncard.querySelector('.hidden');
 		var classNo = hidden.innerText;
 		console.log(classNo);			
 	
 		window.location.href='/sun/detailclass/'+classNo;
-
+		
 		/* 한번누르면 current 지워주기*/		
 		oncard.classList.remove("current");
 	});
 	
+	
+	$('.moimplus').on('click',function(){
+		console.log("moim");
+	});
+	
+	$('.classplus').on('click',function(){
+		console.log("class");
+	});
 });
