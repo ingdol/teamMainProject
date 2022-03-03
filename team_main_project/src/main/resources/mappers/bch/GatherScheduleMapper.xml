@@ -21,7 +21,7 @@
         <result property="gatScheView" column="gatScheView" />
     </resultMap>
 <!--  모임 일정 만들기  -->
-    <insert id="MakeGatherSchedule" parameterType="com.boot.teamMainProject.model.SpaceReviewVO" >
+    <insert id="MakeGatherSchedule"  >
         INSERT INTO Gather_Sche (gatNo, memNick, gatScheTitle, gatScheInfo, gatScheDate, gatScheTime, gatScheLocation, gatScheMax, gatScheSpace, gatScheView)
         VALUES (#{gatNo}, #{memNick}, #{gatScheTitle}, #{gatScheInfo}, #{gatScheDate}, #{gatScheTime}, CONCAT(#{scheduleAddress},#{scheduleSpace}),
                    #{gatScheMax}, #{gatScheSpace}, 0)

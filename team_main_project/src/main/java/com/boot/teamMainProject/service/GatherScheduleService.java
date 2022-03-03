@@ -16,8 +16,8 @@ public class GatherScheduleService implements IGatherScheduleService{
     IGatherScheduleDAO dao;
 
     @Override
-    public void MakeGatherSchedule(GatherScheduleVO gatherScheduleVO) {
-        dao.MakeGatherSchedule(gatherScheduleVO);
+    public void MakeGatherSchedule(String memNick, int gatNo, String gatScheTitle, String gatScheDate, String gatScheTime, int gatScheMax, String scheduleAddress, String scheduleSpace, String gatScheSpace, String gatScheInfo) {
+        dao.MakeGatherSchedule(memNick, gatNo, gatScheTitle, gatScheDate, gatScheTime, gatScheMax, scheduleAddress, scheduleSpace, gatScheSpace, gatScheInfo);
     }
 
     @Override

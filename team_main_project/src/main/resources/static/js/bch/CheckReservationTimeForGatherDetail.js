@@ -76,33 +76,15 @@ $(document).ready(function(){
          }); // ajax 끝
       } // else 끝
    });
-   $('#ReservationBtn').on('click', function () {
-      var Nick = $('#memNick').val();
-      if (Nick == "null") {
-         alert("회원만 이용 가능합니다.\n로그인 해주세요.");
-         window.location.replace('/login');
+   $('#ReservationATAG').on('click', function () {
+      if($('#date').val() == "" || $('#time').val() == "" || $('#time2').val() == "") {
+         event.preventDefault();
+         alert("예약 정보를 정확하게 입력해 주세요.");
       }
       else {
-         $.ajax({
-            type:"post",
-            url:"/ReservationComp", // @RestController로 요청
-            data:{"date":$('#date').val(),
-               "time":$('#time').val(),
-               "time2":$('#time2').val(),
-               "memNick":$('#memNick').val(),
-               "spacePrice":$('#spacePrice').val(),
-               "spaceNo":$('#spaceNo').val()
-            },
-            async: false,
-            success:function(result_name){
-               alert("예약이 완료되었습니다!");
-               window.location.replace('/');
-            },
-            error:function(data, textStatus){
-               alert("예약에 실패했습니다.\n예약 정보를 정확하게 입력해 주세요.");
-               // window.location.replace('/login');
-            }
-         });
+         alert("모임 일정 등록을 완료 하시면 예약이 확정 됩니다.")
+         $('#ReservationATAG').attr('href',
+             "/GatherSchedule?spaceNo=" + $('#spaceNo').val() + "&gatNo=" + $('#gatNo').val() + "&memNick=" + $('#memNick').val() + "&spaceArea=" + $('#spaceArea').val() + "&date=" + $('#date').val() + "&time=" + $('#time').val() + "&time2=" + $('#time2').val() + "&spacePrice=" + $('#spacePrice').val());
       }
    }); // 예약하기 버튼
 });

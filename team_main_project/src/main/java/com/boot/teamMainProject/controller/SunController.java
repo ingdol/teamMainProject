@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class SunController {
 	// 서연 사용controller
@@ -35,15 +37,20 @@ public class SunController {
 	// 모임 일정 공지 service(고병채)
 	@Autowired
 	GatherScheduleService scheduleService;
+	@Autowired
+	MemberService memberService;
 	// 해당모임클릭시 해당모임 상세페이지 나오도록
 	
 	@RequestMapping("/sun/detailgat/{gatNo}")
-	public String detailgat(@PathVariable int gatNo, Model model) {
+	public String detailgat(@PathVariable int gatNo, Model model, HttpSession session) {
 		ArrayList<GatheringVO> detail = gatherser.detailgat(gatNo);
 		ArrayList<GatherDetVO> gatherCommu = gatherDetser.gatcommulist(gatNo);
 		ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
 		GatheringVO sendGatherNo = gatherser.detailViewSomoim(gatNo);
-		
+		String sid = (String) session.getAttribute("sid");
+		MemberVO mem = memberService.detailViewMember(sid);
+
+		model.addAttribute("mem", mem);
 		model.addAttribute("detail",detail);
 		model.addAttribute("gatherCommu",gatherCommu);
 		model.addAttribute("gatherSchedule", gatherSchedule);

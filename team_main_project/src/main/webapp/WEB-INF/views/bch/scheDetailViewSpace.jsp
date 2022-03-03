@@ -11,6 +11,7 @@
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder"></script> <!-- 네이버 지도 api -->
     <script src="/js/bch/MapForDetailView.js"></script>
+    <script src="/js/bch/CheckReservationTimeForGatherDetail.js"></script>
     <script>
         $(document).ready(function(){
             $('#move_section1').on('click', function(){
@@ -56,19 +57,22 @@
                     <h2 id="spaceInfo2">${space.spaceInfo}</h2>
                 </div>
             </div>
+
             <div class="reservation" id="reservation">
                 <form type="hidden" id="hiddenForm">
-
-                    <!-- hidden -->
-<%--                    <input type="hidden" id="spaceNo" name="spaceNo" value="${space.spaceNo}" readonly>--%>
-                    <input type="hidden" id="gatNo" name="gatNo" value="1" readonly> <!-- value 수정해야 합니다. -->
-                    <input type="hidden" id="classNo" name="classNo" value="1" readonly> <!-- value 수정해야 합니다. -->
-                    <input type="hidden" id="memNick" name="memNick" value="코딩이" readonly> <!-- value 수정해야 합니다. -->
-                    <!-- hidden -->
-                    <a href="/GatherSchedule?spaceNo=${space.spaceNo}&gatNo=<%=gatNo%>&memNick=코딩이&spaceArea=${space.spaceArea}"><input type="button" value="공간 예약하기" style="width: 160px; height: 90px;" onclick="return sendForm()"></a>
+                    <input type="hidden" id="no" value="${space.spaceNo}">
+                    <input type="date" class="setDateTime" id="date" value="">
+                    <input type="time" class="setDateTime" id="time" value="">
+                    <input type="time" class="setDateTime" id="time2" value="">
+                    <a id="ReservationATAG" href="/GatherSchedule?spaceNo=${space.spaceNo}&gatNo=<%=gatNo%>&memNick=${mem.memNick}&spaceArea=${space.spaceArea}&date=date&time=time&time2=time2"><input type="button" value="예약하기" id="ReservationBtn"></a>
+                    <input type="hidden" id="spacePrice" value="${space.spacePrice1}">
+                    <input type="hidden" id="gatNo" value="<%=gatNo%>">
+                    <input type="hidden" id="memNick" value="${mem.memNick}">
+                    <input type="hidden" id="spaceNo" value="${space.spaceNo}">
+                    <input type="hidden" id="spaceArea" value="${space.spaceArea}">
                 </form>
-
             </div>
+
             <div id="navigation" class="navigation">
                 <ul class="navigation_list">
                     <li id="move_section1" class="moveSection">공간 소개</li>
