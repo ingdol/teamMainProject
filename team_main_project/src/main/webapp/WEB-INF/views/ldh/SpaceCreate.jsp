@@ -46,7 +46,7 @@
 			</div>
 			<br><br>
 			
-			<h3>당신의 공간을 소개해보세요!</h3><br>
+			<h3>당신의 공간을 소개해보세요!!!</h3><br>
 			<input type="text" id="spaceTitle" name="spaceTitle" 
 				style="width:500px; height:40px; text-align:center; background: #FFFFFF; border: 1px solid rgba(173, 0, 255, 0.25);
 							box-sizing: border-box; box-shadow: 0px 4px 4px rgba(173, 0, 255, 0.25); border-radius: 10px;" placeholder="소개글의 제목을 입력해주세요." 
