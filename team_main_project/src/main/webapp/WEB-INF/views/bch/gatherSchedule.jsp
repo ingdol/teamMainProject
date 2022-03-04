@@ -86,12 +86,20 @@
                         }
                         // 주소에서 받아옴
                         String gatNo = request.getParameter("gatNo");
+                        String date = request.getParameter("date");
+                        String time = request.getParameter("time");
+                        String time2 = request.getParameter("time2");
+                        String spacePrice = request.getParameter("spacePrice");
                     %>
 
-                    <form name="form" id="form" method="post">
-                        <input type="hidden" value="코딩이" id="memNick" name="memNick"> <!-- 값 변경해야 함 -->
-                        <input type="text" value="<%=gatNo%>" id="gatNo" name="gatNo"> <!-- 값 변경해야 함 -->
-                        <input type="text" value="<%=c_spaceNo%>" id="spaceNo" name="spaceNo"> <!-- 값 변경해야 함 -->
+                    <div name="form" id="form">
+                        <input type="hidden" value="${mem.memNick}" id="memNick" name="memNick">
+                        <input type="hidden" value="<%=gatNo%>" id="gatNo" name="gatNo">
+                        <input type="hidden" value="<%=c_spaceNo%>" id="spaceNo" name="spaceNo">
+                        <input type="hidden" value="<%=date%>" id="date" name="date">
+                        <input type="hidden" value="<%=time%>" id="time" name="time">
+                        <input type="hidden" value="<%=time2%>" id="time2" name="time2">
+                        <input type="hidden" value="<%=spacePrice%>" id="spacePrice" name="spacePrice">
                         <div>
                             <input type="text"  name="gatScheTitle" id="gatScheTitle" placeholder="제목을 입력해 주세요">
                         </div>
@@ -124,10 +132,11 @@
                         <div>
                             <textarea rows="20" name="gatScheInfo" id="gatScheInfo" placeholder="내용을 입력해 주세요" style="resize: none"></textarea>
                         </div>
-                            <button type="submit" class="btn btn-primary" id="btnSave1" onclick="javascript: form.action='/WriteGatherScheduleWithoutSpaceReser/<%=gatNo%>'" style="display: none;">일정 등록(공간 없음)</button>
-                            <button type="submit" class="btn btn-primary" id="btnSave2" onclick="javascript: form.action='/WriteGatherSchedule/<%=gatNo%>'">일정 등록(공간 있음)</button>
-<%--                        <button type="submit" class="btn btn-primary" id="btnSave">일정 등록</button>--%>
-                    </form>
+<%--                            <button type="button" class="btn btn-primary" id="btnSave1" onclick="javascript: form.action='/WriteGatherScheduleWithoutSpaceReser/<%=gatNo%>'" style="display: none;">일정 등록(공간 없음)</button>--%>
+<%--                            <button type="button" class="btn btn-primary" id="btnSave2" onclick="javascript: form.action='/WriteGatherSchedule/<%=gatNo%>'">일정 등록(공간 있음)</button>--%>
+                        <button type="button" class="btn btn-primary" id="btnSave1" style="display: none;">일정 등록(공간 없음)</button>
+                        <button type="button" class="btn btn-primary" id="btnSave2" >일정 등록(공간 있음)</button>
+                    </div>
                 </div>
 
             <!-- BOTTOM  -->

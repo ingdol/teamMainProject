@@ -3,6 +3,14 @@
 <html>
     <head>
         <title>공간 대여 전체</title>
+        <script>
+            function checkPerson() {
+                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "") {
+                    $("#maxPerson").val("");
+                    alert("1명 이하는 입력 하실 수 없습니다.")
+                }
+            }
+        </script>
     </head>
     <link type="text/css" rel="stylesheet" href="css/bch/spaceReservationAll.css">
     <link type="text/css" rel="stylesheet" href="css/bch/gallery.css">
@@ -22,9 +30,9 @@
         <div id="FormBox" class="FormBox">
             <input type="hidden" id="gatNo" value="<%=gatNo%>">
             <form class="findPlace" >
-                <span>
-                    <input type="date" id="gatScheDate" name="gatScheDate" placeholder="날짜 선택">
-                </span>
+<%--                <span>--%>
+<%--                    <input type="date" id="gatScheDate" name="gatScheDate" placeholder="날짜 선택">--%>
+<%--                </span>--%>
                 <span>
                     <select name="gatArea1" id="gatArea1" onchange="categoryChange(this)">
                         <option value="">시/도 선택</option>
@@ -61,7 +69,7 @@
                     <option value="7">문화생활시설</option>
                 </select>
                 </span>
-                <span><input type="number" id="maxPerson" class="maxPerson" min="1" placeholder="최대 인원" value="1"></span>
+                <span><input type="number" id="maxPerson" class="maxPerson" min="1" placeholder="최대 인원" value="1" onkeyup="checkPerson()"></span>
 <%--                <input type="submit" value="검색" id="findPlaceBtn">--%>
                 <button id="findPlaceBtn">검색</button>
             </form>

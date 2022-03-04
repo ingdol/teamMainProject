@@ -207,14 +207,15 @@ nav#main_nav{
 
 #main_nav {
 	margin-top: 35px;
-    margin-right: 48px;
+    margin-right: 36px;
     padding: 11px;
-    width: 114px;
-    height: 81px;
+    width: 138px;
+    height: 108px;
     float: right;
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px lightgrey;
+    box-sizing: border-box;
 }
 
 #main_nav ul {

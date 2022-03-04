@@ -36,7 +36,7 @@
 					<div>${detail.gatName}</div>
 					<div>
 						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
-						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
+						<a href="<c:url value='/chat/${sessionScope.sid}/${detail.gatNo}'/>"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		
 				</c:forEach>
@@ -105,7 +105,7 @@
 										<div class="date" id="gatDate"><fmt:formatDate value="${gatSche.gatScheWriteDate}" pattern="YY/MM/dd"/></div>
 										<div class="count" id="gatCount">${gatSche.gatScheView}</div>
 									</div>
-								</c:forEach>								
+								</c:forEach>
 							</div>
 						</div>
 							<nav aria-label="Page navigation example">
@@ -190,7 +190,12 @@
 				<h3 id="sectioninfo">해당모임찜,가입버튼</h3>
 				<ul>
 <%--					<li><button type="button" class="btn btn-primary gatherschedule">일정잡기</button></li>--%>
-					<li><a href="/GatherSchedule?gatNo=${sendGatherNo.gatNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기"></a></li>
+					<c:if test="${empty mem.memNick}">
+						<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>
+					</c:if>
+					<c:if test="${not empty mem.memNick}">
+						<li><a href="/GatherSchedule?gatNo=${sendGatherNo.gatNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>
+					</c:if>
 					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
 					<li><button type="button" class="btn btn-primary join">가입하기</button></li>
 				</ul>

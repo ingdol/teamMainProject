@@ -121,7 +121,7 @@ public class MemberController {
 	public String logout(HttpServletRequest request) {
 		request.getSession().invalidate();
 		request.getSession(true);
-		
+
 		return "redirect:/";
 	}
 	

@@ -23,14 +23,19 @@
         INSERT INTO Space_Reservation (gatNo, memNick, spaceNo, spaceReserDate, spaceReserTime)
         VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{spaceReserDate}, #{spaceReserTime})
     </insert>
-
-    <insert id="SpaceReservationPersonal" parameterType="com.boot.teamMainProject.model.SpaceReservationVO">
+    <!-- 모임 공간 예약(모임 아님) -->
+    <insert id="ReservationCompGather" >
         INSERT INTO Space_Reservation (gatNo, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
-        VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{spaceReserDate}, #{spaceReserStartTime}, #{spaceReserEndTime}, #{spacePay})
+        VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
     </insert>
 <!--  예약 시간 조회  -->
     <select id="CheckReservationTime" resultMap="spaceReser">
         select * from space_Reservation where spaceNo=#{spaceNo}
     </select>
+    <!-- 개인 공간 예약(모임 아님) -->
+    <insert id="ReservationComp">
+        INSERT INTO Space_Reservation (memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
+        VALUES (#{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
+    </insert>
 
 </mapper>

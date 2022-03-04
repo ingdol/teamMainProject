@@ -6,7 +6,7 @@ import com.boot.teamMainProject.model.Gather_Sche_PerVO;
 import java.util.ArrayList;
 
 public interface IGatherScheduleDAO {
-    void MakeGatherSchedule(GatherScheduleVO gatherScheduleVO);
+    void MakeGatherSchedule(String memNick, int gatNo, String gatScheTitle, String gatScheDate, String gatScheTime, int gatScheMax, String scheduleAddress, String scheduleSpace, String gatScheSpace, String gatScheInfo);// 일정 만들기
     ArrayList<GatherScheduleVO> LoadGather_Sche(int gatNo); // 글 목록 보기 전용
     void updateViewCount(int gatScheNo);
     GatherScheduleVO LocdGather_Schedule(int gatNo); // 상세 보기 전용

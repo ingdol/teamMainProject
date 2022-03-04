@@ -1,22 +1,21 @@
 package com.boot.teamMainProject.controller;
 
-import com.boot.teamMainProject.model.SpaceReservationVO;
-import com.boot.teamMainProject.model.SpaceReviewVO;
-import com.boot.teamMainProject.model.SpaceVO;
-import com.boot.teamMainProject.model.Space_CtgVO;
-import com.boot.teamMainProject.service.SpaceReservationService;
-import com.boot.teamMainProject.service.SpaceReviewService;
-import com.boot.teamMainProject.service.SpaceService;
-import com.boot.teamMainProject.service.Space_CtgService;
+import com.boot.teamMainProject.model.*;
+import com.boot.teamMainProject.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 @Controller
 public class SpaceReservationController {
@@ -28,6 +27,8 @@ public class SpaceReservationController {
     SpaceReviewService spaceReviewService;
     @Autowired
     SpaceReservationService reservationService;
+    @Autowired
+    MemberService memberService;
 
     // 공간 전체 페이지
     @RequestMapping("SpaceReservationAll")
@@ -79,23 +80,40 @@ public class SpaceReservationController {
     }
     // 공간 상세 페이지
     @RequestMapping("/detailViewSpace/{spaceNo}")
-    public String detailViewSpace(@PathVariable String spaceNo, Model model) {
-        SpaceVO space = service.detailSpace(spaceNo);
-//        SpaceReviewVO spaceReview = spaceReviewService.spaceReview(spaceNo); // ArrayList로 동작해야 돌아감
-        ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
-        ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
-        model.addAttribute("space", space);
-//        model.addAttribute("spaceReview", spaceReview); // ArrayList로 동작해야 돌아감
-        model.addAttribute("spaceReviewTest", spaceReviewTest);
-        model.addAttribute("spaceInfo", spaceInfo);
-        return "bch/detailViewSpace";
+    public String detailViewSpace(@PathVariable String spaceNo, Model model, HttpSession session, HttpServletResponse write) throws IOException {
+
+//        String sidNick = (String) session.getAttribute("sidNick");
+//        if(sidNick == null) {
+//            write.setContentType("text/html; charset=UTF-8");
+//            PrintWriter out_write = write.getWriter();
+//            out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
+//            out_write.flush();
+//
+//            return "/pdh/login";
+//        }
+//        else {
+        String sid = (String) session.getAttribute("sid");
+        MemberVO mem = memberService.detailViewMember(sid);
+        model.addAttribute("mem", mem);
+
+            SpaceVO space = service.detailSpace(spaceNo);
+            ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
+            ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
+            model.addAttribute("space", space);
+            model.addAttribute("spaceReviewTest", spaceReviewTest);
+            model.addAttribute("spaceInfo", spaceInfo);
+            return "bch/detailViewSpace";
+//        }
     }
     // 공간 상세 페이지 (모임 일정 만드는 페이지에서 사용)
     @RequestMapping("/scheDetailViewSpace/{spaceNo}")
-    public String scheDetailViewSpace(@PathVariable String spaceNo, Model model) {
+    public String scheDetailViewSpace(@PathVariable String spaceNo, Model model, HttpSession session) {
         SpaceVO space = service.detailSpace(spaceNo);
         ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
         ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
+        String sid = (String) session.getAttribute("sid");
+        MemberVO mem = memberService.detailViewMember(sid);
+        model.addAttribute("mem", mem);
         model.addAttribute("space", space);
         model.addAttribute("spaceReviewTest", spaceReviewTest);
         model.addAttribute("spaceInfo", spaceInfo);
@@ -107,7 +125,7 @@ public class SpaceReservationController {
         return "bch/test";
     }
 
-    // 예약 상세 페이지에서 예약 시간 조회
+    // 공간 상세 페이지에서 예약 시간 조회
     @ResponseBody
     @RequestMapping("CheckReservationTime")
     public ArrayList<SpaceReservationVO> CheckReservationTime(@RequestParam("spaceNo") int spaceNo){
@@ -118,5 +136,36 @@ public class SpaceReservationController {
 //        Date EndTime = Timeformatter.parse(spaceEndTime);
         ArrayList<SpaceReservationVO> CheckReservation = reservationService.CheckReservationTime(spaceNo);
         return CheckReservation;
+    }
+    // 공간 상세 페이지에서 예약 공간 하기
+    @ResponseBody
+    @RequestMapping("ReservationComp")
+    public String ReservationComp(@RequestParam("date") String date,
+                                @RequestParam("time") String time,
+                                @RequestParam("time2") String time2,
+                                @RequestParam("memNick") String memNick,
+                                @RequestParam("spacePrice") int spacePrice,
+                                @RequestParam("spaceNo") int spaceNo,
+                                HttpSession session,
+                                HttpServletResponse write) throws ParseException, IOException {
+
+        if(Objects.equals(memNick, "null")) {
+            write.setContentType("text/html; charset=UTF-8");
+            PrintWriter out_write = write.getWriter();
+            out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
+            out_write.flush();
+
+            return "/pdh/login";
+        }
+        else {
+            SimpleDateFormat Timeformatter = new SimpleDateFormat("HH:mm");
+            Date StartTime = Timeformatter.parse(time);
+            Date EndTime = Timeformatter.parse(time2);
+            long diffMin = (EndTime.getTime() - StartTime.getTime()) / 60000; // 분 차이 계산
+
+            spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
+            reservationService.ReservationComp(memNick, spaceNo, date, time, time2, spacePrice);
+            return "/sej/main";
+        }
     }
 }

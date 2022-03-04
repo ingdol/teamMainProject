@@ -25,4 +25,14 @@ public class SpaceReservationService implements ISpaceReservationService{
     public ArrayList<SpaceReservationVO> CheckReservationTime(int spaceNo) {
         return dao.CheckReservationTime(spaceNo);
     }
+
+    @Override
+    public void ReservationComp(String memNick, int spaceNo, String date, String time, String time2, int spacePrice) {
+        dao.ReservationComp(memNick, spaceNo, date, time, time2, spacePrice);
+    }
+
+    @Override
+    public void ReservationCompGather(int gatNo, String memNick, int spaceNo, String date, String time, String time2, int spacePrice) {
+        dao.ReservationCompGather(gatNo, memNick, spaceNo, date, time, time2, spacePrice);
+    }
 }

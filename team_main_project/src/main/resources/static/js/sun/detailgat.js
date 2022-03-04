@@ -42,5 +42,9 @@ $(function(){
 	
 	$(".gatherschedule").on('click',function(){
 		location.href='/GatherSchedule?';
-	});	
+	});
+	$("#fakeBtn").on('click',function(){
+		alert("로그인이 필요합니다.");
+		window.location.replace('/login');
+	});
 });
