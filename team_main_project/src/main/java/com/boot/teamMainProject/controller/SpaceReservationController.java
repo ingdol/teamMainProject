@@ -36,7 +36,7 @@ public class SpaceReservationController {
         ArrayList<SpaceVO> spaceList = service.listAllSpace();
         ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
         model.addAttribute("spaceList", spaceList);
-        model.addAttribute("spaceCtgName", spaceCtgName);
+//        model.addAttribute("spaceCtgName", spaceCtgName);
         return "bch/spaceReservationAll";
     }
     // 공간 전체 페이지(모임 일정 만드는 페이지에서 사용)

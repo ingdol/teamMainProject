@@ -11,14 +11,14 @@
         <result property="spaceNo" column="spaceNo" />
     </resultMap>
 
-    <select id="SpaceCtgName" resultMap="spaceNameResult">
-        <![CDATA[
-        SET @rownum:=0;
-        SELECT @rownum:=@rownum+1, spaceCtgName FROM Space_Ctg
-        JOIN Space ON Space_Ctg.spaceCtgNo = Space.spaceCtgNo
-        WHERE @rownum:=@rownum+1 = Space.spaceNo
-        ]]>
-    </select>
+<!--    <select id="SpaceCtgName" resultMap="spaceNameResult">-->
+<!--        <![CDATA[-->
+<!--        SET @rownum:=0;-->
+<!--        SELECT @rownum:=@rownum+1, spaceCtgName FROM Space_Ctg-->
+<!--        JOIN Space ON Space_Ctg.spaceCtgNo = Space.spaceCtgNo-->
+<!--        WHERE @rownum:=@rownum+1 = Space.spaceNo-->
+<!--        ]]>-->
+<!--    </select>-->
 
     <select id="SpaceCtgNameForAll" resultMap="spaceNameResult">
         SELECT sc.spaceCtgName, s.spaceNo FROM Space_Ctg sc, Space s

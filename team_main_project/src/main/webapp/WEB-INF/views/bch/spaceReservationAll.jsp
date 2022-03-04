@@ -83,9 +83,9 @@
                                     <img id="card-image" src="<c:url value='/images/${space.spacePhoto}'/>" />
                                     <div class = "card-header-is_closed" >
                                         <div class = "card-header-text" >
-                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">
-                                            ${spaceCtgName.spaceCtgName}
-                                            </c:forEach>
+<%--                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">--%>
+<%--                                            ${spaceCtgName.spaceCtgName}--%>
+<%--                                            </c:forEach>--%>
                                         </div >
                                         <div class = "card-header-number" ></div >
                                     </div >
