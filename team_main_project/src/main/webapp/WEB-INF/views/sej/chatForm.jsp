@@ -38,8 +38,8 @@
 				</form>	
 				<div id="recordBox">
 						<!-- 음성 녹음 -->
-							<button id="record"><img src="<c:url value='/images/sej/Microphone.png'/>" id="recordImg"></button> 
-							<button id="stop"><img src="<c:url value='/images/sej/BlockMicrophone.png'/>" id="stopImg"></button>
+							<button id="record"><img src="<c:url value='/img/sej/Microphone.png'/>" id="recordImg"></button> 
+							<button id="stop"><img src="<c:url value='/img/sej/BlockMicrophone.png'/>" id="stopImg"></button>
 							<div id="sound-clips"></div>
 				</div>	
 			</div><br>
