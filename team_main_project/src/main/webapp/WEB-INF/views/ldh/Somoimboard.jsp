@@ -48,10 +48,10 @@
 		   	<c:if test="${gat.gatDetCategory == 0}">
 			<table border = "0" align="center" >
 			<c:if test="${gath.gatBanPhoto!=''}">
-			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></a></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/${gath.gatBanPhoto}'/>" ></a></td></tr>
 			</c:if>
 			<c:if test="${gath.gatBanPhoto==''}">
-			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></a></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/exdefault.png'/>" ></a></td></tr>
 			</c:if>
 			<tr><td colspan="4" class="boardtitle" align="left">
 
@@ -62,10 +62,10 @@
 			<c:if test="${gat.gatDetCategory == 1}">
 			<table border = "0" align="center" >
 			<c:if test="${gath.gatBanPhoto!=''}">
-			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></a></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/${gath.gatBanPhoto}'/>" ></a></td></tr>
 			</c:if>
 			<c:if test="${gath.gatBanPhoto==''}">
-			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></a></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/exdefault.png'/>" ></a></td></tr>
 			</c:if>
 			<tr><td colspan="4" class="boardtitle2" align="left">
 
