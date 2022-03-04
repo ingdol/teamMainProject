@@ -21,7 +21,7 @@ $(document).ready(function(){
                         var item = $('#gallerylistBoxTemp > .card-link-R').clone(); // 복사
                         item.attr('href', "/scheDetailViewSpace/" + space[i].spaceNo + "?" + "gatNo=" + $('#gatNo').val());
                         $(item).find('#card-image-R').html();
-                        $(item).find('#card-image-R').attr('src', "/images/bch/" + space[i].spacePhoto);
+                        $(item).find('#card-image-R').attr('src', "/images/" + space[i].spacePhoto);
                         $(item).find('.card-body-header-title').html(space[i].spaceTitle);
                         $(item).find('.card-body-hashtag').html(space[i].spaceArea);
                         $(item).find('.card-body-nickname').html('최대 ' + space[i].spacePerMax + '인');
