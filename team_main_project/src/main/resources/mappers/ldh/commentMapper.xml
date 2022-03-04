@@ -12,13 +12,13 @@
   	</select>
   	
   <insert id="insertGatDetCom" parameterType="com.boot.teamMainProject.model.GatherDetComVO">
-			INSERT INTO gather_det_com(gatDetComNo,gatDetNo,gatDetComInfo, gatDetComDate) 
-			VALUES (${gatDetComNo}, ${gatDetNo},'${gatDetComInfo}',CURRENT_TIMESTAMP)
+			INSERT INTO gather_det_com 
+			VALUES (${gatDetComNo}, ${gatDetNo},'${memNick}','${gatDetComInfo}',CURRENT_TIMESTAMP,0)
 	</insert>
 	
   <select id="CommentCountBoard" 
    				resultType="com.boot.teamMainProject.model.GatherDetComVO">
   		SELECT * FROM gather_det_com WHERE gatDetNo = #{gatDetNo}
    </select>
-  
+
   </mapper>

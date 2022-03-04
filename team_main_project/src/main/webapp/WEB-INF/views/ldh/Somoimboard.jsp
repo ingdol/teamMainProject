@@ -21,6 +21,19 @@
     }
     form.submit();
 }
+	function SUpdate(){
+		
+		location.href="/ldh/SomoimboardUpdate/${gatNo}/${gatDetNo}";
+	}
+	function SDelete(){
+		
+		if(confirm("게시글을 삭제하시겠습니까?") == true){
+		location.href="/SomoimboardDelete/${gatNo}/${gatDetNo}";
+		}
+		else{
+			return;
+		}
+		}
 </script>
 	</head>
 	<body>
@@ -49,10 +62,10 @@
 			<c:if test="${gat.gatDetCategory == 1}">
 			<table border = "0" align="center" >
 			<c:if test="${gath.gatBanPhoto!=''}">
-			<tr><td colspan="4"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></a></td></tr>
 			</c:if>
 			<c:if test="${gath.gatBanPhoto==''}">
-			<tr><td colspan="4"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></a></td></tr>
 			</c:if>
 			<tr><td colspan="4" class="boardtitle2" align="left">
 
@@ -78,14 +91,15 @@
 			${gat.gatDetInfo }
 			</td></tr>
 			
-			<c:if test="${empty sessionScope.sid }">
-			<tr><td align="center" colspan="4"><br></td></tr>
-			</c:if>
-<%-- 			<c:if test="${not empty sessionScope.sid }"> --%>
-<%-- 				<c:if test="${ }"> --%>
-				
-<%-- 				</c:if> --%>
 
+			<tr><td align="center" colspan="4">&nbsp;</td></tr>
+
+			<c:if test="${not empty sessionScope.sid }">
+				<c:if test="${sessionScope.snick == gat.memNick}">
+					<tr><td align="right" colspan="4"><button class="Supdate" onclick="SUpdate()">수정</button>&nbsp;<button class="Sdelete" onclick="SDelete()">삭제</button></td></tr>
+				</c:if>
+			</c:if>
+			
 			<c:if test="${not empty sessionScope.sid }">
 			<tr><td align="center" colspan="4"><br><img src="<c:url value='/image/ldh/star1.png'/>" width="40px" height="40px">${gat.gatDetLike} 추천!
 			<img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
@@ -114,7 +128,8 @@
 			<c:if test="${not empty sessionScope.sid }">
 			<form id="CommentForm1" name="CommentForm1" method="post"  action="/Commentcreate/${gat.gatNo }/${gat.gatDetNo}">
 				<table border='0'>
-				<tr><td>${mem.memNick}님</td><td>
+				<tr><td>${sessionScope.snick}님</td><td>
+				<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}">
 				<textarea id="gatDetComInfo" name="gatDetComInfo" 
 				rows="3" cols="120" style="padding-left: 10px; padding-top: 10px;" placeholder="댓글을 입력해주세요" onfocus="this.placeholder=''" 
 				onblur="this.placeholder='댓글을 입력해주세요'" ></textarea>

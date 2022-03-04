@@ -60,7 +60,7 @@
 		SELECT memNick FROM Member WHERE memNick=#{memNick}
 	</select>
 
-	<select id="selectNick" resultMap="selectNickMap" parameterType="string">
+	<select id="selectNick" resultMap="MemberResult" parameterType="string">
 		SELECT memNick FROM Member WHERE memId=#{memId}
 	</select>
 <!--  sej : 회원 상세 정보 조회	-->

@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>글 등록</title>
+		<title>글 수정</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
  		  <script src="<c:url value='/js/ckeditor/ckeditor.js'/>"></script>
@@ -29,23 +29,34 @@
 			<section>
 		<div class="wrap">
 				<h3 align="center">카테고리</h3>
-			<form id="SBoardForm" name="SBoardForm" method="post"  action="/sboard" enctype="multipart/form-data">
-				
+			<form id="SBoardForm" name="SBoardForm" method="post"  action="/sboardupdate" enctype="multipart/form-data">
+				<input type="hidden" id="gatNo" name="gatNo" value="${gat.gatNo}">
+				<input type="hidden" id="gatDetNo" name="gatDetNo" value="${gat.gatDetNo}">
 				<table border="0" align='center'>
+				
+				<c:if test="${gat.gatDetCategory == 0 }">
 				<tr height="60px"><td align='right'>
-				<input type="radio" id="toggle-1" name="gatDetCategory" value=0>      			
+				<input type="radio" id="toggle-1" name="gatDetCategory" value=0 checked="checked">      			
 				<label for="toggle-1" >일상</label></td><td>&nbsp;&nbsp;</td>
 				<td align='left'><input type="radio" id="toggle-2" name="gatDetCategory" value=1>      			
 				<label for="toggle-2" >리뷰</label> </td></tr>
-				
-				<c:if test="${not empty sessionScope.sid}">
-				<tr><td colspan="3"><input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"></td></tr>
-				<tr><td colspan="3">
-				<input type="hidden" id="gatNo" name="gatNo" value="${gath.gatNo}"></td></tr>
 				</c:if>
+				<c:if test="${gat.gatDetCategory == 1 }">
+				<tr height="60px"><td align='right'>
+				<input type="radio" id="toggle-1" name="gatDetCategory" value=0>      			
+				<label for="toggle-1" >일상</label></td><td>&nbsp;&nbsp;</td>
+				<td align='left'><input type="radio" id="toggle-2" name="gatDetCategory" value=1 checked="checked">      			
+				<label for="toggle-2" >리뷰</label> </td></tr>
+				</c:if>
+				
+<%-- 				<c:if test="${not empty sessionScope.sid}"> --%>
+<%-- 				<tr><td colspan="3"><input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"></td></tr> --%>
+<!-- 				<tr><td colspan="3"> -->
+<%-- 				<input type="hidden" id="gatNo" name="gatNo" value="${gath.gatNo}"></td></tr> --%>
+<%-- 				</c:if> --%>
 							
 				
-				<tr><td colspan="3"><input type="text" id="gatDetTitle" name="gatDetTitle" 
+				<tr><td colspan="3"><input type="text" id="gatDetTitle" name="gatDetTitle" value="${gat.gatDetTitle}"
 				style="width:1000px; height:40px; padding-left: 10px;" placeholder="제목을 입력해주세요" 
 				onfocus="this.placeholder=''" onblur="this.placeholder='제목을 입력해주세요'">
 				</td></tr>
@@ -53,7 +64,7 @@
 <!-- 				<input type="text" id="gatDetInfo" name="gatDetInfo" style="text-align: top; width:510px; height:537px"> -->
 				<tr><td colspan="3"><textarea id="gatDetInfo" name="gatDetInfo" 
 				 style="padding-left: 10px; padding-top: 10px;" placeholder="내용을 입력해주세요" onfocus="this.placeholder=''" 
-				onblur="this.placeholder='내용을 입력해주세요'" ></textarea>
+				onblur="this.placeholder='내용을 입력해주세요'" >${gat.gatDetInfo }</textarea>
 				<script>
 				 ClassicEditor
 		            .create( document.querySelector( '#gatDetInfo' ), {
@@ -65,15 +76,9 @@
 				</script>
 				
 				</td></tr>
-				<tr><td colspan="3" align="left" class="filebox">
 
-			<input class="upload-name" value="첨부파일">
-			<label for="file">사진 찾기</label>
-			<input type="file" id="file" name="uploadFile">
-			
-		</td></tr>
 				<tr><td colspan="3" align="right">
-				<input type="submit" value="등록" class="subbox"></td></tr>
+				<input type="submit" value="수정" class="subbox"></td></tr>
 				</table>
 			</form>
 		</div>
