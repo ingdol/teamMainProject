@@ -43,13 +43,16 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping(value = "/signin")
 	public String signIn(@RequestBody HashMap<String, String> param, HttpServletRequest request) {
-
+		
 		String checkVar = "fail";
+		MemberVO vo = service.selectNick(param.get("id"));
 		MemberVO resultChk = service.signIn(param);
+		
 		HttpSession session = request.getSession();
 		
 		if(resultChk != null) {
 			session.setAttribute("sid", resultChk.getMemId());
+			session.setAttribute("snick", vo.getMemNick());
 			session.setMaxInactiveInterval(3600); // 60분
 			checkVar = "success";
 		}
@@ -134,17 +137,17 @@ public class MemberController {
         logger.info(body);
         return "/";
     }
-
-    @RequestMapping(value = "/doA", method = RequestMethod.GET)
-    public String doA(Locale locale, Model model){
+    
+    @ResponseBody
+    @RequestMapping(value = "/auth-send")
+    public HashMap<String, String> authSend(@RequestBody String email, Locale locale, Model model){
         JSONObject cred = new JSONObject();
         JSONObject auth = new JSONObject();
         JSONObject parent = new JSONObject();
 
-        cred.put("username","adm");
-        cred.put("password", "pwd");
-        auth.put("tenantName", "bee6438379@gmail.com");
-//        auth.put("tenantName", param);
+        cred.put("username","name");
+        cred.put("password", "pw");
+        auth.put("tenantName", email);
         auth.put("passwordCredentials", cred);
         parent.put("auth", auth);
 
@@ -152,8 +155,11 @@ public class MemberController {
         conn.urlPost(parent);
 
         System.out.println(MemberVO.getAuthNum());
+        
+        HashMap<String, String> num = new HashMap<String, String>();
+        num.put("num", MemberVO.getAuthNum());
 
-        return "index";
+        return num;
     }
 	
 }
