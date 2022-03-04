@@ -58,7 +58,7 @@ public class GatherDetController {
 		return "/ldh/SomoimboardWrite";
 	}
 
-	
+	int test231 = 0;
 	//글작성
 	@RequestMapping("/sboard")
 	public String insertGatherDet ( @RequestParam int gatNo ,@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
@@ -96,12 +96,15 @@ public class GatherDetController {
 		int lastdata = service.Lastboard(gatNo);
 		
 		int gatNo2 = gatNo;
-		
-		int gatDetNo = lastdata + 1;
+//		if(test231 == 0) {
+//			
+//		}
+
 //		gat.setGatDetNo(gatDetNo); 
 		service.insertGatherDet(gat);
 		System.out.println(count2); 
 		
+		int gatDetNo = lastdata;
 		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + gatDetNo;
 	}
 	

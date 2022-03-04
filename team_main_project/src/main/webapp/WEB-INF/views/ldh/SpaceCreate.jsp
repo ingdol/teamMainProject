@@ -60,14 +60,14 @@
 			<h4>당신의 공간을 대표하는 사진을 넣어주세요.</h4>
 			<div class="filebox3">
 			<input class="upload-name" value="첨부파일">
-			<label for="file">사진 찾기</label>
-			<input type="file" id="file" name="uploadFile1"><br><br>
+			<label for="file3">사진 찾기</label>
+			<input type="file" id="file3" name="uploadFile3"><br><br>
 			</div>
 			<h4>공간의 사진을 여러개 넣어주세요.</h4>
 			<div class="filebox4">
 			<input class="upload-name2" value="첨부파일">
-			<label for="file2">사진 찾기</label>
-			<input type="file" id="file2" name="uploadFile2">
+			<label for="file4">사진 찾기</label>
+			<input type="file" id="file4" name="uploadFile4" multiple="multiple">
 			
 			<br><br><br>
 			<input type="submit" value="공간 개설하기" class="subbox3" >
