@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<c:url value="/css/pdh/signup.css" />">
-    <title>SignUp</title>
+    <title>Daily&Linker</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                     <button class="l-auth-Btn" id="auth-btn">메일 인증</button>
                 </li>
                 <li class="l-li" id="l-auth">
-                	<input type="text" class="l-input-email" id="auth" placeholder=" ">
+                	<input type="number" class="l-input-email" id="auth" placeholder=" ">
                 	<label for="" class="l-label" id="auth-label">인증번호</label>
                 	<button class="l-auth-Btn" id="auth-check-btn">확인</button>
                 </li>
@@ -120,8 +120,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

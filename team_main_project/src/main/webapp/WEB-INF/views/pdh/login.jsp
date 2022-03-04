@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<c:url value="/css/pdh/login.css" />">
-    <title>Login</title>
+    <title>Daily&Linker</title>
 </head>
 
 <body>
@@ -47,8 +47,7 @@
         </form>
     </div>
     <!-- JavaScript -->
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
+
     <script src="https://kit.fontawesome.com/a68ab22d16.js" crossorigin="anonymous"></script>
     <script src="<c:url value="/js/pdh/login.js" />"></script>
     <script src="../js/kakao_login.js"></script>

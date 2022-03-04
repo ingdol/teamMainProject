@@ -13,6 +13,7 @@ const nick = document.querySelector('#nick');
 const number = document.querySelector('#number');
 const yearBirth = document.querySelector('#year');
 const dayBirth = document.querySelector('#day');
+const auth = document.querySelector('#auth');
 const monthBirth = document.querySelector('.textBox');
 
 // --| li Tag
@@ -24,6 +25,7 @@ const liNumber = document.querySelector('#l-number');
 const liBirth = document.querySelector('#l-birth');
 const liAddress = document.querySelector('#l-address');
 const liDetailAddress = document.querySelector('#l-detail-address');
+const liAuth = document.querySelector('#l-auth');
 
 
 // --| label Tag
@@ -37,6 +39,12 @@ const addressLabel = document.querySelector('#address-label');
 const detailAddressLabel = document.querySelector('#detailAddress-label');
 const yearLabel = document.querySelector('#year-label');
 const dayLabel = document.querySelector('#day-label');
+const authLabel = document.querySelector('#auth-label');
+
+// --| Button Tag
+const addressBtn = document.querySelector('#address-btn');
+const authBtn = document.querySelector('#auth-btn');
+const authCheckBtn = document.querySelector('#auth-check-btn');
 
 // --| Title Tag
 const titleHobby = document.querySelector('#title-hobby');
@@ -96,7 +104,67 @@ function selectChk() {
     }
 }
 
-document.querySelector('.l-address-Btn').addEventListener('click', function(event){
+authBtn.onclick = async function(event) {
+	event.preventDefault();
+    // --| Email Duplicated
+    if(await emailChecking() === true) {
+		auth.focus();
+	} else{
+		email.focus();
+		return false;
+	}
+	
+    if (emailRegex.test(email.value) === false) {
+        addDomSuccess.remove();
+        addDomFail.classList.add("fail-font");
+        addDomFail.textContent = '이메일을 입력해 주세요.';
+        liEmail.appendChild(addDomFail);
+        email.focus();
+        emailLabel.classList.add("fail-label");
+        email.classList.add("fail-line");
+        return false;
+    } else {
+        addDomFail.remove();
+        emailLabel.classList.remove("fail-label");
+        email.classList.remove("fail-line");
+        addDomSuccess.classList.add('success-font');
+        // addDomSuccess.textContent = '✔ 메일 유효성 검사 성공';
+        liEmail.appendChild(addDomSuccess);
+        emailLabel.classList.add("success-label");
+        email.classList.add("success-line");
+        authBtn.textContent = '재전송';
+        await emailAuth();
+        auth.focus();
+        
+        return false;
+    }
+}
+
+let numTemp = NaN; // 인증번호를 저장해두는 공간
+authCheckBtn.onclick = (event) => {
+	event.preventDefault();
+	if (numTemp !== auth.value) {
+        addDomSuccess.remove();
+        addDomFail.classList.add("fail-font");
+        addDomFail.textContent = '인증번호를 다시 입력해주세요.';
+        liAuth.appendChild(addDomFail);
+        auth.focus();
+        authLabel.classList.add("fail-label");
+        auth.classList.add("fail-line");
+        return false;
+	} else {
+        addDomFail.remove();
+        authLabel.classList.remove("fail-label");
+        auth.classList.remove("fail-line");
+        addDomSuccess.classList.add('success-font');
+        // addDomSuccess.textContent = '✔ 메일 유효성 검사 성공';
+        liAuth.appendChild(addDomSuccess);
+        authLabel.classList.add("success-label");
+        auth.classList.add("success-line");
+	}
+}
+
+addressBtn.addEventListener('click', function(event){
     event.preventDefault();
     execDaumPostcode();
 });
@@ -125,6 +193,7 @@ async function onSubmit() {
     if(await emailChecking() === true) {
 
 	} else{
+		email.focus();
 		return false;
 	}
 	
@@ -148,6 +217,27 @@ async function onSubmit() {
         emailLabel.classList.add("success-label");
         email.classList.add("success-line");
     }
+    
+    // --| Auth
+	if (numTemp !== auth.value) {
+        addDomSuccess.remove();
+        addDomFail.classList.add("fail-font");
+        addDomFail.textContent = '인증번호를 다시 입력해주세요.';
+        liAuth.appendChild(addDomFail);
+        auth.focus();
+        authLabel.classList.add("fail-label");
+        auth.classList.add("fail-line");
+        return false;
+	} else {
+        addDomFail.remove();
+        authLabel.classList.remove("fail-label");
+        auth.classList.remove("fail-line");
+        addDomSuccess.classList.add('success-font');
+        // addDomSuccess.textContent = '✔ 메일 유효성 검사 성공';
+        liAuth.appendChild(addDomSuccess);
+        authLabel.classList.add("success-label");
+        auth.classList.add("success-line");
+	}
     
     // --| Password
     if (pwRegex.test(pw.value) === false) {
@@ -419,7 +509,7 @@ async function emailChecking() {
             addDomFail.classList.add("fail-font");
             addDomFail.textContent = '이미 존재하는 이메일 입니다.';
             liEmail.appendChild(addDomFail);
-            email.focus();
+            // email.focus();
             emailLabel.classList.add("fail-label");
             email.classList.add("fail-line");
             checkEmail = false;
@@ -469,6 +559,32 @@ async function nickChecking() {
     .catch((err) => console.log(err))
 
     return checkNick;
+}
+
+// --| Email Auth Send
+async function emailAuth() {
+	let authNum = '';
+
+    await fetch('/auth-send', {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: email.value,
+    })
+    .then((res) => {
+        if(res.status === 200) {
+            console.log("connection");
+            console.log(clock());
+        }
+        return res.json();
+    })
+    .then((data) => {
+		console.log("dataNum : ", data.num);
+		authNum = data.num;
+		numTemp = data.num;
+    })
+    .catch((err) => console.log(err))
+
+    return authNum;
 }
 
 function showCalendar(month) {
@@ -551,6 +667,14 @@ yearBirth.addEventListener('change', function() {
 		this.value = year();
 	}
 })
+
+// --| '인증번호' 숫자만 입력
+auth.addEventListener('keydown',function(e){
+	if(!((e.keyCode > 47 && e.keyCode < 58) || 
+	e.keyCode == 8 || e.keyCode == 37 || e.keyCode == 39)) {
+		e.preventDefault();
+	}
+});
 
 // --| '년도' 숫자만 입력
 yearBirth.addEventListener('keydown',function(e){
