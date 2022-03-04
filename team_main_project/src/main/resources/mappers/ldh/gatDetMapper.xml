@@ -57,7 +57,12 @@
   		WHERE gatDetNo=#{gatDetNo}
    	</update>
 
-   	
+   	<update id="updateBoard2Read" parameterType="int">
+        UPDATE gather_det
+              SET gatDetView = gatDetView + 1
+         WHERE gatDetNo=#{gatDetNo}
+</update>
+
    <!-- 서연 - 소모임게시판 전체화면 -->
    
    <select id="gatcommulist" resultMap="gatResult">

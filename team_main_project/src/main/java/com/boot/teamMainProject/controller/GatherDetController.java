@@ -23,6 +23,7 @@ import com.boot.teamMainProject.model.MemberVO;
 import com.boot.teamMainProject.service.CommentService;
 import com.boot.teamMainProject.service.GatherDetService;
 import com.boot.teamMainProject.service.GatheringService;
+import com.boot.teamMainProject.service.MemberService;
 
 
 
@@ -37,24 +38,32 @@ public class GatherDetController {
 	@Autowired
 	GatheringService service3;
 	 
+	@Autowired
+	MemberService service4;
+	
+	
+	// 상세 정보 조회 리스트로 이동
+
 	int count = 3;
 	
-	@RequestMapping("/ldh/SomoimboardWrite/{memNick}")
-	public String MoveinsertGather(@PathVariable String memNick, Model model) {
-		System.out.println(memNick); 
-		MemberVO gat = service.MoveinsertGather(memNick);
-		model.addAttribute("gat", gat);
-
+	//글쓰기 페이지
+	@RequestMapping("/ldh/SomoimboardWrite/{gatNo}/{memId}")
+	public String MoveinsertGather(@PathVariable String memId,@PathVariable int gatNo, Model model) {
+		System.out.println(memId); 
+		MemberVO mem = service4.detailViewMember(memId);
+	    model.addAttribute("mem", mem);
+//		MemberVO gat = service.MoveinsertGather(memId);
+//		model.addAttribute("gat", gat);
+	    GatheringVO gath = service3.detailViewSomoim(gatNo);
+		model.addAttribute("gath", gath);
 		return "/ldh/SomoimboardWrite";
 	}
 
 	
-	
+	//글작성
 	@RequestMapping("/sboard")
 	public String insertGatherDet ( @RequestParam int gatNo ,@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
 	{
-		
-		
 		String savedFileName ="";
 		
 		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
@@ -71,27 +80,18 @@ public class GatherDetController {
 //				 + ".jpg" ;
 		//4. 파일 생성
 				File file1 = new File(uploadPath + savedFileName);
-				
-				
 				//5. 서버로 전송
 				file.transferTo(file1);
 		}
 		else {
 			savedFileName = null;
-		}
-		
-		
-		
-		// model
+		}		// model
 		model.addAttribute("originalFileName", originalFileName);
 		
 		String gatDetPhoto = savedFileName;
 		gat.setGatDetPhoto(gatDetPhoto); 
-		
-		
 //		int gatNo2 = gatNo;
 //		count2 = count2 + 1;
-		
 		ArrayList<GatherDetVO> gdList = service.CountBoard();
 		int count2 = gdList.size() +1;
 		
@@ -101,6 +101,7 @@ public class GatherDetController {
 		gat.setGatDetNo(gatDetNo); 
 		service.insertGatherDet(gat);
 		System.out.println(count2); 
+		
 		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + count2;
 	}
 	
@@ -109,7 +110,6 @@ public class GatherDetController {
 	@RequestMapping("/Commentcreate/{gatNo}/{gatDetNo}")
 	public String insertGatDetCom (@PathVariable int gatNo ,@PathVariable int gatDetNo ,@RequestParam String gatDetComInfo,GatherDetComVO gatc) throws IOException
 	{
-		
 		String check = gatDetComInfo;
 		
 		if(check.length()!=0) {
@@ -129,37 +129,43 @@ public class GatherDetController {
 	}
 	
 	
-	
+	//글 상세보기
 	@RequestMapping("/ldh/Somoimboard/{gatNo}/{gatDetNo}")
-	public String detailViewBoard(@PathVariable int gatNo, @PathVariable int gatDetNo, Model model) throws Exception {
+	public String detailViewBoard(@PathVariable int gatNo, @PathVariable int gatDetNo,String memId, Model model, HttpSession session) throws Exception {
 		System.out.println(gatNo + " " + gatDetNo); 
 		GatherDetVO gat = service.detailViewBoard(gatNo, gatDetNo);
 		GatheringVO gath = service3.detailViewSomoim(gatNo);
-		
+//	    String memId = (String)session.getAttribute("memId");
+//	    System.out.println(memId); 
+	    MemberVO mem = service4.detailViewMember(memId);
+	    model.addAttribute("mem", mem);
 		model.addAttribute("gat", gat);
 		model.addAttribute("gath", gath);
-
+//		 System.out.println(memId); 
 		
+		 service.updateBoard2Read(gatDetNo);
 		
 		List<GatherDetComVO> comList = service2.readComment(gatDetNo);
 		model.addAttribute("comList", comList);
 		
 		return "ldh/Somoimboard";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	int countex1 = 14;
 	int countex2 = 14;
 	
-	
+	//소모임 생성 페이지
+		@RequestMapping("/ldh/SomoimCreate/{memId}")
+		public String CreateGather(@PathVariable String memId, Model model) {
+			System.out.println(memId); 
+			MemberVO mem = service4.detailViewMember(memId);
+		    model.addAttribute("mem", mem);
+//			MemberVO gat = service.MoveinsertGather(memId);
+//			model.addAttribute("gat", gat);
+
+			return "/ldh/SomoimCreate";
+		}
+
 	@RequestMapping("/screate")
 	public String insertGathering(GatheringVO gath, @RequestParam String gatArea1, @RequestParam String gatArea2, @RequestParam("uploadFile1") MultipartFile file1,@RequestParam("uploadFile2") MultipartFile file2, Model model,Model model2) throws IOException {
 //		System.out.println(gath.getGatArea());

@@ -7,7 +7,7 @@ public class GatherDetComVO {
 	private int gatDetNo;
 	private String memNick;
 	private String gatDetComInfo;
-	private String gatDetComDate;
+	private Date gatDetComDate;
 	private int gatDetComLike;
 	
 	
@@ -35,10 +35,10 @@ public class GatherDetComVO {
 	public void setGatDetComInfo(String gatDetComInfo) {
 		this.gatDetComInfo = gatDetComInfo;
 	}
-	public String getGatDetComDate() {
+	public Date getGatDetComDate() {
 		return gatDetComDate;
 	}
-	public void setGatDetComDate(String gatDetComDate) {
+	public void setGatDetComDate(Date gatDetComDate) {
 		this.gatDetComDate = gatDetComDate;
 	}
 	public int getGatDetComLike() {

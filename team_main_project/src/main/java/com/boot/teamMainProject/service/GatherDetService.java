@@ -58,7 +58,15 @@ public class GatherDetService implements IGatherDetService {
 		dao.updateGatherDet(gat);
 	}
 
-	
+	@Override
+	public int updateBoard2Read(int gatDetNo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.updateBoard2Read(gatDetNo);
+	}
+
+
+
+
 
 
 
