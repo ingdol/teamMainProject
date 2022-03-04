@@ -5,7 +5,7 @@
         <title>공간 대여 전체</title>
         <script>
             function checkPerson() {
-                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "") {
+                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "" || $('#maxPerson').val() != /[0-9]/) {
                     $("#maxPerson").val("");
                     alert("1명 이하는 입력 하실 수 없습니다.")
                 }
@@ -85,7 +85,7 @@
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >
-                                    <img id="card-image" src="<c:url value='/images/bch/${space.spacePhoto}'/>" />
+                                    <img id="card-image" src="<c:url value='/images/${space.spacePhoto}'/>" />
                                     <div class = "card-header-is_closed" >
                                         <div class = "card-header-text" >
                                             <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">

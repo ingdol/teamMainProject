@@ -25,10 +25,10 @@
               <div class ="wrap">
                       <table border = "0" align="center" >
                           <c:if test="${gath.gatBanPhoto!=''}">
-                              <tr><td colspan="4"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></td></tr>
+                              <tr><td colspan="4"><img src="<c:url value='/images/${gath.gatBanPhoto}'/>" ></td></tr>
                           </c:if>
                           <c:if test="${gath.gatBanPhoto==''}">
-                              <tr><td colspan="4"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></td></tr>
+                              <tr><td colspan="4"><img src="<c:url value='/images/exdefault.png'/>" ></td></tr>
                           </c:if>
                           <tr><td colspan="4" class="boardtitle" align="left">
                               <span style="color:blue">[일정 공지]</span> ${gatherSchedule.gatScheTitle}<br></td>

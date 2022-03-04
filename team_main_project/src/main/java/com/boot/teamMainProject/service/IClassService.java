@@ -20,5 +20,8 @@ public interface IClassService {
    ArrayList<ClassVO> listalldatemax();
    ArrayList<ClassVO> classinfo(int classNo);
    ArrayList<ClassVO> filterclass(String garArea,String hobbyNo);
+
+   // 병채
+   ArrayList<ClassVO> listFindClass(String gatArea1, String state, String category);
 }
 

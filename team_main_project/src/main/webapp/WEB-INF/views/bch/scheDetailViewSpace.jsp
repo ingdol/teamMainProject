@@ -53,15 +53,15 @@
             <div>
                 <div id="slideShow" class="slideShow">
                     <div id="prevNextButtonBox">
-                        <img src="<c:url value='/images/sej/leftButton.png'/>" id="prevButton">
-                        <img src="<c:url value='/images/sej/rightButton.png'/>" id="nextButton">
+                        <img src="<c:url value='/images/leftButton.png'/>" id="prevButton">
+                        <img src="<c:url value='/images/rightButton.png'/>" id="nextButton">
                     </div>
                     <div id="slideShowBox">
                         <div id="slidePanel">
                             <c:set var="spacePhoto2" value="${space.spacePhoto2}"></c:set>
                             <c:set var="spacePhotoArr" value="${fn:split(spacePhoto2,' ')}"></c:set>
                             <c:forEach items="${spacePhotoArr}" var="spaceInfo">
-                                <img src="<c:url value='/images/bch/${spaceInfo}'/>" class="slideImage" />
+                                <img src="<c:url value='/images/${spaceInfo}'/>" class="slideImage" />
                             </c:forEach>
                         </div>
                     </div>

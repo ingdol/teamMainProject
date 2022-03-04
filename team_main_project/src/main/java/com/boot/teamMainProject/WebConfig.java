@@ -12,6 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/images/**")
 
 				.addResourceLocations("file:///C:/teamImage/") // 공통 이미지 경로
+				.addResourceLocations("file:///upload/") // 공통 이미지 경로
 				.addResourceLocations("file:///D:/project/linkerprj/prjphoto/") // 서연님 경로
 				.addResourceLocations("file:///Users/gobyeongchae/Desktop/teamImage/"); //공통 이미지 경로(고병채)
 
