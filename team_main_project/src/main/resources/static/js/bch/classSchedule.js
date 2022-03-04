@@ -13,21 +13,21 @@ $(document).ready(function(){
         event.preventDefault();
         $.ajax({
             type: "post",
-            url: "/WriteGatherScheduleWithoutSpaceReser",
+            url: "/WriteClassScheduleWithoutSpaceReser",
             data:{"memNick": $('#memNick').val(),
                 "classNo": $('#classNo').val(),
-                "gatScheTitle": $('#gatScheTitle').val(),
-                  "gatScheDate": $('#gatScheDate').val(),
-                "gatScheTime": $('#gatScheTime').val(),
-                "gatScheMax": $('#gatScheMax').val(),
+                "classScheTitle": $('#classScheTitle').val(),
+                  "classScheDate": $('#classScheDate').val(),
+                "classScheTime": $('#classScheTime').val(),
+                "classScheMax": $('#classScheMax').val(),
                 "scheduleAddress": $('#scheduleAddress').val(),
                 "scheduleSpace": $('#scheduleSpace').val(),
-                "gatScheSpace": $('#gatScheSpace').val(),
-                "gatScheInfo": $('#gatScheInfo').val()
+                "classScheSpace": $('#classScheSpace').val(),
+                "classScheInfo": $('#classScheInfo').val()
                   },
             success:function (result) {
                 alert("일정 등록 완료!");
-                window.location.replace('/sun/detailgat/'+$('#gatNo').val());
+                // window.location.replace('/sun/detail/'+$('#gatNo').val());
             },
             error:function(data, textStatus){
                 alert("일정 등록 실패!");
@@ -38,17 +38,17 @@ $(document).ready(function(){
         event.preventDefault();
         $.ajax({
             type: "post",
-            url: "/WriteGatherSchedule",
+            url: "/WriteClassSchedule",
             data:{"memNick": $('#memNick').val(),
-                "gatNo": $('#gatNo').val(),
-                "gatScheTitle": $('#gatScheTitle').val(),
-                "gatScheDate": $('#gatScheDate').val(),
-                "gatScheTime": $('#gatScheTime').val(),
-                "gatScheMax": $('#gatScheMax').val(),
+                "classNo": $('#classNo').val(),
+                "classScheTitle": $('#classScheTitle').val(),
+                "classScheDate": $('#classScheDate').val(),
+                "classScheTime": $('#classScheTime').val(),
+                "classScheMax": $('#classScheMax').val(),
                 "scheduleAddress": $('#scheduleAddress').val(),
                 "scheduleSpace": $('#scheduleSpace').val(),
-                "gatScheSpace": $('#gatScheSpace').val(),
-                "gatScheInfo": $('#gatScheInfo').val(),
+                "classScheSpace": $('#classScheSpace').val(),
+                "classScheInfo": $('#classScheInfo').val(),
                 "spaceNo": $('#spaceNo').val(),
                 "date": $('#date').val(),
                 "time": $('#time').val(),
@@ -57,7 +57,7 @@ $(document).ready(function(){
             },
             success:function (result) {
                 alert("일정 등록 & 공간 예약 완료!");
-                window.location.replace('/sun/detailgat/'+$('#gatNo').val());
+                // window.location.replace('/sun/detailgat/'+$('#gatNo').val());
             },
             error:function(data, textStatus){
                 alert("일정 등록 실패!");

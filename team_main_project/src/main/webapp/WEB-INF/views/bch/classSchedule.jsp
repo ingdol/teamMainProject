@@ -2,30 +2,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>소모임 일정 신청</title>
+        <title>클래스 일정 신청</title>
         <script src="/js/jquery-3.6.0.min.js"></script>
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="/css/bch/gatherSchedule.css">
-        <script src="/js/bch/gatherSchedule.js"></script>
+        <link type="text/css" rel="stylesheet" href="/css/bch/classSchedule.css">
+        <script src="/js/bch/classSchedule.js"></script>
         <script>
+            document.addEventListener('keydown', function(event) {
+                // if (event.keyCode === 13) {
+                //     event.preventDefault();
+                // };
+            }, true);
             $(document).ready(function(){
-                // if($('#spaceNo').val() == 0 || $('#spaceNo').val() == null) {
-                //     $('#btnSave2').css("display", "none");
-                //     $('#btnSave1').show();
-                // }
-                // else {
-                //     $('#btnSave1').css("display", "none");
-                //     $('#btnSave2').show();
-                // }
                 $('#toggleBtn').on('click', function(){
                     if($('#findAddress').css("display") == "none") {
                         $('#findAddress').show();
                         $('#findScheduleSpace').hide();
                         $('#scheduleSpace').val("");
                         $('#toggleBtn').val("장소를 대여하겠습니다.")
-                        $('#gatScheSpace').val("N")
+                        $('#classScheSpace').val("N")
                         $('#spaceNo').val(null);
                         $('#btnSave1').show();
                         $('#btnSave2').hide();
@@ -35,7 +32,7 @@
                         $('#scheduleAddress').val("");
                         $('#findScheduleSpace').show();
                         $('#toggleBtn').val("장소 대여하지 않겠습니다.")
-                        $('#gatScheSpace').val("Y")
+                        $('#classScheSpace').val("Y")
                         $('#btnSave2').show();
                         $('#btnSave1').hide();
                     }
@@ -45,10 +42,16 @@
 
             }
             function setDate(){
-                $('#spaceReserDate').val($('#gatScheDate').val());
+                $('#spaceReserDate').val($('#classScheDate').val());
             }
             function setTime(){
-                $('#spaceReserTime').val($('#gatScheTime').val());
+                $('#spaceReserStartTime').val($('#classScheTime').val());
+            }
+            function checkPerson() {
+                if ($('#classScheMax').val() <= 0 && $('#classScheMax').val() != "") {
+                    $("#classScheMax").val("");
+                    alert("1명 이하는 입력 하실 수 없습니다.")
+                }
             }
         </script>
     </head>
@@ -82,23 +85,31 @@
                             spaceArea = request.getParameter("spaceArea");
                         }
                         // 주소에서 받아옴
-                        String gatNo = request.getParameter("gatNo");
+                        String classNo = request.getParameter("classNo");
+                        String date = request.getParameter("date");
+                        String time = request.getParameter("time");
+                        String time2 = request.getParameter("time2");
+                        String spacePrice = request.getParameter("spacePrice");
                     %>
 
-                    <form name="form" id="form" method="post">
-                        <input type="hidden" value="코딩이" id="memNick" name="memNick"> <!-- 값 변경해야 함 -->
-                        <input type="text" value="<%=gatNo%>" id="classNo" name="classNo"> <!-- 값 변경해야 함 -->
-                        <input type="text" value="<%=c_spaceNo%>" id="spaceNo" name="spaceNo"> <!-- 값 변경해야 함 -->
+                    <div name="form" id="form">
+                        <input type="hidden" value="${mem.memNick}" id="memNick" name="memNick">
+                        <input type="hidden" value="<%=classNo%>" id="classNo" name="classNo">
+                        <input type="hidden" value="<%=c_spaceNo%>" id="spaceNo" name="spaceNo">
+                        <input type="hidden" value="<%=date%>" id="date" name="date">
+                        <input type="hidden" value="<%=time%>" id="time" name="time">
+                        <input type="hidden" value="<%=time2%>" id="time2" name="time2">
+                        <input type="hidden" value="<%=spacePrice%>" id="spacePrice" name="spacePrice">
                         <div>
-                            <input type="text"  name="gatScheTitle" id="gatScheTitle" placeholder="제목을 입력해 주세요">
+                            <input type="text"  name="classScheTitle" id="classScheTitle" placeholder="제목을 입력해 주세요">
                         </div>
 
                         <div>
-                            <input type="date" id="gatScheDate" name="gatScheDate" placeholder="날짜 선택" onchange="setDate()">
-                            <input type="time" id="gatScheTime" name="gatScheTime" placeholder="시간 선택" onchange="setTime()">
+                            <input type="date" id="classScheDate" name="classScheDate" placeholder="날짜 선택" onchange="setDate()">
+                            <input type="time" id="classScheTime" name="classScheTime" placeholder="시간 선택" onchange="setTime()">
                             <input type="hidden" id="spaceReserDate" name="spaceReserDate" placeholder="날짜 선택">
-                            <input type="hidden" id="spaceReserTime" name="spaceReserTime" placeholder="시간 선택">
-                            <input type="number" placeholder="최대 인원 입력" id="gatScheMax" name="gatScheMax" min="1">
+                            <input type="hidden" id="spaceReserStartTime" name="spaceReserStartTime" placeholder="시간 선택">
+                            <input type="number" placeholder="최대 인원 입력" id="classScheMax" name="classScheMax" min="1" onkeyup="checkPerson()">
                             <input type="button" value="장소 대여하지 않겠습니다." id="toggleBtn" class="btn btn-primary">
                         </div>
 
@@ -109,22 +120,23 @@
                             </span>
                         </div>
 
-                        <input type="hidden" value="Y" id="gatScheSpace" name="gatScheSpace"> <!-- Y,N값 중 하나 들어감 -->
+                        <input type="hidden" value="Y" id="classScheSpace" name="classScheSpace"> <!-- Y,N값 중 하나 들어감 -->
 
                         <div id="findScheduleSpace">
                             <span>
                                 <input type="text" id="scheduleSpace" name="scheduleSpace" value="<%=spaceArea%>" placeholder="장소를 검색해 주세요." readonly>
-                                <a href="/ScheSpaceReservationAll?gatNo=<%=gatNo%>"><input type="button" value="장소 검색" id="findSpace" class="btn btn-primary" onclick="loadSpaceReser()"></a>
+                                <a href="/ScheSpaceReservationAll?classNo=<%=classNo%>"><input type="button" value="장소 검색" id="findSpace" class="btn btn-primary" onclick="loadSpaceReser()"></a>
                             </span>
                         </div>
 
                         <div>
-                            <textarea rows="20" name="gatScheInfo" id="gatScheInfo" placeholder="내용을 입력해 주세요" style="resize: none"></textarea>
+                            <textarea rows="20" name="classScheInfo" id="classScheInfo" placeholder="내용을 입력해 주세요" style="resize: none"></textarea>
                         </div>
-                            <button type="submit" class="btn btn-primary" id="btnSave1" onclick="javascript: form.action='/WriteGatherScheduleWithoutSpaceReser/<%=gatNo%>'" style="display: none;">일정 등록(공간 없음)</button>
-                            <button type="submit" class="btn btn-primary" id="btnSave2" onclick="javascript: form.action='/WriteGatherSchedule/<%=gatNo%>'">일정 등록(공간 있음)</button>
-<%--                        <button type="submit" class="btn btn-primary" id="btnSave">일정 등록</button>--%>
-                    </form>
+<%--                            <button type="button" class="btn btn-primary" id="btnSave1" onclick="javascript: form.action='/WriteGatherScheduleWithoutSpaceReser/<%=gatNo%>'" style="display: none;">일정 등록(공간 없음)</button>--%>
+<%--                            <button type="button" class="btn btn-primary" id="btnSave2" onclick="javascript: form.action='/WriteGatherSchedule/<%=gatNo%>'">일정 등록(공간 있음)</button>--%>
+                        <button type="button" class="btn btn-primary" id="btnSave1" style="display: none;">일정 등록(공간 없음)</button>
+                        <button type="button" class="btn btn-primary" id="btnSave2" >일정 등록(공간 있음)</button>
+                    </div>
                 </div>
 
             <!-- BOTTOM  -->

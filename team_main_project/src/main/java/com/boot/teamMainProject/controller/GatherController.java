@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -126,12 +127,20 @@ public class GatherController {
             out.flush();
         }
         else {
-            scheduleService.JoinGather(ajaxGatScheNo, ajaxGatNo, ajaxMemNick);
-            response.setContentType("text/html; charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            out.println("신청 완료!");
-            out.flush();
-
+            String ScheduleMemNick = scheduleService.CheckGatherScheduleOverlap(ajaxGatScheNo, ajaxMemNick);
+            if(Objects.equals(ScheduleMemNick, ajaxMemNick)) {
+                response.setContentType("text/html; charset=UTF-8");
+                PrintWriter out = response.getWriter();
+                out.println("이미 신청하셨습니다!");
+                out.flush();
+            }
+            else {
+                scheduleService.JoinGather(ajaxGatScheNo, ajaxGatNo, ajaxMemNick);
+                response.setContentType("text/html; charset=UTF-8");
+                PrintWriter out = response.getWriter();
+                out.println("신청 완료!");
+                out.flush();
+            }
         }
     }
 }

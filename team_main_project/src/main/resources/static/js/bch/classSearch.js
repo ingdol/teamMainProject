@@ -1,4 +1,18 @@
 $(document).ready(function(){
+    function formatDate(date) {
+
+        var d = new Date(date),
+
+            month = '' + (d.getMonth() + 1) ,
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+
+    }
     $('#findPlaceBtn').on('click', function(){
         event.preventDefault();
 
@@ -7,39 +21,25 @@ $(document).ready(function(){
             url:"findConstraintClass",
             data:{"gatArea1":$('#gatArea1').val(),
                 "state":$('#state').val(),
-                "category":$('#category').val()},
+                "category":$('#category').val()
+            },
             dataType:'json',
             async: false,
             success:function(result){
                 if(result != ""){
-                    var space = result;
+                    var classList = result;
 
-                    console.log(space);
+                    console.log(classList);
                     $('#gallerylistBox').empty(); // 비우기
-                    for(var i = 0; i < Object.keys(space).length; i++){
+                    for(var i = 0; i < Object.keys(classList).length; i++){
                         var item = $('#gallerylistBoxTemp > .card-link-R').clone(); // 복사
-                        item.attr('href', "/detailViewSpace/" + space[i].spaceNo);
+                        item.attr('href', "/detailViewClass/" + classList[i].classNo);
                         $(item).find('#card-image-R').html();
-                        $(item).find('#card-image-R').attr('src', "/images/" + space[i].spacePhoto);
-                        $(item).find('.card-body-header-title').html(space[i].spaceTitle);
-                        $(item).find('.card-body-hashtag').html(space[i].spaceArea);
-                        $(item).find('.card-body-nickname').html('최대 ' + space[i].spacePerMax + '인');
-                        $(item).find('.card-body-description').html(space[i].spacePrice1 + '<span>/비수기</span><br>' + space[i].spacePrice2 + '<span>/성수기</span></p>');
-                        $.ajax({
-                            type:"post",
-                            url:"constraintCtg", // @RestController로 요청
-                            dataType: 'json',
-                            async: false,
-                            success:function(result_name){
-                                var spaceCtgName = result_name;
-                                for(var j = 0; j < 1; j++) {
-                                    $(item).find(".card-header-text").html(spaceCtgName[j].spaceCtgName);
-                                }
-                            },
-                            error:function(data, textStatus){
-                                alert("카테고리 이름 추출 실패");
-                            }
-                        }); // 카테고리 이름 뽑는 ajax 끝
+                        $(item).find('#card-image-R').attr('src', "/images/" + classList[i].classPhoto);
+                        $(item).find('.card-header-text').html(classList[i].classArea);
+                        $(item).find('.card-body-header-title').html(classList[i].classTitle);
+                        $(item).find('.card-body-description').html('<span>오픈 : </span>' + formatDate(classList[i].classOpen));
+                        $(item).find('.reg_date').html('Hate ' + classList[i].classHate);
                         $(item).css({'display': 'inline'});
                         $('#gallerylistBox').append(item);
                     }

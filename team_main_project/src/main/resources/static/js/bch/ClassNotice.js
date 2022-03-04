@@ -6,8 +6,8 @@ $(document).ready(function(){
             type:"post",
             url:"/JoinGatherPlan",
             data:{"ajaxMemNick":$('#ajaxMemNick').val(),
-                  "ajaxGatScheNo":$('#ajaxGatScheNo').val(),
-                  "ajaxGatNo":$('#ajaxGatNo').val()
+                  "ajaxClassScheNo":$('#ajaxClassScheNo').val(),
+                  "ajaxClassNo":$('#ajaxClasstNo').val()
                 },
             success:function(result){
                 alert(result);

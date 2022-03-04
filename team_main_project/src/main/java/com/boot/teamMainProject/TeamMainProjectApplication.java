@@ -25,6 +25,7 @@ import com.boot.teamMainProject.dao.ISpaceDAO;
 @MapperScan(basePackageClasses=IClassDAO.class)
 @MapperScan(basePackageClasses=IChatbotDAO.class)
 @MapperScan(basePackageClasses = IGatherScheduleDAO.class)
+@MapperScan(basePackageClasses = IClass_ScheDAO.class)
 
 public class TeamMainProjectApplication {
 
