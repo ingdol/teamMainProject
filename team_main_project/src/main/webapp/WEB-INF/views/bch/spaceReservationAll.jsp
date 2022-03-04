@@ -70,95 +70,95 @@
             </form>
         </div>
         <hr size="3px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
-        <div class="spaceListBox" id="spaceListBox">
-            <div class="gallerylist" id="gallerylist">
-                <span class="gallerylistBox" id="gallerylistBox">
-                    <c:forEach items="${spaceList}" var="space">
-<%--                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />--%>
-                        <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${space.spaceNo}' />">
-                        <a id="card-link" href="<c:url value='/detailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->
-                            <div class="card">
-                                <!-- 카드 헤더 -->
-                                <div class="card-header" >
-                                    <img id="card-image" src="<c:url value='/images/${space.spacePhoto}'/>" />
-                                    <div class = "card-header-is_closed" >
-                                        <div class = "card-header-text" >
-<%--                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">--%>
-<%--                                            ${spaceCtgName.spaceCtgName}--%>
-<%--                                            </c:forEach>--%>
-                                        </div >
-                                        <div class = "card-header-number" ></div >
-                                    </div >
-                                </div>
-                                <!--  카드 바디 -->
-                                <div class="card-body">
-                                    <!--  카드 바디 헤더 -->
-                                    <div class="card-body-header">
-                                        <h1 class="card-body-header-title">${space.spaceTitle}</h1>
-                                        <p class="card-body-hashtag">${space.spaceArea}</p>
-                                        <p class ="card-body-nickname">
-                                            최대 ${space.spacePerMax}인
-                                        </p>
-                                    </div>
-                                    <p class="card-body-description">
-                                    ${space.spacePrice1}<span>/비수기</span><br>${space.spacePrice2}<span>/성수기</span>
-                                    <%--${space.spaceInfo}--%>
-                                    </p>
-                                    <!--  카드 바디 본문 -->
-                                    <!--  카드 바디 푸터 -->
-                                    <div class="card-body-footer">
-                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
-                                        <i class="icon icon-view_count"></i>
-                                        <i class="icon icon-comments_count"></i>
-                                        <i class="reg_date"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </c:forEach>
-                </span>
-            </div>
-        </div>
-        <hr size="3px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
-        <!-- BOTTOM  -->
-        <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
-    </div>
-    <span class="gallerylistBoxTemp" id="gallerylistBoxTemp">
-<%--        <c:forEach items="${spaceList}" var="space">--%>
-<%--    <div id="template">--%>
-            <a class="card-link-R"> <!-- 클릭 시 링크 설정 -->
-                <div class="card">
-                    <!-- 카드 헤더 -->
-                    <div class="card-header" >
-                        <img id="card-image-R" />
-                        <div class = "card-header-is_closed" >
-                            <div class = "card-header-text" ></div >
-                            <div class = "card-header-number" ></div >
-                        </div >
-                    </div>
-                    <!--  카드 바디 -->
-                    <div class="card-body">
-                        <!--  카드 바디 헤더 -->
-                        <div class="card-body-header">
-                            <h1 class="card-body-header-title"></h1>
-                            <p class="card-body-hashtag"></p>
-                            <p class ="card-body-nickname"></p>
-                        </div>
-                        <p class="card-body-description">
-                        </p>
-                        <!--  카드 바디 본문 -->
-                        <!--  카드 바디 푸터 -->
-                        <div class="card-body-footer">
-                            <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
-                            <i class="icon icon-view_count"></i>
-                            <i class="icon icon-comments_count"></i>
-                            <i class="reg_date"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
+<%--        <div class="spaceListBox" id="spaceListBox">--%>
+<%--            <div class="gallerylist" id="gallerylist">--%>
+<%--                <span class="gallerylistBox" id="gallerylistBox">--%>
+<%--                    <c:forEach items="${spaceList}" var="space">--%>
+<%--&lt;%&ndash;                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />&ndash;%&gt;--%>
+<%--                        <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${space.spaceNo}' />">--%>
+<%--                        <a id="card-link" href="<c:url value='/detailViewSpace/${space.spaceNo}'/> "> <!-- 클릭 시 링크 설정 -->--%>
+<%--                            <div class="card">--%>
+<%--                                <!-- 카드 헤더 -->--%>
+<%--                                <div class="card-header" >--%>
+<%--                                    <img id="card-image" src="<c:url value='/images/${space.spacePhoto}'/>" />--%>
+<%--                                    <div class = "card-header-is_closed" >--%>
+<%--                                        <div class = "card-header-text" >--%>
+<%--&lt;%&ndash;                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                            ${spaceCtgName.spaceCtgName}&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                            </c:forEach>&ndash;%&gt;--%>
+<%--                                        </div >--%>
+<%--                                        <div class = "card-header-number" ></div >--%>
+<%--                                    </div >--%>
+<%--                                </div>--%>
+<%--                                <!--  카드 바디 -->--%>
+<%--                                <div class="card-body">--%>
+<%--                                    <!--  카드 바디 헤더 -->--%>
+<%--                                    <div class="card-body-header">--%>
+<%--                                        <h1 class="card-body-header-title">${space.spaceTitle}</h1>--%>
+<%--                                        <p class="card-body-hashtag">${space.spaceArea}</p>--%>
+<%--                                        <p class ="card-body-nickname">--%>
+<%--                                            최대 ${space.spacePerMax}인--%>
+<%--                                        </p>--%>
+<%--                                    </div>--%>
+<%--                                    <p class="card-body-description">--%>
+<%--                                    ${space.spacePrice1}<span>/비수기</span><br>${space.spacePrice2}<span>/성수기</span>--%>
+<%--                                    &lt;%&ndash;${space.spaceInfo}&ndash;%&gt;--%>
+<%--                                    </p>--%>
+<%--                                    <!--  카드 바디 본문 -->--%>
+<%--                                    <!--  카드 바디 푸터 -->--%>
+<%--                                    <div class="card-body-footer">--%>
+<%--                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
+<%--                                        <i class="icon icon-view_count"></i>--%>
+<%--                                        <i class="icon icon-comments_count"></i>--%>
+<%--                                        <i class="reg_date"></i>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </a>--%>
+<%--                    </c:forEach>--%>
+<%--                </span>--%>
+<%--            </div>--%>
 <%--        </div>--%>
-<%--        </c:forEach>--%>
-    </span>
+<%--        <hr size="3px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">--%>
+<%--        <!-- BOTTOM  -->--%>
+<%--        <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />--%>
+<%--    </div>--%>
+<%--    <span class="gallerylistBoxTemp" id="gallerylistBoxTemp">--%>
+<%--&lt;%&ndash;        <c:forEach items="${spaceList}" var="space">&ndash;%&gt;--%>
+<%--&lt;%&ndash;    <div id="template">&ndash;%&gt;--%>
+<%--            <a class="card-link-R"> <!-- 클릭 시 링크 설정 -->--%>
+<%--                <div class="card">--%>
+<%--                    <!-- 카드 헤더 -->--%>
+<%--                    <div class="card-header" >--%>
+<%--                        <img id="card-image-R" />--%>
+<%--                        <div class = "card-header-is_closed" >--%>
+<%--                            <div class = "card-header-text" ></div >--%>
+<%--                            <div class = "card-header-number" ></div >--%>
+<%--                        </div >--%>
+<%--                    </div>--%>
+<%--                    <!--  카드 바디 -->--%>
+<%--                    <div class="card-body">--%>
+<%--                        <!--  카드 바디 헤더 -->--%>
+<%--                        <div class="card-body-header">--%>
+<%--                            <h1 class="card-body-header-title"></h1>--%>
+<%--                            <p class="card-body-hashtag"></p>--%>
+<%--                            <p class ="card-body-nickname"></p>--%>
+<%--                        </div>--%>
+<%--                        <p class="card-body-description">--%>
+<%--                        </p>--%>
+<%--                        <!--  카드 바디 본문 -->--%>
+<%--                        <!--  카드 바디 푸터 -->--%>
+<%--                        <div class="card-body-footer">--%>
+<%--                            <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
+<%--                            <i class="icon icon-view_count"></i>--%>
+<%--                            <i class="icon icon-comments_count"></i>--%>
+<%--                            <i class="reg_date"></i>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </a>--%>
+<%--&lt;%&ndash;        </div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;        </c:forEach>&ndash;%&gt;--%>
+<%--    </span>--%>
     </body>
 </html>
