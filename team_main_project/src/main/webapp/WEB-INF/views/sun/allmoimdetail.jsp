@@ -25,7 +25,7 @@
 							<!-- 받아오기 -->
 							<c:forEach items="${gatheringResult}" begin="0" end="4" var="gat" >
 								<div class="card">
-									<img src="<c:url value='/images/${gat.gatBanPhoto}'/>" alt="LOGO">
+									<img src="<c:url value='/images/${gat.gatPhoto}'/>" alt="LOGO">
 									<div class="cardbody">
 										<h5 class="cardtitle">${gat.gatName}</h5>
 										<p class="hidden">${gat.gatNo}</p>
@@ -39,7 +39,7 @@
 						<div class="cardbox moimcard">
 							<c:forEach items="${gatheringResult}" begin="5" end="9" var="gat" >
 								<div class="card">
-									<img src="<c:url value='/images/${gat.gatBanPhoto}'/>" alt="LOGO">
+									<img src="<c:url value='/images/${gat.gatPhoto}'/>" alt="LOGO">
 									<div class="cardbody">
 										<h5 class="cardtitle">${gat.gatName}</h5>
 										<p class="hidden">${gat.gatNo}</p>
