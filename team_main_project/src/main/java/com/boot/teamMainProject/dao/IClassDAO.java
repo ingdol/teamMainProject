@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.boot.teamMainProject.model.ClassVO;
+import com.boot.teamMainProject.model.SpaceVO;
 
 
 public interface IClassDAO {
@@ -19,4 +20,7 @@ public interface IClassDAO {
    ArrayList<ClassVO> listalldatemax();
    ArrayList<ClassVO> classinfo(int classNo);
    ArrayList<ClassVO> filterclass(String garArea,String hobbyNo);
+
+   // 병채
+   ArrayList<ClassVO> listFindClass(String gatArea1, String state, String category);
 }

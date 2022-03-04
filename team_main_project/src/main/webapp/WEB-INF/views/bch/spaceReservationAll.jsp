@@ -5,7 +5,7 @@
         <title>공간 대여 전체</title>
         <script>
             function checkPerson() {
-                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "") {
+                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "" || $('#maxPerson').val() != /[0-9]/) {
                     $("#maxPerson").val("");
                     alert("1명 이하는 입력 하실 수 없습니다.")
                 }

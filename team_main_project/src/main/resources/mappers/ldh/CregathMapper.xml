@@ -19,11 +19,11 @@
 	</resultMap>
 	
 	<insert id="insertGathering" parameterType="com.boot.teamMainProject.model.GatheringVO">
-			INSERT INTO gathering( memNick,gatName, gatInfo,hobbyNo,gatArea,gatOpen,gatHate,gatPhoto,gatBanPhoto) 
+			INSERT INTO Gathering( memNick,gatName, gatInfo,hobbyNo,gatArea,gatOpen,gatHate,gatPhoto,gatBanPhoto) 
 			VALUES (  '${memNick}','${gatName}','${gatInfo}','${hobbyNo}','${gatArea}',CURRENT_TIMESTAMP,0,'${gatPhoto}','${gatBanPhoto}')
 	</insert>
 	<select id="detailViewSomoim" parameterType="int"
    				resultType="com.boot.teamMainProject.model.GatheringVO">
-  		SELECT * FROM gathering WHERE gatNo=#{gatNo}
+  		SELECT * FROM Gathering WHERE gatNo=#{gatNo}
    </select>
 	</mapper>

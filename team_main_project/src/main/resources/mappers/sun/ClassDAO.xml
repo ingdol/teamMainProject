@@ -17,44 +17,54 @@
 	</resultMap>
 
 	<select id="listClass" resultMap="classResult">
-		select * from class WHERE hobbyNo=#{hobbyNo}
+		select * from Class WHERE hobbyNo=#{hobbyNo}
 	</select>
 
 	<!-- sej -->
 	<!-- 전체 클래스 조회 : Best -->
 	<select id="listAllClassBest" resultMap="classResult">
-		SELECT * FROM class ORDER BY classHate
+		SELECT * FROM Class ORDER BY classHate
 	</select>
 
 	<!-- 전체 클래스 조회 : 신규 -->
 	<select id="listAllClassNew" resultMap="classResult">
-		SELECT * FROM class ORDER BY classOpen DESC
+		SELECT * FROM Class ORDER BY classOpen DESC
 	</select>
 
 	<!-- 클래스 검색  -->
 	<select id="classSearch" resultMap="classResult" parameterType="hashmap">
-		SELECT * FROM class WHERE (classTitle LIKE CONCAT('%', #{keyword}, '%')) AND (classArea LIKE CONCAT('%', #{keyword}, '%'))
+		SELECT * FROM Class WHERE (classTitle LIKE CONCAT('%', #{keyword}, '%')) AND (classArea LIKE CONCAT('%', #{keyword}, '%'))
 	</select>
     
      
    <!-- sun -->
     <select id="listall" resultMap="classResult">
-        select * from class
+        select * from Class
      </select>
      
      <select id="listClassdatemax" resultMap="classResult">
-        select * from class WHERE hobbyNo=#{hobbyNo} order by classOpen ASC
+        select * from Class WHERE hobbyNo=#{hobbyNo} order by classOpen ASC
      </select>
      
      <select id="listalldatemax" resultMap="classResult">
-        select * from class order by classOpen ASC
+        select * from Class order by classOpen ASC
      </select>
      
      <select id="classinfo" resultMap="classResult">
-        select * from class WHERE classNo=#{classNo}
+        select * from Class WHERE classNo=#{classNo}
      </select>
      <select id="filterclass" resultMap="classResult">
-		SELECT * FROM class WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+		SELECT * FROM Class WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+	</select>
+
+	<select id="listFindClass" resultMap="classResult">
+		SELECT * FROM Class WHERE 1=1
+		<if test="gatArea1 != null and gatArea1 != ''">
+			and Class.classArea LIKE CONCAT('%', #{gatArea1}, '%', #{state}, '%')
+		</if>
+		<if test="category != null and category != ''">
+			and Class.hobbyNo LIKE CONCAT('%', #{category}, '%')
+		</if>
 	</select>
 
 </mapper>

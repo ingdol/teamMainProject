@@ -29,7 +29,7 @@
 <!--   		SELECT * FROM gather_det WHERE memNick=#{memNick} -->
 <!--    </select> -->
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-			INSERT INTO gather_det(gatNo,gatDetNo, gatDetTitle,memNick,gatDetInfo,gatDetPhoto, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
+			INSERT INTO Gather_Det(gatNo,gatDetNo, gatDetTitle,memNick,gatDetInfo,gatDetPhoto, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
 			VALUES (${gatNo}, ${gatDetNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}','${gatDetPhoto}',CURRENT_TIMESTAMP,0,0,0,${gatDetCategory})
 			
 	</insert>
@@ -40,26 +40,28 @@
 	
 	<select id="MoveinsertGather" parameterType="String"
    				resultType="com.boot.teamMainProject.model.MemberVO">
-  		SELECT * FROM member WHERE memNick=#{memNick}
+  		SELECT * FROM Member WHERE memNick=#{memNick}
    </select>
    
    <select id="CountBoard" 
    				resultType="com.boot.teamMainProject.model.GatherDetVO">
-  		SELECT * FROM gather_det
+  		SELECT * FROM Gather_Det
    </select>
 <!--    <select id="MoveinsertGather2" parameterType="String" -->
 <!--    				resultType="com.boot.teamMainProject.model.MemberVO"> -->
 <!--   		SELECT * FROM member WHERE memNick=#{memNick} -->
 <!--    </select> -->
+
 	<select id="Lastboard" 
    				resultType="int">
-<!--   		SELECT gatDetNo FROM gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
   		SELECT LAST_INSERT_ID()
    </select>
 
   <!-- 댓글 수 수정 -->
    	<update id="updateGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO" >
-   		UPDATE gather_det
+   		UPDATE Gather_Det
+
   		SET gatDetComNum = #{gatDetComNum}
   		WHERE gatDetNo=#{gatDetNo}
    	</update>
@@ -81,7 +83,7 @@
   		</delete>
   		
    	<update id="updateBoard2Read" parameterType="int">
-        UPDATE gather_det
+        UPDATE Gather_Det
               SET gatDetView = gatDetView + 1
          WHERE gatDetNo=#{gatDetNo}
 </update>
@@ -89,7 +91,7 @@
    <!-- 서연 - 소모임게시판 전체화면 -->
    
    <select id="gatcommulist" resultMap="gatResult">
-  		select * from gather_det WHERE gatNo=#{gatNo}
+  		select * from Gather_Det WHERE gatNo=#{gatNo}
   	</select>
 	
   </mapper>

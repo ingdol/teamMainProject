@@ -20,13 +20,13 @@
 				<article id="content1"> <!-- 탭메뉴 -->
 			        <div id="hobbyMenu">
 						<ul id="hobbyMenuItem">
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/1_sport2.png'/>" id="menuImg"><br>운동</a></li>
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/2_outdoor2.png'/>" id="menuImg"><br>아웃도어</a></li>
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/3_study2.png'/>" id="menuImg"><br>자기계발</a></li>
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/4_travel2.png'/>" id="menuImg"><br>여행</a></li>
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/5_cook2.png'/>" id="menuImg"><br>요리&음식</a></li>
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/6_animal2.png'/>" id="menuImg"><br>애견&애묘</a></li>
-							<li><a href="#"><img src="<c:url value='/images/hobbyCtg/7_picture2.png'/>" id="menuImg"><br>사진&영상</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/1_sport2.png'/>" id="menuImg"><br>운동</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/2_outdoor2.png'/>" id="menuImg"><br>아웃도어</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/3_study2.png'/>" id="menuImg"><br>자기계발</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/4_travel2.png'/>" id="menuImg"><br>여행</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/5_cook2.png'/>" id="menuImg"><br>요리&음식</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/6_animal2.png'/>" id="menuImg"><br>애견&애묘</a></li>
+							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/7_picture2.png'/>" id="menuImg"><br>사진&영상</a></li>
 						</ul>
 					</div>	
 
@@ -36,16 +36,16 @@
 				<article id="slideShow"> <!-- 슬라이드 쇼  -->
 					<!-- 이전/다음 버튼 -->
 					<div id="prevNextButtonBox">
-						<img src="<c:url value='/images/sej/leftButton.png'/>" id="prevButton">
-						<img src="<c:url value='/images/sej/rightButton.png'/>" id="nextButton">
+						<img src="<c:url value='/img/sej/leftButton.png'/>" id="prevButton">
+						<img src="<c:url value='/img/sej/rightButton.png'/>" id="nextButton">
 					</div>				
 					<div id="slideShowBox">
 						<div id="slidePanel">
-							<img src="<c:url value='/images/sej/banner/003.png'/>"  class="slideImage">
-							<img src="<c:url value='/images/sej/banner/004.png'/>"  class="slideImage">
-							<img src="<c:url value='/images/sej/banner/002.png'/>" class="slideImage">
-							<img src="<c:url value='/images/sej/banner/001.png'/>" class="slideImage">
-							<img src="<c:url value='/images/sej/banner/005.png'/>" class="slideImage">
+							<img src="<c:url value='/img/sej/banner/003.png'/>"  class="slideImage">
+							<img src="<c:url value='/img/sej/banner/004.png'/>"  class="slideImage">
+							<img src="<c:url value='/img/sej/banner/002.png'/>" class="slideImage">
+							<img src="<c:url value='/img/sej/banner/001.png'/>" class="slideImage">
+							<img src="<c:url value='/img/sej/banner/005.png'/>" class="slideImage">
 						</div>
 					</div> <!-- slideShowBox 끝 -->
 				</article>
@@ -71,13 +71,13 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">BEST 클래스</div>
-						<div id="allView"><a href="#">전체 보기</a></div>
+						<div id="allView"><a href="/VIewAllClass">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 
 							<c:forEach items="${classListBest}" var="classVo" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
+									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">
 									<br id="bestBr"><p id="gatherCtg">클래스</p>
 									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
 									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>

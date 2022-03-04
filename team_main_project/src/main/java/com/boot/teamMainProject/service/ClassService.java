@@ -60,7 +60,10 @@ public class ClassService implements IClassService {
 	public ArrayList<ClassVO> filterclass(String gatArea,String hobbyNo) {
 		return dao.filterclass(gatArea,hobbyNo);
 	}
-   
-
+// 병채
+	@Override
+	public ArrayList<ClassVO> listFindClass(String gatArea1, String state, String category) {
+		return dao.listFindClass(gatArea1, state, category);
+	}
 }
 

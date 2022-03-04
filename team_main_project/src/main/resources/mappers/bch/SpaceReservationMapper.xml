@@ -30,7 +30,7 @@
     </insert>
 <!--  예약 시간 조회  -->
     <select id="CheckReservationTime" resultMap="spaceReser">
-        select * from space_Reservation where spaceNo=#{spaceNo}
+        select * from Space_Reservation where spaceNo=#{spaceNo}
     </select>
     <!-- 개인 공간 예약(모임 아님) -->
     <insert id="ReservationComp">
