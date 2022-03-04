@@ -36,8 +36,8 @@
 				<article id="slideShow"> <!-- 슬라이드 쇼  -->
 					<!-- 이전/다음 버튼 -->
 					<div id="prevNextButtonBox">
-						<img src="<c:url value='/images/sej/leftButton.png'/>" id="prevButton">
-						<img src="<c:url value='/images/sej/rightButton.png'/>" id="nextButton">
+						<img src="<c:url value='/img/sej/leftButton.png'/>" id="prevButton">
+						<img src="<c:url value='/img/sej/rightButton.png'/>" id="nextButton">
 					</div>				
 					<div id="slideShowBox">
 						<div id="slidePanel">
