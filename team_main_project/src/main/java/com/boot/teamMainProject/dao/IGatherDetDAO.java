@@ -14,7 +14,8 @@ public interface IGatherDetDAO {
 	MemberVO MoveinsertGather(String memNick);
 	ArrayList<GatherDetVO> CountBoard ();
 	void updateGatherDet(GatherDetVO gat);
-	
+	public int updateBoard2Read(int gatDetNo) throws Exception;
+
 	// 서연-소모임게시판 전체화면
 	ArrayList<GatherDetVO> gatcommulist(int gatNo);
 }

@@ -24,10 +24,11 @@
 				
 			
 			<form id="SCreateForm" name="SCreateForm" method="post"  action="/screate" enctype="multipart/form-data">
-
-			<h3>호스트 이름(테스트)</h3><br>
-			<input type="text" id="memNick" name="memNick" ><br>
-
+			
+			<c:if test="${not empty sessionScope.sid }">
+			<input type="hidden" id="memNick" name="memNick" value="${mem.memNick}"><br>
+			</c:if>
+			
 <br><h3>소모임을 열 지역을 선택해주세요.</h3><br>
 			<div class="select">
 			 <select name="gatArea1" id="gatArea1" onchange="categoryChange(this)">
@@ -92,11 +93,13 @@
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
 			
 			<br><br>
+			<h4>소모임을 대표하는 사진을 넣어주세요.</h4>
 			<div class="filebox">
 			<input class="upload-name" value="첨부파일">
 			<label for="file">사진 찾기</label>
 			<input type="file" id="file" name="uploadFile1"><br><br>
 			</div>
+			<h4>소모임의 배너 사진을 넣어주세요.</h4>
 			<div class="filebox2">
 			<input class="upload-name2" value="첨부파일">
 			<label for="file2">사진 찾기</label>

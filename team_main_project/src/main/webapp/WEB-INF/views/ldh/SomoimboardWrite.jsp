@@ -9,8 +9,17 @@
 		<title>글 등록</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
-<%-- 		  <script src="<c:url value='/js/ldh/Sajax.js'/>"></script> --%>
+ 		  <script src="<c:url value='/js/ckeditor/ckeditor.js'/>"></script>
+ 		  <script src="<c:url value='/js/ckeditor/ko.js'/>"></script>
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
+		  <style>
+		  		.ck.ck-editor{
+		  			max-width: 1050px;
+		  		}
+		  		.ck-editor__editable{
+		  			min-height: 300px;
+		  		}
+		  </style>
 	</head>
 	<body>
 		
@@ -19,7 +28,7 @@
 		   <br>
 			<section>
 		<div class="wrap">
-				<h3 align="center">카테고리</h3><br>
+				<h3 align="center">카테고리</h3>
 			<form id="SBoardForm" name="SBoardForm" method="post"  action="/sboard" enctype="multipart/form-data">
 				
 				<table border="0" align='center'>
@@ -29,9 +38,12 @@
 				<td align='left'><input type="radio" id="toggle-2" name="gatDetCategory" value=1>      			
 				<label for="toggle-2" >리뷰</label> </td></tr>
 				
-				<tr><td colspan="3">당신의 닉네임은?: <input type="text" id="memNick" name="memNick" ></td></tr>
+				<c:if test="${not empty sessionScope.sid}">
+				<tr><td colspan="3"><input type="hidden" id="memNick" name="memNick" value="${mem.memNick}"></td></tr>
 				<tr><td colspan="3">
-				당신의 소모임은?: <input type="text" id="gatNo" name="gatNo" ></td></tr>			
+				<input type="hidden" id="gatNo" name="gatNo" value="${gath.gatNo}"></td></tr>
+				</c:if>
+							
 				
 				<tr><td colspan="3"><input type="text" id="gatDetTitle" name="gatDetTitle" 
 				style="width:1000px; height:40px; padding-left: 10px;" placeholder="제목을 입력해주세요" 
@@ -40,8 +52,18 @@
 				
 <!-- 				<input type="text" id="gatDetInfo" name="gatDetInfo" style="text-align: top; width:510px; height:537px"> -->
 				<tr><td colspan="3"><textarea id="gatDetInfo" name="gatDetInfo" 
-				rows="15" cols="141" style="padding-left: 10px; padding-top: 10px;" placeholder="내용을 입력해주세요" onfocus="this.placeholder=''" 
+				 style="padding-left: 10px; padding-top: 10px;" placeholder="내용을 입력해주세요" onfocus="this.placeholder=''" 
 				onblur="this.placeholder='내용을 입력해주세요'" ></textarea>
+				<script>
+				 ClassicEditor
+		            .create( document.querySelector( '#gatDetInfo' ), {
+		                language: {ui: 'ko', content: 'ko'} //언어설정
+		            })
+		            .catch( error => {
+		                console.error( error );
+		            } );
+				</script>
+				
 				</td></tr>
 				<tr><td colspan="3" align="left" class="filebox">
 

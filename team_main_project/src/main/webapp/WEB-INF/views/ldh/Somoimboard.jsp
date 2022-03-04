@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,7 +16,7 @@
 	function commentCheck() {
     var form = document.CommentForm1;
     if(form.gatDetComInfo.value.length==0) {
-        alert("댓글을 입력하세요");
+        alert("댓글 내용을 입력하세요");
         return form.gatDetComInfo.focus();
     }
     form.submit();
@@ -34,10 +35,10 @@
 		   	<c:if test="${gat.gatDetCategory == 0}">
 			<table border = "0" align="center" >
 			<c:if test="${gath.gatBanPhoto!=''}">
-			<tr><td colspan="4"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/${gath.gatBanPhoto}'/>" ></a></td></tr>
 			</c:if>
 			<c:if test="${gath.gatBanPhoto==''}">
-			<tr><td colspan="4"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></td></tr>
+			<tr><td colspan="4"><a href="<c:url value="/sun/detailgat/${gath.gatNo}"/>"><img src="<c:url value='/images/ldh/exdefault.png'/>" ></a></td></tr>
 			</c:if>
 			<tr><td colspan="4" class="boardtitle" align="left">
 
@@ -61,7 +62,7 @@
 			<br>
 			<table border = "0" align="center" class="detail1">
 			<tr><td align="left" colspan="2"><h3>${gat.memNick}</h3><br>
-			작성일자 : ${gat.gatDetDate}<br>조회수 : ${gat.gatDetView}회</td><td></td>
+			작성일자 : <fmt:formatDate value="${gat.gatDetDate}" pattern="yyyy-MM-dd HH:ss"/><br>조회수 : ${gat.gatDetView}회</td><td></td>
 			<td align="right"><img src="<c:url value='/image/ldh/star2.png'/>" width="20px" height="20px"> 
 			${gat.gatDetLike}<br>
 			<img src="<c:url value='/image/ldh/comment.png'/>" width="20px" height="20px">  
@@ -80,9 +81,13 @@
 			<c:if test="${empty sessionScope.sid }">
 			<tr><td align="center" colspan="4"><br></td></tr>
 			</c:if>
-			
+<%-- 			<c:if test="${not empty sessionScope.sid }"> --%>
+<%-- 				<c:if test="${ }"> --%>
+				
+<%-- 				</c:if> --%>
+
 			<c:if test="${not empty sessionScope.sid }">
-			<tr><td align="center" colspan="4"><br><img src="<c:url value='/image/ldh/star1.png'/>" width="40px" height="40px"> 추천!
+			<tr><td align="center" colspan="4"><br><img src="<c:url value='/image/ldh/star1.png'/>" width="40px" height="40px">${gat.gatDetLike} 추천!
 			<img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
 			</c:if>
 			
@@ -98,7 +103,7 @@
 				<c:forEach items="${comList }" var="comList"> 
 
 				<table class="comment" align="center" border="0" width="1000px">
-					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right">${comList.gatDetComDate} <img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
+					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"><fmt:formatDate value="${comList.gatDetComDate}" pattern="yyyy-MM-dd HH:ss"/> <img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
 					<tr><td colspan="2" align="left">${comList.gatDetComInfo}</td></tr>
 				</table>
 			
@@ -109,7 +114,7 @@
 			<c:if test="${not empty sessionScope.sid }">
 			<form id="CommentForm1" name="CommentForm1" method="post"  action="/Commentcreate/${gat.gatNo }/${gat.gatDetNo}">
 				<table border='0'>
-				<tr><td>${sessionScope.sid}님</td><td>
+				<tr><td>${mem.memNick}님</td><td>
 				<textarea id="gatDetComInfo" name="gatDetComInfo" 
 				rows="3" cols="120" style="padding-left: 10px; padding-top: 10px;" placeholder="댓글을 입력해주세요" onfocus="this.placeholder=''" 
 				onblur="this.placeholder='댓글을 입력해주세요'" ></textarea>
