@@ -94,7 +94,14 @@ public class MainController {
 		return "/ldh/SomoimCreate";
 	}
 	
-
+	@RequestMapping("/ldh/SomoimboardUpdate")
+	public String SomoimboardUpdate() {
+		return "/ldh/SomoimboardUpdate";
+	}
+	@RequestMapping("/ldh/SpaceCreate")
+	public String SpaceCreate() {
+		return "/ldh/SpaceCreate";
+	}
 	//---------------------------------
 
 	// pdh 로그인

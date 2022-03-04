@@ -118,3 +118,41 @@ color: white;
 	background: #0038FF;
 border: 3px solid #0038FF;
 }
+
+.Supdate{
+
+		width: 70px;
+height: 40px;
+
+background: #66A3FF;
+border: 3px solid #66A3FF;
+box-sizing: border-box;
+border-radius: 10px;
+
+color: white;
+	
+}
+
+.Supdate:hover{
+	background: #0038FF;
+	border: 3px solid #0038FF;
+}
+
+.Sdelete{
+
+		width: 70px;
+height: 40px;
+
+background: #ff8080;
+border: 3px solid #ff8080;
+box-sizing: border-box;
+border-radius: 10px;
+
+color: white;
+	
+}
+
+.Sdelete:hover{
+	background: #ff0000;
+	border: 3px solid #ff0000;
+}

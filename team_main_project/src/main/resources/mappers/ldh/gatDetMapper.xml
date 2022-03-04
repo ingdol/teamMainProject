@@ -51,12 +51,37 @@
 <!--    				resultType="com.boot.teamMainProject.model.MemberVO"> -->
 <!--   		SELECT * FROM member WHERE memNick=#{memNick} -->
 <!--    </select> -->
-   	<update id="updateGatherDet" parameterType="com.boot.teamMainProject.model.MemberVO" >
+
+	<select id="Lastboard" 
+   				resultType="int">
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+  		SELECT LAST_INSERT_ID()
+   </select>
+
+  <!-- 댓글 수 수정 -->
+   	<update id="updateGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO" >
    		UPDATE Gather_Det
+
   		SET gatDetComNum = #{gatDetComNum}
   		WHERE gatDetNo=#{gatDetNo}
    	</update>
-
+   	
+   	<!--  글 수정  -->
+  <update id="UpdateGatDetComp" parameterType="com.boot.teamMainProject.model.GatherDetVO">
+  		UPDATE gather_det
+  		SET gatDetTitle='${gatDetTitle}', gatDetInfo='${gatDetInfo}', gatDetCategory = '${gatDetCategory}'
+  		WHERE gatDetNo=#{gatDetNo}
+  </update>
+	<!-- 글 삭제  -->
+	
+	<delete id="DeleteGatDetCom"  parameterType="int">
+  			DELETE FROM gather_det_com WHERE gatDetNo=#{gatDetNo}
+  		</delete>
+	
+  		<delete id="DeleteGatDet"  parameterType="int">
+  			DELETE FROM gather_det WHERE gatDetNo=#{gatDetNo}
+  		</delete>
+  		
    	<update id="updateBoard2Read" parameterType="int">
         UPDATE Gather_Det
               SET gatDetView = gatDetView + 1

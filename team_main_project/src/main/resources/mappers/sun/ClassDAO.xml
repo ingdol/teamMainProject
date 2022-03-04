@@ -57,4 +57,14 @@
 		SELECT * FROM Class WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
 	</select>
 
+	<select id="listFindClass" resultMap="classResult">
+		SELECT * FROM Class WHERE 1=1
+		<if test="gatArea1 != null and gatArea1 != ''">
+			and Class.classArea LIKE CONCAT('%', #{gatArea1}, '%', #{state}, '%')
+		</if>
+		<if test="category != null and category != ''">
+			and Class.hobbyNo LIKE CONCAT('%', #{category}, '%')
+		</if>
+	</select>
+
 </mapper>

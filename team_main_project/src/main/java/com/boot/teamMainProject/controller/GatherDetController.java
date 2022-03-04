@@ -49,9 +49,8 @@ public class GatherDetController {
 	//글쓰기 페이지
 	@RequestMapping("/ldh/SomoimboardWrite/{gatNo}/{memId}")
 	public String MoveinsertGather(@PathVariable String memId,@PathVariable int gatNo, Model model) {
-		System.out.println(memId); 
-		MemberVO mem = service4.detailViewMember(memId);
-	    model.addAttribute("mem", mem);
+//		MemberVO mem = service4.detailViewMember(memId);
+//	    model.addAttribute("mem", mem);
 //		MemberVO gat = service.MoveinsertGather(memId);
 //		model.addAttribute("gat", gat);
 	    GatheringVO gath = service3.detailViewSomoim(gatNo);
@@ -94,15 +93,16 @@ public class GatherDetController {
 //		count2 = count2 + 1;
 		ArrayList<GatherDetVO> gdList = service.CountBoard();
 		int count2 = gdList.size() +1;
+		int lastdata = service.Lastboard(gatNo);
 		
 		int gatNo2 = gatNo;
 		
-		int gatDetNo = count2;
-		gat.setGatDetNo(gatDetNo); 
+		int gatDetNo = lastdata + 1;
+//		gat.setGatDetNo(gatDetNo); 
 		service.insertGatherDet(gat);
 		System.out.println(count2); 
 		
-		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + count2;
+		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + gatDetNo;
 	}
 	
 	
@@ -151,6 +151,41 @@ public class GatherDetController {
 		return "ldh/Somoimboard";
 	}
 
+	
+	//글 수정 페이지로 이동
+	@RequestMapping("/ldh/SomoimboardUpdate/{gatNo}/{gatDetNo}")
+	public String UpdateGatDet(@PathVariable int gatNo, @PathVariable int gatDetNo, Model model) {
+//		MemberVO mem = service4.detailViewMember(memId);
+//	    model.addAttribute("mem", mem);
+		GatherDetVO gat = service.detailViewBoard(gatNo, gatDetNo);
+		model.addAttribute("gat", gat);
+//	    GatheringVO gath = service3.detailViewSomoim(gatNo);
+//		model.addAttribute("gath", gath);
+		return "/ldh/SomoimboardUpdate";
+	}
+	
+	@RequestMapping("/sboardupdate")
+	public String UpdateGatDetComp ( @RequestParam int gatDetNo, @RequestParam int gatNo , Model model ,GatherDetVO gat) throws IOException
+	{
+
+		int gatNo2 = gatNo;
+		
+		service.UpdateGatDetComp(gat);
+
+		
+		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + gatDetNo;
+	}
+	
+	@RequestMapping("/SomoimboardDelete/{gatNo}/{gatDetNo}")
+	public String DeleteGatDet ( @PathVariable int gatDetNo, @PathVariable int gatNo) throws IOException
+	{
+		service.DeleteGatDetCom(gatDetNo);
+		service.DeleteGatDet(gatDetNo);
+		
+		return "redirect:/sun/detailgat/"+gatNo;
+	}
+	
+	
 	int countex1 = 14;
 	int countex2 = 14;
 	
