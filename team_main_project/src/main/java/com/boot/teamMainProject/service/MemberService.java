@@ -18,8 +18,6 @@ public class MemberService implements IMemberService {
 	
 	@Override
 	public MemberVO signIn(HashMap<String, String> param) {
-		System.out.println("MemberService" + param);
-		System.out.println("MemberService=return" + dao.signIn(param) );
 		return dao.signIn(param);
 	}
 	
@@ -30,6 +28,7 @@ public class MemberService implements IMemberService {
 	
 	@Override
 	public String memNickCheck(String memNick) {
+		System.out.println("memNick : " + memNick);
 		return dao.memNickCheck(memNick);
 	}
 	
@@ -37,10 +36,15 @@ public class MemberService implements IMemberService {
 	public void userSignup(MemberVO vo) {
 		dao.userSignup(vo);
 	}
-
-	//sej : 멤버 조회
+	
 	@Override
-	public  MemberVO detailViewMember(String memId) {		
-		return dao.detailViewMember(memId);
+	public MemberVO selectNick(String memId) {
+		/*
+		 * System.out.println("selectNick : " + memId);
+		 * System.out.println("selectNick return : " +
+		 * dao.selectNick(memId).getMemNick());
+		 */
+		return dao.selectNick(memId);
 	}
+
 }
