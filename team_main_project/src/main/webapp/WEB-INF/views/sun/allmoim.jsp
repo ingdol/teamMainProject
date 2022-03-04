@@ -62,28 +62,36 @@
 		<h1 id="sectioninfo">전체모임목록</h1>
 			<div class="moim">
 				<div class="cardbox" id="moimcard">
+				<c:forEach items="${gatheringResult}" begin="0" end="4" var="gat">
 					<div class="card">
-						<img class="card-img-top" />
+						<img class="card-img-top" src="<c:url value='/images/${gat.gatPhoto}'/>" />
 						<div class="cardbody">
-							<h5 class="cardtitle"></h5>
-							<p class="hidden"></p>
-							<small class="cardtext textmuted"></small>
+							<h5 class="cardtitle">${gat.gatName}</h5>
+							<p class="hidden">${gat.gatNo}</p>
+							<small class="cardtext textmuted">
+								<fmt:formatDate value="${gat.gatOpen}" pattern="YY/MM/dd"/>
+							</small>
 						</div>
 					</div>
+				</c:forEach>
 				</div>
 				<div class="plus">모임더보기</div>
 			</div>
 
 			<div class="class">
 				<div class="cardbox" id="moimcard">
+				<c:forEach items="${classResult}" begin="0" end="4" var="clas">
 					<div class="card">
-						<img class="card-img-top" />
+						<img class="card-img-top" src="<c:url value='/images/${clas.classPhoto}'/>"/>
 						<div class="cardbody">
-							<h5 class="cardtitle"></h5>
-							<p class="hidden"></p>
-							<small class="cardtext textmuted"></small>
+							<h5 class="cardtitle">${clas.classTitle}</h5>
+							<p class="hidden">${clas.classNo}</p>
+							<small class="cardtext textmuted">
+								<fmt:formatDate value="${clas.classOpen}" pattern="YY/MM/dd"/>
+							</small>
 						</div>
 					</div>
+				</c:forEach>
 				</div>
 				<div class="plus">클래스더보기</div>
 			</div>
