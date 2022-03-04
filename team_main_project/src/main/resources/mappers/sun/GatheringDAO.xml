@@ -17,15 +17,15 @@
   	</resultMap>
   	
   	<select id="showlist" resultMap="gatheringResult">
-  		select * from Gathering WHERE hobbyNo=#{hobbyNo}
+  		SELECT * FROM Gathering WHERE hobbyNo=#{hobbyNo}
   	</select>
   	
   	<select id="detailgat" resultMap="gatheringResult">
-  		select * from Gathering WHERE gatNo=#{gatNo}
+  		SELECT * FROM Gathering WHERE gatNo=#{gatNo}
   	</select>
   	
   	<select id="showall" resultMap="gatheringResult">
-  		select * from Gathering
+  		SELECT * FROM Gathering
   	</select>
   	
   	<select id="showlistdatemax" resultMap="gatheringResult">
@@ -33,16 +33,16 @@
   	</select>
   	
   	<select id="showalldatemax" resultMap="gatheringResult">
-  		select * from Gathering order by gatOpen ASC
+  		SELECT * FROM Gathering ORDER BY gatOpen ASC
   	</select>
   	<select id="hateasc" resultMap="gatheringResult">
-  		select * from Gathering order by gatHate ASC LIMIT 10
+  		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 10
   	</select>  	
   	<select id="hateasc2" resultMap="gatheringResult">
-  		select * from Gathering order by gatHate ASC LIMIT 10,10
+  		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 10,10
   	</select> 
   	<select id="hateasc3" resultMap="gatheringResult">
-  		select * from Gathering order by gatHate ASC LIMIT 20,10
+  		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 20,10
   	</select> 
   	<select id="filtermoim" resultMap="gatheringResult">
 		SELECT * FROM Gathering WHERE (gatArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}

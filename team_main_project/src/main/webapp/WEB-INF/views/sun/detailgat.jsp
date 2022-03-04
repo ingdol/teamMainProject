@@ -57,7 +57,7 @@
 					<div class="moiminfodetail current">
 						<h4 id="sectioninfo">!모임정보</h4>
 						<c:forEach items="${detail}" var="detail">
-						<div class="photobox"><img src="/images/ldh/${detail.gatBanPhoto}"></div>
+						<div class="photobox"><img src="/images/${detail.gatBanPhoto}"></div>
 						<div class="infobox">
 								<span class="large">모임 이름 : ${detail.gatName}</span><br>
 								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
