@@ -26,7 +26,7 @@
 			<form id="SCreateForm" name="SCreateForm" method="post"  action="/screate" enctype="multipart/form-data">
 			
 			<c:if test="${not empty sessionScope.sid }">
-			<input type="hidden" id="memNick" name="memNick" value="${mem.memNick}"><br>
+			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>
 			</c:if>
 			
 <br><h3>소모임을 열 지역을 선택해주세요.</h3><br>
@@ -60,23 +60,23 @@
 			<div class="toggle2">
 
 				<input type="radio" id="toggle2-1" name="hobbyNo" value="1">
-    			<label for="toggle2-1" ><img src="<c:url value='/image/hobbyCtg/1_sport2.png'/>" width="100px" height="100px"></label>
+    			<label for="toggle2-1" ><img src="<c:url value='/images/1_sport.jpg'/>" width="100px" height="100px"></label>
   		  		<input type="radio" id="toggle2-2" name="hobbyNo" value="2">
-  			  	<label for="toggle2-2"><img src="<c:url value='/image/hobbyCtg/2_outdoor2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-2"><img src="<c:url value='/images/2_outdoor.jpg'/>" width="100px" height="100px"></label>
 				<input type="radio" id="toggle2-3" name="hobbyNo" value="3">
-  			  	<label for="toggle2-3"><img src="<c:url value='/image/hobbyCtg/3_study2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-3"><img src="<c:url value='/images/3_study.jpg'/>" width="100px" height="100px"></label>
 				<input type="radio" id="toggle2-4" name="hobbyNo" value="4">
-  			  	<label for="toggle2-4"><img src="<c:url value='/image/hobbyCtg/4_travel2.png'/>" width="100px" height="100px"></label><br>
+  			  	<label for="toggle2-4"><img src="<c:url value='/images/4_travel.jpg'/>" width="100px" height="100px"></label><br>
 				<input type="radio" id="toggle2-5" name="hobbyNo" value="5">
-  			  	<label for="toggle2-5"><img src="<c:url value='/image/hobbyCtg/5_cook2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-5"><img src="<c:url value='/images/5_cook.jpg'/>" width="100px" height="100px"></label>
 				<input type="radio" id="toggle2-6" name="hobbyNo" value="6">
-  			  	<label for="toggle2-6"><img src="<c:url value='/image/hobbyCtg/6_animal2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-6"><img src="<c:url value='/images/6_animal.jpg'/>" width="100px" height="100px"></label>
 				<input type="radio" id="toggle2-7" name="hobbyNo" value="7">
-  			  	<label for="toggle2-7"><img src="<c:url value='/image/hobbyCtg/7_picture2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-7"><img src="<c:url value='/images/7_picture.jpg'/>" width="100px" height="100px"></label>
 				<input type="radio" id="toggle2-8" name="hobbyNo" value="8">
-  			  	<label for="toggle2-8"><img src="<c:url value='/image/hobbyCtg/8_help2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-8"><img src="<c:url value='/images/8_help.jpg'/>" width="100px" height="100px"></label>
 				<input type="radio" id="toggle2-9" name="hobbyNo" value="9">
-  			  	<label for="toggle2-9"><img src="<c:url value='/image/hobbyCtg/9_art2.png'/>" width="100px" height="100px"></label>
+  			  	<label for="toggle2-9"><img src="<c:url value='/images/9_art2.jpg'/>" width="100px" height="100px"></label>
 				
 			
 			</div>

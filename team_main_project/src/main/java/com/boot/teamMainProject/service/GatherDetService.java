@@ -64,6 +64,36 @@ public class GatherDetService implements IGatherDetService {
 		return dao.updateBoard2Read(gatDetNo);
 	}
 
+	@Override
+	public GatherDetVO UpdateGatDet(int gatDetNo) {
+		// TODO Auto-generated method stub
+		return dao.UpdateGatDet(gatDetNo);
+	}
+
+	@Override
+	public void UpdateGatDetComp(GatherDetVO gat) {
+		// TODO Auto-generated method stub
+		dao.UpdateGatDetComp(gat);
+	}
+
+	@Override
+	public void DeleteGatDet(int gatDetNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteGatDet(gatDetNo);
+	}
+
+	@Override
+	public void DeleteGatDetCom(int gatDetNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteGatDetCom(gatDetNo);
+	}
+
+	@Override
+	public int Lastboard(int gatNo) {
+		// TODO Auto-generated method stub
+		return dao.Lastboard(gatNo);
+	}
+
 
 
 
