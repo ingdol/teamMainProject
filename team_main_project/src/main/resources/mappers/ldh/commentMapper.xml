@@ -8,17 +8,17 @@
   	
   	<select id="readComment" resultType="com.boot.teamMainProject.model.GatherDetComVO">
   		SELECT gatDetComNo, memNick, gatDetComInfo, gatDetComDate, gatDetComLike
-  		FROM gather_det_com WHERE gatDetNo = #{gatDetNo}
+  		FROM Gather_Det_Com WHERE gatDetNo = #{gatDetNo}
   	</select>
   	
   <insert id="insertGatDetCom" parameterType="com.boot.teamMainProject.model.GatherDetComVO">
-			INSERT INTO gather_det_com(gatDetComNo,gatDetNo,gatDetComInfo, gatDetComDate) 
+			INSERT INTO Gather_Det_Com(gatDetComNo,gatDetNo,gatDetComInfo, gatDetComDate) 
 			VALUES (${gatDetComNo}, ${gatDetNo},'${gatDetComInfo}',CURRENT_TIMESTAMP)
 	</insert>
 	
   <select id="CommentCountBoard" 
    				resultType="com.boot.teamMainProject.model.GatherDetComVO">
-  		SELECT * FROM gather_det_com WHERE gatDetNo = #{gatDetNo}
+  		SELECT * FROM Gather_Det_Com WHERE gatDetNo = #{gatDetNo}
    </select>
   
   </mapper>

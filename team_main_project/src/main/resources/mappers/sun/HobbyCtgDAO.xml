@@ -10,7 +10,7 @@
   	</resultMap>
   	
   	<select id="ctgall" resultMap="ctg">
-  		select * from hobby_ctg
+  		select * from Hobby_Ctg
   	</select>
   	
   	</mapper>
