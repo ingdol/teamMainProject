@@ -147,7 +147,8 @@ h1 {
 
 .card-body-hashtag {
     color: #2478FF;
-    font-style: italic;
+    /*font-style: italic;*/
+    font-size: 14px;
 }
 
 .card-body-footer {

@@ -46,5 +46,9 @@ public class MemberService implements IMemberService {
 		 */
 		return dao.selectNick(memId);
 	}
-
+	//sej : 멤버 조회
+	@Override
+	public  MemberVO detailViewMember(String memId) {
+		return dao.detailViewMember(memId);
+	}
 }

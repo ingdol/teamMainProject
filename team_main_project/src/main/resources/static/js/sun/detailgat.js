@@ -40,11 +40,15 @@ $(function(){
 		location.href='/chat';
 	});
 	
-	$(".gatherschedule").on('click',function(){
-		location.href='/GatherSchedule?';
-	});
+	// $(".gatherschedule").on('click',function(){
+	// 	location.href='/GatherSchedule?';
+	// });
 	$("#fakeBtn").on('click',function(){
 		alert("로그인이 필요합니다.");
 		window.location.replace('/login');
+	});
+	$("#fakeBtn2").on('click',function(){
+		alert("모임에 가입이 필요합니다.");
+		event.preventDefault();
 	});
 });
