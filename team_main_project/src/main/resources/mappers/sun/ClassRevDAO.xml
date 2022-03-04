@@ -15,6 +15,6 @@
 	</resultMap>	
 	
 	<select id="revlist" resultMap="classRev">
-		select * from class_rev WHERE classNo=#{classNo}
+		select * from Class_Rev WHERE classNo=#{classNo}
 	</select>
 </mapper>
