@@ -171,7 +171,7 @@ h1 {
 .icon-view_count {
     width: 25px;
     height: 17px;
-    /*background: url("images/eye.jpg") no-repeat;*/
+    /*background: url("image/bch/hate.png") no-repeat;*/
 }
 
 .icon-comments_count {
@@ -185,4 +185,5 @@ h1 {
     float: right;
     padding-right: 3%;
     color: black;
+    background: url("image/bch/hate.png") no-repeat;
 }

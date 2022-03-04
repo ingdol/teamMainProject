@@ -71,13 +71,13 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">BEST 클래스</div>
-						<div id="allView"><a href="#">전체 보기</a></div>
+						<div id="allView"><a href="/VIewAllClass">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 
 							<c:forEach items="${classListBest}" var="classVo" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
+									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">
 									<br id="bestBr"><p id="gatherCtg">클래스</p>
 									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
 									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>
