@@ -74,7 +74,7 @@
 						<!-- 받아오기 -->
 						<c:forEach items="${gatheringResult}" begin="0" end="4" var="gat">
 						<div class="card">
-							<img src="<c:url value='/images/ldh/${gat.gatBanPhoto}'/>" class="card-img-top" alt="LOGO">
+							<img src="<c:url value='/images/${gat.gatPhoto}'/>" class="card-img-top" alt="LOGO">
 							<div class="cardbody">
 								<h5 class="cardtitle">${gat.gatName}</h5>
 								<p class="hidden">${gat.gatNo}</p>
