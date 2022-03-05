@@ -143,4 +143,13 @@ public class GatherController {
             }
         }
     }
+    @ResponseBody
+    @RequestMapping("DeleteGatherSchedule")
+    public GatherScheduleVO DeleteGatherSchedule(@RequestParam("ajaxGatScheNo") int ajaxGatScheNo) {
+        GatherScheduleVO gatherScheduleVO = service.LocdGather_Schedule(ajaxGatScheNo);
+//        int gatNo = gatherScheduleVO.getGatNo();
+//        System.out.println("모임 번호 : " + gatNo);
+        service.DeleteGatherSchedule(ajaxGatScheNo);
+        return gatherScheduleVO;
+    }
 }
