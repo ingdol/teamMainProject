@@ -65,5 +65,10 @@ public class ClassService implements IClassService {
 	public ArrayList<ClassVO> listFindClass(String gatArea1, String state, String category) {
 		return dao.listFindClass(gatArea1, state, category);
 	}
+
+	@Override
+	public ClassVO ClassInfoVO(int classNo) {
+		return dao.ClassInfoVO(classNo);
+	}
 }
 

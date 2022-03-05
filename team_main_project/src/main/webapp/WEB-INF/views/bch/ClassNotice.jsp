@@ -73,11 +73,14 @@
               <c:if test="${empty sessionScope.snick}">
                   <input type="button" value="일정 참가" id="FakejoinGatherBtn">
               </c:if>
+              <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
+              <input type="hidden" id="ajaxClassScheNo" value="${classSchedule.classScheNo}">
+              <input type="hidden" id="ajaxClassNo" value="${classSchedule.classNo}">
               <c:if test="${not empty sessionScope.snick}">
-                  <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
-                  <input type="hidden" id="ajaxClassScheNo" value="${classSchedule.classScheNo}">
-                  <input type="hidden" id="ajaxClassNo" value="${classSchedule.classNo}">
                   <input type="button" value="일정 참가" id="joinGatherBtn">
+              </c:if>
+              <c:if test="${sessionScope.snick eq classSchedule.memNick}">
+                  <input type="button" value="삭 제" id="deleteGatherBtn">
               </c:if>
           </section>
 

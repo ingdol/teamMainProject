@@ -42,22 +42,24 @@ public class SunController {
 	GatherScheduleService scheduleService;
 	@Autowired
 	MemberService memberService;
+	@Autowired
+	Class_ScheService class_scheService;
 	// 해당모임클릭시 해당모임 상세페이지 나오도록
 	
 	@RequestMapping("/sun/detailgat/{gatNo}")
 	public String detailgat(@PathVariable int gatNo, Model model, HttpSession session) {
 		ArrayList<GatheringVO> detail = gatherser.detailgat(gatNo);
 		ArrayList<GatherDetVO> gatherCommu = gatherDetser.gatcommulist(gatNo);
-		ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
-		GatheringVO sendGatherNo = gatherser.detailViewSomoim(gatNo);
-		String sid = (String) session.getAttribute("sid");
-		MemberVO mem = memberService.detailViewMember(sid);
+		ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch (목록에 일정 보여주기 위함)
+		GatheringVO sendGatherNo = gatherser.detailViewSomoim(gatNo); // bxh
+		String sid = (String) session.getAttribute("sid"); // bch
+		MemberVO mem = memberService.detailViewMember(sid); // bch
 
-		model.addAttribute("mem", mem);
+		model.addAttribute("mem", mem); //bch
 		model.addAttribute("detail",detail);
 		model.addAttribute("gatherCommu",gatherCommu);
-		model.addAttribute("gatherSchedule", gatherSchedule);
-		model.addAttribute("sendGatherNo", sendGatherNo);
+		model.addAttribute("gatherSchedule", gatherSchedule); // bch
+		model.addAttribute("sendGatherNo", sendGatherNo); // bch
 		System.out.println("detail = " + detail);
 		System.out.println("gatherCommu = " + gatherCommu);
 		return "/sun/detailgat";
@@ -147,11 +149,19 @@ public class SunController {
 	}
 
 	@RequestMapping("/sun/detailclass/{classNo}")
-	public String detailclass(@PathVariable int classNo, Model model) {
+	public String detailclass(@PathVariable int classNo, Model model, HttpSession session) {
 		ArrayList<ClassVO> detail = classser.classinfo(classNo);
 		ArrayList<ClassRevVO> revlist = classrevser.revlist(classNo);
+		ArrayList<Class_ScheVO> classSchedule = class_scheService.LoadClass_Sche(classNo); // bch (목록에 일정 보여주기 위함)
+		ClassVO classInfoVO = classser.ClassInfoVO(classNo); //bch
+		String sid = (String) session.getAttribute("sid"); // bch
+		MemberVO mem = memberService.detailViewMember(sid); // bch
+
+		model.addAttribute("mem", mem); // bch
 		model.addAttribute("detail", detail);
 		model.addAttribute("revlist", revlist);
+		model.addAttribute("classInfoVO", classInfoVO);// bch
+		model.addAttribute("classSchedule", classSchedule);// bch
 		return "/sun/detailclass";
 	}
 	

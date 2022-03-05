@@ -26,18 +26,18 @@ public class Class_ScheService implements IClass_ScheService{
     }
 
     @Override
-    public void updateViewCount(int classScheNo) {
-        dao.updateViewCount(classScheNo);
+    public void updateViewCountForClass(int classScheNo) {
+        dao.updateViewCountForClass(classScheNo);
     }
 
     @Override
-    public Class_ScheVO LocdClass_Schedule(int classScheNo) {
-        return dao.LocdClass_Schedule(classScheNo);
+    public Class_ScheVO LoadClass_Schedule(int classScheNo) {
+        return dao.LoadClass_Schedule(classScheNo);
     }
 
     @Override
-    public int CheckMaxPerson(int classScheNo) {
-        return dao.CheckMaxPerson(classScheNo);
+    public int CheckMaxPersonForClass(int classScheNo) {
+        return dao.CheckMaxPersonForClass(classScheNo);
     }
 
     @Override
@@ -53,5 +53,15 @@ public class Class_ScheService implements IClass_ScheService{
     @Override
     public void JoinClass(int classScheNo, int classNo, String memNick) {
         dao.JoinClass(classScheNo, classNo, memNick);
+    }
+
+    @Override
+    public String CheckClassScheduleOverlap(int classScheNo, String memNick) {
+        return dao.CheckClassScheduleOverlap(classScheNo, memNick);
+    }
+
+    @Override
+    public void DeleteClassSchedule(int classScheNo) {
+        dao.DeleteClassSchedule(classScheNo);
     }
 }

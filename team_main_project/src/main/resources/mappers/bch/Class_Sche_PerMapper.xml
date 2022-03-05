@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.teamMainProject.dao.IClass_ScheDAO">
+
+    <resultMap id="classSchePerNo" type="com.boot.teamMainProject.model.Class_Sche_PerVO">
+        <result property="classScheNo" column="classScheNo" />
+        <result property="classNo" column="classNo" />
+        <result property="memNick" column="memNick" />
+        <result property="classSchePerNo" column="classSchePerNo" />
+
+    </resultMap>
+<!--  현재 모임 참가 인원 숫자 조회  -->
+    <select id="ClassJoinNow" resultType="int" parameterType="int">
+        select count(*) from Class_Sche_Per where classScheNo=#{classScheNo}
+    </select>
+<!--  현재 모임 참가 인원 조회  -->
+    <select id="ClassJoinPerson" resultMap="classSchePerNo">
+        select * from Class_Sche_Per where classScheNo=#{classScheNo}
+    </select>
+    <!--  모임 일정 참가  -->
+    <insert id="JoinClass" parameterType="com.boot.teamMainProject.model.Class_Sche_PerVO" >
+        INSERT INTO Class_Sche_Per (classScheNo, classNo, memNick)
+        VALUES (#{classScheNo}, #{classNo}, #{memNick})
+    </insert>
+<!--  중복 참가 막기  -->
+    <select id="CheckClassScheduleOverlap" resultType="String" >
+        SELECT memNick from Class_Sche_Per WHERE classScheNo=#{classScheNo} AND memNick=#{memNick}
+    </select>
+</mapper>

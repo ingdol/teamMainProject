@@ -1,14 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>클래스 목록 전체</title>
+        <title>공간 대여 전체</title>
         <script>
             function checkPerson() {
-                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "" || $('#maxPerson').val() != /[0-9]/) {
-                    $("#maxPerson").val("");
-                    alert("1명 이하는 입력 하실 수 없습니다.")
+                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "") {
+                    if($('#maxPerson').val() != /[0-9]/) {
+                        $("#maxPerson").val("");
+                        alert("1명 이하는 입력 하실 수 없습니다.")
+                    }
                 }
             }
         </script>
@@ -19,12 +20,17 @@
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="/js/bch/selectLocation.js"></script>
-    <script src="/js/bch/classSearch.js"></script>
+    <script src="/js/bch/ClassSpaceSearch4.js"></script>
     <body>
     <div id ="mainWrap">
+        <%request.setCharacterEncoding("UTF-8");%>
+        <%
+            String classNo = request.getParameter("classNo");
+        %>
         <!-- TOP  -->
         <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
         <div id="FormBox" class="FormBox">
+            <input type="hidden" id="classNo" value="<%=classNo%>">
             <form class="findPlace" >
 <%--                <span>--%>
 <%--                    <input type="date" id="gatScheDate" name="gatScheDate" placeholder="날짜 선택">--%>
@@ -55,18 +61,17 @@
             </span>
                 <span>
                 <select name="category" id="category" class="category">
-                    <option value="">주제를 선택해 주세요.</option>
-                    <option value="1">운동</option>
-                    <option value="2">아웃도어</option>
-                    <option value="3">자기계발</option>
-                    <option value="4">여행</option>
-                    <option value="5">음식&요리</option>
-                    <option value="6">애견&애묘</option>
-                    <option value="7">사진&영상</option>
-                    <option value="8">봉사활동</option>
-                    <option value="9">문화예술</option>
+                    <option value="">장소의 테마를 선택해 주세요.</option>
+                    <option value="1">파티룸</option>
+                    <option value="2">회의실</option>
+                    <option value="3">펜션</option>
+                    <option value="4">골프 연습장</option>
+                    <option value="5">야외운동시설</option>
+                    <option value="6">실내운동시설</option>
+                    <option value="7">문화생활시설</option>
                 </select>
                 </span>
+                <span><input type="number" id="maxPerson" class="maxPerson" min="1" placeholder="최대 인원" value="1" onkeyup="checkPerson()"></span>
 <%--                <input type="submit" value="검색" id="findPlaceBtn">--%>
                 <button id="findPlaceBtn">검색</button>
             </form>
@@ -75,17 +80,19 @@
         <div class="spaceListBox" id="spaceListBox">
             <div class="gallerylist" id="gallerylist">
                 <span class="gallerylistBox" id="gallerylistBox">
-                    <c:forEach items="${classList}" var="classList">
+                    <c:forEach items="${spaceList}" var="space">
 <%--                        <c:set var="spaceNoForCtgName" value="${space.spaceNo}" />--%>
-                        <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${classList.classNo}' />">
-                        <a id="card-link" href="<c:url value='/detailViewClass/${classList.classNo}'/> "> <!-- 클릭 시 링크 설정 -->
+                        <input type="hidden" id="spaceNoForCtgName" value="<c:out value='${space.spaceNo}' />">
+                        <a id="card-link" href="/ClassScheDetailViewSpace/${space.spaceNo}?classNo=<%=classNo%> "> <!-- 클릭 시 링크 설정 -->
                             <div class="card">
                                 <!-- 카드 헤더 -->
                                 <div class="card-header" >
-                                    <img id="card-image" src="<c:url value='/images/${classList.classPhoto}'/>" />
+                                    <img id="card-image" src="<c:url value='/images/${space.spacePhoto}'/>" />
                                     <div class = "card-header-is_closed" >
                                         <div class = "card-header-text" >
-                                            ${classList.classArea}
+                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">
+                                            ${spaceCtgName.spaceCtgName}
+                                            </c:forEach>
                                         </div >
                                         <div class = "card-header-number" ></div >
                                     </div >
@@ -94,14 +101,14 @@
                                 <div class="card-body">
                                     <!--  카드 바디 헤더 -->
                                     <div class="card-body-header">
-                                        <h1 class="card-body-header-title" style="font-size: 18px !important;">${classList.classTitle}</h1>
-                                        <p class="card-body-hashtag"></p>
+                                        <h1 class="card-body-header-title">${space.spaceTitle}</h1>
+                                        <p class="card-body-hashtag">${space.spaceArea}</p>
                                         <p class ="card-body-nickname">
-
+                                            최대 ${space.spacePerMax}인
                                         </p>
                                     </div>
                                     <p class="card-body-description">
-                                    <span>오픈 : </span><fmt:formatDate value="${classList.classOpen}" pattern="yyyy-MM-dd" />
+                                    ${space.spacePrice1}<span>/비수기</span><br>${space.spacePrice2}<span>/성수기</span>
                                     <%--${space.spaceInfo}--%>
                                     </p>
                                     <!--  카드 바디 본문 -->
@@ -110,7 +117,7 @@
                                         <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
                                         <i class="icon icon-view_count"></i>
                                         <i class="icon icon-comments_count"></i>
-                                        <i class="reg_date">Hate ${classList.classHate}</i>
+                                        <i class="reg_date"></i>
                                     </div>
                                 </div>
                             </div>

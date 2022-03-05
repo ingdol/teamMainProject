@@ -132,6 +132,11 @@
                     <div class="revMemNick" id="revMemNick">${spaceReview.memNick}</div>
 <%--                    <p>제목</p><div class="revMemTitle" id="revMemTitle">${spaceReview.spaceRevTitle}</div>--%>
                     <div class="revInfo" id="revInfo" style="white-space:pre;" >${spaceReview.spaceRevTitle}</div>
+                    <c:set var="spaceRevPhoto" value="${spaceReview.spaceRevPhoto}"></c:set>
+                    <c:set var="spaceRevPhotoArr" value="${fn:split(spaceRevPhoto,' ')}"></c:set>
+                    <c:forEach items="${spaceRevPhotoArr}" var="spaceRevPictures">
+                        <span id="ReviewImg"><img src="<c:url value='/images/${spaceRevPictures}'/>"/></span>
+                    </c:forEach>
                     <p id="revDate"><fmt:formatDate value="${spaceReview.spaceRevDate}" pattern="yyyy-MM-dd HH:ss"/></p>
                     <hr color="#d9d8d8" style="margin-bottom: 10px; margin-top: 10px;">
                 </c:forEach>

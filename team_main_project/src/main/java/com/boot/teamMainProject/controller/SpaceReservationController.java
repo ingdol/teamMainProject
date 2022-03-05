@@ -48,15 +48,15 @@ public class SpaceReservationController {
         model.addAttribute("spaceCtgName", spaceCtgName);
         return "bch/scheSpaceReservationAll";
     }
-    // 공간 전체페이지 카테고리 이름 찾기 (현재 동작 x)
-//    @ResponseBody
-//    @RequestMapping("transferCtgName")
-//    public Space_CtgVO transferCtgName(Model model,
-//                                       @RequestParam("spaceNoForCtgName") String spaceNo) {
-//        Space_CtgVO SpaceCtgNameforAll = space_ctgService.SpaceCtgNameforAll(spaceNo);
-//        model.addAttribute("SpaceCtgNameforAll", SpaceCtgNameforAll);
-//        return SpaceCtgNameforAll;
-//    }
+    // 공간 전체 페이지(클래스 모임 일정 만드는 페이지에서 사용)
+    @RequestMapping("ClassScheSpaceReservationAll")
+    public String ClassScheSpaceReservationAll(Model model) {
+        ArrayList<SpaceVO> spaceList = service.listAllSpace();
+        ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
+        model.addAttribute("spaceList", spaceList);
+        model.addAttribute("spaceCtgName", spaceCtgName);
+        return "bch/ClassScheSpaceReservationAll";
+    }
 
     // 조건 상세 조회
     @ResponseBody
@@ -67,7 +67,6 @@ public class SpaceReservationController {
                                              @RequestParam("category") String category,
                                              @RequestParam("maxPerson") int maxPerson) {
         ArrayList<SpaceVO> constraintSpaceList = service.listFindSpace(gatArea1, state, category, maxPerson);
-//        model.addAttribute("constraintSpaceList", constraintSpaceList);
         return constraintSpaceList;
     }
     // 조건 상세 조회 할 때 카테고리 이름 조회(화면에 공간 유형 띄우기 위함.)
@@ -82,16 +81,6 @@ public class SpaceReservationController {
     @RequestMapping("/detailViewSpace/{spaceNo}")
     public String detailViewSpace(@PathVariable String spaceNo, Model model, HttpSession session, HttpServletResponse write) throws IOException {
 
-//        String sidNick = (String) session.getAttribute("sidNick");
-//        if(sidNick == null) {
-//            write.setContentType("text/html; charset=UTF-8");
-//            PrintWriter out_write = write.getWriter();
-//            out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
-//            out_write.flush();
-//
-//            return "/pdh/login";
-//        }
-//        else {
         String sid = (String) session.getAttribute("sid");
         MemberVO mem = memberService.detailViewMember(sid);
         model.addAttribute("mem", mem);
@@ -119,21 +108,25 @@ public class SpaceReservationController {
         model.addAttribute("spaceInfo", spaceInfo);
         return "bch/scheDetailViewSpace";
     }
-    // test Page
-    @RequestMapping("/test")
-    public String test() {
-        return "bch/test";
+    // 공간 상세 페이지 (모임 일정 만드는 페이지에서 사용)
+    @RequestMapping("/ClassScheDetailViewSpace/{spaceNo}")
+    public String ClassScheDetailViewSpace(@PathVariable String spaceNo, Model model, HttpSession session) {
+        SpaceVO space = service.detailSpace(spaceNo);
+        ArrayList<SpaceReviewVO> spaceReviewTest = spaceReviewService.spaceReviewTest(spaceNo);
+        ArrayList<SpaceVO> spaceInfo = service.detailSpaceTest(spaceNo);
+        String sid = (String) session.getAttribute("sid");
+        MemberVO mem = memberService.detailViewMember(sid);
+        model.addAttribute("mem", mem);
+        model.addAttribute("space", space);
+        model.addAttribute("spaceReviewTest", spaceReviewTest);
+        model.addAttribute("spaceInfo", spaceInfo);
+        return "bch/ClassScheDetailViewSpace";
     }
 
     // 공간 상세 페이지에서 예약 시간 조회
     @ResponseBody
     @RequestMapping("CheckReservationTime")
     public ArrayList<SpaceReservationVO> CheckReservationTime(@RequestParam("spaceNo") int spaceNo){
-//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-//        SimpleDateFormat Timeformatter = new SimpleDateFormat("HH:mm");
-//        Date date = formatter.parse(spaceDate);
-//        Date StartTime = Timeformatter.parse(spaceStartTime);
-//        Date EndTime = Timeformatter.parse(spaceEndTime);
         ArrayList<SpaceReservationVO> CheckReservation = reservationService.CheckReservationTime(spaceNo);
         return CheckReservation;
     }

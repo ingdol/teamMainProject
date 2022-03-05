@@ -20,6 +20,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 @Controller
 public class ClassController {
@@ -46,7 +47,7 @@ public class ClassController {
    @ResponseBody
    @RequestMapping("WriteClassSchedule")
    public void WriteClassSchedule(@RequestParam("memNick") String memNick,
-                                   @RequestParam("classNo") int gatNo,
+                                   @RequestParam("classNo") int classNo,
                                    @RequestParam("classScheTitle") String classScheTitle,
                                    @RequestParam("classScheDate") String classScheDate,
                                    @RequestParam("classScheTime") String classScheTime,
@@ -68,8 +69,8 @@ public class ClassController {
 
       spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
 
-      service.MakeClassSchedule(memNick, gatNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo); // 모임 만들기
-      reservationService.ReservationCompGather(gatNo, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
+      service.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo); // 모임 만들기
+      reservationService.ReservationCompGather(classNo, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
 
    }
 
@@ -77,7 +78,7 @@ public class ClassController {
    @ResponseBody
    @RequestMapping("WriteClassScheduleWithoutSpaceReser")
    public void WriteClassScheduleWithoutSpaceReser(@RequestParam("memNick") String memNick,
-                                                    @RequestParam("gatNo") int gatNo,
+                                                    @RequestParam("classNo") int classNo,
                                                     @RequestParam("classScheTitle") String classScheTitle,
                                                     @RequestParam("classScheDate") String classScheDate,
                                                     @RequestParam("classScheTime") String classScheTime,
@@ -86,7 +87,7 @@ public class ClassController {
                                                     @RequestParam("scheduleSpace") String scheduleSpace,
                                                     @RequestParam("classScheSpace") String classScheSpace,
                                                     @RequestParam("classScheInfo") String classScheInfo) {
-      service.MakeClassSchedule(memNick, gatNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo);
+      service.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo);
    }
 
    // 모임 일정 공지
@@ -94,12 +95,12 @@ public class ClassController {
    public String ScheduleNoticeClass(@PathVariable int classtNo, @PathVariable int classScheNo, Model model) {
 //        ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
       GatheringVO gath = service3.detailViewSomoim(classtNo);
-      Class_ScheVO classSchedule = service.LocdClass_Schedule(classScheNo);
+      Class_ScheVO classSchedule = service.LoadClass_Schedule(classScheNo);
       ArrayList<Class_Sche_PerVO> ClassJoinPerson = service.ClassJoinPerson(classScheNo);
       model.addAttribute("gath", gath);
       model.addAttribute("classSchedule", classSchedule);
       model.addAttribute("ClassJoinPerson", ClassJoinPerson);
-      service.updateViewCount(classScheNo);
+      service.updateViewCountForClass(classScheNo);
       return "bch/ClassNotice";
    }
 
@@ -110,7 +111,7 @@ public class ClassController {
                               @RequestParam("ajaxClassScheNo") int ajaxClassScheNo,
                               @RequestParam("ajaxClassNo") int ajaxClassNo,
                               HttpServletResponse response) throws IOException {
-      int ScheduleMaxPerson = service.CheckMaxPerson(ajaxClassScheNo);
+      int ScheduleMaxPerson = service.CheckMaxPersonForClass(ajaxClassScheNo);
       int SchedulePersonNow = service.ClassJoinNow(ajaxClassScheNo);
       System.out.println("모임 최대 인원 : " + ScheduleMaxPerson);
       System.out.println("현재 인원 : " + SchedulePersonNow);
@@ -121,12 +122,32 @@ public class ClassController {
          out.flush();
       }
       else {
-         service.JoinClass(ajaxClassScheNo, ajaxClassNo, ajaxMemNick);
-         response.setContentType("text/html; charset=UTF-8");
-         PrintWriter out = response.getWriter();
-         out.println("신청 완료!");
-         out.flush();
-
+         String ScheduleMemNick = service.CheckClassScheduleOverlap(ajaxClassScheNo, ajaxMemNick);
+         if(Objects.equals(ScheduleMemNick, ajaxMemNick)) {
+            response.setContentType("text/html; charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            out.println("이미 신청하셨습니다!");
+            out.flush();
+         }
+         else {
+            service.JoinClass(ajaxClassScheNo, ajaxClassNo, ajaxMemNick);
+            response.setContentType("text/html; charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            out.println("신청 완료!");
+            out.flush();
+         }
       }
    }
+   // 클래스 일정 삭제
+   @ResponseBody
+   @RequestMapping("DeleteClassSchedule")
+   public Class_ScheVO DeleteClassSchedule(@RequestParam("ajaxClassScheNo") int ajaxClassScheNo) {
+      Class_ScheVO class_scheVO = service.LoadClass_Schedule(ajaxClassScheNo);
+//        int gatNo = gatherScheduleVO.getGatNo();
+//        System.out.println("모임 번호 : " + gatNo);
+      service.DeleteClassSchedule(ajaxClassScheNo);
+      return class_scheVO;
+   }
+
+//   클래스 공간 예약 시작
 }

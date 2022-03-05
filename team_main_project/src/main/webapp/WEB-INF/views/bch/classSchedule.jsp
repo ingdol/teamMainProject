@@ -125,7 +125,7 @@
                         <div id="findScheduleSpace">
                             <span>
                                 <input type="text" id="scheduleSpace" name="scheduleSpace" value="<%=spaceArea%>" placeholder="장소를 검색해 주세요." readonly>
-                                <a href="/ScheSpaceReservationAll?classNo=<%=classNo%>"><input type="button" value="장소 검색" id="findSpace" class="btn btn-primary" onclick="loadSpaceReser()"></a>
+                                <a href="/ClassScheSpaceReservationAll?classNo=<%=classNo%>"><input type="button" value="장소 검색" id="findSpace" class="btn btn-primary" onclick="loadSpaceReser()"></a>
                             </span>
                         </div>
 

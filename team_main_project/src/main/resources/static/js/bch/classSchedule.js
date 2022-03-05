@@ -27,7 +27,7 @@ $(document).ready(function(){
                   },
             success:function (result) {
                 alert("일정 등록 완료!");
-                // window.location.replace('/sun/detail/'+$('#gatNo').val());
+                // window.location.replace('/sun/detailclass/'+$('#classNo').val());
             },
             error:function(data, textStatus){
                 alert("일정 등록 실패!");
@@ -57,7 +57,7 @@ $(document).ready(function(){
             },
             success:function (result) {
                 alert("일정 등록 & 공간 예약 완료!");
-                // window.location.replace('/sun/detailgat/'+$('#gatNo').val());
+                // window.location.replace('/sun/detailclass/'+$('#classNo').val());
             },
             error:function(data, textStatus){
                 alert("일정 등록 실패!");

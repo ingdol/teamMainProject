@@ -143,6 +143,7 @@ public class GatherController {
             }
         }
     }
+    // 모임 일정 삭제 기능
     @ResponseBody
     @RequestMapping("DeleteGatherSchedule")
     public GatherScheduleVO DeleteGatherSchedule(@RequestParam("ajaxGatScheNo") int ajaxGatScheNo) {

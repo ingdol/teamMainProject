@@ -11,7 +11,7 @@
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qrv2ksj8tt&submodules=geocoder"></script> <!-- 네이버 지도 api -->
     <script src="/js/bch/MapForDetailView.js"></script>
-    <script src="/js/bch/CheckReservationTimeForGatherDetail.js"></script>
+    <script src="/js/bch/CheckReservationTimeForClassDetail.js"></script>
     <script src="/js/bch/slideShow.js"></script>
     <script>
         $(document).ready(function(){
@@ -40,7 +40,7 @@
     <body>
     <%request.setCharacterEncoding("UTF-8");%>
     <%
-        String gatNo = request.getParameter("gatNo");
+        String classNo = request.getParameter("classNo");
     %>
     <div id ="mainWrap">
         <!-- TOP  -->
@@ -77,9 +77,9 @@
                     <input type="date" class="setDateTime" id="date" value="">
                     <input type="time" class="setDateTime" id="time" value="">
                     <input type="time" class="setDateTime" id="time2" value="">
-                    <a id="ReservationATAG" href="/GatherSchedule?spaceNo=${space.spaceNo}&gatNo=<%=gatNo%>&memNick=${mem.memNick}&spaceArea=${space.spaceArea}&date=date&time=time&time2=time2"><input type="button" value="예약하기" id="ReservationBtn"></a>
+                    <a id="ReservationATAG" href="/ClassSchedule?spaceNo=${space.spaceNo}&classNo=<%=classNo%>&memNick=${mem.memNick}&spaceArea=${space.spaceArea}&date=date&time=time&time2=time2"><input type="button" value="예약하기" id="ReservationBtn"></a>
                     <input type="hidden" id="spacePrice" value="${space.spacePrice1}">
-                    <input type="hidden" id="gatNo" value="<%=gatNo%>">
+                    <input type="hidden" id="classNo" value="<%=classNo%>">
                     <input type="hidden" id="memNick" value="${mem.memNick}">
                     <input type="hidden" id="spaceNo" value="${space.spaceNo}">
                     <input type="hidden" id="spaceArea" value="${space.spaceArea}">

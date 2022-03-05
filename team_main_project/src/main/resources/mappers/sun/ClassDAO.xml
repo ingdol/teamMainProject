@@ -67,4 +67,9 @@
 		</if>
 	</select>
 
+<!-- bch  -->
+	<select id="ClassInfoVO" resultMap="classResult">
+		SELECT * FROM Class WHERE classNo=#{classNo}
+	</select>
+
 </mapper>
