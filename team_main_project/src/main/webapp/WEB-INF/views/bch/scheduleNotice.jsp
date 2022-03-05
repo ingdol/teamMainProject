@@ -73,14 +73,16 @@
               <c:if test="${empty sessionScope.snick}">
                   <input type="button" value="일정 참가" id="FakejoinGatherBtn">
               </c:if>
+              <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
+              <input type="hidden" id="ajaxGatScheNo" value="${gatherSchedule.gatScheNo}">
+              <input type="hidden" id="ajaxGatNo" value="${gatherSchedule.gatNo}">
               <c:if test="${not empty sessionScope.snick}">
-                  <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
-                  <input type="hidden" id="ajaxGatScheNo" value="${gatherSchedule.gatScheNo}">
-                  <input type="hidden" id="ajaxGatNo" value="${gatherSchedule.gatNo}">
                   <input type="button" value="일정 참가" id="joinGatherBtn">
               </c:if>
+              <c:if test="${sessionScope.snick eq gatherSchedule.memNick}">
+                  <input type="button" value="삭 제" id="deleteGatherBtn">
+              </c:if>
           </section>
-
           <!-- BOTTOM  -->
           <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
       </div>

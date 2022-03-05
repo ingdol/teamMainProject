@@ -15,7 +15,7 @@ $(document).ready(function(){
             type: "post",
             url: "/WriteGatherScheduleWithoutSpaceReser",
             data:{"memNick": $('#memNick').val(),
-                "classNo": $('#classNo').val(),
+                "gatNo": $('#gatNo').val(),
                 "gatScheTitle": $('#gatScheTitle').val(),
                   "gatScheDate": $('#gatScheDate').val(),
                 "gatScheTime": $('#gatScheTime').val(),
