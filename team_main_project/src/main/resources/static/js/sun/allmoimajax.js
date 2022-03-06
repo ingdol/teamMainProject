@@ -53,46 +53,4 @@ $(function(){
 		console.log(hobby);
 		location.href='/sun/allclassdetail/'+hobby;
 	});
-		
-	
-	
-	$('#findPlaceBtn').on('click', function(e){
-		e.preventDefault();
-		
-		var gatArea = $('#gatArea').val();
-		var hobbyNo = $('#category').val();
-		console.log(gatArea+hobbyNo);
-		
-		
-		$.ajax({
-			type:"post",
-			url:"/sun/allmoim/filter",
-			data:{"gatArea": gatArea,
-					  "hobbyNo": hobbyNo},  /* 컨트롤러에서 받을 때*/
-			
-			dataType:'text',
-			success:function(result){
-				if(result !=''){	
-				$('#allmoimclass').empty();
-				console.log(result);
-				$('#allmoimclass').append(result);
-				}
-				
-				else {
-                    $('#allmoimclass').empty();
-                    $('#allmoimclass').css({"margin-left" : "0 !important"});
-                    $('#allmoimclass').append('<span id="notFound" style="margin: 0 !important;">');
-                  	$('#allmoimclass').append('<p style="font-weight: bold; color:#474646 ;font-size: 64px; padding: 20px; margin: 20px;">검색 결과가 없습니다.</p>');
-                    $('#allmoimclass').append('</span>');                   
-                }
-				
-			},
-			error:function(data, textStatus){
-				alert("전송 실패");
-			},
-			complete:function(data, textStatus){
-				alert("작업을 완료했습니다");
-			}
-		});		
-	});			
 });
