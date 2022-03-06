@@ -10,8 +10,6 @@ $(document).ready(function (){
 	console.log(allmaps[0].previousElementSibling.innerHTML);
 	console.log(allmaps[0].previousElementSibling.previousElementSibling.classList.contains("moimno"));
 	
-	//"/sun/detailgat/{gatNo}"
-	//"/sun/detailclass/{classNo}"	
 	let markers = new Array();
 	let infos = new Array();
 	
