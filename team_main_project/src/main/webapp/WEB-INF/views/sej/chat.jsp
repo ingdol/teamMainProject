@@ -25,7 +25,7 @@
 					
 					<c:if test="${not empty sessionScope.sid}"> <!-- 로그인했을때 --> 
 						<div id="yourName" class="yourInputBox">
-							<input type="text" name="userName" id="userName" value="${mem.memNick}" class="chattingInput">
+							<input type="hidden" type="text" name="userName" id="userName" value="${mem.memNick}" class="chattingInput">
 							<button onclick="chatName()" id="startBtn" class="chattingBtn">채팅 시작</button>
 						</div>
 					</c:if>

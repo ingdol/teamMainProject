@@ -33,10 +33,9 @@ $(function(){
 	
    $(".moim4").on('click',function(){
 		console.log("a");
-		$('.moiminfodetail').hide();
 		$('.moimcommu').hide();
 		$('.moimphoto').hide();
-		/*$('.moimchatting').show();*/
+		$('.moiminfodetail').show();
 		/*location.href='/chat';*/
 	});
 	// $(".gatherschedule").on('click',function(){
