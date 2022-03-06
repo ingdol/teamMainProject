@@ -177,11 +177,44 @@ public class SunController {
 		return "/sun/allmoimdetail";
 	}
 	
-	@RequestMapping("/sun/allclassdetail")
+	@RequestMapping("/sun/allclassdetail/{hobbyNo}")
 	public String allclassdetail(@PathVariable String hobbyNo, Model model) {
-		ArrayList<GatheringVO> Result = gatherser.showlist(hobbyNo);
+		ArrayList<ClassVO> Result = classser.listClass(hobbyNo);
 		model.addAttribute("Result",Result);
 		return "/sun/allclassdetail";
 	}
 	
+	@RequestMapping("/sun/allmoim/filter")
+	public String filter( @RequestParam("gatArea") String gatArea,
+				@RequestParam("hobbyNo") String hobbyNo,
+						Model model) {
+		ArrayList<GatheringVO> gatheringResult = gatherser.filtermoim(gatArea, hobbyNo);
+		ArrayList<ClassVO> classResult = classser.filterclass(gatArea, hobbyNo);	
+		model.addAttribute("gatheringResult",gatheringResult);
+		model.addAttribute("classResult",classResult);
+		System.out.println(gatheringResult);
+		System.out.println(classResult);
+		return "/sun/allmoimajax";
+	}
+	
+	@RequestMapping("/sun/allmoimdetail2/{hobbyNo}")
+	public String filmoim(@PathVariable String hobbyNo, Model model) {
+		ArrayList<GatheringVO> gatheringResult = gatherser.showlist(hobbyNo);
+		model.addAttribute("gatheringResult",gatheringResult);
+		return "/sun/allmoimdetail2";
+	}
+	
+	//필터-gatarea,hobbyno-모임전체보기??
+//	@RequestMapping("/sun/allmoim/filter")
+//	public String filterm( @RequestParam("gatArea") String gatArea,
+//				@RequestParam("hobbyNo") String hobbyNo,
+//						Model model) {
+//		ArrayList<GatheringVO> gatheringResult = gatherser.filtermoim(gatArea, hobbyNo);
+//		ArrayList<ClassVO> classResult = classser.filterclass(gatArea, hobbyNo);	
+//		model.addAttribute("gatheringResult",gatheringResult);
+//		model.addAttribute("classResult",classResult);
+//		System.out.println(gatheringResult);
+//		System.out.println(classResult);
+//		return "/sun/allmoimajax";
+//	}
 }

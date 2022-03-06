@@ -61,20 +61,18 @@ $(function(){
 		
 		var gatArea = $('#gatArea').val();
 		var hobbyNo = $('#category').val();
-		console.log(gatArea+hobbyNo);
-		
+		console.log(gatArea+","+hobbyNo);
 		
 		$.ajax({
 			type:"post",
 			url:"/sun/allmoim/filter",
 			data:{"gatArea": gatArea,
-					  "hobbyNo": hobbyNo},  /* 컨트롤러에서 받을 때*/
-			
+				"hobbyNo": hobbyNo},  /* 컨트롤러에서 받을 때*/			
+			/*async: false,*/
 			dataType:'text',
 			success:function(result){
 				if(result !=''){	
 				$('#allmoimclass').empty();
-				console.log(result);
 				$('#allmoimclass').append(result);
 				}
 				
@@ -91,7 +89,7 @@ $(function(){
 				alert("전송 실패");
 			},
 			complete:function(data, textStatus){
-				alert("작업을 완료했습니다");
+				console.log("작업을 완료했습니다");
 			}
 		});		
 	});			

@@ -20,24 +20,17 @@
 	<div class="formbox">
 		<form class="find">
 			 <span>
-                    <select name="gatArea" id="gatArea" onchange="categoryChange(this)">
+                    <select name="gatArea" id="gatArea">
                         <option value="">시/도 선택</option>
                         <option value="서울">서울 특별시</option>
                         <option value="강원">강원도</option>
                         <option value="경기">경기도</option>
-                        <option value="경남">경상남도</option>
-                        <option value="경북">경상북도</option>
-                        <option value="광주">광주 광역시</option>
-                        <option value="대구">대구 광역시</option>
-                        <option value="대전">대전 광역시</option>
+                        <option value="경상">경상도</option>
+                        <option value="충청">충청도</option>
+                        <option value="전라">전라도</option>
                         <option value="부산">부산 광역시</option>
-                        <option value="울산">울산 광역시</option>
                         <option value="인천">인천 광역시</option>
-                        <option value="전남">전라남도</option>
-                        <option value="전북">전라북도</option>
                         <option value="제주">제주 특별자치도</option>
-                        <option value="충남">충청남도</option>
-                        <option value="충북">충청북도</option>
                     </select>                  
             </span>
             <span> 
@@ -75,11 +68,11 @@
 					</div>
 				</c:forEach>
 				</div>
-				<div class="plus">모임더보기</div>
+				<div class="moimplus"><c:forEach items="${gatheringResult}" begin="0" end="0" var="gat"><span class="spannone">${gat.hobbyNo}</span></c:forEach>모임더보기</div>
 			</div>
 
-			<div class="class">
-				<div class="cardbox" id="moimcard">
+			<div class="clas">
+				<div class="cardbox" id="classcard">
 				<c:forEach items="${classResult}" begin="0" end="4" var="clas">
 					<div class="card">
 						<img class="card-img-top" src="<c:url value='/images/${clas.classPhoto}'/>"/>
@@ -93,7 +86,10 @@
 					</div>
 				</c:forEach>
 				</div>
-				<div class="plus">클래스더보기</div>
+				<div class="classplus">
+				<c:forEach items="${classResult}" begin="0" end="0" var="clas">
+				<span class="spannone">${clas.hobbyNo}</span>
+				</c:forEach>클래스더보기</div>
 			</div>
 	</section>
 		<!-- --------------------------------- -->

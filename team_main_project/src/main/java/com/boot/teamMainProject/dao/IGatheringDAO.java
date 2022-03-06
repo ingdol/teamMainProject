@@ -3,6 +3,8 @@ package com.boot.teamMainProject.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.boot.teamMainProject.model.GatheringVO;
 
 public interface IGatheringDAO {
@@ -14,7 +16,7 @@ public interface IGatheringDAO {
 	ArrayList<GatheringVO> hateasc();	
 	ArrayList<GatheringVO> hateasc2();
 	ArrayList<GatheringVO> hateasc3();
-	ArrayList<GatheringVO> filtermoim(String gatArea,String hobbyNo);
+	ArrayList<GatheringVO> filtermoim(@Param("gatArea") String gatArea,@Param("hobbyNo") String hobbyNo);
 
 	//sej
 	ArrayList<GatheringVO> listAllGatherBest();   // 전체 모임 조회 - 베스트

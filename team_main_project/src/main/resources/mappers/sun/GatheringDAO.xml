@@ -45,7 +45,19 @@
   		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 20,10
   	</select> 
   	<select id="filtermoim" resultMap="gatheringResult">
-		SELECT * FROM Gathering WHERE (gatArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+		SELECT * FROM Gathering
+		<if test="gatArea=='' and hobbyNo==''">
+			ORDER BY gatHate ASC
+		</if>
+		<if test="gatArea!='' and hobbyNo==''">
+			WHERE (gatArea LIKE CONCAT('%', #{gatArea}, '%'))
+		</if>
+		<if test="gatArea=='' and hobbyNo!=''">
+			WHERE hobbyNo=#{hobbyNo}
+		</if>
+		<if test="gatArea!='' and hobbyNo!=''">
+			WHERE (gatArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+		</if>	
 	</select>
   	
   	<!-- sej -->

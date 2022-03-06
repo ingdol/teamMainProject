@@ -54,7 +54,19 @@
         SELECT * FROM Class WHERE classNo=#{classNo}
      </select>
      <select id="filterclass" resultMap="classResult">
-		SELECT * FROM Class WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+		SELECT * FROM Class
+		<if test="gatArea=='' and hobbyNo==''">
+			ORDER BY classHate ASC
+		</if>
+		<if test="gatArea!='' and hobbyNo==''">
+			WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%'))
+		</if>
+		<if test="gatArea=='' and hobbyNo!=''">
+			WHERE hobbyNo=#{hobbyNo}
+		</if>
+		<if test="gatArea!='' and hobbyNo!=''">
+			WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
+		</if>	
 	</select>
 
 	<select id="listFindClass" resultMap="classResult">

@@ -10,7 +10,7 @@
 		<script src="<c:url value='/js/sun/allmoimajax.js'/>"></script>
 	</head>
 	<body>
-
+	<br>
 			<h1 id="sectioninfo">전체모임목록</h1>
 			<div class="moim">
 				<div class="cardbox" id="moimcard">
@@ -52,6 +52,6 @@
 				<span class="spannone">${clas.hobbyNo}</span>
 				</c:forEach>클래스더보기</div>
 			</div>
-
+	<br>
 	</body>
 </html>
