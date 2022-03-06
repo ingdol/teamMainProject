@@ -36,7 +36,7 @@
 					<div>${detail.gatName}</div>
 					<div>
 						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
-						<a href="<c:url value='/chat/${sessionScope.sid}/${detail.gatNo}'/>"><span class="quest">1:1문의</span></a>
+						<a href="<c:url value='/askChat/${sessionScope.sid}/${detail.gatNo}'/>"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		
 				</c:forEach>
@@ -48,7 +48,9 @@
 						<li class="moim1"><button type="button" class="btn btn-outline-primary">정보</button></li>
 						<li class="moim2"><button type="button" class="btn btn-outline-primary">모임게시판</button></li>
 						<li class="moim3"><button type="button" class="btn btn-outline-primary">사진첩</button></li>
-						<li class="moim4"><button type="button" class="btn btn-outline-primary">채팅</button></li>
+						<c:forEach items="${detail}" var="detail">
+						<li class="moim4"><a href="<c:url value='/chat/${sessionScope.sid}/${detail.gatNo}'/>"><button type="button" class="btn btn-outline-primary" id="chatBtn">채팅</button></a></li>
+						</c:forEach>		
 					</ul>
 				</div>
 				<div class="detailinfo">

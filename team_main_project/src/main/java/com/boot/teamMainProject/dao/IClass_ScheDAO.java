@@ -7,7 +7,7 @@ import com.boot.teamMainProject.model.Class_Sche_PerVO;
 import java.util.ArrayList;
 
 public interface IClass_ScheDAO {
-    void MakeClassSchedule(String memNick, int gatNo, String classScheTitle, String classScheDate, String classScheTime, int classScheMax, String scheduleAddress, String scheduleSpace, String classScheSpace, String classScheInfo);// 일정 만들기
+    void MakeClassSchedule(String memNick, int classNo, String classScheTitle, String classScheDate, String classScheTime, int classScheMax, String scheduleAddress, String scheduleSpace, String classScheSpace, String classScheInfo);// 일정 만들기
     ArrayList<Class_ScheVO> LoadClass_Sche(int classNo); // 글 목록 보기 전용
     void updateViewCountForClass(int classScheNo);
     Class_ScheVO LoadClass_Schedule(int classScheNo); // 상세 보기 전용

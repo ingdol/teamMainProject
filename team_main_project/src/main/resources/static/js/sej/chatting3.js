@@ -21,19 +21,17 @@ var ws;
 					if(si != ''){
 						$("#sessionId").val(si); 
 					}
-				}else if(d.type == "message"){
+				}
+				}else if(d.type == "message2"){
 					if(d.sessionId == $("#sessionId").val()){
-						$("#chating").append("<p class='me'>" + d.msg + "</p>");	
+						$("#chatting2").append("<p class='me'>" + d.msg + "</p>");	
 					}else{
-						$("#chating").append("<p class='othersText'>" + d.userName + " </p><p class='othersBox'>" + d.msg + "</p>");
+						$("#chatting2").append("<p class='othersText'>" + d.userName + " </p><p class='othersBox'>" + d.msg + "</p>");
 					}
-						
 				}else{
 					console.warn("unknown type!")
 				}
 			}
-			// 스크롤해서 올리기										   
-			$("#chating").scrollTop($("#chating").prop("scrollHeight"));
 		}
 
 		document.addEventListener("keypress", function(e){
@@ -41,9 +39,8 @@ var ws;
 				send();
 			}
 		});
-		
 	}
-
+	
 	function chatName(){
 		var userName = $("#userName").val();
 		if(userName == null || userName.trim() == ""){
@@ -56,14 +53,14 @@ var ws;
 		}
 	}
 
-	function send() {
+	function send2() {
 		var option ={
-			type: "message",
+			type: "message2",
 			roomNumber: $("#roomNumber").val(),
 			sessionId : $("#sessionId").val(),
 			userName : $("#userName").val(),
-			msg : $("#chatting").val()
+			msg : $("#chatting2").val()
 		}
 		ws.send(JSON.stringify(option))
-		$('#chatting').val("");
+		$('#chatting2').val("");
 	}

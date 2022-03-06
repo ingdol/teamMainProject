@@ -70,7 +70,7 @@ public class ClassController {
       spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
 
       service.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo); // 모임 만들기
-      reservationService.ReservationCompGather(classNo, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
+      reservationService.ReservationCompClass(classNo, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
 
    }
 
@@ -87,7 +87,7 @@ public class ClassController {
                                                     @RequestParam("scheduleSpace") String scheduleSpace,
                                                     @RequestParam("classScheSpace") String classScheSpace,
                                                     @RequestParam("classScheInfo") String classScheInfo) {
-      service.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo);
+      service.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo); // 모임 만들기
    }
 
    // 모임 일정 공지

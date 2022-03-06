@@ -1,3 +1,31 @@
+$(function(){
+	msg = $("#chatWelcome").val()
+	$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+
+	
+	/*메뉴 누르면 게시판 보이도록*/
+	$(".chat1").on('click',function(){
+		msg = $("#chatInfo").val()
+		$("#chating").append("<p class='me'>" +"모임소개"+ "</p>");	
+		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+		$("#chating").scrollTop($("#chating").prop("scrollHeight"));
+	});
+	
+	$(".chat2").on('click',function(){
+		msg = $("#chatTime").val()
+		$("#chating").append("<p class='me'>" +"모임시간"+ "</p>");	
+		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+		$("#chating").scrollTop($("#chating").prop("scrollHeight"));
+	});
+	
+	$(".chat3").on('click',function(){
+		msg = $("#chatArea").val()
+		$("#chating").append("<p class='me'>" +"모임장소"+ "</p>");	
+		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");									   
+		$("#chating").scrollTop($("#chating").prop("scrollHeight"));
+	});
+});
+
 var ws;
 
 	function wsOpen(){
@@ -34,6 +62,7 @@ var ws;
 			}
 			// 스크롤해서 올리기										   
 			$("#chating").scrollTop($("#chating").prop("scrollHeight"));
+
 		}
 
 		document.addEventListener("keypress", function(e){
@@ -41,7 +70,6 @@ var ws;
 				send();
 			}
 		});
-		
 	}
 
 	function chatName(){

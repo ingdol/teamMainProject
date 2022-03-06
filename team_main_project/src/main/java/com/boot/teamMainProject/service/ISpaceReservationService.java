@@ -10,4 +10,5 @@ public interface ISpaceReservationService {
     ArrayList<SpaceReservationVO> CheckReservationTime(int spaceNo); // 예약 시간 체크
     void ReservationComp(String memNick, int spaceNo, String date, String time, String time2, int spacePrice); // 예약 하기(개인)
     void ReservationCompGather(int gatNo, String memNick, int spaceNo, String date, String time, String time2, int spacePrice); // 예약 하기(모임)
+    void ReservationCompClass(int classNo, String memNick, int spaceNo, String date, String time, String time2, int spacePrice); // 예약 하기(클래스)
 }

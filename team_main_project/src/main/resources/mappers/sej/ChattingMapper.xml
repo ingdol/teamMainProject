@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.teamMainProject.dao.IChattingDAO">
+
+    <resultMap id="chattingResult" type="com.boot.teamMainProject.model.ChattingVO">
+        <result property="gatNo" column="gatNo" />
+        <result property="chatNo" column="chatNo" />
+        <result property="chatWelcome" column="chatWelcome" />
+        <result property="chatInfo" column="chatInfo" />
+        <result property="chatTime" column="chatTime" />
+        <result property="chatArea" column="chatArea" />
+    </resultMap>
+    
+    <select id="detailChatting" resultMap="chattingResult">
+        SELECT * FROM Chatting WHERE gatNo=#{gatNo}
+    </select>
+</mapper>

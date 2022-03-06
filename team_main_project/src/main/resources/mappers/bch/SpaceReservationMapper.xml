@@ -23,10 +23,15 @@
         INSERT INTO Space_Reservation (gatNo, memNick, spaceNo, spaceReserDate, spaceReserTime)
         VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{spaceReserDate}, #{spaceReserTime})
     </insert>
-    <!-- 모임 공간 예약(모임 아님) -->
+    <!-- 모임 공간 예약 -->
     <insert id="ReservationCompGather" >
         INSERT INTO Space_Reservation (gatNo, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
         VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
+    </insert>
+    <!-- 클래스 공간 예약 -->
+    <insert id="ReservationCompClass" >
+        INSERT INTO Space_Reservation (classNo, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
+        VALUES (#{classNo}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
     </insert>
 <!--  예약 시간 조회  -->
     <select id="CheckReservationTime" resultMap="spaceReser">

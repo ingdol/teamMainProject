@@ -35,4 +35,9 @@ public class SpaceReservationService implements ISpaceReservationService{
     public void ReservationCompGather(int gatNo, String memNick, int spaceNo, String date, String time, String time2, int spacePrice) {
         dao.ReservationCompGather(gatNo, memNick, spaceNo, date, time, time2, spacePrice);
     }
+
+    @Override
+    public void ReservationCompClass(int classNo, String memNick, int spaceNo, String date, String time, String time2, int spacePrice) {
+        dao.ReservationCompClass(classNo, memNick, spaceNo, date, time, time2, spacePrice);
+    }
 }

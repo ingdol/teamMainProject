@@ -17,7 +17,7 @@ $(document).ready(function(){
             data:{"memNick": $('#memNick').val(),
                 "classNo": $('#classNo').val(),
                 "classScheTitle": $('#classScheTitle').val(),
-                  "classScheDate": $('#classScheDate').val(),
+                "classScheDate": $('#classScheDate').val(),
                 "classScheTime": $('#classScheTime').val(),
                 "classScheMax": $('#classScheMax').val(),
                 "scheduleAddress": $('#scheduleAddress').val(),
@@ -27,10 +27,12 @@ $(document).ready(function(){
                   },
             success:function (result) {
                 alert("일정 등록 완료!");
-                // window.location.replace('/sun/detailclass/'+$('#classNo').val());
+                window.location.replace('/sun/detailclass/'+$('#classNo').val());
             },
             error:function(data, textStatus){
                 alert("일정 등록 실패!");
+                console.log(data);
+                console.log(textStatus);
             }
         })
     });
@@ -57,7 +59,7 @@ $(document).ready(function(){
             },
             success:function (result) {
                 alert("일정 등록 & 공간 예약 완료!");
-                // window.location.replace('/sun/detailclass/'+$('#classNo').val());
+                window.location.replace('/sun/detailclass/'+$('#classNo').val());
             },
             error:function(data, textStatus){
                 alert("일정 등록 실패!");
