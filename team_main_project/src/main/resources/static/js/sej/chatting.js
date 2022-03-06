@@ -32,6 +32,8 @@ var ws;
 					console.warn("unknown type!")
 				}
 			}
+			// 스크롤해서 올리기										   
+			$("#chating").scrollTop($("#chating").prop("scrollHeight"));
 		}
 
 		document.addEventListener("keypress", function(e){
@@ -39,6 +41,7 @@ var ws;
 				send();
 			}
 		});
+		
 	}
 
 	function chatName(){

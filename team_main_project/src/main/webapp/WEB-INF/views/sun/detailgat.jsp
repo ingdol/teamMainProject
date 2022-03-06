@@ -36,7 +36,7 @@
 					<div>${detail.gatName}</div>
 					<div>
 						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
-						<a href="<c:url value='/chat/${sessionScope.sid}/${detail.gatNo}'/>"><span class="quest">1:1문의</span></a>
+						<a href="<c:url value='/askChat/${sessionScope.sid}/${detail.gatNo}'/>"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		
 				</c:forEach>

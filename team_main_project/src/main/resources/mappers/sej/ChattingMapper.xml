@@ -6,6 +6,7 @@
 
     <resultMap id="chattingResult" type="com.boot.teamMainProject.model.ChattingVO">
         <result property="gatNo" column="gatNo" />
+        <result property="chatNo" column="chatNo" />
         <result property="chatWelcome" column="chatWelcome" />
         <result property="chatInfo" column="chatInfo" />
         <result property="chatTime" column="chatTime" />

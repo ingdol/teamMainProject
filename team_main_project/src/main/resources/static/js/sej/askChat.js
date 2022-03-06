@@ -1,34 +1,28 @@
 $(function(){
-	$('.chatInfo').hide();
-	$('.chatTime').hide();
-	$('.chatArea').hide();
+	msg = $("#chatWelcome").val()
+	$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+
 	
 	/*메뉴 누르면 게시판 보이도록*/
 	$(".chat1").on('click',function(){
 		msg = $("#chatInfo").val()
-		$('.chatInfo').show();
-		$('.chatTime').hide();
-		$('.chatArea').hide();
 		$("#chating").append("<p class='me'>" +"모임소개"+ "</p>");	
 		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+		$("#chating").scrollTop($("#chating").prop("scrollHeight"));
 	});
 	
 	$(".chat2").on('click',function(){
 		msg = $("#chatTime").val()
-		$('.chatInfo').hide();
-		$('.chatTime').show();
-		$('.chatArea').hide();
 		$("#chating").append("<p class='me'>" +"모임시간"+ "</p>");	
 		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+		$("#chating").scrollTop($("#chating").prop("scrollHeight"));
 	});
 	
 	$(".chat3").on('click',function(){
 		msg = $("#chatArea").val()
-		$('.chatInfo').hide();
-		$('.chatTime').hide();
-		$('.chatArea').show();
 		$("#chating").append("<p class='me'>" +"모임장소"+ "</p>");	
-		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");
+		$("#chating").append("<p class='othersText'>" + "개설자"+ " </p><p class='othersBox'>" + msg + "</p>");									   
+		$("#chating").scrollTop($("#chating").prop("scrollHeight"));
 	});
 });
 
@@ -66,6 +60,9 @@ var ws;
 					console.warn("unknown type!")
 				}
 			}
+			// 스크롤해서 올리기										   
+			$("#chating").scrollTop($("#chating").prop("scrollHeight"));
+
 		}
 
 		document.addEventListener("keypress", function(e){

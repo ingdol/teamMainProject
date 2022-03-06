@@ -2,6 +2,7 @@ package com.boot.teamMainProject.model;
 
 public class ChattingVO {
 	private int gatNo;
+	private int chatNo;
 	private String chatWelcome;
 	private String chatInfo;
 	private String chatTime;
@@ -12,6 +13,12 @@ public class ChattingVO {
 	}
 	public void setGatNo(int gatNo) {
 		this.gatNo = gatNo;
+	}
+	public int getChatNo() {
+		return chatNo;
+	}
+	public void setChatNo(int chatNo) {
+		this.chatNo = chatNo;
 	}
 	public String getChatWelcome() {
 		return chatWelcome;

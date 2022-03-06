@@ -69,22 +69,9 @@ public class ChatController {
 		mv.setViewName("sej/chat");
 		return mv;
 	}
-	
-//	@RequestMapping("/chat3/{memId}/{gatNo}")
-//	public ModelAndView chat3(@PathVariable String memId, @PathVariable int gatNo, Model model) {
-//
-//		MemberVO mem = service.detailViewMember(memId); // 상세 회원 조회 메소드 그대로 사용
-//		model.addAttribute("mem", mem);
-//		ArrayList<GatheringVO> gatV = Gatherservice.detailgat(gatNo);
-//		model.addAttribute("gatV", gatV);
-//		
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("sej/searchTest");
-//		return mv;
-//	}
-	
-	@RequestMapping("/testSej/{memId}/{gatNo}")
-	public ModelAndView detailViewMember(@PathVariable String memId, @PathVariable String gatNo, Model model) {
+
+	@RequestMapping("/askChat/{memId}/{gatNo}")
+	public ModelAndView askChat(@PathVariable String memId, @PathVariable String gatNo, Model model) {
 		MemberVO mem = service.detailViewMember(memId); // 상세 회원 조회 메소드 그대로 사용
 		model.addAttribute("mem", mem);
 		
@@ -92,7 +79,7 @@ public class ChatController {
 		model.addAttribute("chat", chat);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sej/searchTest");
+		mv.setViewName("sej/askChat");
 		return mv;
 	}
 	
