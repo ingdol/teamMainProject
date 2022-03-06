@@ -31,15 +31,14 @@ $(function(){
 		$('.moimphoto').show();
 	});
 	
-	$(".moim4").on('click',function(){
+   $(".moim4").on('click',function(){
 		console.log("a");
 		$('.moiminfodetail').hide();
 		$('.moimcommu').hide();
 		$('.moimphoto').hide();
 		/*$('.moimchatting').show();*/
-		location.href='/chat';
+		/*location.href='/chat';*/
 	});
-	
 	// $(".gatherschedule").on('click',function(){
 	// 	location.href='/GatherSchedule?';
 	// });

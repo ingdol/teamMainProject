@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.boot.teamMainProject.model.ChattingVO;
 import com.boot.teamMainProject.model.GatheringVO;
 import com.boot.teamMainProject.model.MemberVO;
 import com.boot.teamMainProject.model.Room;
+import com.boot.teamMainProject.service.ChattingService;
 import com.boot.teamMainProject.service.GatheringService;
 import com.boot.teamMainProject.service.MemberService;
 
@@ -29,16 +31,19 @@ public class ChatController {
 	@Autowired
 	GatheringService Gatherservice;
 
+	@Autowired
+	ChattingService ChatService;
+
 	List<Room> roomList = new ArrayList<Room>();
 	static int roomNumber = 0;
 	
-//	@RequestMapping("/chat/{memId}")
+//	@RequestMapping("/chat2/{memId}")
 //	public ModelAndView chat(@PathVariable String memId, Model model) {
 //
 //		MemberVO mem = service.detailViewMember(memId); // 상세 회원 조회 메소드 그대로 사용
 //		model.addAttribute("mem", mem);
 //		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("sej/chat");
+//		mv.setViewName("sej/searchTest");
 //		return mv;
 //	}
 //	
@@ -65,6 +70,31 @@ public class ChatController {
 		return mv;
 	}
 	
+//	@RequestMapping("/chat3/{memId}/{gatNo}")
+//	public ModelAndView chat3(@PathVariable String memId, @PathVariable int gatNo, Model model) {
+//
+//		MemberVO mem = service.detailViewMember(memId); // 상세 회원 조회 메소드 그대로 사용
+//		model.addAttribute("mem", mem);
+//		ArrayList<GatheringVO> gatV = Gatherservice.detailgat(gatNo);
+//		model.addAttribute("gatV", gatV);
+//		
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("sej/searchTest");
+//		return mv;
+//	}
+	
+	@RequestMapping("/testSej/{memId}/{gatNo}")
+	public ModelAndView detailViewMember(@PathVariable String memId, @PathVariable String gatNo, Model model) {
+		MemberVO mem = service.detailViewMember(memId); // 상세 회원 조회 메소드 그대로 사용
+		model.addAttribute("mem", mem);
+		
+		ChattingVO chat = ChatService.detailChatting(gatNo);
+		model.addAttribute("chat", chat);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("sej/searchTest");
+		return mv;
+	}
 	
 	/**
 	 * 방 페이지

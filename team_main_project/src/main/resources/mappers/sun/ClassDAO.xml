@@ -33,7 +33,7 @@
 
 	<!-- 클래스 검색  -->
 	<select id="classSearch" resultMap="classResult" parameterType="hashmap">
-		SELECT * FROM Class WHERE (classTitle LIKE CONCAT('%', #{keyword}, '%')) AND (classArea LIKE CONCAT('%', #{keyword}, '%'))
+		SELECT * FROM Class WHERE (classTitle LIKE CONCAT('%', #{keyword}, '%')) OR (classArea LIKE CONCAT('%', #{keyword}, '%'))
 	</select>
     
      
