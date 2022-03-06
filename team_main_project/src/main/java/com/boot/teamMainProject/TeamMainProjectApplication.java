@@ -6,6 +6,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.boot.teamMainProject.dao.GatherDetComDAO;
+import com.boot.teamMainProject.dao.IChatbotDAO;
+import com.boot.teamMainProject.dao.IChattingDAO;
+import com.boot.teamMainProject.dao.IClassDAO;
+import com.boot.teamMainProject.dao.IClassRevDAO;
+import com.boot.teamMainProject.dao.ICommunityDAO;
+import com.boot.teamMainProject.dao.IGatherDetDAO;
+import com.boot.teamMainProject.dao.IGatherScheduleDAO;
+import com.boot.teamMainProject.dao.IGatheringDAO;
+import com.boot.teamMainProject.dao.IHobbyCtgDAO;
+import com.boot.teamMainProject.dao.IMemDAO;
+import com.boot.teamMainProject.dao.ISpaceDAO;
+import com.boot.teamMainProject.dao.ISpaceReservationDAO;
+import com.boot.teamMainProject.dao.ISpaceReviewDAO;
+import com.boot.teamMainProject.dao.ISpace_CtgDAO;
+
 @SpringBootApplication
 @ComponentScan(basePackages= {"com.boot.teamMainProject"}) 
 //@MapperScan(basePackageClasses = IProductDAO.class)
@@ -23,6 +39,7 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan(basePackageClasses = ISpaceDAO.class)
 @MapperScan(basePackageClasses = ISpaceReservationDAO.class)
 @MapperScan(basePackageClasses = ISpaceReviewDAO.class)
+@MapperScan(basePackageClasses = IChattingDAO.class)
 @MapperScan(basePackageClasses = IClass_ScheDAO.class)
 
 

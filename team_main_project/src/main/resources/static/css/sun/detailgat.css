@@ -99,6 +99,10 @@ span{
 	width: 100%;
 }
 
+#chatBtn {
+	width:256px;
+}
+
 /* **********모임상세카테고리************* */
 .moimdetail .detailinfo{
 	margin-top: 2%;
