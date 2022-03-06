@@ -81,7 +81,8 @@
 									<div class="writer">글쓴이</div>
 									<div class="date">작성일</div>
 								</div>
-								<c:forEach items="${revlist}" var="com"> <!-- 일정 공지 보이게 넣으려다가 충돌나면 보기 불편하실 거 같아서 아직 안 넣었어요! -->
+<%--								일정 공지 보이게 넣으려다가 충돌나면 보기 불편하실 거 같아서 아직 안 넣었어요!--%>
+								<c:forEach items="${revlist}" var="com">
 									<div class="top">
 										<div class="num">${com.classRevNo}</div>
 										<div class="title" id="comTitle">
@@ -113,7 +114,8 @@
 			<div class="moimjoin">
 				<h3 id="sectioninfo">해당클래스찜,가입버튼</h3>
 				<ul>
-					<c:choose> <!-- choose 여는 태그부터 닫는 태그까지 일정 잡기 버튼 만들었습니다! -->
+<%--					choose 여는 태그부터 닫는 태그까지 일정 잡기 버튼 만들었습니다!--%>
+					<c:choose>
 						<c:when test="${empty sessionScope.snick}">
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>
 						</c:when>

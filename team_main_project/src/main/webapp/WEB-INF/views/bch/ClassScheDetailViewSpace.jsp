@@ -138,8 +138,7 @@
                     <hr size="5px" width="100%" align="left" color="#5da5f8" style="margin-bottom: 10px">
                     <c:forEach items="${spaceReviewTest}" var="spaceReview">
                         <div class="revMemNick" id="revMemNick">${spaceReview.memNick}</div>
-                        <p>제목</p><div class="revMemTitle" id="revMemTitle">${spaceReview.spaceRevTitle}</div>
-                        <p>내용</p><div class="revInfo" id="revInfo">${spaceReview.spaceRevTitle}</div>
+                        <div class="revInfo" id="revInfo" style="white-space:pre;" >${spaceReview.spaceRevTitle}</div>
                         <c:set var="spaceRevPhoto" value="${spaceReview.spaceRevPhoto}"></c:set>
                         <c:set var="spaceRevPhotoArr" value="${fn:split(spaceRevPhoto,' ')}"></c:set>
                         <c:forEach items="${spaceRevPhotoArr}" var="spaceRevPictures">
