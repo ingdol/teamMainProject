@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.boot.teamMainProject.dao.GatherDetComDAO;
 import com.boot.teamMainProject.dao.IChatbotDAO;
+import com.boot.teamMainProject.dao.IChattingDAO;
 import com.boot.teamMainProject.dao.IClassDAO;
 import com.boot.teamMainProject.dao.IClassRevDAO;
 import com.boot.teamMainProject.dao.ICommunityDAO;
@@ -37,6 +38,7 @@ import com.boot.teamMainProject.dao.ISpace_CtgDAO;
 @MapperScan(basePackageClasses = ISpaceDAO.class)
 @MapperScan(basePackageClasses = ISpaceReservationDAO.class)
 @MapperScan(basePackageClasses = ISpaceReviewDAO.class)
+@MapperScan(basePackageClasses = IChattingDAO.class)
 
 public class TeamMainProjectApplication {
 
