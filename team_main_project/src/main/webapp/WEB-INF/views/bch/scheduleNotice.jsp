@@ -44,7 +44,7 @@
                   <table border = "0" align="center" >
                       <tr>
                           <td colspan="4"  class="boardDetail" align="left">
-                            <p>${gatherSchedule.gatScheInfo}</p>
+                              <div style="white-space:pre;">${gatherSchedule.gatScheInfo}</div>
                               <br>
                               <p>장소 : ${gatherSchedule.gatScheLocation}</p>
                               <c:set var="spaceT" value="${gatherSchedule.gatScheTime}"></c:set>
@@ -70,12 +70,19 @@
                       </table>
                   </ol>
               </div>
-              <input type="hidden" id="ajaxMemNick" value="코딩이">
+              <c:if test="${empty sessionScope.snick}">
+                  <input type="button" value="일정 참가" id="FakejoinGatherBtn">
+              </c:if>
+              <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
               <input type="hidden" id="ajaxGatScheNo" value="${gatherSchedule.gatScheNo}">
               <input type="hidden" id="ajaxGatNo" value="${gatherSchedule.gatNo}">
-              <input type="button" value="일정 참가" id="joinGatherBtn">
+              <c:if test="${not empty sessionScope.snick}">
+                  <input type="button" value="일정 참가" id="joinGatherBtn">
+              </c:if>
+              <c:if test="${sessionScope.snick eq gatherSchedule.memNick}">
+                  <input type="button" value="삭 제" id="deleteGatherBtn">
+              </c:if>
           </section>
-
           <!-- BOTTOM  -->
           <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
       </div>

@@ -71,7 +71,7 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">BEST 클래스</div>
-						<div id="allView"><a href="/VIewAllClass">전체 보기</a></div>
+						<div id="allView"><a href="#">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">

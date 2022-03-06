@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boot.teamMainProject.dao.IClass_ScheDAO">
+
+    <resultMap id="classSchedule" type="com.boot.teamMainProject.model.Class_ScheVO">
+        <result property="classScheNo" column="classScheNo" />
+        <result property="classNo" column="classNo" />
+        <result property="memNick" column="memNick" />
+        <result property="classScheTitle" column="classScheTitle" />
+        <result property="classScheInfo" column="classScheInfo" />
+        <result property="classScheDate" column="classScheDate" />
+        <result property="classScheTime" column="classScheTime" />
+        <result property="classScheLocation" column="classScheLocation" />
+        <result property="classScheMax" column="classScheMax" />
+        <result property="classScheSpace" column="classScheSpace" />
+        <result property="classScheWriteDate" column="classScheWriteDate" />
+        <result property="classScheView" column="classScheView" />
+    </resultMap>
+    <!--  모임 일정 만들기  -->
+    <insert id="MakeClassSchedule"  >
+        INSERT INTO Class_Sche (classNo, memNick, classScheTitle, classScheInfo, classScheDate, classScheTime, classScheLocation, classScheMax, classScheSpace, classScheView)
+        VALUES (#{classNo}, #{memNick}, #{classScheTitle}, #{classScheInfo}, #{classScheDate}, #{classScheTime}, CONCAT(#{scheduleAddress},#{scheduleSpace}),
+                #{classScheMax}, #{classScheSpace}, 0)
+    </insert>
+    <!--  모임 일정 불러오기(전체 페이지 용)  -->
+    <select id="LoadClass_Sche" resultMap="classSchedule">
+        select * from Class_Sche where classNo=#{classtNo}
+    </select>
+    <!--  모임 일정 불러오기(상세 페이지 용)  -->
+    <select id="LoadClass_Schedule" resultMap="classSchedule">
+        select * from Class_Sche where classScheNo=#{classScheNo}
+    </select>
+    <!--  조회수 증가  -->
+    <update id="updateViewCountForClass">
+        update Class_Sche set classScheView = classScheView + 1 where classScheNo = #{classScheNo}
+    </update>
+    <!--  모임 최대 인원 조회  -->
+    <select id="CheckMaxPersonForClass" resultType="int" parameterType="int">
+        select classScheMax from Class_Sche where clasScheNo=#{classScheNo}
+    </select>
+    <!--  모임 일정 삭제  -->
+    <delete id="DeleteClassSchedule">
+        DELETE FROM Class_Sche WHERE classScheNo=#{classScheNo}
+    </delete>
+</mapper>

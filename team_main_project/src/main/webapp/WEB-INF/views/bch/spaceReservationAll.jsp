@@ -5,9 +5,11 @@
         <title>공간 대여 전체</title>
         <script>
             function checkPerson() {
-                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "" || $('#maxPerson').val() != /[0-9]/) {
-                    $("#maxPerson").val("");
-                    alert("1명 이하는 입력 하실 수 없습니다.")
+                if ($('#maxPerson').val() <= 0 && $('#maxPerson').val() != "") {
+                    if($('#maxPerson').val() != /[0-9]/) {
+                        $("#maxPerson").val("");
+                        alert("1명 이하는 입력 하실 수 없습니다.")
+                    }
                 }
             }
         </script>
@@ -64,7 +66,7 @@
                     <option value="7">문화생활시설</option>
                 </select>
                 </span>
-                <span><input type="number" id="maxPerson" class="maxPerson" min="1" placeholder="최대 인원" value="1" onkeyup="checkPerson()"></span>
+                <span><input type="number" id="maxPerson" class="maxPerson" min="1" placeholder="최대 인원" onkeyup="checkPerson()"></span>
 <%--                <input type="submit" value="검색" id="findPlaceBtn">--%>
                 <button id="findPlaceBtn">검색</button>
             </form>

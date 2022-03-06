@@ -14,4 +14,6 @@ public interface IGatherScheduleDAO {
     int GatherJoinNow(int gatScheNo); // 현재 참가 인원 검색
     ArrayList<Gather_Sche_PerVO> GatherJoinPerson(int gatScheNo); // 현재 참가인원 조회
     void JoinGather(int gatScheNo, int gatNo, String memNick); // 모임 참가 버튼
+    String CheckGatherScheduleOverlap(int gatScheNo, String memNick); // 모임 중복 참가 막기
+    void DeleteGatherSchedule(int gatScheNo); // 모임 글 삭제
 }

@@ -21,7 +21,7 @@
 	
    <select id="detailViewBoard" parameterType="int"
    				resultType="com.boot.teamMainProject.model.GatherDetVO">
-  		SELECT * FROM gather_det WHERE gatDetNo=#{gatDetNo}
+  		SELECT * FROM Gather_Det WHERE gatDetNo=#{gatDetNo}
    </select>
 
 <!-- 	<select id="MoveinsertGather" parameterType="String" -->
@@ -68,18 +68,18 @@
    	
    	<!--  글 수정  -->
   <update id="UpdateGatDetComp" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-  		UPDATE gather_det
+  		UPDATE Gather_Det
   		SET gatDetTitle='${gatDetTitle}', gatDetInfo='${gatDetInfo}', gatDetCategory = '${gatDetCategory}'
   		WHERE gatDetNo=#{gatDetNo}
   </update>
 	<!-- 글 삭제  -->
 	
 	<delete id="DeleteGatDetCom"  parameterType="int">
-  			DELETE FROM gather_det_com WHERE gatDetNo=#{gatDetNo}
+  			DELETE FROM Gather_Det_Com WHERE gatDetNo=#{gatDetNo}
   		</delete>
 	
   		<delete id="DeleteGatDet"  parameterType="int">
-  			DELETE FROM gather_det WHERE gatDetNo=#{gatDetNo}
+  			DELETE FROM Gather_Det WHERE gatDetNo=#{gatDetNo}
   		</delete>
   		
    	<update id="updateBoard2Read" parameterType="int">

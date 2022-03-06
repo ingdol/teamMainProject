@@ -9,6 +9,15 @@ public class SpaceReviewVO {
     private String memNick;
     private String spaceRevInfo;
     private Date spaceRevDate;
+    private String spaceRevPhoto;
+
+    public String getSpaceRevPhoto() {
+        return spaceRevPhoto;
+    }
+
+    public void setSpaceRevPhoto(String spaceRevPhoto) {
+        this.spaceRevPhoto = spaceRevPhoto;
+    }
 
     public int getSpaceNo() {
         return spaceNo;

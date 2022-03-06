@@ -38,12 +38,18 @@
 					<h3 id="sectioninfo">지역선택하기</h3>
 				</div>		
 				<c:forEach items="${gatheringResult}" begin="0" var="gr">
-				<input type="hidden" id="gat" value="${gr.gatNo}">
-				<input type="hidden" id="maps" value="${gr.gatArea}">
-				</c:forEach>
+					<div class="moim hidden">
+						<span class="moimno hidden">${gr.gatNo}</span>
+						<span class="moimname hidden">${gr.gatName}</span>
+						<span id="maps" class="area hidden">${gr.gatArea}</span>
+					</div>
+				</c:forEach>				
 				<c:forEach items="${classResult}" begin="0" var="cr">
-				<input type="hidden" id="gat" value="${cr.classNo}">
-				<input type="hidden" id="maps2" value="${cr.classArea}">
+					<div class="class hidden">
+						<span class="moimno hidden">${cr.classNo}</span>
+						<span class="moimname hidden">${cr.classTitle}</span>
+						<span id="maps2" class="area hidden">${cr.classArea}</span>
+					</div>
 				</c:forEach>
 				
 				<div class="mapphoto" id="map" style="width: 90%; height: 750px;"></div>

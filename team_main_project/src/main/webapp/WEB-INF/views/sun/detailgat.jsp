@@ -59,7 +59,7 @@
 					<div class="moiminfodetail current">
 						<h4 id="sectioninfo">!모임정보</h4>
 						<c:forEach items="${detail}" var="detail">
-						<div class="photobox"><img src="/images/ldh/${detail.gatBanPhoto}"></div>
+						<div class="photobox"><img src="/images/${detail.gatBanPhoto}"></div>
 						<div class="infobox">
 								<span class="large">모임 이름 : ${detail.gatName}</span><br>
 								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
@@ -196,24 +196,16 @@
 						<c:when test="${empty mem.memNick}">
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>
 						</c:when>
-						<c:when test="${not empty mem.memNick && (mem.gatJoinNo1 != sendGatherNo.gatNo || mem.gatJoinNo2 != sendGatherNo.gatNo || mem.gatJoinNo3 != sendGatherNo.gatNo || mem.gatJoinNo4 != sendGatherNo.gatNo || mem.gatJoinNo5 != sendGatherNo.gatNo)}">
-							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
+						<c:when test="${not empty mem.memNick and (mem.gatJoinNo1 == sendGatherNo.gatNo or mem.gatJoinNo2 == sendGatherNo.gatNo or mem.gatJoinNo3 == sendGatherNo.gatNo or mem.gatJoinNo4 == sendGatherNo.gatNo or mem.gatJoinNo5 == sendGatherNo.gatNo)}">
+							<li><a href="/GatherSchedule?gatNo=${sendGatherNo.gatNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="/GatherSchedule?gatNo=${sendGatherNo.gatNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>
+							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
 						</c:otherwise>
 					</c:choose>
-<%--					<c:if test="${empty mem.memNick}">--%>
-<%--						<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>--%>
-<%--					</c:if>--%>
-<%--					<c:if test="${not empty mem.memNick && (mem.gatJoinNo1 != sendGatherNo.gatNo || mem.gatJoinNo2 != sendGatherNo.gatNo || mem.gatJoinNo3 != sendGatherNo.gatNo || mem.gatJoinNo4 != sendGatherNo.gatNo || mem.gatJoinNo5 != sendGatherNo.gatNo)}">--%>
-<%--						<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>--%>
-<%--					</c:if>--%>
-<%--					<c:if test="${not empty mem.memNick}">--%>
-<%--							<li><a href="/GatherSchedule?gatNo=${sendGatherNo.gatNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>--%>
-<%--					</c:if>--%>
 					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
 					<li><button type="button" class="btn btn-primary join">가입하기</button></li>
+					<input type="hidden" id="memNick" value="${mem.memNick}">
 				</ul>
 			</div>
 		</section>

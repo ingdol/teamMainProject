@@ -63,12 +63,6 @@
     opacity: 1;
 }
 
-
-
-
-
-
-
 #calendarSpan {
     border: 1px solid green;
     width: 450px;
@@ -177,10 +171,14 @@
 }
 #revMemNick {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 22px;
 }
 #revMemTitle{
     font-size: 20px;
+}
+#revInfo{
+    margin-top: 10px;
+    font-size: 17px;
 }
 #section2 ul li {
     margin-bottom: 5px !important;
@@ -216,6 +214,7 @@
 #revDate {
     font-size: 14px;
     color: #9c9c9c;
+    margin-top: 10px !important;
 }
 /*예약 하는 div 박스*/
 .reservation {
@@ -248,4 +247,11 @@
 }
 a {
     text-decoration-line: none;
+}
+#ReviewImg img{
+    width: 200px;
+    height: 200px;
+    margin: 3px;
+    border: 0;
+    object-fit: cover;
 }

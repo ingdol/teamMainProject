@@ -39,19 +39,19 @@
      
    <!-- sun -->
     <select id="listall" resultMap="classResult">
-        select * from Class
+        SELECT * FROM Class
      </select>
      
      <select id="listClassdatemax" resultMap="classResult">
-        select * from Class WHERE hobbyNo=#{hobbyNo} order by classOpen ASC
+        SELECT * FROM Class WHERE hobbyNo=#{hobbyNo} ORDER BY classOpen ASC
      </select>
      
      <select id="listalldatemax" resultMap="classResult">
-        select * from Class order by classOpen ASC
+        SELECT * FROM Class ORDER BY classOpen ASC
      </select>
      
      <select id="classinfo" resultMap="classResult">
-        select * from Class WHERE classNo=#{classNo}
+        SELECT * FROM Class WHERE classNo=#{classNo}
      </select>
      <select id="filterclass" resultMap="classResult">
 		SELECT * FROM Class WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%')) AND hobbyNo=#{hobbyNo}
@@ -65,6 +65,11 @@
 		<if test="category != null and category != ''">
 			and Class.hobbyNo LIKE CONCAT('%', #{category}, '%')
 		</if>
+	</select>
+
+<!-- bch  -->
+	<select id="ClassInfoVO" resultMap="classResult">
+		SELECT * FROM Class WHERE classNo=#{classNo}
 	</select>
 
 </mapper>

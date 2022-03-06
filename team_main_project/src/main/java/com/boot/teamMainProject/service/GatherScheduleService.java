@@ -54,4 +54,14 @@ public class GatherScheduleService implements IGatherScheduleService{
     public void JoinGather(int gatScheNo, int gatNo, String memNick) {
         dao.JoinGather(gatScheNo, gatNo, memNick);
     }
+
+    @Override
+    public String CheckGatherScheduleOverlap(int gatScheNo, String memNick) {
+        return dao.CheckGatherScheduleOverlap(gatScheNo, memNick);
+    }
+
+    @Override
+    public void DeleteGatherSchedule(int gatScheNo) {
+        dao.DeleteGatherSchedule(gatScheNo);
+    }
 }
