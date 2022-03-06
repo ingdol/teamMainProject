@@ -16,8 +16,8 @@ public class Class_ScheService implements IClass_ScheService{
     IClass_ScheDAO dao;
 
     @Override
-    public void MakeClassSchedule(String memNick, int gatNo, String classScheTitle, String classScheDate, String classScheTime, int classScheMax, String scheduleAddress, String scheduleSpace, String classScheSpace, String classScheInfo) {
-        dao.MakeClassSchedule(memNick, gatNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo);
+    public void MakeClassSchedule(String memNick, int classNo, String classScheTitle, String classScheDate, String classScheTime, int classScheMax, String scheduleAddress, String scheduleSpace, String classScheSpace, String classScheInfo) {
+        dao.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo);
     }
 
     @Override
