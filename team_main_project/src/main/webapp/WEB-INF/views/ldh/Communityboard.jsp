@@ -7,8 +7,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>소모임 게시판</title>
-		<link rel="stylesheet" href="<c:url value="/css/ldh/CDetail.css" />">
-		<link rel="stylesheet" href="<c:url value="/css/ldh/SDetail.css" />">
+		<link rel="stylesheet" href="<c:url value="/css/ldh/Cdetail.css" />">
+		<link rel="stylesheet" href="<c:url value="/css/ldh/Sdetail.css" />">
 <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="<c:url value='/js/ldh/Sdate.js'/>"></script>
