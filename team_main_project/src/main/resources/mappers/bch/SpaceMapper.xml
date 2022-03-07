@@ -22,9 +22,9 @@
         <result property="spacePhoto2" column="spacePhoto2" />
     </resultMap>
 
-<!--    <select id="listAllSpace" resultMap="spaceResult">-->
-<!--        SELECT * FROM Space ORDER BY spaceNo ASC-->
-<!--    </select>-->
+    <select id="listAllSpace" resultMap="spaceResult">
+        SELECT * FROM Space ORDER BY spaceNo ASC
+    </select>
 
     <select id="listFindSpace" resultMap="spaceResult">
         SELECT * FROM Space WHERE 1=1

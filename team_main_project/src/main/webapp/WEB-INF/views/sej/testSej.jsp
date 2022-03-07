@@ -8,8 +8,7 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<c:forEach items="${gatV}" var="gatV">
-								<span>${gatV.gatNo}</span><br>
-						</c:forEach>
+								<span>${chat.gatNo}</span>
+								<span>${chat.chatWelcome}</span>
 	</body>
 </html>

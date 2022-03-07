@@ -35,7 +35,7 @@
 				<div class="moimname">
 					<div>${detail.classTitle}</div>
 					<div>
-						강사 : <a href="#"><img src="#" alt="등급">&nbsp;${detail.memNick}</a>
+						강사 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
 						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		
@@ -81,6 +81,7 @@
 									<div class="writer">글쓴이</div>
 									<div class="date">작성일</div>
 								</div>
+<%--								일정 공지 보이게 넣으려다가 충돌나면 보기 불편하실 거 같아서 아직 안 넣었어요!--%>
 								<c:forEach items="${revlist}" var="com">
 									<div class="top">
 										<div class="num">${com.classRevNo}</div>
@@ -113,6 +114,18 @@
 			<div class="moimjoin">
 				<h3 id="sectioninfo">해당클래스찜,가입버튼</h3>
 				<ul>
+<%--					choose 여는 태그부터 닫는 태그까지 일정 잡기 버튼 만들었습니다!--%>
+					<c:choose>
+						<c:when test="${empty sessionScope.snick}">
+							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>
+						</c:when>
+						<c:when test="${not empty sessionScope.snick and (mem.classJoin1 == classInfoVO.classNo or mem.classJoin2 == classInfoVO.classNo or mem.classJoin3 == classInfoVO.classNo or mem.classJoin4 == classInfoVO.classNo or mem.classJoin5 == classInfoVO.classNo)}">
+							<li><a href="/ClassSchedule?classNo=${classInfoVO.classNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>
+						</c:when>
+						<c:otherwise>
+							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
+						</c:otherwise>
+					</c:choose>
 					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
 					<li><button type="button" class="btn btn-primary join">가입하기</button></li>
 				</ul>

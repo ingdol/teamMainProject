@@ -26,4 +26,8 @@
         INSERT INTO Gather_Sche_Per (gatScheNo, gatNo, memNick)
         VALUES (#{gatScheNo}, #{gatNo}, #{memNick})
     </insert>
+<!--  중복 참가 막기  -->
+    <select id="CheckGatherScheduleOverlap" resultType="String" >
+        SELECT memNick from Gather_Sche_Per WHERE gatScheNo=#{gatScheNo} AND memNick=#{memNick}
+    </select>
 </mapper>

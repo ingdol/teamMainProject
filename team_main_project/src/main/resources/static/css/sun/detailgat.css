@@ -20,9 +20,8 @@ span{
 }
 
 .photobox{
-	width:50%;
-	height:50%;
-	overflow: hidden;
+	width: 80%;
+	text-align: center;
 }
 .photobox img{
 	object-fit: cover; 
@@ -98,6 +97,10 @@ span{
 
 .moimmenubox .btn {
 	width: 100%;
+}
+
+#chatBtn {
+	width:256px;
 }
 
 /* **********모임상세카테고리************* */

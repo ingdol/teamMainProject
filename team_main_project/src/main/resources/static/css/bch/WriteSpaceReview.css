@@ -1,0 +1,56 @@
+#mainWrap {
+    justify-content: center;
+}
+#Wrap {
+    font-family: 'NanumSquareRound' !important;
+    width: 1060px;
+    justify-content: center;
+}
+p{
+    font-weight: bold;
+    font-size: 30px;
+    color: #5fa3ff;
+    justify-content: center;
+}
+textarea {
+    resize: none;
+    width: 1060px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#WriteReview{
+    float: right;
+    background-color: #5da5f8;
+    border-color: #5da5f8;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+}
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 40%;
+    color: #999999;
+}
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+}
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}

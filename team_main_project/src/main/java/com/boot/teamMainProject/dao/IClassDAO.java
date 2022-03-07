@@ -3,6 +3,8 @@ package com.boot.teamMainProject.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.boot.teamMainProject.model.ClassVO;
 import com.boot.teamMainProject.model.SpaceVO;
 
@@ -19,11 +21,12 @@ public interface IClassDAO {
    ArrayList<ClassVO> listClassdatemax(String hobbyNo);
    ArrayList<ClassVO> listalldatemax();
    ArrayList<ClassVO> classinfo(int classNo);
-   ArrayList<ClassVO> filterclass(String garArea,String hobbyNo);
+   ArrayList<ClassVO> filterclass(@Param("gatArea") String gatArea,@Param("hobbyNo") String hobbyNo);
 
    // 병채
    ArrayList<ClassVO> listFindClass(String gatArea1, String state, String category);
    
    //ldh
    ClassVO classinfo2(int classNo);
+   ClassVO ClassInfoVO(int classNo); // 클래스 VO조회
 }

@@ -39,3 +39,8 @@
 	cursor:pointer;
 	background-color: #a8d8ff;	
 }
+
+
+.hidden{
+	display: none;
+}

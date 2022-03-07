@@ -42,4 +42,8 @@
     <select id="CheckMaxPerson" resultType="int" parameterType="int">
         select gatScheMax from Gather_Sche where gatScheNo=#{gatScheNo}
     </select>
+<!--  모임 일정 삭제  -->
+    <delete id="DeleteGatherSchedule">
+        DELETE FROM Gather_Sche WHERE gatScheNo=#{gatScheNo}
+    </delete>
 </mapper>

@@ -1,5 +1,6 @@
 package com.boot.teamMainProject;
 
+import com.boot.teamMainProject.dao.*;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.boot.teamMainProject.dao.GatherDetComDAO;
 import com.boot.teamMainProject.dao.IChatbotDAO;
 import com.boot.teamMainProject.dao.IClassCreateDAO;
+import com.boot.teamMainProject.dao.IChattingDAO;
 import com.boot.teamMainProject.dao.IClassDAO;
 import com.boot.teamMainProject.dao.IClassRevDAO;
 import com.boot.teamMainProject.dao.ICommunityComDAO;
@@ -43,6 +45,9 @@ import com.boot.teamMainProject.dao.ISpace_CtgDAO;
 @MapperScan(basePackageClasses = ISpaceCreateDAO.class)
 @MapperScan(basePackageClasses = IClassCreateDAO.class)
 @MapperScan(basePackageClasses = ICommunityComDAO.class)
+@MapperScan(basePackageClasses = IChattingDAO.class)
+@MapperScan(basePackageClasses = IClass_ScheDAO.class)
+
 public class TeamMainProjectApplication {
 
 	public static void main(String[] args) {

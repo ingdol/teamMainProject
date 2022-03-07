@@ -11,9 +11,9 @@
         <script src="/js/bch/gatherSchedule.js"></script>
         <script>
             document.addEventListener('keydown', function(event) {
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                };
+                // if (event.keyCode === 13) {
+                //     event.preventDefault();
+                // };
             }, true);
             $(document).ready(function(){
                 $('#toggleBtn').on('click', function(){
