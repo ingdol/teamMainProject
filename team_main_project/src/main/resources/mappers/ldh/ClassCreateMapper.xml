@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+    <mapper namespace="com.boot.teamMainProject.dao.IClassCreateDAO">
+    
+    <insert id="insertClass" parameterType="com.boot.teamMainProject.model.ClassVO">
+			INSERT INTO Class(memNick,classTitle,classInfo,hobbyNo,classArea,classPhoto,classOpen,classHate) 
+			VALUES ('${memNick}', '${classTitle}',  '${classInfo}',${hobbyNo},'${classArea}','${classPhoto}',CURRENT_TIMESTAMP,0)
+	</insert>
+    
+    
+    </mapper>

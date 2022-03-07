@@ -4,18 +4,17 @@
 
  
   $(document).ready(function(){
-	$('#star ').on('click', function(){
+	$('#star2 ').on('click', function(){
 		event.preventDefault();
 		
 		var as;
 		
 		$.ajax({
 			type:"post",
-			url:"/SomoimboardLike",
+			url:"/CommunityLike",
 			async:false,
 			data:{
-				 "gatNo":$('#gatNo').val(),
-                  "gatDetNo":$('#gatDetNo').val(),
+                  "commuNo":$('#commuNo').val(),
                   "memNick":$('#memNick').val(),
                 },
 			success:function(result){

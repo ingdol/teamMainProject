@@ -66,5 +66,8 @@
 			and Class.hobbyNo LIKE CONCAT('%', #{category}, '%')
 		</if>
 	</select>
-
+	<!-- 동헌 -->
+	<select id="classinfo2" resultMap="classResult">
+        SELECT * FROM Class WHERE classNo=#{classNo}
+     </select>
 </mapper>

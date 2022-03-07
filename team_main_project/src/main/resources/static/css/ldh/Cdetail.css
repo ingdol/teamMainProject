@@ -171,3 +171,18 @@ color: white;
 	width:"40px" ;
 	height:"40px";
 }
+
+.star2{
+	background: url("/image/ldh/star1.png");
+	background-size:40px;
+	border:0px;
+	width:"40px" ;
+	height:"40px";
+}
+.star2:hover{
+	background: url("/image/ldh/star2.png");
+	background-size:40px;
+	border:0px;
+	width:"40px" ;
+	height:"40px";
+}

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.boot.teamMainProject.dao.IGatherDetDAO;
+import com.boot.teamMainProject.model.GLikeVO;
 import com.boot.teamMainProject.model.GatherDetVO;
 import com.boot.teamMainProject.model.MemberVO;
 
@@ -92,6 +93,30 @@ public class GatherDetService implements IGatherDetService {
 	public int Lastboard(int gatNo) {
 		// TODO Auto-generated method stub
 		return dao.Lastboard(gatNo);
+	}
+
+	@Override
+	public void LikeSBoard(GLikeVO gl) {
+		// TODO Auto-generated method stub
+		dao.LikeSBoard(gl);
+	}
+
+	@Override
+	public void LikeUpdate(int gatDetNo, String memNick) {
+		// TODO Auto-generated method stub
+		dao.LikeUpdate(gatDetNo,memNick);
+	}
+
+	@Override
+	public int LikeSBoard2(int gatDetNo, String memNick) {
+		// TODO Auto-generated method stub
+		return dao.LikeSBoard2(gatDetNo,memNick);
+	}
+
+	@Override
+	public void DeleteGatLike(int gatDetNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteGatLike(gatDetNo);
 	}
 
 

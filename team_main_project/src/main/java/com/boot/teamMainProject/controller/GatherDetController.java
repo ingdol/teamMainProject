@@ -14,8 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.boot.teamMainProject.model.GLikeVO;
 import com.boot.teamMainProject.model.GatherDetComVO;
 import com.boot.teamMainProject.model.GatherDetVO;
 import com.boot.teamMainProject.model.GatheringVO;
@@ -93,7 +95,7 @@ public class GatherDetController {
 //		count2 = count2 + 1;
 		ArrayList<GatherDetVO> gdList = service.CountBoard();
 		int count2 = gdList.size() +1;
-		int lastdata = service.Lastboard(gatNo);
+//		int lastdata = service.Lastboard(gatNo);
 		
 		int gatNo2 = gatNo;
 //		if(test231 == 0) {
@@ -104,11 +106,19 @@ public class GatherDetController {
 		service.insertGatherDet(gat);
 		System.out.println(count2); 
 		
-		int gatDetNo = lastdata;
-		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + gatDetNo;
+//		int gatDetNo = lastdata;
+//		System.out.println(gatDetNo); 
+		return "redirect:/ldh/Somoimboard/"+gatNo2;
 	}
 	
+	@RequestMapping("/ldh/Somoimboard/{gatNo}")
+	public String MoveinsertGather2(@PathVariable int gatNo, Model model) {
+		int lastdata = service.Lastboard(gatNo);
+		int gatDetNo = lastdata;
+		System.out.println(gatDetNo); 
+	return "redirect:/ldh/Somoimboard/"+gatNo + "/" + gatDetNo;
 	
+}
 	//댓글작성
 	@RequestMapping("/Commentcreate/{gatNo}/{gatDetNo}")
 	public String insertGatDetCom (@PathVariable int gatNo ,@PathVariable int gatDetNo ,@RequestParam String gatDetComInfo,GatherDetComVO gatc) throws IOException
@@ -179,11 +189,14 @@ public class GatherDetController {
 		return "redirect:/ldh/Somoimboard/"+gatNo2 + "/" + gatDetNo;
 	}
 	
+	//글 삭제
 	@RequestMapping("/SomoimboardDelete/{gatNo}/{gatDetNo}")
 	public String DeleteGatDet ( @PathVariable int gatDetNo, @PathVariable int gatNo) throws IOException
 	{
 		service.DeleteGatDetCom(gatDetNo);
+		service.DeleteGatLike(gatDetNo);
 		service.DeleteGatDet(gatDetNo);
+		
 		
 		return "redirect:/sun/detailgat/"+gatNo;
 	}
@@ -261,5 +274,22 @@ public class GatherDetController {
 		service3.insertGathering(gath);
 		
 		return "redirect:/main";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/SomoimboardLike")
+	public int LikeSBoard( @RequestParam("gatNo") int gatNo,  
+												@RequestParam("gatDetNo")  int gatDetNo,  
+												@RequestParam("memNick")  String memNick, 
+												GLikeVO gl){
+		
+		service.LikeSBoard(gl);
+		int result = service.LikeSBoard2(gatDetNo,memNick);
+		service.LikeUpdate(gatDetNo,memNick);
+		
+		
+		System.out.println(result);
+		
+		return result;
 	}
 }

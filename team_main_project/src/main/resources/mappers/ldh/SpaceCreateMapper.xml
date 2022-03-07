@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.boot.teamMainProject.dao.ISpaceCreateDAO">
+  <resultMap id="spaceResult" type="com.boot.teamMainProject.model.SpaceVO">
+        <result property="spaceNo" column="spaceNo" />
+        <result property="memNick" column="memNick" />
+        <result property="spaceTitle" column="spaceTitle" />
+        <result property="spaceInfo" column="spaceInfo" />
+        <result property="spaceCtgNo" column="spaceCtgNo" />
+        <result property="spaceArea" column="spaceArea" />
+        <result property="spacePrice1" column="spacePrice1" />
+        <result property="spacePrice2" column="spacePrice2" />
+        <result property="spacePerNum" column="spacePerNum" />
+        <result property="spacePerMax" column="spacePerMax" />
+        <result property="spaceOpen" column="spaceOpen" />
+        <result property="spacePhoto" column="spacePhoto" />
+        <result property="spacePhoto2" column="spacePhoto2" />
+    </resultMap>
+
+	<insert id="insertSpace" parameterType="com.boot.teamMainProject.model.GatherDetVO">
+			INSERT INTO Space(memNick,spaceTitle,spaceInfo,spaceCtgNo,spaceArea,spacePrice1,spacePrice2,spacePerNum,spacePerMax,spaceOpen,spacePhoto,spacePhoto2) 
+			VALUES ('${memNick}', '${spaceTitle}',  '${spaceInfo}','${spaceCtgNo}','${spaceArea}',${spacePrice1},${spacePrice2},${spacePerNum},${spacePerMax},#{spaceOpen},'${spacePhoto}','${spacePhoto2}')
+	</insert>
+
+</mapper>

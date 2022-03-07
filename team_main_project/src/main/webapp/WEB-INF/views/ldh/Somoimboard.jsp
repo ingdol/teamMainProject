@@ -6,12 +6,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>소모임 게시판</title>
+		<title>${gat.gatDetTitle}</title>
 		<link rel="stylesheet" href="<c:url value="/css/ldh/Sdetail.css" />">
 <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="<c:url value='/js/ldh/Sdate.js'/>"></script>
-
+<script src="<c:url value='/js/ldh/Sajax.js'/>"></script>
 <script>
 	function commentCheck() {
     var form = document.CommentForm1;
@@ -24,6 +24,10 @@
 	function SUpdate(){
 		
 		location.href="/ldh/SomoimboardUpdate/${gatNo}/${gatDetNo}";
+	}
+	function Star(){
+		
+		location.href="/SomoimboardLike/${gatNo}/${gatDetNo}/${sessionScope.snick}";
 	}
 	function SDelete(){
 		
@@ -75,7 +79,7 @@
 			<br>
 			<table border = "0" align="center" class="detail1">
 			<tr><td align="left" colspan="2"><h3>${gat.memNick}</h3><br>
-			작성일자 : <fmt:formatDate value="${gat.gatDetDate}" pattern="yyyy-MM-dd HH:ss"/><br>조회수 : ${gat.gatDetView}회</td><td></td>
+			작성일자 : <fmt:formatDate value="${gat.gatDetDate}" pattern="yyyy-MM-dd HH:mm"/><br>조회수 : ${gat.gatDetView}회</td><td></td>
 			<td align="right"><img src="<c:url value='/image/ldh/star2.png'/>" width="20px" height="20px"> 
 			${gat.gatDetLike}<br>
 			<img src="<c:url value='/image/ldh/comment.png'/>" width="20px" height="20px">  
@@ -101,7 +105,11 @@
 			</c:if>
 			
 			<c:if test="${not empty sessionScope.sid }">
-			<tr><td align="center" colspan="4"><br><img src="<c:url value='/image/ldh/star1.png'/>" width="40px" height="40px">${gat.gatDetLike} 추천!
+			<tr><td align="center" colspan="4"><br>
+			<input type="hidden" id="memNick" value="${sessionScope.snick}">
+			<input type="hidden" id="gatNo" value="${gat.gatNo}">
+			<input type="hidden" id="gatDetNo" value="${gat.gatDetNo}">
+			<button id="star" class="star"><img src="<c:url value='/image/ldh/star3.png'/>" width="40px" height="40px"></button>${gat.gatDetLike} 추천!
 			<img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
 			</c:if>
 			
@@ -117,7 +125,7 @@
 				<c:forEach items="${comList }" var="comList"> 
 
 				<table class="comment" align="center" border="0" width="1000px">
-					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"><fmt:formatDate value="${comList.gatDetComDate}" pattern="yyyy-MM-dd HH:ss"/> <img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
+					<tr><td align="left"><b>${comList.memNick}</b>님</td><td align="right"><fmt:formatDate value="${comList.gatDetComDate}" pattern="yyyy-MM-dd HH:mm"/> <img src="<c:url value='/image/ldh/siren.png'/>" width="40px" height="40px"> 신고</td></tr>
 					<tr><td colspan="2" align="left">${comList.gatDetComInfo}</td></tr>
 				</table>
 			

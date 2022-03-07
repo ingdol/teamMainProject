@@ -7,23 +7,8 @@
 
 
 
-.boardtitle{
-/* position: absolute; */
-width: 1000px;
-height: 50px;
 
-font-size:18px;
-
-padding:0px 0px 0px 20px;
-
-background: #FFFFFF;
-border: 1px solid rgba(0, 56, 255, 0.15);
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 56, 255, 0.25);
-border-radius: 10px;
-font-family: 'Noto Sans KR', sans-serif;
-}
-.boardtitle2{
+.reviewtitle{
 /* position: absolute; */
 width: 1000px;
 height: 50px;

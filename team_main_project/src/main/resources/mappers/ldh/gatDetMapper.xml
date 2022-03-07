@@ -18,6 +18,17 @@
 		<result property="gatDetComNum" column="gatDetComNum" />	
 		<result property="gatDetCategory" column="gatDetCategory" />
 	</resultMap>
+	<resultMap id="LikeResult"  type="com.boot.teamMainProject.model.GLikeVO">
+		<result property="memNick" column="memNick" />
+		<result property="gatDetNo" column="gatDetNo" />
+		<result property="gatLike" column="gatLike" />
+	</resultMap>
+	
+<!-- 	<resultMap id="LikeResult"  type="com.boot.teamMainProject.model.GLikeVO"> -->
+<!-- 		<result property="memNick" column="memNick" /> -->
+<!-- 		<result property="gatDetNo" column="gatDetNo" /> -->
+<!-- 		<result property="gatLike" column="gatLike" /> -->
+<!-- 	</resultMap> -->
 	
    <select id="detailViewBoard" parameterType="int"
    				resultType="com.boot.teamMainProject.model.GatherDetVO">
@@ -73,6 +84,9 @@
   		WHERE gatDetNo=#{gatDetNo}
   </update>
 	<!-- 글 삭제  -->
+	<delete id="DeleteGatLike"  parameterType="int">
+  			DELETE FROM Gat_Like WHERE gatDetNo=#{gatDetNo}
+  		</delete>
 	
 	<delete id="DeleteGatDetCom"  parameterType="int">
   			DELETE FROM Gather_Det_Com WHERE gatDetNo=#{gatDetNo}
@@ -88,6 +102,25 @@
          WHERE gatDetNo=#{gatDetNo}
 </update>
 
+<!-- 좋아요 -->
+	<insert id="LikeSBoard" parameterType="com.boot.teamMainProject.model.GLikeVO">
+  		
+			INSERT into Gat_Like(memNick, gatDetNo, gatLike) SELECT '${memNick}', ${gatDetNo},0
+			FROM DUAL WHERE 
+			NOT EXISTS(SELECT * FROM Gat_Like WHERE memNick='${memNick}' AND gatDetNo=${gatDetNo})
+   </insert>
+   
+   <select id="LikeSBoard2" 
+   				 resultType="int">
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+  		SELECT gatLike FROM Gat_Like WHERE memNick = '${memNick}' AND gatDetNO = ${gatDetNo}
+   </select>
+   
+   <update id="LikeUpdate" parameterType="com.boot.teamMainProject.model.GLikeVO">
+   UPDATE Gather_Det AS a, Gat_Like AS b 
+   SET a.gatDetLike = a.gatDetLike+1, b.gatLike= 1 
+   WHERE a.gatDetNo =${gatDetNo} AND b.memNick = '${memNick}' AND b.gatLike = 0
+</update>
    <!-- 서연 - 소모임게시판 전체화면 -->
    
    <select id="gatcommulist" resultMap="gatResult">

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.teamMainProject.dao.ICommunityComDAO">
+  	
+  	<select id="readComComment" resultType="com.boot.teamMainProject.model.CommunityComVO">
+  		SELECT commuComNo, memNick, commuComInfo, commuComDate, commuComLike
+  		FROM Community_Com WHERE commuNo = #{commuNo}
+  	</select>
+  	
+  <insert id="insertCommunityCom" parameterType="com.boot.teamMainProject.model.CommunityComVO">
+
+			INSERT INTO Community_Com 
+			VALUES (${commuComNo}, ${commuNo},'${memNick}','${commuComInfo}',CURRENT_TIMESTAMP,0)
+
+	</insert>
+	
+  <select id="ComCommentCountBoard" 
+   				resultType="com.boot.teamMainProject.model.CommunityComVO">
+  		SELECT * FROM Community_Com WHERE commuNo = #{commuNo}
+   </select>
+
+  </mapper>
