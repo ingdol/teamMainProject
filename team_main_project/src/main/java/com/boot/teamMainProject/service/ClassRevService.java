@@ -19,5 +19,11 @@ public class ClassRevService implements IClassRevService {
 	public ArrayList<ClassRevVO> revlist(int classNo) {
 		return dao.revlist(classNo);
 	}
+	//ldh
+	@Override
+	public ClassRevVO revlist2(int classNo) {
+		// TODO Auto-generated method stub
+		return dao.revlist2(classNo);
+	}
 
 }

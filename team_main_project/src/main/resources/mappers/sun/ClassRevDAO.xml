@@ -17,4 +17,8 @@
 	<select id="revlist" resultMap="classRev">
 		SELECT * FROM Class_Rev WHERE classNo=#{classNo}
 	</select>
+	
+	<select id="revlist2" resultMap="classRev">
+		SELECT * FROM Class_Rev WHERE classNo=#{classNo}
+	</select>
 </mapper>

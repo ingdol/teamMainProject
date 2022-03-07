@@ -102,6 +102,14 @@ public class MainController {
 	public String SpaceCreate() {
 		return "/ldh/SpaceCreate";
 	}
+	@RequestMapping("/ldh/ClassCreate")
+	public String ClassCreate() {
+		return "/ldh/ClassCreate";
+	}
+	@RequestMapping("/ldh/ClassReview")
+	public String ClassReview() {
+		return "/ldh/ClassReview";
+	}
 	//---------------------------------
 
 	// pdh 로그인

@@ -45,4 +45,74 @@
   		SELECT * FROM Community WHERE commuLike>5 ORDER BY commuNo DESC
   	</select>
   	 
+  	 <!-- 동헌 -->
+  	 <select id="CountComBoard" resultMap="communityResult">
+  		SELECT * FROM Community
+  	</select>
+  	
+  	<insert id="insertComBoard" parameterType="com.boot.teamMainProject.model.CommunityVO">
+			INSERT INTO Community(commuCtgNo,commuTitle, memNick, commuInfo,commuPhoto, commuDate ,commuLike, commuView, commuComNum) 
+			VALUES ('${commuCtgNo}', '${commuTitle}', '${memNick}', '${commuInfo}','${commuPhoto}',CURRENT_TIMESTAMP,0,0,0)
+			</insert>
+	<select id="Lastcomboard" 
+   				resultType="int">
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+  		SELECT LAST_INSERT_ID()
+   </select>
+
+	<select id="detailViewCommu" parameterType="int"
+   				resultType="com.boot.teamMainProject.model.CommunityVO">
+  		SELECT * FROM Community WHERE commuNo=#{commuNo}
+   </select>
+   
+			 <!-- 댓글 수 수정 -->
+   	<update id="updateCommunity" parameterType="com.boot.teamMainProject.model.CommunityVO" >
+   		UPDATE Community
+  		SET commuComNum = #{commuComNum}
+  		WHERE commuNo=#{commuNo}
+   	</update>
+	<update id="updateCommBoard2Read" parameterType="int">
+        UPDATE Community
+              SET commuView = commuView + 1
+         WHERE commuNo=#{commuNo}
+</update>
+
+<!-- 좋아요 -->
+	<insert id="LikeCBoard" parameterType="com.boot.teamMainProject.model.CLikeVO">
+  		
+			INSERT into Commu_Like(memNick, commuNo, commuLikeN) SELECT '${memNick}', ${commuNo},0
+			FROM DUAL WHERE 
+			NOT EXISTS(SELECT * FROM Commu_Like WHERE memNick='${memNick}' AND commuNo=${commuNo})
+   </insert>
+   
+   <select id="LikeCBoard2" 
+   				 resultType="int">
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+  		SELECT commuLikeN FROM Commu_Like WHERE memNick = '${memNick}' AND commuNO = ${commuNo}
+   </select>
+   
+   <update id="LikeCUpdate" parameterType="com.boot.teamMainProject.model.CLikeVO">
+   UPDATE Community AS a, Commu_Like AS b 
+   SET a.commuLike = a.commuLike+1, b.commuLikeN= 1 
+   WHERE a.commuNo =${commuNo} AND b.memNick = '${memNick}' AND b.commuLikeN = 0
+</update>
+
+  	<!--  글 수정  -->
+  <update id="UpdateCommuComp" parameterType="com.boot.teamMainProject.model.CommunityVO">
+  		UPDATE Community
+  		SET commuTitle='${commuTitle}', commuInfo='${commuInfo}', commuCtgNo = '${commuCtgNo}'
+  		WHERE commuNo=#{commuNo}
+  </update>
+	<!-- 글 삭제  -->
+	<delete id="DeleteCommuLike"  parameterType="int">
+  			DELETE FROM Commu_Like WHERE commuNo=#{commuNo}
+  		</delete>
+	
+	<delete id="DeleteCommuCom"  parameterType="int">
+  			DELETE FROM Community_Com WHERE commuNo=#{commuNo}
+  		</delete>
+	
+  		<delete id="DeleteCommuDet"  parameterType="int">
+  			DELETE FROM Community WHERE commuNo=#{commuNo}
+  		</delete>
   </mapper>

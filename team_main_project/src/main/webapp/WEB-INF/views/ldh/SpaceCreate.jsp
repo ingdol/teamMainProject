@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<title>공간대여 개설 페이지</title>
 		  <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		  <link rel="stylesheet" href="<c:url value="/css/ldh/SCreate.css" />">
+		  <link rel="stylesheet" href="<c:url value="/css/ldh/SpaceCreate.css" />">
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 		  <script src="<c:url value='/js/ldh/screate.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
@@ -19,7 +19,7 @@
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		   
 			<section>
-			<div id="wrap2">
+			<div id="wrap3">
 			<br><br><br>
 			<h2>공간 개설</h2><br>
 			
@@ -28,22 +28,31 @@
 			
 			<c:if test="${not empty sessionScope.sid }">
 			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>
-			</c:if>
 			
+			</c:if>
+			<div class="select2">
+			 <select name="spaceCtgNo" id="spaceCtgNo">
+              	<option value="1">파티룸</option>
+              	<option value="2">회의실</option>
+              	<option value="3">펜션</option>
+              	<option value="4">골프 연습장</option>
+              	<option value="5">야외운동시설</option>
+              	<option value="6">실내운동시설</option>
+              	<option value="7">문화생활시설</option>
+			</select>
+			
+			</div>
 <br><h3>${sessionScope.snick}님이 게시할 공간의 주소를 선택해주세요.</h3><br>
 			<div class="select">
 <!-- 			 	<input type="text" id="zipcode" name="zipcode"   size="5" >  -->
-				<input type="text"  id="memAddress1" class="memAddress1"  name="memAddress1" size="70" readonly>
+				<input type="text"  id="spaceArea" class="memAddress1"  name="spaceArea" size="70" readonly>
 				<input type="button" id="searchZip" class = "searchZip" name="searchZip" value="우편번호찾기" readonly><br>
 				 
 <!-- 				<input type="text" id="memAddress2"  name="memAddress2" size="70" placeholder="상세 주소 입력"> -->
 			</div>
 <!-- 			<input type="hidden" id="gatArea" name="gatArea" oninput="_onSubmit()"> -->
-			<br><br>
-			<div class="toggle2">
 
-				
-			</div>
+
 			<br><br>
 			
 			<h3>당신의 공간을 소개해보세요!!!</h3><br>
@@ -55,6 +64,13 @@
 			<textarea id="spaceInfo" name="spaceInfo" rows="15" cols="66" placeholder="공간에 대한 설명을 입력해주세요" 
 			onfocus="this.placeholder=''" onblur="this.placeholder='공간에 대한 설명을 입력해주세요'"  style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25);
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
+			
+			<br><br>
+			<input type="text" id="spacePrice1" name="spacePrice1">
+			<input type="text" id="spacePrice2" name="spacePrice2"><br>
+			<input type="text" id="spacePerNum" name="spacePerNum">
+			<input type="text" id="spacePerMax" name="spacePerMax"><br>
+<!-- 			<input type="time" id="spaceOpen" name="spaceOpen"> -->
 			
 			<br><br>
 			<h4>당신의 공간을 대표하는 사진을 넣어주세요.</h4>

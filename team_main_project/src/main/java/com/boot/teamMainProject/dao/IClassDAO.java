@@ -25,5 +25,8 @@ public interface IClassDAO {
 
    // 병채
    ArrayList<ClassVO> listFindClass(String gatArea1, String state, String category);
+   
+   //ldh
+   ClassVO classinfo2(int classNo);
    ClassVO ClassInfoVO(int classNo); // 클래스 VO조회
 }

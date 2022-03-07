@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#wrap{
+#wrap4{
 
 position: absolute;
 background: #FFFFFF;
@@ -13,7 +13,7 @@ background: #FFFFFF;
 	padding:50px;
 }
 
-.subbox{
+.subbox4{
 
 width: 89px;
 height: 47px;
@@ -26,7 +26,7 @@ border-radius: 10px;
 color: white;
 }
 
-.subbox:hover{
+.subbox4:hover{
 
 background: #0038FF;
 border: 3px solid #0038FF;

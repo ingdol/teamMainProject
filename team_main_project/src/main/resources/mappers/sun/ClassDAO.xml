@@ -79,6 +79,12 @@
 		</if>
 	</select>
 
+	<!-- 동헌 -->
+	<select id="classinfo2" resultMap="classResult">
+        SELECT * FROM Class WHERE classNo=#{classNo}
+     </select>
+
+
 <!-- bch  -->
 	<select id="ClassInfoVO" resultMap="classResult">
 		SELECT * FROM Class WHERE classNo=#{classNo}

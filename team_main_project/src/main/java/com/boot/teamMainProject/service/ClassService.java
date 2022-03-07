@@ -66,6 +66,14 @@ public class ClassService implements IClassService {
 		return dao.listFindClass(gatArea1, state, category);
 	}
 
+	
+	//ldh
+	@Override
+	public ClassVO classinfo2(int classNo) {
+		// TODO Auto-generated method stub
+		return dao.classinfo2(classNo);
+
+
 	@Override
 	public ClassVO ClassInfoVO(int classNo) {
 		return dao.ClassInfoVO(classNo);
