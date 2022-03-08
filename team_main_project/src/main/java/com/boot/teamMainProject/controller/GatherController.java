@@ -65,7 +65,8 @@ public class GatherController {
                                       @RequestParam("date") String date,
                                       @RequestParam("time") String time,
                                       @RequestParam("time2") String time2,
-                                      @RequestParam("spacePrice") int spacePrice) throws ParseException {
+                                      @RequestParam("spacePrice") int spacePrice,
+                                      @RequestParam("spaceTitle") String spaceTitle) throws ParseException {
 
         SimpleDateFormat Timeformatter = new SimpleDateFormat("HH:mm");
         Date StartTime = Timeformatter.parse(time);
@@ -75,7 +76,7 @@ public class GatherController {
         spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
 
         service.MakeGatherSchedule(memNick, gatNo, gatScheTitle, gatScheDate, gatScheTime, gatScheMax, scheduleAddress, scheduleSpace, gatScheSpace, gatScheInfo); // 모임 만들기
-        reservationService.ReservationCompGather(gatNo, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
+        reservationService.ReservationCompGather(gatNo, spaceTitle, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
 
     }
 

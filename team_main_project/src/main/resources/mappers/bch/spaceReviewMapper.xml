@@ -22,4 +22,5 @@
         select * from Space_Rev WHERE spaceNo=#{spaceNo}
     </select>
 
+
 </mapper>

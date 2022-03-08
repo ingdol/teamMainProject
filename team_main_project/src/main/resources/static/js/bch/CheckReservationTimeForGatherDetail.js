@@ -84,7 +84,7 @@ $(document).ready(function(){
       else {
          alert("모임 일정 등록을 완료 하시면 예약이 확정 됩니다.")
          $('#ReservationATAG').attr('href',
-             "/GatherSchedule?spaceNo=" + $('#spaceNo').val() + "&gatNo=" + $('#gatNo').val() + "&memNick=" + $('#memNick').val() + "&spaceArea=" + $('#spaceArea').val() + "&date=" + $('#date').val() + "&time=" + $('#time').val() + "&time2=" + $('#time2').val() + "&spacePrice=" + $('#spacePrice').val());
+             "/GatherSchedule?spaceNo=" + $('#spaceNo').val() + "&gatNo=" + $('#gatNo').val() + "&spaceTitle=" + $('#spaceTitle2').val() + "&memNick=" + $('#memNick').val() + "&spaceArea=" + $('#spaceArea').val() + "&date=" + $('#date').val() + "&time=" + $('#time').val() + "&time2=" + $('#time2').val() + "&spacePrice=" + $('#spacePrice').val());
       }
    }); // 예약하기 버튼
 });

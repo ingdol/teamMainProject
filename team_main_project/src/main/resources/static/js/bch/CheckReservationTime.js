@@ -91,7 +91,8 @@ $(document).ready(function(){
                "time2":$('#time2').val(),
                "memNick":$('#memNick').val(),
                "spacePrice":$('#spacePrice').val(),
-               "spaceNo":$('#spaceNo').val()
+               "spaceNo":$('#spaceNo').val(),
+               "spaceTitle":$('#spaceTitle2').val()
             },
             async: false,
             success:function(result_name){

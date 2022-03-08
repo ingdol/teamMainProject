@@ -54,6 +54,7 @@ $(document).ready(function(){
                 "time": $('#time').val(),
                 "time2": $('#time2').val(),
                 "spacePrice": $('#spacePrice').val(),
+                "spaceTitle": $('#spaceTitle').val()
             },
             success:function (result) {
                 alert("일정 등록 & 공간 예약 완료!");

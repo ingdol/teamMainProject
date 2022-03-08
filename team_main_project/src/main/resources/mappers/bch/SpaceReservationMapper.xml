@@ -8,6 +8,7 @@
 
     <resultMap id="spaceReser" type="com.boot.teamMainProject.model.SpaceReservationVO">
         <result property="spaceReserNo" column="spaceReserNo" />
+        <result property="spaceTitle" column="spaceTitle" />
         <result property="gatNo" column="gatNo" />
         <result property="classNo" column="classNo" />
         <result property="memNick" column="memNick" />
@@ -25,13 +26,13 @@
     </insert>
     <!-- 모임 공간 예약 -->
     <insert id="ReservationCompGather" >
-        INSERT INTO Space_Reservation (gatNo, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
-        VALUES (#{gatNo}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
+        INSERT INTO Space_Reservation (gatNo, spaceTitle, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
+        VALUES (#{gatNo}, #{spaceTitle}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
     </insert>
     <!-- 클래스 공간 예약 -->
     <insert id="ReservationCompClass" >
-        INSERT INTO Space_Reservation (classNo, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
-        VALUES (#{classNo}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
+        INSERT INTO Space_Reservation (classNo, spaceTitle, memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
+        VALUES (#{classNo}, #{spaceTitle}, #{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
     </insert>
 <!--  예약 시간 조회  -->
     <select id="CheckReservationTime" resultMap="spaceReser">
@@ -39,8 +40,19 @@
     </select>
     <!-- 개인 공간 예약(모임 아님) -->
     <insert id="ReservationComp">
-        INSERT INTO Space_Reservation (memNick, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
-        VALUES (#{memNick}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
+        INSERT INTO Space_Reservation (memNick, spaceTitle, spaceNo, spaceReserDate, spaceReserStartTime, spaceReserEndTime, spacePay)
+        VALUES (#{memNick}, #{spaceTitle}, #{spaceNo}, #{date}, #{time}, #{time2}, #{spacePrice})
     </insert>
-
+<!--  공간 예약 조회  -->
+    <select id="LookUpReservation" resultMap="spaceReser">
+        select * from Space_Reservation WHERE memNick=#{memNick}
+    </select>
+<!--  공간 예약 취소  -->
+    <delete id="CancelSpaceReservation">
+        delete from Space_Reservation where spaceReserNo=#{spaceReserNo}
+    </delete>
+<!-- 리뷰 작성 조회 -->
+    <select id="LookUpReservationForReview" resultMap="spaceReser">
+        select * from Space_Reservation where spaceReserNo=#{spaceReserNo}
+    </select>
 </mapper>

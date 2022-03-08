@@ -72,6 +72,7 @@ public class ClassService implements IClassService {
 	public ClassVO classinfo2(int classNo) {
 		// TODO Auto-generated method stub
 		return dao.classinfo2(classNo);
+	}
 
 
 	@Override
