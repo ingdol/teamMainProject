@@ -154,4 +154,64 @@ public class GatherController {
         service.DeleteGatherSchedule(ajaxGatScheNo);
         return gatherScheduleVO;
     }
+    // 모임 가입 기능
+    @ResponseBody
+    @RequestMapping("SignInGather")
+    public int SignInGather(@RequestParam("memNick") String memNick,
+                             @RequestParam("gatNo") int gatNo,
+                            HttpSession session) {
+        String sid = (String) session.getAttribute("sid");
+        MemberVO mem = memberService.detailViewMember(sid);
+        String StringGatNo = String.valueOf(gatNo);
+        if(mem.getGatJoinNo1() == null || Objects.equals(mem.getGatJoinNo1(), "")) {
+            if(StringGatNo.equals(mem.getGatJoinNo2()) || StringGatNo.equals(mem.getGatJoinNo3()) || StringGatNo.equals(mem.getGatJoinNo4()) || StringGatNo.equals(mem.getGatJoinNo5())) {
+                return 3;
+            }
+            else {
+                memberService.SignInGather1(gatNo, memNick);
+                return 1;
+            }
+        }
+        else if(mem.getGatJoinNo2() == null || Objects.equals(mem.getGatJoinNo2(), "")) {
+            if(StringGatNo.equals(mem.getGatJoinNo1()) || StringGatNo.equals(mem.getGatJoinNo3()) || StringGatNo.equals(mem.getGatJoinNo4()) || StringGatNo.equals(mem.getGatJoinNo5())) {
+                return 3;
+            }
+            else {
+                memberService.SignInGather2(gatNo, memNick);
+                return 1;
+            }
+        }
+        else if(mem.getGatJoinNo3() == null || Objects.equals(mem.getGatJoinNo3(), "")) {
+            if(StringGatNo.equals(mem.getGatJoinNo1()) || StringGatNo.equals(mem.getGatJoinNo2()) || StringGatNo.equals(mem.getGatJoinNo4()) || StringGatNo.equals(mem.getGatJoinNo5())) {
+                return 3;
+            }
+            else {
+                memberService.SignInGather3(gatNo, memNick);
+                return 1;
+            }
+        }
+        else if(mem.getGatJoinNo4() == null || Objects.equals(mem.getGatJoinNo4(), "")) {
+            if(StringGatNo.equals(mem.getGatJoinNo1()) || StringGatNo.equals(mem.getGatJoinNo2()) || StringGatNo.equals(mem.getGatJoinNo3()) || StringGatNo.equals(mem.getGatJoinNo5())) {
+                return 3;
+            }
+            else {
+                memberService.SignInGather4(gatNo, memNick);
+                return 1;
+            }
+        }
+        else if(mem.getGatJoinNo5() == null || Objects.equals(mem.getGatJoinNo5(), "")) {
+            if(StringGatNo.equals(mem.getGatJoinNo1()) || StringGatNo.equals(mem.getGatJoinNo2()) || StringGatNo.equals(mem.getGatJoinNo3()) || StringGatNo.equals(mem.getGatJoinNo4())) {
+                return 3;
+            }
+            else {
+                memberService.SignInGather5(gatNo, memNick);
+                return 1;
+            }
+        }
+        else {
+            return 2;
+        } // 다 가입했을 경우
+        // 3은 중복될 경우
+        // 1은 가입해도 될 경우
+    }
 }
