@@ -46,7 +46,7 @@
 					<h3 id="sectioninfo">모임메뉴</h3>
 					<ul>
 						<li class="moim1"><button type="button" class="btn btn-outline-primary">정보</button></li>
-						<li class="moim2"><button type="button" class="btn btn-outline-primary">클래스리뷰</button></li>
+						<li class="moim2"><button type="button" class="btn btn-outline-primary">클래스게시판</button></li>
 					</ul>
 				</div>
 				<div class="detailinfo">
