@@ -49,4 +49,8 @@ $(function(){
 		alert("모임에 가입이 필요합니다.");
 		event.preventDefault();
 	});
+	$("#fakeBtn3").on('click',function(){
+		alert("클래스에 가입이 필요합니다.");
+		event.preventDefault();
+	});
 });

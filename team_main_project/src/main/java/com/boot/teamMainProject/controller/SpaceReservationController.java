@@ -139,13 +139,14 @@ public class SpaceReservationController {
                                 @RequestParam("memNick") String memNick,
                                 @RequestParam("spacePrice") int spacePrice,
                                 @RequestParam("spaceNo") int spaceNo,
+                                @RequestParam("spaceTitle") String spaceTitle,
                                 HttpSession session,
                                 HttpServletResponse write) throws ParseException, IOException {
 
         if(Objects.equals(memNick, "null")) {
             write.setContentType("text/html; charset=UTF-8");
             PrintWriter out_write = write.getWriter();
-            out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
+            out_write.println("회원만 사용 가능한 기능입니다.");
             out_write.flush();
 
             return "/pdh/login";
@@ -157,8 +158,13 @@ public class SpaceReservationController {
             long diffMin = (EndTime.getTime() - StartTime.getTime()) / 60000; // 분 차이 계산
 
             spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
-            reservationService.ReservationComp(memNick, spaceNo, date, time, time2, spacePrice);
+            reservationService.ReservationComp(memNick, spaceTitle, spaceNo, date, time, time2, spacePrice);
             return "/sej/main";
         }
+    }
+    @ResponseBody
+    @RequestMapping("CancelSpaceReservation")
+    public void CancelSpaceReservation(@RequestParam("spaceReserNo") int spaceReserNo) {
+        reservationService.CancelSpaceReservation(spaceReserNo);
     }
 }

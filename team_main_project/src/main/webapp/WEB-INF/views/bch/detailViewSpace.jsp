@@ -77,6 +77,7 @@
             <%--                <p style="color: red">※ 선택하신 날짜가 예약 가능하면 예약 버튼이 나타납니다.</p>--%>
             <input type="hidden" id="spacePrice" value="${space.spacePrice1}">
             <input type="hidden" id="spaceNo" value="${space.spaceNo}">
+            <input type="hidden" id="spaceTitle2" value="${space.spaceTitle}">
         </div>
         <div id="navigation" class="navigation">
             <ul class="navigation_list">

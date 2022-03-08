@@ -90,6 +90,7 @@
                         String time = request.getParameter("time");
                         String time2 = request.getParameter("time2");
                         String spacePrice = request.getParameter("spacePrice");
+                        String spaceTitle = request.getParameter("spaceTitle");
                     %>
 
                     <div name="form" id="form">
@@ -100,6 +101,7 @@
                         <input type="hidden" value="<%=time%>" id="time" name="time">
                         <input type="hidden" value="<%=time2%>" id="time2" name="time2">
                         <input type="hidden" value="<%=spacePrice%>" id="spacePrice" name="spacePrice">
+                        <input type="hidden" value="<%=spaceTitle%>" id="spaceTitle" name="spaceTitle">
                         <div>
                             <input type="text"  name="classScheTitle" id="classScheTitle" placeholder="제목을 입력해 주세요">
                         </div>
