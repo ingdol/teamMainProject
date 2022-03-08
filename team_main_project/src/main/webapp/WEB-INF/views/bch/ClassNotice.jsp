@@ -64,7 +64,7 @@
                   <ol class="comList">
                       <table class="comment" align="center" border="0" width="1000px">
                           <tr><td align="left"><b style="font-size: large;">현재 신청 인원</b></td><td align="right"></td></tr>
-                          <c:forEach items="${ClassJoinPerson}" var="GatherJoinPerson">
+                          <c:forEach items="${ClassJoinPerson}" var="ClassJoinPerson">
                               <tr><td align="left"><b>"${ClassJoinPerson.memNick}"</b> 님</td><td align="right"></td></tr>
                           </c:forEach>
                       </table>

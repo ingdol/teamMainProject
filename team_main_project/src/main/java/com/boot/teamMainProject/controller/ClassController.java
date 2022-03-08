@@ -60,7 +60,8 @@ public class ClassController {
                                    @RequestParam("date") String date,
                                    @RequestParam("time") String time,
                                    @RequestParam("time2") String time2,
-                                   @RequestParam("spacePrice") int spacePrice) throws ParseException {
+                                   @RequestParam("spacePrice") int spacePrice,
+                                   @RequestParam("spaceTitle") String spaceTitle) throws ParseException {
 
       SimpleDateFormat Timeformatter = new SimpleDateFormat("HH:mm");
       Date StartTime = Timeformatter.parse(time);
@@ -70,7 +71,7 @@ public class ClassController {
       spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
 
       service.MakeClassSchedule(memNick, classNo, classScheTitle, classScheDate, classScheTime, classScheMax, scheduleAddress, scheduleSpace, classScheSpace, classScheInfo); // 모임 만들기
-      reservationService.ReservationCompClass(classNo, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
+      reservationService.ReservationCompClass(classNo, spaceTitle, memNick, spaceNo, date, time, time2, spacePrice); // 공간 예약
 
    }
 
@@ -92,9 +93,9 @@ public class ClassController {
 
    // 모임 일정 공지
    @RequestMapping("ScheduleNoticeClass/{classNo}/{classScheNo}")
-   public String ScheduleNoticeClass(@PathVariable int classtNo, @PathVariable int classScheNo, Model model) {
+   public String ScheduleNoticeClass(@PathVariable int classNo, @PathVariable int classScheNo, Model model) {
 //        ArrayList<GatherScheduleVO> gatherSchedule = scheduleService.LoadGather_Sche(gatNo); // bch
-      GatheringVO gath = service3.detailViewSomoim(classtNo);
+      GatheringVO gath = service3.detailViewSomoim(classNo);
       Class_ScheVO classSchedule = service.LoadClass_Schedule(classScheNo);
       ArrayList<Class_Sche_PerVO> ClassJoinPerson = service.ClassJoinPerson(classScheNo);
       model.addAttribute("gath", gath);
@@ -148,6 +149,5 @@ public class ClassController {
       service.DeleteClassSchedule(ajaxClassScheNo);
       return class_scheVO;
    }
-
 //   클래스 공간 예약 시작
 }

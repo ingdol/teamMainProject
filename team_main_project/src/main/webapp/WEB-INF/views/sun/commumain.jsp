@@ -50,7 +50,7 @@
 								<div class="top">
 									<div class="num">${comlist.commuNo}</div>
 									<div class="title" id="comTitle">
-										<a href="#">${comlist.commuTitle}/댓글수${comlist.commuComNum}</a>
+										<a href="<c:url value='/ldh/Communityboard/${comlist.commuNo}'/>">${comlist.commuTitle}/댓글수${comlist.commuComNum}</a>
 									</div>
 									<div class="writer" id="comId">${comlist.memNick}</div>
 									<div class="date" id="comDate"><fmt:formatDate value="${comlist.commuDate}" pattern="YY/MM/dd"/></div>
