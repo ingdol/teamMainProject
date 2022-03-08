@@ -25,6 +25,8 @@
                         <label for="files">파일찾기</label>
                         <input type="file" id="files" name="files" multiple accept="image/*">
                         <input type="submit" id="WriteReview" class="btn-primary" value="리뷰 작성">
+                        <input type="hidden" id="spaceNo" name="spaceNo" value="${SpaceInfo.spaceNo}">
+                        <input type="hidden" id="spaceReserNo" name="spaceReserNo" value="${SpaceInfo.spaceReserNo}">
                     </div>
                 </form>
             </div>
