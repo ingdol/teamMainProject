@@ -22,6 +22,12 @@ public class SearchController {
 	@Autowired
 	ClassService service;
 	
+	// 테스트
+	@RequestMapping("/chatBtn")
+	public String chatBtn() {
+		return "/sej/chatBtn";
+	}
+	
 //	// 멤버 조회 리스트로 이동
 //	@RequestMapping("/gatherList")
 //	public String gatherListForm() {
