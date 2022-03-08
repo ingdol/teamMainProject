@@ -5,11 +5,20 @@ import java.util.Date;
 public class SpaceReviewVO {
     private int spaceNo;
     private String spaceRevNo;
+    private int spaceReserNo;
     private String spaceRevTitle;
     private String memNick;
     private String spaceRevInfo;
     private Date spaceRevDate;
     private String spaceRevPhoto;
+
+    public int getSpaceReserNo() {
+        return spaceReserNo;
+    }
+
+    public void setSpaceReserNo(int spaceReserNo) {
+        this.spaceReserNo = spaceReserNo;
+    }
 
     public String getSpaceRevPhoto() {
         return spaceRevPhoto;

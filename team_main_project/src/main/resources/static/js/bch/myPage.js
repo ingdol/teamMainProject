@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#ReservationCancel').on('click', function(){
+    $('.ReservationCancel').on('click', function(){
         if(confirm("정말 예약을 취소하시겠습니까?")) {
             $.ajax({
                 type:"post",
@@ -21,5 +21,8 @@ $(document).ready(function(){
         else{
             event.preventDefault();
         }
+    });
+    $('.FakeReservationCancel').on('click', function(){
+        alert("예약일 이전에만 취소가 가능합니다");
     });
 });
