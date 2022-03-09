@@ -122,8 +122,9 @@
 			</section>
 			</div>
 		   
-			
-			
+		<%-- 	<!-- chatting Button  -->
+		    <jsp:include page="/WEB-INF/views/sej/chatBtn.jsp" flush='true' />
+		 --%>	
 			<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
 			
