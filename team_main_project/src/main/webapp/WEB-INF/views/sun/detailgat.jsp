@@ -45,12 +45,19 @@
 				<div class="moimmenubox">
 					<h3 id="sectioninfo">모임메뉴</h3>
 					<ul>
-						<li class="moim1"><button type="button" class="btn btn-outline-primary">정보</button></li>
-						<li class="moim2"><button type="button" class="btn btn-outline-primary">모임게시판</button></li>
-						<li class="moim3"><button type="button" class="btn btn-outline-primary">사진첩</button></li>
-						<c:forEach items="${detail}" var="detail">
-						<li class="moim4"><a href="<c:url value='/chat/${sessionScope.sid}/${detail.gatNo}'/>"><button type="button" class="btn btn-outline-primary" id="chatBtn">채팅</button></a></li>
-						</c:forEach>		
+					<c:choose>
+						<c:when test="${not empty mem.memNick and (mem.gatJoinNo1 == sendGatherNo.gatNo or mem.gatJoinNo2 == sendGatherNo.gatNo or mem.gatJoinNo3 == sendGatherNo.gatNo or mem.gatJoinNo4 == sendGatherNo.gatNo or mem.gatJoinNo5 == sendGatherNo.gatNo)}">
+							<li class="moim1"><button type="button" class="btn btn-outline-primary">정보</button></li>
+							<li class="moim2"><button type="button" class="btn btn-outline-primary">모임게시판</button></li>
+							<li class="moim3"><button type="button" class="btn btn-outline-primary">사진첩</button></li>
+							<c:forEach items="${detail}" var="detail">
+							<li class="moim4"><a href="<c:url value='/chat/${sessionScope.sid}/${detail.gatNo}'/>"><button type="button" class="btn btn-outline-primary" id="chatBtn">채팅</button></a></li>
+							</c:forEach>	
+						</c:when>
+						<c:otherwise>
+							<li class="moim1"><button type="button" class="btn btn-outline-primary">정보</button></li>
+						</c:otherwise>
+					</c:choose>	
 					</ul>
 				</div>
 				<div class="detailinfo">
@@ -59,18 +66,19 @@
 					<div class="moiminfodetail current">
 						<h4 id="sectioninfo">!모임정보</h4>
 						<c:forEach items="${detail}" var="detail">
-						<div class="photobox"><img src="/images/${detail.gatBanPhoto}"></div>
+						<div class="photobox"><br><img src="/images/${detail.gatBanPhoto}"><br></div>
 						<div class="infobox">
 								<span class="large">모임 이름 : ${detail.gatName}</span><br>
 								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 모임 소개 -</span><br>
 								<span>${detail.gatInfo}</span><br>
+								<br><br>						
 								<hr>
-								<span>${detail.gatNo}</span><br>
+								<%-- <span>${detail.gatNo}</span><br>
 								<span>${detail.memNick}</span><br>
 								<span>${detail.hobbyNo}</span><br>
 								<span>${detail.gatArea}</span><br>
-								<span>${detail.gatHate}</span><br>						
+								<span>${detail.gatHate}</span> --%>
 						</div>						
 						</c:forEach>
 					</div>
@@ -131,42 +139,20 @@
 						<h4 id="sectioninfo">!모임사진첩</h4>
 						<div class="card-group">
 							<ul>
+							<c:forEach items="${gatherCommu}" var="photo" begin="0" end="2">
 								<li>
 									<div class="card">
-										<img src="<c:url value='/images/1_sport.jpg'/>" class="card-img-top" alt="...">
+										<img src="<c:url value='/images/${photo.gatDetPhoto}'/>" class="card-img-top">
 										<div class="card-body">
-											<h5 class="card-title">사진제목</h5>
-											<p class="card-text">사진내용(글자수정해놓아야함)</p>
+											<h5 class="card-title"><c:forEach items="${gatherCommu}" var="com"><a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${photo.gatDetTitle}</a></c:forEach></h5>
+											<p class="card-text">${photo.gatDetInfo}</p>
 										</div>
 										<div class="card-footer">
-											<small class="text-muted">작성날짜</small>
+											<small class="text-muted"><fmt:formatDate value="${photo.gatDetDate}" pattern="YY/MM/dd"/></small>
 										</div>
 									</div>
 								</li>
-								<li>
-									<div class="card">
-										<img src="<c:url value='/images/1_sport.jpg'/>" class="card-img-top" alt="...">
-										<div class="card-body">
-											<h5 class="card-title">사진제목</h5>
-											<p class="card-text">사진내용(글자수정해놓아야함)</p>
-										</div>
-										<div class="card-footer">
-											<small class="text-muted">작성날짜</small>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="card">
-										<img src="<c:url value='/images/1_sport.jpg'/>" class="card-img-top" alt="...">
-										<div class="card-body">
-											<h5 class="card-title">사진제목</h5>
-											<p class="card-text">사진내용(글자수정해놓아야함)</p>
-										</div>
-										<div class="card-footer">
-											<small class="text-muted">작성날짜</small>
-										</div>
-									</div>
-								</li>
+							</c:forEach>								
 							</ul>							
 						</div>
 						<nav aria-label="Page navigation example">
