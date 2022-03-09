@@ -149,5 +149,64 @@ public class ClassController {
       service.DeleteClassSchedule(ajaxClassScheNo);
       return class_scheVO;
    }
-//   클래스 공간 예약 시작
+   // 클래스 가입 기능
+   @ResponseBody
+   @RequestMapping("SignInClass")
+   public int SignInClass(@RequestParam("memNick") String memNick,
+                           @RequestParam("classNo") int classNo,
+                           HttpSession session) {
+      String sid = (String) session.getAttribute("sid");
+      MemberVO mem = memberService.detailViewMember(sid);
+      String StringClassNo = String.valueOf(classNo);
+      if(mem.getClassJoin1() == null || Objects.equals(mem.getClassJoin1(), "")) {
+         if(StringClassNo.equals(mem.getClassJoin2()) || StringClassNo.equals(mem.getClassJoin3()) || StringClassNo.equals(mem.getClassJoin4()) || StringClassNo.equals(mem.getClassJoin5())) {
+            return 3;
+         }
+         else {
+            memberService.SignInClass1(classNo, memNick);
+            return 1;
+         }
+      }
+      else if(mem.getClassJoin2() == null || Objects.equals(mem.getClassJoin2(), "")) {
+         if(StringClassNo.equals(mem.getClassJoin1()) || StringClassNo.equals(mem.getClassJoin3()) || StringClassNo.equals(mem.getClassJoin4()) || StringClassNo.equals(mem.getClassJoin5())) {
+            return 3;
+         }
+         else {
+            memberService.SignInClass2(classNo, memNick);
+            return 1;
+         }
+      }
+      else if(mem.getClassJoin3() == null || Objects.equals(mem.getClassJoin3(), "")) {
+         if(StringClassNo.equals(mem.getClassJoin1()) || StringClassNo.equals(mem.getClassJoin2()) || StringClassNo.equals(mem.getClassJoin4()) || StringClassNo.equals(mem.getClassJoin5())) {
+            return 3;
+         }
+         else {
+            memberService.SignInClass3(classNo, memNick);
+            return 1;
+         }
+      }
+      else if(mem.getClassJoin4() == null || Objects.equals(mem.getClassJoin4(), "")) {
+         if(StringClassNo.equals(mem.getClassJoin1()) || StringClassNo.equals(mem.getClassJoin2()) || StringClassNo.equals(mem.getClassJoin3()) || StringClassNo.equals(mem.getClassJoin5())) {
+            return 3;
+         }
+         else {
+            memberService.SignInClass4(classNo, memNick);
+            return 1;
+         }
+      }
+      else if(mem.getClassJoin5() == null || Objects.equals(mem.getClassJoin5(), "")) {
+         if(StringClassNo.equals(mem.getClassJoin1()) || StringClassNo.equals(mem.getClassJoin2()) || StringClassNo.equals(mem.getClassJoin3()) || StringClassNo.equals(mem.getClassJoin4())) {
+            return 3;
+         }
+         else {
+            memberService.SignInClass5(classNo, memNick);
+            return 1;
+         }
+      }
+      else {
+         return 2;
+      } // 다 가입했을 경우
+      // 3은 중복될 경우
+      // 1은 가입해도 될 경우
+   }
 }

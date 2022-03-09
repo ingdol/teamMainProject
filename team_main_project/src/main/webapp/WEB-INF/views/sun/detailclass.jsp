@@ -136,8 +136,15 @@
 						</c:otherwise>
 					</c:choose>
 					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
-					<li><button type="button" class="btn btn-primary join">가입하기</button></li>
+					<c:if test="${empty mem.memNick}">
+						<li><button type="button" class="btn btn-primary join" id="joinFake">가입하기</button></li>
+					</c:if>
+					<c:if test="${not empty mem.memNick}">
+						<li><button type="button" class="btn btn-primary join" id="joinClass">가입하기</button></li>
+					</c:if>
 				</ul>
+				<input type="hidden" id="memNick" value="${mem.memNick}">
+				<input type="hidden" id="classNo" value="${classInfoVO.classNo}">
 			</div>
 		</section>
 

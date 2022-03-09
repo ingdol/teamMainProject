@@ -83,6 +83,35 @@ $(function(){
 			}
 		});
 	});
+	$('#joinClass').on('click', function () {
+		$.ajax({
+			type:"post",
+			url:"/SignInClass",
+			data:{"memNick":$('#memNick').val(),
+				"classNo":$('#classNo').val()
+			},
+			success:function(result){
+				if(result == 1) {
+					alert("클래스에 가입되었습니다.");
+					location.reload();
+				}
+				else if(result == 3) {
+					alert("해당 클래스에 이미 가입하셨습니다.");
+					location.reload();
+				}
+				else {
+					alert("모임 5개 모두 가입하셨습니다.");
+					location.reload();
+				}
+			},
+			error:function(data, textStatus, result){
+				alert("모임 가입 실패");
+				console.log(data);
+				console.log(result);
+				console.log(textStatus);
+			}
+		});
+	});
 	$("#joinFake").on('click',function(){
 		alert("로그인이 필요합니다.");
 		window.location.replace('/login');

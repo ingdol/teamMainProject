@@ -99,5 +99,26 @@
 		UPDATE Member SET gatJoinNo5=#{gatNo}
 		WHERE memNick=#{memNick}
 	</update>
+	<!--  클래스 가입	-->
+	<update id="SignInClass1">
+		UPDATE Member SET classJoin1=#{classNo}
+		WHERE memNick=#{memNick}
+	</update>
+	<update id="SignInClass2">
+		UPDATE Member SET classJoin2=#{classNo}
+		WHERE memNick=#{memNick}
+	</update>
+	<update id="SignInClass3">
+		UPDATE Member SET classJoin3=#{classNo}
+		WHERE memNick=#{memNick}
+	</update>
+	<update id="SignInClass4">
+		UPDATE Member SET classJoin4=#{classNo}
+		WHERE memNick=#{memNick}
+	</update>
+	<update id="SignInClass5">
+		UPDATE Member SET classJoin5=#{classNo}
+		WHERE memNick=#{memNick}
+	</update>
 
 </mapper>
