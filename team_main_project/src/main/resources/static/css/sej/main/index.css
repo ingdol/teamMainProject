@@ -49,3 +49,9 @@
 	box-shadow:0 3px 5px 0px #F2F2F2;
 	/* offset-x | offset-y | blur-radius | spread-radius | color */
 }
+
+.bottomFixed {
+	position:fixed;
+	bottom:0px;
+	right:0px;
+}

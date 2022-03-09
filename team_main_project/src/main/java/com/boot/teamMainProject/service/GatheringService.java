@@ -46,6 +46,11 @@ public class GatheringService implements IGatheringService {
 	public ArrayList<GatheringVO> gatherSearch(HashMap<String, Object> map){
 		return dao.gatherSearch(map);
 	}
+	
+	@Override
+	public GatheringVO detailViewGatNo(String gatNo){
+		return dao.detailViewGatNo(gatNo);
+	}
 
 	//idh
 	@Override

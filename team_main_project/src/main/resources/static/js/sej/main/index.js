@@ -13,6 +13,16 @@ $(function(){
 		}
 	});
 	
+	//chat 버튼 클릭시 
+	$(".menu-btn").on('click',function(){
+	  $(this).parents(".box").find(".menu-round-box").toggleClass('open');
+	});
+	
+	//스크롤시 bottom에 chat 버튼 고정
+	$('#chatBtnBox').addClass('bottomFixed');
+	$(window).on('scroll', function() {
+			$('#chatBtnBox').addClass('bottomFixed');
+	});
 	
 	//moveToTop 위치 클릭 시 top으로 이동
 	$('#moveToTop').on('click', function(){

@@ -22,6 +22,7 @@ public interface IGatheringDAO {
 	ArrayList<GatheringVO> listAllGatherBest();   // 전체 모임 조회 - 베스트
 	ArrayList<GatheringVO> listAllGatherNew();   // 전체 모임 조회 - 신규
 	ArrayList<GatheringVO> gatherSearch(HashMap<String, Object> map); // 모임 검색
+	GatheringVO detailViewGatNo(String gatNo);
 
 	
 	
