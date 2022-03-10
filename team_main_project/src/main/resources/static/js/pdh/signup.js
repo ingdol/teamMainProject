@@ -461,6 +461,7 @@ async function userSignup() {
 		nick: nick.value, 
 		phone: number.value, 
 		birth: `${yearBirth.value}-${monthTmp}-${dayBirth.value}`,
+		point: '0',
 		hobby: (function() { // 체크박스의 체크된 값
 					let checkedLimit = document.querySelectorAll('.l-check:checked');
 					let Arr = new Array();
