@@ -1,4 +1,9 @@
 @charset "UTF-8";
+#mainWrap {
+	width:1280px;
+	position:relative;
+	background-color:#ffffff;
+}
 
 #sectioninfo{
 	display: none;
