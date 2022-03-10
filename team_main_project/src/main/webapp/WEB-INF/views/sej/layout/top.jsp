@@ -19,10 +19,10 @@
 		<header>
 			<div id="headerBox">
 			<c:if test="${not empty sessionScope.sid}" >
-				<div id="logoBox"><a href="<c:url value='/${sessionScope.sid}'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
 			</c:if>
 			<c:if test="${empty sessionScope.sid}" >
-				<div id="logoBox"><a href="<c:url value='/home'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
 			</c:if>
 			</div>
 		</header>
@@ -74,22 +74,11 @@
 		  <div class="menu">
 		     <div class="menu-round-box">
 		     	<div id="menu-round-box-div">
-		     		<div class="chatFirst">
-		     			<ul>
-				         <li><a href="<c:url value='/chatbotForm'/>">챗봇</a></li>
-				         <c:if test="${not empty sessionScope.sid}">
-					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo1}'/>" >${gatV1.gatName} 채팅방</a></li>
-					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo2}'/>" >${gatV2.gatName} 채팅방</a></li>
-					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo3}'/>" >${gatV3.gatName} 채팅방</a></li>
-					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo4}'/>" >${gatV4.gatName} 채팅방</a></li>
-					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo5}'/>" >${gatV5.gatName} 채팅방</a></li>
-				         </c:if>
-				       </ul>
-		     		</div>
+		     		<div id="chatListBox"></div>
 		       </div>
 		      </div>
-		      <a href="javascript:;" class="menu-btn"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></a>
 		     </div>
+		     <a class="menu-btn"  onClick="javascript:muenuButton();"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></a>
 		</div>
 	</body>
 </html>

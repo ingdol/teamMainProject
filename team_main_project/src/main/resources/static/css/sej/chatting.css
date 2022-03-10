@@ -3,20 +3,21 @@
 
 .container{
 	width:680px;
-	background:#F6F6F6;
+	background:#FFFFFF;
 	margin-top:30px;
 	margin-bottom:30px;
 	padding-bottom:20px;
+  	border-radius: 43px;
+  	box-shadow: 1px 1px 11px 2px lightgrey;
 	
 }
 .container h1{
 	font-size: 18px;
 	text-align:center;
 	padding:13px;
-	background:#8ADBFF;
 }
 .chating{
-	background:#F6F6F6;
+	background:#FFFFFF;
 	width:650px;
 	height: 600px; 
 	overflow-y:scroll; 
