@@ -56,6 +56,14 @@ public class ChatController {
 //		mv.setViewName("sej/chat");
 //		return mv;
 //	}
+	// 챗팅 버튼 눌렀을때
+   @RequestMapping("/chatBtn/{memId}")
+   public String chatButtonMem(@PathVariable String memId, Model model) {
+      MemberVO mem = service.detailViewMember(memId);
+      model.addAttribute("mem", mem);
+      
+      return "redirect:/";
+   }
 	
 	@RequestMapping("/chat/{memId}/{gatNo}")
 	public ModelAndView chat2(@PathVariable String memId, @PathVariable int gatNo, Model model) {

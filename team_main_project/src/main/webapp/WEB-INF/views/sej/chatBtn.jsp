@@ -18,9 +18,7 @@
 		         <li>menu3</li>
 		       </ul>
 		      </div>
-		      <ul>
-		     	 <li class="menu-btn"><button type="button">메뉴</button></li>
-		      </ul>
+		      <a href="javascript:;" class="menu-btn">메뉴</a>
 		     </div>
 		</div>
 	</body>

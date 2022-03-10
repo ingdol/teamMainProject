@@ -10,6 +10,7 @@
 		<link href="<c:url value='/css/sej/main/index.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/menu.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/footer.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/chatBtn.css'/>" rel="stylesheet" type="text/css">
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/sej/main/index.js'/>"></script>
 		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
@@ -17,7 +18,12 @@
 	<body>
 		<header>
 			<div id="headerBox">
-				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+			<c:if test="${not empty sessionScope.sid}" >
+				<div id="logoBox"><a href="<c:url value='/${sessionScope.sid}'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+			</c:if>
+			<c:if test="${empty sessionScope.sid}" >
+				<div id="logoBox"><a href="<c:url value='/home'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+			</c:if>
 			</div>
 		</header>
 		<nav>
@@ -64,5 +70,26 @@
 			</div>  <!-- mainMenuBox 끝 -->
 			
 		</nav>
+		<div id="chatBtnBox" class="box box1">
+		  <div class="menu">
+		     <div class="menu-round-box">
+		     	<div id="menu-round-box-div">
+		     		<div class="chatFirst">
+		     			<ul>
+				         <li><a href="<c:url value='/chatbotForm'/>">챗봇</a></li>
+				         <c:if test="${not empty sessionScope.sid}">
+					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo1}'/>" >${gatV1.gatName} 채팅방</a></li>
+					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo2}'/>" >${gatV2.gatName} 채팅방</a></li>
+					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo3}'/>" >${gatV3.gatName} 채팅방</a></li>
+					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo4}'/>" >${gatV4.gatName} 채팅방</a></li>
+					         <li><a href="<c:url value='/chat/${sessionScope.sid}/${mem.gatJoinNo5}'/>" >${gatV5.gatName} 채팅방</a></li>
+				         </c:if>
+				       </ul>
+		     		</div>
+		       </div>
+		      </div>
+		      <a href="javascript:;" class="menu-btn"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></a>
+		     </div>
+		</div>
 	</body>
 </html>

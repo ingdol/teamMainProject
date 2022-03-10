@@ -1,75 +1,67 @@
 @charset "UTF-8";
 
-*{margin: 0; padding:0;}
-ul{list-style:none;}
+
+ul {
+	margin-top:0;
+	padding:0;
+	list-style:none;   /* type 없음 */
+}
 a{text-decoration:none;}
 
-.box{
-  position:relative;
-  width: 300px; height:300px;
-  border: 2px solid #ccc;
-  padding: 20px; 
-  dispaly:block;
-  margin: 50px auto;
-  overflow:hidden;
+#chatBtnBox {
+	z-index:20;  /* 스크롤 시 위 오도록 */
+	box-sizing: border-box; 
 }
+
 .menu{
-  position:absolute;
-  width: 250px; 
-  height:250px;
+    width: 493px;
+    height: 745px;
 }
-.box1 .menu{
-  left:-70px;
-  bottom:-70px;
-}
+
 .menu-btn{
   position: absolute;
   top:50%; left:50%;
   display:block; 
-  width:70px; height:70px;
-  background:blue;
-  border-radius:50%;
-  text-align:center;
+  width:90px; 
+  height:90px;
   line-height:70px;
-  color:#fff;
-  transform:translate(-50%,-50%);
-  box-shadow: 3px 3px 3px darkblue;
-  transition: box-shadow 0.5s;
-}
-.menu-round-box{
-  position:absolute;
-  width: 250px; 
-  height:250px;
-  border-radius: 50%; 
-  background :skyblue;
-  transform:scale(0,0);
-  transition: transform 0.5s;
-}
-.menu-round-box li{
-  position:absolute;
-  width:50px;
-  height: 50px;
-  border-radius:50%;
-  background: darkblue;
-  color:#fff;
-  text-align:center;
-  line-height:50px;
-  transform: scale(0.8,0.8);
-  transition: transform ease-in 0.1s;
+  transform:translate(165%, 305%);
 }
 
-.menu-round-box li:nth-child(1){
-  top: 20px;left: 100px;
+#chatBtnImg {
+	width:100%;
+	height:100%;
 }
-.menu-round-box li:nth-child(2){
-  top: 50px;left: 155px;
+
+.menu-round-box{
+  width: 414px;
+  height: 688px;
+  border-radius: 43px;
+  background: #F7F7F7;
+  transform:scale(0,0);
+  transition: transform 0s;
+  padding:20px;
 }
-.menu-round-box li:nth-child(3){
-  top: 110px;left: 180px;
+
+#menu-round-box-div {
+  height: 591px;
 }
-.menu-round-box li:nth-child(4){
-  top: 20px;left: 100px;
+
+#menu-round-box-div li{
+  width: 411px;
+  height: 80px;
+  border-radius: 20px;
+  background:#ffffff;
+  text-align:center;
+  line-height:50px;
+  margin-top:20px;
 }
+
+#menu-round-box-div ul li a {
+	text-decoration:none;
+	color:black;
+}
+
 .box1 .open{
   animation: menuBtn1 0.5s linear 1;
   
