@@ -142,7 +142,7 @@ nav#chatB_nav{
     z-index:50;
 }
 
-#chatB_nav ul li {
+#ChtLi {
 	width: 426px;
     height: 84px;
     border-radius: 20px;
@@ -157,6 +157,25 @@ nav#chatB_nav{
     box-sizing: border-box;
 }
 
+.welcomeCht {
+	width: 426px;
+    height: 200px;
+    border-radius: 20px;
+    background: #ffffff;
+    text-align: left;
+    line-height: 35px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 11px 2px lightgrey;
+    padding-left: 34px;
+    padding-top: 13px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.welcomeCht br {
+	line-height:170%
+}
+
 #chatB_nav ul li a {
 	text-decoration:none;
 	color:black;
@@ -169,7 +188,7 @@ nav#chatB_nav{
 }
 
 .chatB_nav li p {
-	width:210px;
+	width:381px;
 	margin-right:166px;
 	position: absolute;
 }
