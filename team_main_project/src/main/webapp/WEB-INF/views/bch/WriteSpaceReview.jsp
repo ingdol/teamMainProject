@@ -17,7 +17,7 @@
             <!-- TOP  -->
             <div id="Wrap">
                 <p>${sessionScope.snick}님이 예약하신 '${SpaceInfo.spaceTitle}'의 후기를 작성해 주세요!</p>
-                <form enctype="multipart/form-data" method="get" action="/SaveReview">
+                <form enctype="multipart/form-data" method="post" action="/SaveReview">
                     <input type="hidden" value="${sessionScope.snick}" id="memNick" name="memNick">
                     <textarea id="ReviewArea" name="ReviewArea" rows="15"></textarea>
                     <div class="filebox">
