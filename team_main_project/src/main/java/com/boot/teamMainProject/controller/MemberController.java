@@ -9,6 +9,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.maven.shared.utils.StringUtils;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +51,7 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping(value = "/signin")
 	public String signIn(@RequestBody HashMap<String, String> param, HttpServletRequest request) {
-		
+		// 포인트 세션
 		String checkVar = "fail";
 		MemberVO vo = service.selectNick(param.get("id"));
 		MemberVO resultChk = service.signIn(param);
@@ -60,6 +61,7 @@ public class MemberController {
 		if(resultChk != null) {
 			session.setAttribute("sid", resultChk.getMemId());
 			session.setAttribute("snick", vo.getMemNick());
+			session.setAttribute("spoint", service.selectPoint(param.get("id")));
 			session.setMaxInactiveInterval(3600); // 60분
 			checkVar = "success";
 		}
@@ -121,6 +123,7 @@ public class MemberController {
 		vo.setHobbyNo2(hobbyArr.get("hobby2"));
 		vo.setHobbyNo3(hobbyArr.get("hobby3"));
 		vo.setMemArea(params.get("address"));
+		vo.setMemPoint(params.get("point"));
 		service.userSignup(vo);
 		
 		return "test";
@@ -172,15 +175,26 @@ public class MemberController {
     // 마이페이지
     @RequestMapping(value = "/mypage")
     public String myPage(Model model, HttpServletRequest request) {
-    	
+    	MemberVO vo = new MemberVO();
     	HttpSession session = request.getSession();
-    	String nick = String.valueOf(session.getAttribute("snick"));
-    	ArrayList<CommunityVO> nickCheck = commuser.memNickCheck(nick);
-		
-		model.addAttribute("nickCheck", nickCheck);
+    	String id = (String) session.getAttribute("sid");
+
+    	vo.setMemId(id);
+		model.addAttribute("join", service.gather(vo));
     	
     	return "pdh/mypage";
     }
+    
+    @RequestMapping(value = "/mypage-gather")
+    public String myPageGather(Model model, HttpServletRequest request) {
+    	HttpSession session = request.getSession();
+    	String nick = String.valueOf(session.getAttribute("snick"));
+    	ArrayList<CommunityVO> nickCheck = commuser.memNickCheck(nick);
+    	
+    	model.addAttribute("nickCheck", nickCheck);
+    	return "pdh/mypage_gather";
+    }
+    
     
     // 정보 수정-로그인
     @RequestMapping(value = "/change-info-signin")
@@ -200,11 +214,42 @@ public class MemberController {
     	String id = String.valueOf(session.getAttribute("sid"));
     	
     	MemberVO mem = service.detailViewMember(id);
+    	
+    	if(StringUtils.isNotEmpty(mem.getMemBirth())) {
+    		String memBirth[] = mem.getMemBirth().split("-");
+    		if(memBirth.length > 2) {
+    			mem.setMemBirth1(memBirth[0]);
+    			mem.setMemBirth2(memBirth[1]);
+    			mem.setMemBirth3(memBirth[2]);
+    		}
+    	}
+    	
     	model.addAttribute("mem", mem);
     	
     	return "pdh/mypage_change_info_signup";
     }
     
-    
+	@ResponseBody
+	@RequestMapping(value = "/user-change-info")
+	public void userChangeInfo(@RequestBody HashMap<String, String> params, HttpServletRequest request) {
+			
+			String[] hobbySplit = params.get("hobby").split(",");
+			HashMap<String, String> hobbyArr = new HashMap<String, String>();
+			hobbyArr.put("hobby1", hobbySplit[0]);
+			hobbyArr.put("hobby2", hobbySplit[1]);
+			hobbyArr.put("hobby3", hobbySplit[2]);
+			
+			MemberVO vo = new MemberVO();
+			
+			vo.setMemId(params.get("email"));
+			vo.setMemPw(params.get("pw"));
+			vo.setMemArea(params.get("address"));
+			vo.setMemPhone(params.get("phone"));
+			vo.setHobbyNo1(hobbyArr.get("hobby1"));
+			vo.setHobbyNo2(hobbyArr.get("hobby2"));
+			vo.setHobbyNo3(hobbyArr.get("hobby3"));
+			
+			service.userChangeInfo(vo);
+	}
 	
 }

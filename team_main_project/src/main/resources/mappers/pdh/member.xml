@@ -48,7 +48,8 @@
 			hobbyNo1, 
 			hobbyNo2, 
 			hobbyNo3, 
-			memNick 
+			memNick, 
+			memPoint
 		)
 		 VALUES
 	 	(
@@ -61,7 +62,8 @@
 		 	#{hobbyNo1}, 
 		 	#{hobbyNo2}, 
 		 	#{hobbyNo3}, 
-		 	#{memNick}
+		 	#{memNick}, 
+		 	#{memPoint}
 	 	)
 	</insert>
 	
@@ -73,6 +75,41 @@
 	<select id="selectNick" resultMap="MemberResult" parameterType="string">
 		SELECT memNick FROM Member WHERE memId=#{memId}
 	</select>
+	
+	<select id="selectPoint" resultType="int" parameterType="String">
+		SELECT memPoint FROM Member WHERE memId=#{memId}
+	</select>
+	
+	<select id="gather" resultType="com.boot.teamMainProject.model.MemberVO" parameterType="string">
+		SELECT 
+			gatJoinNo1, 
+			gatJoinNo2, 
+			gatJoinNo3, 
+			gatJoinNo4, 
+			gatJoinNo5, 
+			classJoin1, 
+			classJoin2, 
+			classJoin3, 
+			classJoin4, 
+			classJoin5
+		FROM Member
+		WHERE
+			memId=#{memId}
+	</select>
+	
+	<update id="userChangeInfo" parameterType="com.boot.teamMainProject.model.MemberVO" >
+		UPDATE Member 
+		SET 
+			memPw = #{memPw}, 
+			memArea = #{memArea}, 
+			memPhone = #{memPhone}, 
+			hobbyNo1 = #{hobbyNo1}, 
+			hobbyNo2 = #{hobbyNo2}, 
+			hobbyNo3 = #{hobbyNo3}
+		WHERE 
+			memId = #{memId}
+	</update>
+	
 <!--  sej : 회원 상세 정보 조회	-->
 	<select id="detailViewMember" parameterType="string"
 			resultType="com.boot.teamMainProject.model.MemberVO" >

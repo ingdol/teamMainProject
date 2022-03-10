@@ -75,6 +75,7 @@ h1 {
     outline: 0;
     transition: border-color 0.4s, border-width 0.1s;
     font-size: var(--nomal-font-size);
+    pointer-events: none;
 }
 
 .l-input-year {
@@ -90,6 +91,7 @@ h1 {
     outline: 0;
     transition: border-color 0.4s, border-width 0.1s;
     font-size: var(--nomal-font-size);
+    pointer-events: none;
 }
 
 .l-input-address {
