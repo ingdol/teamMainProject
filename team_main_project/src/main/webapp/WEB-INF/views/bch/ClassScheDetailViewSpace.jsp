@@ -77,12 +77,13 @@
                     <input type="date" class="setDateTime" id="date" value="">
                     <input type="time" class="setDateTime" id="time" value="">
                     <input type="time" class="setDateTime" id="time2" value="">
-                    <a id="ReservationATAG" href="/ClassSchedule?spaceNo=${space.spaceNo}&classNo=<%=classNo%>&memNick=${mem.memNick}&spaceArea=${space.spaceArea}&date=date&time=time&time2=time2"><input type="button" value="예약하기" id="ReservationBtn"></a>
+                    <a id="ReservationATAG" href="/ClassSchedule?spaceNo=${space.spaceNo}&spaceTitle=${space.spaceTitle}&classNo=<%=classNo%>&memNick=${mem.memNick}&spaceArea=${space.spaceArea}&date=date&time=time&time2=time2"><input type="button" value="예약하기" id="ReservationBtn"></a>
                     <input type="hidden" id="spacePrice" value="${space.spacePrice1}">
                     <input type="hidden" id="classNo" value="<%=classNo%>">
                     <input type="hidden" id="memNick" value="${mem.memNick}">
                     <input type="hidden" id="spaceNo" value="${space.spaceNo}">
                     <input type="hidden" id="spaceArea" value="${space.spaceArea}">
+                    <input type="hidden" id="spaceTitle2" value="${space.spaceTitle}">
                 </form>
             </div>
 

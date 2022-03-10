@@ -29,10 +29,12 @@ public class SpaceReservationController {
     SpaceReservationService reservationService;
     @Autowired
     MemberService memberService;
+    @Autowired
+    GatheringService gatheringService;
 
     // 공간 전체 페이지
     @RequestMapping("SpaceReservationAll")
-    public String SpaceReservationAll(Model model) {
+    public String SpaceReservationAll(Model model, HttpSession session) {
         ArrayList<SpaceVO> spaceList = service.listAllSpace();
         ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
         model.addAttribute("spaceList", spaceList);
@@ -72,10 +74,9 @@ public class SpaceReservationController {
     // 조건 상세 조회 할 때 카테고리 이름 조회(화면에 공간 유형 띄우기 위함.)
     @ResponseBody
     @RequestMapping(value = "constraintCtg")
-    public ArrayList<Space_CtgVO> constraintCtg(Model model) {
-        ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
-        model.addAttribute("spaceCtgName", spaceCtgName);
-        return spaceCtgName;
+    public Space_CtgVO constraintCtg(Model model, @RequestParam("spaceCtgNo") String spaceCtgNo) {
+        Space_CtgVO spaceCtgName1 = space_ctgService.FindSpaceCtgName(spaceCtgNo);
+        return spaceCtgName1;
     }
     // 공간 상세 페이지
     @RequestMapping("/detailViewSpace/{spaceNo}")
@@ -139,13 +140,14 @@ public class SpaceReservationController {
                                 @RequestParam("memNick") String memNick,
                                 @RequestParam("spacePrice") int spacePrice,
                                 @RequestParam("spaceNo") int spaceNo,
+                                @RequestParam("spaceTitle") String spaceTitle,
                                 HttpSession session,
                                 HttpServletResponse write) throws ParseException, IOException {
 
         if(Objects.equals(memNick, "null")) {
             write.setContentType("text/html; charset=UTF-8");
             PrintWriter out_write = write.getWriter();
-            out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
+            out_write.println("회원만 사용 가능한 기능입니다.");
             out_write.flush();
 
             return "/pdh/login";
@@ -157,8 +159,13 @@ public class SpaceReservationController {
             long diffMin = (EndTime.getTime() - StartTime.getTime()) / 60000; // 분 차이 계산
 
             spacePrice = Integer.parseInt(String.valueOf(diffMin*spacePrice));
-            reservationService.ReservationComp(memNick, spaceNo, date, time, time2, spacePrice);
+            reservationService.ReservationComp(memNick, spaceTitle, spaceNo, date, time, time2, spacePrice);
             return "/sej/main";
         }
+    }
+    @ResponseBody
+    @RequestMapping("CancelSpaceReservation")
+    public void CancelSpaceReservation(@RequestParam("spaceReserNo") int spaceReserNo) {
+        reservationService.CancelSpaceReservation(spaceReserNo);
     }
 }

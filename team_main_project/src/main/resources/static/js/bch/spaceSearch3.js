@@ -14,8 +14,6 @@ $(document).ready(function(){
             success:function(result){
                 if(result != ""){
                     var space = result;
-
-                    console.log(space);
                     $('#gallerylistBox').empty(); // 비우기
                     for(var i = 0; i < Object.keys(space).length; i++){
                         var item = $('#gallerylistBoxTemp > .card-link-R').clone(); // 복사
@@ -26,16 +24,17 @@ $(document).ready(function(){
                         $(item).find('.card-body-hashtag').html(space[i].spaceArea);
                         $(item).find('.card-body-nickname').html('최대 ' + space[i].spacePerMax + '인');
                         $(item).find('.card-body-description').html(space[i].spacePrice1 + '<span>/비수기</span><br>' + space[i].spacePrice2 + '<span>/성수기</span></p>');
+                        var spaceCtgNo = space[i].spaceCtgNo
                         $.ajax({
                             type:"post",
                             url:"constraintCtg", // @RestController로 요청
-                            dataType: 'json',
+                            data: {
+                                'spaceCtgNo': spaceCtgNo
+                            },
                             async: false,
                             success:function(result_name){
-                                var spaceCtgName = result_name;
-                                for(var j = 0; j < 1; j++) {
-                                    $(item).find(".card-header-text").html(spaceCtgName[j].spaceCtgName);
-                                }
+                                console.log(result_name.spaceCtgName);
+                                $(item).find(".card-header-text").html(result_name.spaceCtgName);
                             },
                             error:function(data, textStatus){
                                 alert("카테고리 이름 추출 실패");

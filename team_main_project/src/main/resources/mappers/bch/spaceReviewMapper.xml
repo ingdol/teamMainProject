@@ -9,10 +9,12 @@
     <resultMap id="spaceReviewResult" type="com.boot.teamMainProject.model.SpaceReviewVO">
         <result property="spaceNo" column="spaceNo" />
         <result property="spaceRevNo" column="spaceRevNo" />
+        <result property="spaceReserNo" column="spaceReserNo" />
         <result property="spaceRevTitle" column="spaceRevTitle" />
         <result property="memNick" column="memNick" />
         <result property="spaceRevInfo" column="spaceRevInfo" />
         <result property="spaceRevDate" column="spaceRevDate" />
+        <result property="spaceRevPhoto" column="spaceRevPhoto" />
     </resultMap>
 
     <select id="spaceReview" resultMap="spaceReviewResult">
@@ -20,6 +22,14 @@
     </select>
     <select id="spaceReviewTest" resultMap="spaceReviewResult">
         select * from Space_Rev WHERE spaceNo=#{spaceNo}
+    </select>
+<!-- 리뷰 작성 -->
+    <insert id="WriteReview">
+        insert into Space_Rev (spaceNo, spaceReserNo, spaceRevTitle, memNick, spaceRevPhoto, spaceRevDate)
+        values (#{spaceNo}, #{spaceReserNo}, #{spaceRevTitle}, #{memNick}, #{spaceRevPhoto}, now())
+    </insert>
+    <select id="CheckReview" resultMap="spaceReviewResult">
+        select * from Space_Rev WHERE spaceReserNo=#{spaceReserNo}
     </select>
 
 </mapper>

@@ -51,4 +51,49 @@ public class MemberService implements IMemberService {
 	public  MemberVO detailViewMember(String memId) {
 		return dao.detailViewMember(memId);
 	}
+	@Override
+	public void SignInGather1(int gatNo, String memNick) {
+		dao.SignInGather1(gatNo, memNick);
+	}
+	@Override
+	public void SignInGather2(int gatNo, String memNick) {
+		dao.SignInGather2(gatNo, memNick);
+	}
+	@Override
+	public void SignInGather3(int gatNo, String memNick) {
+		dao.SignInGather3(gatNo, memNick);
+	}
+	@Override
+	public void SignInGather4(int gatNo, String memNick) {
+		dao.SignInGather4(gatNo, memNick);
+	}
+	@Override
+	public void SignInGather5(int gatNo, String memNick) {
+		dao.SignInGather5(gatNo, memNick);
+	}
+
+	@Override
+	public void SignInClass1(int classNo, String memNick) {
+		dao.SignInClass1(classNo, memNick);
+	}
+
+	@Override
+	public void SignInClass2(int classNo, String memNick) {
+		dao.SignInClass2(classNo, memNick);
+	}
+
+	@Override
+	public void SignInClass3(int classNo, String memNick) {
+		dao.SignInClass3(classNo, memNick);
+	}
+
+	@Override
+	public void SignInClass4(int classNo, String memNick) {
+		dao.SignInClass4(classNo, memNick);
+	}
+
+	@Override
+	public void SignInClass5(int classNo, String memNick) {
+		dao.SignInClass5(classNo, memNick);
+	}
 }

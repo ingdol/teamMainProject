@@ -43,10 +43,11 @@ $(function(){
 	
 	$(".category5").on('click',function(){
 		console.log("a");
-		$('.allbox').hide();
+		/*$('.allbox').hide();
 		$('.dailybox').hide();
 		$('.reviewbox').hide();
 		$('.bestbox').hide();
-		$('.writebox').show();
+		$('.writebox').show();*/
+		window.location.replace('/ldh/CommunityWrite');
 	});
 });

@@ -85,8 +85,10 @@
                                     <img id="card-image" src="<c:url value='/images/${space.spacePhoto}'/>" />
                                     <div class = "card-header-is_closed" >
                                         <div class = "card-header-text" >
-                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName" begin="0" end="0">
-                                            ${spaceCtgName.spaceCtgName}
+                                            <c:forEach items="${spaceCtgName}" var="spaceCtgName">
+                                            <c:if test="${spaceCtgName.spaceCtgNo eq space.spaceCtgNo}">
+                                                ${spaceCtgName.spaceCtgName}
+                                            </c:if>
                                             </c:forEach>
                                         </div >
                                         <div class = "card-header-number" ></div >
@@ -109,7 +111,7 @@
                                     <!--  카드 바디 본문 -->
                                     <!--  카드 바디 푸터 -->
                                     <div class="card-body-footer">
-                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
+<%--                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
                                         <i class="icon icon-view_count"></i>
                                         <i class="icon icon-comments_count"></i>
                                         <i class="reg_date"></i>
@@ -151,7 +153,7 @@
                         <!--  카드 바디 본문 -->
                         <!--  카드 바디 푸터 -->
                         <div class="card-body-footer">
-                            <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
+<%--                            <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
                             <i class="icon icon-view_count"></i>
                             <i class="icon icon-comments_count"></i>
                             <i class="reg_date"></i>

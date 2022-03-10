@@ -4,10 +4,10 @@ $(document).ready(function(){
 
         $.ajax({
             type:"post",
-            url:"/JoinGatherPlan",
+            url:"/JoinClassPlan",
             data:{"ajaxMemNick":$('#ajaxMemNick').val(),
                   "ajaxClassScheNo":$('#ajaxClassScheNo').val(),
-                  "ajaxClassNo":$('#ajaxClasstNo').val()
+                  "ajaxClassNo":$('#ajaxClassNo').val()
                 },
             success:function(result){
                 alert(result);
@@ -37,7 +37,7 @@ $(document).ready(function(){
                 },
                 success:function(result){
                     alert("삭제 완료");
-                    // location.replace("/sun/detailgat/" + result.gatNo); // 변경 필요
+                    location.replace("/sun/detailclass/" + result.classNo); // 변경 필요
                 },
                 error:function(data, textStatus, result){
                     alert("삭제 실패");

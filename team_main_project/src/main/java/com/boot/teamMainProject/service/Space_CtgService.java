@@ -27,4 +27,9 @@ public class Space_CtgService implements ISpace_CtgService {
     public ArrayList<Space_CtgVO> SpaceCtgNameForAll(String spaceNo) {
         return dao.SpaceCtgNameForAll(spaceNo);
     }
+
+    @Override
+    public Space_CtgVO FindSpaceCtgName(String spaceCtgNo) {
+        return dao.FindSpaceCtgName(spaceCtgNo);
+    }
 }

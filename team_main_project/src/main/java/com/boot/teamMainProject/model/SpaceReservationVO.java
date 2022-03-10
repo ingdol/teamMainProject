@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class SpaceReservationVO {
     private int spaceReserNo;
+    private String spaceTitle;
     private int gatNo;
     private int classNo;
     private String memNick;
@@ -12,6 +13,14 @@ public class SpaceReservationVO {
     private String spaceReserStartTime;
     private String spaceReserEndTime;
     private int spacePay;
+
+    public String getSpaceTitle() {
+        return spaceTitle;
+    }
+
+    public void setSpaceTitle(String spaceTitle) {
+        this.spaceTitle = spaceTitle;
+    }
 
     public int getSpaceNo() {
         return spaceNo;

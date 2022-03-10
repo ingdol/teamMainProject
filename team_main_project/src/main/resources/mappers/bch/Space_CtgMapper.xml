@@ -12,7 +12,7 @@
     </resultMap>
 
     <select id="SpaceCtgName" resultMap="spaceNameResult">
-        SELECT spaceCtgName FROM Space_Ctg
+        SELECT * FROM Space_Ctg
     </select>
 
     <select id="SpaceCtgNameForAll" resultMap="spaceNameResult">
@@ -20,4 +20,9 @@
         WHERE s.spaceCtgNo = sc.spaceCtgNo AND s.spaceNo = #{spaceNo}
     </select>
 
+    <select id="FindSpaceCtgName" resultMap="spaceNameResult">
+        select spaceCtgName
+        from Space_Ctg
+        where spaceCtgNo=#{spaceCtgNo}
+    </select>
 </mapper>

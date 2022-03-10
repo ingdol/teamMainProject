@@ -75,5 +75,10 @@
 	<select id="gatherSearch" resultMap="gatheringResult" parameterType="hashmap">
 		SELECT * FROM Gathering WHERE (gatName LIKE CONCAT('%', #{keyword}, '%')) OR (gatArea LIKE CONCAT('%', #{keyword}, '%'))
 	</select>
+	
+	<select id="detailViewGatNo" parameterType="string"
+			resultType="com.boot.teamMainProject.model.GatheringVO" >
+		SELECT * FROM Gathering WHERE gatNo=#{gatNo}
+	</select>
   	
   </mapper>

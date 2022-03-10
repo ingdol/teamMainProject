@@ -10,6 +10,7 @@
 		<link href="<c:url value='/css/sej/main/index.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/menu.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/footer.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/chatBtn.css'/>" rel="stylesheet" type="text/css">
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		<script src="<c:url value='/js/sej/main/index.js'/>"></script>
 		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
@@ -17,7 +18,12 @@
 	<body>
 		<header>
 			<div id="headerBox">
+			<c:if test="${not empty sessionScope.sid}" >
 				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+			</c:if>
+			<c:if test="${empty sessionScope.sid}" >
+				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
+			</c:if>
 			</div>
 		</header>
 		<nav>
@@ -47,7 +53,7 @@
 							<input id="menu" type="checkbox">
                 	            <nav id="main_nav">
 				    		         <ul>
-				    		          	<li><a href="<c:url value='/chat/${sessionScope.sid}'/>">마이페이지</a></li>
+				    		          	<li><a href="<c:url value='/mypage/${sessionScope.snick}'/>">마이페이지</a></li>
 				    		          	<li><a href="<c:url value='/logout'/>">로그아웃</a></li>
 				    		          </ul>
 				    		     </nav>
@@ -64,5 +70,15 @@
 			</div>  <!-- mainMenuBox 끝 -->
 			
 		</nav>
+		<div id="chatBtnBox" class="box box1">
+		  <div class="menu">
+		     <div class="menu-round-box">
+		     	<div id="menu-round-box-div">
+		     		<div id="chatListBox"></div>
+		       </div>
+		      </div>
+		     </div>
+		     <a class="menu-btn"  onClick="javascript:muenuButton();"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></a>
+		</div>
 	</body>
 </html>

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+
+ul {
+	margin-top:0;
+	padding:0;
+	list-style:none;   /* type 없음 */
+}
+a{text-decoration:none;}
+
+#chatBtnBox {
+	z-index:20;  /* 스크롤 시 위 오도록 */
+	box-sizing: border-box; 
+}
+
+.menu{
+    width: 493px;
+    height: 745px;
+}
+
+.menu-btn{
+  position: absolute;
+  top:50%; left:50%;
+  display:block; 
+  width:90px; 
+  height:90px;
+  line-height:70px;
+  transform:translate(165%, 305%);
+}
+
+#chatBtnImg {
+	width:100%;
+	height:100%;
+}
+
+.menu-round-box{
+  width: 414px;
+  height: 688px;
+  border-radius: 43px;
+  background: #F7F7F7;
+  transform:scale(0,0);
+  /* visibility: hidden; */
+  transition: transform 0s;
+  padding:20px;
+  box-shadow: 1px 1px 11px 2px lightgrey;
+}
+
+#menu-round-box-div {
+  height: 591px;
+}
+
+#menu-round-box-div li{
+  width: 380px;
+  height: 74px;
+  border-radius: 20px;
+  background:#ffffff;
+  text-align:left;
+  line-height:30px;
+  margin-top:20px;
+  box-shadow: 1px 1px 11px 2px lightgrey;
+  padding-left:34px;
+  padding-top:10px;
+  position: relative;
+}
+
+#menu-round-box-div ul li a {
+	text-decoration:none;
+	color:black;
+}
+
+
+.box1 .open{
+  animation: menuBtn1 0.5s linear 1;
+  visibility: visible;
+  transition: all 0.5s;
+  transform:scale(1,1);
+  visibility:visible;
+}
+@keyframes menuBtn1{
+  0%{
+    transform:scale(0,0);
+  }
+  100%{
+    transform:scale(1,1);
+  }
+} 
+
+.open ~ .menu-btn{
+  box-shadow:none;
+}
+.open li{
+  transition-delay:0.5s;
+  /* transform: scale(1,1); */
+  visibility:visible;
+}
+#chatListName {
+	height:30px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.chatFirst li p {
+	width:210px;
+	margin-right:166px;
+	position: absolute;
+}
+
+#chatInImg {
+	float:right;
+	width: 15px;
+    height: 29px;
+    margin-bottom: 25px;
+    margin-top: -14px;
+    margin-right:20px;
+}

@@ -16,14 +16,17 @@
             <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
             <!-- TOP  -->
             <div id="Wrap">
-                <p>${sessionScope.snick}님이 예약하신 '(예약한 Space Title)'의 후기를 작성해 주세요!</p>
-                <form enctype="multipart/form-data">
-                    <textarea id="ReviewArea" rows="15"></textarea>
+                <p>${sessionScope.snick}님이 예약하신 '${SpaceInfo.spaceTitle}'의 후기를 작성해 주세요!</p>
+                <form enctype="multipart/form-data" method="post" action="/SaveReview">
+                    <input type="hidden" value="${sessionScope.snick}" id="memNick" name="memNick">
+                    <textarea id="ReviewArea" name="ReviewArea" rows="15"></textarea>
                     <div class="filebox">
                         <input class="upload-name" value="첨부파일" placeholder="첨부파일" readonly>
-                        <label for="FileList">파일찾기</label>
-                        <input type="file" id="FileList" multiple accept="image/*">
+                        <label for="files">파일찾기</label>
+                        <input type="file" id="files" name="files" multiple accept="image/*">
                         <input type="submit" id="WriteReview" class="btn-primary" value="리뷰 작성">
+                        <input type="hidden" id="spaceNo" name="spaceNo" value="${SpaceInfo.spaceNo}">
+                        <input type="hidden" id="spaceReserNo" name="spaceReserNo" value="${SpaceInfo.spaceReserNo}">
                     </div>
                 </form>
             </div>

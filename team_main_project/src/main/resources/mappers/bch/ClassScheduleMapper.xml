@@ -40,7 +40,7 @@
     </update>
     <!--  모임 최대 인원 조회  -->
     <select id="CheckMaxPersonForClass" resultType="int" parameterType="int">
-        select classScheMax from Class_Sche where clasScheNo=#{classScheNo}
+        select classScheMax from Class_Sche where classScheNo=#{classScheNo}
     </select>
     <!--  모임 일정 삭제  -->
     <delete id="DeleteClassSchedule">

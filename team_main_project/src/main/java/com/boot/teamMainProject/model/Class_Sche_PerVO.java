@@ -2,8 +2,17 @@ package com.boot.teamMainProject.model;
 
 public class Class_Sche_PerVO {
     private int classSchePerNo;
+    private int classScheNo;
     private int classNo;
     private String memNick;
+
+    public int getClassScheNo() {
+        return classScheNo;
+    }
+
+    public void setClassScheNo(int classScheNo) {
+        this.classScheNo = classScheNo;
+    }
 
     public int getClassSchePerNo() {
         return classSchePerNo;

@@ -46,7 +46,7 @@
 					<h3 id="sectioninfo">모임메뉴</h3>
 					<ul>
 						<li class="moim1"><button type="button" class="btn btn-outline-primary">정보</button></li>
-						<li class="moim2"><button type="button" class="btn btn-outline-primary">클래스리뷰</button></li>
+						<li class="moim2"><button type="button" class="btn btn-outline-primary">클래스 게시판</button></li>
 					</ul>
 				</div>
 				<div class="detailinfo">
@@ -55,18 +55,19 @@
 					<div class="moiminfodetail current">
 						<h4 id="sectioninfo">!클래스정보</h4>
 						<c:forEach items="${detail}" var="detail">
-						<div class="photobox"><img src="<c:url value='/images/${detail.classPhoto}'/>"></div>
+						<div class="photobox"><br><img src="<c:url value='/images/${detail.classPhoto}'/>"><br></div>
 						<div class="infobox">
 								<span class="large">클래스 제목 : ${detail.classTitle}</span><br>
 								<span>클래스 개설일 : <fmt:formatDate value="${detail.classOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 클래스 소개 -</span><br>
 								<span>${detail.classInfo}</span><br>
-								<hr>								
-								<span>${detail.classNo}</span><br>
+								<br><br>
+								<hr>
+								<%-- <span>${detail.classNo}</span><br>
 								<span>${detail.memNick}</span><br>
 								<span>${detail.hobbyNo}</span><br>
 								<span>${detail.classArea}</span><br>
-								<span>${detail.classHate}</span><br>						
+								<span>${detail.classHate}</span><br> --%>						
 						</div>					
 						</c:forEach>
 					</div>
@@ -81,7 +82,6 @@
 									<div class="writer">글쓴이</div>
 									<div class="date">작성일</div>
 								</div>
-<%--								일정 공지 보이게 넣으려다가 충돌나면 보기 불편하실 거 같아서 아직 안 넣었어요!--%>
 								<c:forEach items="${revlist}" var="com">
 									<div class="top">
 										<div class="num">${com.classRevNo}</div>
@@ -90,6 +90,16 @@
 										</div>
 										<div class="writer" id="comId">${com.memNick}</div>
 										<div class="date" id="comDate"><fmt:formatDate value="${com.classRevDate}" pattern="YY/MM/dd"/></div>
+									</div>
+								</c:forEach>
+								<c:forEach items="${classSchedule}" var="classSche">
+									<div class="top">
+										<div class="num">${classSche.classScheNo}</div>
+										<div class="title" id="gatTitle">
+											<a href="<c:url value='/ScheduleNoticeClass/${classSche.classNo}/${classSche.classScheNo}'/>">[일정 공지]${classSche.classScheTitle}</a>
+										</div>
+										<div class="writer" id="gatId">${classSche.memNick}</div>
+										<div class="date" id="gatDate"><fmt:formatDate value="${classSche.classScheWriteDate}" pattern="YY/MM/dd"/></div>
 									</div>
 								</c:forEach>
 							</div>
@@ -119,16 +129,23 @@
 						<c:when test="${empty sessionScope.snick}">
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>
 						</c:when>
-						<c:when test="${not empty sessionScope.snick and (mem.classJoin1 == classInfoVO.classNo or mem.classJoin2 == classInfoVO.classNo or mem.classJoin3 == classInfoVO.classNo or mem.classJoin4 == classInfoVO.classNo or mem.classJoin5 == classInfoVO.classNo)}">
+						<c:when test="${sessionScope.snick == classInfoVO.memNick and (mem.classJoin1 == classInfoVO.classNo or mem.classJoin2 == classInfoVO.classNo or mem.classJoin3 == classInfoVO.classNo or mem.classJoin4 == classInfoVO.classNo or mem.classJoin5 == classInfoVO.classNo)}">
 							<li><a href="/ClassSchedule?classNo=${classInfoVO.classNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>
 						</c:when>
 						<c:otherwise>
-							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
+							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn3"></li>
 						</c:otherwise>
 					</c:choose>
 					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
-					<li><button type="button" class="btn btn-primary join">가입하기</button></li>
+					<c:if test="${empty mem.memNick}">
+						<li><button type="button" class="btn btn-primary join" id="joinFake">가입하기</button></li>
+					</c:if>
+					<c:if test="${not empty mem.memNick}">
+						<li><button type="button" class="btn btn-primary join" id="joinClass">가입하기</button></li>
+					</c:if>
 				</ul>
+				<input type="hidden" id="memNick" value="${mem.memNick}">
+				<input type="hidden" id="classNo" value="${classInfoVO.classNo}">
 			</div>
 		</section>
 

@@ -12,15 +12,16 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/images/**")
 
 				.addResourceLocations("file:///C:/teamImage/") // 공통 이미지 경로
-				.addResourceLocations("file:///upload/") // 공통 이미지 경로
+				.addResourceLocations("file:///upload/") // 공통 이미지 경로(서버)
 				.addResourceLocations("file:///D:/project/linkerprj/prjphoto/") // 서연님 경로
 				.addResourceLocations("file:///Users/gobyeongchae/Desktop/teamImage/"); //공통 이미지 경로(고병채)
 
 		registry.addResourceHandler("/voice/**")
+		.addResourceLocations("file:///voice/") //챗봇 보이스(서버)
 		.addResourceLocations("file:///C:/upload/") //챗봇 보이스
 		.addResourceLocations("file:////Users/gobyeongchae/download/"); //챗봇 보이스
 
 		registry.addResourceHandler("/bchimages/**")
-				.addResourceLocations("file:///Users/gobyeongchae/Desktop/teamImage/bch/"); // 이미지 경로(고병채)
+				.addResourceLocations("file:///Users/gobyeongchae/Desktop/teamImage/"); // 이미지 경로(고병채)
 	}
 }
