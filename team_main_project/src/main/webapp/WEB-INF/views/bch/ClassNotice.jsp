@@ -23,7 +23,7 @@
 
           <section>
               <div class ="wrap">
-                      <table border = "0" align="center" >
+                      <table border = "0" align="center"id="headerTitle" >
                           <c:if test="${gath.gatBanPhoto!=''}">
                               <tr><td colspan="4"><img src="<c:url value='/images/${gath.gatBanPhoto}'/>" ></td></tr>
                           </c:if>
