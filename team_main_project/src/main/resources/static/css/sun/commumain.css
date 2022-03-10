@@ -72,3 +72,8 @@
 	display: flex;
     justify-content: space-between;
 }
+
+.menu{
+	width: 100% !important;
+    height: 100% !important;
+}
