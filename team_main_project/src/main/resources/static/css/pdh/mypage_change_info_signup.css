@@ -1,0 +1,720 @@
+/* ======== CASCADING VARIABLES ======== */
+:root {
+    /* ======== ALIGN ======== */
+    --main-align-margin-auto: 0 auto;
+
+    /* ======== COLOR ======== */
+    --color-first: #ffffff;
+
+    /* ======== SIZE ======== */
+    --nomal-font-size: 24px;
+    --sub-font-size: 12px;
+    --box-size-first: 40px;
+}
+
+/* ======== TEXT FONT ======== */
+
+/* ======== MAIN ======== */
+
+body {
+    margin: var(--main-align-margin-auto);
+    /* box-sizing: border-box; */
+}
+
+h1 {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+#l-form {
+    height: 145vh;
+    margin-bottom: -10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-input {
+    position: absolute;
+    width: 100%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+	z-index: 11;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-email {
+    position: absolute;
+    width: 70%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+	z-index: 11;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-day {
+    position: absolute;
+    width: 20%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+	left: 19rem;
+	z-index: 11;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-year {
+    position: absolute;
+    width: 20%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+	left: 0.15rem;
+	z-index: 11;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-address {
+    position: absolute;
+    width: 40%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-detailed-address {
+    position: absolute;
+    width: 40%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-address-right {
+    position: absolute;
+    width: 40%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    left: 14rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+}
+
+.l-input-disabled {
+    position: absolute;
+    width: 100%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    transition: border-color 0.4s, border-width 0.1s;
+    font-size: var(--nomal-font-size);
+    pointer-events: none;
+}
+
+.l-li {
+    list-style: none;
+    position: relative;
+    height: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+.l-li-check {
+    list-style: none;
+    position: relative;
+    height: 5rem;
+    margin-bottom: 6rem;
+}
+
+.l-li-title {
+    list-style: none;
+    position: relative;
+    height: 3rem;
+}
+
+.l-li-title-birth {
+    list-style: none;
+    position: relative;
+    height: 3rem;
+}
+
+.l-li-Btn {
+    list-style: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+    top: 1.5rem;
+}
+
+.l-address-Btn {
+    position: absolute;
+    width: 50%;
+    height: var(--box-size-first);
+    margin-bottom: 30px;
+    border: none;
+	background: rgba(50, 130, 255, 1.0);
+	color: white;
+    left: 12rem;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    font-size: var(--nomal-font-size);
+}
+
+.l-auth-Btn {
+	position: absolute;
+	width: 20%;
+	height: var(--box-size-first);
+	margin-bottom: 30px;
+	left: 19rem;
+	cursor: pointer;
+}
+
+#l-submit {
+    width: 24rem;
+    height: var(--box-size-first);
+    font-weight: bold;
+    color: white;
+    background: rgba(30, 144, 255, 1.0);
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.l-label {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.l-label-disabled {
+    position: absolute;
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.l-label-day {
+    position: absolute;
+    left: 19.5rem;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.l-label-year {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.l-label-right {
+    position: absolute;
+    left: 15rem;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+    z-index: -1;
+    transition: all 0.2s;
+}
+
+.l-check {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.l-title {
+    position: absolute;
+    top: 0.5rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: gray;
+    font-weight: bold;
+}
+
+#postcode {
+	pointer-events: none;
+}
+
+#address {
+	font-size: var(--sub-font-size);
+	font-weight: bold;
+	pointer-events: none;
+}
+
+.dropdown {
+	position: relative;
+	width: 100px;
+	height: 20px;
+	left: 8rem;
+}
+
+.dropdown input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	outline: none;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.dropdown .option {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	background: #ffffff;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+	z-index: 100;
+}
+
+.dropdown .option div {
+	padding: 12px 20px;
+	cursor: pointer;
+}
+
+.dropdown .option div ion-icon {
+	position: relative;
+	top: 4px;
+	padding-right: 5px;
+	font-size: 1.2em;
+}
+
+.dropdown.active .option {
+	display: block;
+}
+
+.togglefocus {
+	transition: outline-color 0.4s, outline-width 0.05s !important;
+	outline-style: solid !important;
+	outline-width: 2px !important;
+	outline-color: rgba(50, 130, 255, 0.9) !important;
+}
+
+/* ======== PSEUDO-CLASS <SELECTOR> ======== */
+.l-address-Btn:hover {
+	background: #ffffff;
+	color: rgba(50, 130, 255, 1.0);
+}
+
+.l-address-Btn:before,.l-address-Btn:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	width: 0;
+	background: rgba(50, 130, 255, 1.0);
+	transition: 400ms ease all;
+}
+
+.l-address-Btn:after {
+	right: inherit;
+	top: inherit;
+	left: 0;
+	bottom: 0;
+}
+
+.l-address-Btn:hover:before,.l-address-Btn:hover:after {
+	width: 100%;
+	transition: 800ms ease all;
+}
+
+#l-submit:hover {
+    background: rgba(50, 130, 255, 0.9);
+}
+
+#l-submit:active {
+    background: rgba(50, 130, 255, 1.0);
+}
+
+.l-input:focus + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input:not(:focus).l-input:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-address:focus + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address:not(:focus).l-input-address:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-address-right:focus + .l-label-right {
+    top: -1rem;
+    left: 13.5rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address-right:not(:focus).l-input-address-right:not(:placeholder-shown) + .l-label-right {
+    top: -1rem;
+    left: 13.5rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-address-right:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-detailed-address:focus + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-detailed-address:not(:focus).l-input-detailed-address:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-detailed-address:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-disabled:focus + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-disabled:not(:focus).l-input-disabled:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.3rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-disabled:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-day:focus + .l-label-day {
+    top: -1rem;
+    left: 18.7rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-day:not(:focus).l-input-day:not(:placeholder-shown) + .l-label-day {
+    top: -1rem;
+    left: 18.7rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-day:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-year:focus + .l-label-year {
+    top: -1rem;
+    left: 0rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-year:not(:focus).l-input-year:not(:placeholder-shown) + .l-label-year {
+    top: -1rem;
+    left: 0rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-year:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.l-input-email:focus + .l-label {
+    top: -1rem;
+    left: -0.25rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-email:not(:focus).l-input-email:not(:placeholder-shown) + .l-label {
+    top: -1rem;
+    left: -0.25rem;
+    font-size: var(--sub-font-size);
+}
+
+.l-input-email:focus {
+    border-width: 2px;
+    border-color: deepskyblue;
+}
+
+.dropdown .option div:hover {
+	background: rgba(50, 130, 255, 0.9);
+	color: #ffffff;
+}
+
+.dropdown::before {
+	content: '';
+	position: absolute;
+	right: 0px;
+	width: 8px;
+	height: 8px;
+	border: 2px solid #333;
+	border-top: 2px solid rgba(0, 0, 0, 0.0);
+	border-right: 2px solid rgba(0, 0, 0, 0.0);
+	top: 15px;
+	z-index: 100;
+	pointer-events: none;
+	transform: rotate(-45deg);
+	transition: 0.5s;
+}
+
+.textBox:hover {
+	transition: background 0.2s;
+	background: rgba(211, 211, 211, 0.5);
+}
+
+.dropdown.active::before {
+	top: 22px;
+	transform: rotate(-225deg);
+}
+
+/* remove Arrow Btn */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ======== SUCCESS EVENT <CLASS> ======== */
+.success-font {
+    color: green;
+    font-weight: bold;
+}
+
+.success-line {
+    border-width: 2px;
+    border-color: green;
+}
+
+.success-label {
+    color: green;
+}
+
+
+/* ======== WARNING EVENT <TAG> ======== */
+span {
+    position: relative;
+    top: 3rem;
+    left: 0.3rem;
+}
+
+/* ======== WARNING EVENT <CLASS> ======== */
+.fail-font {
+    color: red;
+    font-weight: bold;
+}
+
+.fail-line {
+    border-width: 2px;
+    border-color: red;
+}
+
+.fail-label {
+    color: red;
+}
+
+.fail-hobby-label {
+    animation: fontColorSwing 0.5s ease forwards;
+}
+
+.fail-bg {
+	border: 3px solid red;
+    animation: bgColorSwing 0.5s ease forwards;
+}
+
+/* ======== WARNING EVENT <KEY-FRAMES> ======== */
+@keyframes bgColorSwing {
+	0%{
+		background: rgba(255, 51, 51, 1.0);
+		transform: rotate(0deg);
+	}
+	5%{ background: rgba(255, 51, 51, 1.0) }
+	10%{
+		background: rgba(255, 51, 51, 1.0);
+		transform: rotate(10deg);
+	}
+	15%{ background: rgba(255, 51, 51, 1.0) }
+	20%{
+		background: rgba(255, 51, 51, 1.0);
+		transform: rotate(-10deg);
+	}
+	25%{ background: rgba(255, 51, 51, 1.0) }
+	30%{
+		background: rgba(255, 51, 51, 1.0);
+		transform: rotate(5deg);
+	}
+	35%{ background: rgba(255, 51, 51, 1.0) }
+	40%{
+		background: rgba(255, 51, 51, 1.0);
+		transform: rotate(-5deg);
+	}
+	
+	45%{ background: rgba(255, 51, 51, 1.0) }
+	50%{
+		background: rgba(255, 51, 51, 1.0);
+		transform: rotate(2deg);
+	}
+	55%{ background: rgba(255, 51, 51, 0.9) }
+	60%{
+		background: rgba(255, 51, 51, 0.8);
+		transform: rotate(-2deg);
+	}
+	65%{ background: rgba(255, 51, 51, 0.7) }
+	70%{
+		background: rgba(255, 51, 51, 0.6);
+		transform: rotate(0deg);
+	}
+	75%{ background: rgba(255, 51, 51, 0.5) }
+	80%{ background: rgba(255, 51, 51, 0.4) }
+	85%{ background: rgba(255, 51, 51, 0.3) }
+	90%{ background: rgba(255, 51, 51, 0.2) }
+	95%{ background: rgba(255, 51, 51, 0.1) }
+	100%{
+		background: rgba(255, 51, 51, 0.0);
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes fontColorSwing {
+	0%{
+		color: rgb(255, 51, 51);
+		transform: rotate(0deg);
+	}
+	5%{ color: rgb(255, 51, 51) }
+	10%{
+		color: rgb(255, 51, 51);
+		transform: rotate(10deg);
+	}
+	15%{ color: rgb(255, 51, 51) }
+	20%{
+		color: rgb(255, 51, 51);
+		transform: rotate(-10deg);
+	}
+	25%{ color: rgb(255, 51, 51) }
+	30%{
+		color: rgb(255, 51, 51);
+		transform: rotate(5deg);
+	}
+	35%{ color: rgb(255, 51, 51) }
+	40%{
+		color: rgb(255, 51, 51);
+		transform: rotate(-5deg);
+	}
+	
+	45%{ color: rgb(255, 51, 51) }
+	50%{
+		color: rgb(255, 51, 51);
+		transform: rotate(2deg);
+	}
+	55%{ color: rgb(255, 51, 51) }
+	60%{
+		color: rgb(255, 51, 51);
+		transform: rotate(-2deg);
+	}
+	65%{ color: rgb(255, 51, 51) }
+	70%{
+		color: rgb(255, 51, 51);
+		transform: rotate(0deg);
+	}
+	75%{ color: rgb(255, 51, 51) }
+	80%{ color: rgb(255, 51, 51) }
+	85%{ color: rgb(255, 51, 51) }
+	90%{ color: rgb(255, 51, 51) }
+	95%{ color: rgb(255, 51, 51) }
+	100%{
+		color: rgb(255, 51, 51);
+		transform: rotate(0deg);
+	}
+}
