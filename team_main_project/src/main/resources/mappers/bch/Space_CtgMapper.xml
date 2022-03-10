@@ -21,7 +21,8 @@
     </select>
 
     <select id="FindSpaceCtgName" resultMap="spaceNameResult">
-        select *
+        select spaceCtgName
         from Space_Ctg
+        where spaceCtgNo=#{spaceCtgNo}
     </select>
 </mapper>

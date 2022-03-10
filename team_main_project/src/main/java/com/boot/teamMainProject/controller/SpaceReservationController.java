@@ -74,10 +74,9 @@ public class SpaceReservationController {
     // 조건 상세 조회 할 때 카테고리 이름 조회(화면에 공간 유형 띄우기 위함.)
     @ResponseBody
     @RequestMapping(value = "constraintCtg")
-    public ArrayList<Space_CtgVO> constraintCtg(Model model) {
-        ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
-        model.addAttribute("spaceCtgName", spaceCtgName);
-        return spaceCtgName;
+    public Space_CtgVO constraintCtg(Model model, @RequestParam("spaceCtgNo") String spaceCtgNo) {
+        Space_CtgVO spaceCtgName1 = space_ctgService.FindSpaceCtgName(spaceCtgNo);
+        return spaceCtgName1;
     }
     // 공간 상세 페이지
     @RequestMapping("/detailViewSpace/{spaceNo}")

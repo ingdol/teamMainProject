@@ -29,7 +29,7 @@ public class Space_CtgService implements ISpace_CtgService {
     }
 
     @Override
-    public Space_CtgVO FindSpaceCtgName() {
-        return dao.FindSpaceCtgName();
+    public Space_CtgVO FindSpaceCtgName(String spaceCtgNo) {
+        return dao.FindSpaceCtgName(spaceCtgNo);
     }
 }
