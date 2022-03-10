@@ -102,7 +102,7 @@
   		
 			INSERT into Commu_Hate(memNick, commuNo, commuHated) SELECT '${memNick}', ${commuNo},0
 			FROM DUAL WHERE 
-			NOT EXISTS(SELECT * FROM Commu_Like WHERE memNick='${memNick}' AND commuNo=${commuNo})
+			NOT EXISTS(SELECT * FROM Commu_Hate WHERE memNick='${memNick}' AND commuNo=${commuNo})
    </insert>
    
    <select id="HateCBoard2" 

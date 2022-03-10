@@ -241,8 +241,8 @@ public class GatherDetController {
 		String savedFileName1 ="";
 		String savedFileName2 ="";
 		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
-		String uploadPath1 = "/images/";
-		String uploadPath2 = "/images/";
+		String uploadPath1 = "/upload/";
+		String uploadPath2 = "/upload/";
 //		String uploadPath1 = "C:/teamImage/";
 //		String uploadPath2 = "C:/teamImage/";
 		// 2. 원본 파일 이름 알아오기
@@ -292,7 +292,7 @@ public class GatherDetController {
 		gath.setGatArea(gatArea); 
 		service3.insertGathering(gath);
 		
-		return "redirect:/main";
+		return "redirect:/";
 	}
 	
 	@ResponseBody
