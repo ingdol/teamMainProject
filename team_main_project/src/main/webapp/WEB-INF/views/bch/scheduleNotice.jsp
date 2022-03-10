@@ -23,7 +23,7 @@
 
           <section>
               <div class ="wrap">
-                      <table border = "0" align="center" >
+                      <table border = "0" align="center" id="headerTitle">
                           <c:if test="${gath.gatBanPhoto!=''}">
                               <tr><td colspan="4"><img src="<c:url value='/images/${gath.gatBanPhoto}'/>" ></td></tr>
                           </c:if>
@@ -56,7 +56,7 @@
                           </td>
                       </tr>
                   </table>
-                  <div id="map" style="width: 1000px; height: 50%; margin-top: 20px; margin-bottom: 20px;"></div>
+                  <div id="map" style="width: 890px !important; height: 50%; margin-top: 20px; margin-bottom: 20px;"></div>
               </div>
           </section>
           <section>
@@ -70,18 +70,20 @@
                       </table>
                   </ol>
               </div>
-              <c:if test="${empty sessionScope.snick}">
-                  <input type="button" value="일정 참가" id="FakejoinGatherBtn">
-              </c:if>
-              <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
-              <input type="hidden" id="ajaxGatScheNo" value="${gatherSchedule.gatScheNo}">
-              <input type="hidden" id="ajaxGatNo" value="${gatherSchedule.gatNo}">
-              <c:if test="${not empty sessionScope.snick}">
-                  <input type="button" value="일정 참가" id="joinGatherBtn">
-              </c:if>
-              <c:if test="${sessionScope.snick eq gatherSchedule.memNick}">
-                  <input type="button" value="삭 제" id="deleteGatherBtn">
-              </c:if>
+              <div class="wrap">
+                  <c:if test="${empty sessionScope.snick}">
+                      <input type="button" value="일정 참가" id="FakejoinGatherBtn">
+                  </c:if>
+                  <input type="hidden" id="ajaxMemNick" value="${sessionScope.snick}">
+                  <input type="hidden" id="ajaxGatScheNo" value="${gatherSchedule.gatScheNo}">
+                  <input type="hidden" id="ajaxGatNo" value="${gatherSchedule.gatNo}">
+                  <c:if test="${not empty sessionScope.snick}">
+                      <input type="button" value="일정 참가" id="joinGatherBtn">
+                  </c:if>
+                  <c:if test="${sessionScope.snick eq gatherSchedule.memNick}">
+                      <input type="button" value="삭 제" id="deleteGatherBtn">
+                  </c:if>
+              </div>
           </section>
           <!-- BOTTOM  -->
           <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />

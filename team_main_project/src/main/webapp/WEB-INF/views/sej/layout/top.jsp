@@ -53,7 +53,7 @@
 							<input id="menu" type="checkbox">
                 	            <nav id="main_nav">
 				    		         <ul>
-				    		          	<li><a href="<c:url value='/mypage/${sessionScope.snick}'/>">마이페이지</a></li>
+				    		          	<li><a href="<c:url value='/mypage'/>">마이페이지</a></li>
 				    		          	<li><a href="<c:url value='/logout'/>">로그아웃</a></li>
 				    		          </ul>
 				    		     </nav>

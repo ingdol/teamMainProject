@@ -5,8 +5,8 @@
     <head>
         <title>My Page</title>
         <link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
-        <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">
-        <link href="<c:url value='/css/sun/detailgat.css'/>" rel="stylesheet" type="text/css">
+<%--        <link href="<c:url value='/css/sun/suncommon.css'/>" rel="stylesheet" type="text/css">--%>
+<%--        <link href="<c:url value='/css/sun/detailgat.css'/>" rel="stylesheet" type="text/css">--%>
         <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
         <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
         <script src="<c:url value='/js/sun/detailgat.js'/>"></script>
@@ -64,55 +64,6 @@
 							</div>
 						</div>
             </span>
-<%--            <span>--%>
-<%--                <p>예약 목록(공간 주인만)</p>--%>
-<%--						<div class="board_list_wrap">--%>
-<%--							<div class="board_list">--%>
-<%--								<div class="top">--%>
-<%--									<div class="title">공간 이름</div>--%>
-<%--                                    <div class="title">날짜</div>--%>
-<%--									<div class="title">시작 시간</div>--%>
-<%--									<div class="title">끝 시간</div>--%>
-<%--									<div class="title">가격</div>--%>
-<%--									<div class="title">취소</div>--%>
-<%--								</div>--%>
-<%--								<c:forEach items="${gatherCommu}" var="com">--%>
-<%--									<div class="top">--%>
-<%--										<div class="num">${com.gatDetNo}</div>--%>
-<%--										<div class="title" id="comTitle">--%>
-<%--											<a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>--%>
-<%--										</div>--%>
-<%--										<div class="writer" id="comId">${com.memNick}</div>--%>
-<%--										<div class="date" id="comDate"><fmt:formatDate value="${com.gatDetDate}" pattern="YY/MM/dd"/></div>--%>
-<%--										<div class="count" id="comCount">${com.gatDetView}</div>--%>
-<%--									</div>--%>
-<%--                                </c:forEach>--%>
-<%--							</div>--%>
-<%--						</div>--%>
-<%--                <p>공간 목록(공간 주인만)</p>--%>
-<%--						<div class="board_list_wrap">--%>
-<%--							<div class="board_list">--%>
-<%--								<div class="top">--%>
-<%--									<div class="num">번호</div>--%>
-<%--									<div class="title">제목</div>--%>
-<%--									<div class="writer">글쓴이</div>--%>
-<%--									<div class="date">작성일</div>--%>
-<%--									<div class="count">조회</div>--%>
-<%--								</div>--%>
-<%--								<c:forEach items="${gatherCommu}" var="com">--%>
-<%--									<div class="top">--%>
-<%--										<div class="num">${com.gatDetNo}</div>--%>
-<%--										<div class="title" id="comTitle">--%>
-<%--											<a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${com.gatDetTitle}/댓글수${com.gatDetComNum}</a>--%>
-<%--										</div>--%>
-<%--										<div class="writer" id="comId">${com.memNick}</div>--%>
-<%--										<div class="date" id="comDate"><fmt:formatDate value="${com.gatDetDate}" pattern="YY/MM/dd"/></div>--%>
-<%--										<div class="count" id="comCount">${com.gatDetView}</div>--%>
-<%--									</div>--%>
-<%--                                </c:forEach>--%>
-<%--							</div>--%>
-<%--						</div>--%>
-<%--            </span>--%>
         </div>
         <!-- BOTTOM  -->
         <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
