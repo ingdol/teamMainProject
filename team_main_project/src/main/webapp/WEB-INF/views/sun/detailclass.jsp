@@ -115,7 +115,11 @@
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
-									<li class="bt_wrap"><a href="<c:url value='/ldh/SomoimboardWrite/{memNick}'/>" class="on">등록</a></li>
+									<li class="bt_wrap">
+										<a href="<c:url value='/ldh/ClassReviewWrite/${classInfoVO.classNo}/${mem.memId}'/>" class="on">등록</a>
+									</li>
+									
+									
 								</ul>
 							</nav>	
 					</div>
