@@ -146,4 +146,10 @@
   		<delete id="DeleteCommuDet"  parameterType="int">
   			DELETE FROM Community WHERE commuNo=#{commuNo}
   		</delete>
+ 
+ 	<!-- 게시글 아이디 검색 -->
+	<select id="memNickCheck" resultMap="communityResult" parameterType="com.boot.teamMainProject.model.CommunityVO">
+		SELECT * FROM Community WHERE memNick=#{memNick} ORDER BY commuNo DESC
+	</select>
+
   </mapper>

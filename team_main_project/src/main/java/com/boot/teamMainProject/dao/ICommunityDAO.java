@@ -36,4 +36,7 @@ public interface ICommunityDAO {
 	void DeleteCommuLike(int commuNo);
 	void DeleteCommuHate(int commuNo);
 	void DeleteCommuDet(int commuNo);
+	
+	//	pdh
+	ArrayList<CommunityVO> memNickCheck(String memNick);
 }

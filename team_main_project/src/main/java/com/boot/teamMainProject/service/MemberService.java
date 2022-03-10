@@ -38,6 +38,31 @@ public class MemberService implements IMemberService {
 	}
 	
 	@Override
+	public MemberVO gather1(String gatJoinNo1) {
+		return dao.gather1(gatJoinNo1);
+	}
+	
+	@Override
+	public MemberVO gather2(String gatJoinNo2) {
+		return dao.gather2(gatJoinNo2);
+	}
+	
+	@Override
+	public MemberVO gather3(String gatJoinNo3) {
+		return dao.gather3(gatJoinNo3);
+	}
+	
+	@Override
+	public MemberVO gather4(String gatJoinNo4) {
+		return dao.gather4(gatJoinNo4);
+	}
+	
+	@Override
+	public MemberVO gather5(String gatJoinNo5) {
+		return dao.gather5(gatJoinNo5);
+	}
+	
+	@Override
 	public MemberVO selectNick(String memId) {
 		/*
 		 * System.out.println("selectNick : " + memId);

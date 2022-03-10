@@ -163,4 +163,11 @@ public class CommunityService implements ICommunityService {
 		dao.ComCReset(commuNo);
 	}
 
+	
+	@Override
+	public ArrayList<CommunityVO> memNickCheck(String memNick) {
+		// TODO Auto-generated method stub
+		return dao.memNickCheck(memNick);
+	}
+	
 }

@@ -10,6 +10,11 @@ public interface IMemberService {
 	MemberVO signIn(HashMap<String, String> param);
 	void userSignup(MemberVO vo);
 	MemberVO selectNick(String memNick);
+	MemberVO gather1(String gatJoinNo1);
+	MemberVO gather2(String gatJoinNo2);
+	MemberVO gather3(String gatJoinNo3);
+	MemberVO gather4(String gatJoinNo4);
+	MemberVO gather5(String gatJoinNo5);
 	MemberVO detailViewMember(String memId);// sej : 상세 회원 조회
 	void SignInGather1(int gatNo, String memNick); // 모임 가입
 	void SignInGather2(int gatNo, String memNick); // 모임 가입

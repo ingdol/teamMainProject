@@ -1,7 +1,9 @@
 package com.boot.teamMainProject.controller;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.boot.teamMainProject.model.CommunityVO;
 import com.boot.teamMainProject.model.MemberVO;
+import com.boot.teamMainProject.service.CommunityService;
 import com.boot.teamMainProject.service.MemberService;
 
 @Controller
@@ -26,6 +30,9 @@ public class MemberController {
 
 	@Autowired
 	MemberService service;
+	
+	@Autowired
+	CommunityService commuser;
 	
 	@RequestMapping(value = "/login", method = {RequestMethod.GET})
 	public String login() {
@@ -161,5 +168,43 @@ public class MemberController {
 
         return num;
     }
+    
+    // 마이페이지
+    @RequestMapping(value = "/mypage")
+    public String myPage(Model model, HttpServletRequest request) {
+    	
+    	HttpSession session = request.getSession();
+    	String nick = String.valueOf(session.getAttribute("snick"));
+    	ArrayList<CommunityVO> nickCheck = commuser.memNickCheck(nick);
+		
+		model.addAttribute("nickCheck", nickCheck);
+    	
+    	return "pdh/mypage";
+    }
+    
+    // 정보 수정-로그인
+    @RequestMapping(value = "/change-info-signin")
+    public String changeInfoSignin(Model model, HttpServletRequest request) {
+    	HttpSession session = request.getSession();
+    	String sid = String.valueOf(session.getAttribute("sid"));
+    	
+    	model.addAttribute("sid", sid);
+    	
+    	return "pdh/mypage_change_info_signin";
+    }
+    
+    // 정보 수정
+    @RequestMapping(value = "/change-info-signup")
+    public String changeInfo(Model model, HttpServletRequest request) {
+    	HttpSession session = request.getSession();
+    	String id = String.valueOf(session.getAttribute("sid"));
+    	
+    	MemberVO mem = service.detailViewMember(id);
+    	model.addAttribute("mem", mem);
+    	
+    	return "pdh/mypage_change_info_signup";
+    }
+    
+    
 	
 }
