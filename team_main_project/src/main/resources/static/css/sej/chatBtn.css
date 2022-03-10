@@ -39,8 +39,10 @@ a{text-decoration:none;}
   border-radius: 43px;
   background: #F7F7F7;
   transform:scale(0,0);
+  /* visibility: hidden; */
   transition: transform 0s;
   padding:20px;
+  box-shadow: 1px 1px 11px 2px lightgrey;
 }
 
 #menu-round-box-div {
@@ -48,13 +50,17 @@ a{text-decoration:none;}
 }
 
 #menu-round-box-div li{
-  width: 411px;
-  height: 80px;
+  width: 380px;
+  height: 74px;
   border-radius: 20px;
   background:#ffffff;
-  text-align:center;
-  line-height:50px;
+  text-align:left;
+  line-height:30px;
   margin-top:20px;
+  box-shadow: 1px 1px 11px 2px lightgrey;
+  padding-left:34px;
+  padding-top:10px;
+  position: relative;
 }
 
 #menu-round-box-div ul li a {
@@ -62,11 +68,13 @@ a{text-decoration:none;}
 	color:black;
 }
 
+
 .box1 .open{
   animation: menuBtn1 0.5s linear 1;
-  
+  visibility: visible;
   transition: all 0.5s;
   transform:scale(1,1);
+  visibility:visible;
 }
 @keyframes menuBtn1{
   0%{
@@ -75,12 +83,33 @@ a{text-decoration:none;}
   100%{
     transform:scale(1,1);
   }
-}
+} 
 
 .open ~ .menu-btn{
   box-shadow:none;
 }
 .open li{
   transition-delay:0.5s;
-  transform: scale(1,1);
+  /* transform: scale(1,1); */
+  visibility:visible;
+}
+#chatListName {
+	height:30px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.chatFirst li p {
+	width:210px;
+	margin-right:166px;
+	position: absolute;
+}
+
+#chatInImg {
+	float:right;
+	width: 15px;
+    height: 29px;
+    margin-bottom: 25px;
+    margin-top: -14px;
+    margin-right:20px;
 }

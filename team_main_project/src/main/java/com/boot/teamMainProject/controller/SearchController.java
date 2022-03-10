@@ -30,10 +30,10 @@ public class SearchController {
 	MemberService memService;
 	
 	// 테스트
-	@RequestMapping("/chatBtn")
-	public String chatBtn() {
-		return "/sej/chatBtn";
-	}
+//	@RequestMapping("/chatBtn")
+//	public String chatBtn() {
+//		return "/sej/chatBtn";
+//	}
 	
 //	// 멤버 조회 리스트로 이동
 //	@RequestMapping("/gatherList")
@@ -43,8 +43,22 @@ public class SearchController {
 	
 	
 	 //메인페이지 - 베스트 모임 클래스. 신규 모임 클래스 DB 연결
+	// @ResponseBody
 	@RequestMapping("/")
-	public String listAllGatherBest(HttpSession session, Model model) {
+	public String listAllGatherBest(Model model) {
+		ArrayList<GatheringVO> gatListBest = Gatherservice.listAllGatherBest();
+		ArrayList<GatheringVO> gatListNew = Gatherservice.listAllGatherNew();
+		ArrayList<ClassVO> classListBest = service.listAllClassBest();
+		ArrayList<ClassVO> classListNew = service.listAllClassNew();
+		model.addAttribute("gatListBest", gatListBest);
+		model.addAttribute("gatListNew", gatListNew);
+		model.addAttribute("classListBest", classListBest);
+		model.addAttribute("classListNew", classListNew);
+		return "sej/main";
+	}
+	
+	@RequestMapping("/chatWindow")
+	public String listAllGatherBest2(HttpSession session, Model model) {
 		String sid = (String) session.getAttribute("sid");
 		MemberVO mem = memService.detailViewMember(sid);
 		System.out.println(mem);
@@ -67,17 +81,10 @@ public class SearchController {
 			model.addAttribute("gatV4", gatV4);
 			model.addAttribute("gatV5", gatV5);
 		}
-
-		ArrayList<GatheringVO> gatListBest = Gatherservice.listAllGatherBest();
-		ArrayList<GatheringVO> gatListNew = Gatherservice.listAllGatherNew();
-		ArrayList<ClassVO> classListBest = service.listAllClassBest();
-		ArrayList<ClassVO> classListNew = service.listAllClassNew();
-		model.addAttribute("gatListBest", gatListBest);
-		model.addAttribute("gatListNew", gatListNew);
-		model.addAttribute("classListBest", classListBest);
-		model.addAttribute("classListNew", classListNew);
-		return "/sej/main";
+		model.addAttribute("mem", mem);
+		return "/sej/chatList";
 	}
+	
 	
 //	@RequestMapping("/")
 //	public String mainChatList(HttpSession session, Model model) {

@@ -13,10 +13,20 @@ $(function(){
 		}
 	});
 	
-	//chat 버튼 클릭시 
+/*	//chat 버튼 클릭시 
 	$(".menu-btn").on('click',function(){
 	  $(this).parents(".box").find(".menu-round-box").toggleClass('open');
-	});
+			$.ajax({    		
+				type:"post",	
+				url: "chatBtn", //통신할 url		
+				success: function(result) {
+					$('#chatListBox').html(result);		
+				},
+				error: function(e, textStatus) {
+					alert("에러가 발생했습니다 : " + textStatus);
+				}
+			});
+	});*/
 	
 	//스크롤시 bottom에 chat 버튼 고정
 	$('#chatBtnBox').addClass('bottomFixed');
@@ -31,6 +41,11 @@ $(function(){
 	
 });
 
+
+ $(document).ready(function(){ 
+	
+	
+});
 
 
 /*$(function(){
@@ -51,3 +66,19 @@ $(function(){
 	});
 	
 });*/
+
+function muenuButton(){
+	
+	  $(".menu-btn").parents(".box").find(".menu-round-box").toggleClass('open');
+			$.ajax({    		
+				type:"post",	
+				url: "/chatWindow", //통신할 url		
+				success: function(result) {					
+					$('#chatListBox').html(result);		
+				},
+				error: function(e, textStatus) {
+					alert("에러가 발생했습니다 : " + textStatus);
+				}
+			});
+
+}

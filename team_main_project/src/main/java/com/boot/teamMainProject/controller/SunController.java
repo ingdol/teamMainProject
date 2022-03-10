@@ -1,19 +1,33 @@
 package com.boot.teamMainProject.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import com.boot.teamMainProject.model.*;
-import com.boot.teamMainProject.service.*;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpSession;
+import com.boot.teamMainProject.model.ClassRevVO;
+import com.boot.teamMainProject.model.ClassVO;
+import com.boot.teamMainProject.model.Class_ScheVO;
+import com.boot.teamMainProject.model.CommunityVO;
+import com.boot.teamMainProject.model.GatherDetVO;
+import com.boot.teamMainProject.model.GatherScheduleVO;
+import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.model.MemberVO;
+import com.boot.teamMainProject.service.ClassRevService;
+import com.boot.teamMainProject.service.ClassService;
+import com.boot.teamMainProject.service.Class_ScheService;
+import com.boot.teamMainProject.service.CommunityService;
+import com.boot.teamMainProject.service.GatherDetService;
+import com.boot.teamMainProject.service.GatherScheduleService;
+import com.boot.teamMainProject.service.GatheringService;
+import com.boot.teamMainProject.service.HobbyCtgService;
+import com.boot.teamMainProject.service.MemberService;
 
 @Controller
 public class SunController {
@@ -69,6 +83,7 @@ public class SunController {
 	// 전체커뮤니티게시판
 	@RequestMapping("/sun/commumain/1")
 	public String commumain(Model model) {
+		System.out.println("aa");
 		ArrayList<CommunityVO> comlist = commuser.communitylist();
 		ArrayList<CommunityVO> dailylist = commuser.dailylist();
 		ArrayList<CommunityVO> reviewlist = commuser.reviewlist();
