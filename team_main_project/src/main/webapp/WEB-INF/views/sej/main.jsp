@@ -20,13 +20,13 @@
 				<article id="content1"> <!-- 탭메뉴 -->
 			        <div id="hobbyMenu">
 						<ul id="hobbyMenuItem">
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/1_sport2.png'/>" id="menuImg"><br>운동</a></li>
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/2_outdoor2.png'/>" id="menuImg"><br>아웃도어</a></li>
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/3_study2.png'/>" id="menuImg"><br>자기계발</a></li>
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/4_travel2.png'/>" id="menuImg"><br>여행</a></li>
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/5_cook2.png'/>" id="menuImg"><br>요리&음식</a></li>
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/6_animal2.png'/>" id="menuImg"><br>애견&애묘</a></li>
-							<li><a href="#"><img src="<c:url value='/img/hobbyCtg/7_picture2.png'/>" id="menuImg"><br>사진&영상</a></li>
+							<li><a href="/sun/allmoimdetail2/1"><img src="<c:url value='/img/hobbyCtg/1_sport2.png'/>" id="menuImg"><br>운동</a></li>
+							<li><a href="/sun/allmoimdetail2/2"><img src="<c:url value='/img/hobbyCtg/2_outdoor2.png'/>" id="menuImg"><br>아웃도어</a></li>
+							<li><a href="/sun/allmoimdetail2/3"><img src="<c:url value='/img/hobbyCtg/3_study2.png'/>" id="menuImg"><br>자기계발</a></li>
+							<li><a href="/sun/allmoimdetail2/4"><img src="<c:url value='/img/hobbyCtg/4_travel2.png'/>" id="menuImg"><br>여행</a></li>
+							<li><a href="/sun/allmoimdetail2/5"><img src="<c:url value='/img/hobbyCtg/5_cook2.png'/>" id="menuImg"><br>요리&음식</a></li>
+							<li><a href="/sun/allmoimdetail2/6"><img src="<c:url value='/img/hobbyCtg/6_animal2.png'/>" id="menuImg"><br>애견&애묘</a></li>
+							<li><a href="/sun/allmoimdetail2/7"><img src="<c:url value='/img/hobbyCtg/7_picture2.png'/>" id="menuImg"><br>사진&영상</a></li>
 						</ul>
 					</div>	
 
