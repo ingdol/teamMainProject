@@ -17,16 +17,16 @@ font-size:18px;
 
 padding:0px 0px 0px 20px;
 
-background: #FFFFFF;
-border: 1px solid rgb(255, 162, 162);
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgb(255, 162, 162);
-border-radius: 10px;
+/* background: #FFFFFF; */
+/* border: 1px solid rgb(255, 162, 162); */
+/* box-sizing: border-box; */
+/* box-shadow: 0px 4px 4px rgb(255, 162, 162); */
+/* border-radius: 10px; */
 font-family: 'Noto Sans KR', sans-serif;
 }
 .boardDetail{
 position:relative;
-width: 1000px;
+width: 890px;
 height: 302px;
 
 background: #FFFFFF;
@@ -34,9 +34,9 @@ box-sizing: border-box;
 vertical-align: top;
 
 background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-border: 1px solid rgba(0, 0, 0, 0.2);
+/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+border-radius: 3px;
+border: 1px solid rgba(0, 0, 0, 0.25);
 
 padding:20px 20px 20px 20px; 
 }
@@ -62,12 +62,12 @@ font-size: 14px;
 line-height: 16px;
 
 color: #000000;
-width: 1000px;
+width: 890px;
 height: 100px;
 
 background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+border-radius: 5px;
 border: 1px solid rgba(0, 0, 0, 0.2);
 
 padding:0px 20px 0px 20px;

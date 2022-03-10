@@ -26,6 +26,11 @@ background: #FFFFFF;
     opacity:0.3; 
     position: relative;
     border-radius: 10px;
+        	-webkit-transition:.3s;
+	-moz-transition:.3s;
+	-ms-transition:3s;
+	-o-transition:.3s;
+	transition:.3s;
 }
 .toggle2 input[type=radio] + label:hover{
 	filter: brightness(100%);
@@ -62,6 +67,11 @@ font-size:300%;
 font-family: 'Dongle', sans-serif;;
 
 color: white;
+    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
 }
 
 .subbox2:hover{
@@ -88,6 +98,7 @@ select{
 	border-radius:10px;
 	border: 1px solid rgba(0, 133, 255, 0.25);
 	box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.25);
+	
 }
 
 select option{
@@ -95,4 +106,27 @@ select option{
 	background: white;
 	color: black;
 	padding: 3px 0;
+}
+.tooltip{
+	display:inline-block;
+	color:#ff44a9;
+	font-weight: bold;
+	
+}
+
+.tooltip-text{
+	display: none;
+	position: absolute;
+	max-width:200px;
+	border: 1px solid;
+	border-radius: 3px;
+	padding: 5px;
+	font-size: 0.8em;
+	color: white;
+	background:#ff44a9;
+	
+}
+
+.tooltip:hover .tooltip-text{
+	display: block;
 }

@@ -13,7 +13,8 @@
 		<result property="gatDetInfo" column="gatDetInfo" />	
 		<result property="gatDetPhoto" column="gatDetPhoto" />	
 		<result property="gatDetDate" column="gatDetDate" />	
-		<result property="gatDetLike" column="gatDetLike" />	
+		<result property="gatDetLike" column="gatDetLike" />
+		<result property="gatDetHate" column="gatDetHate" />	
 		<result property="gatDetView" column="gatDetView" />	
 		<result property="gatDetComNum" column="gatDetComNum" />	
 		<result property="gatDetCategory" column="gatDetCategory" />
@@ -40,8 +41,8 @@
 <!--   		SELECT * FROM gather_det WHERE memNick=#{memNick} -->
 <!--    </select> -->
 	<insert id="insertGatherDet" parameterType="com.boot.teamMainProject.model.GatherDetVO">
-			INSERT INTO Gather_Det(gatNo,gatDetNo, gatDetTitle,memNick,gatDetInfo,gatDetPhoto, gatDetDate ,gatDetLike, gatDetView, gatDetComNum, gatDetCategory) 
-			VALUES (${gatNo}, ${gatDetNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}','${gatDetPhoto}',CURRENT_TIMESTAMP,0,0,0,${gatDetCategory})
+			INSERT INTO Gather_Det(gatNo,gatDetNo, gatDetTitle,memNick,gatDetInfo,gatDetPhoto, gatDetDate ,gatDetLike,gatDetHate, gatDetView, gatDetComNum, gatDetCategory) 
+			VALUES (${gatNo}, ${gatDetNo},  '${gatDetTitle}','${memNick}','${gatDetInfo}','${gatDetPhoto}',CURRENT_TIMESTAMP,0,0,0,0,${gatDetCategory})
 			
 	</insert>
 	
@@ -87,9 +88,16 @@
 	<delete id="DeleteGatLike"  parameterType="int">
   			DELETE FROM Gat_Like WHERE gatDetNo=#{gatDetNo}
   		</delete>
-	
+  		
+	<delete id="DeleteGatHate"  parameterType="int">
+  			DELETE FROM Gat_Hate WHERE gatDetNo=#{gatDetNo}
+  		</delete>
+  		
 	<delete id="DeleteGatDetCom"  parameterType="int">
   			DELETE FROM Gather_Det_Com WHERE gatDetNo=#{gatDetNo}
+  		</delete>
+  		<delete id="DeleteGatDetCom2"  parameterType="int">
+  			DELETE FROM Gather_Det_Com WHERE gatDetComNo=#{gatDetComNo} AND gatDetNo=#{gatDetNo}
   		</delete>
 	
   		<delete id="DeleteGatDet"  parameterType="int">
@@ -102,6 +110,11 @@
          WHERE gatDetNo=#{gatDetNo}
 </update>
 
+<update id="ComReset" parameterType="int">
+        UPDATE Gather_Det
+              SET gatDetComNum = gatDetComNum - 1
+         WHERE gatDetNo=#{gatDetNo}
+</update>
 <!-- 좋아요 -->
 	<insert id="LikeSBoard" parameterType="com.boot.teamMainProject.model.GLikeVO">
   		
@@ -120,6 +133,26 @@
    UPDATE Gather_Det AS a, Gat_Like AS b 
    SET a.gatDetLike = a.gatDetLike+1, b.gatLike= 1 
    WHERE a.gatDetNo =${gatDetNo} AND b.memNick = '${memNick}' AND b.gatLike = 0
+</update>
+
+
+<insert id="HateSBoard" parameterType="com.boot.teamMainProject.model.GHateVO">
+  		
+			INSERT into Gat_Hate(memNick, gatDetNo, gatDetHated) SELECT '${memNick}', ${gatDetNo},0
+			FROM DUAL WHERE 
+			NOT EXISTS(SELECT * FROM Gat_Hate WHERE memNick='${memNick}' AND gatDetNo=${gatDetNo})
+   </insert>
+   
+   <select id="HateSBoard2" 
+   				 resultType="int">
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+  		SELECT gatDetHated FROM Gat_Hate WHERE memNick = '${memNick}' AND gatDetNO = ${gatDetNo}
+   </select>
+   
+   <update id="HateUpdate" parameterType="com.boot.teamMainProject.model.GHateVO">
+   UPDATE Gather_Det AS a, Gat_Hate AS b 
+   SET a.gatDetHate = a.gatDetHate+1, b.gatDetHated= 1 
+   WHERE a.gatDetNo =${gatDetNo} AND b.memNick = '${memNick}' AND b.gatDetHated = 0
 </update>
    <!-- 서연 - 소모임게시판 전체화면 -->
    

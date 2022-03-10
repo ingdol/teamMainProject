@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.boot.teamMainProject.dao.ICommunityDAO;
+import com.boot.teamMainProject.model.CHateVO;
 import com.boot.teamMainProject.model.CLikeVO;
 import com.boot.teamMainProject.model.CommunityVO;
 
@@ -124,6 +125,42 @@ public class CommunityService implements ICommunityService {
 	public void DeleteCommuDet(int commuNo) {
 		// TODO Auto-generated method stub
 		dao.DeleteCommuDet(commuNo);
+	}
+
+	@Override
+	public void HateCBoard(CHateVO gh) {
+		// TODO Auto-generated method stub
+		dao.HateCBoard(gh);
+	}
+
+	@Override
+	public int HateCBoard2(int commuNo, String memNick) {
+		// TODO Auto-generated method stub
+		return dao.HateCBoard2(commuNo, memNick);
+	}
+
+	@Override
+	public void HateCUpdate(int commuNo, String memNick) {
+		// TODO Auto-generated method stub
+		dao.HateCUpdate(commuNo, memNick);
+	}
+
+	@Override
+	public void DeleteCommuHate(int commuNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteCommuHate(commuNo);
+	}
+
+	@Override
+	public void DeleteCommuCom2(int commuNo, int commuComNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteCommuCom2(commuNo, commuComNo);
+	}
+
+	@Override
+	public void ComCReset(int commuNo) {
+		// TODO Auto-generated method stub
+		dao.ComCReset(commuNo);
 	}
 
 }

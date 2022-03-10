@@ -11,6 +11,7 @@ public class GatherDetVO {
 	private String gatDetPhoto;
 	private Date gatDetDate;
 	private int gatDetLike;
+	private int gatDetHate;
 	private int gatDetView;
 	private int gatDetComNum;
 	private int gatDetCategory;
@@ -80,5 +81,11 @@ public class GatherDetVO {
 	}
 	public void setGatDetCategory(int gatDetCategory) {
 		this.gatDetCategory = gatDetCategory;
+	}
+	public int getGatDetHate() {
+		return gatDetHate;
+	}
+	public void setGatDetHate(int gatDetHate) {
+		this.gatDetHate = gatDetHate;
 	}
 }

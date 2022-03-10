@@ -3,9 +3,9 @@ package com.boot.teamMainProject.dao;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.boot.teamMainProject.model.CHateVO;
 import com.boot.teamMainProject.model.CLikeVO;
 import com.boot.teamMainProject.model.CommunityVO;
-import com.boot.teamMainProject.model.GatherDetVO;
 
 public interface ICommunityDAO {
 
@@ -26,8 +26,14 @@ public interface ICommunityDAO {
 	void LikeCBoard(CLikeVO gl);
 	int LikeCBoard2(int commuNo, String memNick);
 	void LikeCUpdate(int commuNo, String memNick);
+	void HateCBoard(CHateVO gh);
+	int HateCBoard2(int commuNo, String memNick);
+	void HateCUpdate(int commuNo, String memNick);
 	void UpdateCommuComp(CommunityVO com);
 	void DeleteCommuCom(int commuNo);
+	void DeleteCommuCom2(int commuNo,int commuComNo);
+	void ComCReset(int commuNo);
 	void DeleteCommuLike(int commuNo);
+	void DeleteCommuHate(int commuNo);
 	void DeleteCommuDet(int commuNo);
 }

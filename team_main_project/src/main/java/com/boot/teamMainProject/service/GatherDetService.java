@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.boot.teamMainProject.dao.IGatherDetDAO;
+import com.boot.teamMainProject.model.GHateVO;
 import com.boot.teamMainProject.model.GLikeVO;
 import com.boot.teamMainProject.model.GatherDetVO;
 import com.boot.teamMainProject.model.MemberVO;
@@ -117,6 +118,42 @@ public class GatherDetService implements IGatherDetService {
 	public void DeleteGatLike(int gatDetNo) {
 		// TODO Auto-generated method stub
 		dao.DeleteGatLike(gatDetNo);
+	}
+
+	@Override
+	public void HateSBoard(GHateVO gh) {
+		// TODO Auto-generated method stub
+		dao.HateSBoard(gh);
+	}
+
+	@Override
+	public int HateSBoard2(int gatDetNo, String memNick) {
+		// TODO Auto-generated method stub
+		return dao.HateSBoard2(gatDetNo, memNick);
+	}
+
+	@Override
+	public void HateUpdate(int gatDetNo, String memNick) {
+		// TODO Auto-generated method stub
+		dao.HateUpdate(gatDetNo, memNick);
+	}
+
+	@Override
+	public void DeleteGatHate(int gatDetNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteGatHate(gatDetNo);
+	}
+
+	@Override
+	public void DeleteGatDetCom2(int gatDetNo, int gatDetComNo) {
+		// TODO Auto-generated method stub
+		dao.DeleteGatDetCom2(gatDetNo, gatDetComNo);
+	}
+
+	@Override
+	public void ComReset(int gatDetNo) {
+		// TODO Auto-generated method stub
+		dao.ComReset(gatDetNo);
 	}
 
 

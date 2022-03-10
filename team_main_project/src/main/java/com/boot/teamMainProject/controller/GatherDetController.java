@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.boot.teamMainProject.model.GHateVO;
 import com.boot.teamMainProject.model.GLikeVO;
 import com.boot.teamMainProject.model.GatherDetComVO;
 import com.boot.teamMainProject.model.GatherDetVO;
@@ -63,45 +64,60 @@ public class GatherDetController {
 	int test231 = 0;
 	//글작성
 	@RequestMapping("/sboard")
-	public String insertGatherDet ( @RequestParam int gatNo ,@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
+	public String insertGatherDet ( @RequestParam int gatNo ,
+			@RequestParam("uploadFile") MultipartFile file, Model model ,GatherDetVO gat) throws IOException
 	{
+		ArrayList<GatherDetVO> gdList = service.CountBoard();
+		int count2 = gdList.size() +1;
+		
 		String savedFileName ="";
 		
 		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
+
+//		String uploadPath = "C:/teamImage/";		
+
 		String uploadPath = "/upload/";
+
 		
 		// 2. 원본 파일 이름 알아오기
 		String originalFileName = file.getOriginalFilename();
 		
+		if(originalFileName.length()==0) {
+			savedFileName = null;
+		}
 		//3. 파일 이름 중복되지 않도록 이름 변경: 서버에 저장할 이름, UUID 사용
 //		UUID uuid = UUID.randomUUID();uuid.toString() + "_" +
-		if(originalFileName.length()>3) {
-		count = count + 1;
-		savedFileName = "gather_det" + count + "." + originalFileName.charAt(originalFileName.length()-3) + originalFileName.charAt(originalFileName.length()-2) + originalFileName.charAt(originalFileName.length()-1);
-//				 + ".jpg" ;
-		//4. 파일 생성
-				File file1 = new File(uploadPath + savedFileName);
-				//5. 서버로 전송
-				file.transferTo(file1);
-		}
 		else {
-			savedFileName = null;
-		}		// model
+			
+		int checkk = originalFileName.indexOf(".",0)+1;
+		
+		savedFileName = "gather_det" + count2 + ".";
+		for(int i=checkk; i<originalFileName.length(); i++) {
+			
+			savedFileName+=originalFileName.charAt(i);
+		}
+		
+		
+		// 4. 파일 생성
+		File file1 = new File(uploadPath + savedFileName);
+		//5. 서버로 전송
+		file.transferTo(file1);
+		
+		}
 		model.addAttribute("originalFileName", originalFileName);
 		
 		String gatDetPhoto = savedFileName;
 		gat.setGatDetPhoto(gatDetPhoto); 
 //		int gatNo2 = gatNo;
 //		count2 = count2 + 1;
-		ArrayList<GatherDetVO> gdList = service.CountBoard();
-		int count2 = gdList.size() +1;
+		
 //		int lastdata = service.Lastboard(gatNo);
 		
 		int gatNo2 = gatNo;
 //		if(test231 == 0) {
 //			
 //		}
-
+		
 //		gat.setGatDetNo(gatDetNo); 
 		service.insertGatherDet(gat);
 		System.out.println(count2); 
@@ -194,6 +210,7 @@ public class GatherDetController {
 	public String DeleteGatDet ( @PathVariable int gatDetNo, @PathVariable int gatNo) throws IOException
 	{
 		service.DeleteGatDetCom(gatDetNo);
+		service.DeleteGatHate(gatDetNo);
 		service.DeleteGatLike(gatDetNo);
 		service.DeleteGatDet(gatDetNo);
 		
@@ -224,8 +241,10 @@ public class GatherDetController {
 		String savedFileName1 ="";
 		String savedFileName2 ="";
 		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
-		String uploadPath1 = "C:/teamImage/";
-		String uploadPath2 = "C:/teamImage/ldh/";
+		String uploadPath1 = "/images/";
+		String uploadPath2 = "/images/";
+//		String uploadPath1 = "C:/teamImage/";
+//		String uploadPath2 = "C:/teamImage/";
 		// 2. 원본 파일 이름 알아오기
 		String originalFileName1= file1.getOriginalFilename();
 		String originalFileName2= file2.getOriginalFilename();
@@ -292,4 +311,32 @@ public class GatherDetController {
 		
 		return result;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/SomoimboardHate")
+	public int HateSBoard( @RequestParam("gatNo") int gatNo,  
+												@RequestParam("gatDetNo")  int gatDetNo,  
+												@RequestParam("memNick")  String memNick, 
+												GHateVO gh){
+		
+		service.HateSBoard(gh);
+		int result = service.HateSBoard2(gatDetNo,memNick);
+		service.HateUpdate(gatDetNo,memNick);
+		
+		
+		System.out.println(result);
+		
+		return result;
+	}
+	
+	@RequestMapping("/SomoimboardComDelete/{gatNo}/{gatDetNo}/{gatDetComNo}")
+	public String DeleteGatDetCom ( @PathVariable int gatDetNo, @PathVariable int gatDetComNo, 
+																@PathVariable int gatNo) throws IOException
+	{
+		service.DeleteGatDetCom2(gatDetNo, gatDetComNo);
+		service.ComReset(gatDetNo);
+		
+		return "redirect:/ldh/Somoimboard/"+gatNo + "/"+gatDetNo;
+	}
+	
 }
