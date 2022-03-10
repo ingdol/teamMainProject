@@ -36,8 +36,14 @@
 					<div>${detail.gatName}</div>
 					<div>
 						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
-						<a href="<c:url value='/askChat/${sessionScope.sid}/${detail.gatNo}'/>"><span class="quest">1:1문의</span></a>
-					</div>
+						<c:if test="${empty mem.memNick}">
+							<span class="quest"><button type="button"  id="fakeBtn">1:1문의</button></span>
+						</c:if>
+						<c:if test="${not empty mem.memNick}">
+							<a href="<c:url value='/askChat/${sessionScope.sid}/${detail.gatNo}'/>">
+							<span class="quest"><button type="button"  id="realBtn">1:1문의</button></span></a>
+						</c:if>
+						</div>
 				</div>		
 				</c:forEach>
 			</div>

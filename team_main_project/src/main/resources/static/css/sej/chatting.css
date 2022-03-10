@@ -11,10 +11,24 @@
   	box-shadow: 1px 1px 11px 2px lightgrey;
 	
 }
+#containerTop {
+	background:#F8F8F8;
+    border-top-left-radius: 43px;
+    border-top-right-radius: 43px;
+}
 .container h1{
+	font-size: 24px;
+	text-align:left;
+	padding-left:95px;
+	padding-top:20px;
+	color:black;
+}
+.container p{
 	font-size: 18px;
-	text-align:center;
-	padding:13px;
+	text-align:left;
+	padding:5px;
+	padding-left:95px;
+	padding-bottom:20px;
 }
 .chating{
 	background:#FFFFFF;
@@ -26,10 +40,10 @@
 .chating .me{
 	height: auto; 
 	width: auto; 
-	background: #FFFFFF;
-	border: 1px solid #ABABAB;
-	border-radius: 10px;
-	font-size:16px;
+	background: #39B9F1;
+	color:#ffffff;
+	border-radius: 20px;
+	font-size:18px;
 	float:right; 
 	margin-left:400px;
 	position: relative;
@@ -40,7 +54,7 @@
 .chating .othersText{
 	height: auto; 
 	width: auto; 
-	font-size:16px;
+	font-size:18px;
 	float:left; 
 	margin-right:400px;
 	position: relative;
@@ -51,12 +65,11 @@
 .chating .othersBox{
 	height: auto; 
 	width: auto; 
-	background: #FFFFFF;
-	border: 1px solid #ABABAB;
-	border-radius: 10px;
-	font-size:16px;
+	background: #F4F4F4;
+	border-radius: 20px;
+	font-size:18px;
 	float:left; 
-	margin-right:400px;
+	margin-right:325px;
 	position: relative;
 	padding:10px;
 }
@@ -73,7 +86,7 @@
 	height: 70px; 
 	width: 470px; 
 	border:0 solid white;
-	font-size:16px;
+	font-size:18px;
 	float:left;
 	padding-left:50px;
 	position: relative;
@@ -83,24 +96,26 @@
 	height: 55px; 
 	width: 110px; 
 	padding-right:0;
-	background: #D0D0D0;
-	border-radius: 10px;
+	background: #EEECEC;
+	border-radius: 15px;
 	border:0 solid white;
-	font-size:16px;
+	font-size:18px;
 	position: absolute;
 	margin-top:7px;
 }
 
 #startBtn {
-	height: 55px; 
-	width: 600px; 
-	border-radius: 10px;
-	border:0 solid white;
-	background: #EAF5FF;
-	font-size:16px;
-	margin-top:8px;
-	margin-left:30px;
-	position: relative;
+	height: 65px;
+    width: 600px;
+    border-radius: 10px;
+    border: 0 solid white;
+    background: #EAF5FF;
+    font-size: 20px;
+    font-weight:bold;
+    margin-top: 1px;
+    margin-left: 30px;
+    position: relative;
+	padding-left:20px;
 }
 #yourMsg {
 	display: none;
@@ -112,6 +127,7 @@
 	width: 642px; 
 	background:#FFFFFF;
 	padding-right:18px;
+	padding-bottom:10px;
 }
 
 .chatMenuBox li {
@@ -125,8 +141,64 @@
 	height: 45px; 
 	width: 100px; 
 	border-radius: 10px;
-	border:1 solid skyblue;
-    background:none;
-	font-size:15px;
+	font-size:17px;
 	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.w-btn-outline {
+    position: relative;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    color:#000000;
+    background: #ffffff;
+}
+
+.w-btn-indigo-outline {
+    border: 3px solid #76A8E2;
+    color: #1e6b7b;
+}
+
+.w-btn-indigo-outline:hover {
+    color:#ffffff;
+    background: #76A8E2;
+}
+
+
+#sendImg {
+	width: 34px;
+    height: 40px;
+    padding-left: 257px;
+    padding-top: 13px;
+    position: absolute;
+    z-index: 5;
+}
+
+#chatImg {
+	width: 70px;
+    height: 70px;
+    padding-left: 18px;
+    padding-top: 13px;
+    position: absolute;
+    z-index: 5;
+}
+
+#chatImg2 {
+	width: 69px;
+    height: 62px;
+    padding-left: 18px;
+    padding-top: 17px;
+    position: absolute;
+    z-index: 5;
+}
+
+#chattingInImg {
+	width: 25px;
+    height: 35px;
+    padding-left: 254px;
+    padding-top:20px;
+    position: absolute;
+    z-index: 5;
 }

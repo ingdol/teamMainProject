@@ -70,7 +70,12 @@
 			</div>  <!-- mainMenuBox 끝 -->
 			
 		</nav>
-		<div id="chatBtnBox" class="box box1">
+		<label class="chatB" for="chatB" id="chatButton" onClick="javascript:muenuButton();"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></label>
+			<input id="chatB" type="checkbox">
+                	            <nav id="chatB_nav" class="chatB_nav">
+				    		         	<div id="chatListBox"></div>
+				    		     </nav>
+<%-- 		<div id="chatBtnBox" class="box box1">
 		  <div class="menu">
 		     <div class="menu-round-box">
 		     	<div id="menu-round-box-div">
@@ -78,7 +83,7 @@
 		       </div>
 		      </div>
 		     </div>
-		     <a class="menu-btn"  onClick="javascript:muenuButton();"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></a>
-		</div>
-	</body>
+		      <a class="menu-btn"  onClick="javascript:muenuButton();"><img src="<c:url value='/img/sej/chatBtn.png'/>" id="chatBtnImg"></a>
+		  </div> --%>
+				</body>
 </html>

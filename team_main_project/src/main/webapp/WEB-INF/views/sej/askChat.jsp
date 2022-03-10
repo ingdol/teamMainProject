@@ -14,7 +14,13 @@
 			<!-- TOP  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 				<div id="container" class="container">
-					<h1>1:1 문의</h1>
+				<div id="containerTop">
+					<img src="<c:url value='/img/sej/askBtn.png'/>"  id="chatImg2">	
+					<a href="<c:url value='/sun/detailgat/${gatV.gatNo}'/>">
+					<img src="<c:url value='/img/sej/chatIn.png'/>"  id="chattingInImg">	
+					<h1>${gatV.gatName}</h1></a>
+					<p>1:1 문의</p>
+				</div>
 					<input type="hidden" id="sessionId" value="">
 					<input type="hidden" id="roomNumber" value="${chat.gatNo}0${chat.chatNo}">
 					
@@ -23,9 +29,9 @@
 					<div class="chatBox">
 						<div class="chatMenuBox">
 							<ul>
-								<li class="chat3"><button type="button" class="btn btn-outline-primary">모임장소</button></li>
-								<li class="chat2"><button type="button" class="btn btn-outline-primary">모임시간</button></li>
-								<li class="chat1"><button type="button" class="btn btn-outline-primary">모임소개</button></li>								
+								<li class="chat3"><button type="button" class="w-btn-outline w-btn-indigo-outline">모임장소</button></li>
+								<li class="chat2"><button type="button" class="w-btn-outline w-btn-indigo-outline">모임시간</button></li>
+								<li class="chat1"><button type="button" class="w-btn-outline w-btn-indigo-outline">모임소개</button></li>								
 							</ul>
 						</div>
 						<div class="chatWelcome">
@@ -49,7 +55,7 @@
 					</c:if>
 					<div id="yourMsg" class="yourInputBox">
 						<input id="chatting" name="chatting" placeholder="보내실 메시지를 입력하세요." class="chattingInput">
-						<button onclick="send()" id="sendBtn" class="chattingBtn">보내기</button>
+						<button onclick="send()" id="sendBtn" class="chattingBtn">전송</button>
 					</div>
 				</div>
 			<!-- BOTTOM  -->

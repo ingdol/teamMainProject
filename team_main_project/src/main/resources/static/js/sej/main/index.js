@@ -29,10 +29,22 @@ $(function(){
 	});*/
 	
 	//스크롤시 bottom에 chat 버튼 고정
-	$('#chatBtnBox').addClass('bottomFixed');
+	$('#chatButton').addClass('bottomFixed');
+	$(window).on('scroll', function() {
+			$('#chatButton').addClass('bottomFixed');
+	});
+	
+	//스크롤시 bottom에 chat 버튼 고정
+	$('#chatB_nav').addClass('bottomFixed');
+	$(window).on('scroll', function() {
+			$('#chatB_nav').addClass('bottomFixed');
+	});
+	
+	//스크롤시 bottom에 chat 버튼 고정
+/*	$('#chatBtnBox').addClass('bottomFixed');
 	$(window).on('scroll', function() {
 			$('#chatBtnBox').addClass('bottomFixed');
-	});
+	});*/
 	
 	//moveToTop 위치 클릭 시 top으로 이동
 	$('#moveToTop').on('click', function(){
@@ -69,8 +81,8 @@ $(function(){
 
 function muenuButton(){
 	
-	  $(".menu-btn").parents(".box").find(".menu-round-box").toggleClass('open');
-			$.ajax({    		
+	/*  $(".menu-btn").parents(".box").find(".menu-round-box").toggleClass('open');
+	*/		$.ajax({    		
 				type:"post",	
 				url: "/chatWindow", //통신할 url		
 				success: function(result) {					

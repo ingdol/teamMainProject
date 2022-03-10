@@ -86,6 +86,9 @@ public class ChatController {
 		ChattingVO chat = ChatService.detailChatting(gatNo);
 		model.addAttribute("chat", chat);
 		
+		GatheringVO gatV = Gatherservice.detailViewGatNo(gatNo);
+		model.addAttribute("gatV", gatV);
+		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("sej/askChat");
 		return mv;
