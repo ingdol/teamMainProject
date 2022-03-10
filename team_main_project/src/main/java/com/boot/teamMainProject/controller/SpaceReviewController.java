@@ -56,7 +56,7 @@ public class SpaceReviewController {
         }
     }
 
-    @RequestMapping(value = "SaveReview", method = RequestMethod.POST)
+    @RequestMapping(value = "SaveReview")
     public String SaveReview(@RequestParam("files") List<MultipartFile> files,
                              @RequestParam("ReviewArea") String ReviewArea,
                              @RequestParam("memNick") String memNick,
