@@ -18,10 +18,11 @@
 		   
 		<div id="chatSize">
 			<!-- Header -->
-			<div id="chatHeader">
-				<span>개설자 1:1 채팅</span>
-				<button id="btnClose">X</button>
-			</div>
+				<div class="containerTop">
+					<img src="<c:url value='/img/sej/askBtn.png'/>"  id="chatImg2">	
+					<h1>Daily&Linker</h1></a>
+					<p>1:1 문의</p>
+				</div>
 		
 		<!-- 채팅 내용 출력 -->
 			

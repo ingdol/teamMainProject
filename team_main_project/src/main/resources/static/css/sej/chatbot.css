@@ -1,16 +1,43 @@
 @charset "UTF-8";
 
 #chatSize {
-	margin-top: 30px;
+	width:680px;
+	background:#FFFFFF;
+	margin-top:30px;
+	margin-bottom:30px;
+  	border-radius: 43px;
+  	box-shadow: 1px 1px 11px 2px lightgrey;
 }
 
-#chatHeader { 
-	height:30px;
-	width:700px;
-	padding: 10px 15px; 
-	background:#8ADBFF;
+.containerTop {
+	background:#F8F8F8;
+    border-top-left-radius: 43px;
+    border-top-right-radius: 43px;
+}
+
+.containerTop h1{
+	font-size: 24px;
+	text-align:left;
+	padding-left:95px;
+	padding-top:20px;
+	color:black;
+}
+.containerTop p{
 	font-size: 18px;
-	text-align:center;
+	text-align:left;
+	padding:5px;
+	padding-left:95px;
+	padding-bottom:20px;
+}
+
+
+#chatImg2 {
+	width: 69px;
+    height: 62px;
+    padding-left: 18px;
+    padding-top: 17px;
+    position: absolute;
+    z-index: 5;
 }
 
 #btnClose {
@@ -20,32 +47,30 @@
 }
 
 #chatAllBox {
-	width: 730px; 
-	background:#F6F6F6;
+	width:680px;
 }
  
 #chatBox {
 	height: 600px; 
-	width: 677px; 
+	width: 629px; 
 	overflow-y:scroll; 
 	padding:10px 26px; 
-	background:#F6F6F6;
+	background:#FFFFFF;
 } 	
 
 #chatInputBox {
 	text-align:center;
 	height: 80px; 
-	width: 690px; 
+	width: 628px; 
 	padding-top:10px;
-	background:#FFFFFF;
-	padding-right:25px;
+	padding-right:50px;
 }
 
 #message {
 	height: 70px; 
-	width: 430px; 
+	width: 408px; 
 	border:0 solid white;
-	font-size:16px;
+	font-size:18px;
 	float:left;
 	padding-left:40px;
 	position: relative;
@@ -55,28 +80,30 @@
 	height: 60px; 
 	width: 110px; 
 	padding-right:0;
-	background: #D0D0D0;
-	border-radius: 10px;
+	background: #EEECEC;
+	border-radius: 15px;
 	border:0 solid white;
-	font-size:16px;
+	font-size:18px;
 	position: absolute;
 	margin-top:5px;
+	margin-left:10px;
 }
 
 							 
 .msgBox.send  #msgInputBox {
-	background: #EAF5FF;
-	border: 1px solid #ABABAB;
+	background: #39B9F1;
 	box-sizing: border-box;
 	border-radius: 10px;
 	padding:15px;
 	text-align:left; 
 	float:right; 
+	color:#ffffff;
+	font-size:18px;
 }
 
 .msgBox #in {
-	width:650px; 
-	background:#F6F6F6;
+	width:616px; 
+	background:#FFFFFF;
 	float:left; 
 }
 
@@ -84,26 +111,37 @@
 	background: none;
 	float:left; 
 	margin-top:10px;
+	font-size:18px;
+	font-weight:bold;
 }
 
 
 .msgBox #msgOwnBox {
-	background: #FFFFFF;
-	border: 1px solid #ABABAB;
+	background: #F4F4F4;
 	box-sizing: border-box;
 	border-radius: 10px;
 	padding:15px;
 	float:left; 
 	text-align:left;
-	margin-right:356px;
+	margin-right:290px;
 	margin-top:10px;
+	font-size:18px;
+}
+
+#chatUrl {
+	background: #F4F4F4;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding:15px;
+	float:left; 
+	text-align:left;
+	margin-right:290px;
+	margin-top:10px;
+	font-size:18px;
 }
 
 #chatImage {
-	width:60%;
-	height:60%;
-	margin-top:50px;
-	margin-bottom:50px;
+	width:100%;
 }
 
 #record {
@@ -113,7 +151,7 @@
 #recordBox {
 	height: 70px; 
 	width: 100px; 
-	margin-left:470px;
+	margin-left:434px;
 	position: relative;
 	
 }

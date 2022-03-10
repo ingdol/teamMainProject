@@ -8,7 +8,7 @@
 		<link href="<c:url value='/css/sej/chatBtn.css'/>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-					<div class="chatFirst">
+					<!-- <div class="chatFirst"> -->
 		     			<ul>
 				         <li><a href="<c:url value='/chatbotForm'/>"><p id="chatListName">Daily&Linker</p>
 				         			<br><p>1:1 문의하기</p><img src="<c:url value='/img/sej/chatIn.png'/>"  id="chatInImg"></a></li>
@@ -25,6 +25,6 @@
 					         		<br><p>채팅하기 </p><img src="<c:url value='/img/sej/chatIn.png'/>"  id="chatInImg"></a></li>
 				         </c:if>
 				       </ul>
-		     		</div>
+		     		<!-- </div> -->
 	</body>
 </html>

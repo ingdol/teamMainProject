@@ -54,7 +54,7 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">BEST 모임</div>
-						<div id="allView"><a href="#">전체 보기</a></div>
+						<div id="allView"><a href="<c:url value='/sun/allmoimdetail/1'/>">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
@@ -71,13 +71,13 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">BEST 클래스</div>
-						<div id="allView"><a href="#">전체 보기</a></div>
+						<div id="allView"><a href="<c:url value='/sun/allmoimdetail/1'/>">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 
 							<c:forEach items="${classListBest}" var="classVo" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">
+									<a href="<c:url value='/sun/detailclass/${classVo.classNo}'/>"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">
 									<br id="bestBr"><p id="gatherCtg">클래스</p>
 									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
 									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>
@@ -89,7 +89,7 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">신규 모임</div>
-						<div id="allView"><a href="#">전체 보기</a></div>
+						<div id="allView"><a href="<c:url value='/sun/allmoimdetail/1'/>">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
@@ -105,12 +105,12 @@
 				<div id="bestItem">
 					<div id="itemTop">
 						<div id="bestName">신규 클래스</div>
-						<div id="allView"><a href="#">전체 보기</a></div>
+						<div id="allView"><a href="<c:url value='/sun/allmoimdetail/1'/>">전체 보기</a></div>
 					</div>
 					 <div id="bestMenu">
 						<ul id="bestMenuList">
 							<c:forEach items="${classListNew}" var="classVo" begin="0" end="2"><li>	
-									<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
+									<a href="<c:url value='/sun/detailclass/${classVo.classNo}'/>"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="bestImg">	
 									<br id="bestBr"><p id="gatherCtg">클래스</p>
 									<br id="bestBr"><p id="gatherName">${classVo.classTitle}</p>
 									<br id="bestBr"><div id="gatherArea">${classVo.classArea}</div> </a></li>

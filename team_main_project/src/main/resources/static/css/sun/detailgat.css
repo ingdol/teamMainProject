@@ -271,6 +271,11 @@ span{
 	color: black;
 }
 
+.quest button {
+	background:none;
+	border:none;
+}
+
 .quest:hover{
 	opacity: 0.7;
 }

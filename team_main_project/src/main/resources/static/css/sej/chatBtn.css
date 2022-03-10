@@ -8,14 +8,14 @@ ul {
 }
 a{text-decoration:none;}
 
-#chatBtnBox {
-	z-index:20;  /* 스크롤 시 위 오도록 */
+/* #chatBtnBox {
+	z-index:20;  스크롤 시 위 오도록
 	box-sizing: border-box; 
 }
 
 .menu{
-    width: 493px;
-    height: 745px;
+    width: 200px;
+    height: 200px;
 }
 
 .menu-btn{
@@ -25,7 +25,7 @@ a{text-decoration:none;}
   width:90px; 
   height:90px;
   line-height:70px;
-  transform:translate(165%, 305%);
+  transform:translate(0%, 0%);
 }
 
 #chatBtnImg {
@@ -39,10 +39,11 @@ a{text-decoration:none;}
   border-radius: 43px;
   background: #F7F7F7;
   transform:scale(0,0);
-  /* visibility: hidden; */
+  visibility: hidden;
   transition: transform 0s;
   padding:20px;
   box-shadow: 1px 1px 11px 2px lightgrey;
+ transform: translate(100%, 200%);
 }
 
 #menu-round-box-div {
@@ -90,7 +91,7 @@ a{text-decoration:none;}
 }
 .open li{
   transition-delay:0.5s;
-  /* transform: scale(1,1); */
+  transform: scale(1,1);
   visibility:visible;
 }
 #chatListName {
@@ -112,4 +113,84 @@ a{text-decoration:none;}
     margin-bottom: 25px;
     margin-top: -14px;
     margin-right:20px;
+}
+ */
+
+ input#chatB {
+	display: none;
+	
+}
+
+nav#chatB_nav{
+	display: none;
+}
+
+ input#chatB:checked + nav#chatB_nav {
+	display: block;
+}
+
+#chatB_nav {
+    margin-bottom: 53px;
+    margin-right: 38px;
+	width: 468px;
+	height: 688px;
+	border-radius: 43px;
+	background: #F7F7F7;
+    float: right;
+  	box-shadow: 1px 1px 11px 2px lightgrey;
+    box-sizing: border-box;
+    z-index:50;
+}
+
+#chatB_nav ul li {
+	width: 426px;
+    height: 84px;
+    border-radius: 20px;
+    background: #ffffff;
+    text-align: left;
+    line-height: 30px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 11px 2px lightgrey;
+    padding-left: 34px;
+    padding-top: 13px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#chatB_nav ul li a {
+	text-decoration:none;
+	color:black;
+}
+
+#chatListName {
+	height:30px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.chatB_nav li p {
+	width:210px;
+	margin-right:166px;
+	position: absolute;
+}
+
+#chatInImg {
+	float:right;
+	width: 15px;
+    height: 29px;
+    margin-bottom: 25px;
+    margin-top: -14px;
+    margin-right:20px;
+}
+
+#chatBtnImg {
+  width:90px; 
+  height:90px;
+  margin-right:10px;
+  margin-bottom:10px;
+  z-index:100;
+}
+
+#chatButton {
+  z-index:100;
 }

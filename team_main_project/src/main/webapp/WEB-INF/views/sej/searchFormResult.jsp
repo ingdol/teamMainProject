@@ -45,7 +45,7 @@
 						</c:when>
 				   <c:otherwise>
 				   <c:forEach items="${classSearchList}" var="classVo"><li>	
-							<a href="#"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="searchImg">	
+							<a href="<c:url value='/sun/detailclass/${classVo.classNo}'/>"><img src="<c:url value='/images/${classVo.classPhoto}'/>" id="searchImg">	
 							<br id="searchBr"><p id="searchCtg">클래스</p>
 							<br id="searchBr"><p id="searchName">${classVo.classTitle}</p>
 							<br id="searchBr"><div id="searchArea">${classVo.classArea}</div> </a></li>
