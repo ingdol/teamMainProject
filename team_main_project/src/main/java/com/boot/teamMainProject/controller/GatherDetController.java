@@ -292,7 +292,7 @@ public class GatherDetController {
 		gath.setGatArea(gatArea); 
 		service3.insertGathering(gath);
 		
-		return "redirect:/main";
+		return "redirect:/";
 	}
 	
 	@ResponseBody

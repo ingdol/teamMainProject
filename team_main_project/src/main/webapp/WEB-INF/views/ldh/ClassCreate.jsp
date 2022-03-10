@@ -11,6 +11,7 @@
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 		  <script src="<c:url value='/js/ldh/screate.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
+		   <script src="<c:url value='/js/ldh/ClassCheck.js'/>"></script>
 		  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>	
 		  <script src="<c:url value='/js/searchZip.js'/>"></script>	
 	</head>
@@ -24,7 +25,7 @@
 			<h2>클래스 개설</h2><br>
 			
 				
-			<form id="ClassCreateForm" name="ClassCreateForm" method="post"  action="/classcreate" enctype="multipart/form-data">
+			<form id="ClassCreateForm" name="ClassCreateForm" method="post" onsubmit="return validate2();"  action="/classcreate" enctype="multipart/form-data">
 			
 			<c:if test="${not empty sessionScope.sid }">
 			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>

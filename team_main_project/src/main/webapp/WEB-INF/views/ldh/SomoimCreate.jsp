@@ -11,6 +11,7 @@
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 		  <script src="<c:url value='/js/ldh/screate.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
+			<script src="<c:url value='/js/ldh/SCajax.js'/>"></script>
 	</head>
 	<body>
 		<div id="mainWrap">
@@ -21,9 +22,9 @@
 			<br><br><br>
 			<h2>소모임 만들기</h2><br><br>
 			
-				
+<!-- 			 -->
 			
-			<form id="SCreateForm" name="SCreateForm" method="post"  action="/screate" enctype="multipart/form-data">
+			<form id="SCreateForm" onsubmit="return validate();" name="SCreateForm" method="post" 	action="/screate"  enctype="multipart/form-data">
 			
 			<c:if test="${not empty sessionScope.sid }">
 			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>
@@ -88,7 +89,7 @@
 							box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.25); border-radius: 10px;" placeholder="소모임 제목을 입력해주세요" 
 				onfocus="this.placeholder=''" onblur="this.placeholder='소모임 제목을 입력해주세요'">
 			<br><br>
-			<textarea id="gatDetInfo" name="gatDetInfo" rows="15" cols="66" placeholder="소모임에 대한 설명을 입력해주세요" 
+			<textarea id="gatInfo" name="gatInfo" rows="15" cols="66" placeholder="소모임에 대한 설명을 입력해주세요" 
 			onfocus="this.placeholder=''" onblur="this.placeholder='소모임에 대한 설명을 입력해주세요'"  style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25);
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
 			

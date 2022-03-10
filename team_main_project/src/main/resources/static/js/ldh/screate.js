@@ -70,6 +70,8 @@
 //var gatArea1 = document.getElementById("memArea1") 
 //var gatArea2 = document.getElementById("state")
 //
+
+
 //var gatArea ="";
 //
 // 
@@ -77,4 +79,8 @@
 // 
 //$("#gatArea").val(gatArea);  //hidden value set  
 //}
+//const liName = document.querySelector('#l-name');
+//const liEmail = document.querySelector('#l-email');
+
+
 
