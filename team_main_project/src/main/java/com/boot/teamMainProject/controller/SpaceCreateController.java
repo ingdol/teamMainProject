@@ -32,7 +32,7 @@ public class SpaceCreateController {
 													) throws IOException {
 		String savedFileName = "";
 		String savedFileName2 = "";
-		String uploadPath = "/images/";
+		String uploadPath = "/upload/";
 //		String uploadPath = "C:/teamImage/";
 		
 		ArrayList<String> originalFilenameList = new ArrayList<String>();
