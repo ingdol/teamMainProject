@@ -29,10 +29,12 @@ public class SpaceReservationController {
     SpaceReservationService reservationService;
     @Autowired
     MemberService memberService;
+    @Autowired
+    GatheringService gatheringService;
 
     // 공간 전체 페이지
     @RequestMapping("SpaceReservationAll")
-    public String SpaceReservationAll(Model model) {
+    public String SpaceReservationAll(Model model, HttpSession session) {
         ArrayList<SpaceVO> spaceList = service.listAllSpace();
         ArrayList<Space_CtgVO> spaceCtgName = space_ctgService.SpaceCtgName();
         model.addAttribute("spaceList", spaceList);

@@ -50,7 +50,7 @@ $(function(){
 		event.preventDefault();
 	});
 	$("#fakeBtn3").on('click',function(){
-		alert("클래스에 가입이 필요합니다.");
+		alert("클래스 개설자만 작성할 수 있습니다.");
 		event.preventDefault();
 	});
 

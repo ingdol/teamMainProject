@@ -128,7 +128,7 @@
 						<c:when test="${empty sessionScope.snick}">
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn"></li>
 						</c:when>
-						<c:when test="${sessionScope.snick == mem.memNick and (mem.classJoin1 == classInfoVO.classNo or mem.classJoin2 == classInfoVO.classNo or mem.classJoin3 == classInfoVO.classNo or mem.classJoin4 == classInfoVO.classNo or mem.classJoin5 == classInfoVO.classNo)}">
+						<c:when test="${sessionScope.snick == classInfoVO.memNick and (mem.classJoin1 == classInfoVO.classNo or mem.classJoin2 == classInfoVO.classNo or mem.classJoin3 == classInfoVO.classNo or mem.classJoin4 == classInfoVO.classNo or mem.classJoin5 == classInfoVO.classNo)}">
 							<li><a href="/ClassSchedule?classNo=${classInfoVO.classNo}"><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="realBtn"></a></li>
 						</c:when>
 						<c:otherwise>

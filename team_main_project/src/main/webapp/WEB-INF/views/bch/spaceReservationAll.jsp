@@ -109,7 +109,7 @@
                                     <!--  카드 바디 본문 -->
                                     <!--  카드 바디 푸터 -->
                                     <div class="card-body-footer">
-                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
+<%--                                        <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
                                         <i class="icon icon-view_count"></i>
                                         <i class="icon icon-comments_count"></i>
                                         <i class="reg_date"></i>
@@ -151,7 +151,7 @@
                         <!--  카드 바디 본문 -->
                         <!--  카드 바디 푸터 -->
                         <div class="card-body-footer">
-                            <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
+<%--                            <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">--%>
                             <i class="icon icon-view_count"></i>
                             <i class="icon icon-comments_count"></i>
                             <i class="reg_date"></i>
