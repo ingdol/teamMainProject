@@ -59,7 +59,7 @@ public class CommunityController {
 		String savedFileName ="";
 		
 		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
-		String uploadPath = "/images/";
+		String uploadPath = "/upload/";
 //		String uploadPath = "C:/teamImage/";
 		
 		ArrayList<CommunityVO> commList = service.CountComBoard();
