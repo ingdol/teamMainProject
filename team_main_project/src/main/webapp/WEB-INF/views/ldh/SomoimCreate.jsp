@@ -19,7 +19,7 @@
 			<section>
 			<div id="wrap2">
 			<br><br><br>
-			<h2>소모임 만들기</h2><br><br><br>
+			<h2>소모임 만들기</h2><br><br>
 			
 				
 			
@@ -92,20 +92,23 @@
 			onfocus="this.placeholder=''" onblur="this.placeholder='소모임에 대한 설명을 입력해주세요'"  style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25);
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
 			
-			<br><br>
-			<h4>소모임을 대표하는 사진을 넣어주세요.</h4>
+			<br><br><br><br><br>
+			<h4>소모임을 대표하는 사진을 넣어주세요.<span class="tooltip" title="소모임을 대표하는 사진을 넣습니다. 720 x 480 사이즈가 적당합니다."><img src="<c:url value='/image/ldh/doum.png'/>" width="16px" height="16px"></span></h4>
+			<hr width="300px"><br>
 			<div class="filebox">
 			<input class="upload-name" value="첨부파일">
 			<label for="file">사진 찾기</label>
 			<input type="file" id="file" name="uploadFile1"><br><br>
 			</div>
-			<h4>소모임의 배너 사진을 넣어주세요.</h4>
+			<br><br><br>
+			<h4>소모임의 배너 사진을 넣어주세요.<span class="tooltip" title="소모임 게시판 내 배너 사진을 넣습니다. 1000 x 200 사이즈가 적당합니다."><img src="<c:url value='/image/ldh/doum.png'/>" width="16px" height="16px"></span></h4>
+			<hr width="270px"><br>
 			<div class="filebox2">
 			<input class="upload-name2" value="첨부파일">
 			<label for="file2">사진 찾기</label>
 			<input type="file" id="file2" name="uploadFile2">
 			
-			<br><br>
+			<br><br><br><br><br><br>
 			<input type="submit" value="소모임 만들기" class="subbox2" >
 			</div>
 			</form>

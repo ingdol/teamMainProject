@@ -33,23 +33,32 @@ public class ClassCreateController {
 		String savedFileName ="";
 		
 		// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
-		String uploadPath = "C:/teamImage/";
-		
+		String uploadPath = "/images/";
+//		String uploadPath = "C:/teamImage/";
 		// 2. 원본 파일 이름 알아오기
 		String originalFileName = file5.getOriginalFilename();
 		
-		if(originalFileName.length()>3) {
-			count = count + 1;
-			savedFileName = "class" + count + "." + originalFileName.charAt(originalFileName.length()-3) + originalFileName.charAt(originalFileName.length()-2) + originalFileName.charAt(originalFileName.length()-1);
-//					 + ".jpg" ;
-			//4. 파일 생성
-					File file = new File(uploadPath + savedFileName);
-					//5. 서버로 전송
-					file5.transferTo(file);
-			}
-			else {
-				savedFileName = null;
-			}		// model
+
+		if(originalFileName.length()==0) {
+			savedFileName = null;
+		}
+		else {
+		// 파일 이름을 리스트에 추가
+		int checkk = originalFileName.indexOf(".",0)+1;
+		
+		count = count + 1;
+		savedFileName = "class" + count + ".";
+		for(int i=checkk; i<originalFileName.length(); i++) {
+			
+			savedFileName+=originalFileName.charAt(i);
+		}
+		
+		
+		// 4. 파일 생성
+		File file = new File(uploadPath + savedFileName);
+		//5. 서버로 전송
+		file5.transferTo(file);
+		}
 			model.addAttribute("originalFileName", originalFileName);
 			String classPhoto = savedFileName;
 			System.out.println(classPhoto); 

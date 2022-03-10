@@ -9,9 +9,10 @@ public class CommunityVO {
 	private String commuTitle; 
 	private String memNick; 
 	private String commuInfo; 
-	private String commuPhoto; // longblob 
+	private String commuPhoto; 
 	private Date commuDate; 
-	private int commuLike; 
+	private int commuLike;
+	private int commuHate;
 	private int commuView; 
 	private int commuComNum;
 	
@@ -74,6 +75,12 @@ public class CommunityVO {
 	}
 	public void setCommuComNum(int commuComNum) {
 		this.commuComNum = commuComNum;
+	}
+	public int getCommuHate() {
+		return commuHate;
+	}
+	public void setCommuHate(int commuHate) {
+		this.commuHate = commuHate;
 	}
 	
 	

@@ -47,17 +47,21 @@
 		    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 			
 			<section>
-		<div class ="wrap">
+		<div id ="wrap">
 		
 			
 
-			<table border = "0" align="center" >
+			<table border = "0" align="left" >
 			
 			<tr><td colspan="4"><span style="text-align:left;"><h3><a href="#">클래스</a> > <a href="#">${crd.classTitle}</a> > <a href="#">리뷰게시판</a></h3><br></span></td></tr>
+			</table>
+			<hr width="890px" color="#ff8080">
+			
+			<table border = "0" align="center" >
 			<tr><td colspan="4" class="reviewtitle" align="left">
 			${cr.classRevTitle}<br></td></tr>
 			</table>
-
+			<hr width="890px" color="#ff8080">
 			<br>
 			<table border = "0" align="center" class="detail1">
 			<tr><td align="left" colspan="4"><h3>${cr.memNick}</h3><br>

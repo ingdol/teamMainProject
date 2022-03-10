@@ -50,7 +50,7 @@
 								<div class="top">
 									<div class="num">${comlist.commuNo}</div>
 									<div class="title" id="comTitle">
-										<a href="#">${comlist.commuTitle}/댓글수${comlist.commuComNum}</a>
+										<a href="<c:url value="/ldh/Communityboard/${comlist.commuNo}"/>">${comlist.commuTitle}/댓글수${comlist.commuComNum}</a>
 									</div>
 									<div class="writer" id="comId">${comlist.memNick}</div>
 									<div class="date" id="comDate"><fmt:formatDate value="${comlist.commuDate}" pattern="YY/MM/dd"/></div>
@@ -90,7 +90,7 @@
 								<div class="top">
 								<div class="num">${dailylist.commuNo}</div>
 								<div class="title" id="comTitle">
-									<a href="#">${dailylist.commuTitle}/댓글수${dailylist.commuComNum}</a>
+									<a href="<c:url value="/ldh/Communityboard/${dailylist.commuNo}"/>">${dailylist.commuTitle}/댓글수${dailylist.commuComNum}</a>
 								</div>
 								<div class="writer" id="comId">${dailylist.memNick}</div>
 								<div class="date" id="comDate"><fmt:formatDate value="${dailylist.commuDate}" pattern="YY/MM/dd"/></div>
@@ -130,7 +130,7 @@
 								<div class="top">
 								<div class="num">${reviewlist.commuNo}</div>
 								<div class="title" id="comTitle">
-									<a href="#">${reviewlist.commuTitle}/댓글수${reviewlist.commuComNum}</a>
+									<a href="<c:url value="/ldh/Communityboard/${reviewlist.commuNo}"/>">${reviewlist.commuTitle}/댓글수${reviewlist.commuComNum}</a>
 								</div>
 								<div class="writer" id="comId">${reviewlist.memNick}</div>
 								<div class="date" id="comDate"><fmt:formatDate value="${reviewlist.commuDate}" pattern="YY/MM/dd"/></div>
@@ -170,7 +170,7 @@
 								<div class="top">
 								<div class="num">${bestlist.commuNo}</div>
 								<div class="title" id="comTitle">
-									<a href="#">${bestlist.commuTitle}/댓글수${bestlist.commuComNum}</a>
+									<a href="<c:url value="/ldh/Communityboard/${bestlist.commuNo}"/>">${bestlist.commuTitle}/댓글수${bestlist.commuComNum}</a>
 								</div>
 								<div class="writer" id="comId">${bestlist.memNick}</div>
 								<div class="date" id="comDate"><fmt:formatDate value="${bestlist.commuDate}" pattern="YY/MM/dd"/></div>

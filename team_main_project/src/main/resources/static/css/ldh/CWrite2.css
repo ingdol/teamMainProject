@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+#wrap5{
+
+position: absolute;
+background: #FFFFFF;
+	text-align:center;
+	position:relative;
+	width:70%;
+/* 	height:100%; */
+	box-shadow: 0px 1px 3px;
+	border-radius: 10px;
+	padding:50px;
+}
+
+.subbox5{
+
+width: 70px;
+height: 40px;
+
+background: #ff8080;
+border: 3px solid #ff8080;
+box-sizing: border-box;
+border-radius: 10px;
+	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
+color: white;
+}
+
+.subbox5:hover{
+
+background: #ff0000;
+border: 3px solid #ff0000;
+}
+
+
+.toggle2 input[type=radio]{
+    display: none;
+
+}
+.toggle2 input[type=radio] + label {
+/*     position: relative; */
+	padding: 5px 15px;
+box-sizing: border-box;
+	background: #ffffff;
+	border-radius: 20px;
+		border: 3px solid #ffb173;
+/* 	clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%); */
+
+	color:#000000;
+/* 	-webkit-transform:scale(1); */
+/* 	-moz-transform:scale(1); */
+/* 	-ms-transform:scale(1);	 */
+/* 	-o-transform:scale(1);	 */
+/* 	transform:scale(1); */
+	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
+}
+.toggle2  input[type=radio] + label:hover{
+	background: #ec4700;
+	color:white;
+	
+/* 	-webkit-transform:scale(3); */
+/* 	-moz-transform:scale(3); */
+/* 	-ms-transform:scale(3);	 */
+/* 	-o-transform:scale(3); */
+/* 	transform:scale(3); */
+}
+.toggle2 input[type=radio]:checked + label {
+/*     position: relative; */
+	
+	background: #ec4700;
+	border-radius: 15px;
+	color:#ffffff;
+/* 	border: 1px solid rgba(0, 0, 0, 0.15); */
+	border: 3px solid #ec4700;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 300px;
+    color: #999999;
+}
+
+.filebox label {
+     display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color:rgb(255, 128, 128);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 25px;
+    margin-left: 10px;
+    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
+}
+.filebox label:hover {
+   background: rgb(255, 0, 0);
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}

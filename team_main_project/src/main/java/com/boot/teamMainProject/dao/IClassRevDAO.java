@@ -9,6 +9,7 @@ public interface IClassRevDAO {
 	ArrayList<ClassRevVO> revlist(int classNo);
 	
 	//ldh
-	ClassRevVO revlist2(int classNo);
-
+	ClassRevVO revlist2(int classRevNo);
+	void insertClassRev(ClassRevVO cr);
+	int LastCRboard(int classNo);
 }

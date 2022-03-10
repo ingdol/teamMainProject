@@ -8,7 +8,7 @@
 
 
 .boardtitle{
-/* position: absolute; */
+position: relative;
 width: 1000px;
 height: 50px;
 
@@ -16,15 +16,15 @@ font-size:18px;
 
 padding:0px 0px 0px 20px;
 
-background: #FFFFFF;
-border: 1px solid rgba(0, 56, 255, 0.15);
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 56, 255, 0.25);
-border-radius: 10px;
+/* background: #FFFFFF; */
+/* border: 1px solid rgba(0, 56, 255, 0.15); */
+/* box-sizing: border-box; */
+/* box-shadow: 0px 4px 4px rgba(0, 56, 255, 0.25); */
+/* border-radius: 10px; */
 font-family: 'Noto Sans KR', sans-serif;
 }
 .boardtitle2{
-/* position: absolute; */
+position: absolute;
 width: 1000px;
 height: 50px;
 
@@ -32,16 +32,16 @@ font-size:18px;
 
 padding:0px 0px 0px 20px;
 
-background: #FFFFFF;
-border: 1px solid rgb(255, 162, 162);
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgb(255, 162, 162);
-border-radius: 10px;
+/* background: #FFFFFF; */
+/* border: 1px solid rgb(255, 162, 162); */
+/* box-sizing: border-box; */
+/* box-shadow: 0px 4px 4px rgb(255, 162, 162); */
+/* border-radius: 10px; */
 font-family: 'Noto Sans KR', sans-serif;
 }
 .boardDetail{
 position:relative;
-width: 1000px;
+width: 890px;
 height: 302px;
 
 background: #FFFFFF;
@@ -49,9 +49,9 @@ box-sizing: border-box;
 vertical-align: top;
 
 background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-border: 1px solid rgba(0, 0, 0, 0.2);
+/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+border-radius: 3px;
+border: 1px solid rgba(0, 0, 0, 0.25);
 
 padding:20px 20px 20px 20px; 
 }
@@ -77,12 +77,12 @@ font-size: 14px;
 line-height: 16px;
 
 color: #000000;
-width: 1000px;
+width: 890px;
 height: 100px;
 
 background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+border-radius: 5px;
 border: 1px solid rgba(0, 0, 0, 0.2);
 
 padding:0px 20px 0px 20px;
@@ -90,33 +90,54 @@ padding:0px 20px 0px 20px;
 	
 .comment{
 
-width: 1000px;
+width: 890px;
 height: 122px;
 
-border: 1px solid rgba(0, 117, 255, 0.2);
+border: 1px solid rgba(0, 0, 0, 0.2);
 background: #FFFFFF;
 box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 117, 255, 0.25);
-border-radius: 10px;
+/* box-shadow: 0px 4px 4px rgba(0, 117, 255, 0.25); */
+border-radius: 3px;
 
-padding: 10px 10px 10px 10px;
+padding: 10px 20px 10px 20px;
+margin-bottom:10px;
 }
+.commentWrite{
+
+width: 890px;
+height: 122px;
+
+border: 1px solid rgba(0, 0, 0, 0.2);
+background: #FFFFFF;
+box-sizing: border-box;
+/* box-shadow: 0px 4px 4px rgba(0, 117, 255, 0.25); */
+border-radius: 3px;
+
+padding: 20px 20px 10px 20px;
+margin-bottom:10px;
+margin-top:10px;
+}
+
 
 .comsubbox{
 	width: 65px;
 height: 57px;
 
-background: #66A3FF;
-border: 3px solid #66A3FF;
+background: #7bb0ff;
+border: 3px solid #7bb0ff;
 box-sizing: border-box;
-border-radius: 10px;
+border-radius: 3px;
 
 color: white;
-	
+	    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
 }
 .comsubbox:hover{
-	background: #0038FF;
-border: 3px solid #0038FF;
+	background: #007dfb;
+border: 3px solid #007dfb;
 }
 
 .Supdate{
@@ -161,13 +182,60 @@ color: white;
 	background: url("/image/ldh/star1.png");
 	background-size:40px;
 	border:0px;
-	width:"40px" ;
+	width:"44px" ;
 	height:"40px";
+		    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
 }
 .star:hover{
 	background: url("/image/ldh/star2.png");
 	background-size:40px;
 	border:0px;
+	width:"44px" ;
+	height:"40px";
+}
+
+
+.siren{
+	background: url("/image/ldh/siren.png");
+	background-size:40px;
+	border:0px;
 	width:"40px" ;
 	height:"40px";
+		    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
+}
+.siren:hover{
+	background: url("/image/ldh/siren2.png");
+	background-size:40px;
+	border:0px;
+	width:"40px" ;
+	height:"40px";
+}
+
+.DeleteSCom{
+
+		width: 50px;
+height: 20px;
+color:white;
+background: #ff8080;
+border: 1px solid #ff8080;
+box-sizing: border-box;
+border-radius: 5px;
+padding: 0px 0px 3px 0px;
+		    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
+}
+.DeleteSCom:hover{
+background: #ff0000;
+	border: 1px solid #ff0000;
 }

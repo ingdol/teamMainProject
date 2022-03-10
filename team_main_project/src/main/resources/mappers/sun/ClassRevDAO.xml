@@ -19,6 +19,17 @@
 	</select>
 	
 	<select id="revlist2" resultMap="classRev">
-		SELECT * FROM Class_Rev WHERE classNo=#{classNo}
+		SELECT * FROM Class_Rev WHERE classRevNo=#{classRevNo}
 	</select>
+	
+	<insert id="insertClassRev" parameterType="com.boot.teamMainProject.model.ClassRevVO">
+			INSERT INTO Class_Rev(classNo, classRevTitle,memNick,classRevInfo,classRevPhoto, classRevDate) 
+			VALUES (${classNo}, '${classRevTitle}','${memNick}','${classRevInfo}','${classRevPhoto}',CURRENT_TIMESTAMP)
+	</insert>
+		<select id="LastCRboard" 
+   				resultType="int">
+<!--   		SELECT gatDetNo FROM Gather_det ORDER BY gatDetNo DESC LIMIT 1 -->
+  		SELECT LAST_INSERT_ID()
+   </select>
+	
 </mapper>

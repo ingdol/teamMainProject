@@ -21,9 +21,19 @@ public class ClassRevService implements IClassRevService {
 	}
 	//ldh
 	@Override
-	public ClassRevVO revlist2(int classNo) {
+	public ClassRevVO revlist2(int classRevNo) {
 		// TODO Auto-generated method stub
-		return dao.revlist2(classNo);
+		return dao.revlist2(classRevNo);
+	}
+	@Override
+	public void insertClassRev(ClassRevVO cr) {
+		// TODO Auto-generated method stub
+		dao.insertClassRev(cr);
+	}
+	@Override
+	public int LastCRboard(int classNo) {
+		// TODO Auto-generated method stub
+		return dao.LastCRboard(classNo);
 	}
 
 }
