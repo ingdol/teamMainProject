@@ -65,7 +65,7 @@ public class SpaceReviewController {
                              @RequestParam("memNick") String memNick,
                              @RequestParam("spaceNo") int spaceNo,
                              @RequestParam("spaceReserNo") int spaceReserNo) throws Exception {
-        String basePath = "/Users/gobyeongchae/Desktop/test";
+        String basePath = "/upload";
         String originalName = "";
         StringBuilder name = new StringBuilder();
         System.out.println(files.size());
