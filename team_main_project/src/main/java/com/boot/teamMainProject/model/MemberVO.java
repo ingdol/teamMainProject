@@ -25,7 +25,10 @@ public class MemberVO {
 	private static String authNum;
 	private int levelClass;
 	private int levelSpace;
-	private int memPoint;
+	private String memPoint;
+	private String memBirth1;
+	private String memBirth2;
+	private String memBirth3;
 	
 	public String getMemId() {
 		return memId;
@@ -171,11 +174,29 @@ public class MemberVO {
 	public void setLevelSpace(int levelSpace) {
 		this.levelSpace = levelSpace;
 	}
-	public int getMemPoint() {
+	public String getMemPoint() {
 		return memPoint;
 	}
-	public void setMemPoint(int memPoint) {
-		this.memPoint = memPoint;
+	public void setMemPoint(String memId) {
+		this.memId = memId;
+	}
+	public String getMemBirth1() {
+		return memBirth1;
+	}
+	public void setMemBirth1(String memBirth1) {
+		this.memBirth1 = memBirth1;
+	}
+	public String getMemBirth2() {
+		return memBirth2;
+	}
+	public void setMemBirth2(String memBirth2) {
+		this.memBirth2 = memBirth2;
+	}
+	public String getMemBirth3() {
+		return memBirth3;
+	}
+	public void setMemBirth3(String memBirth3) {
+		this.memBirth3 = memBirth3;
 	}
 	
 }

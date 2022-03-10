@@ -9,12 +9,10 @@ public interface IMemDAO {
 	String memNickCheck(String memNick);
 	MemberVO signIn(HashMap<String, String> param);
 	void userSignup(MemberVO vo);
+	void userChangeInfo(MemberVO vo);
 	MemberVO selectNick(String memNick);
-	MemberVO gather1(String gatJoinNo1);
-	MemberVO gather2(String gatJoinNo2);
-	MemberVO gather3(String gatJoinNo3);
-	MemberVO gather4(String gatJoinNo4);
-	MemberVO gather5(String gatJoinNo5);
+	MemberVO gather(MemberVO memId);
+	int selectPoint(String memId);
 	MemberVO detailViewMember(String memId);// sej : 상세 회원 조회
 	void SignInGather1(int gatNo, String memNick); // 모임 가입
 	void SignInGather2(int gatNo, String memNick); // 모임 가입
@@ -26,4 +24,6 @@ public interface IMemDAO {
 	void SignInClass3(int classNo, String memNick); // 클래스 가입
 	void SignInClass4(int classNo, String memNick); // 클래스 가입
 	void SignInClass5(int classNo, String memNick); // 클래스 가입
+
+	
 }
