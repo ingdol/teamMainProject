@@ -206,8 +206,8 @@ nav#main_nav{
 }
 
 #main_nav {
-	margin-top: 35px;
-    margin-right: 36px;
+    margin-top: 69px;
+    margin-left: 309px;
     padding: 11px;
     width: 138px;
     height: 108px;
@@ -216,6 +216,8 @@ nav#main_nav{
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px lightgrey;
     box-sizing: border-box;
+    position:absolute;
+    z-index:100;
 }
 
 #main_nav ul {
