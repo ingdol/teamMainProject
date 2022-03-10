@@ -89,11 +89,12 @@ $(document).ready(function() {
 				var marker = markers[seq], // 클릭한 마커의 시퀀스로 찾는다.
 					info = infos[seq]; // 클릭한 마커의 시퀀스로 찾는다
 
-				if (info.getMap()) {
+				/*if (info.getMap()) {
 					info.close();
 				} else {
 					info.open(map, marker); // 표출
-				}
+				}*/
+				info.open(map, marker);
 			}
 		}
 
