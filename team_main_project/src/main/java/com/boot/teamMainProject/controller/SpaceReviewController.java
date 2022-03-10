@@ -59,7 +59,7 @@ public class SpaceReviewController {
         }
     }
 
-    @PostMapping("SaveReview")
+    @RequestMapping("SaveReview")
     public String SaveReview(@RequestParam("files") List<MultipartFile> files,
                              @RequestParam("ReviewArea") String ReviewArea,
                              @RequestParam("memNick") String memNick,
