@@ -71,6 +71,6 @@ public class ClassCreateController {
 			service.insertClass(cl);
 		
 		
-		return "redirect:/main";
+			return "redirect:/";
 	}
 }

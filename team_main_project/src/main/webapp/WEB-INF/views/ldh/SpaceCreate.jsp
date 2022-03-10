@@ -11,6 +11,7 @@
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
 		  <script src="<c:url value='/js/ldh/screate.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
+		  <script src="<c:url value='/js/ldh/SpaceCheck.js'/>"></script>
 		  <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>	
 		  <script src="<c:url value='/js/searchZip.js'/>"></script>	
 	</head>
@@ -24,7 +25,7 @@
 			<h2>공간 개설</h2><br>
 			
 				
-			<form id="SpaceCreateForm" name="SpaceCreateForm" method="post"  action="/spacecreate" enctype="multipart/form-data">
+			<form id="SpaceCreateForm" name="SpaceCreateForm" onsubmit="return validate3()" method="post"  action="/spacecreate" enctype="multipart/form-data">
 			
 			<c:if test="${not empty sessionScope.sid }">
 			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>
@@ -66,10 +67,10 @@
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
 			
 			<br><br>
-			<input type="text" id="spacePrice1" name="spacePrice1">
-			<input type="text" id="spacePrice2" name="spacePrice2"><br>
-			<input type="text" id="spacePerNum" name="spacePerNum">
-			<input type="text" id="spacePerMax" name="spacePerMax"><br>
+			<input type="text" id="spacePrice1" class ="spacePrice1" name="spacePrice1" placeholder="최소 비용"> ~
+			<input type="text" id="spacePrice2" class ="spacePrice2" name="spacePrice2" placeholder="최대 비용"><br><br>
+			<input type="text" id="spacePerNum" class ="spacePerNum" name="spacePerNum" placeholder="최소 수용인원"> ~
+			<input type="text" id="spacePerMax" class ="spacePerMax" name="spacePerMax" placeholder="최소 수용인원"><br>
 <!-- 			<input type="time" id="spaceOpen" name="spaceOpen"> -->
 			
 			<br><br>

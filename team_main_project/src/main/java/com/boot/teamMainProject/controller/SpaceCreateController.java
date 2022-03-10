@@ -92,7 +92,7 @@ public class SpaceCreateController {
 		spa.setMemNick(memNick); 
 		service.insertSpace(spa);
 		
-		return "redirect:/main";
+		return "redirect:/";
 	}
 
 }
