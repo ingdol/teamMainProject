@@ -67,7 +67,7 @@ public class SpaceReviewController {
                              @RequestParam("spaceReserNo") int spaceReserNo) throws Exception {
         String basePath = "/Users/gobyeongchae/Desktop/test";
         String originalName = "";
-        String name = "";
+        StringBuilder name = new StringBuilder();
         System.out.println(files.size());
         if(files.size() >= 1) {
             // 파일 업로드(여러개) 처리 부분
@@ -82,11 +82,9 @@ public class SpaceReviewController {
                     File dest = new File(filePath);
                     file.transferTo(dest);
                 }
-                name = name + originalName + " ";
+                name.append(originalName).append(" ");
             }
-            System.out.println("이름 : " + name);
-            System.out.println(ReviewArea);
-            reviewService.WriteReview(spaceNo, spaceReserNo, ReviewArea, memNick, name);
+            reviewService.WriteReview(spaceNo, spaceReserNo, ReviewArea, memNick, name.toString());
         }
         return "redirect:/mypage/"+memNick;
     }

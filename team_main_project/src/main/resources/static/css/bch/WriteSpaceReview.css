@@ -6,6 +6,9 @@
     width: 1060px;
     justify-content: center;
 }
+label {
+    display: inline !important;
+}
 p{
     font-weight: bold;
     font-size: 30px;
@@ -19,13 +22,13 @@ textarea {
     margin-bottom: 20px;
 }
 #WriteReview{
-    float: right;
-    background-color: #5da5f8;
-    border-color: #5da5f8;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 100px;
-    height: 40px;
+    float: right !important;
+    background-color: #5da5f8 !important;
+    border-color: #5da5f8 !important;
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    width: 100px !important;
+    height: 40px !important;
 }
 .filebox .upload-name {
     display: inline-block;
