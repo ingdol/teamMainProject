@@ -31,14 +31,16 @@
 	            </ul>
 	        </div>
 	        <div class="subscription-list">
-	            <h3>가입한 모임 / 찜 리스트</h3>
+	            <h3>작성한 게시글</h3>
 	        </div>
 	        <div class="subscription">
 	            <div class="club">
 	                <ul class="club-list">
- 	               		<li class="club-item">${join.gatJoinNo1}</li>
- 	               		<li class="club-item">${join.gatJoinNo2}</li>
- 	               		<li class="club-item">${join.gatJoinNo3}</li>
+	                <c:forEach items="${nickCheck}" var="nickCheck">
+	                	<li class="club-item"><a class="gat-href" href="<c:url value='/ldh/Communityboard/${nickCheck.commuNo}'/>">
+	                		${nickCheck.commuTitle}/댓글수${nickCheck.commuComNum}
+	               		</a></li>
+	                </c:forEach>
 	                </ul>
 	            </div>
 	        </div>

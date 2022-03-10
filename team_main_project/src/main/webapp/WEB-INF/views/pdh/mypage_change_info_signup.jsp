@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,27 +36,15 @@
 		        <li class="l-li-title-birth">
                     <div class="l-title" id="title-birth">생년월일</div>
                 </li>
+                <%-- <c:set var = "year" value="${fn:split(mem.birth, '-') }" /> --%>
                 <li class="l-li" id="l-birth">
-                	<input type="number" class="l-input-year" id="year" placeholder=" " min="1">
+                	<input type="number" class="l-input-year" id="year" placeholder=" " min="1" value="${mem.memBirth1}" readonly="readonly">
                     <label for="" class="l-label-year" id="year-label">년</label>
-                    <input type="number" class="l-input-day" id="day" placeholder=" " min="1" max="31">
+                    <input type="number" class="l-input-day" id="day" placeholder=" " min="1" max="31" value="${mem.memBirth3}" readonly="readonly">
                     <label for="" class="l-label-day" id="day-label">일</label>
                 	<div class="dropdown">
-                		<input type="text" class="textBox" placeholder="월" readonly>
-                		<div class="option">
-                			<div id="month-1"><ion-icon name="calendar-outline"></ion-icon>1월</div>
-                			<div id="month-2"><ion-icon name="calendar-outline"></ion-icon>2월</div>
-                			<div id="month-3"><ion-icon name="calendar-outline"></ion-icon>3월</div>
-                			<div id="month-4"><ion-icon name="calendar-outline"></ion-icon>4월</div>
-                			<div id="month-5"><ion-icon name="calendar-outline"></ion-icon>5월</div>
-                			<div id="month-6"><ion-icon name="calendar-outline"></ion-icon>6월</div>
-                			<div id="month-7"><ion-icon name="calendar-outline"></ion-icon>7월</div>
-                			<div id="month-8"><ion-icon name="calendar-outline"></ion-icon>8월</div>
-                			<div id="month-9"><ion-icon name="calendar-outline"></ion-icon>9월</div>
-                			<div id="month-10"><ion-icon name="calendar-outline"></ion-icon>10월</div>
-                			<div id="month-11"><ion-icon name="calendar-outline"></ion-icon>11월</div>
-                			<div id="month-12"><ion-icon name="calendar-outline"></ion-icon>12월</div>
-                		</div>
+                		<input type="text" class="textBox" placeholder="월" readonly="readonly" <c:if test="${not empty mem.memBirth2}">value="${mem.memBirth2}월"</c:if>>
+                		
                 	</div>
                 </li>
                 <li class="l-li" id="l-nick">

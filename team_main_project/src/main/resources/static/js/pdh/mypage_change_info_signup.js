@@ -355,7 +355,7 @@ async function userSignup() {
 		monthTmp = `0${monthTmp}`;
 	}
 	
-    await fetch('/user-signup', {
+    await fetch('/user-change-info', {
 	method: 'POST', 
 	headers: { 'Content-Type': 'application/json' },
 	body: JSON.stringify({
