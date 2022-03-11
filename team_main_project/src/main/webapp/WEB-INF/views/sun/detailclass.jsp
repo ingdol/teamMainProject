@@ -35,7 +35,7 @@
 				<div class="moimname">
 					<div class="titlesize">${detail.classTitle}</div>
 					<div>
-						강사 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
+						강사 : <a href="#">&nbsp;${detail.memNick}</a>
 						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		
