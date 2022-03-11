@@ -6,7 +6,7 @@
       <script>
           $(document).ready(function(){
              // alert("이미 리뷰를 작성하셨습니다.");
-              location.replace("/mypage/" + $('#memNick').val()); // 변경 필요
+              location.replace("/ReservationList"); // 변경 필요
           });
       </script>
   </head>
