@@ -86,7 +86,7 @@
 									<div class="top">
 										<div class="num">${com.classRevNo}</div>
 										<div class="title" id="comTitle">
-											<a href="<c:url value='/ldh/Somoimboard/${com.classNo}/${com.classRevNo}'/>">${com.classRevTitle}</a>
+											<a href="<c:url value='/ldh/ClassReview/${com.classNo}/${com.classRevNo}'/>">${com.classRevTitle}</a>
 										</div>
 										<div class="writer" id="comId">${com.memNick}</div>
 										<div class="date" id="comDate"><fmt:formatDate value="${com.classRevDate}" pattern="YY/MM/dd"/></div>

@@ -31,6 +31,7 @@
 			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>
 			
 			</c:if>
+			<br><h3>${sessionScope.snick}님이 개설할 클래스의 주소를 선택해주세요.</h3><hr width="450px" color="#ff8080"><br><br><br>
 			<div class="select">
 			 <select name="classArea1" id="classArea1" onchange="categoryChange(this)">
               	<option value="">시/도 선택</option>
@@ -54,9 +55,12 @@
 			<select name="classArea2" id="state">
               <option>군/구 선택</option>
             </select>
+				
+			</div><br><br><br>
+			<hr width="500px" color="#d9d9d9">
 			
-			</div>
-<br><h3>${sessionScope.snick}님이 게시할 클래스의 주소를 선택해주세요.</h3><br>
+			<br>
+<br><h3>클래스의 카테고리를 선택해주세요.</h3><hr width="300px" color="#ff8080"><br><br>
 			
 			<div class="toggle3">
 
@@ -83,8 +87,10 @@
 			</div>
 
 			<br><br>
+			<hr width="500px" color="#d9d9d9">
+			<br><br>
 			
-			<h3>당신의 클래스를 소개해보세요!!!</h3><br>
+			<h3>당신의 클래스를 소개해보세요!!!</h3><hr width="270px" color="#ff8080"><br><br>
 			<input type="text" id="classTitle" name="classTitle" 
 				style="width:500px; height:40px; text-align:center; background: #FFFFFF; border: 1px solid rgba(255, 0, 0, 0.25);
 							box-sizing: border-box; box-shadow: 0px 4px 4px rgba(255, 0, 0, 0.5); border-radius: 10px;" placeholder="소개글의 제목을 입력해주세요." 
@@ -95,11 +101,14 @@
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
 			
 			<br><br>
-
+			
 <!-- 			<input type="time" id="spaceOpen" name="spaceOpen"> -->
+			<br>
+			<hr width="500px" color="#d9d9d9">
 			
 			<br><br>
-			<h4>당신의 클래스를 대표하는 사진을 넣어주세요.</h4>
+			<h4>당신의 클래스를 대표하는 사진을 넣어주세요.</h4><hr width="330px" color="#ff8080"><br>
+			<br>
 			<div class="filebox5">
 			<input class="upload-name" value="첨부파일">
 			<label for="file5">사진 찾기</label>

@@ -293,6 +293,7 @@ public class GatherDetController {
 		service3.insertGathering(gath);
 		
 		return "redirect:/";
+		
 	}
 	
 	@ResponseBody
