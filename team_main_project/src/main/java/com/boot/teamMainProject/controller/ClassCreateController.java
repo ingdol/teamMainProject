@@ -22,7 +22,7 @@ public class ClassCreateController {
 	ClassCreateService service;
 	
 	
-	int count = 7;
+	int count = 22;
 	
 	@RequestMapping("/classcreate")
 	public String insertClass(@RequestParam String memNick, 

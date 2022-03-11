@@ -14,7 +14,7 @@
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/CWrite.css" />">
 		  <style>
 		  		.ck.ck-editor{
-		  			max-width: 1050px;
+		  			max-width: 890px;
 		  		}
 		  		.ck-editor__editable{
 		  			min-height: 300px;
@@ -27,35 +27,41 @@
 	    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		   <br>
 			<section>
-		<div class="wrap">
-				<h3 align="center">카테고리</h3>
+		<div id="wrap4">
 			<form id="CommuBoardForm" name="CommuBoardForm" method="post"  action="/communityupdate" enctype="multipart/form-data">
 				<input type="hidden" id="commuNo" name="commuNo" value="${com.commuNo}">
+					<table border="0" align='left'>
+				<tr><td><img src="<c:url value='/image/ldh/write.png'/>" width="40px" height="40px"><span><b>글쓰기</b></span></td></tr>
+				</table><br><br><br>
+				
+				<hr width="890px" color="#ffb173">
+				
+				
 				<table border="0" align='center'>
 				
 				<c:if test="${com.commuCtgNo == '1' }">
-				<tr height="60px"><td align='right'>
-				<input type="radio" id="toggle4-1" name="commuCtgNo" value='1' checked="checked">      			
-				<label for="toggle4-1" >일상</label></td><td>&nbsp;&nbsp;</td>
-				<td align='left'><input type="radio" id="toggle4-2" name="commuCtgNo" value='2'>      			
-				<label for="toggle4-2" >리뷰</label> </td></tr>
+				<tr height="60px"><td align='left' colspan="3" class="toggle2" >
+				<input type="radio" id="toggle4-1" name="commuCtgNo" checked="checked" value='1'>      			
+				<label for="toggle4-1" >일상</label>&nbsp;&nbsp;
+				<input type="radio" id="toggle4-2" name="commuCtgNo" value='2'>      			
+				<label for="toggle4-2" >홍보</label> </td></tr>
 				</c:if>
 				<c:if test="${com.commuCtgNo == '2' }">
-				<tr height="60px"><td align='right'>
-				<input type="radio" id="toggle4-1" name="commuCtgNo" value='1'>      			
-				<label for="toggle4-1" >일상</label></td><td>&nbsp;&nbsp;</td>
-				<td align='left'><input type="radio" id="toggle4-2" name="commuCtgNo" value='2' checked="checked">      			
-				<label for="toggle4-2" >리뷰</label> </td></tr>
+				<tr height="60px"><td align='left' colspan="3" class="toggle2" >
+				<input type="radio" id="toggle4-1" name="commuCtgNo"  value='1'>      			
+				<label for="toggle4-1" >일상</label>&nbsp;&nbsp;
+				<input type="radio" id="toggle4-2" name="commuCtgNo" value='2' checked="checked">      			
+				<label for="toggle4-2" >홍보</label> </td></tr>
 				</c:if>
 							
 				
 				<tr><td colspan="3"><input type="text" id="commuTitle" name="commuTitle" value="${com.commuTitle}"
-				style="width:1000px; height:40px; padding-left: 10px;" placeholder="제목을 입력해주세요" 
+				style="width:870px; height:40px; padding-left: 10px;" placeholder="제목을 입력해주세요" 
 				onfocus="this.placeholder=''" onblur="this.placeholder='제목을 입력해주세요'">
 				</td></tr>
 				
 <!-- 				<input type="text" id="commuInfo" name="commuInfo" style="text-align: top; width:510px; height:537px"> -->
-				<tr><td colspan="3"><textarea id="commuInfo" name="commuInfo" 
+				<tr><td colspan="3"><br><textarea id="commuInfo" name="commuInfo" 
 				 style="padding-left: 10px; padding-top: 10px;" placeholder="내용을 입력해주세요" onfocus="this.placeholder=''" 
 				onblur="this.placeholder='내용을 입력해주세요'" >${com.commuInfo }</textarea>
 				<script>
@@ -70,7 +76,7 @@
 				
 				</td></tr>
 
-				<tr><td colspan="3" align="right">
+				<tr><td colspan="3" align="right"><br>
 				<input type="submit" value="수정" class="subbox4"></td></tr>
 				</table>
 			</form>
