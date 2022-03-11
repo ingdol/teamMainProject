@@ -21,7 +21,7 @@ body {
 
 .container {
     display: flex;
-    height: 65vh;
+    height: 58vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;

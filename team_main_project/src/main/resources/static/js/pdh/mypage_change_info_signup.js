@@ -396,54 +396,6 @@ function showCalendar(month) {
 	monthBirth.value = month;
 }
 
-month1.onclick = function() {
-	showCalendar('1월');
-}
-
-month2.onclick = function() {
-	showCalendar('2월');
-}
-
-month3.onclick = function() {
-	showCalendar('3월');
-}
-
-month4.onclick = function() {
-	showCalendar('4월');
-}
-
-month5.onclick = function() {
-	showCalendar('5월');
-}
-
-month6.onclick = function() {
-	showCalendar('6월');
-}
-
-month7.onclick = function() {
-	showCalendar('7월');
-}
-
-month8.onclick = function() {
-	showCalendar('8월');
-}
-
-month9.onclick = function() {
-	showCalendar('9월');
-}
-
-month10.onclick = function() {
-	showCalendar('10월');
-}
-
-month11.onclick = function() {
-	showCalendar('11월');
-}
-
-month12.onclick = function() {
-	showCalendar('12월');
-}
-
 // --| DropDown 클릭 이벤트
 const dropdown = document.querySelector('.dropdown');
 dropdown.onclick = function() {
