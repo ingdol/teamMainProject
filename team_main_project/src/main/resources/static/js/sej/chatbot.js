@@ -164,10 +164,13 @@
 								// 챗봇으로 부터 받은 텍스트 답변을 음성으로 변환하기 위해 TTS 호출
 							$("#chatBox").append("<img src='" + bubbles[b].data.cover.data.imageUrl +
 																		 "' alt='이미지 없음' id='chatImage'>");
+								callAjaxTTS(bubbles[b].data.cover.data.description);	
 								if(bubbles[b].data.contentTable == null){
 								$("#chatBox").append
 								("<div id='chatUrl' ><a href='"+bubbles[b].data.cover.data.action.data.url+"' target='_blank'>" + 
-										bubbles[b].data.cover.data.action.data.url+ "</a></div><br><br>");							
+										bubbles[b].data.cover.data.action.data.url+ "</a></div><br><br>");		
+																   
+								callAjaxTTS(bubbles[b].data.cover.data.description);							
 							} else {
 								$("#chatBox").append("<div class='msgBox receive'><span id='in'><span id='msgOwner'>Daily&Linker</span><br><span id='msgOwnBox'>" + bubbles[b].data.cover.data.description+ "</span></span></div><br><br>");	
 								// 챗봇으로 부터 받은 텍스트 답변을 음성으로 변환하기 위해 TTS 호출									   

@@ -14,9 +14,9 @@
             <div id="footerTextBox">
             	<div id="bottomMenuBox1">
 	               <ul id="bottomMenuItem1">
-	                  <li><a href="#">클래스 호스트 지원</a></li>
-	                  <li><a href="#">공간대여 호스트 지원</a></li>
-	                  <li><a href="#">문의사항</a></li>
+	                  <li><a href="#">클래스 개설</a></li>
+	                  <li><a href="#">공간대여 개설</a></li>
+	                  <li><a href="#">호스트 지원</a></li>
 	               </ul>
 	            </div>
          
