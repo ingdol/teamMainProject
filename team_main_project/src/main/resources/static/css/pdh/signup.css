@@ -200,6 +200,12 @@ h1 {
 	margin-bottom: 30px;
 	left: 19rem;
 	cursor: pointer;
+	background: rgba(50, 130, 255, 0.9);
+	border: none;
+	border-radius: 10px;
+	font-weight: bold;
+	color: white;
+	transition: all 0.2s;
 }
 
 #l-submit {
@@ -343,6 +349,14 @@ h1 {
 }
 
 /* ======== PSEUDO-CLASS <SELECTOR> ======== */
+.l-auth-Btn:hover {
+	background: rgba(50, 130, 255, 0.7);
+}
+
+.l-auth-Btn:active {
+	background: rgba(50, 130, 255, 1.0);
+}
+
 .l-address-Btn:hover {
 	background: #ffffff;
 	color: rgba(50, 130, 255, 1.0);

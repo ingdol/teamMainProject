@@ -100,12 +100,12 @@ $(function(){
 					location.reload();
 				}
 				else {
-					alert("모임 5개 모두 가입하셨습니다.");
+					alert("클래스 5개 모두 가입하셨습니다.");
 					location.reload();
 				}
 			},
 			error:function(data, textStatus, result){
-				alert("모임 가입 실패");
+				alert("클래스 가입 실패");
 				console.log(data);
 				console.log(result);
 				console.log(textStatus);

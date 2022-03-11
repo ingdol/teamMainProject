@@ -53,8 +53,10 @@
 
 			<table border = "0" align="left" >
 			
-			<tr><td colspan="4"><span style="text-align:left;"><h3><a href="#">클래스</a> > <a href="#">${crd.classTitle}</a> > <a href="#">리뷰게시판</a></h3><br></span></td></tr>
+			<tr><td colspan="4"><span style="text-align:left;"><h3><a href="#">클래스</a> > <a href="<c:url value='/sun/detailclass/${crd.classNo}'/>">${crd.classTitle}</a></h3><br></span></td></tr>
+			
 			</table>
+			<br><br><br><br>
 			<hr width="890px" color="#ff8080">
 			
 			<table border = "0" align="center" >

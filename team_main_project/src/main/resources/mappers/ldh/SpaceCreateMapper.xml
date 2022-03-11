@@ -23,7 +23,7 @@
 
 	<insert id="insertSpace" parameterType="com.boot.teamMainProject.model.GatherDetVO">
 			INSERT INTO Space(memNick,spaceTitle,spaceInfo,spaceCtgNo,spaceArea,spacePrice1,spacePrice2,spacePerNum,spacePerMax,spaceOpen,spacePhoto,spacePhoto2) 
-			VALUES ('${memNick}', '${spaceTitle}',  '${spaceInfo}','${spaceCtgNo}','${spaceArea}',${spacePrice1},${spacePrice2},${spacePerNum},${spacePerMax},#{spaceOpen},'${spacePhoto}','${spacePhoto2}')
+			VALUES ('${memNick}', '${spaceTitle}',  '${spaceInfo}','${spaceCtgNo}','${spaceArea}',${spacePrice1},${spacePrice2},${spacePerNum},${spacePerMax},CURRENT_TIMESTAMP,'${spacePhoto}','${spacePhoto2}')
 	</insert>
 
 </mapper>

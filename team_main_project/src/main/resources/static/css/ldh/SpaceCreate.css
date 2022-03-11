@@ -86,7 +86,11 @@ box-sizing: border-box;
 border-radius: 10px;
 font-size:300%;
 font-family: 'Dongle', sans-serif;;
-
+	    	-webkit-transition:.4s;
+	-moz-transition:.4s;
+	-ms-transition:4s;
+	-o-transition:.4s;
+	transition:.4s;
 color: white;
 }
 

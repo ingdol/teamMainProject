@@ -33,9 +33,9 @@
 					<img src="<c:url value='/images/${detail.classPhoto}'/>">
 				</div>
 				<div class="moimname">
-					<div>${detail.classTitle}</div>
+					<div class="titlesize">${detail.classTitle}</div>
 					<div>
-						강사 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
+						강사 : <a href="#">&nbsp;${detail.memNick}</a>
 						<a href="/chatbotForm"><span class="quest">1:1문의</span></a>
 					</div>
 				</div>		
@@ -86,7 +86,7 @@
 									<div class="top">
 										<div class="num">${com.classRevNo}</div>
 										<div class="title" id="comTitle">
-											<a href="<c:url value='/ldh/Somoimboard/${com.classNo}/${com.classRevNo}'/>">${com.classRevTitle}</a>
+											<a href="<c:url value='/ldh/ClassReview/${com.classNo}/${com.classRevNo}'/>">${com.classRevTitle}</a>
 										</div>
 										<div class="writer" id="comId">${com.memNick}</div>
 										<div class="date" id="comDate"><fmt:formatDate value="${com.classRevDate}" pattern="YY/MM/dd"/></div>
@@ -115,7 +115,11 @@
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
-									<li class="bt_wrap"><a href="<c:url value='/ldh/SomoimboardWrite/{memNick}'/>" class="on">등록</a></li>
+									<li class="bt_wrap">
+										<a href="<c:url value='/ldh/ClassReviewWrite/${classInfoVO.classNo}/${mem.memId}'/>" class="on">등록</a>
+									</li>
+									
+									
 								</ul>
 							</nav>	
 					</div>
