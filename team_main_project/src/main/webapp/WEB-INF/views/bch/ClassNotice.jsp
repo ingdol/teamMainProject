@@ -56,7 +56,7 @@
                           </td>
                       </tr>
                   </table>
-                  <div id="map" style="width: 1000px; height: 50%; margin-top: 20px; margin-bottom: 20px;"></div>
+                  <div id="map" style="width: 890px; height: 50%; margin-top: 20px; margin-bottom: 20px;"></div>
               </div>
           </section>
           <section>
