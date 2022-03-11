@@ -76,8 +76,6 @@ public class SunController {
 		model.addAttribute("sendGatherNo", sendGatherNo); // bch
 		System.out.println("detail = " + detail);
 		System.out.println("gatherCommu = " + gatherCommu);
-		System.out.println("?="+gatherCommu.get(0).getGatDetTitle());
-		System.out.println("?="+gatherCommu.get(0).getGatDetPhoto());
 		return "/sun/detailgat";
 	}
 
