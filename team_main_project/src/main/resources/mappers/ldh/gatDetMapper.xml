@@ -159,6 +159,5 @@
    <select id="gatcommulist" resultMap="gatResult">
   		select * from Gather_Det WHERE gatNo=#{gatNo}
   	</select>
-	
   </mapper>
   

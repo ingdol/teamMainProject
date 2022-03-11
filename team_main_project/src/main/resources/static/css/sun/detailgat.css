@@ -9,6 +9,7 @@
 span{
 	display: inline-block;
 	margin-top: 1%;
+	width:50%;
 }
 .large{
 	font-weight: bold;

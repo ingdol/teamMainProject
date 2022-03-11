@@ -33,9 +33,9 @@
 					<img src="<c:url value='/images/${detail.gatPhoto}'/>">
 				</div>
 				<div class="moimname">
-					<div>${detail.gatName}</div>
+					<div class="titlesize">${detail.gatName}</div>
 					<div>
-						모임장 : <a href="#"><img src="<c:url value='/images/grade.jpg'/>">&nbsp;${detail.memNick}</a>
+						모임장 : <a href="#">&nbsp;${detail.memNick}</a>
 						<c:if test="${empty mem.memNick}">
 							<span class="quest"><button type="button"  id="fakeBtn">1:1문의</button></span>
 						</c:if>
@@ -158,7 +158,7 @@
 										</div>
 									</div>
 								</li>
-							</c:forEach>								
+							</c:forEach>
 							</ul>							
 						</div>
 						<nav aria-label="Page navigation example">
