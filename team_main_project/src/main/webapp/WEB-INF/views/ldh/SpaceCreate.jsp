@@ -43,7 +43,11 @@
 			</select>
 			
 			</div>
-<br><h3>${sessionScope.snick}님이 게시할 공간의 주소를 선택해주세요.</h3><br>
+			<br><br>
+			<hr width="500px" color="#d9d9d9">
+			<br>
+<br><h3>${sessionScope.snick}님이 게시할 공간의 주소를 선택해주세요.</h3><hr width="420px" color="#d17dff">
+			<br><br><br>
 			<div class="select">
 <!-- 			 	<input type="text" id="zipcode" name="zipcode"   size="5" >  -->
 				<input type="text"  id="spaceArea" class="memAddress1"  name="spaceArea" size="70" readonly>
@@ -54,9 +58,9 @@
 <!-- 			<input type="hidden" id="gatArea" name="gatArea" oninput="_onSubmit()"> -->
 
 
-			<br><br>
+			<br><br><hr width="500px" color="#d9d9d9"><br><br><br>
 			
-			<h3>당신의 공간을 소개해보세요!!!</h3><br>
+			<h3>당신의 공간을 소개해보세요!!!</h3><hr width="250px" color="#d17dff"><br><br>
 			<input type="text" id="spaceTitle" name="spaceTitle" 
 				style="width:500px; height:40px; text-align:center; background: #FFFFFF; border: 1px solid rgba(173, 0, 255, 0.25);
 							box-sizing: border-box; box-shadow: 0px 4px 4px rgba(173, 0, 255, 0.25); border-radius: 10px;" placeholder="소개글의 제목을 입력해주세요." 
@@ -66,27 +70,31 @@
 			onfocus="this.placeholder=''" onblur="this.placeholder='공간에 대한 설명을 입력해주세요'"  style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25);
 			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
 			
-			<br><br>
+			<br><br><br><hr width="500px" color="#d9d9d9"><br><br>
+			
+			<h4>공간 상세설정</h4><hr width="100px" color="#d17dff"><br><br>
 			<input type="text" id="spacePrice1" class ="spacePrice1" name="spacePrice1" placeholder="최소 비용"> ~
 			<input type="text" id="spacePrice2" class ="spacePrice2" name="spacePrice2" placeholder="최대 비용"><br><br>
 			<input type="text" id="spacePerNum" class ="spacePerNum" name="spacePerNum" placeholder="최소 수용인원"> ~
 			<input type="text" id="spacePerMax" class ="spacePerMax" name="spacePerMax" placeholder="최소 수용인원"><br>
 <!-- 			<input type="time" id="spaceOpen" name="spaceOpen"> -->
 			
-			<br><br>
-			<h4>당신의 공간을 대표하는 사진을 넣어주세요.</h4>
+			<br><br><hr width="500px" color="#d9d9d9"><br><br>
+			
+			<h4>당신의 공간을 대표하는 사진을 넣어주세요.</h4><hr width="310px" color="#d17dff"><br><br>
 			<div class="filebox3">
 			<input class="upload-name" value="첨부파일">
 			<label for="file3">사진 찾기</label>
 			<input type="file" id="file3" name="uploadFile3"><br><br>
 			</div>
-			<h4>공간의 사진을 여러개 넣어주세요.</h4>
+			<br><br>
+			<h4>공간의 사진을 4개까지 넣어주세요.</h4><hr width="250px" color="#d17dff"><br><br>
 			<div class="filebox4">
 			<input class="upload-name2" value="첨부파일">
 			<label for="file4">사진 찾기</label>
 			<input type="file" id="file4" name="uploadFile4" multiple="multiple">
 			
-			<br><br><br>
+			<br><br><br><hr width="500px" color="#d9d9d9"><br><br>
 			<input type="submit" value="공간 개설하기" class="subbox3" >
 			</div>
 			</form>

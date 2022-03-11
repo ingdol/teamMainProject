@@ -14,8 +14,8 @@
             <div id="footerTextBox">
             	<div id="bottomMenuBox1">
 	               <ul id="bottomMenuItem1">
-	                  <li><a href="#">클래스 호스트 지원</a></li>
-	                  <li><a href="#">공간대여 호스트 지원</a></li>
+	                  <li><a href="<c:url value='/ldh/ClassCreate'/>">클래스 호스트 지원</a></li>
+	                  <li><a href="<c:url value='/ldh/SpaceCreate'/>">공간대여 호스트 지원</a></li>
 	                  <li><a href="#">문의사항</a></li>
 	               </ul>
 	            </div>
