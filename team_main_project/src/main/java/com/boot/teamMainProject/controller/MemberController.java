@@ -9,6 +9,8 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.boot.teamMainProject.model.SpaceReservationVO;
+import com.boot.teamMainProject.service.SpaceReservationService;
 import org.apache.maven.shared.utils.StringUtils;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
@@ -16,10 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.boot.teamMainProject.model.CommunityVO;
 import com.boot.teamMainProject.model.MemberVO;
@@ -34,6 +33,9 @@ public class MemberController {
 	
 	@Autowired
 	CommunityService commuser;
+
+	@Autowired
+	SpaceReservationService reservationService;
 	
 	@RequestMapping(value = "/login", method = {RequestMethod.GET})
 	public String login() {
@@ -178,6 +180,9 @@ public class MemberController {
     	MemberVO vo = new MemberVO();
     	HttpSession session = request.getSession();
     	String id = (String) session.getAttribute("sid");
+		String snick = (String) session.getAttribute("snick");
+		ArrayList<SpaceReservationVO> ReservationList = reservationService.LookUpReservation(snick); // 내가 예약한 공간 조회
+		model.addAttribute("ReservationList", ReservationList);
 
     	vo.setMemId(id);
 		model.addAttribute("join", service.gather(vo));
@@ -251,5 +256,13 @@ public class MemberController {
 			
 			service.userChangeInfo(vo);
 	}
-	
+
+	@RequestMapping("ReservationList")
+	public String ReservationList(Model model, HttpSession session) {
+		String snick = String.valueOf(session.getAttribute("snick"));
+		ArrayList<SpaceReservationVO> ReservationList = reservationService.LookUpReservation(snick); // 내가 예약한 공간 조회
+		model.addAttribute("ReservationList", ReservationList);
+
+		return "pdh/mypage_Reservation_List";
+	}
 }

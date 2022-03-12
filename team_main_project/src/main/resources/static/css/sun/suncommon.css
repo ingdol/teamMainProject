@@ -49,3 +49,8 @@
 .hidden{
 	display: none;
 }
+
+.titlesize{
+	font-size: xx-large;
+	font-weight: bold;
+}
