@@ -31,6 +31,10 @@ var ws;
 				}else{
 					console.warn("unknown type!")
 				}
+				}else{
+				//파일 업로드한 경우 업로드한 파일을 채팅방에 뿌려준다.
+				var url = URL.createObjectURL(new Blob([msg]));
+				$("#chating").append("<div class='img'><img class='msgImg' src="+url+"></div><div class='clearBoth'></div>");
 			}
 			// 스크롤해서 올리기										   
 			$("#chating").scrollTop($("#chating").prop("scrollHeight"));
@@ -66,4 +70,24 @@ var ws;
 		}
 		ws.send(JSON.stringify(option))
 		$('#chatting').val("");
+	}
+	
+	function fileSend(){
+		var file = document.querySelector("#fileUpload").files[0];
+		var fileReader = new FileReader();
+		fileReader.onload = function() {
+			var param = {
+				type: "fileUpload",
+				file: file,
+				roomNumber: $("#roomNumber").val(),
+				sessionId : $("#sessionId").val(),
+				msg : $("#chatting").val(),
+				userName : $("#userName").val()
+			}
+			ws.send(JSON.stringify(param)); //파일 보내기전 메시지를 보내서 파일을 보냄을 명시한다.
+
+		    arrayBuffer = this.result;
+			ws.send(arrayBuffer); //파일 소켓 전송
+		};
+		fileReader.readAsArrayBuffer(file);
 	}
