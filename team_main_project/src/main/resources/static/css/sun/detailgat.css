@@ -11,9 +11,14 @@ span{
 	margin-top: 1%;
 	width:50%;
 }
+
+span p{
+	line-height: 200%;
+}
+
 .large{
 	font-weight: bold;
-	font-size: large;
+	font-size: xx-large;
 	color: navy;
 }
 .medium{
@@ -30,7 +35,7 @@ span{
 	object-fit: cover; 
 }
 .infobox{
-	width:80%;
+	width:70%;
 	margin-top:2%;
 }
 
