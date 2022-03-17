@@ -183,7 +183,17 @@ body {
     width: 80px;
     cursor: pointer;
     border-radius: 10px;
-    margin-left: 40px;
+    margin-left: 43px;
+}
+.FakeReservationCancel{
+    background-color: var(--bg-color);
+    border: var(--bg-color);
+    color: white;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 43px;
 }
 
 #list-Title {
@@ -206,5 +216,5 @@ body {
     margin-left: 55px;
 }
 #list-Review {
-    margin-left: 35px;
+    margin-left: 32px;
 }

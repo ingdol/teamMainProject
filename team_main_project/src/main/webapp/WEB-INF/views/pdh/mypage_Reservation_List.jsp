@@ -5,6 +5,7 @@
     <head>
         <title>공간 예약 내역</title>
         <link rel="stylesheet" href="<c:url value="/css/pdh/mypage.css" />">
+        <script src="/js/bch/myPage.js"></script>
     </head>
     <body>
     <div id ="mainWrap">
@@ -51,10 +52,10 @@
                                 <span class="list-Reser" id="listPay">${List.spacePay}</span>
                                 <c:choose>
                                     <c:when test="${List.spaceReserDate > nowDate}">
-                                        <span class="list-Reser" id="listCancel"><input type="button" value="예약 취소" id="ReservationCancel" class="ReservationCancel"></span>
+                                        <input type="button" value="예약 취소" id="ReservationCancel" class="ReservationCancel">
                                     </c:when>
                                     <c:otherwise>
-                                        <span class="list-Reser" id="listCancel"><input type="button" value="예약 취소" id="FakeReservationCancel" class="ReservationCancel"></span>
+                                        <input type="button" value="예약 취소" id="FakeReservationCancel" class="FakeReservationCancel">
                                     </c:otherwise>
                                 </c:choose>
                                 <c:choose>
@@ -62,7 +63,7 @@
                                         <span class="list-Reser" id="list-Review"><a href="/WriteSpaceReview/${List.spaceReserNo}">리뷰 작성</a></span>
                                     </c:when>
                                     <c:otherwise>
-                                        <span class="list-Reser" id="list-Review"><a>리뷰 작성 불가</a></span>
+                                        <span class="list-Reser" id="list-Review"><a>리뷰 작성</a></span>
                                     </c:otherwise>
                                 </c:choose>
                             </li>
@@ -72,6 +73,5 @@
             </div>
         </div>
     </div>
-    <script src="<c:url value="/js/bch/mypage.js" />"></script>
     </body>
 </html>
