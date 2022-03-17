@@ -23,7 +23,8 @@
 	</head>
 	<body>
 		
-		<div id="mainWrap">
+		
+<div id="mainWrap">
 	    <jsp:include page="/WEB-INF/views/sej/layout/top.jsp" flush='true' />
 		   <br>
 			<section>

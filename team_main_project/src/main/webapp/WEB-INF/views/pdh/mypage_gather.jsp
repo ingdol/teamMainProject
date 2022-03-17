@@ -45,6 +45,8 @@
 	            </div>
 	        </div>
 	    </div>
+  	<!-- BOTTOM  -->
+    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </div>
      <script src="<c:url value="/js/pdh/mypage.js" />"></script>
 </body>

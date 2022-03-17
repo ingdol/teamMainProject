@@ -178,7 +178,7 @@ public class MemberVO {
 		return memPoint;
 	}
 	public void setMemPoint(String memId) {
-		this.memId = memId;
+		this.memPoint = memId;
 	}
 	public String getMemBirth1() {
 		return memBirth1;

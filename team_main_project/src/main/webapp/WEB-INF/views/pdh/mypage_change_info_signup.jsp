@@ -18,7 +18,7 @@
     <!-- MAIN -->
     <div id="l-form">
         <form class="form" method="post">
-            <h1>Sign Up</h1>
+            <h1>회원정보수정</h1>
             <ul>
                 <li class="l-li" id="l-email">
                     <input type="text" class="l-input-disabled" id="email" placeholder=" " readonly="readonly" value="${mem.memId}">
@@ -95,7 +95,7 @@
                 </li>
                 <li class="l-li-Btn">
 	                <button id="l-submit">
-	                	<i class="far fa-paper-plane"></i> Sign Up
+	                	<i class="far fa-paper-plane"></i> 정보수정
 	                </button>
                 </li>
             </ul>
