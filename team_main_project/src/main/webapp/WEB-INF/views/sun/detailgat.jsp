@@ -74,17 +74,13 @@
 						<c:forEach items="${detail}" var="detail">
 						<div class="photobox"><br><img src="/images/${detail.gatBanPhoto}"><br></div>
 						<div class="infobox">
-								<span class="large">모임 이름 : ${detail.gatName}</span><br>
-								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
+								<span class="large">모임 이름 : ${detail.gatName}</span><br><br>
+								<span>&nbsp;&nbsp;모임 지역 : ${detail.gatArea}</span><br>
+								<span>&nbsp;&nbsp;모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 모임 소개 -</span><br>
-								<span>${detail.gatInfo}</span><br>
+								<span class="infos"><p>${detail.gatInfo}</p></span><br>
 								<br><br>						
 								<hr>
-								<%-- <span>${detail.gatNo}</span><br>
-								<span>${detail.memNick}</span><br>
-								<span>${detail.hobbyNo}</span><br>
-								<span>${detail.gatArea}</span><br>
-								<span>${detail.gatHate}</span> --%>
 						</div>						
 						</c:forEach>
 					</div>
