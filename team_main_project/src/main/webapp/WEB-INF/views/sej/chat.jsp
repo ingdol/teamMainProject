@@ -39,10 +39,6 @@
 						<input id="chatting" name="chatting" placeholder="보내실 메시지를 입력하세요." class="chattingInput">
 						<button onclick="send()" id="sendBtn" class="chattingBtn">전송</button>
 					</div>
-					<div>
-						<input type="file" id="fileUpload">
-						<button onclick="fileSend()" id="sendFileBtn">파일올리기</button>
-					</div>
 			</c:forEach>
 				</div>
 			<!-- BOTTOM  -->
