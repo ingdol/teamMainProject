@@ -11,7 +11,7 @@ public class ClassVO {
    private String classArea;
    private String classPhoto;
    private Date classOpen;
-   private int classHate;
+   private int classRecommand;
    
    public int getClassNo() {
       return classNo;
@@ -61,11 +61,11 @@ public class ClassVO {
    public void setClassOpen(Date classOpen) {
       this.classOpen = classOpen;
    }
-   public int getClassHate() {
-      return classHate;
+   public int getClassRecommand() {
+      return classRecommand;
    }
-   public void setClassHate(int classHate) {
-      this.classHate = classHate;
+   public void setClassRecommand(int classRecommand) {
+      this.classRecommand = classRecommand;
    }
    
    

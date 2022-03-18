@@ -63,7 +63,7 @@
   	<!-- sej -->
   	<!-- 전체 모임 조회 : Best -->
  	<select id="listAllGatherBest" resultMap="gatheringResult">
- 		SELECT * FROM Gathering ORDER BY gatRecommand
+ 		SELECT * FROM Gathering ORDER BY gatRecommand DESC
  	</select>
   	
   	<!-- 전체 모임 조회 : 신규 -->
