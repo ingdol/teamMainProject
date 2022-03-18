@@ -12,7 +12,7 @@
   		<result property="hobbyNo" column="hobbyNo"/>
   		<result property="gatArea" column="gatArea"/>
   		<result property="gatOpen" column="gatOpen"/>
-  		<result property="gatHate" column="gatHate"/>
+  		<result property="gatRecommand" column="gatRecommand"/>
   		<result property="gatPhoto" column="gatPhoto"/>
   	</resultMap>
   	
@@ -36,18 +36,18 @@
   		SELECT * FROM Gathering ORDER BY gatOpen ASC
   	</select>
   	<select id="hateasc" resultMap="gatheringResult">
-  		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 10
+  		SELECT * FROM Gathering ORDER BY gatRecommand ASC LIMIT 10
   	</select>  	
   	<select id="hateasc2" resultMap="gatheringResult">
-  		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 10,10
+  		SELECT * FROM Gathering ORDER BY gatRecommand ASC LIMIT 10,10
   	</select> 
   	<select id="hateasc3" resultMap="gatheringResult">
-  		SELECT * FROM Gathering ORDER BY gatHate ASC LIMIT 20,10
+  		SELECT * FROM Gathering ORDER BY gatRecommand ASC LIMIT 20,10
   	</select> 
   	<select id="filtermoim" resultMap="gatheringResult">
 		SELECT * FROM Gathering
 		<if test="gatArea=='' and hobbyNo==''">
-			ORDER BY gatHate ASC
+			ORDER BY gatRecommand ASC
 		</if>
 		<if test="gatArea!='' and hobbyNo==''">
 			WHERE (gatArea LIKE CONCAT('%', #{gatArea}, '%'))
@@ -63,7 +63,7 @@
   	<!-- sej -->
   	<!-- 전체 모임 조회 : Best -->
  	<select id="listAllGatherBest" resultMap="gatheringResult">
- 		SELECT * FROM Gathering ORDER BY gatHate
+ 		SELECT * FROM Gathering ORDER BY gatRecommand
  	</select>
   	
   	<!-- 전체 모임 조회 : 신규 -->
@@ -80,5 +80,25 @@
 			resultType="com.boot.teamMainProject.model.GatheringVO" >
 		SELECT * FROM Gathering WHERE gatNo=#{gatNo}
 	</select>
+  	
+  	
+  		<insert id="LikeGathering" parameterType="com.boot.teamMainProject.model.GatRecomVO">
+  		
+			INSERT into Gat_Recommand(memNick, gatNo, gatReCheck) SELECT '${memNick}', ${gatNo},0
+			FROM DUAL WHERE 
+			NOT EXISTS(SELECT * FROM Gat_Recommand WHERE memNick='${memNick}' AND gatNo=${gatNo})
+   </insert>
+   
+   <select id="LikeGathering2" 
+   				 resultType="int">
+  		SELECT gatReCheck FROM Gat_Recommand WHERE memNick = '${memNick}' AND gatNo = ${gatNo}
+   </select>
+   
+   <update id="LikeGatUpdate" parameterType="com.boot.teamMainProject.model.GatRecomVO">
+   UPDATE Gathering AS a, Gat_Recommand AS b 
+   SET a.gatRecommand = a.gatRecommand+1, b.gatReCheck= 1 
+   WHERE a.gatNo =${gatNo} AND b.memNick = '${memNick}' AND b.gatReCheck = 0
+</update>
+  	
   	
   </mapper>

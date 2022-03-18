@@ -5,6 +5,8 @@ import java.util.HashMap;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.boot.teamMainProject.model.GLikeVO;
+import com.boot.teamMainProject.model.GatRecomVO;
 import com.boot.teamMainProject.model.GatheringVO;
 
 public interface IGatheringDAO {
@@ -29,4 +31,7 @@ public interface IGatheringDAO {
 	//ldh
 	void insertGathering(GatheringVO gath);
 	GatheringVO detailViewSomoim(int gatNo);
+	void LikeGathering(GatRecomVO gr);
+	int LikeGathering2(int gatNo, String memNick);
+	void LikeGatUpdate(int gatNo, String memNick);
 }

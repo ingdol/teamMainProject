@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.boot.teamMainProject.model.GatRecomVO;
 import com.boot.teamMainProject.model.GatheringVO;
 
 public interface IGatheringService {
@@ -23,6 +24,9 @@ public interface IGatheringService {
 	//ldh
 	void insertGathering(GatheringVO gath);
 	GatheringVO detailViewSomoim(int gatNo);
+	void LikeGathering(GatRecomVO gr);
+	int LikeGathering2(int gatNo, String memNick);
+	void LikeGatUpdate(int gatNo, String memNick);
 	//sun
 	ArrayList<GatheringVO> showall();
 	ArrayList<GatheringVO> showlistdatemax(String hobbyNo);

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.boot.teamMainProject.dao.IGatheringDAO;
+import com.boot.teamMainProject.model.GatRecomVO;
 import com.boot.teamMainProject.model.GatheringVO;
 
 @Service
@@ -89,6 +90,24 @@ public class GatheringService implements IGatheringService {
 
 	public ArrayList<GatheringVO> filtermoim(String gatArea, String hobbyNo) {
 		return dao.filtermoim(gatArea,hobbyNo);
+	}
+
+	@Override
+	public void LikeGathering(GatRecomVO gr) {
+		// TODO Auto-generated method stub
+		dao.LikeGathering(gr);
+	}
+
+	@Override
+	public int LikeGathering2(int gatNo, String memNick) {
+		// TODO Auto-generated method stub
+		return dao.LikeGathering2(gatNo, memNick);
+	}
+
+	@Override
+	public void LikeGatUpdate(int gatNo, String memNick) {
+		// TODO Auto-generated method stub
+		dao.LikeGatUpdate(gatNo, memNick);
 	}
 
 

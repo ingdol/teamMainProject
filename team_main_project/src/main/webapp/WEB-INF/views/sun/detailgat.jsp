@@ -13,7 +13,15 @@
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	<script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value='/js/sun/detailgat.js'/>"></script>
+	<script src="<c:url value='/js/ldh/glike.js'/>"></script>
 	<style type="text/css"></style>
+	<script>
+	function gat_Recommand(){
+		if()
+		
+		location.href="/gatLike/${gatNo}/${sessionScope.snick}";
+	}
+	</script>
 </head>
 <body>
 	<section id="mainWrap">
@@ -195,16 +203,17 @@
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
 						</c:otherwise>
 					</c:choose>
-					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
+					<li><button type="button" id= "gat_Recommand" class="btn btn-secondary zzim">추천!</button></li>
 					<c:if test="${empty mem.memNick}">
 						<li><button type="button" class="btn btn-primary join" id="joinFake">가입하기</button></li>
 					</c:if>
 					<c:if test="${not empty mem.memNick}">
 						<li><button type="button" class="btn btn-primary join" id="join">가입하기</button></li>
 					</c:if>
-					<input type="hidden" id="memNick" value="${mem.memNick}">
-					<input type="hidden" id="gatNo" value="${sendGatherNo.gatNo}">
+					
 				</ul>
+				<input type="hidden" id="memNick" value="${mem.memNick}">
+					<input type="hidden" id="gatNo" value="${sendGatherNo.gatNo}">
 			</div>
 		</section>
 
