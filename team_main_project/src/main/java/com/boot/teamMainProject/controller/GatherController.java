@@ -11,8 +11,6 @@ import java.util.Objects;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.boot.teamMainProject.model.*;
-import com.boot.teamMainProject.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.boot.teamMainProject.model.GatRecomVO;
+import com.boot.teamMainProject.model.GatherScheduleVO;
+import com.boot.teamMainProject.model.Gather_Sche_PerVO;
+import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.model.MemberVO;
 import com.boot.teamMainProject.service.GatherScheduleService;
 import com.boot.teamMainProject.service.GatheringService;
+import com.boot.teamMainProject.service.MemberService;
 import com.boot.teamMainProject.service.SpaceReservationService;
 
 @Controller
@@ -214,4 +218,20 @@ public class GatherController {
         // 3은 중복될 경우
         // 1은 가입해도 될 경우
     }
+    
+    @ResponseBody
+	@RequestMapping("/gatLike")
+	public int LikeGathering( @RequestParam("gatNo") int gatNo,  
+												@RequestParam("memNick")  String memNick, 
+												GatRecomVO gr){
+		
+		service3.LikeGathering(gr);
+		int result = service3.LikeGathering2(gatNo,memNick);
+		service3.LikeGatUpdate(gatNo,memNick);
+		
+		
+		System.out.println(result);
+		
+		return result;
+	}
 }

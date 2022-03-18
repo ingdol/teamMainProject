@@ -102,7 +102,7 @@ function Siren2(){
 			<tr><td colspan="4"  class="boardDetail" align="left">
 			
 			<c:if test="${com.commuPhoto != ''}">
-			<img src="<c:url value='/images/${com.commuPhoto}'/>" ><br>
+			<img src="<c:url value='/images/${com.commuPhoto}'/>"  style="max-width: 100%; height: auto;" ><br>
 			</c:if>
 			${com.commuInfo }
 			</td></tr>

@@ -115,7 +115,7 @@ function DeleteSCom(gatDetComNo){
 			<tr><td colspan="4"  class="boardDetail" align="left">
 			
 			<c:if test="${gat.gatDetPhoto != ''}">
-			<img src="<c:url value='/images/${gat.gatDetPhoto}'/>" ><br>
+			<img src="<c:url value='/images/${gat.gatDetPhoto}'/>"  style="max-width: 100%; height: auto;" ><br>
 			</c:if>
 			${gat.gatDetInfo }
 			</td></tr>
