@@ -23,7 +23,7 @@ $(document).ready(function(){
             event.preventDefault();
         }
     });
-    // $('#FakeReservationCancel').on('click', function(){
-    //     alert("예약일 이전에만 취소가 가능합니다");
-    // });
+    $('.FakeReservationCancel').on('click', function(){
+        alert("예약일 이전에만 취소가 가능합니다");
+    });
 });

@@ -56,7 +56,7 @@
                                         <input type="button" value="예약 취소" id="ReservationCancel" class="ReservationCancel">
                                     </c:when>
                                     <c:otherwise>
-                                        <input type="button" value="취소 불가" id="FakeReservationCancel" class="FakeReservationCancel">
+                                        <input type="button" value="예약 취소" id="FakeReservationCancel" class="FakeReservationCancel">
                                     </c:otherwise>
                                 </c:choose>
                                 <c:choose>
