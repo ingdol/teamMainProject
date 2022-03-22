@@ -57,17 +57,13 @@
 						<c:forEach items="${detail}" var="detail">
 						<div class="photobox"><br><img src="<c:url value='/images/${detail.classPhoto}'/>"><br></div>
 						<div class="infobox">
-								<span class="large">클래스 제목 : ${detail.classTitle}</span><br>
-								<span>클래스 개설일 : <fmt:formatDate value="${detail.classOpen}" pattern="YY/MM/dd"/></span><br><br>
+								<span class="large">클래스 제목 : ${detail.classTitle}</span><br><br>
+								<span>&nbsp;&nbsp;클래스 지역 : ${detail.classArea}</span><br>
+								<span>&nbsp;&nbsp;클래스 개설일 : <fmt:formatDate value="${detail.classOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 클래스 소개 -</span><br>
-								<span>${detail.classInfo}</span><br>
+								<span class="infos"><p>${detail.classInfo}</p></span><br>
 								<br><br>
-								<hr>
-								<%-- <span>${detail.classNo}</span><br>
-								<span>${detail.memNick}</span><br>
-								<span>${detail.hobbyNo}</span><br>
-								<span>${detail.classArea}</span><br>
-								<span>${detail.classHate}</span><br> --%>						
+								<hr>			
 						</div>					
 						</c:forEach>
 					</div>

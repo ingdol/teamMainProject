@@ -13,7 +13,7 @@
 		<result property="classArea" column="classArea"/>
 		<result property="classPhoto" column="classPhoto"/>
 		<result property="classOpen" column="classOpen"/>
-		<result property="classHate" column="classHate"/>
+		<result property="classRecommand" column="classRecommand"/>
 	</resultMap>
 
 	<select id="listClass" resultMap="classResult">
@@ -23,7 +23,7 @@
 	<!-- sej -->
 	<!-- 전체 클래스 조회 : Best -->
 	<select id="listAllClassBest" resultMap="classResult">
-		SELECT * FROM Class ORDER BY classHate
+		SELECT * FROM Class ORDER BY classRecommand DESC
 	</select>
 
 	<!-- 전체 클래스 조회 : 신규 -->
@@ -56,7 +56,7 @@
      <select id="filterclass" resultMap="classResult">
 		SELECT * FROM Class
 		<if test="gatArea=='' and hobbyNo==''">
-			ORDER BY classHate ASC
+			ORDER BY classRecommand ASC
 		</if>
 		<if test="gatArea!='' and hobbyNo==''">
 			WHERE (classArea LIKE CONCAT('%', #{gatArea}, '%'))

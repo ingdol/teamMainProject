@@ -59,22 +59,26 @@ public class SearchController {
 	
 	@RequestMapping("/chatWindow")
 	public String listAllGatherBest2(HttpSession session, Model model) {
+		// 로그인 정보 가져오기
 		String sid = (String) session.getAttribute("sid");
 		MemberVO mem = memService.detailViewMember(sid);
 		System.out.println(mem);
 		if (mem == null) {
 			System.out.println("null");
 		} else {
+			// 회원이 가입한 모임 받아와서
 			String gatNo1 = mem.getGatJoinNo1();
 			String gatNo2 = mem.getGatJoinNo2();
 			String gatNo3 = mem.getGatJoinNo3();
 			String gatNo4 = mem.getGatJoinNo4();
 			String gatNo5 = mem.getGatJoinNo5();
+			// 회원이 가입한 모임 = gatNo로 대입 -> gatNo의 상세 내용 검색
 			GatheringVO gatV1 = Gatherservice.detailViewGatNo(gatNo1);
 			GatheringVO gatV2 = Gatherservice.detailViewGatNo(gatNo2);
 			GatheringVO gatV3 = Gatherservice.detailViewGatNo(gatNo3);
 			GatheringVO gatV4 = Gatherservice.detailViewGatNo(gatNo4);
 			GatheringVO gatV5 = Gatherservice.detailViewGatNo(gatNo5);
+			// 밑에 모델을 jsp에서 사용
 			model.addAttribute("gatV1", gatV1);
 			model.addAttribute("gatV2", gatV2);
 			model.addAttribute("gatV3", gatV3);

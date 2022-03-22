@@ -11,7 +11,7 @@ public class GatheringVO {
 	private String hobbyNo;
 	private String gatArea;
 	private Date gatOpen;
-	private int gatHate;
+	private int gatRecommand;
 	private String gatPhoto;
 	private String gatBanPhoto;
 	
@@ -57,11 +57,11 @@ public class GatheringVO {
 	public void setGatOpen(Date gatOpen) {
 		this.gatOpen = gatOpen;
 	}
-	public int getGatHate() {
-		return gatHate;
+	public int getGatRecommand() {
+		return gatRecommand;
 	}
-	public void setGatHate(int gatHate) {
-		this.gatHate = gatHate;
+	public void setGatRecommand(int gatRecommand) {
+		this.gatRecommand = gatRecommand;
 	}
 	public String getGatPhoto() {
 		return gatPhoto;

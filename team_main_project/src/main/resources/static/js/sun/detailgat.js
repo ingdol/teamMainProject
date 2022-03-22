@@ -116,4 +116,14 @@ $(function(){
 		alert("로그인이 필요합니다.");
 		window.location.replace('/login');
 	});
+	
+	/*****************************/
+	var info = document.querySelector('.infos');
+	var infos = info.innerHTML;	
+	
+	$(window).on('load', function(){
+		console.log(infos);
+		info.style.color ="#777";
+		console.log(infos.charAt(0));	
+	});
 });

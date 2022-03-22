@@ -24,7 +24,7 @@
                     <li class="portal-item" onclick="location.href = '/mypage-gather'">내 게시글</li>
                     <li class="portal-item" onclick="location.href = '/mypage'">가입한 모임</li>
                     <li class="portal-item" onclick="location.href = '/ReservationList'">예약 내역</li>
-                    <li class="portal-item" id="mkclub">모임 개설</li>
+                    <li class="portal-item" id="mkclub" onclick="location.href = '/ldh/SomoimCreate/${sid}'">모임 개설</li>
                 </ul>
             </div>
             <div class="subscription-list">

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,15 @@
 	<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 	<script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value='/js/sun/detailgat.js'/>"></script>
+	<script src="<c:url value='/js/ldh/glike.js'/>"></script>
 	<style type="text/css"></style>
+	<script>
+	function gat_Recommand(){
+		if()
+		
+		location.href="/gatLike/${gatNo}/${sessionScope.snick}";
+	}
+	</script>
 </head>
 <body>
 	<section id="mainWrap">
@@ -74,17 +83,13 @@
 						<c:forEach items="${detail}" var="detail">
 						<div class="photobox"><br><img src="/images/${detail.gatBanPhoto}"><br></div>
 						<div class="infobox">
-								<span class="large">모임 이름 : ${detail.gatName}</span><br>
-								<span>모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
+								<span class="large">모임 이름 : ${detail.gatName}</span><br><br>
+								<span>&nbsp;&nbsp;모임 지역 : ${detail.gatArea}</span><br>
+								<span>&nbsp;&nbsp;모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
 								<span class="medium">- 모임 소개 -</span><br>
-								<span>${detail.gatInfo}</span><br>
+								<span class="infos"><p>${detail.gatInfo}</p></span><br>
 								<br><br>						
 								<hr>
-								<%-- <span>${detail.gatNo}</span><br>
-								<span>${detail.memNick}</span><br>
-								<span>${detail.hobbyNo}</span><br>
-								<span>${detail.gatArea}</span><br>
-								<span>${detail.gatHate}</span> --%>
 						</div>						
 						</c:forEach>
 					</div>
@@ -150,7 +155,7 @@
 									<div class="card">
 										<img src="<c:url value='/images/${photo.gatDetPhoto}'/>" class="card-img-top">
 										<div class="card-body">
-											<h5 class="card-title"><c:forEach items="${gatherCommu}" var="com"><a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${photo.gatDetTitle}</a></c:forEach></h5>
+											<c:forEach items="${gatherCommu}" var="com" begin="0" end="0"><h5 class="card-title"><a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${photo.gatDetTitle}</a></h5></c:forEach>
 											<p class="card-text">${photo.gatDetInfo}</p>
 										</div>
 										<div class="card-footer">
@@ -159,7 +164,7 @@
 									</div>
 								</li>
 							</c:forEach>
-							</ul>							
+							</ul>									
 						</div>
 						<nav aria-label="Page navigation example">
 							<ul class="pagination">
@@ -195,16 +200,17 @@
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
 						</c:otherwise>
 					</c:choose>
-					<li><button type="button" class="btn btn-secondary zzim">찜하기</button></li>
+					<li><button type="button" id= "gat_Recommand" class="btn btn-secondary zzim">추천!</button></li>
 					<c:if test="${empty mem.memNick}">
 						<li><button type="button" class="btn btn-primary join" id="joinFake">가입하기</button></li>
 					</c:if>
 					<c:if test="${not empty mem.memNick}">
 						<li><button type="button" class="btn btn-primary join" id="join">가입하기</button></li>
 					</c:if>
-					<input type="hidden" id="memNick" value="${mem.memNick}">
-					<input type="hidden" id="gatNo" value="${sendGatherNo.gatNo}">
+					
 				</ul>
+				<input type="hidden" id="memNick" value="${mem.memNick}">
+					<input type="hidden" id="gatNo" value="${sendGatherNo.gatNo}">
 			</div>
 		</section>
 

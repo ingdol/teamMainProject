@@ -11,9 +11,14 @@ span{
 	margin-top: 1%;
 	width:50%;
 }
+
+span p{
+	line-height: 200%;
+}
+
 .large{
 	font-weight: bold;
-	font-size: large;
+	font-size: xx-large;
 	color: navy;
 }
 .medium{
@@ -30,7 +35,7 @@ span{
 	object-fit: cover; 
 }
 .infobox{
-	width:80%;
+	width:70%;
 	margin-top:2%;
 }
 
@@ -150,6 +155,7 @@ span{
     justify-content: initial;
     align-items:center; 
     margin: 2%;
+    width: 30%;
 }
 .card-group li div{
 	box-sizing: border-box; 
@@ -163,11 +169,12 @@ span{
     
 }
 .card-group li img{
-	height: 60%;	
+	height: 60%;
+	/* object-fit: cover; */	
 }
 .card-group li .card-body{
-	height: 21%;
-	margin-top: 10%;
+	/* height: 21%; */
+	margin-top: 3%;
 }
 .card-group li .card-body .card-text{
 	margin-bottom: 0.5%;
