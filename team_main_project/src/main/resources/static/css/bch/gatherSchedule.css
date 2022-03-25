@@ -2,11 +2,12 @@
     font-family: 'NanumSquareRound' !important;
     width: 1260px;
     justify-content: center;
+    margin-bottom:100px;
 }
 #gatScheTitle {
     width: 1260px;
     height: 50px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 20px;
     font-size: 27px;
     font-weight: bold;

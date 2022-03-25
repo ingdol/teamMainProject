@@ -27,13 +27,27 @@
 	justify-content: space-around;
 }
 
+.card {
+	border-radius: 15px;
+}
+.card img{
+	width:100%;
+	height: 80%;	
+	border-radius: 15px 15px 0 0;
+}
+
+.cardtitle{
+	font-size: 17px;
+	padding-bottom:5px;
+}
+
 .cardbox .card{
 	width:15%;
 	height: 100%;
 	display: grid;
 	align-items: start;
 	cursor: pointer;
-	background-color:  #d9eeff;
+	background-color:  #E2F0FF;
 }
 .cardbox .card:hover{
 	opacity: 0.7;
