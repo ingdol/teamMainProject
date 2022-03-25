@@ -7,7 +7,7 @@
     <mapper namespace="com.boot.teamMainProject.dao.IClassCreateDAO">
     
     <insert id="insertClass" parameterType="com.boot.teamMainProject.model.ClassVO">
-			INSERT INTO Class(memNick,classTitle,classInfo,hobbyNo,classArea,classPhoto,classOpen,classHate) 
+			INSERT INTO Class(memNick,classTitle,classInfo,hobbyNo,classArea,classPhoto,classOpen,classRecommand) 
 			VALUES ('${memNick}', '${classTitle}',  '${classInfo}',${hobbyNo},'${classArea}','${classPhoto}',CURRENT_TIMESTAMP,0)
 	</insert>
     
