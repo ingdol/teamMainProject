@@ -83,13 +83,13 @@
 						<c:forEach items="${detail}" var="detail">
 						<div class="photobox"><br><img src="/images/${detail.gatBanPhoto}"><br></div>
 						<div class="infobox">
-								<span class="large">모임 이름 : ${detail.gatName}</span><br><br>
-								<span>&nbsp;&nbsp;모임 지역 : ${detail.gatArea}</span><br>
-								<span>&nbsp;&nbsp;모임 개설일 : <fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></span><br><br>
-								<span class="medium">- 모임 소개 -</span><br>
-								<span class="infos"><p>${detail.gatInfo}</p></span><br>
-								<br><br>						
-								<hr>
+						<br>
+								<div class="large">${detail.gatName}</div><br><br>
+								<div class="medium">모임 지역</div><hr><div class="mediumText">${detail.gatArea}</div><br><br>
+								<div class="medium">모임 개설일</div><hr><div class="mediumText"><fmt:formatDate value="${detail.gatOpen}" pattern="YY/MM/dd"/></div><br><br>
+								<div class="medium">모임 소개 </div><hr>
+								<div class="mediumText"><p>${detail.gatInfo}</p></div><br>
+								<br><br>		
 						</div>						
 						</c:forEach>
 					</div>
@@ -98,7 +98,7 @@
 					<div class="moimcommu">
 						<div class="board_list_wrap">
 							<div class="board_list">
-								<div class="top">
+								<div class="topTitle">
 									<div class="num">번호</div>
 									<div class="title">제목</div>
 									<div class="writer">글쓴이</div>
@@ -140,7 +140,8 @@
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
-									<li class="bt_wrap"><a href="<c:url value='/ldh/SomoimboardWrite/${gatNo}/${sessionScope.sid}'/>" class="on">등록</a></li>
+									<a id="bt_wrap_a" href="<c:url value='/ldh/SomoimboardWrite/${gatNo}/${sessionScope.sid}'/>" class="on"><button type="button" class="btn btn-outline-primary" id="bt_wrap">
+									글 작성</button></a>
 								</ul>
 							</nav>	
 					</div>
@@ -200,7 +201,7 @@
 							<li><input type="button" class="btn btn-primary gatherschedule" style="width: 100%" value="일정 잡기" id="fakeBtn2"></li>
 						</c:otherwise>
 					</c:choose>
-					<li><button type="button" id= "gat_Recommand" class="btn btn-secondary zzim">추천!</button></li>
+					<li><button type="button" id= "gat_Recommand" class="btn btn-secondary zzim">추천👍</button></li>
 					<c:if test="${empty mem.memNick}">
 						<li><button type="button" class="btn btn-primary join" id="joinFake">가입하기</button></li>
 					</c:if>
