@@ -7,6 +7,8 @@
 
 /*최상단 div*/
 .detailWrap {
+	margin-top:40px;
+	margin-bottom:40px;
     width: 98%;
     font-family: 'NanumSquareRound';
     text-align: left !important;
@@ -80,6 +82,7 @@
 .navigation {
     position: relative;
     background-color: white !important;
+    margin-bottom:40px;
 
 }
  /*li 감싸는 ul*/

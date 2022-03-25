@@ -19,10 +19,9 @@ span p{
 .large{
 	font-weight: bold;
 	font-size: xx-large;
-	color: navy;
 }
 .medium{
-	font-size: medium;
+	font-size: 20px;
 	font-weight: bold;
 	color: navy;
 }
@@ -35,8 +34,15 @@ span p{
 	object-fit: cover; 
 }
 .infobox{
-	width:70%;
+	width:1000px;
 	margin-top:2%;
+}
+
+.infobox hr {
+	border : 2px solid #D0E0FF;
+}
+.mediumText {
+	font-size: 18px;
 }
 
 /* -------------- 모임소개 --------- */
@@ -192,7 +198,7 @@ span p{
 .moimjoin{
 	position: fixed;
 	width:30%;
-	top:90%;
+	top:92%;
 	left:35%;
 	margin:1%;
 	z-index: 1;
@@ -225,7 +231,7 @@ span p{
 /* 모임게시판 */
 .board_list_wrap{
 	width:80%;
-	height: 80%;
+	height: 60%;
 	border: 1px solid #c9c9c9;
 	padding: 1%;
 	margin-left: 9%;
@@ -253,30 +259,48 @@ span p{
 	margin:1%;
 }
 
+.topTitle{
+	display: flex;
+    justify-content: space-between;
+    margin-left: 6%;
+    font-weight:bold;
+    font-size:17px;
+}
+
 .top{
 	display: flex;
     justify-content: space-between;
     margin-left: 6%;
 }
 
-.bt_wrap{
+#bt_wrap{
 	display: inline-block;
-	padding: 1%;
-	margin: 2% 1% 1% 5%;
+	float:right;
 }
 
+#bt_wrap_a {
+	
+	width: 400px;
+}
 
+.moimname div:nth-child(2) {
+	font-size:18px;
+	padding-top:5px;
+}
 
 /* 1:1문의 */
 .quest{
 	display: inline-block;
 	padding: 1%;
 	margin-left:5%;
-	border: 1px solid #d4d4d4;
+	border: 1px solid #fff;
 	border-radius: 10px;
-	background-color: #d4d4d4;
+	background-color: #BDE1FF;
 	font-weight: bold;
 	color: black;
+	width:150px;
+	height:45px;
+	line-height:30px;
 }
 
 .quest button {
@@ -288,7 +312,16 @@ span p{
 	opacity: 0.7;
 }
 
+#gat_Recommand {
+	color:#007bff;
+	background-color: white;
+    border-color: #007bff;
+}
 
+#gat_Recommand:hover {
+	color:white;
+	background-color: #BDE1FF;
+}
 /* 넘기는거 */
 .pagination{
 	z-index: 100;

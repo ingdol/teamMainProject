@@ -1,10 +1,11 @@
 $(document).ready(function(){
     $('.ReservationCancel').on('click', function(){
+        var item = $(this).siblings('input').val();
         if(confirm("정말 예약을 취소하시겠습니까?")) {
             $.ajax({
                 type:"post",
                 url:"/CancelSpaceReservation",
-                data:{"spaceReserNo":$('#spaceReserNo').val()
+                data:{"spaceReserNo": item
                 },
                 success:function(result){
                     alert("예약이 취소 되었습니다.");
