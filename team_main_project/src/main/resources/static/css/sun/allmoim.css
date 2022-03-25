@@ -31,6 +31,9 @@ p{
 
 
 /* **************필터선택후***************** */
+.card {
+	border-radius: 15px;
+}
 
 #allmoimclass{
 	width:100%;
@@ -59,7 +62,7 @@ p{
 	display: grid;
 	align-items: start;
 	cursor: pointer;
-	background-color:  #eaf5ff;
+	background-color:  #E2F0FF;
 }
 .cardbox .card:hover{
 	opacity: 0.7;
@@ -68,13 +71,17 @@ p{
 .card-img-top{
 	width:100%;
 	height: 80%;	
+	border-radius: 15px 15px 0 0;
 }
 .cardbody{
 	display: grid;
 	justify-content: center;
 	margin-top: 5%;
 }
-
+.cardtitle{
+	font-size: 17px;
+	padding-bottom:5px;
+}
 .cardbox .card .cardbody h5{
 	width:100%;
 	height: 20%;
@@ -92,12 +99,15 @@ p{
 .moimplus,
 .classplus{
 	width:10%;
+	height:30px;
+	line-height:30px;
 	text-align:center;
-	border: 1px solid gray;
+	border: 1px solid lightgray;
 	border-radius: 10px;
 	padding: 5px;
 	cursor: pointer;
-	background-color:  #d9eeff;
+	background-color:  #F2F2F2;
+	margin-top:36px;
 }
 
 .plus:hover {
