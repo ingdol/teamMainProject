@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,7 +155,7 @@
 									<div class="card">
 										<img src="<c:url value='/images/${photo.gatDetPhoto}'/>" class="card-img-top">
 										<div class="card-body">
-											<h5 class="card-title"><c:forEach items="${gatherCommu}" var="com"><a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${photo.gatDetTitle}</a></c:forEach></h5>
+											<c:forEach items="${gatherCommu}" var="com" begin="0" end="0"><h5 class="card-title"><a href="<c:url value='/ldh/Somoimboard/${com.gatNo}/${com.gatDetNo}'/>">${photo.gatDetTitle}</a></h5></c:forEach>
 											<p class="card-text">${photo.gatDetInfo}</p>
 										</div>
 										<div class="card-footer">
@@ -163,7 +164,7 @@
 									</div>
 								</li>
 							</c:forEach>
-							</ul>							
+							</ul>									
 						</div>
 						<nav aria-label="Page navigation example">
 							<ul class="pagination">
