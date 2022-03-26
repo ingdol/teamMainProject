@@ -130,7 +130,7 @@
 			<div class="filebox">
 			<input class="upload-name" value="첨부파일">
 			<label for="file">사진 찾기</label>
-			<input type="file" id="file" name="uploadFile1"><br><br>
+			<input type="file" id="file" name="uploadFile1" accept="image/*"><br><br>
 			</div>
 			<br><br>
 			<h4>소모임의 배너 사진을 넣어주세요.<span class="tooltip" title="소모임 게시판 내 배너 사진을 넣습니다. 1000 x 200 사이즈가 적당합니다."><img src="<c:url value='/image/ldh/doum.png'/>" width="16px" height="16px"></span></h4>
