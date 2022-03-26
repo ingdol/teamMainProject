@@ -40,7 +40,7 @@
                         <strong id="endTime">종료 시간</strong>
                         <strong id="Pay">가격</strong>
                         <strong id="ReserCancel">예약 취소</strong>
-                        <strong id="Review">리뷰 작성</strong>
+                        <strong id="Review">리뷰</strong>
                         <jsp:useBean id="now" class="java.util.Date"/>
                         <fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm" var="nowDate"/>
                         <c:forEach items="${ReservationList}" var="List">
@@ -50,7 +50,7 @@
                                 <span class="list-Reser" id="list-Date">${List.spaceReserDate}</span>
                                 <span id="listStart" class="list-Reser">${List.spaceReserStartTime}</span>
                                 <span id="listEnd" class="list-Reser">${List.spaceReserEndTime}</span>
-                                <span class="list-Reser" id="listPay">${List.spacePay}</span>
+                                <span class="list-Reser" id="listPay"><fmt:formatNumber value="${List.spacePay}" type="number"/></span>
                                 <c:choose>
                                     <c:when test="${List.spaceReserDate > nowDate}">
                                         <input type="button" value="예약 취소" id="ReservationCancel" class="ReservationCancel">
@@ -73,6 +73,8 @@
                 </div>
             </div>
         </div>
+        <!-- TOP  -->
+        <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
     </div>
     </body>
 </html>
