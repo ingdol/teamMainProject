@@ -37,6 +37,7 @@ public class APIRestController {
 		
 		try {
 			// 1. 파일 저장 경로 설정 : 실제 서비스되는 위치 (프로젝트 외부에 저장)
+			/* String uploadPath = "c:/upload/"; */
 			String uploadPath = "/voice/";
 			
 			// 2. 원본 파일 이름 알아오기

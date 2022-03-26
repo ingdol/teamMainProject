@@ -159,8 +159,8 @@ public class STTService {
 	public void resultToFileSave(String result) {
 		try {
 			String fileName = Long.valueOf(new Date().getTime()).toString();
-			String filePathName = "C:/upload/" + "stt_" + fileName + ".txt"; 
-//			String filePathName = "/voice/" + "stt_" + fileName + ".txt";
+			/* String filePathName = "C:/upload/" + "stt_" + fileName + ".txt"; */
+			String filePathName = "/voice/" + "stt_" + fileName + ".txt";
 			
 			FileWriter fw = new FileWriter(filePathName);
 			fw.write(result);
@@ -172,7 +172,6 @@ public class STTService {
 		}
 	}
 }
-
 
 
 

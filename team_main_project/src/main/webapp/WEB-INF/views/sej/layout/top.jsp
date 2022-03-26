@@ -6,16 +6,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Daily&Linker</title>
-		<link href="<c:url value='/css/sej/main/common.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/index.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/sej/main/common.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/menu.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/main/footer.css'/>" rel="stylesheet" type="text/css">
 		<link href="<c:url value='/css/sej/chatBtn.css'/>" rel="stylesheet" type="text/css">
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/sej/main/index.js'/>"></script>
-		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
 	</head>
 	<body>
+		<script async src="<c:url value='/js/sej/main/index.js'/>"></script>
+		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
 		<header>
 			<div id="headerBox">
 			<c:if test="${not empty sessionScope.sid}" >
