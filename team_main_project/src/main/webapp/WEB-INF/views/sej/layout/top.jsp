@@ -17,6 +17,7 @@
 		<script async src="<c:url value='/js/sej/main/index.js'/>"></script>
 		<script src="<c:url value='/js/sej/allSearch.js'/>"></script>
 		<header>
+		<!-- 커밋테스트 -->
 			<div id="headerBox">
 			<c:if test="${not empty sessionScope.sid}" >
 				<div id="logoBox"><a href="<c:url value='/'/>"><img src="<c:url value='/img/sej/logo.jpg'/>" id="logoImg"></a></div>
