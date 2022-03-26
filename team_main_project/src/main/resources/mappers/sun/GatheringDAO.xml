@@ -80,6 +80,13 @@
 			resultType="com.boot.teamMainProject.model.GatheringVO" >
 		SELECT * FROM Gathering WHERE gatNo=#{gatNo}
 	</select>
+	
+	<resultMap id="detailViewGatNoListMap" type="com.boot.teamMainProject.model.GatheringVO">
+  		<result property="gatName" column="gatName"/>
+  	</resultMap>
+	<select id="selectDetailViewGatNoList" resultMap="detailViewGatNoListMap" parameterType="com.boot.teamMainProject.model.MemberVO">
+		SELECT gatName FROM Gathering WHERE gatNo IN (#{gatJoinNo1}, #{gatJoinNo2}, #{gatJoinNo3}, #{gatJoinNo4}, #{gatJoinNo5})
+	</select>
   	
   	
   		<insert id="LikeGathering" parameterType="com.boot.teamMainProject.model.GatRecomVO">
