@@ -16,6 +16,10 @@
                 // };
             }, true);
             $(document).ready(function(){
+                $('#classScheDate').val(sessionStorage.getItem("classScheDate"));
+                $('#classScheTime').val(sessionStorage.getItem("classScheTime"));
+                setTimeout(sessionStorage.clear(), 1000);
+
                 $('#toggleBtn').on('click', function(){
                     if($('#findAddress').css("display") == "none") {
                         $('#findAddress').show();
@@ -43,9 +47,13 @@
             }
             function setDate(){
                 $('#spaceReserDate').val($('#classScheDate').val());
+                var classScheDate = $('#classScheDate').val();
+                sessionStorage.setItem("classScheDate", classScheDate);
             }
             function setTime(){
                 $('#spaceReserStartTime').val($('#classScheTime').val());
+                var classScheTime = $('#classScheTime').val();
+                sessionStorage.setItem("classScheTime", classScheTime);
             }
             function checkPerson() {
                 if ($('#classScheMax').val() <= 0 && $('#classScheMax').val() != "") {

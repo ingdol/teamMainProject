@@ -13,13 +13,13 @@
 		<result property="hobbyNo" column="hobbyNo" />	
 		<result property="gatArea" column="gatArea" />	
 		<result property="gatOpen" column="gatOpen" />	
-		<result property="gatHate" column="gatHate" />
+		<result property="gatRecommand" column="gatRecommand" />
 		<result property="gatPhoto" column="gatPhoto" />	
 		<result property="gatBanPhoto" column="gatBanPhoto" />		
 	</resultMap>
 	
 	<insert id="insertGathering" parameterType="com.boot.teamMainProject.model.GatheringVO">
-			INSERT INTO Gathering( memNick,gatName, gatInfo,hobbyNo,gatArea,gatOpen,gatHate,gatPhoto,gatBanPhoto) 
+			INSERT INTO Gathering( memNick,gatName, gatInfo,hobbyNo,gatArea,gatOpen,gatRecommand,gatPhoto,gatBanPhoto) 
 			VALUES (  '${memNick}','${gatName}','${gatInfo}','${hobbyNo}','${gatArea}',CURRENT_TIMESTAMP,0,'${gatPhoto}','${gatBanPhoto}')
 	</insert>
 	<select id="detailViewSomoim" parameterType="int"

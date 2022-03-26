@@ -9,9 +9,19 @@
 		  <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SCreate.css" />">
 		  <link rel="stylesheet" href="<c:url value="/css/ldh/SWrite.css" />">
+		  <script src="<c:url value='/js/ckeditor/ckeditor.js'/>"></script>
+ 		  <script src="<c:url value='/js/ckeditor/ko.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/screate.js'/>"></script>
 		  <script src="<c:url value='/js/ldh/Swrite.js'/>"></script>
 			<script src="<c:url value='/js/ldh/SCajax.js'/>"></script>
+			  <style>
+		  		.ck.ck-editor{
+		  			max-width: 890px;
+		  		}
+		  		.ck-editor__editable{
+		  			min-height: 300px;
+		  		}
+		  </style>
 	</head>
 	<body>
 		<div id="mainWrap">
@@ -19,9 +29,9 @@
 		   
 			<section>
 			<div id="wrap2">
-			<br><br><br>
-			<h2>소모임 만들기</h2><br><br>
 			
+			<h3 style="text-align:left;"><img src="<c:url value='/image/ldh/somoim.png'/>" width="50px" height="32px"> 소모임 개설</h3><br>
+			<hr style="border-top:4px double;">
 <!-- 			 -->
 			
 			<form id="SCreateForm" onsubmit="return validate();" name="SCreateForm" method="post" 	action="/screate"  enctype="multipart/form-data">
@@ -29,8 +39,8 @@
 			<c:if test="${not empty sessionScope.sid }">
 			<input type="hidden" id="memNick" name="memNick" value="${sessionScope.snick}"><br>
 			</c:if>
-			
-<br><h3>소모임을 열 지역을 선택해주세요.</h3><br>
+			<br>
+<br><h4>소모임을 열 지역을 선택해주세요.</h4><br>
 			<div class="select">
 			 <select name="gatArea1" id="gatArea1" onchange="categoryChange(this)">
               	<option value="">시/도 선택</option>
@@ -57,7 +67,12 @@
 			</div>
 <!-- 			<input type="hidden" id="gatArea" name="gatArea" oninput="_onSubmit()"> -->
 			<br><br>
-			<h3>소모임의 카테고리를 선택해주세요.</h3><br>
+			<br>
+			<hr style="border-top:2px dashed #e3e3e3; border-bottom:2px dashed #fff" >
+			<br><br><br>
+			
+			
+			<h4>소모임의 카테고리를 선택해주세요.</h4><br>
 			<div class="toggle2">
 
 				<input type="radio" id="toggle2-1" name="hobbyNo" value="1">
@@ -82,34 +97,52 @@
 			
 			</div>
 			<br><br>
+			<br>
+			<hr style="border-top:2px dashed #e3e3e3; border-bottom:2px dashed #fff" >
+			<br><br><br>
 			
-			<h3>생성할 소모임의 제목을 입력해주세요.</h3><br>
+			<h4>생성할 소모임을 소개해보세요.</h4><br>
 			<input type="text" id="gatName" name="gatName" 
-				style="width:500px; height:40px; text-align:center; background: #FFFFFF; border: 1px solid rgba(0, 133, 255, 0.25);
-							box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.25); border-radius: 10px;" placeholder="소모임 제목을 입력해주세요" 
+				style="width:500px; height:40px; text-align:center; background: #FFFFFF; border: 2px solid rgba(0, 133, 255, 0.5);
+							box-sizing: border-box; box-shadow: 0px 3px 3px rgba(0, 133, 255, 0.25); border-radius: 3px;" placeholder="소모임 제목을 입력해주세요" 
 				onfocus="this.placeholder=''" onblur="this.placeholder='소모임 제목을 입력해주세요'">
 			<br><br>
-			<textarea id="gatInfo" name="gatInfo" rows="15" cols="66" placeholder="소모임에 대한 설명을 입력해주세요" 
-			onfocus="this.placeholder=''" onblur="this.placeholder='소모임에 대한 설명을 입력해주세요'"  style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.25);
-			box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; padding:10px;"></textarea>
+			<textarea id="gatInfo" name="gatInfo" placeholder="소모임에 대한 설명을 입력해주세요" 
+			onfocus="this.placeholder=''" onblur="this.placeholder='소모임에 대한 설명을 입력해주세요'" 
+			style="padding-left: 10px; padding-top: 10px;" ></textarea>
+				<script>
+				 ClassicEditor
+		            .create( document.querySelector( '#gatInfo' ), {
+		                language: {ui: 'ko', content: 'ko'} //언어설정
+		            })
+		            .catch( error => {
+		                console.error( error );
+		            } );
+				</script>
 			
-			<br><br><br><br><br>
+			<br><br>
+			<br>
+			<hr style="border-top:2px dashed #e3e3e3; border-bottom:2px dashed #fff" >
+			<br><br>
+			<br>
 			<h4>소모임을 대표하는 사진을 넣어주세요.<span class="tooltip" title="소모임을 대표하는 사진을 넣습니다. 720 x 480 사이즈가 적당합니다."><img src="<c:url value='/image/ldh/doum.png'/>" width="16px" height="16px"></span></h4>
-			<hr width="300px"><br>
+			<br>
 			<div class="filebox">
 			<input class="upload-name" value="첨부파일">
 			<label for="file">사진 찾기</label>
-			<input type="file" id="file" name="uploadFile1"><br><br>
+			<input type="file" id="file" name="uploadFile1" accept="image/*"><br><br>
 			</div>
-			<br><br><br>
+			<br><br>
 			<h4>소모임의 배너 사진을 넣어주세요.<span class="tooltip" title="소모임 게시판 내 배너 사진을 넣습니다. 1000 x 200 사이즈가 적당합니다."><img src="<c:url value='/image/ldh/doum.png'/>" width="16px" height="16px"></span></h4>
-			<hr width="270px"><br>
+			<br>
 			<div class="filebox2">
 			<input class="upload-name2" value="첨부파일">
 			<label for="file2">사진 찾기</label>
-			<input type="file" id="file2" name="uploadFile2">
-			
-			<br><br><br><br><br><br>
+			<input type="file" id="file2" name="uploadFile2" accept="image/*">
+			<br><br>
+			<br>
+			<hr style="border-top:2px dashed #e3e3e3; border-bottom:2px dashed #fff" >
+			<br><br><br>
 			<input type="submit" value="소모임 만들기" class="subbox2" >
 			</div>
 			</form>

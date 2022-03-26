@@ -5,13 +5,15 @@
 #wrap2{
 /* 	position: relative; */
 background: #FFFFFF;
-	text-align:center;
+	text-align:left;
 /* 	position:relative; */
-	width:70%;
+	width:65%;
 /* 	height:100%; */
-	box-shadow: 0px 1px 3px;
+	box-shadow: 0px 1px 5px lightgrey;
 	border-radius: 10px;
-/* 	padding:50px; */
+	padding:50px;
+	margin-top:40px;
+	margin-bottom:40px;
 }
 
 
@@ -42,6 +44,7 @@ background: #FFFFFF;
     opacity:1; 
 
     position: relative; 
+    
 }
 
 .toggle2-text{
@@ -52,10 +55,12 @@ background: #FFFFFF;
 }
 
 .subbox2{
+
 position:relative;
 
-	
-width: 100%;
+right:50px;
+top:50px;
+width: 932px;
 height: 100px;
 text-align: center;
 
@@ -67,11 +72,13 @@ font-size:300%;
 font-family: 'Dongle', sans-serif;;
 
 color: white;
+
     	-webkit-transition:.4s;
 	-moz-transition:.4s;
 	-ms-transition:4s;
 	-o-transition:.4s;
 	transition:.4s;
+	margin-bottom:40px;
 }
 
 .subbox2:hover{
@@ -95,9 +102,9 @@ select{
 	padding: 5px 30px 5px 10px;
 	background: url('/image/ldh/select.png') no-repeat 95% 50%;
 	background-size: 20px;
-	border-radius:10px;
-	border: 1px solid rgba(0, 133, 255, 0.25);
-	box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.25);
+	border-radius:3px;
+	border: 2px solid rgba(0, 133, 255, 0.5);
+	box-shadow: 0px 3px 3px rgba(0, 133, 255, 0.25);
 	
 }
 
