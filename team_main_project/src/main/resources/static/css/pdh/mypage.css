@@ -73,9 +73,11 @@ body {
     cursor: pointer;
     transition: all 0.2s;
 }
-
+.subscription {
+    width: 75%;
+}
 .club {
-    width: 50rem;
+    width: 100%;
     box-shadow: 1px 1px 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -155,25 +157,25 @@ body {
     margin-left: 30px !important;
 }
 #title{
-    margin-left: 60px;
-}
-#reserDate{
     margin-left: 90px;
 }
+#reserDate{
+    margin-left: 110px;
+}
 #startTime{
-    margin-left: 45px;
+    margin-left: 62px;
 }
 #endTime{
-    margin-left: 45px;
+    margin-left: 32px;
 }
 #Pay{
-    margin-left: 45px;
+    margin-left: 70px;
 }
 #ReserCancel{
-    margin-left: 45px;
+    margin-left: 99px;
 }
 #Review{
-    margin-left: 45px;
+    margin-left: 78px;
 }
 .ReservationCancel{
     background-color: var(--bg-color);
@@ -183,7 +185,8 @@ body {
     width: 80px;
     cursor: pointer;
     border-radius: 10px;
-    margin-left: 43px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 .FakeReservationCancel{
     background-color: var(--bg-color);
@@ -193,28 +196,31 @@ body {
     width: 80px;
     cursor: pointer;
     border-radius: 10px;
-    margin-left: 43px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 #list-Title {
-    width: 130px;
+    width: 20%;
+    text-align: center;
 }
 #list-Date {
-    margin-left: 30px;
-    width: 100px;
+    width: 15%;
+    text-align: center;
 }
 #listStart {
-    width: 30px;
-    margin-left: 25px;
+    width: 10%;
+    text-align: center;
 }
 #listEnd {
-    width: 30px;
-    margin-left: 70px;
+    width: 10%;
+    text-align: center;
 }
 #listPay {
-    width: 30px;
-    margin-left: 55px;
+    width: 15%;
+    text-align: center;
 }
 #list-Review {
-    margin-left: 32px;
+    width: 10%;
+    text-align: center;
 }
