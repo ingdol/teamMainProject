@@ -76,7 +76,7 @@
 
 			<input class="upload-name" value="첨부파일">
 			<label for="file">사진 찾기</label>
-			<input type="file" id="file" name="uploadFile">
+			<input type="file" id="file" name="uploadFile" accept="image/*">
 			
 		</td></tr>
 				<tr><td colspan="3" align="right">
