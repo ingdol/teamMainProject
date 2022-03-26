@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import com.boot.teamMainProject.model.GLikeVO;
 import com.boot.teamMainProject.model.GatRecomVO;
 import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.model.MemberVO;
 
 public interface IGatheringDAO {
 	ArrayList<GatheringVO> showlist(String hobbyNo);
@@ -25,6 +26,7 @@ public interface IGatheringDAO {
 	ArrayList<GatheringVO> listAllGatherNew();   // 전체 모임 조회 - 신규
 	ArrayList<GatheringVO> gatherSearch(HashMap<String, Object> map); // 모임 검색
 	GatheringVO detailViewGatNo(String gatNo);
+	ArrayList<GatheringVO>selectDetailViewGatNoList(MemberVO memberVO); //가입한모임 리스트 조회
 
 	
 	
