@@ -35,18 +35,21 @@ body {
     margin-bottom: 28px;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .change-info {
     position: relative;
     cursor: pointer;
-    background-color: var(--bg-color);
+    background-color: rgb(128 156 199 / 90%);
+    border: 2px solid rgb(128 156 199 / 90%);
     border-radius: 10px;
     color: white;
-    top: -4.8rem;
-    left: 13.5rem;
-    padding: 3px 5px 3px 5px;
+    top: -1.7rem;
+    left: 24.9rem;
+    padding: 7px 9px 7px 9px;
     font-weight: bold;
+    font-size:15px;
     transition: all 0.2s;
 }
 
@@ -63,15 +66,17 @@ body {
 .portal-item {
     display: inline;
     position: relative;
-    width: 8rem;
+    width: 7.7rem;
     height: 3rem;
     text-align: center;
     background: var(--bg-color);
+    border: 2px solid var(--bg-color);
     color: white;
     font-weight: bold;
     line-height: 3rem;
     cursor: pointer;
     transition: all 0.2s;
+    border-radius: 5px;
 }
 .subscription {
     width: 75%;
@@ -82,16 +87,16 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 25px;
+    border-radius: 5px;
 }
 
 .club-item {
     list-style: none;
     width: 95%;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid black;
+    height: 49px;
+    line-height: 47px;
+    border: 2px solid #468eff;
     border-radius: 5px;
-    background: var(--bg-color);
     padding-left: 10px;
     text-align: center;
     margin: 10px 0 4px 17px;
@@ -141,7 +146,7 @@ body {
 }
 
 .change-info:hover {
-    color: var(--bg-color);
+    color: rgb(98 134 191);
     background-color: transparent;
 }
 
@@ -159,25 +164,25 @@ body {
     margin-left: 30px !important;
 }
 #title{
-    margin-left: 90px;
+    margin-left: 82px;
 }
 #reserDate{
-    margin-left: 110px;
+    margin-left: 73px;
 }
 #startTime{
-    margin-left: 62px;
+    margin-left: 57px;
 }
 #endTime{
-    margin-left: 32px;
+    margin-left: 24px;
 }
 #Pay{
-    margin-left: 70px;
+    margin-left: 59px;
 }
 #ReserCancel{
-    margin-left: 99px;
+    margin-left: 92px;
 }
 #Review{
-    margin-left: 78px;
+    margin-left: 71px;
 }
 .ReservationCancel{
     background-color: var(--bg-color);
@@ -203,7 +208,6 @@ body {
 }
 
 #list-Title {
-    width: 20%;
     text-align: center;
 }
 #list-Date {

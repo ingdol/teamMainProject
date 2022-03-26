@@ -160,7 +160,7 @@ public class STTService {
 		try {
 			String fileName = Long.valueOf(new Date().getTime()).toString();
 			/* String filePathName = "C:/upload/" + "stt_" + fileName + ".txt"; */
-			String filePathName = "/voice/" + "stt_" + fileName + ".txt";
+			String filePathName = "voice/" + "stt_" + fileName + ".txt";
 			
 			FileWriter fw = new FileWriter(filePathName);
 			fw.write(result);
