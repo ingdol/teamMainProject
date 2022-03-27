@@ -30,7 +30,7 @@
           
                 record.onclick = () => {
                     mediaRecorder.start();
-                    record.style.background = "red";
+                    record.style.background = "#878bff";
                     /*record.style.color = "black";*/
                 }
 
