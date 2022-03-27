@@ -52,8 +52,8 @@ public class TTSService {
                 //File f = new File(tempname + ".mp3");
                 
                 voiceFileName = "tts_" + tempname + ".mp3";    
-				/* File f = new File("C:/upload/" + voiceFileName); */
-                File f = new File("/voice/"  +  voiceFileName);                  
+//				File f = new File("C:/upload/" + voiceFileName);
+				File f = new File("/voice/"  +  voiceFileName);           
                 f.createNewFile();
                 
                 OutputStream outputStream = new FileOutputStream(f);

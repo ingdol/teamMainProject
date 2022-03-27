@@ -144,10 +144,10 @@
 	width:100%;
 }
 
-#record {
+/* #record {
     border:none;
     background:none;
-}
+} */
 #recordBox {
 	height: 70px; 
 	width: 100px; 
@@ -155,10 +155,10 @@
 	position: relative;
 	
 }
-#stop {
+/* #stop {
     border:none;
     background:none;
-}
+} */
 
 #recordText {
 	position: absolute;

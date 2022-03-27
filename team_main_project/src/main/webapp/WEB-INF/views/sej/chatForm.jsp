@@ -24,34 +24,41 @@
 					<p>1:1 문의</p>
 				</div>
 		
+		<div id="wrap">
+			<!-- Header -->
+			<div id="chatHeader">
+				<span>챗봇</span>
+				<button id="btnClose">X</button>
+			</div>
+		
 		<!-- 채팅 내용 출력 -->
 			
 			<!-- 응답 메시지 출력  -->
-		<div id="chatAllBox">
 			<div id="chatBox"></div><br>
 			
-			<div id="chatInputBox">
+			<div>
 				<!-- 질문 메시지 입력 폼 -->
 				<form id="chatForm">
 					<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
-					
-					<input type="submit" id="btnSubmit" value="전송" >		
-				</form>	
-				<div id="recordBox">
-						<!-- 음성 녹음 -->
-							<button id="record"><img src="<c:url value='/img/sej/Microphone.png'/>" id="recordImg"></button> 
-							<button id="stop"><img src="<c:url value='/img/sej/BlockMicrophone.png'/>" id="stopImg"></button>
-							<div id="sound-clips"></div>
-				</div>	
+					<input type="submit" value="전송">		
+				</form>		
 			</div><br>
-		</div>
 			
+			<div>
+			<!-- 음성 녹음 -->
+			음성 메시지 : <button id="record">녹음</button> 
+							<button id="stop">정지</button>
+							<div id="sound-clips"></div><br>
+			
+			</div>
 			
 			<div>
 				<audio preload="auto" controls></audio>
 			</div>			
-			</div>
 			
+			<br><br>
+			<a href="/">index 페이지로 이동</a>
+		</div>
 			<!-- BOTTOM  -->
 		    <jsp:include page="/WEB-INF/views/sej/layout/bottom.jsp" flush='true' />
 			
