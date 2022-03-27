@@ -1,6 +1,5 @@
 package com.boot.teamMainProject;
 
-import com.boot.teamMainProject.dao.*;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.boot.teamMainProject.dao.GatherDetComDAO;
 import com.boot.teamMainProject.dao.IChatbotDAO;
-import com.boot.teamMainProject.dao.IClassCreateDAO;
 import com.boot.teamMainProject.dao.IChattingDAO;
+import com.boot.teamMainProject.dao.IClassCreateDAO;
 import com.boot.teamMainProject.dao.IClassDAO;
 import com.boot.teamMainProject.dao.IClassRevDAO;
+import com.boot.teamMainProject.dao.IClass_ScheDAO;
 import com.boot.teamMainProject.dao.ICommunityComDAO;
 import com.boot.teamMainProject.dao.ICommunityDAO;
 import com.boot.teamMainProject.dao.IGatherDetDAO;
@@ -30,23 +30,23 @@ import com.boot.teamMainProject.dao.ISpace_CtgDAO;
 //@MapperScan(basePackageClasses = IProductDAO.class)
 @MapperScan(basePackageClasses=GatherDetComDAO.class)
 @MapperScan(basePackageClasses=IChatbotDAO.class)
+@MapperScan(basePackageClasses=IChattingDAO.class)
+@MapperScan(basePackageClasses=IClass_ScheDAO.class)
+@MapperScan(basePackageClasses=IClassCreateDAO.class)
 @MapperScan(basePackageClasses=IClassDAO.class)
 @MapperScan(basePackageClasses=IClassRevDAO.class)
+@MapperScan(basePackageClasses=ICommunityComDAO.class)
 @MapperScan(basePackageClasses=ICommunityDAO.class)
 @MapperScan(basePackageClasses=IGatherDetDAO.class)
 @MapperScan(basePackageClasses=IGatheringDAO.class)
-@MapperScan(basePackageClasses = IGatherScheduleDAO.class)
-@MapperScan(basePackageClasses = IHobbyCtgDAO.class)
-@MapperScan(basePackageClasses = IMemDAO.class)
-@MapperScan(basePackageClasses = ISpace_CtgDAO.class)
-@MapperScan(basePackageClasses = ISpaceDAO.class)
-@MapperScan(basePackageClasses = ISpaceReservationDAO.class)
-@MapperScan(basePackageClasses = ISpaceReviewDAO.class)
-@MapperScan(basePackageClasses = ISpaceCreateDAO.class)
-@MapperScan(basePackageClasses = IClassCreateDAO.class)
-@MapperScan(basePackageClasses = ICommunityComDAO.class)
-@MapperScan(basePackageClasses = IChattingDAO.class)
-@MapperScan(basePackageClasses = IClass_ScheDAO.class)
+@MapperScan(basePackageClasses=IGatherScheduleDAO.class)
+@MapperScan(basePackageClasses=IHobbyCtgDAO.class)
+@MapperScan(basePackageClasses=IMemDAO.class)
+@MapperScan(basePackageClasses=ISpace_CtgDAO.class)
+@MapperScan(basePackageClasses=ISpaceCreateDAO.class)
+@MapperScan(basePackageClasses=ISpaceDAO.class)
+@MapperScan(basePackageClasses=ISpaceReservationDAO.class)
+@MapperScan(basePackageClasses=ISpaceReviewDAO.class)
 
 public class TeamMainProjectApplication {
 

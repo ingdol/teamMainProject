@@ -17,13 +17,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ChatbotService {
-	
-	
 	public String main(String voiceMessage) {
 	//public static String main(String voiceMessage) {	
 
 		String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6695/f3ee7840f78053cc5fcc2275e6f2a81d51919ebd2fa3ef15a4cbbe2bb3de2926";
 		String secretKey = "UGh3a2dHT3laSXFiT3BpTVhFaExkTEdtcWN3SWhnTVc=";		
+		
 		
         String chatbotMessage = ""; // 응답 메시지        
 
@@ -83,9 +82,10 @@ public class ChatbotService {
 	public String imgLinkMainService(String voiceMessage) {
 		//public static String main(String voiceMessage) {	
 
-			String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6695/f3ee7840f78053cc5fcc2275e6f2a81d51919ebd2fa3ef15a4cbbe2bb3de2926";
-			String secretKey = "UGh3a2dHT3laSXFiT3BpTVhFaExkTEdtcWN3SWhnTVc=";		
-
+		String apiURL = "https://48177f4276a44b18b155f0a28f99bb59.apigw.ntruss.com/custom/v1/6695/f3ee7840f78053cc5fcc2275e6f2a81d51919ebd2fa3ef15a4cbbe2bb3de2926";
+		String secretKey = "UGh3a2dHT3laSXFiT3BpTVhFaExkTEdtcWN3SWhnTVc=";		
+			
+			
 	        String chatbotMessage = ""; // 응답 메시지        
 
 	        try {
@@ -233,6 +233,17 @@ public class ChatbotService {
     	return result;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

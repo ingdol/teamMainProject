@@ -2,6 +2,7 @@ package com.boot.teamMainProject.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.boot.teamMainProject.dao.IGatheringDAO;
 import com.boot.teamMainProject.model.GatRecomVO;
 import com.boot.teamMainProject.model.GatheringVO;
+import com.boot.teamMainProject.model.MemberVO;
 
 @Service
 public class GatheringService implements IGatheringService {
@@ -108,6 +110,10 @@ public class GatheringService implements IGatheringService {
 	public void LikeGatUpdate(int gatNo, String memNick) {
 		// TODO Auto-generated method stub
 		dao.LikeGatUpdate(gatNo, memNick);
+	}
+
+	public List<GatheringVO> detailViewGatNoList(MemberVO gather) {
+		return dao.selectDetailViewGatNoList(gather);
 	}
 
 

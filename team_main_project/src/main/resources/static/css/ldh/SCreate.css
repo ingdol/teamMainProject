@@ -60,15 +60,15 @@ position:relative;
 
 right:50px;
 top:50px;
-width: 932px;
-height: 100px;
+width: 898px;
+height: 90px;
 text-align: center;
-
+margin-left:17px;
 background: #66A3FF;
 border: 3px solid #66A3FF;
 box-sizing: border-box;
 border-radius: 10px;
-font-size:300%;
+font-size:270%;
 font-family: 'Dongle', sans-serif;;
 
 color: white;
@@ -82,8 +82,8 @@ color: white;
 }
 
 .subbox2:hover{
-	background: #0038FF;
-	border: 3px solid #0038FF;
+	background: #3a89ff;
+	border: 3px solid #3a89ff;
 	border-radius: 10px;
 }
 

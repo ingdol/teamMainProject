@@ -38,9 +38,9 @@
 	        <div class="subscription">
 	            <div class="club">
 	                <ul class="club-list">
- 	               		<li class="club-item">${join.gatJoinNo1}</li>
- 	               		<li class="club-item">${join.gatJoinNo2}</li>
- 	               		<li class="club-item">${join.gatJoinNo3}</li>
+	                	<c:forEach var="items" items="${gatVoList}">
+	                		<li class="club-item">${items.gatName}</li>
+	                	</c:forEach>
 	                </ul>
 	            </div>
 	        </div>
