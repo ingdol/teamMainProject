@@ -8,9 +8,9 @@ const emailer =  require('./emailer');
 app = express();
 
 let opts = {
-    // host: '127.0.0.1',
-    host: 'localhost',
-    port: 8081,
+    host: '127.0.0.1',
+//     host: 'localhost',
+//     port: 8081,
     method: 'POST',
     path: '/start',
     headers: {'Content-type': 'application/json'},
