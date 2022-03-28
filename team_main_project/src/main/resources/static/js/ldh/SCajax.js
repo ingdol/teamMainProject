@@ -19,6 +19,7 @@ function validate(){
 		return false;}
 	else if(!check(gatName, "소모임 이름을")){
 		return false;}
+	// 에러테스트
 		else if(!check(memNick, "로그인 후에")){
 		return false;}
 		else{
