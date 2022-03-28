@@ -16,6 +16,7 @@
                 // };
             }, true);
             $(document).ready(function(){
+
                 $('#gatScheDate').val(sessionStorage.getItem("gatScheDate"));
                 $('#gatScheTime').val(sessionStorage.getItem("gatScheTime"));
                 setTimeout(sessionStorage.clear(), 1000);

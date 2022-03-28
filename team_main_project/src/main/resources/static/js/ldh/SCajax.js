@@ -19,7 +19,7 @@ function validate(){
 		return false;}
 	else if(!check(gatName, "소모임 이름을")){
 		return false;}
-		//주서어억
+	// 에러테스트. 소모임 정보가 뜨면 안됩니다.
 		else if(!check(memNick, "로그인 후에")){
 		return false;}
 		else{

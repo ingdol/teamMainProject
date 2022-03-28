@@ -212,4 +212,7 @@ nav#chatB_nav{
 
 #chatButton {
   z-index:100;
+   position: fixed;
+   bottom: 0px;
+   right: 0px;
 }

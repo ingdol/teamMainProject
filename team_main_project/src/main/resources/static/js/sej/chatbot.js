@@ -30,14 +30,14 @@
           
                 record.onclick = () => {
                     mediaRecorder.start();
-                    /*record.style.background = "red";
-                    record.style.color = "black";*/
+                    record.style.background = "#878bff";
+                    /*record.style.color = "black";*/
                 }
 
                 stop.onclick = () => {//정지 버튼 클릭 시
                     mediaRecorder.stop();//녹음 정지                       
-                    /*record.style.background = "";
-                    record.style.color = "";*/
+                    record.style.background = "";
+                   /* record.style.color = "";*/
                 }
                 
                 mediaRecorder.onstop = e => {                        
