@@ -16,6 +16,10 @@
                 // };
             }, true);
             $(document).ready(function(){
+                $('#gatScheDate').val(sessionStorage.getItem("gatScheDate"));
+                $('#gatScheTime').val(sessionStorage.getItem("gatScheTime"));
+                setTimeout(sessionStorage.clear(), 1000);
+
                 $('#toggleBtn').on('click', function(){
                     if($('#findAddress').css("display") == "none") {
                         $('#findAddress').show();
@@ -43,9 +47,13 @@
             }
             function setDate(){
                 $('#spaceReserDate').val($('#gatScheDate').val());
+                var gatScheDate = $('#gatScheDate').val();
+                sessionStorage.setItem("gatScheDate", gatScheDate);
             }
             function setTime(){
                 $('#spaceReserStartTime').val($('#gatScheTime').val());
+                var gatScheTime = $('#gatScheTime').val();
+                sessionStorage.setItem("gatScheTime", gatScheTime);
             }
             function checkPerson() {
                 if ($('#gatScheMax').val() <= 0 && $('#gatScheMax').val() != "") {
