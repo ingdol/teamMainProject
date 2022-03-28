@@ -19,8 +19,6 @@ function validate(){
 		return false;}
 	else if(!check(gatName, "소모임 이름을")){
 		return false;}
-		else if(!check(gatInfo, "소모임 정보를")){
-		return false;}
 		else if(!check(memNick, "로그인 후에")){
 		return false;}
 		else{
@@ -39,6 +37,8 @@ function check(value, dataName) {
         
         }
     }
+
+    
 function Areacheck(value, dataName) {
         if (value=="군/구 선택" || value=="") {
             alert(dataName + " 입력해주세요!");
